@@ -14,7 +14,7 @@ This platform is architected as a sales funnel with integrated affiliate trigger
 - Visa & Legal Services (Lexidy)
 - Health Insurance (SafetyWing)
 - Global Banking (Wise)
-- Accommodations (Agoda/Blueground)
+- Accommodations (Agoda/Blueground) 1
 
 ## 🛠 Tech Stack
 - **Core:** HTML5 / CSS3 / Vanilla JavaScript
