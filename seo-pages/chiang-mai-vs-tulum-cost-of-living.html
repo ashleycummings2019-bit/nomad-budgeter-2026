@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nomad Budgeter | Free Digital Nomad Tax & Cost of Living Calculator (2026)</title>
+    <meta name="description" content="Calculate your net income, taxes, and cost of living on global Digital Nomad Visas. Updated with 2026 tax brackets for Spain, Portugal, UAE, and 45+ countries.">
+    <link rel="stylesheet" href="../index.css">
+    
+    <!-- AI SEO & Social Metadata -->
+    <meta property="og:title" content="Nomad Budgeter | Free Digital Nomad Tax & Cost of Living Calculator">
+    <meta property="og:description" content="Calculate your net income and cost of living on global Digital Nomad Visas. Updated with 2026 tax brackets for Spain, Portugal, UAE, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nomadbudgeter.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nomad Budgeter | Free Digital Nomad Tax & Cost of Living Calculator">
+    <meta name="twitter:description" content="Calculate your net income and cost of living on global Digital Nomad Visas.">
+    <meta name="author" content="Nomad Budgeter">
+    <meta name="last-modified" content="2026-04-17">
+    <link rel="canonical" href="https://nomadbudgeter.com/">
+    
+    <!-- Structured Data: SoftwareApplication + HowTo + WebPage Graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://nomadbudgeter.com/#software",
+          "name": "Nomad Budgeter - Global Digital Nomad Tax & Budget Calculator",
+          "operatingSystem": "Web Browser",
+          "applicationCategory": "FinanceApplication",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Real-time 2026 tax estimates for 45+ countries",
+            "Cost of living data integration",
+            "Digital Nomad Visa tax rate lookup",
+            "Multi-currency conversion support",
+            "Monthly savings potential analysis"
+          ],
+          "dateModified": "2026-04-17"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://nomadbudgeter.com/#webpage",
+          "url": "https://nomadbudgeter.com/",
+          "name": "Free Digital Nomad Tax Calculator - 2026 Global Estimates",
+          "about": { "@id": "https://nomadbudgeter.com/#software" },
+          "description": "Calculate your net income and cost of living on global Digital Nomad Visas. Updated with 2026 tax brackets for Spain, Portugal, UAE, and more."
+        },
+        {
+          "@type": "HowTo",
+          "name": "How to Calculate Your Digital Nomad Budget",
+          "description": "Use Nomad Budgeter to estimate your net income, taxes, and cost of living in any global destination.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Enter Your Income",
+              "text": "Type your annual gross income in USD into the income field."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Choose Your Destination",
+              "text": "Enter any city worldwide (e.g., Lisbon, Dubai, Bali) into the Target City field."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Review Your Results",
+              "text": "Click 'Calculate My Budget' to see your estimated take-home pay, effective tax rate, cost of living index, and monthly savings potential."
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Nomad Budgeter",
+          "url": "https://nomadbudgeter.com",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@nomadbudgeter.com",
+            "contactType": "customer support"
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Cookie / GPC Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>We use essential cookies for site functionality and respect your browser's <strong>Global Privacy Control (GPC)</strong> signal. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <button id="cookie-accept" class="cookie-btn">Accept</button>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar: Inputs -->
+        <aside class="glass-panel">
+            <header>
+                <h1>Nomad Budgeter</h1>
+                <p>Digital Nomad Financial Calculator</p>
+            </header>
+
+            <div class="calculator-form">
+                <div class="input-group">
+                    <label for="income">Annual Gross Income</label>
+                    <input type="number" id="income" placeholder="e.g. 120000" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="location">Target City</label>
+                    <input type="text" <input type="text" id="location" value="Chiang Mai" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="expenses">Estimated Monthly Expenses</label>
+                    <input type="number" id="expenses" placeholder="e.g. 3000">
+                </div>
+
+                <button id="calculate-btn">Calculate My Budget</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Syncing market data...</p>
+            </div>
+        </aside>
+
+        <!-- Main: Results Display -->
+        <main id="results-panel" class="glass-panel hidden">
+            <div class="results-header">
+                <div>
+                    <h2>Financial Analysis</h2>
+                    <p id="city-badge">London, United Kingdom</p>
+                </div>
+                <div class="aura-score" id="aura-ring">
+                    <span id="aura-value">85</span>
+                </div>
+            </div>
+
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Take-Home Pay (Monthly)</div>
+                    <div class="metric-value highlight" id="res-net-monthly">$0</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Effective Tax Rate</div>
+                    <div class="metric-value" id="res-tax-rate">0%</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Cost of Living Index</div>
+                    <div class="metric-value" id="res-col-index">High</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Monthly Savings Potential</div>
+                    <div class="metric-value positive" id="res-savings">$0</div>
+                </div>
+            </div>
+
+            <div class="metric-card" style="margin-top: 1.5rem; width: 100%;">
+                <div class="metric-label">Budget Commentary</div>
+                <p id="aura-commentary" style="line-height: 1.6; color: var(--text-main);">
+                    Your financial vitality is strong. Based on current tax laws and city metrics, you are in the top 15% of earners in this location.
+                </p>
+            </div>
+
+            <!-- Trust Signal: Last Verified -->
+            <div class="trust-badge">
+                <span>📊 Tax data last verified: April 2026</span>
+                <span>🤖 Calculation logic assisted by AI, human-verified for 2026 compliance.</span>
+            </div>
+        </main>
+
+        <!-- Initial Placeholder -->
+        <main id="empty-state" class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">✨</div>
+            <h2>Ready to plan your nomad budget?</h2>
+            <p style="color: var(--text-dim); max-width: 300px; margin-top: 1rem;">Enter your details to generate a comprehensive financial report for any city worldwide.</p>
+        </main>
+    </div>
+
+    <!-- Internal Links Footer (SEO + Anti-Orphan) -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Popular Nomad Calculators</h3>
+                <ul class="footer-links">
+                    <li><a href="seo-pages/lisbon-digital-nomad-tax-calculator.html">Lisbon Tax Calculator</a></li>
+                    <li><a href="seo-pages/dubai-digital-nomad-tax-calculator.html">Dubai Tax Calculator</a></li>
+                    <li><a href="seo-pages/bali-digital-nomad-tax-calculator.html">Bali Tax Calculator</a></li>
+                    <li><a href="seo-pages/london-digital-nomad-tax-calculator.html">London Tax Calculator</a></li>
+                    <li><a href="seo-pages/madrid-digital-nomad-tax-calculator.html">Madrid Tax Calculator</a></li>
+                    <li><a href="seo-pages/bangkok-digital-nomad-tax-calculator.html">Bangkok Tax Calculator</a></li>
+                    <li><a href="seo-pages/new-york-digital-nomad-tax-calculator.html">New York Tax Calculator</a></li>
+                    <li><a href="seo-pages/medellin-digital-nomad-tax-calculator.html">Medellín Tax Calculator</a></li>
+                    <li><a href="seo-pages/chiang-mai-digital-nomad-tax-calculator.html">Chiang Mai Tax Calculator</a></li>
+                    <li><a href="seo-pages/tulum-digital-nomad-tax-calculator.html">Tulum Tax Calculator</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Popular Comparisons</h3>
+                <ul class="footer-links">
+                    <li><a href="seo-pages/lisbon-vs-bali-cost-of-living.html">Lisbon vs Bali</a></li>
+                    <li><a href="seo-pages/dubai-vs-london-cost-of-living.html">Dubai vs London</a></li>
+                    <li><a href="seo-pages/bali-vs-chiang-mai-cost-of-living.html">Bali vs Chiang Mai</a></li>
+                    <li><a href="seo-pages/madrid-vs-lisbon-cost-of-living.html">Madrid vs Lisbon</a></li>
+                    <li><a href="seo-pages/new-york-vs-london-cost-of-living.html">New York vs London</a></li>
+                    <li><a href="seo-pages/medellin-vs-tulum-cost-of-living.html">Medellín vs Tulum</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="disclaimer.html">Legal Disclaimer</a></li>
+                    <li><a href="mailto:hello@nomadbudgeter.com">Contact: hello@nomadbudgeter.com</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Legal Disclaimer -->
+        <div class="footer-legal">
+            <p>© 2026 Nomad Budgeter. All rights reserved. Calculations are for informational purposes only and do not constitute legal, financial, or tax advice. Tax residency laws and Digital Nomad Visa requirements are subject to frequent legislative change. Consult a qualified tax professional before making relocation decisions.</p>
+            <p class="footer-sources">Data sources: API-Ninjas, ExchangeRate-API & Official 2026 Nomad Visa Portals. Calculation logic assisted by AI for real-time accuracy, human-verified for 2026 compliance.</p>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>

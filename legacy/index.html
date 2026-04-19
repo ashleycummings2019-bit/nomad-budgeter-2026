@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Nomad Tax & Cost of Living Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Nomad Calculator ✈️</h1>
+            <p>Calculate your net income and cost of living on the world's most popular Digital Nomad Visas.</p>
+        </header>
+
+        <div class="ad-container glass-panel" id="ad-top">
+            <p class="ad-label">Advertisement</p>
+        </div>
+
+        <main>
+            <div class="calculator-card glass-panel">
+                <div class="input-group">
+                    <label for="income">Annual Gross Income (USD):</label>
+                    <input type="number" id="income" placeholder="e.g. 85000" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="destination">Target Destination City:</label>
+                    <input type="text" id="destination" placeholder="e.g. Lisbon, Dubai, Bali" required>
+                </div>
+
+                <button id="calculate-btn">Calculate My Nomad Life</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing local tax laws and living costs...</p>
+            </div>
+
+            <div id="results" class="hidden result-card glass-panel">
+                <h2>Your Estimated Nomad Budget</h2>
+                
+                <div class="result-row">
+                    <span>Gross Income:</span>
+                    <strong id="res-gross">$0</strong>
+                </div>
+                <div class="result-row tax-row">
+                    <span>Estimated Local Tax:</span>
+                    <strong id="res-tax">$0</strong>
+                </div>
+                <div class="result-row">
+                    <span>Net Income (Annual):</span>
+                    <strong id="res-net">$0</strong>
+                </div>
+                
+                <hr>
+
+                <div class="result-row">
+                    <span>Estimated Monthly Cost of Living:</span>
+                    <strong id="res-col">$0</strong>
+                </div>
+                <div class="result-row highlight-row">
+                    <span>Leftover Monthly Cash:</span>
+                    <strong id="res-leftover">$0</strong>
+                </div>
+
+                <div class="ad-container mt-20" id="ad-bottom">
+                    <p class="ad-label">Advertisement - Best Nomad Health Insurance</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
