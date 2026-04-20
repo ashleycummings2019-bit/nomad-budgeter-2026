@@ -30,9 +30,17 @@
     box-sizing: border-box;
 }
 
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* ─── Base ─── */
 body {
-    background: var(--bg-gradient);
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 20s ease infinite;
     color: var(--text-main);
     font-family: 'Outfit', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
@@ -66,18 +74,20 @@ a:hover { color: #a78bfa; }
 
 /* ─── Glassmorphism Panels ─── */
 .glass-panel {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     padding: 2.5rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    transition: var(--transition-smooth);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .glass-panel:hover {
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-6px);
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 15px 40px 0 rgba(139, 92, 246, 0.25);
 }
 
 /* ─── Forms ─── */
@@ -121,7 +131,8 @@ input::placeholder { color: rgba(148, 163, 184, 0.6); }
 /* ─── Buttons ─── */
 button, .btn {
     width: 100%;
-    background: linear-gradient(135deg, var(--aura-primary), var(--aura-secondary));
+    background: linear-gradient(135deg, var(--aura-primary), var(--aura-secondary), var(--aura-primary));
+    background-size: 200% auto;
     color: white;
     border: none;
     border-radius: 14px;
@@ -130,14 +141,14 @@ button, .btn {
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.5);
 }
 
 button:hover, .btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-    box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.5);
+    background-position: right center;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px -5px rgba(139, 92, 246, 0.7), 0 0 20px rgba(59, 130, 246, 0.5);
 }
 
 button:disabled {
@@ -401,9 +412,18 @@ button:disabled {
 }
 
 .city-hero h1 {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, var(--aura-primary), #60a5fa, #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+    to { background-position: 200% center; }
 }
 
 .city-highlights {
