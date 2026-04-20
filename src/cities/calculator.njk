@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: cities
+  size: 1
+  alias: city
+permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
+---
+
+{# Dynamic SEO Variables #}
+{% set seoTitle = "2026 Cost of Living Calculator: " + city.name + " (" + city.country + ")" %}
+{% set seoDescription = "Calculate your exact cost of living in " + city.name + " for 2026. Interactive tool including rent, food, " + city.tax | percentInt + " nomad tax rate, and savings potential." %}
+{% set seoUrl = site.url + "/" + city.slug + "/cost-of-living-calculator/" %}
+{% set isCalculatorPage = true %}
+
+<div class="app-container">
+    <main class="main-content">
+        <header class="page-header">
+            <nav class="breadcrumbs">
+                <a href="/">Home</a> &rsaquo; 
+                <a href="/visas/{{ city.countrySlug }}/">{{ city.country }}</a> &rsaquo; 
+                <a href="/cities/{{ city.slug }}/">{{ city.name }}</a> &rsaquo; 
+                <span>Calculator</span>
+            </nav>
+            <h1 class="page-title">{{ city.name }} Cost of Living Calculator</h1>
+            <p class="page-subtitle">{{ city.intro }} Use the interactive tool below to calculate your true lifestyle cost and savings potential in {{ city.name }}.</p>
+        </header>
+
+        <section class="calculator-section">
+            <div class="card interactive-calculator">
+                <div class="card-header">
+                    <h2>Your {{ city.name }} Budget</h2>
+                </div>
+                
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label for="monthly-income">Your Monthly Income (USD)</label>
+                        <input type="number" id="monthly-income" class="form-input" placeholder="e.g., 5000" min="0" step="100">
+                    </div>
+                </div>
+
+                <div class="calculator-results">
+                    <div class="result-row">
+                        <span class="result-label">Local Taxes ({{ city.tax | percentInt }}):</span>
+                        <span class="result-value" id="calc-tax-amount">---</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Average Rent (1BR):</span>
+                        <span class="result-value">{{ city.rent | usd }}</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">Living Costs (Food/Fun):</span>
+                        <span class="result-value">{{ (city.col - city.rent) | usd }}</span>
+                    </div>
+                    <div class="result-row total-row">
+                        <span class="result-label">Total Monthly Expenses:</span>
+                        <span class="result-value" id="calc-total-expenses">---</span>
+                    </div>
+                    <div class="result-row highlight-row">
+                        <span class="result-label">Potential Savings:</span>
+                        <span class="result-value success" id="calc-savings">---</span>
+                    </div>
+                </div>
+
+                <div class="calculator-feedback" id="calc-feedback">
+                    Enter your income to see your lifestyle score.
+                </div>
+            </div>
+        </section>
+
+        <section class="related-section">
+            <h2>Living in {{ city.name }}</h2>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <span class="metric-label">Visa Option</span>
+                    <span class="metric-value text-sm">{{ city.visa }}</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Min. Income Req.</span>
+                    <span class="metric-value">{{ city.visaMinIncome | usd }}</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-label">Nomad Score</span>
+                    <span class="metric-value highlight">{{ city.score }}/100</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const incomeInput = document.getElementById('monthly-income');
+        const taxAmountEl = document.getElementById('calc-tax-amount');
+        const totalExpensesEl = document.getElementById('calc-total-expenses');
+        const savingsEl = document.getElementById('calc-savings');
+        const feedbackEl = document.getElementById('calc-feedback');
+
+        // Base city data from template
+        const cityTaxRate = {{ city.tax }};
+        const cityRent = {{ city.rent }};
+        const cityCol = {{ city.col }};
+        const visaMinIncome = {{ city.visaMinIncome }};
+
+        incomeInput.addEventListener('input', (e) => {
+            const income = parseFloat(e.target.value);
+            
+            if (isNaN(income) || income <= 0) {
+                taxAmountEl.innerText = '---';
+                totalExpensesEl.innerText = '---';
+                savingsEl.innerText = '---';
+                feedbackEl.innerText = 'Enter your income to see your lifestyle score.';
+                feedbackEl.className = 'calculator-feedback';
+                return;
+            }
+
+            const tax = income * cityTaxRate;
+            const expenses = cityRent + (cityCol - cityRent);
+            const totalOutflow = tax + expenses;
+            const savings = income - totalOutflow;
+
+            taxAmountEl.innerText = '$' + tax.toLocaleString('en-US', {maximumFractionDigits: 0});
+            totalExpensesEl.innerText = '$' + expenses.toLocaleString('en-US', {maximumFractionDigits: 0});
+            
+            savingsEl.innerText = '$' + savings.toLocaleString('en-US', {maximumFractionDigits: 0});
+            
+            if (savings < 0) {
+                savingsEl.className = 'result-value danger';
+                feedbackEl.innerHTML = `<strong>Warning:</strong> You need to earn more to live comfortably here.`;
+                feedbackEl.className = 'calculator-feedback danger';
+            } else if (savings < 500) {
+                savingsEl.className = 'result-value warning';
+                feedbackEl.innerHTML = `<strong>Tight Budget:</strong> You can afford it, but savings will be minimal.`;
+                feedbackEl.className = 'calculator-feedback warning';
+            } else {
+                savingsEl.className = 'result-value success';
+                feedbackEl.innerHTML = `<strong>Great Lifestyle:</strong> You'll live comfortably and save money.`;
+                feedbackEl.className = 'calculator-feedback success';
+            }
+
+            if (visaMinIncome > 0 && income < visaMinIncome) {
+                feedbackEl.innerHTML += `<br><span style="color:var(--danger)">Note: Income does not meet the ${visaMinIncome} requirement for the nomad visa.</span>`;
+            }
+        });
+    });
+</script>

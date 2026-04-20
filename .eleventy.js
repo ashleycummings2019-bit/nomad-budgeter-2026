@@ -61,6 +61,12 @@ module.exports = function (eleventyConfig) {
     return d.toLocaleString("en-US", { month: "long", year: "numeric" });
   });
 
+  // Get exact build time for EEAT
+  eleventyConfig.addShortcode("buildTime", () => {
+    const d = new Date();
+    return d.toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "numeric", timeZoneName: "short" });
+  });
+
   // ─── Collections ───
 
   // Collection of all city pages
