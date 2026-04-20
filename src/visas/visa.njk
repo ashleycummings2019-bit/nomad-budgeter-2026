@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: countries
+  size: 1
+  alias: country
+permalink: "/visas/{{ country.slug }}/"
+eleventyComputed:
+  pageTitle: "{{ country.name }} Digital Nomad Visa Guide & Tax Calculator (2026)"
+  pageDescription: "Complete guide to the 2026 {{ country.name }} {{ country.visaName }}. Calculate your taxes at a {{ country.tax | percentInt }} rate and compare top cities."
+---
+
+<div class="comparison-container">
+    {# Hero #}
+    <div class="comparison-hero">
+        <div class="badge-2026" style="margin-bottom: 1rem;">
+            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+            Verified {{ site.year }} Visa Guide
+        </div>
+        <h1>{{ country.name }} Digital Nomad Visa<br>&amp; Tax Guide</h1>
+        <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">Everything you need to know about the {{ country.visaName }} and tax residency in {{ site.year }}.</p>
+    </div>
+
+    {# Visa Summary Stats #}
+    <div class="metric-grid" style="margin-bottom: 3rem;">
+        <div class="metric-card">
+            <div class="metric-label">Nomad Visa Tax Rate</div>
+            <div class="metric-value highlight">{{ country.tax * 100 }}%</div>
+            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem;">{{ country.taxType }}</p>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Minimum Income Required</div>
+            <div class="metric-value">${{ country.minIncomeMonthly | localeString }}/mo</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Visa Duration</div>
+            <div class="metric-value" style="font-size: 1.5rem;">{{ country.visaDuration }}</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-label">Processing Time</div>
+            <div class="metric-value" style="font-size: 1.5rem;">{{ country.processingTime }}</div>
+        </div>
+    </div>
+
+    {# Expert Analysis #}
+    <div class="expert-analysis">
+        <h2>Is {{ country.name }} Right for You?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">{{ country.intro }}</p>
+
+        <h3>Why Nomads Choose {{ country.name }}</h3>
+        <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">
+            {% for highlight in country.highlights %}
+            <li style="margin-bottom: 0.5rem;">{{ highlight }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Visa Requirements</h3>
+        <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">
+            {% for req in country.requirements %}
+            <li style="margin-bottom: 0.5rem;">{{ req }}</li>
+            {% endfor %}
+        </ul>
+
+        <div class="verdict-box" style="margin-top: 2rem;">
+            <p><strong>Currency:</strong> {{ country.currency }} | <strong>Language:</strong> {{ country.language }}</p>
+        </div>
+
+        {# Recommended Legal Partner #}
+        {% if country.continent == "Europe" or country.continent == "Americas" %}
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Need Help Applying?</h3>
+        <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener noreferrer" class="partner-card" style="border-color: var(--aura-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h4 style="color: var(--aura-primary);">{{ site.affiliates.lexidy.name }}</h4>
+                    <p>{{ site.affiliates.lexidy.desc }} (Recommended for {{ country.name }})</p>
+                </div>
+                <span style="font-size: 1.5rem;">→</span>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+
+    {# Top Cities in Country #}
+    <h2 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">Top Nomad Cities in {{ country.name }}</h2>
+    <div class="partner-grid">
+        {% for citySlug in country.cities %}
+            {% for c in cities %}
+                {% if c.slug == citySlug %}
+                <a href="/cities/{{ c.slug }}/" class="partner-card">
+                    <h4>{{ c.name }}</h4>
+                    <p>Rent: ${{ c.rent }}/mo | Score: {{ c.score }}</p>
+                    <p style="font-size: 0.8rem; color: var(--aura-primary); margin-top: 0.5rem;">Calculate Budget →</p>
+                </a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>

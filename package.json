@@ -1,0 +1,16 @@
+{
+  "name": "nomad-budgeter",
+  "version": "2.0.0",
+  "description": "Digital Nomad Tax & Cost of Living Calculator — Powered by Eleventy",
+  "scripts": {
+    "dev": "node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
+    "build": "node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

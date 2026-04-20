@@ -1,0 +1,59 @@
+{# Embeddable Calculator Widget — Used on homepage, city pages, and comparison pages #}
+{# Pass prefillCity and/or compareMode variables to customize behavior #}
+
+{% if compareMode %}
+{# Comparison Calculator (for comparison pages) #}
+<div class="calculator-widget glass-panel">
+    <header>
+        <h2>Savings Calculator</h2>
+        <p>Compare your monthly "Leftover" after tax &amp; rent.</p>
+    </header>
+    <div class="calculator-form">
+        <div class="input-group">
+            <label for="compare-income">Your Annual Gross Income (USD)</label>
+            <input type="number" id="compare-income" placeholder="e.g. 100000"
+                   data-desta="{{ destA }}" data-destb="{{ destB }}" required>
+        </div>
+        <button id="compare-btn">Compare Net Savings</button>
+    </div>
+    <div id="comparison-result"></div>
+</div>
+
+{% else %}
+{# Standard Calculator (for homepage and city pages) #}
+<aside class="glass-panel calculator-sidebar">
+    <header style="margin-bottom: 2.5rem;">
+        <div class="badge-2026" style="margin-bottom: 1rem;">
+            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+            Verified {{ site.year }} Market Data
+        </div>
+        <h1 style="font-size: 2.2rem; line-height: 1.1; margin-bottom: 0.5rem;">{{ site.name }}</h1>
+        <p style="color: var(--text-dim); font-size: 0.95rem;">Calculate your true "Leftover" savings potential. Trusted by <strong>{{ site.socialProof }}</strong> this month.</p>
+    </header>
+
+    <div class="calculator-form">
+        <div class="input-group">
+            <label for="income">Annual Gross Income (USD)</label>
+            <input type="number" id="income" placeholder="e.g. 100000" required>
+        </div>
+
+        <div class="input-group">
+            <label for="location">Target City</label>
+            <input type="text" id="location" placeholder="e.g. Lisbon, Bali, Dubai"
+                   {% if prefillCity %}value="{{ prefillCity }}"{% endif %} required>
+        </div>
+
+        <div class="input-group">
+            <label for="expenses">Custom Monthly Expenses (Optional)</label>
+            <input type="number" id="expenses" placeholder="We'll use {{ site.year }} local averages if empty">
+        </div>
+
+        <button id="calculate-btn">Sync Market Data &amp; Calculate</button>
+    </div>
+
+    <div id="loading" class="hidden" style="text-align: center; margin-top: 1.5rem;">
+        <div class="spinner"></div>
+        <p style="color: var(--aura-primary); font-weight: 600;">Connecting to Live Data Nodes...</p>
+    </div>
+</aside>
+{% endif %}

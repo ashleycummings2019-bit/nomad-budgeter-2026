@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "partials/head.njk" %}
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    {% include "partials/cookie-banner.njk" %}
+
+    {{ content | safe }}
+
+    {% include "partials/footer.njk" %}
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

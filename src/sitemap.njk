@@ -1,0 +1,49 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>{{ site.url }}/</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    {% for city in cities %}
+    <url>
+        <loc>{{ site.url }}/cities/{{ city.slug }}/</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    {% endfor %}
+    {% for comp in comparisons %}
+    <url>
+        <loc>{{ site.url }}/compare/{{ comp.slug }}/</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>{% if comp.featured %}0.7{% else %}0.6{% endif %}</priority>
+    </url>
+    {% endfor %}
+    {% for country in countries %}
+    <url>
+        <loc>{{ site.url }}/visas/{{ country.slug }}/</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    {% endfor %}
+    <url>
+        <loc>{{ site.url }}/privacy/</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>{{ site.url }}/disclaimer/</loc>
+        <lastmod>2026-04-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>

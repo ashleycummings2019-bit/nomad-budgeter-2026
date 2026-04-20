@@ -1,0 +1,47 @@
+{# Footer Partial — Internal link mesh + legal disclaimers #}
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Popular Nomad Calculators</h3>
+            <ul class="footer-links">
+                {% for city in cities | slice(0, 10) %}
+                <li><a href="/cities/{{ city.slug }}/">{{ city.name }} Tax Calculator</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Featured Comparisons</h3>
+            <ul class="footer-links">
+                {% for comp in comparisons %}
+                {% if comp.featured and loop.index <= 8 %}
+                <li><a href="/compare/{{ comp.slug }}/">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Visa Guides</h3>
+            <ul class="footer-links">
+                {% for country in countries | slice(0, 8) %}
+                <li><a href="/visas/{{ country.slug }}/">{{ country.name }} Nomad Visa</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul class="footer-links">
+                <li><a href="/privacy/">Privacy Policy</a></li>
+                <li><a href="/disclaimer/">Legal Disclaimer</a></li>
+                <li><a href="mailto:{{ site.email }}">Contact: {{ site.email }}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-legal">
+        <p>&copy; {% year %} {{ site.name }}. All rights reserved. Calculations are for informational purposes only and do not constitute legal, financial, or tax advice. Tax residency laws and Digital Nomad Visa requirements are subject to frequent legislative change. Consult a qualified tax professional before making relocation decisions.</p>
+        <p class="footer-sources">Data sources: API-Ninjas, ExchangeRate-API &amp; Official 2026 Nomad Visa Portals. Calculation logic assisted by AI for real-time accuracy, human-verified for 2026 compliance.</p>
+    </div>
+</footer>

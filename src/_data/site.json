@@ -1,0 +1,21 @@
+{
+  "name": "Nomad Budgeter",
+  "url": "https://nomadbudgeter.com",
+  "description": "Calculate your net income, taxes, and cost of living on global Digital Nomad Visas. Updated with 2026 tax brackets for 45+ countries.",
+  "tagline": "Your 2026 Digital Nomad Financial Engine",
+  "email": "hello@nomadbudgeter.com",
+  "year": "2026",
+  "dataLastVerified": "April 2026",
+  "socialProof": "12,402 nomads",
+  "apiKeys": {
+    "exchangeRate": "4fee8fc6019902b0118cd93b",
+    "apiNinjas": "w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt"
+  },
+  "affiliates": {
+    "lexidy": { "name": "Lexidy Legal", "url": "https://www.lexidy.com", "desc": "Top-rated firm for European Nomad Visas in 2026." },
+    "safetywing": { "name": "SafetyWing", "url": "https://safetywing.com", "desc": "Global nomad health insurance meeting all 2026 visa requirements." },
+    "wise": { "name": "Wise", "url": "https://wise.com", "desc": "Move money globally with the lowest 2026 exchange rate fees." },
+    "agoda": { "name": "Agoda Stays", "url": "https://www.agoda.com", "desc": "Best rates for monthly nomad rentals in Asia & beyond." },
+    "blueground": { "name": "Blueground", "url": "https://www.theblueground.com", "desc": "Furnished apartments for 1-12 month stays in 30+ cities." }
+  }
+}

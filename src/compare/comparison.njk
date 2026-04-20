@@ -1,0 +1,112 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: comparisons
+  size: 1
+  alias: comp
+permalink: "/compare/{{ comp.slug }}/"
+eleventyComputed:
+  pageTitle: "{{ comp.cityA.name }} vs. {{ comp.cityB.name }}: 2026 Digital Nomad Comparison"
+  pageDescription: "{{ comp.description }}"
+---
+
+<div class="comparison-container">
+    {# Hero #}
+    <div class="comparison-hero">
+        <div class="badge-2026" style="margin-bottom: 1rem;">
+            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+            Verified {{ site.year }} Comparison
+        </div>
+        <h1>{{ comp.cityA.name }} vs. {{ comp.cityB.name }}<br>{{ site.year }} {{ comp.theme }}</h1>
+        <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">{{ comp.emoji }} {{ comp.description }}</p>
+    </div>
+
+    {# Side-by-Side Cards #}
+    <div class="comparison-grid">
+        {# City A #}
+        <div class="comp-card" style="border-top: 6px solid var(--aura-primary);">
+            <h3 style="margin-bottom: 1.5rem;">{{ comp.cityA.name }}, {{ comp.cityA.country }}</h3>
+            <div class="stat-row"><span>Visa Type:</span> <strong>{{ comp.cityA.visa }}</strong></div>
+            <div class="stat-row"><span>Tax Rate:</span> <strong>{{ comp.cityA.tax * 100 }}%</strong></div>
+            <div class="stat-row"><span>Monthly Cost of Living:</span> <strong>${{ comp.cityA.col }}</strong></div>
+            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.cityA.rent }}/mo</strong></div>
+            <div class="stat-row"><span>Min. Income Required:</span> <strong>${{ comp.cityA.visaMinIncome }}/mo</strong></div>
+            <div class="stat-row"><span>Nomad Score:</span> <strong>{{ comp.cityA.score }}/100</strong></div>
+            <div class="stat-row"><span>Savings @ $100k/yr:</span> <strong {% if comp.savingsA > comp.savingsB %}style="color: var(--aura-accent);"{% endif %}>${{ comp.savingsA }}/mo</strong></div>
+            <div class="verdict-box" {% if comp.savingsA > comp.savingsB %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
+                <p><strong>{% if comp.savingsA > comp.savingsB %}✅ Winner for savings{% else %}Higher costs apply{% endif %}</strong></p>
+            </div>
+        </div>
+
+        {# City B #}
+        <div class="comp-card" style="border-top: 6px solid var(--aura-secondary);">
+            <h3 style="margin-bottom: 1.5rem;">{{ comp.cityB.name }}, {{ comp.cityB.country }}</h3>
+            <div class="stat-row"><span>Visa Type:</span> <strong>{{ comp.cityB.visa }}</strong></div>
+            <div class="stat-row"><span>Tax Rate:</span> <strong>{{ comp.cityB.tax * 100 }}%</strong></div>
+            <div class="stat-row"><span>Monthly Cost of Living:</span> <strong>${{ comp.cityB.col }}</strong></div>
+            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.cityB.rent }}/mo</strong></div>
+            <div class="stat-row"><span>Min. Income Required:</span> <strong>${{ comp.cityB.visaMinIncome }}/mo</strong></div>
+            <div class="stat-row"><span>Nomad Score:</span> <strong>{{ comp.cityB.score }}/100</strong></div>
+            <div class="stat-row"><span>Savings @ $100k/yr:</span> <strong {% if comp.savingsB > comp.savingsA %}style="color: var(--aura-accent);"{% endif %}>${{ comp.savingsB }}/mo</strong></div>
+            <div class="verdict-box" {% if comp.savingsB > comp.savingsA %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
+                <p><strong>{% if comp.savingsB > comp.savingsA %}✅ Winner for savings{% else %}Higher costs apply{% endif %}</strong></p>
+            </div>
+        </div>
+    </div>
+
+    {# Expert Analysis #}
+    <div class="expert-analysis">
+        <h2>{{ site.year }} Strategic Analysis: {{ comp.theme }}</h2>
+        <p><strong>{{ comp.cityA.name }}</strong> ({{ comp.cityA.country }}): {{ comp.cityA.intro }}</p>
+        <p><strong>{{ comp.cityB.name }}</strong> ({{ comp.cityB.country }}): {{ comp.cityB.intro }}</p>
+        <p>At a $100,000 annual income, <strong>{{ comp.winner }}</strong> delivers higher monthly savings. {{ comp.cityA.name }} leaves you with <strong>${{ comp.savingsA }}/month</strong> while {{ comp.cityB.name }} leaves you with <strong>${{ comp.savingsB }}/month</strong> — a difference of <strong>${{ (comp.savingsA - comp.savingsB) | abs }}/month</strong>.</p>
+
+        {# Affiliate Partner Cards #}
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Recommended Partners</h3>
+        <div class="partner-grid">
+            {% if comp.region == "Europe" or comp.region == "Atlantic Islands" %}
+            <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.lexidy.name }}</h4>
+                <p>{{ site.affiliates.lexidy.desc }}</p>
+            </a>
+            {% endif %}
+            <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.safetywing.name }}</h4>
+                <p>{{ site.affiliates.safetywing.desc }}</p>
+            </a>
+            <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.wise.name }}</h4>
+                <p>{{ site.affiliates.wise.desc }}</p>
+            </a>
+            {% if comp.region == "Southeast Asia" or comp.region == "East Asia" or comp.region == "Asia" %}
+            <a href="{{ site.affiliates.agoda.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.agoda.name }}</h4>
+                <p>{{ site.affiliates.agoda.desc }}</p>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+    {# Inline Comparison Calculator #}
+    <div class="app-container" style="margin-top: 4rem; grid-template-columns: 1fr;">
+        {% set compareMode = true %}
+        {% set destA = comp.cityA.countrySlug %}
+        {% set destB = comp.cityB.countrySlug %}
+        {% include "partials/calculator.njk" %}
+    </div>
+
+    {# Related Comparisons #}
+    <div style="margin-top: 4rem;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">More Comparisons</h2>
+        <div class="partner-grid">
+            {% for related in comparisons %}
+            {% if related.slug != comp.slug and related.featured and loop.index <= 12 %}
+            <a href="/compare/{{ related.slug }}/" class="partner-card">
+                <h4>{{ related.cityA.name }} vs. {{ related.cityB.name }}</h4>
+                <p>{{ related.theme }} · {{ related.emoji }}</p>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

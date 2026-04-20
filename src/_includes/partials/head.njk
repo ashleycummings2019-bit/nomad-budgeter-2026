@@ -1,0 +1,40 @@
+{# SEO Head Partial — Renders title, meta, OG tags, canonical, and JSON-LD #}
+
+<title>{{ pageTitle | default(site.name + " | " + site.tagline) }}</title>
+<meta name="description" content="{{ pageDescription | default(site.description) }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta name="author" content="{{ site.name }}">
+<meta name="last-modified" content="{{ site.dataLastVerified }}">
+
+{# Open Graph #}
+<meta property="og:title" content="{{ pageTitle | default(site.name) }}">
+<meta property="og:description" content="{{ pageDescription | default(site.description) }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+{# Twitter Card #}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle | default(site.name) }}">
+<meta name="twitter:description" content="{{ pageDescription | default(site.description) }}">
+
+{# JSON-LD Structured Data — Page-specific blocks injected via pageSchema variable #}
+{% if pageSchema %}
+<script type="application/ld+json">
+{{ pageSchema | safe }}
+</script>
+{% endif %}
+
+{# Default Organization Schema on every page #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{ site.email }}",
+    "contactType": "customer support"
+  }
+}
+</script>

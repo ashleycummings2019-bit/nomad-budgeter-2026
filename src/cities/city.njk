@@ -1,0 +1,127 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: cities
+  size: 1
+  alias: city
+permalink: "/cities/{{ city.slug }}/"
+eleventyComputed:
+  pageTitle: "{{ city.name }} Digital Nomad Tax & Cost of Living Calculator (2026)"
+  pageDescription: "Calculate your nomad budget in {{ city.name }}, {{ city.country }}. {{ city.visa }} with {{ city.tax | percentInt }} tax rate. Updated for 2026."
+  prefillCity: "{{ city.name }}"
+---
+
+{# City Hero Section #}
+<div class="city-hero">
+    <div class="badge-2026" style="margin-bottom: 1rem;">
+        <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+        Verified {{ site.year }} Data
+    </div>
+    <h1>{{ city.name }} Digital Nomad<br>Tax & Budget Calculator</h1>
+    <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">{{ city.country }} · {{ city.visa }} · {{ city.tax * 100 }}% Tax Rate</p>
+
+    <div class="city-highlights">
+        {% for highlight in city.highlights %}
+        <span class="highlight-chip">{{ highlight }}</span>
+        {% endfor %}
+    </div>
+</div>
+
+{# City Introduction (unique per page — prevents thin content) #}
+<div class="comparison-container">
+    <div class="expert-analysis" style="margin-top: 2rem;">
+        <h2 style="color: var(--aura-primary); margin-bottom: 1rem;">{{ city.name }} for Digital Nomads in {{ site.year }}</h2>
+        <p style="color: var(--text-main);">{{ city.intro }}</p>
+
+        {# Key Stats Grid #}
+        <div class="metric-grid" style="margin-top: 2rem;">
+            <div class="metric-card">
+                <div class="metric-label">Monthly Cost of Living</div>
+                <div class="metric-value highlight">${{ city.col | localeString }}</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Average Rent (1BR Center)</div>
+                <div class="metric-value">${{ city.rent | localeString }}</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Nomad Visa Tax Rate</div>
+                <div class="metric-value {% if city.tax == 0 %}positive{% endif %}">{{ city.tax * 100 }}%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Minimum Income Required</div>
+                <div class="metric-value">${{ city.visaMinIncome | localeString }}/mo</div>
+            </div>
+        </div>
+
+        {# Nomad Score #}
+        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(15,23,42,0.5); border-radius: 20px; border: 1px solid var(--glass-border);">
+            <div class="metric-label">Nomad Score</div>
+            <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, var(--aura-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{{ city.score }}/100</div>
+        </div>
+    </div>
+</div>
+
+{# Calculator Widget (prefilled with this city) #}
+<div class="app-container" style="margin-top: 4rem;">
+    {% set prefillCity = city.name %}
+    {% include "partials/calculator.njk" %}
+
+    <main id="results-panel" class="glass-panel hidden">
+        <div class="results-header">
+            <div>
+                <h2>Financial Analysis</h2>
+                <p id="city-badge">{{ city.name }}, {{ city.country }}</p>
+            </div>
+            <div class="aura-score" id="aura-ring">
+                <span id="aura-value">{{ city.score }}</span>
+            </div>
+        </div>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-label">Take-Home Pay (Monthly)</div>
+                <div class="metric-value highlight" id="res-net-monthly">$0</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Effective Tax Rate</div>
+                <div class="metric-value" id="res-tax-rate">0%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Cost of Living Index</div>
+                <div class="metric-value" id="res-col-index">High</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Monthly Savings Potential</div>
+                <div class="metric-value positive" id="res-savings">$0</div>
+            </div>
+        </div>
+        <div class="metric-card" style="margin-top: 1.5rem; width: 100%;">
+            <div class="metric-label">Budget Commentary</div>
+            <p id="aura-commentary" style="line-height: 1.6; color: var(--text-main);"></p>
+        </div>
+        <div class="trust-badge">
+            <span>📊 Tax data last verified: {{ site.dataLastVerified }}</span>
+            <span>🤖 Human-verified for {{ site.year }} compliance.</span>
+        </div>
+    </main>
+
+    <main id="empty-state" class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 300px;">
+        <div style="font-size: 3rem; margin-bottom: 1rem;">🧮</div>
+        <h2>Calculate your {{ city.name }} budget</h2>
+        <p style="color: var(--text-dim); max-width: 300px; margin-top: 0.75rem;">Enter your income to see your personalized {{ city.name }} financial breakdown.</p>
+    </main>
+</div>
+
+{# Related Comparisons #}
+<div class="comparison-container" style="margin-top: 4rem;">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Compare {{ city.name }} with Other Hubs</h2>
+    <div class="partner-grid">
+        {% for comp in comparisons %}
+        {% if (comp.cityA.slug == city.slug or comp.cityB.slug == city.slug) and loop.index <= 20 %}
+        <a href="/compare/{{ comp.slug }}/" class="partner-card">
+            <h4>{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</h4>
+            <p>{{ comp.theme }} · Winner: {{ comp.winner }}</p>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>

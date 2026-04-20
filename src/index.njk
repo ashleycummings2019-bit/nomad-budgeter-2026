@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+pageTitle: "Nomad Budgeter | Free Digital Nomad Tax & Cost of Living Calculator (2026)"
+pageDescription: "Calculate your net income, taxes, and cost of living on global Digital Nomad Visas. Updated with 2026 tax brackets for Spain, Portugal, UAE, and 45+ countries."
+pageSchema: |
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://nomadbudgeter.com/#software",
+        "name": "Nomad Budgeter - Global Digital Nomad Tax & Budget Calculator",
+        "operatingSystem": "Web Browser",
+        "applicationCategory": "FinanceApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Real-time 2026 tax estimates for 45+ countries",
+          "Cost of living data integration",
+          "Digital Nomad Visa tax rate lookup",
+          "Multi-currency conversion support",
+          "Monthly savings potential analysis"
+        ],
+        "dateModified": "2026-04-17"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Calculate Your Digital Nomad Budget",
+        "description": "Use Nomad Budgeter to estimate your net income, taxes, and cost of living in any global destination.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Enter Your Income", "text": "Type your annual gross income in USD." },
+          { "@type": "HowToStep", "position": 2, "name": "Choose Your Destination", "text": "Enter any city worldwide into the Target City field." },
+          { "@type": "HowToStep", "position": 3, "name": "Review Your Results", "text": "Click 'Calculate My Budget' to see take-home pay, tax rate, and savings." }
+        ]
+      }
+    ]
+  }
+permalink: /
+---
+
+<div class="app-container">
+    {# Calculator Sidebar #}
+    {% include "partials/calculator.njk" %}
+
+    {# Results Panel (hidden until calculation) #}
+    <main id="results-panel" class="glass-panel hidden">
+        <div class="results-header">
+            <div>
+                <h2>Financial Analysis</h2>
+                <p id="city-badge">London, United Kingdom</p>
+            </div>
+            <div class="aura-score" id="aura-ring">
+                <span id="aura-value">85</span>
+            </div>
+        </div>
+
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="metric-label">Take-Home Pay (Monthly)</div>
+                <div class="metric-value highlight" id="res-net-monthly">$0</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Effective Tax Rate</div>
+                <div class="metric-value" id="res-tax-rate">0%</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Cost of Living Index</div>
+                <div class="metric-value" id="res-col-index">High</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-label">Monthly Savings Potential</div>
+                <div class="metric-value positive" id="res-savings">$0</div>
+            </div>
+        </div>
+
+        <div class="metric-card" style="margin-top: 1.5rem; width: 100%;">
+            <div class="metric-label">Budget Commentary</div>
+            <p id="aura-commentary" style="line-height: 1.6; color: var(--text-main);">
+                Your financial vitality is strong. Based on current tax laws and city metrics, you are in the top 15% of earners in this location.
+            </p>
+        </div>
+
+        <div class="trust-badge">
+            <span>📊 Tax data last verified: {{ site.dataLastVerified }}</span>
+            <span>🤖 Calculation logic assisted by AI, human-verified for 2026 compliance.</span>
+        </div>
+    </main>
+
+    {# Empty State (shown before calculation) #}
+    <main id="empty-state" class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 400px;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">✨</div>
+        <h2>Ready to plan your nomad budget?</h2>
+        <p style="color: var(--text-dim); max-width: 300px; margin-top: 1rem;">Enter your details to generate a comprehensive financial report for any city worldwide.</p>
+    </main>
+</div>
