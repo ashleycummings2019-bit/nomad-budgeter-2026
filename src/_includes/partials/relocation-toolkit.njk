@@ -1,0 +1,56 @@
+{# Relocation Toolkit Partial - Contextual Affiliate Links #}
+<section class="relocation-toolkit expert-analysis">
+    <h2>Your {{ city.name }} Relocation Toolkit</h2>
+    <p>Planning your move to {{ city.country }}? Here are the verified services our community uses to get set up.</p>
+    
+    <div class="toolkit-grid">
+        {% if city.continent == "Europe" %}
+        <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🏛️</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.lexidy.name }}</h4>
+                <p>Need help with the {{ city.visa }}? Get expert legal assistance for your European move.</p>
+                <span class="toolkit-cta">Consult Lawyers &rarr;</span>
+            </div>
+        </a>
+        {% endif %}
+
+        <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🛡️</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.safetywing.name }}</h4>
+                <p>Mandatory health insurance that meets the requirements for most nomad visas, including {{ city.country }}.</p>
+                <span class="toolkit-cta">Get Covered &rarr;</span>
+            </div>
+        </a>
+
+        {% if city.continent == "Asia" %}
+        <a href="{{ site.affiliates.agoda.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🏖️</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.agoda.name }}</h4>
+                <p>Find the best monthly rental deals and long-term stays in {{ city.name }}.</p>
+                <span class="toolkit-cta">Find Housing &rarr;</span>
+            </div>
+        </a>
+        {% else %}
+        <a href="{{ site.affiliates.blueground.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🏙️</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.blueground.name }}</h4>
+                <p>Move-in ready furnished apartments in premium {{ city.name }} neighborhoods.</p>
+                <span class="toolkit-cta">Find Apartments &rarr;</span>
+            </div>
+        </a>
+        {% endif %}
+
+        <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">💸</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.wise.name }}</h4>
+                <p>Transfer your salary to {{ city.currency }} with the lowest exchange fees.</p>
+                <span class="toolkit-cta">Open Account &rarr;</span>
+            </div>
+        </a>
+    </div>
+</section>

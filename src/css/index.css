@@ -521,6 +521,81 @@ button:disabled {
 .text-center { text-align: center; }
 .mt-4 { margin-top: 4rem; }
 
+/* ─── Relocation Toolkit (Affiliates) ─── */
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.toolkit-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.toolkit-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.toolkit-card:hover {
+    border-color: var(--aura-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.2);
+}
+
+.toolkit-card:hover::before {
+    opacity: 1;
+}
+
+.toolkit-icon {
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toolkit-content h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.toolkit-content p {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.toolkit-cta {
+    display: inline-block;
+    color: var(--aura-primary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
     .cookie-banner {

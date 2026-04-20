@@ -65,19 +65,10 @@ eleventyComputed:
             <p><strong>Currency:</strong> {{ country.currency }} | <strong>Language:</strong> {{ country.language }}</p>
         </div>
 
-        {# Recommended Legal Partner #}
-        {% if country.continent == "Europe" or country.continent == "Americas" %}
-        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Need Help Applying?</h3>
-        <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener noreferrer" class="partner-card" style="border-color: var(--aura-primary);">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h4 style="color: var(--aura-primary);">{{ site.affiliates.lexidy.name }}</h4>
-                    <p>{{ site.affiliates.lexidy.desc }} (Recommended for {{ country.name }})</p>
-                </div>
-                <span style="font-size: 1.5rem;">→</span>
-            </div>
-        </a>
-        {% endif %}
+        {% set city = { name: country.name, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency } %}
+        <div style="margin-top: 3rem;">
+            {% include "partials/relocation-toolkit.njk" %}
+        </div>
     </div>
 
     {# Top Cities in Country #}
