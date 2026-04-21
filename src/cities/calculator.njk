@@ -37,6 +37,36 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
                         <label for="monthly-income">Your Monthly Income (USD)</label>
                         <input type="number" id="monthly-income" class="form-input" placeholder="e.g., 5000" min="0" step="100">
                     </div>
+
+                    <div class="input-group">
+                        <label for="days-in-country">Days in Country (Tax Residency)</label>
+                        <input type="range" id="days-in-country" class="form-input" min="1" max="365" value="365" style="padding:0; height:auto;">
+                        <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-dim); margin-top:5px;">
+                            <span>1 day</span>
+                            <span id="days-val" style="color:var(--aura-primary); font-weight:bold;">365 days</span>
+                            <span>365 days</span>
+                        </div>
+                        <div id="residency-warning" style="font-size: 0.8rem; color: #ef4444; display: none; margin-top: 5px;">
+                            ⚠️ Over 183 days usually triggers local tax residency.
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="display:flex; gap: 1rem;">
+                        <div style="flex:1;">
+                            <label for="employment-type">Work Status</label>
+                            <select id="employment-type" class="form-input">
+                                <option value="freelancer">Freelancer / B2B</option>
+                                <option value="employee">W2 Employee</option>
+                            </select>
+                        </div>
+                        <div style="flex:1;">
+                            <label for="us-citizen">US Citizen?</label>
+                            <select id="us-citizen" class="form-input">
+                                <option value="no">No</option>
+                                <option value="yes">Yes (FEIE)</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="calculator-results">
@@ -93,6 +123,12 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const incomeInput = document.getElementById('monthly-income');
+        const daysInput = document.getElementById('days-in-country');
+        const daysValEl = document.getElementById('days-val');
+        const warningEl = document.getElementById('residency-warning');
+        const empTypeInput = document.getElementById('employment-type');
+        const usCitizenInput = document.getElementById('us-citizen');
+
         const taxAmountEl = document.getElementById('calc-tax-amount');
         const totalExpensesEl = document.getElementById('calc-total-expenses');
         const savingsEl = document.getElementById('calc-savings');
@@ -104,8 +140,8 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
         const cityCol = {{ city.col }};
         const visaMinIncome = {{ city.visaMinIncome }};
 
-        incomeInput.addEventListener('input', (e) => {
-            const income = parseFloat(e.target.value);
+        const calculate = () => {
+            const income = parseFloat(incomeInput.value);
             
             if (isNaN(income) || income <= 0) {
                 taxAmountEl.innerText = '---';
@@ -116,12 +152,45 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
                 return;
             }
 
-            const tax = income * cityTaxRate;
+            const days = parseInt(daysInput.value, 10);
+            const isUsCitizen = usCitizenInput.value === 'yes';
+            const isFreelancer = empTypeInput.value === 'freelancer';
+
+            daysValEl.innerText = `${days} days`;
+            warningEl.style.display = days > 183 ? 'block' : 'none';
+
+            let paysLocalTax = days > 183;
+            let localTax = paysLocalTax ? (income * cityTaxRate) : 0;
+            
+            let usTax = 0;
+            let usFederalTax = 0;
+            let seTax = 0;
+
+            if (isUsCitizen) {
+                const feieMonthlyLimit = 132900 / 12; // 2026 limit
+                let taxableUsIncome = Math.max(0, income - feieMonthlyLimit);
+                
+                if (taxableUsIncome > 0) {
+                    usFederalTax = taxableUsIncome * 0.24; // approx 24% on excess
+                }
+                
+                if (isFreelancer) {
+                    seTax = income * 0.153; // 15.3% SE Tax
+                }
+                
+                if (localTax > 0 && usFederalTax > 0) {
+                    let offset = Math.min(usFederalTax, localTax);
+                    usFederalTax -= offset;
+                }
+                usTax = usFederalTax + seTax;
+            }
+
+            const totalTax = localTax + usTax;
             const expenses = cityRent + (cityCol - cityRent);
-            const totalOutflow = tax + expenses;
+            const totalOutflow = totalTax + expenses;
             const savings = income - totalOutflow;
 
-            taxAmountEl.innerText = '$' + tax.toLocaleString('en-US', {maximumFractionDigits: 0});
+            taxAmountEl.innerText = '$' + totalTax.toLocaleString('en-US', {maximumFractionDigits: 0});
             totalExpensesEl.innerText = '$' + expenses.toLocaleString('en-US', {maximumFractionDigits: 0});
             
             savingsEl.innerText = '$' + savings.toLocaleString('en-US', {maximumFractionDigits: 0});
@@ -143,6 +212,11 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
             if (visaMinIncome > 0 && income < visaMinIncome) {
                 feedbackEl.innerHTML += `<br><span style="color:var(--danger)">Note: Income does not meet the ${visaMinIncome} requirement for the nomad visa.</span>`;
             }
-        });
+        };
+
+        incomeInput.addEventListener('input', calculate);
+        daysInput.addEventListener('input', calculate);
+        empTypeInput.addEventListener('change', calculate);
+        usCitizenInput.addEventListener('change', calculate);
     });
 </script>

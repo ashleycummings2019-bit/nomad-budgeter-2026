@@ -62,12 +62,9 @@ module.exports = function () {
     });
   });
 
-  // Auto-generate additional pairs from top 15 cities (non-duplicate)
-  const topSlugs = [
-    "lisbon", "dubai", "bali", "bangkok", "chiang-mai",
-    "medellin", "athens", "budapest", "tbilisi", "madrid",
-    "berlin", "cape-town", "kuala-lumpur", "buenos-aires", "tulum",
-  ];
+  // Auto-generate additional pairs from all cities
+  const topSlugs = cities.map(c => c.slug);
+
 
   const existingSlugs = new Set(results.map((r) => r.slug));
 

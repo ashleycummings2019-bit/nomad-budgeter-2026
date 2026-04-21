@@ -48,6 +48,36 @@
             <input type="number" id="expenses" placeholder="We'll use {{ site.year }} local averages if empty">
         </div>
 
+        <div class="input-group">
+            <label for="days-in-country">Days in Country (Tax Residency)</label>
+            <input type="range" id="days-in-country" min="1" max="365" value="365" style="width: 100%;">
+            <div style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-dim); margin-top:5px;">
+                <span>1 day</span>
+                <span id="days-val" style="color:var(--aura-primary); font-weight:bold;">365 days</span>
+                <span>365 days</span>
+            </div>
+            <div id="residency-warning" style="font-size: 0.8rem; color: #ef4444; display: none; margin-top: 5px;">
+                ⚠️ Over 183 days usually triggers local tax residency.
+            </div>
+        </div>
+
+        <div class="input-group" style="display:flex; gap: 1rem;">
+            <div style="flex:1;">
+                <label for="employment-type" style="display:block; margin-bottom:0.5rem; font-size:0.9rem;">Work Status</label>
+                <select id="employment-type" style="width:100%; padding:0.75rem; border-radius:6px; background:var(--bg-dark); color:#fff; border:1px solid rgba(255,255,255,0.2);">
+                    <option value="freelancer">Freelancer / B2B</option>
+                    <option value="employee">W2 Employee</option>
+                </select>
+            </div>
+            <div style="flex:1;">
+                <label for="us-citizen" style="display:block; margin-bottom:0.5rem; font-size:0.9rem;">US Citizen?</label>
+                <select id="us-citizen" style="width:100%; padding:0.75rem; border-radius:6px; background:var(--bg-dark); color:#fff; border:1px solid rgba(255,255,255,0.2);">
+                    <option value="no">No</option>
+                    <option value="yes">Yes (FEIE)</option>
+                </select>
+            </div>
+        </div>
+
         <button id="calculate-btn">Sync Market Data &amp; Calculate</button>
     </div>
 

@@ -237,3 +237,144 @@ button:hover {
 @media (max-width: 768px) {
     .cookie-banner { flex-direction: column; gap: 1rem; text-align: center; bottom: 1rem; left: 1rem; right: 1rem; }
 }
+
+/* Relocation Toolkit & SEO Silos */
+.expert-analysis {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+    margin-top: 3rem;
+}
+
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.toolkit-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.toolkit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--aura-primary);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.toolkit-icon {
+    font-size: 2rem;
+    background: rgba(15, 23, 42, 0.6);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.toolkit-content h4 {
+    color: var(--text-main);
+    margin-bottom: 0.25rem;
+}
+
+.toolkit-content p {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.4;
+}
+
+.toolkit-cta {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--aura-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.metric-card {
+    background: rgba(15, 23, 42, 0.4);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+.metric-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.metric-value.highlight { color: var(--aura-primary); }
+.metric-value.positive { color: var(--aura-accent); }
+
+.highlight-chip {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--aura-primary);
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.city-hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(to bottom, rgba(139, 92, 246, 0.05), transparent);
+}
+
+.city-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.partner-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+.partner-card:hover {
+    border-color: var(--aura-secondary);
+    background: rgba(59, 130, 246, 0.05);
+}

@@ -1,0 +1,44 @@
+{# SEO Silos - Internal Linking for Authority #}
+<section class="seo-silos expert-analysis" style="margin-top: 4rem; border-top: 1px solid var(--glass-border); padding-top: 3rem;">
+    <h2 style="text-align: center; margin-bottom: 3rem;">Explore More Nomad Hubs</h2>
+    
+    <div class="toolkit-grid">
+        {# Silo 1: Top Tax Havens #}
+        <div class="metric-card">
+            <h4 style="color: #10b981; margin-bottom: 1rem;">0% Tax Havens</h4>
+            <ul style="list-style: none; padding: 0;">
+                {% for c in cities %}
+                    {% if c.tax == 0 and loop.index <= 5 %}
+                    <li style="margin-bottom: 0.5rem;"><a href="/cities/{{ c.slug }}/" style="color: var(--text-main); text-decoration: none;">&rarr; {{ c.name }}, {{ c.country }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        {# Silo 2: Digital Nomad Visa Hubs #}
+        <div class="metric-card">
+            <h4 style="color: var(--aura-primary); margin-bottom: 1rem;">Digital Nomad Visas</h4>
+            <ul style="list-style: none; padding: 0;">
+                {% for c in cities %}
+                    {% if "Visa" in c.visa and loop.index <= 8 %}
+                    <li style="margin-bottom: 0.5rem;"><a href="/cities/{{ c.slug }}/" style="color: var(--text-main); text-decoration: none;">&rarr; {{ c.name }} ({{ c.visa | truncate(15) }})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        {# Silo 3: Same Continent (Contextual) #}
+        <div class="metric-card">
+            <h4 style="color: var(--text-dim); margin-bottom: 1rem;">More in {{ city.continent or "Global" }}</h4>
+            <ul style="list-style: none; padding: 0;">
+                {% set count = 0 %}
+                {% for c in cities %}
+                    {% if c.continent == city.continent and c.slug != city.slug and count < 5 %}
+                    <li style="margin-bottom: 0.5rem;"><a href="/cities/{{ c.slug }}/" style="color: var(--text-main); text-decoration: none;">&rarr; {{ c.name }}, {{ c.country }}</a></li>
+                    {% set count = count + 1 %}
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

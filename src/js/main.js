@@ -51,6 +51,17 @@ class NomadBudgeterCalculator {
         
         const compBtn = document.getElementById('compare-btn');
         if (compBtn) compBtn.addEventListener('click', () => this.handleComparison());
+
+        const daysInput = document.getElementById('days-in-country');
+        if (daysInput) {
+            daysInput.addEventListener('input', (e) => {
+                const days = parseInt(e.target.value, 10);
+                const daysValEl = document.getElementById('days-val');
+                if (daysValEl) daysValEl.innerText = `${days} days`;
+                const warning = document.getElementById('residency-warning');
+                if (warning) warning.style.display = days > 183 ? 'block' : 'none';
+            });
+        }
     }
 
     async fetchWithTimeout(resource, options = {}) {
@@ -108,6 +119,9 @@ class NomadBudgeterCalculator {
             const income = parseFloat(document.getElementById('income').value);
             const cityInput = document.getElementById('location').value.toLowerCase().trim();
             const userExpenses = parseFloat(document.getElementById('expenses').value) || 0;
+            const daysInCountry = parseInt(document.getElementById('days-in-country')?.value || 365, 10);
+            const isUsCitizen = document.getElementById('us-citizen')?.value === 'yes';
+            const empType = document.getElementById('employment-type')?.value || 'freelancer';
 
             if (!income || !cityInput) {
                 alert("Please enter details.");
@@ -161,7 +175,10 @@ class NomadBudgeterCalculator {
                 country: countryName,
                 tax: effectiveTaxRate,
                 col: monthlyCol,
-                score_base: scoreBase
+                score_base: scoreBase,
+                daysInCountry,
+                isUsCitizen,
+                empType
             };
 
             this.updateUI(income, actualCityName, finalData, userExpenses);
@@ -230,12 +247,45 @@ class NomadBudgeterCalculator {
 
     updateUI(grossAnnual, cityName, cityData, userExpenses) {
         const monthlyGross = grossAnnual / 12;
-        const taxAmount = monthlyGross * cityData.tax;
-        const netMonthly = monthlyGross - taxAmount;
+        
+        // 1. Tax Residency Logic (183 Days)
+        let paysLocalTax = cityData.daysInCountry > 183;
+        let localTaxAmount = paysLocalTax ? (monthlyGross * cityData.tax) : 0;
+        
+        // 2. US Citizen Complexity (FEIE, FTC, SE Tax)
+        let usTaxAmount = 0;
+        let usFederalTax = 0;
+        let seTax = 0;
+        
+        if (cityData.isUsCitizen) {
+            const feieLimit = 132900; // 2026 FEIE limit
+            let taxableUsIncome = Math.max(0, grossAnnual - feieLimit);
+            
+            // Estimate 24% US Federal Tax on excess income
+            if (taxableUsIncome > 0) {
+                usFederalTax = (taxableUsIncome * 0.24) / 12;
+            }
+            
+            // SE Tax (15.3%) for freelancers - assuming no Totalization Agreement for simplicity here
+            if (cityData.empType === 'freelancer') {
+                seTax = (grossAnnual * 0.153) / 12;
+            }
+            
+            // Foreign Tax Credit (FTC) - Local tax offsets US Federal tax (but not SE Tax)
+            if (localTaxAmount > 0 && usFederalTax > 0) {
+                let offset = Math.min(usFederalTax, localTaxAmount);
+                usFederalTax -= offset;
+            }
+            
+            usTaxAmount = usFederalTax + seTax;
+        }
+
+        const totalTaxAmount = localTaxAmount + usTaxAmount;
+        const netMonthly = monthlyGross - totalTaxAmount;
         const totalExpenses = userExpenses > 0 ? userExpenses : cityData.col;
         const savings = netMonthly - totalExpenses;
         
-        const taxRatePercent = (cityData.tax * 100).toFixed(0);
+        const taxRatePercent = monthlyGross > 0 ? ((totalTaxAmount / monthlyGross) * 100).toFixed(1) : 0;
         const savingsRatio = Math.max(0, Math.min(1, savings / netMonthly));
         const budgetScore = Math.round(cityData.score_base * (0.5 + savingsRatio * 0.5));
 
@@ -255,6 +305,29 @@ class NomadBudgeterCalculator {
 
         this.animateScore(budgetScore);
         this.updateCommentary(budgetScore, savings);
+        this.updateROILogic(grossAnnual, totalTaxAmount, cityData);
+    }
+
+    updateROILogic(grossAnnual, totalTaxAmount, cityData) {
+        const baselineTaxRate = 0.35; // Standard high-tax baseline (US/UK/EU)
+        const baselineMonthlyTax = (grossAnnual * baselineTaxRate) / 12;
+        const localMonthlyTax = totalTaxAmount;
+        
+        const monthlyTaxSavings = Math.max(0, baselineMonthlyTax - localMonthlyTax);
+        const visaCost = cityData.visaCost || 2500; // Default fallback if not in data
+        
+        const roiEl = document.getElementById('visa-roi-card');
+        const paybackEl = document.getElementById('res-payback');
+        const savingsEl = document.getElementById('res-roi-savings');
+
+        if (monthlyTaxSavings > 100) {
+            const months = Math.ceil(visaCost / monthlyTaxSavings);
+            if (roiEl) roiEl.classList.remove('hidden');
+            if (paybackEl) paybackEl.innerText = `${months} Months`;
+            if (savingsEl) savingsEl.innerText = this.formatCurrency(monthlyTaxSavings * 12) + " / yr";
+        } else {
+            if (roiEl) roiEl.classList.add('hidden');
+        }
     }
 
     animateScore(score) {
