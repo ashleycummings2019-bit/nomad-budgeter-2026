@@ -516,6 +516,34 @@ button:disabled {
 
 .cookie-banner a { color: var(--aura-primary); }
 
+/* ─── Results Entrance Animation ─── */
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.2); }
+    50% { box-shadow: 0 0 35px rgba(139, 92, 246, 0.4); }
+}
+
+#results-panel:not(.hidden) {
+    animation: fadeSlideIn 0.5s ease-out;
+}
+
+#results-panel:not(.hidden) .metric-card {
+    animation: fadeSlideIn 0.4s ease-out both;
+}
+
+#results-panel:not(.hidden) .metric-card:nth-child(1) { animation-delay: 0.05s; }
+#results-panel:not(.hidden) .metric-card:nth-child(2) { animation-delay: 0.1s; }
+#results-panel:not(.hidden) .metric-card:nth-child(3) { animation-delay: 0.15s; }
+#results-panel:not(.hidden) .metric-card:nth-child(4) { animation-delay: 0.2s; }
+
+.aura-score {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
 /* ─── Utilities ─── */
 .hidden { display: none !important; }
 .text-center { text-align: center; }

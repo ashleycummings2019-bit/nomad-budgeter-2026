@@ -1,5 +1,6 @@
 /**
- * Nomad Budgeter | Financial Logic (v2.2 - Full 2026 Vault)
+ * Nomad Budgeter | Financial Logic (v3.0 — Unified Data Architecture)
+ * Single source of truth: /api/cities.json (built from src/_data/cities.json)
  */
 
 const API_KEYS = {
@@ -7,43 +8,41 @@ const API_KEYS = {
     apiNinjas: 'w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt'
 };
 
-// Expanded 2026 Data Vault (Targets all 5 major showdowns)
-const NOMAD_DESTINATIONS = {
-    "spain": { name: "Spain", minIncomeUSD: 3105, tax: 0.24, col: 2500, score_base: 84 },
-    "portugal": { name: "Portugal", minIncomeUSD: 4100, tax: 0.20, col: 2800, score_base: 88 },
-    "dubai": { name: "Dubai", minIncomeUSD: 5000, tax: 0.00, col: 4500, score_base: 95 },
-    "bali": { name: "Bali", minIncomeUSD: 2000, tax: 0.00, col: 1800, score_base: 92 },
-    "japan": { name: "Japan", minIncomeUSD: 5330, tax: 0.00, col: 3500, score_base: 85 },
-    "georgia": { name: "Georgia", minIncomeUSD: 2000, tax: 0.01, col: 1500, score_base: 80 },
-    "thailand": { name: "Thailand", minIncomeUSD: 3000, tax: 0.15, col: 1900, score_base: 91 },
-    "mexico": { name: "Mexico", minIncomeUSD: 3500, tax: 0.25, col: 2200, score_base: 82 },
-    "colombia": { name: "Colombia", minIncomeUSD: 1000, tax: 0.20, col: 1300, score_base: 85 },
-    "greece": { name: "Greece", minIncomeUSD: 3800, tax: 0.15, col: 2400, score_base: 86 }
-};
-
-const CITY_DATABASE = {
-    "lisbon": { col: 2800, score_base: 88, country: "Portugal", tax: 0.20 },
-    "dubai": { col: 4500, score_base: 95, country: "UAE", tax: 0.00 },
-    "london": { col: 4000, score_base: 72, country: "UK", tax: 0.30 },
-    "bali": { col: 1800, score_base: 92, country: "Indonesia", tax: 0.00 },
-    "new york": { col: 5000, score_base: 65, country: "USA", tax: 0.35 },
-    "madrid": { col: 2500, score_base: 84, country: "Spain", tax: 0.24 },
-    "bangkok": { col: 1900, score_base: 89, country: "Thailand", tax: 0.15 },
-    "medellin": { col: 1300, score_base: 85, country: "Colombia", tax: 0.20 },
-    "chiang mai": { col: 1100, score_base: 94, country: "Thailand", tax: 0.15 },
-    "tulum": { col: 2500, score_base: 78, country: "Mexico", tax: 0.25 },
-    "tbilisi": { col: 1500, score_base: 80, country: "Georgia", tax: 0.01 },
-    "tokyo": { col: 3500, score_base: 85, country: "Japan", tax: 0.00 },
-    "athens": { col: 2400, score_base: 86, country: "Greece", tax: 0.15 }
-};
-
 class NomadBudgeterCalculator {
     constructor() {
         this.cachedRates = null;
+        this.cityDataMap = null;
         this.fallbackRates = { "USD": 1, "EUR": 0.92, "AED": 3.67, "IDR": 15800, "GBP": 0.79, "THB": 36.5, "MXN": 17.1 };
         this.initEventListeners();
         this.fetchCurrencyRates();
+        this.loadCityDatabase();
     }
+
+    // ─── Data Loading ───
+
+    async loadCityDatabase() {
+        if (this.cityDataMap) return;
+        try {
+            const res = await fetch('/api/cities.json');
+            const data = await res.json();
+            this.cityDataMap = {};
+            data.forEach(city => {
+                const slug = city.slug.toLowerCase().trim();
+                const name = city.name.toLowerCase().trim();
+                // Index by both slug and display name for flexible lookups
+                this.cityDataMap[slug] = city;
+                this.cityDataMap[name] = city;
+                // Also index by country slug for comparison pages
+                if (city.countrySlug && !this.cityDataMap[city.countrySlug]) {
+                    this.cityDataMap[city.countrySlug] = city;
+                }
+            });
+        } catch (e) {
+            console.warn("City database load failed, using inline fallback:", e.message);
+        }
+    }
+
+    // ─── Event Listeners ───
 
     initEventListeners() {
         const btn = document.getElementById('calculate-btn');
@@ -63,6 +62,8 @@ class NomadBudgeterCalculator {
             });
         }
     }
+
+    // ─── Network Helpers ───
 
     async fetchWithTimeout(resource, options = {}) {
         const { timeout = 5000 } = options;
@@ -114,6 +115,8 @@ class NomadBudgeterCalculator {
         return null;
     }
 
+    // ─── Core Calculation ───
+
     async handleCalculation() {
         try {
             const income = parseFloat(document.getElementById('income').value);
@@ -129,6 +132,9 @@ class NomadBudgeterCalculator {
             }
 
             this.toggleLoading(true);
+
+            // Ensure city database is loaded before proceeding
+            await this.loadCityDatabase();
 
             const [rates, cityDataAPI] = await Promise.all([
                 this.fetchCurrencyRates(),
@@ -152,7 +158,11 @@ class NomadBudgeterCalculator {
             }
 
             const taxData = await this.fetchIncomeTax(income, countryCode);
-            const localFallback = CITY_DATABASE[cityInput] || NOMAD_DESTINATIONS[cityInput];
+
+            // Look up from unified city database (replaces old CITY_DATABASE / NOMAD_DESTINATIONS)
+            const localFallback = this.cityDataMap
+                ? (this.cityDataMap[cityInput] || this.cityDataMap[cityInput.replace(/\s+/g, '-')])
+                : null;
             
             let effectiveTaxRate = 0.25;
             if (taxData && taxData.total_tax !== undefined) {
@@ -167,7 +177,7 @@ class NomadBudgeterCalculator {
                 countryName = localFallback.country || localFallback.name;
             }
 
-            const scoreBase = localFallback ? localFallback.score_base : 75;
+            const scoreBase = localFallback ? (localFallback.score_base || localFallback.score || 75) : 75;
 
             await new Promise(resolve => setTimeout(resolve, 800));
 
@@ -189,6 +199,8 @@ class NomadBudgeterCalculator {
         }
     }
     
+    // ─── Comparison Logic ───
+
     handleComparison() {
         const incomeInput = document.getElementById('compare-income');
         if (!incomeInput) return;
@@ -202,8 +214,10 @@ class NomadBudgeterCalculator {
         const destAId = incomeInput.dataset.desta;
         const destBId = incomeInput.dataset.destb;
 
-        const destA = NOMAD_DESTINATIONS[destAId];
-        const destB = NOMAD_DESTINATIONS[destBId];
+        if (!this.cityDataMap) return;
+
+        const destA = this.cityDataMap[destAId];
+        const destB = this.cityDataMap[destBId];
 
         if (!destA || !destB) return;
 
@@ -231,6 +245,8 @@ class NomadBudgeterCalculator {
         }
     }
 
+    // ─── Formatting Helpers ───
+
     formatSimple(num) {
         return Math.round(num).toLocaleString();
     }
@@ -244,6 +260,8 @@ class NomadBudgeterCalculator {
             btn.innerText = isLoading ? "Syncing Market Data..." : "Calculate My Budget";
         }
     }
+
+    // ─── UI Rendering ───
 
     updateUI(grossAnnual, cityName, cityData, userExpenses) {
         const monthlyGross = grossAnnual / 12;
@@ -330,10 +348,28 @@ class NomadBudgeterCalculator {
         }
     }
 
+    // ─── Dynamic Aura System ───
+
     animateScore(score) {
         const ring = document.getElementById('aura-ring');
         const val = document.getElementById('aura-value');
         if (!ring || !val) return;
+
+        // Dynamic color based on score tier
+        let targetColor = '#8b5cf6'; // Default: Purple (Good)
+        let glowColor = 'rgba(139, 92, 246, 0.25)';
+        if (score >= 85) {
+            targetColor = '#10b981'; // Green (Excellent)
+            glowColor = 'rgba(16, 185, 129, 0.25)';
+        } else if (score < 70) {
+            targetColor = '#f59e0b'; // Orange (Warning)
+            glowColor = 'rgba(245, 158, 11, 0.25)';
+        }
+
+        // Apply dynamic color to CSS custom property for cascade effect
+        document.documentElement.style.setProperty('--aura-primary', targetColor);
+        ring.style.boxShadow = `0 0 30px ${glowColor}`;
+        
         let current = 0;
         const interval = setInterval(() => {
             if (current >= score) {
@@ -341,7 +377,7 @@ class NomadBudgeterCalculator {
             } else {
                 current++;
                 val.innerText = current;
-                ring.style.background = `conic-gradient(var(--aura-primary, #8b5cf6) ${current}%, transparent 0%)`;
+                ring.style.background = `conic-gradient(${targetColor} ${current}%, transparent 0%)`;
             }
         }, 15);
     }
