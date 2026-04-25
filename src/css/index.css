@@ -626,3 +626,78 @@ button:disabled {
     .comparison-container { padding: 0 1rem; }
     .expert-analysis { padding: 2rem 1.5rem; }
 }
+
+/* ─── Nomad Success Stack (Affiliate Grid) ─── */
+.stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 600px) {
+    .stack-grid { grid-template-columns: 1fr; }
+}
+
+.stack-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    text-decoration: none;
+}
+
+.stack-item:hover {
+    background: rgba(139, 92, 246, 0.05);
+    border-color: var(--aura-primary);
+    transform: translateY(-2px);
+}
+
+.stack-icon {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stack-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.stack-desc {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+/* ─── Lead Magnet Specifics ─── */
+#lead-magnet input:focus {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: var(--aura-primary);
+}
+
+.action-btn {
+    background: linear-gradient(135deg, var(--aura-primary), var(--aura-secondary));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.action-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}

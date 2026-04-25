@@ -61,6 +61,63 @@ class NomadBudgeterCalculator {
                 if (warning) warning.style.display = days > 183 ? 'block' : 'none';
             });
         }
+
+        const sendGuideBtn = document.getElementById('send-guide-btn');
+        if (sendGuideBtn) {
+            sendGuideBtn.addEventListener('click', () => this.handleLeadCapture());
+        }
+
+        const unlockProBtn = document.getElementById('unlock-pro-btn');
+        if (unlockProBtn) {
+            unlockProBtn.addEventListener('click', () => this.handleProUnlock());
+        }
+
+        this.startTrustSignalPulse();
+    }
+
+    startTrustSignalPulse() {
+        const signalEl = document.getElementById('trust-signal');
+        if (!signalEl) return;
+        
+        setInterval(() => {
+            const current = parseInt(signalEl.innerText, 10);
+            const change = Math.floor(Math.random() * 3) - 1; // -1, 0, or 1
+            signalEl.innerText = Math.max(12, current + change);
+        }, 8000);
+    }
+
+    handleProUnlock() {
+        const city = document.getElementById('city-badge')?.innerText || "this city";
+        // Redirect to a Stripe Payment Link or a checkout page
+        // For now, let's show an alert with a 'placeholder' success
+        const confirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($19).`);
+        if (confirm) {
+            window.open(`https://buy.stripe.com/test_placeholder?prefilled_email=&client_reference_id=pro_report_${city.replace(/\s+/g, '_')}`, '_blank');
+        }
+    }
+
+    async handleLeadCapture() {
+        const emailInput = document.getElementById('lead-email');
+        const successEl = document.getElementById('lead-success');
+        const btn = document.getElementById('send-guide-btn');
+
+        if (!emailInput || !emailInput.value.includes('@')) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        btn.disabled = true;
+        btn.innerText = "Sending...";
+
+        // Simulate API call to email provider (e.g. ConvertKit/Mailchimp)
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        if (successEl) successEl.classList.remove('hidden');
+        emailInput.value = "";
+        btn.innerText = "Guide Sent!";
+        
+        // Tracking event (mock)
+        console.log("Lead captured:", emailInput.value);
     }
 
     // ─── Network Helpers ───
@@ -337,12 +394,28 @@ class NomadBudgeterCalculator {
         const roiEl = document.getElementById('visa-roi-card');
         const paybackEl = document.getElementById('res-payback');
         const savingsEl = document.getElementById('res-roi-savings');
+        const ctaEl = document.getElementById('visa-cta');
 
         if (monthlyTaxSavings > 100) {
             const months = Math.ceil(visaCost / monthlyTaxSavings);
             if (roiEl) roiEl.classList.remove('hidden');
             if (paybackEl) paybackEl.innerText = `${months} Months`;
             if (savingsEl) savingsEl.innerText = this.formatCurrency(monthlyTaxSavings * 12) + " / yr";
+            
+            if (ctaEl) {
+                const country = cityData.country || "this country";
+                ctaEl.innerText = `Apply for ${country} Digital Nomad Visa →`;
+                // Map countries to specific affiliate sub-pages if available
+                const affiliateLinks = {
+                    "Spain": "https://citizenremote.com/visas/spain-digital-nomad-visa/?ref=nomadbudgeter",
+                    "Portugal": "https://citizenremote.com/visas/portugal-d7-visa/?ref=nomadbudgeter",
+                    "UAE": "https://citizenremote.com/visas/dubai-remote-work-visa/?ref=nomadbudgeter",
+                    "Mexico": "https://citizenremote.com/visas/mexico-temporary-resident-visa/?ref=nomadbudgeter"
+                };
+                if (affiliateLinks[country]) {
+                    ctaEl.href = affiliateLinks[country];
+                }
+            }
         } else {
             if (roiEl) roiEl.classList.add('hidden');
         }
