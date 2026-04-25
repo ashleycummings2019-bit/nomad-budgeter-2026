@@ -7,7 +7,11 @@ module.exports = async function() {
         "spain": { taxRate: 0.24, name: "Beckham Law", duration: "6 years", maxIncome: 600000 },
         "portugal": { taxRate: 0.20, name: "ITS Regime", duration: "10 years", maxIncome: null },
         "greece": { taxRate: 0.07, name: "Digital Nomad Visa", duration: "7 years", maxIncome: null },
-        "italy": { taxRate: 0.05, name: "Lavoratori Impatriati", duration: "5 years", maxIncome: null }
+        "italy": { taxRate: 0.05, name: "Lavoratori Impatriati", duration: "5 years", maxIncome: null },
+        "bali": { taxRate: 0.00, name: "Remote Worker (B211A)", duration: "6 months+", maxIncome: null },
+        "dubai": { taxRate: 0.00, name: "Zero Tax Regime", duration: "Lifetime", maxIncome: null },
+        "medellin": { taxRate: 0.00, name: "Foreign Income Exemption", duration: "Indefinite", maxIncome: null },
+        "chiang-mai": { taxRate: 0.00, name: "LTR Visa (Remote)", duration: "10 years", maxIncome: null }
     };
 
     if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
