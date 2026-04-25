@@ -141,7 +141,7 @@ permalink: /
 
         {# Pro Report Upsell #}
         <div id="pro-upsell" class="glass-panel" style="margin-top: 1.5rem; border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5));">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+            <div class="stack-on-mobile" style="justify-content: space-between; align-items: center; gap: 1.5rem;">
                 <div style="flex: 1; min-width: 250px;">
                     <div class="badge-2026" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); margin-bottom: 0.5rem;">PREMIUM REPORT</div>
                     <h3 style="color: #fff; margin-bottom: 0.5rem;">Unlock Full Financial Breakdown</h3>
@@ -152,7 +152,7 @@ permalink: /
                         <li>Direct Visa Lawyer Contact List</li>
                     </ul>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
+                        <div class="metric-value highlight" style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
                         <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro →</button>
                     </div>
                 </div>
@@ -163,18 +163,38 @@ permalink: /
         </div>
 
         {# Lead Magnet #}
-        <div id="lead-magnet" class="glass-panel" style="margin-top: 2rem; border: 1px solid rgba(139, 92, 246, 0.3); background: linear-gradient(to right, rgba(139, 92, 246, 0.05), rgba(15, 23, 42, 0.5));">
-            <div style="display: flex; gap: 1.5rem; align-items: center;">
-                <div style="font-size: 3rem;">📘</div>
+        {% include "partials/lead-magnet.njk" %}
+
+        <div style="margin-top: 3rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
                 <div>
-                    <h3 style="color: #fff; margin-bottom: 0.5rem;">2026 Global Tax Guide</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 1rem;">Get our 50-page breakdown of tax-optimized nomad countries.</p>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <input type="email" id="lead-email" placeholder="Enter your email" style="flex: 1; padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff;">
-                        <button id="send-guide-btn" class="action-btn" style="white-space: nowrap;">Send PDF Guide</button>
-                    </div>
-                    <div id="lead-success" class="hidden" style="margin-top: 0.5rem; color: #10b981; font-size: 0.85rem;">Check your inbox! The 2026 Guide is on its way.</div>
+                    <h2 style="font-size: 1.5rem; margin: 0;">Nomad Hub Deep-Dives</h2>
+                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.25rem;">2026 Strategic comparisons for the world's top nomad hubs.</p>
                 </div>
+                <a href="/compare/bali-vs-lisbon/" style="color: #10b981; font-size: 0.85rem; font-weight: 600; text-decoration: none;">View All Comparisons →</a>
+            </div>
+            
+            <div class="stack-grid">
+                <a href="/compare/bali-vs-chiang-mai/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #10b981;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏖️</div>
+                    <div style="font-weight: 700; color: #fff;">Bali vs. Chiang Mai</div>
+                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">The Southeast Asia Budget King Battle</div>
+                </a>
+                <a href="/compare/lisbon-vs-valencia/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #3b82f6;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🇪🇺</div>
+                    <div style="font-weight: 700; color: #fff;">Lisbon vs. Valencia</div>
+                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">EU Digital Nomad Visa Showdown</div>
+                </a>
+                <a href="/compare/dubai-vs-singapore/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #f59e0b;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💰</div>
+                    <div style="font-weight: 700; color: #fff;">Dubai vs. Singapore</div>
+                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">High-Income 0% Tax Optimization</div>
+                </a>
+                <a href="/compare/medellin-vs-mexico-city/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #ef4444;">
+                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🌎</div>
+                    <div style="font-weight: 700; color: #fff;">Medellin vs. Mexico City</div>
+                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">The Ultimate LATAM Nomad Choice</div>
+                </a>
             </div>
         </div>
 

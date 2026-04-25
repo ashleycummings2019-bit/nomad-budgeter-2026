@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: countryComparisons
+  size: 1
+  alias: comp
+permalink: "/compare/country/{{ comp.slug }}/"
+eleventyComputed:
+  pageTitle: "{{ comp.countryA.name }} vs. {{ comp.countryB.name }}: 2026 Digital Nomad Comparison"
+  pageDescription: "{{ comp.description }}"
+---
+
+<div class="comparison-container">
+    {# Hero #}
+    <div class="comparison-hero">
+        <div class="badge-2026" style="margin-bottom: 1rem;">
+            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+            Verified {{ site.year }} Visa Analysis
+        </div>
+        <h1>{{ comp.countryA.name }} vs. {{ comp.countryB.name }}<br>{{ site.year }} Digital Nomad Comparison</h1>
+        <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">⚖️ {{ comp.description }}</p>
+    </div>
+
+    {# Side-by-Side Cards #}
+    <div class="comparison-grid">
+        {# Country A #}
+        <div class="comp-card" style="border-top: 6px solid var(--aura-primary);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <span style="font-size: 2rem;">{{ comp.countryA.code | countryEmoji }}</span>
+                <h3 style="margin: 0;">{{ comp.countryA.name }}</h3>
+            </div>
+            <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.countryA.visaName }}</strong></div>
+            <div class="stat-row"><span>Tax Rate:</span> <strong {% if comp.countryA.tax < comp.countryB.tax %}style="color: var(--aura-accent);"{% endif %}>{{ comp.countryA.tax * 100 }}%</strong></div>
+            <div class="stat-row"><span>Tax Details:</span> <strong style="font-size: 0.85rem;">{{ comp.countryA.taxType }}</strong></div>
+            <div class="stat-row"><span>Min. Income:</span> <strong {% if comp.countryA.minIncomeMonthly < comp.countryB.minIncomeMonthly %}style="color: var(--aura-accent);"{% endif %}>${{ comp.countryA.minIncomeMonthly }}/mo</strong></div>
+            <div class="stat-row"><span>Visa Duration:</span> <strong>{{ comp.countryA.visaDuration }}</strong></div>
+            <div class="stat-row"><span>Processing Time:</span> <strong>{{ comp.countryA.processingTime }}</strong></div>
+            
+            <div class="verdict-box" {% if comp.countryA.tax < comp.countryB.countryB.tax %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
+                <p><strong>{% if comp.countryA.tax < comp.countryB.tax %}✅ Lower Tax Rate{% else %}Higher Tax Bracket{% endif %}</strong></p>
+            </div>
+
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Highlights</h4>
+            <ul style="font-size: 0.9rem; color: var(--text-dim); padding-left: 1.2rem;">
+                {% for highlight in comp.countryA.highlights %}
+                <li>{{ highlight }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {# Country B #}
+        <div class="comp-card" style="border-top: 6px solid var(--aura-secondary);">
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <span style="font-size: 2rem;">{{ comp.countryB.code | countryEmoji }}</span>
+                <h3 style="margin: 0;">{{ comp.countryB.name }}</h3>
+            </div>
+            <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.countryB.visaName }}</strong></div>
+            <div class="stat-row"><span>Tax Rate:</span> <strong {% if comp.countryB.tax < comp.countryA.tax %}style="color: var(--aura-accent);"{% endif %}>{{ comp.countryB.tax * 100 }}%</strong></div>
+            <div class="stat-row"><span>Tax Details:</span> <strong style="font-size: 0.85rem;">{{ comp.countryB.taxType }}</strong></div>
+            <div class="stat-row"><span>Min. Income:</span> <strong {% if comp.countryB.minIncomeMonthly < comp.countryA.minIncomeMonthly %}style="color: var(--aura-accent);"{% endif %}>${{ comp.countryB.minIncomeMonthly }}/mo</strong></div>
+            <div class="stat-row"><span>Visa Duration:</span> <strong>{{ comp.countryB.visaDuration }}</strong></div>
+            <div class="stat-row"><span>Processing Time:</span> <strong>{{ comp.countryB.processingTime }}</strong></div>
+
+            <div class="verdict-box" {% if comp.countryB.tax < comp.countryA.tax %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
+                <p><strong>{% if comp.countryB.tax < comp.countryA.tax %}✅ Lower Tax Rate{% else %}Higher Tax Bracket{% endif %}</strong></p>
+            </div>
+
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Key Highlights</h4>
+            <ul style="font-size: 0.9rem; color: var(--text-dim); padding-left: 1.2rem;">
+                {% for highlight in comp.countryB.highlights %}
+                <li>{{ highlight }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {# Expert Analysis #}
+    <div class="expert-analysis">
+        <h2>{{ site.year }} Strategic Analysis</h2>
+        <p><strong>{{ comp.countryA.name }}</strong>: {{ comp.countryA.intro }}</p>
+        <p style="margin-top: 1.5rem;"><strong>{{ comp.countryB.name }}</strong>: {{ comp.countryB.intro }}</p>
+        
+        <div class="glass-panel" style="margin-top: 2rem; border-left: 4px solid var(--aura-accent);">
+            <p style="margin-bottom: 0;"><strong>Financial Verdict:</strong> 
+            {% if comp.countryA.tax < comp.countryB.tax %}
+            {{ comp.countryA.name }} offers a significant tax advantage with a {{ comp.countryA.tax * 100 }}% rate compared to {{ comp.countryB.name }}'s {{ comp.countryB.tax * 100 }}%.
+            {% elif comp.countryB.tax < comp.countryA.tax %}
+            {{ comp.countryB.name }} is the tax winner here, offering a {{ comp.countryB.tax * 100 }}% rate versus {{ comp.countryA.name }}'s {{ comp.countryA.tax * 100 }}%.
+            {% else %}
+            Both countries offer similar tax profiles, so your decision should focus on lifestyle and visa duration.
+            {% endif %}
+            </p>
+        </div>
+
+        {# Nomad Verdict #}
+        <div class="glass-panel" style="margin-top: 2rem; border-left: 4px solid var(--aura-primary); background: rgba(59, 130, 246, 0.05);">
+            <div class="expert-verdict-content">
+                <div class="expert-icon" style="font-size: 2.5rem;">🛂</div>
+                <div>
+                    <h3 style="color: var(--aura-primary); margin-bottom: 0.5rem;">2026 Residency Strategy</h3>
+                    <p style="font-style: italic; color: var(--text-dim);">"For long-term nomads looking for a <strong>path to permanent residency</strong>, {{ comp.countryA.name if comp.countryA.residencyPath else comp.countryB.name }} is historically the more stable choice. However, {{ comp.countryB.name if comp.countryA.residencyPath else comp.countryA.name }} offers a much faster 'Entry-to-Stay' timeline, which is ideal if you need to relocate within 30 days."</p>
+                    <div style="margin-top: 1rem;" class="stack-on-mobile">
+                        <div class="badge-2026" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">⏱️ Fast Approval</div>
+                        <div class="badge-2026" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">📜 Simple Paperwork</div>
+                        <div class="badge-2026" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">💳 Renewal: Automatic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {# Partner Recommendations #}
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Recommended Partners for Your Move</h3>
+        <div class="partner-grid">
+            <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.lexidy.name }}</h4>
+                <p>{{ site.affiliates.lexidy.desc }}</p>
+            </a>
+            <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.safetywing.name }}</h4>
+                <p>{{ site.affiliates.safetywing.desc }}</p>
+            </a>
+            <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
+                <h4>{{ site.affiliates.wise.name }}</h4>
+                <p>{{ site.affiliates.wise.desc }}</p>
+            </a>
+        </div>
+    </div>
+
+    {# Lead Magnet #}
+    {% include "partials/lead-magnet.njk" %}
+
+    {# Related Comparisons #}
+    <div style="margin-top: 4rem;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">More Country Comparisons</h2>
+        <div class="partner-grid">
+            {% for related in countryComparisons | slice(0, 13) %}
+            {% if related.slug != comp.slug %}
+            <a href="/compare/country/{{ related.slug }}/" class="partner-card">
+                <h4>{{ related.countryA.name }} vs. {{ related.countryB.name }}</h4>
+                <p>Visa & Tax Analysis</p>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

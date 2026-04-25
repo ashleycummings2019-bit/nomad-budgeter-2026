@@ -25,8 +25,12 @@
 </head>
 <body>
     {% include "partials/cookie-banner.njk" %}
+    {% include "partials/header.njk" %}
+    {% include "partials/mobile-cta.njk" %}
 
     {{ content | safe }}
+
+    {% include "partials/mobile-nav.njk" %}
 
     {% include "partials/footer.njk" %}
 

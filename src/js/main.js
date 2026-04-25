@@ -92,18 +92,20 @@ class NomadBudgeterCalculator {
     }
 
     handleProUnlock() {
-        const city = document.getElementById('city-badge')?.innerText || "this city";
+        const cityBadge = document.getElementById('city-badge');
+        const city = cityBadge?.innerText || "this city";
+        const price = 19;
         
         // Track conversion event
         if (typeof gtag === 'function') {
             gtag('event', 'begin_checkout', {
                 currency: 'USD',
-                value: 19,
-                items: [{ item_name: `Pro Report - ${city}`, price: 19 }]
+                value: price,
+                items: [{ item_name: `Pro Report - ${city}`, price: price }]
             });
         }
         
-        const userConfirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($19).`);
+        const userConfirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($${price}).`);
         if (userConfirm) {
             const stripeUrl = `https://buy.stripe.com/00wdR3aQeg521HXgzleAg0b?prefilled_email=${encodeURIComponent(this.userEmail)}&client_reference_id=pro_report_${city.replace(/\s+/g, '_')}`;
             window.open(stripeUrl, '_blank');

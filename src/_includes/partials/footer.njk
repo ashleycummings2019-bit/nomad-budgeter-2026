@@ -13,14 +13,30 @@
         <div class="footer-section">
             <h3>Featured Comparisons</h3>
             <ul class="footer-links">
-                {% for comp in comparisons %}
-                {% if comp.featured and loop.index <= 8 %}
+                {% for comp in comparisons | slice(0, 100) %}
+                {% if comp.featured %}
                 <li><a href="/compare/{{ comp.slug }}/">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
         </div>
 
+        <div class="footer-section">
+            <h3>Global Visa Duels</h3>
+            <ul class="footer-links">
+                {% for comp in countryComparisons | slice(0, 8) %}
+                <li><a href="/compare/country/{{ comp.slug }}/">{{ comp.countryA.name }} vs. {{ comp.countryB.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Lifestyle vs. Visa Battles</h3>
+            <ul class="footer-links">
+                {% for comp in cityCountryComparisons | slice(0, 8) %}
+                <li><a href="/compare/city-vs-country/{{ comp.slug }}/">{{ comp.city.name }} vs. {{ comp.country.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
         <div class="footer-section">
             <h3>Visa Guides</h3>
             <ul class="footer-links">

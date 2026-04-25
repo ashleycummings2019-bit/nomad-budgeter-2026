@@ -52,6 +52,14 @@ module.exports = function (eleventyConfig) {
     return arr.slice(start, end);
   });
 
+  // Convert country code to emoji flag
+  eleventyConfig.addFilter("countryEmoji", function(countryCode) {
+    if (!countryCode) return "";
+    return countryCode
+      .toUpperCase()
+      .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
+  });
+
   // Get current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 

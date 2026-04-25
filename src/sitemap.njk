@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
         <priority>0.8</priority>
     </url>
     {% endfor %}
-    {% for comp in comparisons %}
+    {% for comp in comparisons | slice(0, 1000) %}
     <url>
         <loc>{{ site.url }}/compare/{{ comp.slug }}/</loc>
         <lastmod>2026-04-20</lastmod>
@@ -32,6 +32,22 @@ eleventyExcludeFromCollections: true
         <lastmod>2026-04-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    {% endfor %}
+    {% for comp in countryComparisons | slice(0, 50) %}
+    <url>
+        <loc>{{ site.url }}/compare/country/{{ comp.slug }}/</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    {% endfor %}
+    {% for comp in cityCountryComparisons | slice(0, 50) %}
+    <url>
+        <loc>{{ site.url }}/compare/city-vs-country/{{ comp.slug }}/</loc>
+        <lastmod>2026-04-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     {% endfor %}
     <url>

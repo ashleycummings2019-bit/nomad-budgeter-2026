@@ -166,8 +166,10 @@ eleventyComputed:
                         <li>Direct Visa Lawyer Contact List</li>
                     </ul>
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
-                        <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro →</button>
+                        {% set currentTier = pricing.getCountryTier(city.country) %}
+                        {% set currentPrice = pricing.tiers[currentTier].price %}
+                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">${{ currentPrice }}</div>
+                        <button id="unlock-pro-btn" class="action-btn" data-price="{{ currentPrice }}" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro →</button>
                     </div>
                 </div>
                 <div style="flex: 0 0 160px; display: flex; justify-content: center;">
@@ -179,6 +181,9 @@ eleventyComputed:
             <span>📊 Tax data last verified: {{ site.dataLastVerified }}</span>
             <span>🤖 Human-verified for {{ site.year }} compliance.</span>
         </div>
+
+        {# Lead Magnet #}
+        {% include "partials/lead-magnet.njk" %}
     </main>
 
     <main id="empty-state" class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 300px;">

@@ -61,6 +61,22 @@ eleventyComputed:
         <p><strong>{{ comp.cityB.name }}</strong> ({{ comp.cityB.country }}): {{ comp.cityB.intro }}</p>
         <p>At a $100,000 annual income, <strong>{{ comp.winner }}</strong> delivers higher monthly savings. {{ comp.cityA.name }} leaves you with <strong>${{ comp.savingsA }}/month</strong> while {{ comp.cityB.name }} leaves you with <strong>${{ comp.savingsB }}/month</strong> — a difference of <strong>${{ (comp.savingsA - comp.savingsB) | abs }}/month</strong>.</p>
 
+        {# Nomad Verdict #}
+        <div class="glass-panel" style="margin-top: 2rem; border-left: 4px solid var(--aura-accent); background: rgba(16, 185, 129, 0.05);">
+            <div class="expert-verdict-content">
+                <div class="expert-icon" style="font-size: 2.5rem;">👨‍💻</div>
+                <div>
+                    <h3 style="color: var(--aura-accent); margin-bottom: 0.5rem;">2026 Nomad Expert Verdict</h3>
+                    <p style="font-style: italic; color: var(--text-dim);">"For nomads prioritizing <strong>wealth accumulation</strong>, {{ comp.winner }} is the clear winner in 2026. However, if your business requires a <strong>stronger networking hub</strong>, {{ comp.cityA.name if comp.winner == comp.cityB.name else comp.cityB.name }} often provides better value for your time despite the slightly lower savings rate."</p>
+                    <div style="margin-top: 1rem;" class="stack-on-mobile">
+                        <div class="badge-2026" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">🚀 Best for Networking</div>
+                        <div class="badge-2026" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">📉 Low Tax Friction</div>
+                        <div class="badge-2026" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">🏡 Housing Availability: Fair</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         {# Affiliate Partner Cards #}
         <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Recommended Partners</h3>
         <div class="partner-grid">
@@ -106,9 +122,13 @@ eleventyComputed:
                         <li>Visa Setup & Legal Roadmap for Both Cities</li>
                         <li>Exclusive "Nomad Winner" Financial Model</li>
                     </ul>
+                    {% set tierA = pricing.getCountryTier(comp.cityA.country) %}
+                    {% set tierB = pricing.getCountryTier(comp.cityB.country) %}
+                    {% set finalTier = tierA if tierA > tierB else tierB %}
+                    {% set finalPrice = pricing.tiers[finalTier].price %}
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
-                        <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1;">Unlock Comparison Pro →</button>
+                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">${{ finalPrice }}</div>
+                        <button id="unlock-pro-btn" class="action-btn" data-price="{{ finalPrice }}" style="background: #f59e0b; color: #000; flex: 1;">Unlock Comparison Pro →</button>
                     </div>
                 </div>
                 <div style="flex: 0 0 160px; display: flex; justify-content: center;">
@@ -116,14 +136,17 @@ eleventyComputed:
                 </div>
             </div>
         </div>
+
+        {# Lead Magnet #}
+        {% include "partials/lead-magnet.njk" %}
     </div>
 
     {# Related Comparisons #}
     <div style="margin-top: 4rem;">
         <h2 style="text-align: center; margin-bottom: 2rem;">More Comparisons</h2>
         <div class="partner-grid">
-            {% for related in comparisons %}
-            {% if related.slug != comp.slug and related.featured and loop.index <= 12 %}
+            {% for related in comparisons | slice(0, 50) %}
+            {% if related.slug != comp.slug and loop.index <= 12 %}
             <a href="/compare/{{ related.slug }}/" class="partner-card">
                 <h4>{{ related.cityA.name }} vs. {{ related.cityB.name }}</h4>
                 <p>{{ related.theme }} · {{ related.emoji }}</p>

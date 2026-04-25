@@ -34,6 +34,14 @@ module.exports = function () {
     { a: "bali", b: "bangkok", theme: "Tropical Titans", emoji: "🌴", region: "Southeast Asia" },
   ];
 
+  // ─── Priority Hubs (Nomad Popularity) ───
+  const priorityHubs = [
+    "bali", "canggu", "ubud", "lisbon", "dubai", "medellin", 
+    "chiang-mai", "bangkok", "mexico-city", "valencia", 
+    "da-nang", "bansko", "austin", "miami", "barcelona",
+    "buenos-aires", "istanbul", "tbilisi", "cape-town"
+  ];
+
   const results = [];
 
   // Build featured comparisons
@@ -54,6 +62,7 @@ module.exports = function () {
       emoji: pair.emoji,
       region: pair.region,
       featured: true,
+      priority: 1000, // Highest priority
       savingsA: savingsA100k,
       savingsB: savingsB100k,
       winner: winner,
@@ -64,8 +73,6 @@ module.exports = function () {
 
   // Auto-generate additional pairs from all cities
   const topSlugs = cities.map(c => c.slug);
-
-
   const existingSlugs = new Set(results.map((r) => r.slug));
 
   for (let i = 0; i < topSlugs.length; i++) {
@@ -81,6 +88,14 @@ module.exports = function () {
       const cityB = cityMap[slugB];
       if (!cityA || !cityB) continue;
 
+      // Calculate priority score: 10 for each priority city involved
+      let priorityScore = 0;
+      if (priorityHubs.includes(slugA)) priorityScore += 10;
+      if (priorityHubs.includes(slugB)) priorityScore += 10;
+      
+      // Bonus for same region (more relevant comparisons)
+      if (cityA.continent === cityB.continent) priorityScore += 5;
+
       const savingsA = Math.round((100000 * (1 - cityA.tax)) / 12 - cityA.col);
       const savingsB = Math.round((100000 * (1 - cityB.tax)) / 12 - cityB.col);
 
@@ -92,6 +107,7 @@ module.exports = function () {
         emoji: "📊",
         region: cityA.continent === cityB.continent ? cityA.continent : "Global",
         featured: false,
+        priority: priorityScore,
         savingsA: savingsA,
         savingsB: savingsB,
         winner: savingsA > savingsB ? cityA.name : cityB.name,
@@ -103,5 +119,6 @@ module.exports = function () {
     }
   }
 
-  return results;
+  // Sort by priority (featured first, then priority hubs, then others)
+  return results.sort((a, b) => b.priority - a.priority);
 };
