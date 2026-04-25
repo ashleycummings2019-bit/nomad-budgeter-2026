@@ -1,9 +1,9 @@
 module.exports = function (eleventyConfig) {
   // ─── Passthrough Copy ───
+  eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/images");
 
   // ─── Custom Filters ───
 

@@ -19,6 +19,22 @@ eleventyComputed:
         </div>
         <h1>{{ country.name }} Digital Nomad Visa<br>&amp; Tax Guide</h1>
         <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">Everything you need to know about the {{ country.visaName }} and tax residency in {{ site.year }}.</p>
+
+        {# Trust Signals #}
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; opacity: 0.8; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
+                <span style="color: #f59e0b; font-size: 1rem;">★★★★★</span>
+                <span>Trusted by {{ site.socialProof }}</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                <span>GDPR & {{ site.year }} Compliant</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>Updated {{ site.dataLastVerified }}</span>
+            </div>
+        </div>
     </div>
 
     {# Visa Summary Stats #}
@@ -61,6 +77,68 @@ eleventyComputed:
             {% endfor %}
         </ul>
 
+        {# Long-form Guide Content (Phase 3) #}
+        {% if country.guide %}
+        <div class="guide-sections" style="margin-top: 4rem;">
+            
+            {# Roadmap #}
+            <div class="glass-panel" style="margin-bottom: 3rem; padding: 2rem;">
+                <h3 style="margin-top: 0; margin-bottom: 1.5rem; color: #fff;"><span style="color: var(--aura-primary);">01.</span> Step-by-Step Application Roadmap</h3>
+                <div class="roadmap-steps">
+                    {% for step in country.guide.applicationSteps %}
+                    <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div style="flex: 0 0 40px; height: 40px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--aura-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--aura-primary);">
+                            {{ step.step }}
+                        </div>
+                        <div>
+                            <h4 style="margin: 0; color: #fff;">{{ step.title }}</h4>
+                            <p style="margin-top: 0.25rem; font-size: 0.95rem; color: var(--text-dim); line-height: 1.5;">{{ step.desc }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {# Checklist #}
+            <div style="margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1.5rem; color: #fff;"><span style="color: var(--aura-primary);">02.</span> Required Documents Checklist</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                    {% for item in country.guide.documentChecklist %}
+                    <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span style="font-size: 0.95rem; color: var(--text-main);">{{ item }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {# Tax Deep Dive #}
+            <div class="glass-panel" style="margin-bottom: 3rem; padding: 2.5rem; border-left: 4px solid var(--aura-primary); background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(15, 23, 42, 0.5));">
+                <h3 style="margin-top: 0; margin-bottom: 1rem; color: #fff;"><span style="color: var(--aura-primary);">03.</span> Deep-Dive: Tax Strategy</h3>
+                <p style="line-height: 1.7; color: var(--text-main); font-size: 1.05rem;">{{ country.guide.taxDeepDive }}</p>
+                <div style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; font-size: 0.95rem; border: 1px solid rgba(139, 92, 246, 0.2);">
+                    <strong style="color: var(--aura-primary);">Relocation Hack:</strong> Most successful nomads in {{ country.name }} start their application 3 months before their intended arrival to lock in tax benefits.
+                </div>
+            </div>
+
+            {# FAQ #}
+            <div style="margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1.5rem; color: #fff;"><span style="color: var(--aura-primary);">04.</span> Frequently Asked Questions</h3>
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    {% for faq in country.guide.faq %}
+                    <div class="glass-panel" style="padding: 1.5rem;">
+                        <h4 style="color: #fff; margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <span style="color: var(--aura-primary);">Q:</span> {{ faq.q }}
+                        </h4>
+                        <p style="color: var(--text-dim); padding-left: 1.5rem; margin: 0; font-size: 0.95rem;">{{ faq.a }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+        {% endif %}
+
         <div class="verdict-box" style="margin-top: 2rem;">
             <p><strong>Currency:</strong> {{ country.currency }} | <strong>Language:</strong> {{ country.language }}</p>
         </div>
@@ -68,6 +146,29 @@ eleventyComputed:
         {% set city = { name: country.name, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency } %}
         <div style="margin-top: 3rem;">
             {% include "partials/relocation-toolkit.njk" %}
+        </div>
+
+        {# Pro Report Upsell #}
+        <div id="pro-upsell" class="glass-panel" style="margin-top: 3rem; border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5));">
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 250px;">
+                    <div class="badge-2026" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); margin-bottom: 0.5rem;">PREMIUM REPORT</div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem;">Unlock the Full {{ country.name }} Tax & Legal Strategy</h3>
+                    <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 1.2rem; margin-bottom: 1rem;">
+                        <li>Detailed 2026 {{ country.name }} Tax Optimization Guide</li>
+                        <li>Full Breakdown of Health Insurance & Banking Requirements</li>
+                        <li>Local City Cost Comparisons & Neighborhood Heatmaps</li>
+                        <li>Step-by-Step Visa Application Roadmap & Lawyer Contacts</li>
+                    </ul>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
+                        <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro Guide →</button>
+                    </div>
+                </div>
+                <div style="flex: 0 0 160px; display: flex; justify-content: center;">
+                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                </div>
+            </div>
         </div>
     </div>
 

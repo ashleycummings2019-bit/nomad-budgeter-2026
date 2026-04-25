@@ -1,7 +1,12 @@
 {# Relocation Toolkit Partial - Contextual Affiliate Links #}
 <section class="relocation-toolkit expert-analysis">
-    <h2>Your {{ city.name }} Relocation Toolkit</h2>
-    <p>Planning your move to {{ city.country }}? Here are the verified services our community uses to get set up.</p>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+        <h2 style="margin: 0;">Your {{ city.name }} Relocation Toolkit</h2>
+        <div class="badge-2026" style="background: rgba(139, 92, 246, 0.1); color: var(--aura-primary); border-color: rgba(139, 92, 246, 0.2); font-size: 0.65rem;">
+            PARTNER VERIFIED
+        </div>
+    </div>
+    <p style="margin-bottom: 2rem;">Planning your move to {{ city.country }}? Here are the verified services our community uses to get set up.</p>
     
     <div class="toolkit-grid">
         {% if city.continent == "Europe" %}
