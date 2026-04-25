@@ -6,13 +6,13 @@
     {% include "partials/head.njk" %}
     <link rel="stylesheet" href="/css/index.css">
 
-    {# Google Analytics 4 — Replace G-XXXXXXXXXX with your real Measurement ID #}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    {# Google Analytics 4 #}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', '{{ site.ga4 }}');
     </script>
 
     {# Inject API keys from 11ty data so they aren't hardcoded in main.js #}

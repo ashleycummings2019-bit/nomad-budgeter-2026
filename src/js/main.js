@@ -17,6 +17,7 @@ class NomadBudgeterCalculator {
         this.cachedRates = null;
         this.cityDataMap = null;
         this.fallbackRates = { "USD": 1, "EUR": 0.92, "AED": 3.67, "IDR": 15800, "GBP": 0.79, "THB": 36.5, "MXN": 17.1 };
+        this.userEmail = "";
         this.initEventListeners();
         this.fetchCurrencyRates();
         this.loadCityDatabase();
@@ -104,7 +105,8 @@ class NomadBudgeterCalculator {
         
         const userConfirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($19).`);
         if (userConfirm) {
-            window.open(`https://buy.stripe.com/test_placeholder?prefilled_email=&client_reference_id=pro_report_${city.replace(/\s+/g, '_')}`, '_blank');
+            const stripeUrl = `https://buy.stripe.com/00wdR3aQeg521HXgzleAg0b?prefilled_email=${encodeURIComponent(this.userEmail)}&client_reference_id=pro_report_${city.replace(/\s+/g, '_')}`;
+            window.open(stripeUrl, '_blank');
         }
     }
 
@@ -119,6 +121,7 @@ class NomadBudgeterCalculator {
         }
 
         const capturedEmail = emailInput.value.trim();
+        this.userEmail = capturedEmail;
         btn.disabled = true;
         btn.innerText = "Sending...";
 
@@ -209,9 +212,10 @@ class NomadBudgeterCalculator {
             // Ensure city database is loaded before proceeding
             await this.loadCityDatabase();
 
+            // Run API calls in parallel, but handle their failures individually
             const [rates, cityDataAPI] = await Promise.all([
-                this.fetchCurrencyRates(),
-                this.fetchCityData(cityInput)
+                this.fetchCurrencyRates().catch(() => this.fallbackRates),
+                this.fetchCityData(cityInput).catch(() => null)
             ]);
             
             let countryCode = "US";
@@ -230,14 +234,15 @@ class NomadBudgeterCalculator {
                 countryName = countryCode;
             }
 
-            const taxData = await this.fetchIncomeTax(income, countryCode);
+            // Tax API is often the bottleneck, handle failure gracefully
+            const taxData = await this.fetchIncomeTax(income, countryCode).catch(() => null);
 
-            // Look up from unified city database (replaces old CITY_DATABASE / NOMAD_DESTINATIONS)
+            // Look up from unified city database
             const localFallback = this.cityDataMap
                 ? (this.cityDataMap[cityInput] || this.cityDataMap[cityInput.replace(/\s+/g, '-')])
                 : null;
             
-            let effectiveTaxRate = 0.25;
+            let effectiveTaxRate = 0.25; // Global average fallback
             if (taxData && taxData.total_tax !== undefined) {
                 effectiveTaxRate = parseFloat(taxData.total_tax) / income;
             } else if (localFallback) {
@@ -252,7 +257,8 @@ class NomadBudgeterCalculator {
 
             const scoreBase = localFallback ? (localFallback.score_base || localFallback.score || 75) : 75;
 
-            await new Promise(resolve => setTimeout(resolve, 800));
+            // Artificial delay for "calculating" feel
+            await new Promise(resolve => setTimeout(resolve, 600));
 
             const finalData = {
                 country: countryName,
@@ -266,7 +272,8 @@ class NomadBudgeterCalculator {
 
             this.updateUI(income, actualCityName, finalData, userExpenses);
         } catch (globalError) {
-            console.error("Failure:", globalError);
+            console.error("Calculation Failure:", globalError);
+            alert("Calculation error. Please try a different city or check your connection.");
         } finally {
             this.toggleLoading(false);
         }
