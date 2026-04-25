@@ -1,11 +1,15 @@
 /**
  * Nomad Budgeter | Financial Logic (v3.0 — Unified Data Architecture)
  * Single source of truth: /api/cities.json (built from src/_data/cities.json)
+ *
+ * API keys are injected at build time via window.__NB_CONFIG__
+ * (set in base.njk from 11ty environment data).
+ * Fallback keys are provided for local dev only.
  */
 
 const API_KEYS = {
-    exchangeRate: '4fee8fc6019902b0118cd93b',
-    apiNinjas: 'w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt'
+    exchangeRate: (window.__NB_CONFIG__?.exchangeRate) || '4fee8fc6019902b0118cd93b',
+    apiNinjas: (window.__NB_CONFIG__?.apiNinjas) || 'w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt'
 };
 
 class NomadBudgeterCalculator {
@@ -88,10 +92,18 @@ class NomadBudgeterCalculator {
 
     handleProUnlock() {
         const city = document.getElementById('city-badge')?.innerText || "this city";
-        // Redirect to a Stripe Payment Link or a checkout page
-        // For now, let's show an alert with a 'placeholder' success
-        const confirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($19).`);
-        if (confirm) {
+        
+        // Track conversion event
+        if (typeof gtag === 'function') {
+            gtag('event', 'begin_checkout', {
+                currency: 'USD',
+                value: 19,
+                items: [{ item_name: `Pro Report - ${city}`, price: 19 }]
+            });
+        }
+        
+        const userConfirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($19).`);
+        if (userConfirm) {
             window.open(`https://buy.stripe.com/test_placeholder?prefilled_email=&client_reference_id=pro_report_${city.replace(/\s+/g, '_')}`, '_blank');
         }
     }
@@ -106,6 +118,7 @@ class NomadBudgeterCalculator {
             return;
         }
 
+        const capturedEmail = emailInput.value.trim();
         btn.disabled = true;
         btn.innerText = "Sending...";
 
@@ -116,8 +129,11 @@ class NomadBudgeterCalculator {
         emailInput.value = "";
         btn.innerText = "Guide Sent!";
         
-        // Tracking event (mock)
-        console.log("Lead captured:", emailInput.value);
+        // Tracking event
+        console.log("Lead captured:", capturedEmail);
+        if (typeof gtag === 'function') {
+            gtag('event', 'lead_capture', { method: 'tax_guide_pdf', email_domain: capturedEmail.split('@')[1] });
+        }
     }
 
     // ─── Network Helpers ───

@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "partials/head.njk" %}
     <link rel="stylesheet" href="/css/index.css">
+
+    {# Google Analytics 4 — Replace G-XXXXXXXXXX with your real Measurement ID #}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    {# Inject API keys from 11ty data so they aren't hardcoded in main.js #}
+    <script>
+      window.__NB_CONFIG__ = {
+        exchangeRate: "{{ site.apiKeys.exchangeRate }}",
+        apiNinjas: "{{ site.apiKeys.apiNinjas }}"
+      };
+    </script>
 </head>
 <body>
     {% include "partials/cookie-banner.njk" %}
