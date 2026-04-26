@@ -42,18 +42,24 @@ permalink: /
     {% include "partials/calculator.njk" %}
 
     {# Results Panel (hidden until calculation) #}
-    <main id="results-panel" class="glass-panel hidden">
+    <section id="results-panel" class="glass-panel hidden">
         <div class="results-header">
-            <div>
-                <h2>Financial Analysis</h2>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <p id="city-badge">London, United Kingdom</p>
-                    <span style="width: 4px; height: 4px; background: var(--text-dim); border-radius: 50%;"></span>
-                    <p style="font-size: 0.8rem; color: #10b981; font-weight: 600;"><span id="trust-signal">18</span> nomads calculating live</p>
+            <div class="header-info">
+                <h2 class="aura-title">Financial Analysis</h2>
+                <div class="header-meta">
+                    <p id="city-badge" class="city-badge">London, United Kingdom</p>
+                    <span class="meta-dot"></span>
+                    <p class="trust-indicator"><span id="trust-signal">18</span> nomads calculating live</p>
                 </div>
             </div>
-            <div class="aura-score" id="aura-ring">
-                <span id="aura-value">85</span>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <button id="share-results-btn" class="glass-btn-sm" title="Share My Results">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
+                    Share
+                </button>
+                <div class="aura-score" id="aura-ring">
+                    <span id="aura-value">85</span>
+                </div>
             </div>
         </div>
 
@@ -76,23 +82,23 @@ permalink: /
             </div>
         </div>
 
-        <div id="visa-roi-card" class="metric-card hidden" style="margin-top: 1.5rem; width: 100%; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(15, 23, 42, 0.5)); border-color: #10b981;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <div>
-                    <div class="metric-label" style="color: #10b981;">Visa ROI Tracker</div>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">Time to recover visa & setup costs via tax savings.</p>
+        <div id="visa-roi-card" class="metric-card roi-tracker hidden">
+            <div class="flex-between mb-4">
+                <div class="roi-info">
+                    <div class="metric-label accent-color">Visa ROI Tracker</div>
+                    <p class="roi-desc">Time to recover visa & setup costs via tax savings.</p>
                 </div>
-                <div style="text-align: right;">
+                <div class="roi-stats">
                     <div class="metric-value positive" id="res-payback">0 Months</div>
-                    <div style="font-size: 0.8rem; color: #10b981; font-weight: 600;" id="res-roi-savings">+$0 / yr</div>
+                    <div class="roi-yearly-savings" id="res-roi-savings">+$0 / yr</div>
                 </div>
             </div>
-            <a href="https://citizenremote.com/?ref=nomadbudgeter" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn" style="width: 100%; text-align: center; background: #10b981; text-decoration: none; display: block; padding: 0.8rem; border-radius: 8px; font-weight: 600;">Apply for Digital Nomad Visa →</a>
+            <a href="https://citizenremote.com/?ref=nomadbudgeter" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for Digital Nomad Visa →</a>
         </div>
 
         {# Success Stack (Affiliates) #}
-        <div style="margin-top: 2rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-main);">Your Nomad Success Stack</h3>
+        <div class="success-stack-section">
+            <h3 class="section-subtitle">Your Nomad Success Stack</h3>
             <div class="stack-grid">
                 <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
                     <div class="stack-icon">🛡️</div>
@@ -112,14 +118,14 @@ permalink: /
                     <div class="stack-icon">💼</div>
                     <div class="stack-info">
                         <div class="stack-name">Remote.com</div>
-                        <div class="stack-desc">Payroll &amp; Compliance</div>
+                        <div class="stack-desc">Payroll & Compliance</div>
                     </div>
                 </a>
                 <a href="{{ site.affiliates.nomadlist.url }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
                     <div class="stack-icon">🌍</div>
                     <div class="stack-info">
                         <div class="stack-name">Nomad List</div>
-                        <div class="stack-desc">City &amp; Community</div>
+                        <div class="stack-desc">City & Community</div>
                     </div>
                 </a>
                 <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
@@ -132,82 +138,65 @@ permalink: /
             </div>
         </div>
 
-        <div class="metric-card" style="margin-top: 1.5rem; width: 100%;">
+        <div class="metric-card commentary-box">
             <div class="metric-label">Budget Commentary</div>
-            <p id="aura-commentary" style="line-height: 1.6; color: var(--text-main);">
+            <p id="aura-commentary" class="commentary-text">
                 Your financial vitality is strong. Based on current tax laws and city metrics, you are in the top 15% of earners in this location.
             </p>
         </div>
 
+        {# Pro Report (Premium View) #}
+        {% include "partials/pro-report.njk" %}
+
         {# Pro Report Upsell #}
-        <div id="pro-upsell" class="glass-panel" style="margin-top: 1.5rem; border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5));">
-            <div class="stack-on-mobile" style="justify-content: space-between; align-items: center; gap: 1.5rem;">
-                <div style="flex: 1; min-width: 250px;">
-                    <div class="badge-2026" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); margin-bottom: 0.5rem;">PREMIUM REPORT</div>
-                    <h3 style="color: #fff; margin-bottom: 0.5rem;">Unlock Full Financial Breakdown</h3>
-                    <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 1.2rem; margin-bottom: 1rem;">
+        <div id="pro-upsell" class="glass-panel upsell-panel">
+            <div class="upsell-container">
+                <div class="upsell-content">
+                    <div class="badge-2026 upsell-badge">PREMIUM REPORT</div>
+                    <h3 class="upsell-title">Unlock Full Financial Breakdown</h3>
+                    <ul class="upsell-features">
                         <li>Detailed 2026 Tax Optimization Strategy</li>
                         <li>Local Apartment & Utility Estimates</li>
                         <li>Nomad Community & Co-working Heatmap</li>
                         <li>Direct Visa Lawyer Contact List</li>
                     </ul>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="metric-value highlight" style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
-                        <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro →</button>
+                    <div class="upsell-footer">
+                        <div class="upsell-price">$19</div>
+                        <button id="unlock-pro-btn" class="action-btn accent-bg">Unlock Full Report →</button>
                     </div>
                 </div>
-                <div style="flex: 0 0 160px; display: flex; justify-content: center;">
-                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="upsell-visual">
+                    <div class="upsell-mockup">
+                        <div class="mockup-line"></div>
+                        <div class="mockup-line"></div>
+                        <div class="mockup-line short"></div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        {# Lead Magnet #}
-        {% include "partials/lead-magnet.njk" %}
-
-        <div style="margin-top: 3rem;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem;">
-                <div>
-                    <h2 style="font-size: 1.5rem; margin: 0;">Nomad Hub Deep-Dives</h2>
-                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 0.25rem;">2026 Strategic comparisons for the world's top nomad hubs.</p>
-                </div>
-                <a href="/compare/bali-vs-lisbon/" style="color: #10b981; font-size: 0.85rem; font-weight: 600; text-decoration: none;">View All Comparisons →</a>
-            </div>
-            
-            <div class="stack-grid">
-                <a href="/compare/bali-vs-chiang-mai/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #10b981;">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🏖️</div>
-                    <div style="font-weight: 700; color: #fff;">Bali vs. Chiang Mai</div>
-                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">The Southeast Asia Budget King Battle</div>
-                </a>
-                <a href="/compare/lisbon-vs-valencia/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #3b82f6;">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🇪🇺</div>
-                    <div style="font-weight: 700; color: #fff;">Lisbon vs. Valencia</div>
-                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">EU Digital Nomad Visa Showdown</div>
-                </a>
-                <a href="/compare/dubai-vs-singapore/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #f59e0b;">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💰</div>
-                    <div style="font-weight: 700; color: #fff;">Dubai vs. Singapore</div>
-                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">High-Income 0% Tax Optimization</div>
-                </a>
-                <a href="/compare/medellin-vs-mexico-city/" class="stack-item glass-panel" style="padding: 1.25rem; border-bottom: 3px solid #ef4444;">
-                    <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🌎</div>
-                    <div style="font-weight: 700; color: #fff;">Medellin vs. Mexico City</div>
-                    <div style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.2rem;">The Ultimate LATAM Nomad Choice</div>
-                </a>
-            </div>
+    {# Empty State (Visible on load) #}
+    <section id="empty-state" class="empty-state reveal">
+        <div class="empty-content">
+            <div class="aura-pulse"></div>
+            <h2 class="aura-title">Awaiting Calculations...</h2>
+            <p>Enter your income and destination to generate your 2026 financial roadmap.</p>
         </div>
-
-        <div class="trust-badge">
-            <span>📊 Tax data last verified: {{ site.dataLastVerified }}</span>
-            <span>🤖 Calculation logic assisted by AI, human-verified for 2026 compliance.</span>
-        </div>
-    </main>
-
-    {# Empty State (shown before calculation) #}
-    <main id="empty-state" class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 400px;">
-        <div style="font-size: 4rem; margin-bottom: 1rem;">✨</div>
-        <h2>Ready to plan your nomad budget?</h2>
-        <p style="color: var(--text-dim); max-width: 300px; margin-top: 1rem;">Enter your details to generate a comprehensive financial report for any city worldwide.</p>
-    </main>
+    </section>
 </div>
+
+{# Lead Capture Section #}
+<section class="lead-section reveal">
+    <div class="lead-card glass-panel">
+        <div class="lead-content">
+            <h2 class="aura-title">2026 Global Tax Guide</h2>
+            <p>Get our updated PDF on the top 10 tax-free countries for digital nomads in 2026.</p>
+            <div class="lead-form">
+                <input type="email" id="lead-email" placeholder="nomad@example.com" class="aura-input">
+                <button id="send-guide-btn" class="action-btn accent-bg">Send Me the Guide</button>
+            </div>
+            <p id="lead-success" class="success-msg hidden">✅ Sent! Check your inbox in a few minutes.</p>
+        </div>
+    </div>
+</section>

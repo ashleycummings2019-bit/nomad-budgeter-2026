@@ -14,7 +14,7 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
 {% set isCalculatorPage = true %}
 
 <div class="app-container">
-    <main class="main-content">
+    <div class="main-content-inner">
         <header class="page-header">
             <nav class="breadcrumbs">
                 <a href="/">Home</a> &rsaquo; 
@@ -117,7 +117,7 @@ permalink: "/{{ city.slug }}/cost-of-living-calculator/index.html"
         </section>
 
         {% include "partials/relocation-toolkit.njk" %}
-    </main>
+    </div> <!-- /.main-content-inner -->
 </div>
 
 <script>

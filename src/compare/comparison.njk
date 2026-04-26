@@ -10,149 +10,161 @@ eleventyComputed:
   pageDescription: "{{ comp.description }}"
 ---
 
-<div class="comparison-container">
+<div class="section-container mt-16">
     {# Hero #}
-    <div class="comparison-hero">
-        <div class="badge-2026" style="margin-bottom: 1rem;">
-            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+    <div class="comparison-hero text-center mb-16">
+        <div class="badge-2026 mb-4">
+            <span class="badge-dot"></span>
             Verified {{ site.year }} Comparison
         </div>
-        <h1>{{ comp.cityA.name }} vs. {{ comp.cityB.name }}<br>{{ site.year }} {{ comp.theme }}</h1>
-        <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">{{ comp.emoji }} {{ comp.description }}</p>
+        <h1 class="aura-title large-title">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}<br>{{ comp.theme }} ({{ site.year }})</h1>
+        <p class="text-dim subtitle-text max-800">{{ comp.emoji }} {{ comp.description }}</p>
     </div>
 
     {# Side-by-Side Cards #}
-    <div class="comparison-grid">
+    <div class="comparison-grid grid-2 stack-on-mobile">
         {# City A #}
-        <div class="comp-card" style="border-top: 6px solid var(--aura-primary);">
-            <h3 style="margin-bottom: 1.5rem;">{{ comp.cityA.name }}, {{ comp.cityA.country }}</h3>
-            <div class="stat-row"><span>Visa Type:</span> <strong>{{ comp.cityA.visa }}</strong></div>
-            <div class="stat-row"><span>Tax Rate:</span> <strong>{{ comp.cityA.tax * 100 }}%</strong></div>
-            <div class="stat-row"><span>Monthly Cost of Living:</span> <strong>${{ comp.cityA.col }}</strong></div>
-            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.cityA.rent }}/mo</strong></div>
-            <div class="stat-row"><span>Min. Income Required:</span> <strong>${{ comp.cityA.visaMinIncome }}/mo</strong></div>
-            <div class="stat-row"><span>Nomad Score:</span> <strong>{{ comp.cityA.score }}/100</strong></div>
-            <div class="stat-row"><span>Savings @ $100k/yr:</span> <strong {% if comp.savingsA > comp.savingsB %}style="color: var(--aura-accent);"{% endif %}>${{ comp.savingsA }}/mo</strong></div>
-            <div class="verdict-box" {% if comp.savingsA > comp.savingsB %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
-                <p><strong>{% if comp.savingsA > comp.savingsB %}✅ Winner for savings{% else %}Higher costs apply{% endif %}</strong></p>
+        <div class="comp-card glass-panel p-8 aura-border-primary">
+            <h2 class="aura-title mb-6">{{ comp.cityA.name }}, {{ comp.cityA.country }}</h2>
+            <div class="stat-rows">
+                <div class="stat-row"><span>Visa Type</span> <strong>{{ comp.cityA.visa }}</strong></div>
+                <div class="stat-row"><span>Tax Rate</span> <strong>{{ comp.cityA.tax | percentInt }}</strong></div>
+                <div class="stat-row"><span>Monthly COL</span> <strong>${{ comp.cityA.col | localeString }}</strong></div>
+                <div class="stat-row"><span>Average Rent</span> <strong>${{ comp.cityA.rent | localeString }}</strong></div>
+                <div class="stat-row"><span>Min. Income</span> <strong>${{ comp.cityA.visaMinIncome | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Nomad Score</span> <strong>{{ comp.cityA.score }}/100</strong></div>
+                <div class="stat-row highlight-row">
+                    <span>Savings @ $100k/yr</span>
+                    <strong class="{% if comp.savingsA > comp.savingsB %}positive-text{% endif %}">${{ comp.savingsA | localeString }}/mo</strong>
+                </div>
+            </div>
+            <div class="verdict-box mt-6 {% if comp.savingsA > comp.savingsB %}winner-box{% endif %}">
+                <p><strong>{% if comp.savingsA > comp.savingsB %}✅ Winner for Wealth Accumulation{% else %}Premium Cost Profile{% endif %}</strong></p>
             </div>
         </div>
 
         {# City B #}
-        <div class="comp-card" style="border-top: 6px solid var(--aura-secondary);">
-            <h3 style="margin-bottom: 1.5rem;">{{ comp.cityB.name }}, {{ comp.cityB.country }}</h3>
-            <div class="stat-row"><span>Visa Type:</span> <strong>{{ comp.cityB.visa }}</strong></div>
-            <div class="stat-row"><span>Tax Rate:</span> <strong>{{ comp.cityB.tax * 100 }}%</strong></div>
-            <div class="stat-row"><span>Monthly Cost of Living:</span> <strong>${{ comp.cityB.col }}</strong></div>
-            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.cityB.rent }}/mo</strong></div>
-            <div class="stat-row"><span>Min. Income Required:</span> <strong>${{ comp.cityB.visaMinIncome }}/mo</strong></div>
-            <div class="stat-row"><span>Nomad Score:</span> <strong>{{ comp.cityB.score }}/100</strong></div>
-            <div class="stat-row"><span>Savings @ $100k/yr:</span> <strong {% if comp.savingsB > comp.savingsA %}style="color: var(--aura-accent);"{% endif %}>${{ comp.savingsB }}/mo</strong></div>
-            <div class="verdict-box" {% if comp.savingsB > comp.savingsA %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
-                <p><strong>{% if comp.savingsB > comp.savingsA %}✅ Winner for savings{% else %}Higher costs apply{% endif %}</strong></p>
+        <div class="comp-card glass-panel p-8 aura-border-secondary">
+            <h2 class="aura-title mb-6">{{ comp.cityB.name }}, {{ comp.cityB.country }}</h2>
+            <div class="stat-rows">
+                <div class="stat-row"><span>Visa Type</span> <strong>{{ comp.cityB.visa }}</strong></div>
+                <div class="stat-row"><span>Tax Rate</span> <strong>{{ comp.cityB.tax | percentInt }}</strong></div>
+                <div class="stat-row"><span>Monthly COL</span> <strong>${{ comp.cityB.col | localeString }}</strong></div>
+                <div class="stat-row"><span>Average Rent</span> <strong>${{ comp.cityB.rent | localeString }}</strong></div>
+                <div class="stat-row"><span>Min. Income</span> <strong>${{ comp.cityB.visaMinIncome | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Nomad Score</span> <strong>{{ comp.cityB.score }}/100</strong></div>
+                <div class="stat-row highlight-row">
+                    <span>Savings @ $100k/yr</span>
+                    <strong class="{% if comp.savingsB > comp.savingsA %}positive-text{% endif %}">${{ comp.savingsB | localeString }}/mo</strong>
+                </div>
+            </div>
+            <div class="verdict-box mt-6 {% if comp.savingsB > comp.savingsA %}winner-box{% endif %}">
+                <p><strong>{% if comp.savingsB > comp.savingsA %}✅ Winner for Wealth Accumulation{% else %}Premium Cost Profile{% endif %}</strong></p>
             </div>
         </div>
     </div>
 
     {# Expert Analysis #}
-    <div class="expert-analysis">
-        <h2>{{ site.year }} Strategic Analysis: {{ comp.theme }}</h2>
-        <p><strong>{{ comp.cityA.name }}</strong> ({{ comp.cityA.country }}): {{ comp.cityA.intro }}</p>
-        <p><strong>{{ comp.cityB.name }}</strong> ({{ comp.cityB.country }}): {{ comp.cityB.intro }}</p>
-        <p>At a $100,000 annual income, <strong>{{ comp.winner }}</strong> delivers higher monthly savings. {{ comp.cityA.name }} leaves you with <strong>${{ comp.savingsA }}/month</strong> while {{ comp.cityB.name }} leaves you with <strong>${{ comp.savingsB }}/month</strong> — a difference of <strong>${{ (comp.savingsA - comp.savingsB) | abs }}/month</strong>.</p>
+    <div class="expert-analysis-container mt-16">
+        <div class="glass-panel p-10">
+            <h2 class="aura-title mb-8">{{ site.year }} Strategic Analysis: {{ comp.theme }}</h2>
+            <div class="analysis-prose">
+                <p><strong>{{ comp.cityA.name }}</strong> ({{ comp.cityA.country }}): {{ comp.cityA.intro }}</p>
+                <p class="mt-6"><strong>{{ comp.cityB.name }}</strong> ({{ comp.cityB.country }}): {{ comp.cityB.intro }}</p>
+                <p class="mt-6 highlight-text">At a $100,000 annual income, <strong>{{ comp.winner }}</strong> delivers higher monthly savings. {{ comp.cityA.name }} leaves you with <strong>${{ comp.savingsA | localeString }}/month</strong> while {{ comp.cityB.name }} leaves you with <strong>${{ comp.savingsB | localeString }}/month</strong> — a difference of <strong>${{ (comp.savingsA - comp.savingsB) | abs | localeString }}/month</strong>.</p>
+            </div>
 
-        {# Nomad Verdict #}
-        <div class="glass-panel" style="margin-top: 2rem; border-left: 4px solid var(--aura-accent); background: rgba(16, 185, 129, 0.05);">
-            <div class="expert-verdict-content">
-                <div class="expert-icon" style="font-size: 2.5rem;">👨‍💻</div>
-                <div>
-                    <h3 style="color: var(--aura-accent); margin-bottom: 0.5rem;">2026 Nomad Expert Verdict</h3>
-                    <p style="font-style: italic; color: var(--text-dim);">"For nomads prioritizing <strong>wealth accumulation</strong>, {{ comp.winner }} is the clear winner in 2026. However, if your business requires a <strong>stronger networking hub</strong>, {{ comp.cityA.name if comp.winner == comp.cityB.name else comp.cityB.name }} often provides better value for your time despite the slightly lower savings rate."</p>
-                    <div style="margin-top: 1rem;" class="stack-on-mobile">
-                        <div class="badge-2026" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">🚀 Best for Networking</div>
-                        <div class="badge-2026" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">📉 Low Tax Friction</div>
-                        <div class="badge-2026" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">🏡 Housing Availability: Fair</div>
+            {# Nomad Verdict #}
+            <div class="expert-verdict-card mt-12 p-8">
+                <div class="expert-verdict-content">
+                    <div class="expert-avatar">👨‍💻</div>
+                    <div class="expert-text">
+                        <h3 class="aura-primary mb-4">2026 Nomad Expert Verdict</h3>
+                        <p class="italic-dim">"For nomads prioritizing <strong>wealth accumulation</strong>, {{ comp.winner }} is the clear winner in 2026. However, if your business requires a <strong>stronger networking hub</strong>, {{ comp.cityA.name if comp.winner == comp.cityB.name else comp.cityB.name }} often provides better value for your time despite the slightly lower savings rate."</p>
+                        <div class="verdict-tags mt-6">
+                            <span class="badge-2026 tag-success">🚀 Best for Networking</span>
+                            <span class="badge-2026 tag-success">📉 Low Tax Friction</span>
+                            <span class="badge-2026 tag-info">🏡 Housing Availability: Fair</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        {# Affiliate Partner Cards #}
-        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Recommended Partners</h3>
-        <div class="partner-grid">
-            {% if comp.region == "Europe" or comp.region == "Atlantic Islands" %}
-            <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.lexidy.name }}</h4>
-                <p>{{ site.affiliates.lexidy.desc }}</p>
-            </a>
-            {% endif %}
-            <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.safetywing.name }}</h4>
-                <p>{{ site.affiliates.safetywing.desc }}</p>
-            </a>
-            <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.wise.name }}</h4>
-                <p>{{ site.affiliates.wise.desc }}</p>
-            </a>
-            {% if comp.region == "Southeast Asia" or comp.region == "East Asia" or comp.region == "Asia" %}
-            <a href="{{ site.affiliates.agoda.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.agoda.name }}</h4>
-                <p>{{ site.affiliates.agoda.desc }}</p>
-            </a>
-            {% endif %}
+        {# Toolkits #}
+        <div class="mt-16">
+            {% include "partials/relocation-toolkit.njk" %}
         </div>
     </div>
 
     {# Inline Comparison Calculator #}
-    <div class="app-container" style="margin-top: 4rem; grid-template-columns: 1fr;">
-        {% set compareMode = true %}
-        {% set destA = comp.cityA.countrySlug %}
-        {% set destB = comp.cityB.countrySlug %}
-        {% include "partials/calculator.njk" %}
-
-        {# Pro Report Upsell #}
-        <div id="pro-upsell" class="glass-panel" style="margin-top: 1.5rem; border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5)); max-width: 800px; margin-left: auto; margin-right: auto;">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 250px;">
-                    <div class="badge-2026" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); margin-bottom: 0.5rem;">PREMIUM REPORT</div>
-                    <h3 style="color: #fff; margin-bottom: 0.5rem;">Unlock Comparison Deep-Dive</h3>
-                    <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 1.2rem; margin-bottom: 1rem;">
-                        <li>Side-by-Side 2026 Tax Arbitrage Strategy</li>
-                        <li>Local Apartment & Utility Cost Gap Analysis</li>
-                        <li>Visa Setup & Legal Roadmap for Both Cities</li>
-                        <li>Exclusive "Nomad Winner" Financial Model</li>
-                    </ul>
-                    {% set tierA = pricing.getCountryTier(comp.cityA.country) %}
-                    {% set tierB = pricing.getCountryTier(comp.cityB.country) %}
-                    {% set finalTier = tierA if tierA > tierB else tierB %}
-                    {% set finalPrice = pricing.tiers[finalTier].price %}
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">${{ finalPrice }}</div>
-                        <button id="unlock-pro-btn" class="action-btn" data-price="{{ finalPrice }}" style="background: #f59e0b; color: #000; flex: 1;">Unlock Comparison Pro →</button>
-                    </div>
-                </div>
-                <div style="flex: 0 0 160px; display: flex; justify-content: center;">
-                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-                </div>
-            </div>
+    <div class="app-container mt-16">
+        <div class="calculator-column">
+            {% set compareMode = true %}
+            {% set destA = comp.cityA.countrySlug %}
+            {% set destB = comp.cityB.countrySlug %}
+            {% include "partials/calculator.njk" %}
         </div>
 
-        {# Lead Magnet #}
-        {% include "partials/lead-magnet.njk" %}
+        <div class="results-column">
+            {# Pro Report Upsell #}
+            <div id="pro-upsell" class="glass-panel upsell-panel">
+                <div class="upsell-container">
+                    <div class="upsell-content">
+                        <div class="badge-2026 upsell-badge">PREMIUM COMPARISON</div>
+                        <h3 class="upsell-title">Unlock Full Arbitrage Report</h3>
+                        <ul class="upsell-features">
+                            <li>Side-by-Side 2026 Tax Arbitrage Strategy</li>
+                            <li>Local Apartment & Utility Cost Gap Analysis</li>
+                            <li>Visa Setup & Legal Roadmap for Both Cities</li>
+                            <li>Exclusive "Nomad Winner" Financial Model</li>
+                        </ul>
+                        {% set tierA = pricing.getCountryTier(comp.cityA.country) %}
+                        {% set tierB = pricing.getCountryTier(comp.cityB.country) %}
+                        {% set finalTier = tierA if tierA > tierB else tierB %}
+                        {% set finalPrice = pricing.tiers[finalTier].price %}
+                        <div class="upsell-footer">
+                            <div class="upsell-price">${{ finalPrice }}</div>
+                            <button id="unlock-pro-btn" class="action-btn upsell-btn" data-price="{{ finalPrice }}">Unlock Pro →</button>
+                        </div>
+                    </div>
+                    <div class="upsell-visual">
+                        <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" class="pro-mockup">
+                    </div>
+                </div>
+            </div>
+
+            {# Pro Report (Premium View - Optional for Comparison) #}
+            {# {% include "partials/pro-report.njk" %} #}
+
+            {# Lead Magnet #}
+            {% include "partials/lead-magnet.njk" %}
+        </div>
     </div>
 
     {# Related Comparisons #}
-    <div style="margin-top: 4rem;">
-        <h2 style="text-align: center; margin-bottom: 2rem;">More Comparisons</h2>
-        <div class="partner-grid">
-            {% for related in comparisons | slice(0, 50) %}
-            {% if related.slug != comp.slug and loop.index <= 12 %}
-            <a href="/compare/{{ related.slug }}/" class="partner-card">
-                <h4>{{ related.cityA.name }} vs. {{ related.cityB.name }}</h4>
-                <p>{{ related.theme }} · {{ related.emoji }}</p>
-            </a>
-            {% endif %}
+    <div class="section-container mt-24">
+        <h2 class="aura-title text-center mb-8">More Strategic Comparisons</h2>
+        <div class="stack-grid">
+            {% set relatedCount = 0 %}
+            {% for related in comparisons %}
+                {% if related.slug != comp.slug and relatedCount < 4 %}
+                    {% if related.cityA.slug == comp.cityA.slug or related.cityB.slug == comp.cityA.slug or related.cityA.slug == comp.cityB.slug or related.cityB.slug == comp.cityB.slug %}
+                        {% set relatedCount = relatedCount + 1 %}
+                        <a href="/compare/{{ related.slug }}/" class="stack-item glass-panel hub-card">
+                            <div class="hub-icon">{{ related.emoji }}</div>
+                            <div class="hub-info">
+                                <div class="hub-name">{{ related.cityA.name }} vs. {{ related.cityB.name }}</div>
+                                <div class="hub-desc">{{ related.theme }}</div>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endif %}
             {% endfor %}
+        </div>
+        
+        <div class="mt-16">
+            {% include "partials/seo-silos.njk" %}
         </div>
     </div>
 </div>

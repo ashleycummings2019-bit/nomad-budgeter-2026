@@ -1,0 +1,12 @@
+{
+    "search.exclude": {
+        "**/_site": true,
+        "**/.eleventy.js": true
+    },
+    "files.exclude": {
+        "**/_site": true
+    },
+    "html.validate.scripts": false,
+    "css.lint.duplicateProperties": "warning",
+    "eslint.enable": true
+}

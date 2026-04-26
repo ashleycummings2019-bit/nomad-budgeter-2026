@@ -21,6 +21,17 @@ class NomadBudgeterCalculator {
         this.initEventListeners();
         this.fetchCurrencyRates();
         this.loadCityDatabase();
+        this.checkProStatus();
+    }
+
+    checkProStatus() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true' || localStorage.getItem('nb_pro_unlocked') === 'true') {
+            this.isPro = true;
+            localStorage.setItem('nb_pro_unlocked', 'true');
+        } else {
+            this.isPro = false;
+        }
     }
 
     // ─── Data Loading ───
@@ -77,7 +88,70 @@ class NomadBudgeterCalculator {
             unlockProBtn.addEventListener('click', () => this.handleProUnlock());
         }
 
+        const shareBtn = document.getElementById('share-results-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', () => this.handleShare());
+        }
+
         this.startTrustSignalPulse();
+        this.checkUrlParams();
+    }
+
+    checkUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const income = params.get('income');
+        const loc = params.get('location');
+        if (income && loc) {
+            const incomeInput = document.getElementById('income');
+            const locInput = document.getElementById('location');
+            if (incomeInput) incomeInput.value = income;
+            if (locInput) locInput.value = loc;
+            
+            const expInput = document.getElementById('expenses');
+            const daysInput = document.getElementById('days-in-country');
+            const usInput = document.getElementById('us-citizen');
+            
+            if (expInput && params.get('expenses')) expInput.value = params.get('expenses');
+            if (daysInput && params.get('days')) daysInput.value = params.get('days');
+            if (usInput && params.get('us')) usInput.value = params.get('us');
+            
+            // Auto-calculate after a short delay for DB load
+            setTimeout(() => this.handleCalculation(), 500);
+        }
+    }
+
+    handleShare() {
+        const income = document.getElementById('income')?.value || "";
+        const loc = document.getElementById('location')?.value || "";
+        const expenses = document.getElementById('expenses')?.value || "";
+        const days = document.getElementById('days-in-country')?.value || "";
+        const us = document.getElementById('us-citizen')?.value || "";
+
+        const baseUrl = window.location.origin + window.location.pathname;
+        const shareUrl = `${baseUrl}?income=${income}&location=${encodeURIComponent(loc)}&expenses=${expenses}&days=${days}&us=${us}`;
+
+        if (navigator.share) {
+            navigator.share({
+                title: 'My Nomad Budget',
+                text: `Check out my cost of living and tax breakdown for ${loc}!`,
+                url: shareUrl
+            }).catch(() => {
+                this.copyToClipboard(shareUrl);
+            });
+        } else {
+            this.copyToClipboard(shareUrl);
+        }
+    }
+
+    copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById('share-results-btn');
+            if (btn) {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Link Copied!';
+                setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+            }
+        });
     }
 
     startTrustSignalPulse() {
@@ -418,6 +492,50 @@ class NomadBudgeterCalculator {
         this.animateScore(budgetScore);
         this.updateCommentary(budgetScore, savings);
         this.updateROILogic(grossAnnual, totalTaxAmount, cityData);
+        this.updateProReport(cityName, cityData, localTaxAmount, usTaxAmount, totalTaxAmount, totalExpenses);
+    }
+
+    updateProReport(cityName, cityData, localTax, usTax, totalTax, totalExpenses) {
+        const proReport = document.getElementById('pro-report-content');
+        const upsell = document.getElementById('pro-upsell');
+
+        if (!this.isPro) {
+            if (proReport) proReport.classList.add('hidden');
+            if (upsell) upsell.classList.remove('hidden');
+            return;
+        }
+
+        if (proReport) proReport.classList.remove('hidden');
+        if (upsell) upsell.classList.add('hidden');
+
+        const safeSet = (id, val) => {
+            const el = document.getElementById(id);
+            if (el) el.innerText = val;
+        };
+
+        safeSet('pro-city-name', cityName);
+        safeSet('pro-country-name', cityData.country || cityName);
+        safeSet('pro-local-tax', this.formatCurrency(localTax));
+        safeSet('pro-se-tax', this.formatCurrency(usTax > 0 ? usTax * 0.6 : 0)); // Simulated split
+        safeSet('pro-us-tax', this.formatCurrency(usTax > 0 ? usTax * 0.4 : 0));
+        safeSet('pro-total-tax', this.formatCurrency(totalTax));
+
+        // Detailed COL (Simulated from base metrics)
+        const rent = totalExpenses * 0.6;
+        const food = totalExpenses * 0.2;
+        const work = 250;
+        const util = totalExpenses - rent - food - work;
+
+        safeSet('pro-rent', this.formatCurrency(rent));
+        safeSet('pro-groceries', this.formatCurrency(food));
+        safeSet('pro-coworking', this.formatCurrency(work));
+        safeSet('pro-utilities', this.formatCurrency(util));
+        safeSet('pro-total-col', this.formatCurrency(totalExpenses));
+
+        // Re-trigger reveal for new elements
+        if (window.observeNewElements) {
+            window.observeNewElements(proReport);
+        }
     }
 
     updateROILogic(grossAnnual, totalTaxAmount, cityData) {
@@ -506,6 +624,33 @@ class NomadBudgeterCalculator {
 
 document.addEventListener('DOMContentLoaded', () => {
     new NomadBudgeterCalculator();
+
+    // --- Scroll Reveal Logic ---
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                entry.target.style.opacity = '1';
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    // Function to observe new elements
+    window.observeNewElements = (container) => {
+        const targets = container.querySelectorAll('.metric-card, .stack-item, .upsell-panel, .hub-card, .glass-panel:not(.sidebar)');
+        targets.forEach(el => {
+            el.style.opacity = '0';
+            revealObserver.observe(el);
+        });
+    };
+
+    // Observe initial static elements
+    document.querySelectorAll('.section-container, .glass-panel, .grid-3 > div, .grid-2 > div, .expert-analysis').forEach(el => {
+        el.style.opacity = '0';
+        revealObserver.observe(el);
+    });
+
     const cookieBanner = document.getElementById('cookie-banner');
     const cookieAccept = document.getElementById('cookie-accept');
     if (localStorage.getItem('nb_cookie_accepted') === 'true' && cookieBanner) cookieBanner.classList.add('hidden');

@@ -4,101 +4,92 @@ title: 2026 Nomad Tax & Budget Trends | Nomad Budgeter
 description: Real-time data study on the best tax arbitrage and cost-of-living destinations for digital nomads in 2026.
 ---
 
-<div class="trends-container py-16 px-4">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent">
-                2026 Nomad Data Study
-            </h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-                Analyzing the tax arbitrage and cost-of-living shifts across 1,800+ global destinations.
-            </p>
-        </div>
+<div class="section-container mt-16">
+    <div class="text-center mb-16">
+        <h1 class="aura-title">2026 Nomad Data Study</h1>
+        <p class="text-dim mb-8" style="max-width: 700px; margin: 1rem auto 0; font-size: 1.2rem;">
+            Analyzing the tax arbitrage and cost-of-living shifts across {{ cities | length }}+ global destinations.
+        </p>
+    </div>
 
-        <!-- Trend Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div class="glass-card p-8 rounded-2xl border border-white/10 text-center">
-                <div class="text-3xl mb-4">🏆</div>
-                <h3 class="text-xl font-bold mb-2">Best Overall Value</h3>
-                <p class="text-gray-400">Valencia, Spain (Digital Nomad Visa)</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl border border-white/10 text-center">
-                <div class="text-3xl mb-4">💰</div>
-                <h3 class="text-xl font-bold mb-2">Highest Savings</h3>
-                <p class="text-gray-400">Dubai, UAE (0% Income Tax)</p>
-            </div>
-            <div class="glass-card p-8 rounded-2xl border border-white/10 text-center">
-                <div class="text-3xl mb-4">🚀</div>
-                <h3 class="text-xl font-bold mb-2">Trending Fast</h3>
-                <p class="text-gray-400">Bansko, Bulgaria (Low Tax + Low Cost)</p>
-            </div>
-        </div>
+    <!-- Trend Grid -->
+    <div class="grid-3 stack-on-mobile mb-16">
+        {% set valencia = cities | selectattr('slug', 'equalto', 'valencia') | first %}
+        {% set dubai = cities | selectattr('slug', 'equalto', 'dubai') | first %}
+        {% set bansko = cities | selectattr('slug', 'equalto', 'bansko') | first %}
 
-        <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 mb-16">
-            <h2 class="text-3xl font-bold mb-8">Top 10 Tax Arbitrage Winners (2026)</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead>
-                        <tr class="border-b border-white/10">
-                            <th class="py-4 px-2">City</th>
-                            <th class="py-4 px-2">Tax Rate</th>
-                            <th class="py-4 px-2">Est. Monthly Savings*</th>
-                            <th class="py-4 px-2">Visa Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-2 font-medium">Dubai, UAE</td>
-                            <td class="py-4 px-2 text-green-400">0%</td>
-                            <td class="py-4 px-2">$7,200</td>
-                            <td class="py-4 px-2">Remote Work Visa</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-2 font-medium">Lisbon, Portugal</td>
-                            <td class="py-4 px-2 text-yellow-400">15-20%</td>
-                            <td class="py-4 px-2">$4,800</td>
-                            <td class="py-4 px-2">D8 Visa</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-2 font-medium">Valencia, Spain</td>
-                            <td class="py-4 px-2 text-blue-400">15%</td>
-                            <td class="py-4 px-2">$5,100</td>
-                            <td class="py-4 px-2">Beckham Law / DNV</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-2 font-medium">Bali, Indonesia</td>
-                            <td class="py-4 px-2 text-green-400">0%*</td>
-                            <td class="py-4 px-2">$6,400</td>
-                            <td class="py-4 px-2">Remote Worker Kitas</td>
-                        </tr>
-                        <tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
-                            <td class="py-4 px-2 font-medium">Bansko, Bulgaria</td>
-                            <td class="py-4 px-2 text-green-400">10%</td>
-                            <td class="py-4 px-2">$5,900</td>
-                            <td class="py-4 px-2">EU Freelance</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <p class="text-sm text-gray-500 mt-6">*Estimated savings based on $100k annual remote income and local cost of living.</p>
+        <div class="glass-panel text-center">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 20px rgba(var(--aura-primary-rgb), 0.3));">🏆</div>
+            <h3 class="mb-4">Best Overall Value</h3>
+            <p class="text-dim">{{ valencia.name }}, {{ valencia.country }}<br><span class="text-aura-primary" style="font-size: 0.85rem; font-weight: 700;">{{ valencia.visa }}</span></p>
         </div>
+        <div class="glass-panel text-center">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.3));">💰</div>
+            <h3 class="mb-4">Highest Savings</h3>
+            <p class="text-dim">{{ dubai.name }}, {{ dubai.country }}<br><span class="text-aura-primary" style="font-size: 0.85rem; font-weight: 700;">{{ dubai.tax | percentInt }} Tax</span></p>
+        </div>
+        <div class="glass-panel text-center">
+            <div style="font-size: 3.5rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.3));">🚀</div>
+            <h3 class="mb-4">Trending Fast</h3>
+            <p class="text-dim">{{ bansko.name }}, {{ bansko.country }}<br><span class="text-aura-primary" style="font-size: 0.85rem; font-weight: 700;">Low Tax + Low Cost</span></p>
+        </div>
+    </div>
 
-        <div class="text-center">
-            <h2 class="text-3xl font-bold mb-6">Want the full raw data?</h2>
-            <p class="text-gray-400 mb-8 max-w-xl mx-auto">
-                Our team analyzes thousands of data points daily. Get the 2026 Global Tax Arbitrage Guide for a deep dive into every hub.
-            </p>
-            <a href="/#lead-magnet" class="inline-block bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">
-                Download the 2026 Tax Guide
+    <div class="glass-panel mb-16" style="padding: 2.5rem;">
+        <h2 class="mb-8">Top 10 Tax Arbitrage Winners ({{ site.year }})</h2>
+        <div class="glass-table-wrapper">
+            <table class="glass-table">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Tax Rate</th>
+                        <th>Est. Monthly Savings*</th>
+                        <th>Visa Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% set winners = cities | sort(false, false, 'tax') | slice(0, 10) %}
+                    {% for city in winners %}
+                    {% set savings = (100000 / 12) * (1 - city.tax) - city.col %}
+                    <tr>
+                        <td style="font-weight: 700; color: #fff;">{{ city.name }}, {{ city.country }}</td>
+                        <td class="{% if city.tax <= 0.1 %}positive-text{% endif %}">{{ city.tax | percentInt }}</td>
+                        <td class="positive-text" style="font-weight: 700;">{{ savings | usd }}</td>
+                        <td class="text-dim">{{ city.visa }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <p class="text-dim mt-8" style="font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 1.5rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            Estimated savings based on $100k annual remote income and local cost of living data.
+        </p>
+    </div>
+
+    <div class="mb-16">
+        {% include "partials/relocation-toolkit.njk" %}
+    </div>
+
+    <div class="glass-panel text-center mb-16" style="padding: 4rem 2rem; background: radial-gradient(circle at center, rgba(var(--aura-primary-rgb), 0.1) 0%, transparent 70%);">
+        <h2 class="mb-6" style="font-size: 2.5rem;">Want the full raw data?</h2>
+        <p class="text-dim mb-8" style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.1rem;">
+            Our team analyzes thousands of data points daily. Get the {{ site.year }} Global Tax Arbitrage Guide for a deep dive into every hub.
+        </p>
+        <a href="/#lead-magnet" class="action-btn" style="padding: 1.25rem 3rem; font-size: 1.1rem;">
+            Download the {{ site.year }} Tax Guide
+        </a>
+    </div>
+
+    <!-- Explore More Silos -->
+    <div class="mt-16 pt-16 border-t" style="border-color: rgba(255,255,255,0.05);">
+        <h3 class="text-center mb-12">Compare More Destinations</h3>
+        <div class="grid-4 stack-on-mobile" style="gap: 1rem;">
+            {% for city in cities | slice(0, 12) %}
+            <a href="/cities/{{ city.slug }}/" class="text-dim" style="font-size: 0.9rem; text-decoration: none; padding: 0.5rem; display: block; transition: color 0.3s ease;">
+                {{ city.name }} Budget Calculator →
             </a>
+            {% endfor %}
         </div>
     </div>
 </div>
-
-<style>
-.glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-</style>

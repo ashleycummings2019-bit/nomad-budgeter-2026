@@ -10,56 +10,56 @@ eleventyComputed:
   pageDescription: "{{ comp.description }}"
 ---
 
-<div class="comparison-container">
+<div class="section-container mt-16">
     {# Hero #}
-    <div class="comparison-hero">
-        <div class="badge-2026" style="margin-bottom: 1rem;">
+    <div class="comparison-hero text-center mb-16">
+        <div class="badge-2026 mb-4">
             <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
             2026 Strategic Relocation Analysis
         </div>
-        <h1>{{ comp.city.name }} vs. {{ comp.country.name }}<br>Lifestyle vs. Visa Comparison</h1>
-        <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">⚖️ {{ comp.description }}</p>
+        <h1 class="aura-title">{{ comp.city.name }} vs. {{ comp.country.name }}<br>Lifestyle vs. Visa Comparison</h1>
+        <p class="text-dim" style="font-size: 1.15rem; max-width: 800px; margin: 1rem auto 0;">⚖️ {{ comp.description }}</p>
     </div>
 
     {# Side-by-Side Cards #}
     <div class="comparison-grid">
         {# City Card #}
         <div class="comp-card" style="border-top: 6px solid var(--aura-primary);">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <div class="flex-between mb-6">
                 <h3 style="margin: 0;">{{ comp.city.name }}, {{ comp.city.country }}</h3>
             </div>
             <div class="stat-row"><span>Type:</span> <strong>Specific City Base</strong></div>
-            <div class="stat-row"><span>Monthly COL:</span> <strong>${{ comp.city.col }}</strong></div>
-            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.city.rent }}/mo</strong></div>
-            <div class="stat-row"><span>Local Tax Rate:</span> <strong>{{ comp.city.tax * 100 }}%</strong></div>
+            <div class="stat-row"><span>Monthly COL:</span> <strong>${{ comp.city.col | localeString }}</strong></div>
+            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.city.rent | localeString }}/mo</strong></div>
+            <div class="stat-row"><span>Local Tax Rate:</span> <strong>{{ comp.city.tax | percentInt }}</strong></div>
             <div class="stat-row"><span>Nomad Score:</span> <strong>{{ comp.city.score }}/100</strong></div>
             
             <div class="verdict-box" style="background: rgba(var(--aura-primary-rgb), 0.05);">
                 <p><strong>Ideal for: {{ comp.city.intro | truncate(60) }}</strong></p>
             </div>
 
-            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Top Reason to Choose {{ comp.city.name }}</h4>
-            <p style="font-size: 0.9rem; color: var(--text-dim);">Living in {{ comp.city.name }} provides a verified nomad community, specific neighborhood vibes, and immediate access to {{ comp.city.name }}'s unique infrastructure.</p>
+            <h4 class="mt-8 mb-2">Top Reason to Choose {{ comp.city.name }}</h4>
+            <p class="text-dim" style="font-size: 0.9rem;">Living in {{ comp.city.name }} provides a verified nomad community, specific neighborhood vibes, and immediate access to {{ comp.city.name }}'s unique infrastructure.</p>
         </div>
 
         {# Country Card #}
         <div class="comp-card" style="border-top: 6px solid var(--aura-secondary);">
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
-                <span style="font-size: 2rem;">{{ comp.country.code | countryEmoji }}</span>
+            <div class="flex-between mb-6">
                 <h3 style="margin: 0;">{{ comp.country.name }} (Full Country)</h3>
+                <span style="font-size: 2rem;">{{ comp.country.code | countryEmoji }}</span>
             </div>
             <div class="stat-row"><span>Type:</span> <strong>National Visa Program</strong></div>
             <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.country.visaName }}</strong></div>
-            <div class="stat-row"><span>National Tax:</span> <strong>{{ comp.country.tax * 100 }}%</strong></div>
-            <div class="stat-row"><span>Min. Income:</span> <strong>${{ comp.country.minIncomeMonthly }}/mo</strong></div>
+            <div class="stat-row"><span>National Tax:</span> <strong>{{ comp.country.tax | percentInt }}</strong></div>
+            <div class="stat-row"><span>Min. Income:</span> <strong>${{ comp.country.minIncomeMonthly | localeString }}/mo</strong></div>
             <div class="stat-row"><span>Visa Length:</span> <strong>{{ comp.country.visaDuration }}</strong></div>
 
             <div class="verdict-box" style="background: rgba(var(--aura-secondary-rgb), 0.05);">
                 <p><strong>Focus: National Residency & Tax</strong></p>
             </div>
 
-            <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem;">Benefits of {{ comp.country.name }}</h4>
-            <ul style="font-size: 0.9rem; color: var(--text-dim); padding-left: 1.2rem;">
+            <h4 class="mt-8 mb-2">Benefits of {{ comp.country.name }}</h4>
+            <ul class="text-dim" style="font-size: 0.9rem; padding-left: 1.2rem;">
                 {% for highlight in comp.country.highlights %}
                 <li>{{ highlight }}</li>
                 {% endfor %}
@@ -68,23 +68,23 @@ eleventyComputed:
     </div>
 
     {# Expert Analysis #}
-    <div class="expert-analysis">
-        <h2>Expert Verdict: Choosing Between a City Base or a Country Strategy</h2>
-        <p>Choosing <strong>{{ comp.city.name }}</strong> means committing to a specific urban lifestyle with known costs of ${{ comp.city.col }}/month. This is best for nomads who value community and established coworking hubs.</p>
-        <p style="margin-top: 1.5rem;">However, <strong>{{ comp.country.name }}</strong>'s {{ comp.country.visaName }} might offer better long-term tax residency benefits ({{ comp.country.tax * 100 }}% flat rate) and the flexibility to move between multiple cities like {% for c in comp.country.cities %}{{ c }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
+    <div class="expert-analysis mt-16">
+        <h2 class="mb-8">Expert Verdict: Choosing Between a City Base or a Country Strategy</h2>
+        <p>Choosing <strong>{{ comp.city.name }}</strong> means committing to a specific urban lifestyle with known costs of ${{ comp.city.col | localeString }}/month. This is best for nomads who value community and established coworking hubs.</p>
+        <p class="mt-6">However, <strong>{{ comp.country.name }}</strong>'s {{ comp.country.visaName }} might offer better long-term tax residency benefits ({{ comp.country.tax | percentInt }} flat rate) and the flexibility to move between multiple cities like {% for c in comp.country.cities %}{{ c }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
         
-        <div class="glass-panel" style="margin-top: 2rem; border-left: 4px solid var(--aura-accent);">
+        <div class="glass-panel mt-8" style="border-left: 4px solid var(--aura-accent);">
             <p style="margin-bottom: 0;"><strong>Relocation Tip:</strong> If you love the vibe of {{ comp.city.name }} but need the legal stability of {{ comp.country.name }}, check if there is a tax treaty between {{ comp.city.country }} and {{ comp.country.name }} before making your final move.</p>
         </div>
 
         {# Nomad Verdict #}
-        <div class="glass-panel" style="margin-top: 2rem; border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);">
-            <div class="expert-verdict-content">
+        <div class="glass-panel mt-8" style="border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);">
+            <div class="expert-verdict-content" style="display: flex; gap: 1.5rem;">
                 <div class="expert-icon" style="font-size: 2.5rem;">🏗️</div>
                 <div>
-                    <h3 style="color: #f59e0b; margin-bottom: 0.5rem;">2026 Hybrid Strategy</h3>
-                    <p style="font-style: italic; color: var(--text-dim);">"The smartest move for 2026? Use the <strong>{{ comp.country.name }} {{ comp.country.visaName }}</strong> to secure legal residency, but set up your primary base in <strong>{{ comp.city.name }}</strong>. This gives you the high-intensity networking of the city with the national-level tax benefits of the visa program."</p>
-                    <div style="margin-top: 1rem;" class="stack-on-mobile">
+                    <h3 style="color: #f59e0b;" class="mb-4">2026 Hybrid Strategy</h3>
+                    <p style="font-style: italic;" class="text-dim">"The smartest move for 2026? Use the <strong>{{ comp.country.name }} {{ comp.country.visaName }}</strong> to secure legal residency, but set up your primary base in <strong>{{ comp.city.name }}</strong>. This gives you the high-intensity networking of the city with the national-level tax benefits of the visa program."</p>
+                    <div class="mt-6 stack-on-mobile" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                         <div class="badge-2026" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">🏛️ National Protection</div>
                         <div class="badge-2026" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">☕ City Infrastructure</div>
                         <div class="badge-2026" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">🌍 Global Portability</div>
@@ -93,21 +93,9 @@ eleventyComputed:
             </div>
         </div>
 
-        {# Partner Recommendations #}
-        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem;">Relocation Toolkit</h3>
-        <div class="partner-grid">
-            <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.lexidy.name }}</h4>
-                <p>{{ site.affiliates.lexidy.desc }}</p>
-            </a>
-            <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.safetywing.name }}</h4>
-                <p>{{ site.affiliates.safetywing.desc }}</p>
-            </a>
-            <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="noopener noreferrer" class="partner-card">
-                <h4>{{ site.affiliates.wise.name }}</h4>
-                <p>{{ site.affiliates.wise.desc }}</p>
-            </a>
+        {# Relocation Toolkit #}
+        <div class="mt-16">
+            {% include "partials/relocation-toolkit.njk" %}
         </div>
     </div>
 
@@ -115,8 +103,8 @@ eleventyComputed:
     {% include "partials/lead-magnet.njk" %}
 
     {# Related Comparisons #}
-    <div style="margin-top: 4rem;">
-        <h2 style="text-align: center; margin-bottom: 2rem;">Explore More Options</h2>
+    <div class="mt-16">
+        <h2 class="text-center mb-8">Explore More Options</h2>
         <div class="partner-grid">
             {% for related in cityCountryComparisons | slice(0, 13) %}
             {% if related.slug != comp.slug %}

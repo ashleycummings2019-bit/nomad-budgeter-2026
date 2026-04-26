@@ -10,27 +10,27 @@ eleventyComputed:
   pageDescription: "Complete guide to the 2026 {{ country.name }} {{ country.visaName }}. Calculate your taxes at a {{ country.tax | percentInt }} rate and compare top cities."
 ---
 
-<div class="comparison-container">
+<div class="section-container mt-16">
     {# Hero #}
-    <div class="comparison-hero">
-        <div class="badge-2026" style="margin-bottom: 1rem;">
+    <div class="comparison-hero text-center mb-16">
+        <div class="badge-2026 mb-4">
             <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
             Verified {{ site.year }} Visa Guide
         </div>
-        <h1>{{ country.name }} Digital Nomad Visa<br>&amp; Tax Guide</h1>
-        <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">Everything you need to know about the {{ country.visaName }} and tax residency in {{ site.year }}.</p>
+        <h1 class="aura-title">{{ country.name }} Digital Nomad Visa<br>&amp; Tax Guide</h1>
+        <p class="text-dim mb-8" style="font-size: 1.15rem; max-width: 700px; margin: 1rem auto 0;">Everything you need to know about the {{ country.visaName }} and tax residency in {{ site.year }}.</p>
 
         {# Trust Signals #}
-        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; margin-top: 2rem; opacity: 0.8; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
+        <div class="flex-center" style="gap: 2rem; opacity: 0.8; flex-wrap: wrap;">
+            <div class="flex-center" style="gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
                 <span style="color: #f59e0b; font-size: 1rem;">★★★★★</span>
                 <span>Trusted by {{ site.socialProof }}</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
+            <div class="flex-center" style="gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 <span>GDPR & {{ site.year }} Compliant</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
+            <div class="flex-center" style="gap: 0.5rem; font-size: 0.85rem; color: var(--text-dim);">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                 <span>Updated {{ site.dataLastVerified }}</span>
             </div>
@@ -38,11 +38,11 @@ eleventyComputed:
     </div>
 
     {# Visa Summary Stats #}
-    <div class="metric-grid" style="margin-bottom: 3rem;">
+    <div class="metric-grid mb-16">
         <div class="metric-card">
             <div class="metric-label">Nomad Visa Tax Rate</div>
-            <div class="metric-value highlight">{{ country.tax * 100 }}%</div>
-            <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 0.5rem;">{{ country.taxType }}</p>
+            <div class="metric-value highlight">{{ country.tax | percentInt }}</div>
+            <p class="text-dim mt-2" style="font-size: 0.8rem;">{{ country.taxType }}</p>
         </div>
         <div class="metric-card">
             <div class="metric-label">Minimum Income Required</div>
@@ -60,39 +60,44 @@ eleventyComputed:
 
     {# Expert Analysis #}
     <div class="expert-analysis">
-        <h2>Is {{ country.name }} Right for You?</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;">{{ country.intro }}</p>
+        <h2 class="mb-6">Is {{ country.name }} Right for You?</h2>
+        <p class="mb-8" style="font-size: 1.1rem; line-height: 1.6;">{{ country.intro }}</p>
 
-        <h3>Why Nomads Choose {{ country.name }}</h3>
-        <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">
-            {% for highlight in country.highlights %}
-            <li style="margin-bottom: 0.5rem;">{{ highlight }}</li>
-            {% endfor %}
-        </ul>
-
-        <h3>Visa Requirements</h3>
-        <ul style="margin-left: 1.5rem; margin-bottom: 2rem; color: var(--text-main);">
-            {% for req in country.requirements %}
-            <li style="margin-bottom: 0.5rem;">{{ req }}</li>
-            {% endfor %}
-        </ul>
+        <div class="grid-2 stack-on-mobile mb-16">
+            <div class="glass-panel">
+                <h3 class="mb-4">Why Nomads Choose {{ country.name }}</h3>
+                <ul class="text-dim" style="padding-left: 1.5rem;">
+                    {% for highlight in country.highlights %}
+                    <li class="mb-2">{{ highlight }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="glass-panel">
+                <h3 class="mb-4">Visa Requirements</h3>
+                <ul class="text-dim" style="padding-left: 1.5rem;">
+                    {% for req in country.requirements %}
+                    <li class="mb-2">{{ req }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
 
         {# Long-form Guide Content (Phase 3) #}
         {% if country.guide %}
-        <div class="guide-sections" style="margin-top: 4rem;">
+        <div class="guide-sections mt-16">
             
             {# Roadmap #}
-            <div class="glass-panel" style="margin-bottom: 3rem; padding: 2rem;">
-                <h3 style="margin-top: 0; margin-bottom: 1.5rem; color: #fff;"><span style="color: var(--aura-primary);">01.</span> Step-by-Step Application Roadmap</h3>
+            <div class="glass-panel mb-12" style="padding: 2.5rem;">
+                <h3 class="mb-8" style="margin-top: 0;"><span class="text-aura-primary">01.</span> Step-by-Step Application Roadmap</h3>
                 <div class="roadmap-steps">
                     {% for step in country.guide.applicationSteps %}
-                    <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
-                        <div style="flex: 0 0 40px; height: 40px; background: rgba(139, 92, 246, 0.1); border: 1px solid var(--aura-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--aura-primary);">
+                    <div class="flex" style="gap: 1.5rem; margin-bottom: 2rem;">
+                        <div class="flex-center" style="flex: 0 0 44px; height: 44px; background: rgba(var(--aura-primary-rgb), 0.1); border: 1px solid var(--aura-primary); border-radius: 50%; font-weight: bold; color: var(--aura-primary);">
                             {{ step.step }}
                         </div>
                         <div>
-                            <h4 style="margin: 0; color: #fff;">{{ step.title }}</h4>
-                            <p style="margin-top: 0.25rem; font-size: 0.95rem; color: var(--text-dim); line-height: 1.5;">{{ step.desc }}</p>
+                            <h4 class="mb-1" style="color: #fff;">{{ step.title }}</h4>
+                            <p class="text-dim" style="font-size: 0.95rem; line-height: 1.6;">{{ step.desc }}</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -100,37 +105,37 @@ eleventyComputed:
             </div>
 
             {# Checklist #}
-            <div style="margin-bottom: 3rem;">
-                <h3 style="margin-bottom: 1.5rem; color: #fff;"><span style="color: var(--aura-primary);">02.</span> Required Documents Checklist</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <div class="mb-12">
+                <h3 class="mb-8"><span class="text-aura-primary">02.</span> Required Documents Checklist</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;">
                     {% for item in country.guide.documentChecklist %}
-                    <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <div class="flex" style="align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span style="font-size: 0.95rem; color: var(--text-main);">{{ item }}</span>
+                        <span class="text-main" style="font-size: 0.95rem;">{{ item }}</span>
                     </div>
                     {% endfor %}
                 </div>
             </div>
 
             {# Tax Deep Dive #}
-            <div class="glass-panel" style="margin-bottom: 3rem; padding: 2.5rem; border-left: 4px solid var(--aura-primary); background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(15, 23, 42, 0.5));">
-                <h3 style="margin-top: 0; margin-bottom: 1rem; color: #fff;"><span style="color: var(--aura-primary);">03.</span> Deep-Dive: Tax Strategy</h3>
-                <p style="line-height: 1.7; color: var(--text-main); font-size: 1.05rem;">{{ country.guide.taxDeepDive }}</p>
-                <div style="margin-top: 1.5rem; padding: 1.25rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; font-size: 0.95rem; border: 1px solid rgba(139, 92, 246, 0.2);">
-                    <strong style="color: var(--aura-primary);">Relocation Hack:</strong> Most successful nomads in {{ country.name }} start their application 3 months before their intended arrival to lock in tax benefits.
+            <div class="glass-panel mb-12" style="padding: 2.5rem; border-left: 4px solid var(--aura-primary); background: linear-gradient(135deg, rgba(var(--aura-primary-rgb), 0.05), rgba(15, 23, 42, 0.5));">
+                <h3 class="mb-4" style="margin-top: 0;"><span class="text-aura-primary">03.</span> Deep-Dive: Tax Strategy</h3>
+                <p class="text-main" style="line-height: 1.7; font-size: 1.05rem;">{{ country.guide.taxDeepDive }}</p>
+                <div class="mt-8" style="padding: 1.5rem; background: rgba(var(--aura-primary-rgb), 0.1); border-radius: 12px; font-size: 0.95rem; border: 1px solid rgba(var(--aura-primary-rgb), 0.2);">
+                    <strong class="text-aura-primary">Relocation Hack:</strong> Most successful nomads in {{ country.name }} start their application 3 months before their intended arrival to lock in tax benefits.
                 </div>
             </div>
 
             {# FAQ #}
-            <div style="margin-bottom: 3rem;">
-                <h3 style="margin-bottom: 1.5rem; color: #fff;"><span style="color: var(--aura-primary);">04.</span> Frequently Asked Questions</h3>
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div class="mb-16">
+                <h3 class="mb-8"><span class="text-aura-primary">04.</span> Frequently Asked Questions</h3>
+                <div class="flex flex-column" style="gap: 1.5rem;">
                     {% for faq in country.guide.faq %}
-                    <div class="glass-panel" style="padding: 1.5rem;">
-                        <h4 style="color: #fff; margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.5rem;">
-                            <span style="color: var(--aura-primary);">Q:</span> {{ faq.q }}
+                    <div class="glass-panel" style="padding: 2rem;">
+                        <h4 class="mb-4 flex" style="align-items: flex-start; gap: 0.5rem; color: #fff;">
+                            <span class="text-aura-primary">Q:</span> {{ faq.q }}
                         </h4>
-                        <p style="color: var(--text-dim); padding-left: 1.5rem; margin: 0; font-size: 0.95rem;">{{ faq.a }}</p>
+                        <p class="text-dim" style="padding-left: 1.5rem; font-size: 0.95rem; line-height: 1.6;">{{ faq.a }}</p>
                     </div>
                     {% endfor %}
                 </div>
@@ -139,34 +144,36 @@ eleventyComputed:
         </div>
         {% endif %}
 
-        <div class="verdict-box" style="margin-top: 2rem;">
+        <div class="verdict-box mt-8">
             <p><strong>Currency:</strong> {{ country.currency }} | <strong>Language:</strong> {{ country.language }}</p>
         </div>
 
-        {% set city = { name: country.name, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency } %}
-        <div style="margin-top: 3rem;">
+        {# Relocation Toolkit #}
+        <div class="mt-16">
+            {% set country_data = { name: country.name, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency, isEurope: (country.continent == "Europe") } %}
+            {% set country = country_data %}
             {% include "partials/relocation-toolkit.njk" %}
         </div>
 
         {# Pro Report Upsell #}
-        <div id="pro-upsell" class="glass-panel" style="margin-top: 3rem; border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5));">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 250px;">
-                    <div class="badge-2026" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); margin-bottom: 0.5rem;">PREMIUM REPORT</div>
-                    <h3 style="color: #fff; margin-bottom: 0.5rem;">Unlock the Full {{ country.name }} Tax & Legal Strategy</h3>
-                    <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 1.2rem; margin-bottom: 1rem;">
-                        <li>Detailed 2026 {{ country.name }} Tax Optimization Guide</li>
-                        <li>Full Breakdown of Health Insurance & Banking Requirements</li>
-                        <li>Local City Cost Comparisons & Neighborhood Heatmaps</li>
-                        <li>Step-by-Step Visa Application Roadmap & Lawyer Contacts</li>
+        <div id="pro-upsell" class="glass-panel mt-16" style="border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5)); overflow: hidden;">
+            <div class="grid-2 stack-on-mobile" style="align-items: center; gap: 3rem;">
+                <div style="padding: 1rem;">
+                    <div class="badge-2026 mb-4" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">PREMIUM GUIDE</div>
+                    <h2 class="mb-4" style="color: #fff; font-size: 2.2rem;">Unlock the Full {{ country.name }} Tax & Legal Strategy</h2>
+                    <ul class="text-dim mb-8" style="padding-left: 1.2rem; font-size: 0.95rem;">
+                        <li class="mb-2">Detailed 2026 {{ country.name }} Tax Optimization Guide</li>
+                        <li class="mb-2">Full Breakdown of Health Insurance & Banking Requirements</li>
+                        <li class="mb-2">Local City Cost Comparisons & Neighborhood Heatmaps</li>
+                        <li class="mb-2">Step-by-Step Visa Application Roadmap & Lawyer Contacts</li>
                     </ul>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">$19</div>
-                        <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro Guide →</button>
+                    <div class="flex" style="align-items: center; gap: 1.5rem;">
+                        <div style="font-size: 2.5rem; font-weight: 900; color: #fff;">$19</div>
+                        <button id="unlock-pro-btn" class="action-btn" style="background: #f59e0b; color: #000; flex: 1; border-radius: 12px; font-weight: 800;">Unlock Pro Guide →</button>
                     </div>
                 </div>
-                <div style="flex: 0 0 160px; display: flex; justify-content: center;">
-                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="flex-center">
+                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" style="max-width: 320px; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); transform: rotate(3deg);">
                 </div>
             </div>
         </div>
@@ -176,18 +183,34 @@ eleventyComputed:
     {% include "partials/lead-magnet.njk" %}
 
     {# Top Cities in Country #}
-    <h2 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">Top Nomad Cities in {{ country.name }}</h2>
-    <div class="partner-grid">
-        {% for citySlug in country.cities %}
-            {% for c in cities %}
-                {% if c.slug == citySlug %}
-                <a href="/cities/{{ c.slug }}/" class="partner-card">
-                    <h4>{{ c.name }}</h4>
-                    <p>Rent: ${{ c.rent }}/mo | Score: {{ c.score }}</p>
-                    <p style="font-size: 0.8rem; color: var(--aura-primary); margin-top: 0.5rem;">Calculate Budget →</p>
+    <div class="mt-16">
+        <h2 class="text-center mb-8">Top Nomad Cities in {{ country.name }}</h2>
+        <div class="partner-grid">
+            {% for citySlug in country.cities %}
+                {% for c in cities %}
+                    {% if c.slug == citySlug %}
+                    <a href="/cities/{{ c.slug }}/" class="partner-card">
+                        <h4>{{ c.name }}</h4>
+                        <p>Rent: ${{ c.rent | localeString }}/mo | Score: {{ c.score }}</p>
+                        <p class="mt-4" style="font-size: 0.8rem; color: var(--aura-primary); font-weight: 700;">Calculate Budget →</p>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+    {# Other Low-Tax Destinations #}
+    <div class="mt-16 pt-16 border-t" style="border-color: rgba(255,255,255,0.05);">
+        <h3 class="text-center mb-8">Other Low-Tax Destinations in {{ country.continent }}</h3>
+        <div class="flex flex-wrap flex-center" style="gap: 1rem;">
+            {% for other in countries | selectattr('continent', 'equalto', country.continent) | slice(0, 5) %}
+                {% if other.slug != country.slug %}
+                <a href="/visas/{{ other.slug }}/" class="glass-panel" style="padding: 1rem 2rem; border-radius: 50px; font-size: 0.9rem; text-decoration: none; color: var(--text-dim); transition: all 0.3s ease;">
+                    {{ other.name }} ({{ other.tax | percentInt }} Tax)
                 </a>
                 {% endif %}
             {% endfor %}
-        {% endfor %}
+        </div>
     </div>
 </div>

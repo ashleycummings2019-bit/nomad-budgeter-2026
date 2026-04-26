@@ -1,20 +1,21 @@
 {# Relocation Toolkit Partial - Contextual Affiliate Links #}
 <section class="relocation-toolkit expert-analysis">
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-        <h2 style="margin: 0;">Your {{ city.name }} Relocation Toolkit</h2>
-        <div class="badge-2026" style="background: rgba(139, 92, 246, 0.1); color: var(--aura-primary); border-color: rgba(139, 92, 246, 0.2); font-size: 0.65rem;">
+    <div class="flex-between mb-6">
+        <h2 style="margin: 0;">Your {% if city %}{{ city.name }}{% elif country %}{{ country.name }}{% else %}Digital Nomad{% endif %} Relocation Toolkit</h2>
+        <div class="badge-2026" style="background: rgba(var(--aura-primary-rgb), 0.1); color: var(--aura-primary);">
             PARTNER VERIFIED
         </div>
     </div>
-    <p style="margin-bottom: 2rem;">Planning your move to {{ city.country }}? Here are the verified services our community uses to get set up.</p>
+    <p class="mb-8">Planning your move {% if city %}to {{ city.country }}{% elif country %}to {{ country.name }}{% endif %}? Here are the verified services our community uses to get set up.</p>
     
     <div class="toolkit-grid">
-        {% if city.continent == "Europe" %}
+        {% set isEurope = (city and city.continent == "Europe") or (country and country.continent == "Europe") or (country and country.isEurope) %}
+        {% if isEurope %}
         <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">🏛️</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.lexidy.name }}</h4>
-                <p>Need help with the {{ city.visa }}? Get expert legal assistance for your European move.</p>
+                <p>Need help with visa paperwork? Get expert legal assistance for your move to {% if city %}{{ city.country }}{% else %}{{ country.name }}{% endif %}.</p>
                 <span class="toolkit-cta">Consult Lawyers &rarr;</span>
             </div>
         </a>
@@ -24,27 +25,40 @@
             <div class="toolkit-icon">🛡️</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.safetywing.name }}</h4>
-                <p>Mandatory health insurance that meets the requirements for most nomad visas, including {{ city.country }}.</p>
+                <p>Mandatory health insurance that meets requirements for nomad visas in {% if city %}{{ city.country }}{% elif country %}{{ country.name }}{% else %}most countries{% endif %}.</p>
                 <span class="toolkit-cta">Get Covered &rarr;</span>
             </div>
         </a>
 
-        {% if city.continent == "Asia" %}
-        <a href="{{ site.affiliates.agoda.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
-            <div class="toolkit-icon">🏖️</div>
-            <div class="toolkit-content">
-                <h4>{{ site.affiliates.agoda.name }}</h4>
-                <p>Find the best monthly rental deals and long-term stays in {{ city.name }}.</p>
-                <span class="toolkit-cta">Find Housing &rarr;</span>
-            </div>
-        </a>
+        {% if city or country %}
+            {% set isAsia = (city and city.continent == "Asia") or (country and country.continent == "Asia") %}
+            {% if isAsia %}
+            <a href="{{ site.affiliates.agoda.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+                <div class="toolkit-icon">🏖️</div>
+                <div class="toolkit-content">
+                    <h4>{{ site.affiliates.agoda.name }}</h4>
+                    <p>Find the best monthly rental deals and long-term stays in {% if city %}{{ city.name }}{% else %}{{ country.name }}{% endif %}.</p>
+                    <span class="toolkit-cta">Find Housing &rarr;</span>
+                </div>
+            </a>
+            {% else %}
+            <a href="{{ site.affiliates.blueground.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+                <div class="toolkit-icon">🏙️</div>
+                <div class="toolkit-content">
+                    <h4>{{ site.affiliates.blueground.name }}</h4>
+                    <p>Move-in ready furnished apartments in premium {% if city %}{{ city.name }}{% else %}{{ country.name }}{% endif %} neighborhoods.</p>
+                    <span class="toolkit-cta">Find Apartments &rarr;</span>
+                </div>
+            </a>
+            {% endif %}
         {% else %}
+        {# Global Fallback for Housing #}
         <a href="{{ site.affiliates.blueground.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">🏙️</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.blueground.name }}</h4>
-                <p>Move-in ready furnished apartments in premium {{ city.name }} neighborhoods.</p>
-                <span class="toolkit-cta">Find Apartments &rarr;</span>
+                <p>Premium furnished apartments in the world's most popular nomad hubs.</p>
+                <span class="toolkit-cta">Explore Cities &rarr;</span>
             </div>
         </a>
         {% endif %}
@@ -53,7 +67,7 @@
             <div class="toolkit-icon">💸</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.wise.name }}</h4>
-                <p>Transfer your salary to {{ city.currency }} with the lowest exchange fees.</p>
+                <p>Transfer your funds {% if city %}to {{ city.currency }}{% elif country %}to {{ country.currency }}{% else %}globally{% endif %} with the lowest exchange fees.</p>
                 <span class="toolkit-cta">Open Account &rarr;</span>
             </div>
         </a>

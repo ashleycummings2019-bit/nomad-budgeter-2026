@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /legacy/
-Disallow: /tmp/
-
-Sitemap: https://nomadbudgeter.com/sitemap.xml

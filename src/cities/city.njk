@@ -12,29 +12,29 @@ eleventyComputed:
 ---
 
 {# City Hero Section #}
-<div class="city-hero">
-    <div class="badge-2026" style="margin-bottom: 1rem;">
-        <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
-        Verified {{ site.year }} Data
+<div class="city-hero section-container">
+    <div class="badge-2026 mb-4">
+        <span class="badge-dot"></span>
+        Verified {{ site.year }} Market Data
     </div>
-    <h1>{{ city.name }} Digital Nomad<br>Tax & Budget Calculator</h1>
-    <p style="color: var(--text-dim); font-size: 1.15rem; margin-top: 1rem;">{{ city.country }} · {{ city.visa }} · {{ city.tax * 100 }}% Tax Rate</p>
+    <h1 class="aura-title large-title">{{ city.name }} Nomad Tax<br>& Budget Calculator</h1>
+    <p class="text-dim subtitle-text">{{ city.country }} · {{ city.visa }} · {{ city.tax * 100 }}% Nomad Tax Rate</p>
 
-    <div class="city-highlights">
+    <div class="city-highlights mt-6">
         {% for highlight in city.highlights %}
         <span class="highlight-chip">{{ highlight }}</span>
         {% endfor %}
     </div>
 </div>
 
-{# City Introduction (unique per page — prevents thin content) #}
-<div class="comparison-container">
-    <div class="expert-analysis" style="margin-top: 2rem;">
-        <h2 style="color: var(--aura-primary); margin-bottom: 1rem;">{{ city.name }} for Digital Nomads in {{ site.year }}</h2>
-        <p style="color: var(--text-main);">{{ city.intro }}</p>
+{# City Introduction #}
+<div class="section-container mt-16">
+    <div class="expert-analysis glass-panel p-8">
+        <h2 class="aura-title mb-6">{{ city.name }} for Digital Nomads in {{ site.year }}</h2>
+        <p class="text-main">{{ city.intro }}</p>
 
         {# Key Stats Grid #}
-        <div class="metric-grid" style="margin-top: 2rem;">
+        <div class="metric-grid mt-8">
             <div class="metric-card">
                 <div class="metric-label">Monthly Cost of Living</div>
                 <div class="metric-value highlight">${{ city.col | localeString }}</div>
@@ -45,37 +45,43 @@ eleventyComputed:
             </div>
             <div class="metric-card">
                 <div class="metric-label">Nomad Visa Tax Rate</div>
-                <div class="metric-value {% if city.tax == 0 %}positive{% endif %}">{{ city.tax * 100 }}%</div>
+                <div class="metric-value {% if city.tax == 0 %}positive-text{% endif %}">{{ city.tax * 100 }}%</div>
             </div>
             <div class="metric-card">
-                <div class="metric-label">Minimum Income Required</div>
-                <div class="metric-value">${{ city.visaMinIncome | localeString }}/mo</div>
+                <div class="metric-label">Min. Annual Income</div>
+                <div class="metric-value">${{ (city.visaMinIncome * 12) | localeString }}</div>
             </div>
         </div>
 
-        {# Nomad Score #}
-        <div style="text-align: center; margin-top: 2rem; padding: 2rem; background: rgba(15,23,42,0.5); border-radius: 20px; border: 1px solid var(--glass-border);">
-            <div class="metric-label">Nomad Score</div>
-            <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #fff, var(--aura-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">{{ city.score }}/100</div>
+        {# Nomad Score Panel #}
+        <div class="score-panel mt-8">
+            <div class="metric-label">Aura Financial Score</div>
+            <div class="score-value highlight">{{ city.score }}/100</div>
+            <p class="text-dim text-sm">Based on tax efficiency, CoL, and 2026 quality of life indices.</p>
         </div>
     </div>
 </div>
 
-{# Calculator Widget (prefilled with this city) #}
-<div class="app-container" style="margin-top: 4rem;">
+{# Calculator Widget #}
+<div class="app-container mt-16">
     {% set prefillCity = city.name %}
     {% include "partials/calculator.njk" %}
 
-    <main id="results-panel" class="glass-panel hidden">
+    <section id="results-panel" class="glass-panel hidden">
         <div class="results-header">
-            <div>
-                <h2>Financial Analysis</h2>
-                <p id="city-badge">{{ city.name }}, {{ city.country }}</p>
+            <div class="header-info">
+                <h2 class="aura-title">Personalized Analysis</h2>
+                <div class="header-meta">
+                    <p id="city-badge" class="city-badge">{{ city.name }}, {{ city.country }}</p>
+                    <span class="meta-dot"></span>
+                    <p class="trust-indicator">Verified for 2026</p>
+                </div>
             </div>
             <div class="aura-score" id="aura-ring">
                 <span id="aura-value">{{ city.score }}</span>
             </div>
         </div>
+
         <div class="metric-grid">
             <div class="metric-card">
                 <div class="metric-label">Take-Home Pay (Monthly)</div>
@@ -94,22 +100,24 @@ eleventyComputed:
                 <div class="metric-value positive" id="res-savings">$0</div>
             </div>
         </div>
-        <div id="visa-roi-card" class="metric-card hidden" style="margin-top: 1.5rem; width: 100%; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(15, 23, 42, 0.5)); border-color: #10b981;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <div class="metric-label" style="color: #10b981;">Visa ROI Tracker</div>
-                    <p style="font-size: 0.85rem; color: var(--text-dim);">Time to recover visa & setup costs via tax savings.</p>
+
+        <div id="visa-roi-card" class="metric-card roi-tracker hidden mt-6">
+            <div class="flex-between mb-4">
+                <div class="roi-info">
+                    <div class="metric-label accent-color">Visa ROI Tracker</div>
+                    <p class="roi-desc">Time to recover visa & setup costs via tax savings.</p>
                 </div>
-                <div style="text-align: right;">
+                <div class="roi-stats">
                     <div class="metric-value positive" id="res-payback">0 Months</div>
-                    <div style="font-size: 0.8rem; color: #10b981; font-weight: 600;" id="res-roi-savings">+$0 / yr</div>
+                    <div class="roi-yearly-savings" id="res-roi-savings">+$0 / yr</div>
                 </div>
             </div>
+            <a href="https://citizenremote.com/?ref=nomadbudgeter" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for {{ city.name }} Visa →</a>
         </div>
 
-        {# Success Stack (Affiliates) #}
-        <div style="margin-top: 2rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 1rem; color: var(--text-main);">Your Nomad Success Stack</h3>
+        {# Success Stack #}
+        <div class="success-stack-section mt-8">
+            <h3 class="section-subtitle">Your {{ city.name }} Success Stack</h3>
             <div class="stack-grid">
                 <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
                     <div class="stack-icon">🛡️</div>
@@ -148,67 +156,96 @@ eleventyComputed:
                 </a>
             </div>
         </div>
-        <div class="metric-card" style="margin-top: 1.5rem; width: 100%;">
+
+        <div class="metric-card commentary-box mt-6">
             <div class="metric-label">Budget Commentary</div>
-            <p id="aura-commentary" style="line-height: 1.6; color: var(--text-main);"></p>
+            <p id="aura-commentary" class="commentary-text"></p>
         </div>
 
+        {# Pro Report (Premium View) #}
+        {% include "partials/pro-report.njk" %}
+
         {# Pro Report Upsell #}
-        <div id="pro-upsell" class="glass-panel" style="margin-top: 1.5rem; border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5));">
-            <div style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 250px;">
-                    <div class="badge-2026" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); margin-bottom: 0.5rem;">PREMIUM REPORT</div>
-                    <h3 style="color: #fff; margin-bottom: 0.5rem;">Unlock Full Financial Breakdown</h3>
-                    <ul style="font-size: 0.85rem; color: var(--text-dim); padding-left: 1.2rem; margin-bottom: 1rem;">
+        <div id="pro-upsell" class="glass-panel upsell-panel mt-6">
+            <div class="upsell-container">
+                <div class="upsell-content">
+                    <div class="badge-2026 upsell-badge">PREMIUM REPORT</div>
+                    <h3 class="upsell-title">Unlock {{ city.name }} Deep-Dive</h3>
+                    <ul class="upsell-features">
                         <li>Detailed 2026 Tax Optimization Strategy</li>
                         <li>Local Apartment & Utility Estimates</li>
                         <li>Nomad Community & Co-working Heatmap</li>
                         <li>Direct Visa Lawyer Contact List</li>
                     </ul>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div class="upsell-footer">
                         {% set currentTier = pricing.getCountryTier(city.country) %}
                         {% set currentPrice = pricing.tiers[currentTier].price %}
-                        <div style="font-size: 1.5rem; font-weight: 800; color: #fff;">${{ currentPrice }}</div>
-                        <button id="unlock-pro-btn" class="action-btn" data-price="{{ currentPrice }}" style="background: #f59e0b; color: #000; flex: 1;">Unlock Pro →</button>
+                        <div class="upsell-price">${{ currentPrice }}</div>
+                        <button id="unlock-pro-btn" class="action-btn upsell-btn" data-price="{{ currentPrice }}">Unlock Pro →</button>
                     </div>
                 </div>
-                <div style="flex: 0 0 160px; display: flex; justify-content: center;">
-                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" style="width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+                <div class="upsell-visual">
+                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" class="pro-mockup">
                 </div>
             </div>
         </div>
-        <div class="trust-badge">
+
+        <div class="trust-badge mt-8">
             <span>📊 Tax data last verified: {{ site.dataLastVerified }}</span>
             <span>🤖 Human-verified for {{ site.year }} compliance.</span>
         </div>
 
         {# Lead Magnet #}
         {% include "partials/lead-magnet.njk" %}
-    </main>
+    </section>
 
-    <main id="empty-state" class="glass-panel" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: 300px;">
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🧮</div>
-        <h2>Calculate your {{ city.name }} budget</h2>
-        <p style="color: var(--text-dim); max-width: 300px; margin-top: 0.75rem;">Enter your income to see your personalized {{ city.name }} financial breakdown.</p>
-    </main>
-</div>
+    {# Similar Destinations Section #}
+    <div class="section-container mt-24">
+        <div class="flex-between mb-8">
+            <h2 class="aura-title">Explore Similar Destinations</h2>
+            <a href="/" class="view-all-link">Back to Map →</a>
+        </div>
+        <div class="stack-grid">
+            {% set count = 0 %}
+            {% for otherCity in cities %}
+                {% if otherCity.slug != city.slug and count < 4 %}
+                    {% if otherCity.country == city.country or (otherCity.col > city.col * 0.8 and otherCity.col < city.col * 1.2) %}
+                        {% set count = count + 1 %}
+                        <a href="/cities/{{ otherCity.slug }}/" class="stack-item glass-panel hub-card">
+                            <div class="hub-icon">{{ otherCity.emoji | default('📍') }}</div>
+                            <div class="hub-info">
+                                <div class="hub-name">{{ otherCity.name }}</div>
+                                <div class="hub-desc">{{ otherCity.country }} · {{ otherCity.tax | percentInt }} Tax</div>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 
-{# Related Comparisons #}
-<div class="comparison-container" style="margin-top: 4rem;">
-    <h2 style="text-align: center; margin-bottom: 2rem;">Compare {{ city.name }} with Other Hubs</h2>
-    <div class="partner-grid">
-        {% for comp in comparisons %}
-        {% if (comp.cityA.slug == city.slug or comp.cityB.slug == city.slug) and loop.index <= 20 %}
-        <a href="/compare/{{ comp.slug }}/" class="partner-card">
-            <h4>{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</h4>
-            <p>{{ comp.theme }} · Winner: {{ comp.winner }}</p>
-        </a>
-        {% endif %}
-        {% endfor %}
+    {# Related Comparisons #}
+    <div class="section-container mt-24">
+        <h2 class="aura-title text-center mb-8">Compare {{ city.name }} with Other Hubs</h2>
+        <div class="stack-grid">
+            {% set compCount = 0 %}
+            {% for comp in comparisons %}
+                {% if (comp.cityA.slug == city.slug or comp.cityB.slug == city.slug) and compCount < 4 %}
+                    {% set compCount = compCount + 1 %}
+                    <a href="/compare/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+                        <div class="hub-icon">{{ comp.emoji }}</div>
+                        <div class="hub-info">
+                            <div class="hub-name">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</div>
+                            <div class="hub-desc">{{ comp.theme }}</div>
+                        </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 
-<div class="comparison-container" style="margin-top: 2rem;">
+<div class="section-container mt-16">
     {% include "partials/relocation-toolkit.njk" %}
     {% include "partials/seo-silos.njk" %}
 </div>
