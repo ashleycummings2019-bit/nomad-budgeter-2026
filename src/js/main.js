@@ -127,17 +127,29 @@ class NomadBudgeterCalculator {
         btn.disabled = true;
         btn.innerText = "Sending...";
 
-        // Simulate API call to email provider (e.g. ConvertKit/Mailchimp)
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await fetch('/api/capture-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: capturedEmail, source: 'Nomad Budgeter 2026 Guide' })
+            });
 
-        if (successEl) successEl.classList.remove('hidden');
-        emailInput.value = "";
-        btn.innerText = "Guide Sent!";
-        
-        // Tracking event
-        console.log("Lead captured:", capturedEmail);
-        if (typeof gtag === 'function') {
-            gtag('event', 'lead_capture', { method: 'tax_guide_pdf', email_domain: capturedEmail.split('@')[1] });
+            if (!response.ok) throw new Error('Capture failed');
+
+            if (successEl) successEl.classList.remove('hidden');
+            emailInput.value = "";
+            btn.innerText = "Guide Sent!";
+            
+            // Tracking event
+            console.log("Lead captured:", capturedEmail);
+            if (typeof gtag === 'function') {
+                gtag('event', 'lead_capture', { method: 'tax_guide_pdf', email_domain: capturedEmail.split('@')[1] });
+            }
+        } catch (error) {
+            console.error("Lead capture failed:", error);
+            alert("Sorry, there was an issue sending your guide. Please try again or contact support.");
+            btn.disabled = false;
+            btn.innerText = "Send My Free Copy →";
         }
     }
 
