@@ -10,6 +10,9 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   },
+  "dependencies": {
+    "stripe": "^15.0.0"
+  },
   "engines": {
     "node": ">=18.0.0"
   }
