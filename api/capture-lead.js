@@ -54,16 +54,18 @@ module.exports = async (req, res) => {
             console.error('Airtable Error:', data);
             let errorMessage = data.error?.message || 'Failed to save lead';
             
-            // Helpful hint for common Airtable setup issues
+            // Detailed troubleshooting for Airtable setup
             if (response.status === 404) {
-                errorMessage = `Table "${TABLE_NAME}" not found in base. Please ensure your Airtable base has a table named exactly "${TABLE_NAME}".`;
+                errorMessage = `Airtable Table Not Found: Ensure your base (${AIRTABLE_BASE_ID}) has a table named exactly "${TABLE_NAME}".`;
             } else if (response.status === 422) {
-                errorMessage = `Airtable Field mismatch. Ensure your "${TABLE_NAME}" table has fields: "Email" (Email/Text), "Source" (Text), and "Date" (Date/Text).`;
+                errorMessage = `Airtable Field Mismatch: Ensure the "${TABLE_NAME}" table has these exact fields: "Email" (Email type), "Source" (Single line text), and "Date" (Date/Time or Text).`;
+            } else if (response.status === 401) {
+                errorMessage = "Airtable Authentication Failed: Check your AIRTABLE_API_KEY.";
             }
 
             return res.status(response.status).json({ 
                 error: errorMessage,
-                airtableError: data.error
+                details: data.error
             });
         }
 

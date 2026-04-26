@@ -20,12 +20,23 @@ module.exports = async function() {
     }
 
     try {
-        console.log("Fetching tax overrides from Airtable...");
-        const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Table%201`, {
+        let tableName = 'Tax Overrides';
+        let response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}`, {
             headers: {
                 Authorization: `Bearer ${AIRTABLE_API_KEY}`
             }
         });
+        
+        // Secondary fallback to "Table 1" if "Tax Overrides" doesn't exist
+        if (response.status === 404) {
+            tableName = 'Table 1';
+            console.log(`⚠️ "Tax Overrides" table not found. Retrying with "${tableName}"...`);
+            response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}`, {
+                headers: {
+                    Authorization: `Bearer ${AIRTABLE_API_KEY}`
+                }
+            });
+        }
         
         if (!response.ok) {
             throw new Error(`Airtable API responded with ${response.status}`);
