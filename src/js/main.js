@@ -179,10 +179,31 @@ class NomadBudgeterCalculator {
             });
         }
         
-        const userConfirm = window.confirm(`Ready to unlock the deep-dive report for ${city}? \n\nClick OK to proceed to secure checkout ($${price}).`);
-        if (userConfirm) {
-            const stripeUrl = `https://buy.stripe.com/00wdR3aQeg521HXgzleAg0b?prefilled_email=${encodeURIComponent(this.userEmail)}&client_reference_id=pro_report_${city.replace(/\s+/g, '_')}`;
-            window.open(stripeUrl, '_blank');
+        const btn = document.getElementById('unlock-pro-btn');
+        if (btn) {
+            const originalText = btn.innerText;
+            btn.innerText = "Redirecting to Secure Checkout...";
+            btn.style.opacity = "0.7";
+            btn.style.pointerEvents = "none";
+            
+            setTimeout(() => {
+                // IMPORTANT: Replace this with your actual Live Stripe Payment Link
+                const STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/00wdR3aQeg521HXgzleAg0b';
+                
+                const stripeUrl = new URL(STRIPE_PAYMENT_LINK);
+                if (this.userEmail) stripeUrl.searchParams.append('prefilled_email', this.userEmail);
+                stripeUrl.searchParams.append('client_reference_id', `pro_report_${city.replace(/\s+/g, '_')}`);
+                
+                // Redirect user to Stripe
+                window.location.href = stripeUrl.toString();
+                
+                // Reset button state (in case user hits 'back' in browser)
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.opacity = "1";
+                    btn.style.pointerEvents = "auto";
+                }, 2000);
+            }, 500);
         }
     }
 
