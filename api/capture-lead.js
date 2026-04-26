@@ -41,7 +41,7 @@ module.exports = async (req, res) => {
                         fields: {
                             'Email': email,
                             'Source': source || 'Nomad Budgeter Guide Magnet',
-                            'Date': new Date().toISOString()
+                            'Date': new Date().toISOString().split('T')[0] // Just YYYY-MM-DD
                         }
                     }
                 ]
