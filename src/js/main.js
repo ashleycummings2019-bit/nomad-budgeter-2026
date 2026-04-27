@@ -88,9 +88,9 @@ class NomadBudgeterCalculator {
             unlockProBtn.addEventListener('click', () => this.handleProUnlock());
         }
 
-        const shareBtn = document.getElementById('share-results-btn');
-        if (shareBtn) {
-            shareBtn.addEventListener('click', () => this.handleShare());
+        const headerGoProBtn = document.getElementById('header-go-pro');
+        if (headerGoProBtn) {
+            headerGoProBtn.addEventListener('click', (e) => this.handleProUnlock(e));
         }
 
         this.startTrustSignalPulse();
@@ -165,9 +165,15 @@ class NomadBudgeterCalculator {
         }, 8000);
     }
 
-    handleProUnlock() {
+    handleProUnlock(e) {
+        if (e && e.target.id === 'header-go-pro') {
+            // If it's the header button, we might want to just scroll to the upsell first 
+            // OR go directly to checkout. The user said "take you to the payment page".
+            // So we go directly to checkout.
+        }
+
         const cityBadge = document.getElementById('city-badge');
-        const city = cityBadge?.innerText || "this city";
+        const city = cityBadge?.innerText || "Global";
         const price = 19;
         
         // Track conversion event
@@ -179,7 +185,7 @@ class NomadBudgeterCalculator {
             });
         }
         
-        const btn = document.getElementById('unlock-pro-btn');
+        const btn = e?.target || document.getElementById('unlock-pro-btn');
         if (btn) {
             const originalText = btn.innerText;
             btn.innerText = "Redirecting to Secure Checkout...";
@@ -650,27 +656,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('reveal');
                 entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-    // Function to observe new elements
+    // Function to observe elements safely
+    const observeElement = (el) => {
+        // Safety check: if element is already in view, show it immediately
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            return;
+        }
+
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        revealObserver.observe(el);
+    };
+
     window.observeNewElements = (container) => {
-        const targets = container.querySelectorAll('.metric-card, .stack-item, .upsell-panel, .hub-card, .glass-panel:not(.sidebar)');
-        targets.forEach(el => {
-            el.style.opacity = '0';
-            revealObserver.observe(el);
-        });
+        container.querySelectorAll('.metric-card, .stack-item, .upsell-panel, .hub-card, .glass-panel:not(.sidebar)').forEach(observeElement);
     };
 
     // Observe initial static elements
-    document.querySelectorAll('.section-container, .glass-panel, .grid-3 > div, .grid-2 > div, .expert-analysis').forEach(el => {
-        el.style.opacity = '0';
-        revealObserver.observe(el);
-    });
+    document.querySelectorAll('.section-container, .glass-panel, .grid-3 > div, .grid-2 > div, .expert-analysis, .stack-item, .hub-card').forEach(observeElement);
 
     const cookieBanner = document.getElementById('cookie-banner');
     const cookieAccept = document.getElementById('cookie-accept');
