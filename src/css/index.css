@@ -1380,3 +1380,99 @@ button:disabled {
 .empty-title { font-size: 2rem; color: #fff; margin-bottom: 1rem; }
 .empty-desc { color: var(--text-dim); max-width: 360px; font-size: 1.1rem; line-height: 1.6; }
 
+/* ━━━ LIVE PRICES / PULSE SECTION ━━━ */
+
+.exchange-rate-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.1));
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1.25rem;
+}
+.rate-label {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+.rate-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--aura-secondary);
+    font-family: 'Outfit', sans-serif;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+@media (max-width: 768px) {
+    .price-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .price-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.price-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    padding: 1rem;
+    transition: var(--transition-smooth);
+}
+.price-card:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+}
+
+.price-emoji {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: center;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+.price-item-name {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.price-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+}
+.price-local {
+    font-size: 0.8rem;
+    color: var(--aura-accent);
+    font-weight: 500;
+}
+
+/* Pulse badge animation */
+.pulse-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+}
+.pulse-dot {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 4px var(--aura-accent); }
+    50% { opacity: 0.5; box-shadow: 0 0 12px var(--aura-accent); }
+}

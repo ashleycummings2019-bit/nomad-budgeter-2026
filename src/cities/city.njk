@@ -62,6 +62,98 @@ eleventyComputed:
     </div>
 </div>
 
+{# ━━━ LIVE LOCAL PRICES (Pulse Data) ━━━ #}
+{% if city.prices_usd %}
+<div class="section-container mt-16">
+    <div class="glass-panel p-8">
+        <div class="flex-between mb-6">
+            <h2 class="aura-title">Live Prices in {{ city.name }}</h2>
+            {% if city.pulse_updated %}
+            <span class="badge-2026 pulse-badge">
+                <span class="badge-dot pulse-dot"></span>
+                Updated {{ city.exchangeRateDate }}
+            </span>
+            {% endif %}
+        </div>
+
+        {% if city.exchangeRate and city.currency != "USD" %}
+        <div class="exchange-rate-bar mb-6">
+            <span class="rate-label">💱 Today's Rate</span>
+            <span class="rate-value">1 USD = {{ city.exchangeRate }} {{ city.currency }}</span>
+        </div>
+        {% endif %}
+
+        <div class="price-grid">
+            <div class="price-card">
+                <div class="price-emoji">☕</div>
+                <div class="price-info">
+                    <div class="price-item-name">Cappuccino</div>
+                    <div class="price-value">${{ city.prices_usd.cappuccino }}</div>
+                    {% if city.prices_local and city.currency != "USD" %}
+                    <div class="price-local">{{ city.prices_local.cappuccino }} {{ city.currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="price-emoji">🍽️</div>
+                <div class="price-info">
+                    <div class="price-item-name">Budget Meal</div>
+                    <div class="price-value">${{ city.prices_usd.mealCheap }}</div>
+                    {% if city.prices_local and city.currency != "USD" %}
+                    <div class="price-local">{{ city.prices_local.mealCheap }} {{ city.currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="price-emoji">🍺</div>
+                <div class="price-info">
+                    <div class="price-item-name">Local Beer</div>
+                    <div class="price-value">${{ city.prices_usd.beerLocal }}</div>
+                    {% if city.prices_local and city.currency != "USD" %}
+                    <div class="price-local">{{ city.prices_local.beerLocal }} {{ city.currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="price-emoji">🥛</div>
+                <div class="price-info">
+                    <div class="price-item-name">Milk (1 Liter)</div>
+                    <div class="price-value">${{ city.prices_usd.milk1L }}</div>
+                    {% if city.prices_local and city.currency != "USD" %}
+                    <div class="price-local">{{ city.prices_local.milk1L }} {{ city.currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="price-emoji">🍗</div>
+                <div class="price-info">
+                    <div class="price-item-name">Chicken Breast (1kg)</div>
+                    <div class="price-value">${{ city.prices_usd.chickenBreast1kg }}</div>
+                    {% if city.prices_local and city.currency != "USD" %}
+                    <div class="price-local">{{ city.prices_local.chickenBreast1kg }} {{ city.currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="price-emoji">💻</div>
+                <div class="price-info">
+                    <div class="price-item-name">Coworking (Day)</div>
+                    <div class="price-value">${{ city.prices_usd.coworkingDay }}</div>
+                    {% if city.prices_local and city.currency != "USD" %}
+                    <div class="price-local">{{ city.prices_local.coworkingDay }} {{ city.currency }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <p class="text-dim text-sm mt-4" style="font-style: italic;">
+            Prices reflect {{ site.year }} averages updated via live exchange rates.
+            <span class="user-currency-note" style="display:none;"> Converted to <strong class="user-currency-name"></strong> for your convenience.</span>
+        </p>
+    </div>
+</div>
+{% endif %}
+
 {# Calculator Widget #}
 <div class="app-container mt-16">
     {% set prefillCity = city.name %}
