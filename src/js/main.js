@@ -166,11 +166,8 @@ class NomadBudgeterCalculator {
     }
 
     handleProUnlock(e) {
-        if (e && e.target.id === 'header-go-pro') {
-            // If it's the header button, we might want to just scroll to the upsell first 
-            // OR go directly to checkout. The user said "take you to the payment page".
-            // So we go directly to checkout.
-        }
+        if (e) e.preventDefault();
+
 
         const cityBadge = document.getElementById('city-badge');
         const city = cityBadge?.innerText || "Global";
@@ -653,6 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     new NomadBudgeterCalculator();
 
     // --- Scroll Reveal Logic ---
+    const isMobile = window.innerWidth <= 768;
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -665,6 +663,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to observe elements safely
     const observeElement = (el) => {
+        if (isMobile) {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+            return;
+        }
+        
         // Safety check: if element is already in view, show it immediately
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
