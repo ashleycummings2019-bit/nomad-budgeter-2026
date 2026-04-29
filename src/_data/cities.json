@@ -18,7 +18,27 @@
       "Strong startup scene",
       "Atlantic coast lifestyle"
     ],
-    "intro": "Lisbon continues to reign as Europe's top digital nomad hub in 2026. With the ITS regime offering a 20% flat tax for up to 10 years and year-round sunshine, it draws thousands of remote workers to its cobblestone streets and rooftop coworking spaces."
+    "intro": "Lisbon continues to reign as Europe's top digital nomad hub in 2026. With the ITS regime offering a 20% flat tax for up to 10 years and year-round sunshine, it draws thousands of remote workers to its cobblestone streets and rooftop coworking spaces.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Porto",
@@ -39,7 +59,27 @@
       "Wine country access",
       "Growing tech scene"
     ],
-    "intro": "Porto offers the same Portuguese visa benefits as Lisbon at roughly 15% lower cost of living. The Ribeira district and Douro Valley provide a premium quality of life for nomads who prefer a quieter pace."
+    "intro": "Porto offers the same Portuguese visa benefits as Lisbon at roughly 15% lower cost of living. The Ribeira district and Douro Valley provide a premium quality of life for nomads who prefer a quieter pace.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Valencia",
@@ -60,7 +100,27 @@
       "Affordable for Spain",
       "Ciudad de las Artes"
     ],
-    "intro": "Valencia has emerged as Spain's best-value nomad city in 2026. The Beckham Law's 24% flat rate combines with rents 30% below Barcelona to create one of the best savings ratios in Western Europe."
+    "intro": "Valencia has emerged as Spain's best-value nomad city in 2026. The Beckham Law's 24% flat rate combines with rents 30% below Barcelona to create one of the best savings ratios in Western Europe.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Barcelona",
@@ -81,7 +141,27 @@
       "Mediterranean beach",
       "Vibrant nightlife"
     ],
-    "intro": "Barcelona remains a top-tier nomad destination despite rising rents. The Beckham Law's 24% flat tax helps offset higher costs, and the city's creative energy and beach lifestyle are hard to match anywhere in Europe."
+    "intro": "Barcelona remains a top-tier nomad destination despite rising rents. The Beckham Law's 24% flat tax helps offset higher costs, and the city's creative energy and beach lifestyle are hard to match anywhere in Europe.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 3.99,
+      "mealCheap": 13,
+      "beerLocal": 5.22,
+      "milk1L": 2.09,
+      "chickenBreast1kg": 9.5,
+      "coworkingDay": 27
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Madrid",
@@ -102,7 +182,27 @@
       "Lower rent than Barcelona",
       "Rich cultural scene"
     ],
-    "intro": "Madrid is Spain's capital of opportunity for digital nomads in 2026. The Beckham Law applies here just as in Barcelona, but rents are roughly 10% lower and the central location makes weekend European travel effortless."
+    "intro": "Madrid is Spain's capital of opportunity for digital nomads in 2026. The Beckham Law applies here just as in Barcelona, but rents are roughly 10% lower and the central location makes weekend European travel effortless.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 3.99,
+      "mealCheap": 13,
+      "beerLocal": 5.22,
+      "milk1L": 2.09,
+      "chickenBreast1kg": 9.5,
+      "coworkingDay": 27
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "London",
@@ -123,7 +223,27 @@
       "World-class networking",
       "Cultural capital"
     ],
-    "intro": "London is expensive but unmatched for career networking and global connectivity. The Global Talent Visa offers a path for highly skilled remote workers, though the 30% effective tax rate and high rents make savings challenging."
+    "intro": "London is expensive but unmatched for career networking and global connectivity. The Global Talent Visa offers a path for highly skilled remote workers, though the 30% effective tax rate and high rents make savings challenging.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 4.51,
+      "mealCheap": 16,
+      "beerLocal": 6.56,
+      "milk1L": 2.3,
+      "chickenBreast1kg": 11,
+      "coworkingDay": 33
+    },
+    "exchangeRate": 0.82,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Berlin",
@@ -144,7 +264,27 @@
       "Affordable for Western EU",
       "Creative culture"
     ],
-    "intro": "Berlin's freelance visa and relatively affordable rents make it a top pick for European nomads in 2026. The city's tech ecosystem and multicultural energy attract developers and creatives from around the world."
+    "intro": "Berlin's freelance visa and relatively affordable rents make it a top pick for European nomads in 2026. The city's tech ecosystem and multicultural energy attract developers and creatives from around the world.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 3.99,
+      "mealCheap": 13,
+      "beerLocal": 5.22,
+      "milk1L": 2.09,
+      "chickenBreast1kg": 9.5,
+      "coworkingDay": 27
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Amsterdam",
@@ -165,7 +305,27 @@
       "English widely spoken",
       "Startup ecosystem"
     ],
-    "intro": "Amsterdam's Dutch-American Friendship Treaty (DAFT) makes it uniquely accessible for US entrepreneurs. High costs are offset by an English-speaking environment and one of Europe's densest startup ecosystems."
+    "intro": "Amsterdam's Dutch-American Friendship Treaty (DAFT) makes it uniquely accessible for US entrepreneurs. High costs are offset by an English-speaking environment and one of Europe's densest startup ecosystems.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 5.22,
+      "mealCheap": 19,
+      "beerLocal": 7.6,
+      "milk1L": 2.66,
+      "chickenBreast1kg": 13,
+      "coworkingDay": 38
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Athens",
@@ -186,7 +346,27 @@
       "Mediterranean climate",
       "Ancient history meets modern"
     ],
-    "intro": "Greece's 7% flat tax regime for foreign income earners is the lowest in the EU in 2026. Athens combines affordable Mediterranean living with Schengen access and a growing coworking infrastructure."
+    "intro": "Greece's 7% flat tax regime for foreign income earners is the lowest in the EU in 2026. Athens combines affordable Mediterranean living with Schengen access and a growing coworking infrastructure.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Split",
@@ -207,7 +387,27 @@
       "0% tax on foreign income",
       "Schengen access"
     ],
-    "intro": "Croatia's digital nomad visa exempts foreign-sourced income from local tax entirely. Split's Adriatic coastline, low cost of living, and Schengen membership make it a rising star for European nomads in 2026."
+    "intro": "Croatia's digital nomad visa exempts foreign-sourced income from local tax entirely. Split's Adriatic coastline, low cost of living, and Schengen membership make it a rising star for European nomads in 2026.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Budapest",
@@ -228,7 +428,27 @@
       "Ultra-low rent",
       "Ruin bar scene"
     ],
-    "intro": "Budapest's White Card permit and 15% flat tax rate make it one of Central Europe's most affordable nomad bases. With rents under $1,000 for city-center apartments and a legendary social scene, the savings potential is exceptional."
+    "intro": "Budapest's White Card permit and 15% flat tax rate make it one of Central Europe's most affordable nomad bases. With rents under $1,000 for city-center apartments and a legendary social scene, the savings potential is exceptional.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 1200,
+      "mealCheap": 3000,
+      "beerLocal": 1100,
+      "milk1L": 670,
+      "chickenBreast1kg": 2800,
+      "coworkingDay": 6700
+    },
+    "exchangeRate": 370,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Prague",
@@ -249,7 +469,27 @@
       "Central European hub",
       "Strong beer culture"
     ],
-    "intro": "Prague's trade license system gives freelancers a straightforward path to residency with a 15% flat tax. The city is pricier than Budapest but offers world-class infrastructure and a central position for European travel."
+    "intro": "Prague's trade license system gives freelancers a straightforward path to residency with a 15% flat tax. The city is pricier than Budapest but offers world-class infrastructure and a central position for European travel.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 77,
+      "mealCheap": 190,
+      "beerLocal": 72,
+      "milk1L": 43,
+      "chickenBreast1kg": 180,
+      "coworkingDay": 430
+    },
+    "exchangeRate": 24,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Tallinn",
@@ -270,7 +510,27 @@
       "Digital-first government",
       "Medieval old town"
     ],
-    "intro": "Estonia pioneered the digital nomad concept with e-Residency, and Tallinn remains a tech-forward base in 2026. The 20% flat corporate tax and seamless digital infrastructure attract location-independent entrepreneurs."
+    "intro": "Estonia pioneered the digital nomad concept with e-Residency, and Tallinn remains a tech-forward base in 2026. The 20% flat corporate tax and seamless digital infrastructure attract location-independent entrepreneurs.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Vilnius",
@@ -291,7 +551,27 @@
       "Low cost of living",
       "UNESCO old town"
     ],
-    "intro": "Vilnius is the Baltic's hidden gem for budget-conscious nomads in 2026. With rents 15% below Tallinn and Lithuania's growing tech scene, it offers the EU lifestyle at near-Eastern European prices."
+    "intro": "Vilnius is the Baltic's hidden gem for budget-conscious nomads in 2026. With rents 15% below Tallinn and Lithuania's growing tech scene, it offers the EU lifestyle at near-Eastern European prices.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Bucharest",
@@ -312,7 +592,28 @@
       "10% flat tax",
       "Gigabit internet"
     ],
-    "intro": "Romania's 10% flat income tax and some of the fastest internet in Europe make Bucharest an emerging nomad favorite. The city's cost of living is among the lowest in the EU, maximizing your savings potential."
+    "intro": "Romania's 10% flat income tax and some of the fastest internet in Europe make Bucharest an emerging nomad favorite. The city's cost of living is among the lowest in the EU, maximizing your savings potential.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Tenerife",
@@ -333,7 +634,27 @@
       "Island lifestyle",
       "Lower costs than mainland"
     ],
-    "intro": "Tenerife combines the Canary Islands' eternal spring climate with Spain's Beckham Law tax benefits. Rents are 25% below mainland cities, and the surf-and-work lifestyle attracts a growing nomad community to spots like Santa Cruz."
+    "intro": "Tenerife combines the Canary Islands' eternal spring climate with Spain's Beckham Law tax benefits. Rents are 25% below mainland cities, and the surf-and-work lifestyle attracts a growing nomad community to spots like Santa Cruz.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Funchal",
@@ -354,7 +675,27 @@
       "Nomad Village program",
       "Subtropical climate"
     ],
-    "intro": "Madeira's Digital Nomad Village in Ponta do Sol put Funchal on the global map. Portugal's ITS regime applies here with the added bonus of subtropical weather, lower rents than Lisbon, and a tight-knit nomad community."
+    "intro": "Madeira's Digital Nomad Village in Ponta do Sol put Funchal on the global map. Portugal's ITS regime applies here with the added bonus of subtropical weather, lower rents than Lisbon, and a tight-knit nomad community.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Tbilisi",
@@ -375,7 +716,28 @@
       "Ultra-low cost of living",
       "Visa-free for 1 year"
     ],
-    "intro": "Georgia's 1% small business tax and visa-free entry for 95+ nationalities make Tbilisi the ultimate budget nomad base. The city's wine culture, $600 rents, and rapidly improving coworking scene punch well above their weight."
+    "intro": "Georgia's 1% small business tax and visa-free entry for 95+ nationalities make Tbilisi the ultimate budget nomad base. The city's wine culture, $600 rents, and rapidly improving coworking scene punch well above their weight.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Istanbul",
@@ -396,7 +758,27 @@
       "Affordable luxury",
       "Bosphorus views"
     ],
-    "intro": "Istanbul straddles Europe and Asia in every sense. While Turkey lacks a formal nomad visa, the 90-day tourist stay combined with ultra-affordable luxury living and world-class food make it a popular base for short-term nomads."
+    "intro": "Istanbul straddles Europe and Asia in every sense. While Turkey lacks a formal nomad visa, the 90-day tourist stay combined with ultra-affordable luxury living and world-class food make it a popular base for short-term nomads.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 110,
+      "mealCheap": 280,
+      "beerLocal": 100,
+      "milk1L": 62,
+      "chickenBreast1kg": 260,
+      "coworkingDay": 620
+    },
+    "exchangeRate": 34.5,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Dubai",
@@ -417,7 +799,27 @@
       "World-class infrastructure",
       "Global connectivity hub"
     ],
-    "intro": "Dubai's 0% income tax is the ultimate draw for high-earning nomads in 2026. The Virtual Working Visa requires $5,000/month income but rewards you with zero tax liability, making it the highest-savings destination for six-figure earners."
+    "intro": "Dubai's 0% income tax is the ultimate draw for high-earning nomads in 2026. The Virtual Working Visa requires $5,000/month income but rewards you with zero tax liability, making it the highest-savings destination for six-figure earners.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 20,
+      "mealCheap": 73,
+      "beerLocal": 29,
+      "milk1L": 10,
+      "chickenBreast1kg": 51,
+      "coworkingDay": 150
+    },
+    "exchangeRate": 3.67,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Bangkok",
@@ -438,7 +840,27 @@
       "Street food culture",
       "Modern infrastructure"
     ],
-    "intro": "Thailand's LTR Visa grants 10 years of residency with a 15% flat tax on local income. Bangkok's combination of modern condos, $3 street food meals, and gigabit internet makes it Asia's most complete nomad city."
+    "intro": "Thailand's LTR Visa grants 10 years of residency with a 15% flat tax on local income. Bangkok's combination of modern condos, $3 street food meals, and gigabit internet makes it Asia's most complete nomad city.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 120,
+      "mealCheap": 290,
+      "beerLocal": 110,
+      "milk1L": 66,
+      "chickenBreast1kg": 270,
+      "coworkingDay": 660
+    },
+    "exchangeRate": 36.5,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Chiang Mai",
@@ -459,7 +881,27 @@
       "Mountain temple scenery",
       "Massive nomad community"
     ],
-    "intro": "Chiang Mai is the undisputed champion of budget nomad living in 2026. With total monthly costs under $1,200 and one of the world's largest remote worker communities, it consistently tops \"best value\" lists globally."
+    "intro": "Chiang Mai is the undisputed champion of budget nomad living in 2026. With total monthly costs under $1,200 and one of the world's largest remote worker communities, it consistently tops \"best value\" lists globally.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 66,
+      "mealCheap": 130,
+      "beerLocal": 44,
+      "milk1L": 40,
+      "chickenBreast1kg": 160,
+      "coworkingDay": 290
+    },
+    "exchangeRate": 36.5,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Bali",
@@ -480,7 +922,27 @@
       "Surf and yoga culture",
       "Tropical coworking scene"
     ],
-    "intro": "Bali's Remote Worker Visa charges 0% tax on foreign-sourced income. The Canggu and Uluwatu corridors have become the global epicenter of the surf-and-code lifestyle, though 2026 rents have climbed 25% year-on-year."
+    "intro": "Bali's Remote Worker Visa charges 0% tax on foreign-sourced income. The Canggu and Uluwatu corridors have become the global epicenter of the surf-and-code lifestyle, though 2026 rents have climbed 25% year-on-year.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 51200,
+      "mealCheap": 128000,
+      "beerLocal": 48000,
+      "milk1L": 28800,
+      "chickenBreast1kg": 120000,
+      "coworkingDay": 288000
+    },
+    "exchangeRate": 16000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Tokyo",
@@ -501,7 +963,27 @@
       "Ultra-safe city",
       "Unmatched food culture"
     ],
-    "intro": "Japan's 2024-launched Digital Nomad Visa allows 6-month stays with no local tax obligation. Tokyo's safety, punctual infrastructure, and culinary scene make it a premium destination for nomads who can meet the $5,330/month income requirement."
+    "intro": "Japan's 2024-launched Digital Nomad Visa allows 6-month stays with no local tax obligation. Tokyo's safety, punctual infrastructure, and culinary scene make it a premium destination for nomads who can meet the $5,330/month income requirement.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 830,
+      "mealCheap": 3000,
+      "beerLocal": 1200,
+      "milk1L": 420,
+      "chickenBreast1kg": 2100,
+      "coworkingDay": 6000
+    },
+    "exchangeRate": 150.2,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Seoul",
@@ -522,7 +1004,27 @@
       "K-culture capital",
       "Cutting-edge tech city"
     ],
-    "intro": "Seoul's Workcation Visa launched in 2025 and is gaining traction among tech nomads. South Korea's 5G infrastructure, cafe culture, and food scene rival Tokyo at roughly 10% lower cost of living."
+    "intro": "Seoul's Workcation Visa launched in 2025 and is gaining traction among tech nomads. South Korea's 5G infrastructure, cafe culture, and food scene rival Tokyo at roughly 10% lower cost of living.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 5900,
+      "mealCheap": 19600,
+      "beerLocal": 7700,
+      "milk1L": 3100,
+      "chickenBreast1kg": 14000,
+      "coworkingDay": 39200
+    },
+    "exchangeRate": 1400,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Singapore",
@@ -543,7 +1045,27 @@
       "Business hub of Asia",
       "Ultra-modern infrastructure"
     ],
-    "intro": "Singapore's Tech.Pass targets high-earning tech professionals with an effectively 0% rate on foreign income. The highest cost of living in Asia is offset by unmatched business infrastructure and a gateway to the entire ASEAN market."
+    "intro": "Singapore's Tech.Pass targets high-earning tech professionals with an effectively 0% rate on foreign income. The highest cost of living in Asia is offset by unmatched business infrastructure and a gateway to the entire ASEAN market.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 7.43,
+      "mealCheap": 27,
+      "beerLocal": 11,
+      "milk1L": 3.78,
+      "chickenBreast1kg": 19,
+      "coworkingDay": 54
+    },
+    "exchangeRate": 1.35,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Ho Chi Minh City",
@@ -564,7 +1086,27 @@
       "French-Vietnamese culture",
       "Booming economy"
     ],
-    "intro": "Ho Chi Minh City's cost of living is among Asia's lowest, with total monthly expenses under $1,500 for a comfortable lifestyle. Vietnam's booming economy and growing digital infrastructure make it a rising star for budget nomads."
+    "intro": "Ho Chi Minh City's cost of living is among Asia's lowest, with total monthly expenses under $1,500 for a comfortable lifestyle. Vietnam's booming economy and growing digital infrastructure make it a rising star for budget nomads.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 60000,
+      "mealCheap": 125000,
+      "beerLocal": 45000,
+      "milk1L": 35000,
+      "chickenBreast1kg": 137500,
+      "coworkingDay": 300000
+    },
+    "exchangeRate": 25000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Kuala Lumpur",
@@ -585,7 +1127,27 @@
       "English widely spoken",
       "Modern city amenities"
     ],
-    "intro": "Malaysia's DE Rantau pass offers 0% tax on foreign income with a low $2,000/month income requirement. Kuala Lumpur's modern infrastructure, English-speaking environment, and ultra-affordable rents make it Southeast Asia's best-kept secret."
+    "intro": "Malaysia's DE Rantau pass offers 0% tax on foreign income with a low $2,000/month income requirement. Kuala Lumpur's modern infrastructure, English-speaking environment, and ultra-affordable rents make it Southeast Asia's best-kept secret.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 12,
+      "mealCheap": 24,
+      "beerLocal": 8.64,
+      "milk1L": 6.72,
+      "chickenBreast1kg": 26,
+      "coworkingDay": 58
+    },
+    "exchangeRate": 4.8,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Manila",
@@ -606,7 +1168,27 @@
       "BPO hub",
       "Tropical islands nearby"
     ],
-    "intro": "Manila's English-speaking workforce and low costs attract budget nomads in 2026. While the tax situation is less favorable than neighbors, the Philippines' 7,000+ islands offer weekend escapes unmatched anywhere in Asia."
+    "intro": "Manila's English-speaking workforce and low costs attract budget nomads in 2026. While the tax situation is less favorable than neighbors, the Philippines' 7,000+ islands offer weekend escapes unmatched anywhere in Asia.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 140,
+      "mealCheap": 290,
+      "beerLocal": 100,
+      "milk1L": 81,
+      "chickenBreast1kg": 320,
+      "coworkingDay": 700
+    },
+    "exchangeRate": 58,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Da Nang",
@@ -627,7 +1209,27 @@
       "Lowest costs in Asia",
       "Growing nomad scene"
     ],
-    "intro": "Da Nang has quietly become Vietnam's most livable city for remote workers. The beachfront My Khe area, $550 apartment rents, and a growing cafe-coworking culture make it one of Asia's best budget-to-quality ratios."
+    "intro": "Da Nang has quietly become Vietnam's most livable city for remote workers. The beachfront My Khe area, $550 apartment rents, and a growing cafe-coworking culture make it one of Asia's best budget-to-quality ratios.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 60000,
+      "mealCheap": 125000,
+      "beerLocal": 45000,
+      "milk1L": 35000,
+      "chickenBreast1kg": 137500,
+      "coworkingDay": 300000
+    },
+    "exchangeRate": 25000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Yerevan",
@@ -648,7 +1250,28 @@
       "Ultra-low rent",
       "Growing tech sector"
     ],
-    "intro": "Yerevan offers visa-free entry for 180 days and costs that rival Tbilisi. Armenia's growing tech sector and $500 rents make it the Caucasus region's most affordable base for digital nomads in 2026."
+    "intro": "Yerevan offers visa-free entry for 180 days and costs that rival Tbilisi. Armenia's growing tech sector and $500 rents make it the Caucasus region's most affordable base for digital nomads in 2026.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "New York",
@@ -669,7 +1292,28 @@
       "Unmatched networking",
       "Cultural epicenter"
     ],
-    "intro": "New York is the world's most expensive major nomad hub but unmatched for career networking and deal-making. The 35% effective tax rate and $3,200 average rents make it a high-cost baseline that many nomads are actively fleeing."
+    "intro": "New York is the world's most expensive major nomad hub but unmatched for career networking and deal-making. The 35% effective tax rate and $3,200 average rents make it a high-cost baseline that many nomads are actively fleeing.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "exchangeRate": 1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Montreal",
@@ -690,7 +1334,27 @@
       "Affordable for North America",
       "Tech hub"
     ],
-    "intro": "Montreal is North America's most affordable major city for remote workers. The bilingual French-English culture, lower rents than Toronto, and a strong AI/tech sector make it a compelling base for nomads who need a North American time zone."
+    "intro": "Montreal is North America's most affordable major city for remote workers. The bilingual French-English culture, lower rents than Toronto, and a strong AI/tech sector make it a compelling base for nomads who need a North American time zone.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 5.8,
+      "mealCheap": 19,
+      "beerLocal": 7.59,
+      "milk1L": 3.04,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 39
+    },
+    "exchangeRate": 1.38,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Toronto",
@@ -711,7 +1375,27 @@
       "Strong job market",
       "Proximity to US"
     ],
-    "intro": "Toronto is Canada's business capital and a major tech hub, but 2026 rents have made it nearly as expensive as New York. Nomads choosing Toronto do so for the networking and the proximity to US markets rather than cost savings."
+    "intro": "Toronto is Canada's business capital and a major tech hub, but 2026 rents have made it nearly as expensive as New York. Nomads choosing Toronto do so for the networking and the proximity to US markets rather than cost savings.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 7.59,
+      "mealCheap": 28,
+      "beerLocal": 11,
+      "milk1L": 3.86,
+      "chickenBreast1kg": 19,
+      "coworkingDay": 55
+    },
+    "exchangeRate": 1.38,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Mexico City",
@@ -732,7 +1416,27 @@
       "US time zone friendly",
       "Vibrant culture"
     ],
-    "intro": "Mexico City is Latin America's cultural powerhouse and a top choice for US-based nomads who need time zone alignment. The Roma and Condesa neighborhoods offer a premium lifestyle at roughly 60% the cost of equivalent US cities."
+    "intro": "Mexico City is Latin America's cultural powerhouse and a top choice for US-based nomads who need time zone alignment. The Roma and Condesa neighborhoods offer a premium lifestyle at roughly 60% the cost of equivalent US cities.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 58,
+      "mealCheap": 150,
+      "beerLocal": 55,
+      "milk1L": 33,
+      "chickenBreast1kg": 140,
+      "coworkingDay": 330
+    },
+    "exchangeRate": 18.2,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Tulum",
@@ -753,7 +1457,27 @@
       "Booming nomad scene",
       "Cenote swimming"
     ],
-    "intro": "Tulum has transformed from a backpacker town into a premium nomad hub with prices to match. The jungle-meets-Caribbean aesthetic draws influencers and creatives, but 2026 rents now rival European cities."
+    "intro": "Tulum has transformed from a backpacker town into a premium nomad hub with prices to match. The jungle-meets-Caribbean aesthetic draws influencers and creatives, but 2026 rents now rival European cities.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 76,
+      "mealCheap": 250,
+      "beerLocal": 100,
+      "milk1L": 40,
+      "chickenBreast1kg": 180,
+      "coworkingDay": 510
+    },
+    "exchangeRate": 18.2,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Medellín",
@@ -774,7 +1498,27 @@
       "Ultra-low costs",
       "Growing tech ecosystem"
     ],
-    "intro": "Medellín's eternal spring climate and Colombia's territorial tax system (0% on foreign income) make it Latin America's top value destination. The Poblado and Laureles neighborhoods offer a full nomad lifestyle for under $1,500/month."
+    "intro": "Medellín's eternal spring climate and Colombia's territorial tax system (0% on foreign income) make it Latin America's top value destination. The Poblado and Laureles neighborhoods offer a full nomad lifestyle for under $1,500/month.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 9800,
+      "mealCheap": 20500,
+      "beerLocal": 7400,
+      "milk1L": 5700,
+      "chickenBreast1kg": 22600,
+      "coworkingDay": 49200
+    },
+    "exchangeRate": 4100,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Buenos Aires",
@@ -795,7 +1539,27 @@
       "Legendary steak and wine",
       "Tango culture"
     ],
-    "intro": "Argentina's currency situation makes Buenos Aires extraordinarily cheap for dollar-earning nomads in 2026. The Palermo and Recoleta neighborhoods offer a European ambiance at a fraction of the cost."
+    "intro": "Argentina's currency situation makes Buenos Aires extraordinarily cheap for dollar-earning nomads in 2026. The Palermo and Recoleta neighborhoods offer a European ambiance at a fraction of the cost.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 2400,
+      "mealCheap": 5000,
+      "beerLocal": 1800,
+      "milk1L": 1400,
+      "chickenBreast1kg": 5500,
+      "coworkingDay": 12000
+    },
+    "exchangeRate": 1000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Rio de Janeiro",
@@ -816,7 +1580,27 @@
       "Carnival culture",
       "Mountain-meets-ocean scenery"
     ],
-    "intro": "Rio's Digital Nomad Visa launched in 2022 and requires just $1,500/month income. Copacabana and Ipanema offer a beach-and-city lifestyle that's hard to replicate, though safety considerations remain a factor for newcomers."
+    "intro": "Rio's Digital Nomad Visa launched in 2022 and requires just $1,500/month income. Copacabana and Ipanema offer a beach-and-city lifestyle that's hard to replicate, though safety considerations remain a factor for newcomers.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 16,
+      "mealCheap": 41,
+      "beerLocal": 15,
+      "milk1L": 9.18,
+      "chickenBreast1kg": 38,
+      "coworkingDay": 92
+    },
+    "exchangeRate": 5.1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "San José",
@@ -837,7 +1621,27 @@
       "0% tax on foreign income",
       "Stable democracy"
     ],
-    "intro": "Costa Rica's Digital Nomad Visa exempts foreign income from local tax entirely. San José serves as a base for accessing both Pacific and Caribbean coasts, with a stable democracy and strong environmental consciousness."
+    "intro": "Costa Rica's Digital Nomad Visa exempts foreign income from local tax entirely. San José serves as a base for accessing both Pacific and Caribbean coasts, with a stable democracy and strong environmental consciousness.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 1600,
+      "mealCheap": 4100,
+      "beerLocal": 1500,
+      "milk1L": 920,
+      "chickenBreast1kg": 3800,
+      "coworkingDay": 9200
+    },
+    "exchangeRate": 510,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Panama City",
@@ -858,7 +1662,28 @@
       "0% tax on foreign income",
       "Modern skyline"
     ],
-    "intro": "Panama's use of the US Dollar eliminates currency risk entirely, and foreign-sourced income is tax-free. Panama City's modern skyline and international banking sector attract high-earning nomads seeking financial efficiency."
+    "intro": "Panama's use of the US Dollar eliminates currency risk entirely, and foreign-sourced income is tax-free. Panama City's modern skyline and international banking sector attract high-earning nomads seeking financial efficiency.",
+    "prices_usd": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "prices_local": {
+      "cappuccino": 4.2,
+      "mealCheap": 14,
+      "beerLocal": 5.5,
+      "milk1L": 2.2,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 28,
+      "groceryIndex": 0.8
+    },
+    "exchangeRate": 1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Cape Town",
@@ -879,7 +1704,27 @@
       "Wine country access",
       "Growing tech hub"
     ],
-    "intro": "Cape Town's Remote Working Visa and stunning natural setting make it Africa's premier nomad destination. The city's tech scene is booming, and the rand's weakness against the dollar creates exceptional purchasing power."
+    "intro": "Cape Town's Remote Working Visa and stunning natural setting make it Africa's premier nomad destination. The city's tech scene is booming, and the rand's weakness against the dollar creates exceptional purchasing power.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 62,
+      "mealCheap": 160,
+      "beerLocal": 59,
+      "milk1L": 35,
+      "chickenBreast1kg": 150,
+      "coworkingDay": 350
+    },
+    "exchangeRate": 19.5,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Nairobi",
@@ -900,7 +1745,27 @@
       "Silicon Savannah tech hub",
       "Year-round mild climate"
     ],
-    "intro": "Nairobi's 'Silicon Savannah' reputation is well-earned in 2026. Kenya's growing tech ecosystem and digital nomad work permit attract entrepreneurs who want to be at the frontier of Africa's digital economy."
+    "intro": "Nairobi's 'Silicon Savannah' reputation is well-earned in 2026. Kenya's growing tech ecosystem and digital nomad work permit attract entrepreneurs who want to be at the frontier of Africa's digital economy.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 310,
+      "mealCheap": 650,
+      "beerLocal": 230,
+      "milk1L": 180,
+      "chickenBreast1kg": 720,
+      "coworkingDay": 1600
+    },
+    "exchangeRate": 130,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Bansko",
@@ -921,7 +1786,28 @@
       "Lowest costs in EU",
       "Tight-knit community"
     ],
-    "intro": "Bansko has evolved from a ski resort into a year-round digital nomad phenomenon. With mountain views, $400 rents, and Bulgaria's 10% flat tax, it offers one of the world's highest standards of living for the lowest price."
+    "intro": "Bansko has evolved from a ski resort into a year-round digital nomad phenomenon. With mountain views, $400 rents, and Bulgaria's 10% flat tax, it offers one of the world's highest standards of living for the lowest price.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Sofia",
@@ -942,7 +1828,28 @@
       "Booming tech scene",
       "Vibrant urban life"
     ],
-    "intro": "Sofia combines Bulgaria's 10% flat tax with the amenities of a major EU capital. It boasts some of Europe's fastest internet and a rapidly growing ecosystem of developers and digital entrepreneurs."
+    "intro": "Sofia combines Bulgaria's 10% flat tax with the amenities of a major EU capital. It boasts some of Europe's fastest internet and a rapidly growing ecosystem of developers and digital entrepreneurs.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Belgrade",
@@ -963,7 +1870,28 @@
       "Central Balkan hub",
       "High quality of life"
     ],
-    "intro": "Belgrade is the rising star of the Balkans in 2026. The city offers a gritty, creative energy, world-class dining at affordable prices, and a streamlined 3-year residence permit for remote workers."
+    "intro": "Belgrade is the rising star of the Balkans in 2026. The city offers a gritty, creative energy, world-class dining at affordable prices, and a streamlined 3-year residence permit for remote workers.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Tirana",
@@ -984,7 +1912,28 @@
       "Mediterranean climate",
       "Fast-improving infrastructure"
     ],
-    "intro": "Tirana is Europe's latest low-tax hotspot. With 0% tax for IT-related remote work and total monthly costs around $1,100, it's becoming a favorite for nomads seeking a Mediterranean base on a budget."
+    "intro": "Tirana is Europe's latest low-tax hotspot. With 0% tax for IT-related remote work and total monthly costs around $1,100, it's becoming a favorite for nomads seeking a Mediterranean base on a budget.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Montevideo",
@@ -1005,7 +1954,27 @@
       "Safe and stable",
       "Beautiful rambla coastline"
     ],
-    "intro": "Montevideo offers the stability of Europe with the tax benefits of a territorial system. Foreign income is 100% tax-free, and the city's high safety ratings and relaxed pace make it a premium LatAm choice."
+    "intro": "Montevideo offers the stability of Europe with the tax benefits of a territorial system. Foreign income is 100% tax-free, and the city's high safety ratings and relaxed pace make it a premium LatAm choice.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 120,
+      "mealCheap": 310,
+      "beerLocal": 120,
+      "milk1L": 70,
+      "chickenBreast1kg": 290,
+      "coworkingDay": 700
+    },
+    "exchangeRate": 39,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Antigua",
@@ -1026,7 +1995,27 @@
       "Volcano views",
       "Rich cultural immersion"
     ],
-    "intro": "Antigua is Central America's most stunning nomad base. Guatemala's new Remote Professional permit allows stays up to 5 years, and the city's US-time-zone-friendly location makes it ideal for North American workers."
+    "intro": "Antigua is Central America's most stunning nomad base. Guatemala's new Remote Professional permit allows stays up to 5 years, and the city's US-time-zone-friendly location makes it ideal for North American workers.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 19,
+      "mealCheap": 39,
+      "beerLocal": 14,
+      "milk1L": 11,
+      "chickenBreast1kg": 43,
+      "coworkingDay": 94
+    },
+    "exchangeRate": 7.8,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Bratislava",
@@ -1047,7 +2036,27 @@
       "15% flat tax",
       "Proximity to Vienna"
     ],
-    "intro": "Bratislava offers the stability and safety of the Eurozone with a low 15% flat tax for trade license holders. Its location just 60km from Vienna provides access to two world-class cities from one affordable base."
+    "intro": "Bratislava offers the stability and safety of the Eurozone with a low 15% flat tax for trade license holders. Its location just 60km from Vienna provides access to two world-class cities from one affordable base.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Cusco",
@@ -1068,7 +2077,27 @@
       "World-class food",
       "Low cost baseline"
     ],
-    "intro": "Cusco is the ultimate destination for nomads seeking cultural depth. With monthly costs under $1,000 and 0% tax for non-residents staying under 183 days, it's one of the highest-value cultural hubs in the world."
+    "intro": "Cusco is the ultimate destination for nomads seeking cultural depth. With monthly costs under $1,000 and 0% tax for non-residents staying under 183 days, it's one of the highest-value cultural hubs in the world.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 6.66,
+      "mealCheap": 13,
+      "beerLocal": 4.44,
+      "milk1L": 4.07,
+      "chickenBreast1kg": 17,
+      "coworkingDay": 30
+    },
+    "exchangeRate": 3.7,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Playa del Carmen",
@@ -1089,7 +2118,27 @@
       "Fast-growing community",
       "Mayan Riviera access"
     ],
-    "intro": "Playa del Carmen is the Caribbean's nomad capital. While pricier than Mexico City, it offers a beach lifestyle and a massive community of remote workers with easy residency paths for mid-to-high earners."
+    "intro": "Playa del Carmen is the Caribbean's nomad capital. While pricier than Mexico City, it offers a beach lifestyle and a massive community of remote workers with easy residency paths for mid-to-high earners.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 58,
+      "mealCheap": 150,
+      "beerLocal": 55,
+      "milk1L": 33,
+      "chickenBreast1kg": 140,
+      "coworkingDay": 330
+    },
+    "exchangeRate": 18.2,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Florianópolis",
@@ -1110,7 +2159,27 @@
       "High safety for Brazil",
       "42 pristine beaches"
     ],
-    "intro": "Florianópolis, or 'Floripa', is Brazil's tech-and-surf capital. With Brazil's Digital Nomad Visa requiring only $1,500/month, this island city offers a safe, high-quality lifestyle that attracts developers and surfers alike."
+    "intro": "Florianópolis, or 'Floripa', is Brazil's tech-and-surf capital. With Brazil's Digital Nomad Visa requiring only $1,500/month, this island city offers a safe, high-quality lifestyle that attracts developers and surfers alike.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 12,
+      "mealCheap": 26,
+      "beerLocal": 9.18,
+      "milk1L": 7.14,
+      "chickenBreast1kg": 28,
+      "coworkingDay": 61
+    },
+    "exchangeRate": 5.1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Batumi",
@@ -1131,7 +2200,28 @@
       "Black Sea coast",
       "Ultra-low living costs"
     ],
-    "intro": "Batumi offers the same 1% tax benefit as Tbilisi but on the Black Sea coast. With modern skyscrapers meeting a historic old town and rents under $500, it's one of Europe's most affordable seaside bases."
+    "intro": "Batumi offers the same 1% tax benefit as Tbilisi but on the Black Sea coast. With modern skyscrapers meeting a historic old town and rents under $500, it's one of Europe's most affordable seaside bases.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "exchangeRate": null,
+    "exchangeRateDate": "Apr 29, 2026",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Koh Phangan",
@@ -1152,7 +2242,27 @@
       "Huge nomad scene",
       "Yoga and wellness hub"
     ],
-    "intro": "Koh Phangan has evolved from a party island into a premier nomad destination. Thailand's LTR Visa provides 10-year stability, while the island's wellness-focused nomad community and tropical scenery are world-class."
+    "intro": "Koh Phangan has evolved from a party island into a premier nomad destination. Thailand's LTR Visa provides 10-year stability, while the island's wellness-focused nomad community and tropical scenery are world-class.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 88,
+      "mealCheap": 180,
+      "beerLocal": 66,
+      "milk1L": 51,
+      "chickenBreast1kg": 200,
+      "coworkingDay": 440
+    },
+    "exchangeRate": 36.5,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "George Town",
@@ -1173,7 +2283,27 @@
       "0% tax on foreign income",
       "English-speaking"
     ],
-    "intro": "George Town (Penang) combines Malaysia's 0% tax on foreign income with the title of Asia's food capital. It offers a slower, more historic pace than Kuala Lumpur with even lower costs and high quality of life."
+    "intro": "George Town (Penang) combines Malaysia's 0% tax on foreign income with the title of Asia's food capital. It offers a slower, more historic pace than Kuala Lumpur with even lower costs and high quality of life.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 12,
+      "mealCheap": 24,
+      "beerLocal": 8.64,
+      "milk1L": 6.72,
+      "chickenBreast1kg": 26,
+      "coworkingDay": 58
+    },
+    "exchangeRate": 4.8,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Lagos",
@@ -1194,7 +2324,27 @@
       "Surf and sun year-round",
       "Strong nomad community"
     ],
-    "intro": "Lagos is the Algarve's nomad capital. Offering Portugal's 20% flat tax in a stunning coastal setting, it attracts remote workers who prefer the sun-and-surf lifestyle over the urban bustle of Lisbon."
+    "intro": "Lagos is the Algarve's nomad capital. Offering Portugal's 20% flat tax in a stunning coastal setting, it attracts remote workers who prefer the sun-and-surf lifestyle over the urban bustle of Lisbon.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Las Palmas",
@@ -1215,7 +2365,27 @@
       "Beach city life",
       "Spanish island costs"
     ],
-    "intro": "Las Palmas de Gran Canaria is Europe's winter sanctuary. Spain's Beckham Law flat tax applies here, but with lower VAT and island costs, it's one of the most efficient ways to live the Spanish lifestyle year-round."
+    "intro": "Las Palmas de Gran Canaria is Europe's winter sanctuary. Spain's Beckham Law flat tax applies here, but with lower VAT and island costs, it's one of the most efficient ways to live the Spanish lifestyle year-round.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Ericeira",
@@ -1236,7 +2406,27 @@
       "Atlantic coast views",
       "Close to Lisbon"
     ],
-    "intro": "Ericeira is the surfing capital of Europe for digital nomads. Just 45 minutes from Lisbon, it offers a laid-back coastal vibe with Portugal's attractive tax incentives and world-class coworking infrastructure."
+    "intro": "Ericeira is the surfing capital of Europe for digital nomads. Just 45 minutes from Lisbon, it offers a laid-back coastal vibe with Portugal's attractive tax incentives and world-class coworking infrastructure.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Seville",
@@ -1257,7 +2447,27 @@
       "Historic architecture",
       "Affordable Spanish living"
     ],
-    "intro": "Seville represents the soul of Andalusia. For digital nomads, it offers one of Spain's best ratios of cultural depth to cost of living, all while qualifying for the Beckham Law's 24% flat tax rate."
+    "intro": "Seville represents the soul of Andalusia. For digital nomads, it offers one of Spain's best ratios of cultural depth to cost of living, all while qualifying for the Beckham Law's 24% flat tax rate.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Malaga",
@@ -1278,7 +2488,27 @@
       "Mediterranean beaches",
       "International airport hub"
     ],
-    "intro": "Malaga has transformed into the 'Silicon Valley of the Mediterranean'. Its thriving Tech Bay ecosystem and airport connectivity make it a top-tier choice for tech nomads seeking the Spanish sun."
+    "intro": "Malaga has transformed into the 'Silicon Valley of the Mediterranean'. Its thriving Tech Bay ecosystem and airport connectivity make it a top-tier choice for tech nomads seeking the Spanish sun.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Warsaw",
@@ -1299,7 +2529,27 @@
       "Ultra-fast internet",
       "Low cost of luxury living"
     ],
-    "intro": "Warsaw is Central Europe's powerhouse. With a growing tech scene, 12% flat tax options for freelancers, and high-quality modern infrastructure, it's a premier choice for career-driven nomads."
+    "intro": "Warsaw is Central Europe's powerhouse. With a growing tech scene, 12% flat tax options for freelancers, and high-quality modern infrastructure, it's a premier choice for career-driven nomads.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 13,
+      "mealCheap": 33,
+      "beerLocal": 12,
+      "milk1L": 7.38,
+      "chickenBreast1kg": 31,
+      "coworkingDay": 74
+    },
+    "exchangeRate": 4.1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Krakow",
@@ -1320,7 +2570,27 @@
       "Vibrant social scene",
       "Strong tech ecosystem"
     ],
-    "intro": "Krakow combines Poland's attractive tax rates for freelancers with a more historic, relaxed pace than Warsaw. Its legendary old town and growing startup ecosystem make it a favorite in Eastern Europe."
+    "intro": "Krakow combines Poland's attractive tax rates for freelancers with a more historic, relaxed pace than Warsaw. Its legendary old town and growing startup ecosystem make it a favorite in Eastern Europe.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 13,
+      "mealCheap": 33,
+      "beerLocal": 12,
+      "milk1L": 7.38,
+      "chickenBreast1kg": 31,
+      "coworkingDay": 74
+    },
+    "exchangeRate": 4.1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Zagreb",
@@ -1341,7 +2611,27 @@
       "Central Balkan hub",
       "High safety ranking"
     ],
-    "intro": "Zagreb offers the same 0% tax benefits as coastal Croatia but with the energy and infrastructure of a major capital. It's a stable, safe, and highly affordable gateway to both Central Europe and the Balkans."
+    "intro": "Zagreb offers the same 0% tax benefits as coastal Croatia but with the energy and infrastructure of a major capital. It's a stable, safe, and highly affordable gateway to both Central Europe and the Balkans.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 3.04,
+      "mealCheap": 7.6,
+      "beerLocal": 2.85,
+      "milk1L": 1.71,
+      "chickenBreast1kg": 7.13,
+      "coworkingDay": 17
+    },
+    "exchangeRate": 0.95,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Austin",
@@ -1362,7 +2652,28 @@
       "Live music capital",
       "Major tech hub"
     ],
-    "intro": "Austin is a premier domestic nomad hub for those seeking to escape high-tax states like California or New York. Texas's 0% state income tax and thriving tech and music scenes offset rising US living costs."
+    "intro": "Austin is a premier domestic nomad hub for those seeking to escape high-tax states like California or New York. Texas's 0% state income tax and thriving tech and music scenes offset rising US living costs.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "exchangeRate": 1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Miami",
@@ -1383,7 +2694,28 @@
       "Crypto and tech capital",
       "Beach and nightlife"
     ],
-    "intro": "Miami has emerged as a global tech and crypto hub in 2026. The 0% Florida state income tax and year-round beach lifestyle draw high-earners seeking a North American base with a tropical vibe."
+    "intro": "Miami has emerged as a global tech and crypto hub in 2026. The 0% Florida state income tax and year-round beach lifestyle draw high-earners seeking a North American base with a tropical vibe.",
+    "prices_usd": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "prices_local": {
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
+    },
+    "exchangeRate": 1,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Port Louis",
@@ -1404,7 +2736,27 @@
       "Island paradise lifestyle",
       "Safe and stable"
     ],
-    "intro": "Mauritius's Premium Visa is one of the few free 1-year nomad permits globally. With a 15% flat tax and a high quality of life, this Indian Ocean island is a premium choice for nomads seeking sun and stability."
+    "intro": "Mauritius's Premium Visa is one of the few free 1-year nomad permits globally. With a 15% flat tax and a high quality of life, this Indian Ocean island is a premium choice for nomads seeking sun and stability.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 150,
+      "mealCheap": 370,
+      "beerLocal": 140,
+      "milk1L": 83,
+      "chickenBreast1kg": 350,
+      "coworkingDay": 830
+    },
+    "exchangeRate": 46,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Ubud",
@@ -1425,7 +2777,27 @@
       "Rice paddy views",
       "Tax-free foreign income"
     ],
-    "intro": "Ubud is the spiritual heart of the nomad world in 2026. While Canggu offers the surf, Ubud offers the peace, with Indonesia's 0% tax on foreign income making it a financial haven for wellness-focused remote workers."
+    "intro": "Ubud is the spiritual heart of the nomad world in 2026. While Canggu offers the surf, Ubud offers the peace, with Indonesia's 0% tax on foreign income making it a financial haven for wellness-focused remote workers.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 38400,
+      "mealCheap": 80000,
+      "beerLocal": 28800,
+      "milk1L": 22400,
+      "chickenBreast1kg": 88000,
+      "coworkingDay": 192000
+    },
+    "exchangeRate": 16000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Canggu",
@@ -1446,7 +2818,27 @@
       "Vibrant coworking community",
       "Tax-free foreign income"
     ],
-    "intro": "Canggu remains the world's most dense nomad hub in 2026. The surf-and-code lifestyle is supported by world-class cafes and a 0% tax rate on foreign income, though rising rents have made it a premium destination."
+    "intro": "Canggu remains the world's most dense nomad hub in 2026. The surf-and-code lifestyle is supported by world-class cafes and a 0% tax rate on foreign income, though rising rents have made it a premium destination.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 51200,
+      "mealCheap": 128000,
+      "beerLocal": 48000,
+      "milk1L": 28800,
+      "chickenBreast1kg": 120000,
+      "coworkingDay": 288000
+    },
+    "exchangeRate": 16000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Sayulita",
@@ -1467,7 +2859,27 @@
       "Bohemian vibe",
       "Close to Puerto Vallarta"
     ],
-    "intro": "Sayulita is Mexico's boutique nomad gem on the Pacific coast. It offers a more intimate, bohemian alternative to Tulum with consistent surf, reliable internet, and a growing community of remote entrepreneurs."
+    "intro": "Sayulita is Mexico's boutique nomad gem on the Pacific coast. It offers a more intimate, bohemian alternative to Tulum with consistent surf, reliable internet, and a growing community of remote entrepreneurs.",
+    "prices_usd": {
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
+    },
+    "prices_local": {
+      "cappuccino": 58,
+      "mealCheap": 150,
+      "beerLocal": 55,
+      "milk1L": 33,
+      "chickenBreast1kg": 140,
+      "coworkingDay": 330
+    },
+    "exchangeRate": 18.2,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Hoi An",
@@ -1488,7 +2900,27 @@
       "Tailor capital",
       "Extreme value living"
     ],
-    "intro": "Hoi An is arguably the most beautiful budget destination for nomads in 2026. With monthly costs around $1,100 and a high quality of life, it's a favorite for those seeking cultural depth and extreme financial leverage."
+    "intro": "Hoi An is arguably the most beautiful budget destination for nomads in 2026. With monthly costs around $1,100 and a high quality of life, it's a favorite for those seeking cultural depth and extreme financial leverage.",
+    "prices_usd": {
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
+    },
+    "prices_local": {
+      "cappuccino": 45000,
+      "mealCheap": 87500,
+      "beerLocal": 30000,
+      "milk1L": 27500,
+      "chickenBreast1kg": 112500,
+      "coworkingDay": 200000
+    },
+    "exchangeRate": 25000,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   },
   {
     "name": "Siargao",
@@ -1509,6 +2941,26 @@
       "Island community",
       "English speaking"
     ],
-    "intro": "Siargao has bounced back as the Philippines' top nomad island in 2026. The launch of the Philippine Digital Nomad Visa has brought more remote workers to General Luna's surf breaks and island-style coworking spots."
+    "intro": "Siargao has bounced back as the Philippines' top nomad island in 2026. The launch of the Philippine Digital Nomad Visa has brought more remote workers to General Luna's surf breaks and island-style coworking spots.",
+    "prices_usd": {
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
+    },
+    "prices_local": {
+      "cappuccino": 140,
+      "mealCheap": 290,
+      "beerLocal": 100,
+      "milk1L": 81,
+      "chickenBreast1kg": 320,
+      "coworkingDay": 700
+    },
+    "exchangeRate": 58,
+    "exchangeRateDate": "2026-04-29",
+    "pulse_updated": "2026-04-29T00:47:42.257Z"
   }
 ]
