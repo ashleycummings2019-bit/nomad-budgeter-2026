@@ -19,6 +19,7 @@ eleventyComputed:
         </div>
         <h1 class="aura-title large-title">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}<br>{{ comp.theme }} ({{ site.year }})</h1>
         <p class="text-dim subtitle-text max-800">{{ comp.emoji }} {{ comp.description }}</p>
+        <p class="text-dim text-small mt-4"><i class="fa fa-clock-o"></i> Prices updated: {{ comp.cityA.pulse_updated | formatDate }}<br>Exchange Rate: 1 USD = {{ comp.cityA.exchangeRate }} {{ comp.cityA.currency }}, 1 USD = {{ comp.cityB.exchangeRate }} {{ comp.cityB.currency }}</p>
     </div>
 
     {# Side-by-Side Cards #}
@@ -29,13 +30,13 @@ eleventyComputed:
             <div class="stat-rows">
                 <div class="stat-row"><span>Visa Type</span> <strong>{{ comp.cityA.visa }}</strong></div>
                 <div class="stat-row"><span>Tax Rate</span> <strong>{{ comp.cityA.tax | percentInt }}</strong></div>
-                <div class="stat-row"><span>Monthly COL</span> <strong>${{ comp.cityA.col | localeString }}</strong></div>
-                <div class="stat-row"><span>Average Rent</span> <strong>${{ comp.cityA.rent | localeString }}</strong></div>
-                <div class="stat-row"><span>Min. Income</span> <strong>${{ comp.cityA.visaMinIncome | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Monthly COL</span> <strong><span class="nb-price" data-usd="{{ comp.cityA.col }}">${{ comp.cityA.col | localeString }}</span></strong></div>
+                <div class="stat-row"><span>Average Rent</span> <strong><span class="nb-price" data-usd="{{ comp.cityA.rent }}">${{ comp.cityA.rent | localeString }}</span></strong></div>
+                <div class="stat-row"><span>Min. Income</span> <strong><span class="nb-price" data-usd="{{ comp.cityA.visaMinIncome }}">${{ comp.cityA.visaMinIncome | localeString }}</span>/mo</strong></div>
                 <div class="stat-row"><span>Nomad Score</span> <strong>{{ comp.cityA.score }}/100</strong></div>
                 <div class="stat-row highlight-row">
                     <span>Savings @ $100k/yr</span>
-                    <strong class="{% if comp.savingsA > comp.savingsB %}positive-text{% endif %}">${{ comp.savingsA | localeString }}/mo</strong>
+                    <strong class="{% if comp.savingsA > comp.savingsB %}positive-text{% endif %}"><span class="nb-price" data-usd="{{ comp.savingsA }}">${{ comp.savingsA | localeString }}</span>/mo</strong>
                 </div>
             </div>
             <div class="verdict-box mt-6 {% if comp.savingsA > comp.savingsB %}winner-box{% endif %}">
@@ -49,17 +50,74 @@ eleventyComputed:
             <div class="stat-rows">
                 <div class="stat-row"><span>Visa Type</span> <strong>{{ comp.cityB.visa }}</strong></div>
                 <div class="stat-row"><span>Tax Rate</span> <strong>{{ comp.cityB.tax | percentInt }}</strong></div>
-                <div class="stat-row"><span>Monthly COL</span> <strong>${{ comp.cityB.col | localeString }}</strong></div>
-                <div class="stat-row"><span>Average Rent</span> <strong>${{ comp.cityB.rent | localeString }}</strong></div>
-                <div class="stat-row"><span>Min. Income</span> <strong>${{ comp.cityB.visaMinIncome | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Monthly COL</span> <strong><span class="nb-price" data-usd="{{ comp.cityB.col }}">${{ comp.cityB.col | localeString }}</span></strong></div>
+                <div class="stat-row"><span>Average Rent</span> <strong><span class="nb-price" data-usd="{{ comp.cityB.rent }}">${{ comp.cityB.rent | localeString }}</span></strong></div>
+                <div class="stat-row"><span>Min. Income</span> <strong><span class="nb-price" data-usd="{{ comp.cityB.visaMinIncome }}">${{ comp.cityB.visaMinIncome | localeString }}</span>/mo</strong></div>
                 <div class="stat-row"><span>Nomad Score</span> <strong>{{ comp.cityB.score }}/100</strong></div>
                 <div class="stat-row highlight-row">
                     <span>Savings @ $100k/yr</span>
-                    <strong class="{% if comp.savingsB > comp.savingsA %}positive-text{% endif %}">${{ comp.savingsB | localeString }}/mo</strong>
+                    <strong class="{% if comp.savingsB > comp.savingsA %}positive-text{% endif %}"><span class="nb-price" data-usd="{{ comp.savingsB }}">${{ comp.savingsB | localeString }}</span>/mo</strong>
                 </div>
             </div>
             <div class="verdict-box mt-6 {% if comp.savingsB > comp.savingsA %}winner-box{% endif %}">
                 <p><strong>{% if comp.savingsB > comp.savingsA %}✅ Winner for Wealth Accumulation{% else %}Premium Cost Profile{% endif %}</strong></p>
+            </div>
+        </div>
+    </div>
+
+    {# Real-Time Food & Groceries #}
+    <div class="section-container mt-16">
+        <h2 class="aura-title text-center mb-8">Real-Time Cost of Living Breakdown</h2>
+        <div class="glass-panel p-8">
+            <div class="grocery-grid">
+                <div class="grocery-header text-dim">Item</div>
+                <div class="grocery-header text-dim text-right">{{ comp.cityA.name }} (USD)</div>
+                <div class="grocery-header text-dim text-right">{{ comp.cityB.name }} (USD)</div>
+                <div class="grocery-header text-dim text-right">Difference</div>
+                
+                {# Cappuccino #}
+                <div class="grocery-row">
+                    <div class="grocery-item">☕ Cappuccino</div>
+                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.cappuccino | default(0) | usdPrecise }}</div>
+                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.cappuccino | default(0) | usdPrecise }}</div>
+                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.cappuccino < comp.cityB.prices_usd.cappuccino %}positive-text{% else %}negative-text{% endif %}">
+                        {% set diffCap = comp.cityA.prices_usd.cappuccino - comp.cityB.prices_usd.cappuccino %}
+                        {% if diffCap > 0 %}+{% endif %}{{ diffCap | abs | usdPrecise }}
+                    </div>
+                </div>
+
+                {# Cheap Meal #}
+                <div class="grocery-row">
+                    <div class="grocery-item">🍽️ Cheap Restaurant Meal</div>
+                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.mealCheap | default(0) | usdPrecise }}</div>
+                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.mealCheap | default(0) | usdPrecise }}</div>
+                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.mealCheap < comp.cityB.prices_usd.mealCheap %}positive-text{% else %}negative-text{% endif %}">
+                        {% set diffMeal = comp.cityA.prices_usd.mealCheap - comp.cityB.prices_usd.mealCheap %}
+                        {% if diffMeal > 0 %}+{% endif %}{{ diffMeal | abs | usdPrecise }}
+                    </div>
+                </div>
+
+                {# Local Beer #}
+                <div class="grocery-row">
+                    <div class="grocery-item">🍺 Local Beer (0.5L)</div>
+                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.beerLocal | default(0) | usdPrecise }}</div>
+                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.beerLocal | default(0) | usdPrecise }}</div>
+                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.beerLocal < comp.cityB.prices_usd.beerLocal %}positive-text{% else %}negative-text{% endif %}">
+                        {% set diffBeer = comp.cityA.prices_usd.beerLocal - comp.cityB.prices_usd.beerLocal %}
+                        {% if diffBeer > 0 %}+{% endif %}{{ diffBeer | abs | usdPrecise }}
+                    </div>
+                </div>
+
+                {# Coworking #}
+                <div class="grocery-row">
+                    <div class="grocery-item">💻 Coworking (1 Day)</div>
+                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.coworkingDay | default(0) | usdPrecise }}</div>
+                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.coworkingDay | default(0) | usdPrecise }}</div>
+                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.coworkingDay < comp.cityB.prices_usd.coworkingDay %}positive-text{% else %}negative-text{% endif %}">
+                        {% set diffCowork = comp.cityA.prices_usd.coworkingDay - comp.cityB.prices_usd.coworkingDay %}
+                        {% if diffCowork > 0 %}+{% endif %}{{ diffCowork | abs | usdPrecise }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -124,7 +182,7 @@ eleventyComputed:
                         {% set finalTier = tierA if tierA > tierB else tierB %}
                         {% set finalPrice = pricing.tiers[finalTier].price %}
                         <div class="upsell-footer">
-                            <div class="upsell-price">${{ finalPrice }}</div>
+                            <div class="upsell-price"><span class="nb-price" data-usd="{{ finalPrice }}">${{ finalPrice }}</span></div>
                             <button id="unlock-pro-btn" class="action-btn upsell-btn" data-price="{{ finalPrice }}">Unlock Pro →</button>
                         </div>
                     </div>

@@ -18,6 +18,17 @@ module.exports = function (eleventyConfig) {
     }).format(value);
   });
 
+  // Format number as USD currency with decimals
+  eleventyConfig.addFilter("usdPrecise", function (value) {
+    if (typeof value !== "number") return "$0.00";
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(value);
+  });
+
   // Format as percentage
   eleventyConfig.addFilter("percent", function (value) {
     if (typeof value !== "number") return "0%";
@@ -59,6 +70,13 @@ module.exports = function (eleventyConfig) {
     return countryCode
       .toUpperCase()
       .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
+  });
+
+  // Format date string
+  eleventyConfig.addFilter("formatDate", function(dateString) {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
   });
 
   // Get current year

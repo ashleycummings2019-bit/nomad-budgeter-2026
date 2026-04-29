@@ -120,5 +120,6 @@ module.exports = function () {
   }
 
   // Sort by priority (featured first, then priority hubs, then others)
-  return results.sort((a, b) => b.priority - a.priority);
+  // Limit to top 150 to prevent spam flags as requested by user
+  return results.sort((a, b) => b.priority - a.priority).slice(0, 150);
 };

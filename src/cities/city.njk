@@ -37,11 +37,11 @@ eleventyComputed:
         <div class="metric-grid mt-8">
             <div class="metric-card">
                 <div class="metric-label">Monthly Cost of Living</div>
-                <div class="metric-value highlight">${{ city.col | localeString }}</div>
+                <div class="metric-value highlight"><span class="nb-price" data-usd="{{ city.col }}">${{ city.col | localeString }}</span></div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Average Rent (1BR Center)</div>
-                <div class="metric-value">${{ city.rent | localeString }}</div>
+                <div class="metric-value"><span class="nb-price" data-usd="{{ city.rent }}">${{ city.rent | localeString }}</span></div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Nomad Visa Tax Rate</div>
@@ -49,7 +49,7 @@ eleventyComputed:
             </div>
             <div class="metric-card">
                 <div class="metric-label">Min. Annual Income</div>
-                <div class="metric-value">${{ (city.visaMinIncome * 12) | localeString }}</div>
+                <div class="metric-value"><span class="nb-price" data-usd="{{ city.visaMinIncome * 12 }}">${{ (city.visaMinIncome * 12) | localeString }}</span></div>
             </div>
         </div>
 
@@ -88,7 +88,7 @@ eleventyComputed:
                 <div class="price-emoji">☕</div>
                 <div class="price-info">
                     <div class="price-item-name">Cappuccino</div>
-                    <div class="price-value">${{ city.prices_usd.cappuccino }}</div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.cappuccino }}">${{ city.prices_usd.cappuccino }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.cappuccino }} {{ city.currency }}</div>
                     {% endif %}
@@ -98,7 +98,7 @@ eleventyComputed:
                 <div class="price-emoji">🍽️</div>
                 <div class="price-info">
                     <div class="price-item-name">Budget Meal</div>
-                    <div class="price-value">${{ city.prices_usd.mealCheap }}</div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.mealCheap }}">${{ city.prices_usd.mealCheap }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.mealCheap }} {{ city.currency }}</div>
                     {% endif %}
@@ -108,7 +108,7 @@ eleventyComputed:
                 <div class="price-emoji">🍺</div>
                 <div class="price-info">
                     <div class="price-item-name">Local Beer</div>
-                    <div class="price-value">${{ city.prices_usd.beerLocal }}</div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.beerLocal }}">${{ city.prices_usd.beerLocal }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.beerLocal }} {{ city.currency }}</div>
                     {% endif %}
@@ -118,7 +118,7 @@ eleventyComputed:
                 <div class="price-emoji">🥛</div>
                 <div class="price-info">
                     <div class="price-item-name">Milk (1 Liter)</div>
-                    <div class="price-value">${{ city.prices_usd.milk1L }}</div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.milk1L }}">${{ city.prices_usd.milk1L }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.milk1L }} {{ city.currency }}</div>
                     {% endif %}
@@ -128,7 +128,7 @@ eleventyComputed:
                 <div class="price-emoji">🍗</div>
                 <div class="price-info">
                     <div class="price-item-name">Chicken Breast (1kg)</div>
-                    <div class="price-value">${{ city.prices_usd.chickenBreast1kg }}</div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.chickenBreast1kg }}">${{ city.prices_usd.chickenBreast1kg }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.chickenBreast1kg }} {{ city.currency }}</div>
                     {% endif %}
@@ -138,7 +138,7 @@ eleventyComputed:
                 <div class="price-emoji">💻</div>
                 <div class="price-info">
                     <div class="price-item-name">Coworking (Day)</div>
-                    <div class="price-value">${{ city.prices_usd.coworkingDay }}</div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.coworkingDay }}">${{ city.prices_usd.coworkingDay }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.coworkingDay }} {{ city.currency }}</div>
                     {% endif %}
@@ -272,7 +272,7 @@ eleventyComputed:
                     <div class="upsell-footer">
                         {% set currentTier = pricing.getCountryTier(city.country) %}
                         {% set currentPrice = pricing.tiers[currentTier].price %}
-                        <div class="upsell-price">${{ currentPrice }}</div>
+                        <div class="upsell-price"><span class="nb-price" data-usd="{{ currentPrice }}">${{ currentPrice }}</span></div>
                         <button id="unlock-pro-btn" class="action-btn upsell-btn" data-price="{{ currentPrice }}">Unlock Pro →</button>
                     </div>
                 </div>

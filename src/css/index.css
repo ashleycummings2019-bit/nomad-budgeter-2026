@@ -1476,3 +1476,131 @@ button:disabled {
     0%, 100% { opacity: 1; box-shadow: 0 0 4px var(--aura-accent); }
     50% { opacity: 0.5; box-shadow: 0 0 12px var(--aura-accent); }
 }
+
+/* ─── Grocery Comparison Grid ─── */
+.grocery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .grocery-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .grocery-grid .grocery-header:first-child,
+    .grocery-grid .grocery-item {
+        grid-column: 1 / -1;
+        margin-bottom: -0.5rem;
+    }
+    .grocery-row {
+        display: contents;
+    }
+}
+
+.grocery-header {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.grocery-row {
+    display: contents;
+}
+
+.grocery-row > div {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grocery-row:last-child > div {
+    border-bottom: none;
+}
+
+.grocery-item {
+    font-weight: 500;
+    color: #fff;
+}
+
+.grocery-price {
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+
+.grocery-diff {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.positive-text {
+    color: var(--aura-accent) !important;
+}
+
+.negative-text {
+    color: #ef4444 !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ─── Geo Currency Toggle ─── */
+.currency-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+.currency-toggle-btn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: var(--aura-primary);
+    box-shadow: var(--neon-shadow);
+    transform: translateY(-1px);
+}
+
+.currency-toggle-btn:active {
+    transform: scale(0.97);
+}
+
+/* ─── Price Swap Transition ─── */
+.nb-price {
+    display: inline;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nb-price.swapping {
+    opacity: 0.3;
+    transform: translateY(-2px);
+}
+
+/* Currency badge (optional inline label) */
+.nb-currency-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--aura-primary);
+    vertical-align: middle;
+    margin-left: 4px;
+    letter-spacing: 0.04em;
+}
