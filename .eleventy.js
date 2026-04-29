@@ -76,6 +76,11 @@ module.exports = function (eleventyConfig) {
     return d.toLocaleString("en-US", { month: "long", day: "numeric", year: "numeric", hour: "numeric", minute: "numeric", timeZoneName: "short" });
   });
 
+  // Get current date for sitemap
+  eleventyConfig.addShortcode("sitemapDate", () => {
+    return new Date().toISOString().split('T')[0];
+  });
+
   // ─── Collections ───
 
   // Collection of all city pages
