@@ -49,18 +49,28 @@ eleventyComputed:
 {% include "partials/breadcrumbs.njk" %}
 
 {# City Hero Section #}
-<div class="city-hero section-container">
-    <div class="badge-2026 mb-4">
-        <span class="badge-dot"></span>
-        Verified {{ site.year }} Market Data
-    </div>
-    <h1 class="aura-title large-title">{{ city.name }} Nomad Tax<br>& Budget Calculator</h1>
-    <p class="text-dim subtitle-text">{{ city.country }} · {{ city.visa }} · {{ city.tax * 100 }}% Nomad Tax Rate</p>
+<div class="city-hero-wrapper">
+    {% if city.external_image_url %}
+    <div class="city-hero-bg" style="background-image: url('{{ city.external_image_url | vimg(1200, 80) }}')"></div>
+    {% endif %}
+    <div class="city-hero-overlay"></div>
+    
+    <div class="city-hero section-container">
+        <div class="badge-2026 mb-4">
+            <span class="badge-dot"></span>
+            Verified {{ site.year }} Market Data
+        </div>
+        <h1 class="aura-title large-title">{{ city.name }} Nomad Tax<br>& Budget Calculator</h1>
+        <p class="text-dim subtitle-text">{{ city.country }} · {{ city.visa }} · {{ city.tax * 100 }}% Nomad Tax Rate</p>
 
-    <div class="city-highlights mt-6">
-        {% for highlight in city.highlights %}
-        <span class="highlight-chip">{{ highlight }}</span>
-        {% endfor %}
+        <div class="city-highlights mt-8">
+            {% for highlight in city.highlights %}
+            <div class="highlight-tag reveal" style="animation-delay: {{ loop.index * 0.1 }}s">
+                <span style="font-size: 1.2rem;">⚡</span>
+                {{ highlight }}
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
@@ -314,7 +324,7 @@ eleventyComputed:
                     </div>
                 </div>
                 <div class="upsell-visual">
-                    <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" class="pro-mockup">
+                    <img src="{{ '/assets/images/pro-mockup.png' | vimg(640, 80) }}" alt="Nomad Budgeter Pro Report Mockup" class="pro-mockup" loading="lazy" decoding="async">
                 </div>
             </div>
         </div>

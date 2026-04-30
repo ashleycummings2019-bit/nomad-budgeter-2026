@@ -38,7 +38,8 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.175Z",
+    "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6"
   },
   {
     "name": "Porto",
@@ -79,7 +80,8 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.175Z",
+    "external_image_url": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b"
   },
   {
     "name": "Valencia",
@@ -120,7 +122,8 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.175Z",
+    "external_image_url": "https://images.unsplash.com/photo-1534313314376-a72289b6181e"
   },
   {
     "name": "Barcelona",
@@ -161,7 +164,8 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.175Z",
+    "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
   },
   {
     "name": "Madrid",
@@ -202,7 +206,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "London",
@@ -243,7 +247,8 @@
     },
     "exchangeRate": 0.82,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
   },
   {
     "name": "Berlin",
@@ -284,7 +289,8 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1509233725247-49e657c54213"
   },
   {
     "name": "Amsterdam",
@@ -325,7 +331,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Athens",
@@ -366,7 +372,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Split",
@@ -407,7 +413,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Budapest",
@@ -448,7 +454,7 @@
     },
     "exchangeRate": 370,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Prague",
@@ -489,7 +495,7 @@
     },
     "exchangeRate": 24,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Tallinn",
@@ -530,7 +536,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Vilnius",
@@ -571,7 +577,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Bucharest",
@@ -613,7 +619,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Tenerife",
@@ -654,7 +660,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Funchal",
@@ -695,7 +701,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Tbilisi",
@@ -737,7 +743,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Istanbul",
@@ -778,7 +784,7 @@
     },
     "exchangeRate": 34.5,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Dubai",
@@ -819,7 +825,8 @@
     },
     "exchangeRate": 3.67,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
   },
   {
     "name": "Bangkok",
@@ -860,7 +867,8 @@
     },
     "exchangeRate": 36.5,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1508004528368-1e4471569a9e"
   },
   {
     "name": "Chiang Mai",
@@ -901,7 +909,8 @@
     },
     "exchangeRate": 36.5,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1527333656061-ca7adf608ae1"
   },
   {
     "name": "Bali",
@@ -942,7 +951,8 @@
     },
     "exchangeRate": 16000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4"
   },
   {
     "name": "Tokyo",
@@ -983,7 +993,8 @@
     },
     "exchangeRate": 150.2,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26"
   },
   {
     "name": "Seoul",
@@ -1024,7 +1035,7 @@
     },
     "exchangeRate": 1400,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Singapore",
@@ -1065,7 +1076,8 @@
     },
     "exchangeRate": 1.35,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd"
   },
   {
     "name": "Ho Chi Minh City",
@@ -1106,7 +1118,7 @@
     },
     "exchangeRate": 25000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Kuala Lumpur",
@@ -1147,7 +1159,7 @@
     },
     "exchangeRate": 4.8,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Manila",
@@ -1188,7 +1200,7 @@
     },
     "exchangeRate": 58,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Da Nang",
@@ -1229,7 +1241,7 @@
     },
     "exchangeRate": 25000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Yerevan",
@@ -1271,7 +1283,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "New York",
@@ -1313,7 +1325,7 @@
     },
     "exchangeRate": 1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Montreal",
@@ -1354,7 +1366,7 @@
     },
     "exchangeRate": 1.38,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Toronto",
@@ -1395,7 +1407,7 @@
     },
     "exchangeRate": 1.38,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Mexico City",
@@ -1436,7 +1448,8 @@
     },
     "exchangeRate": 18.2,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03"
   },
   {
     "name": "Tulum",
@@ -1477,7 +1490,7 @@
     },
     "exchangeRate": 18.2,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Medellín",
@@ -1518,7 +1531,8 @@
     },
     "exchangeRate": 4100,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z",
+    "external_image_url": "https://images.unsplash.com/photo-1594165230047-9257d07936a7"
   },
   {
     "name": "Buenos Aires",
@@ -1559,7 +1573,7 @@
     },
     "exchangeRate": 1000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Rio de Janeiro",
@@ -1600,7 +1614,7 @@
     },
     "exchangeRate": 5.1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "San José",
@@ -1641,7 +1655,7 @@
     },
     "exchangeRate": 510,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Panama City",
@@ -1683,7 +1697,7 @@
     },
     "exchangeRate": 1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Cape Town",
@@ -1724,7 +1738,7 @@
     },
     "exchangeRate": 19.5,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Nairobi",
@@ -1765,7 +1779,7 @@
     },
     "exchangeRate": 130,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Bansko",
@@ -1807,7 +1821,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Sofia",
@@ -1849,7 +1863,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Belgrade",
@@ -1891,7 +1905,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Tirana",
@@ -1933,7 +1947,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Montevideo",
@@ -1974,7 +1988,7 @@
     },
     "exchangeRate": 39,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Antigua",
@@ -2015,7 +2029,7 @@
     },
     "exchangeRate": 7.8,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Bratislava",
@@ -2056,7 +2070,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Cusco",
@@ -2097,7 +2111,7 @@
     },
     "exchangeRate": 3.7,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Playa del Carmen",
@@ -2138,7 +2152,7 @@
     },
     "exchangeRate": 18.2,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Florianópolis",
@@ -2179,7 +2193,7 @@
     },
     "exchangeRate": 5.1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Batumi",
@@ -2221,7 +2235,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Koh Phangan",
@@ -2262,7 +2276,7 @@
     },
     "exchangeRate": 36.5,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.341Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "George Town",
@@ -2303,7 +2317,7 @@
     },
     "exchangeRate": 4.8,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Lagos",
@@ -2344,7 +2358,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Las Palmas",
@@ -2385,7 +2399,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Ericeira",
@@ -2426,7 +2440,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Seville",
@@ -2467,7 +2481,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Malaga",
@@ -2508,7 +2522,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Warsaw",
@@ -2549,7 +2563,7 @@
     },
     "exchangeRate": 4.1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Krakow",
@@ -2590,7 +2604,7 @@
     },
     "exchangeRate": 4.1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Zagreb",
@@ -2631,7 +2645,7 @@
     },
     "exchangeRate": 0.95,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Austin",
@@ -2673,7 +2687,7 @@
     },
     "exchangeRate": 1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Miami",
@@ -2715,7 +2729,7 @@
     },
     "exchangeRate": 1,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Port Louis",
@@ -2756,7 +2770,7 @@
     },
     "exchangeRate": 46,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Ubud",
@@ -2797,7 +2811,7 @@
     },
     "exchangeRate": 16000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Canggu",
@@ -2838,7 +2852,7 @@
     },
     "exchangeRate": 16000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Sayulita",
@@ -2879,7 +2893,7 @@
     },
     "exchangeRate": 18.2,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Hoi An",
@@ -2920,7 +2934,7 @@
     },
     "exchangeRate": 25000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Siargao",
@@ -2961,7 +2975,7 @@
     },
     "exchangeRate": 58,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T03:35:58.342Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Hanoi",
@@ -2984,25 +2998,25 @@
     ],
     "intro": "Hanoi is the soulful capital of Vietnam, offering a high-energy mix of history and modern nomad life. In 2026, its ultra-low cost of living and vibrant street culture make it a top-tier value hub for those who don't mind the chaos.",
     "prices_usd": {
-      "cappuccino": 1.5,
-      "mealCheap": 2.5,
-      "beerLocal": 1.0,
-      "milk1L": 1.2,
-      "chickenBreast1kg": 4.0,
-      "coworkingDay": 7,
-      "groceryIndex": 0.32
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 37500,
-      "mealCheap": 62500,
-      "beerLocal": 25000,
-      "milk1L": 30000,
-      "chickenBreast1kg": 100000,
-      "coworkingDay": 175000
+      "cappuccino": 60000,
+      "mealCheap": 125000,
+      "beerLocal": 45000,
+      "milk1L": 35000,
+      "chickenBreast1kg": 137500,
+      "coworkingDay": 300000
     },
     "exchangeRate": 25000,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T04:30:00.000Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   },
   {
     "name": "Luang Prabang",
@@ -3013,7 +3027,7 @@
     "continent": "Asia",
     "col": 950,
     "rent": 400,
-    "tax": 0.00,
+    "tax": 0,
     "score": 80,
     "visa": "Tourist Visa (30 days)",
     "visaMinIncome": 0,
@@ -3025,24 +3039,25 @@
     ],
     "intro": "Luang Prabang is the ultimate 'slow nomad' destination in 2026. This UNESCO world heritage town in Laos offers extreme value, peaceful riverside coworking, and a spiritual atmosphere that's hard to find elsewhere.",
     "prices_usd": {
-      "cappuccino": 2.0,
-      "mealCheap": 3.0,
-      "beerLocal": 1.5,
-      "milk1L": 1.5,
-      "chickenBreast1kg": 5.0,
-      "coworkingDay": 10,
-      "groceryIndex": 0.38
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 44000,
-      "mealCheap": 66000,
-      "beerLocal": 33000,
-      "milk1L": 33000,
-      "chickenBreast1kg": 110000,
-      "coworkingDay": 220000
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
     },
-    "exchangeRate": 22000,
+    "exchangeRate": null,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T04:30:00.000Z"
+    "pulse_updated": "2026-04-30T17:07:55.176Z"
   }
 ]

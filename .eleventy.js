@@ -99,6 +99,17 @@ module.exports = function (eleventyConfig) {
     return new Date().toISOString().split('T')[0];
   });
 
+  // Vercel Image Optimization Filter
+  eleventyConfig.addFilter("vimg", function (url, width = 800, quality = 75) {
+    if (!url) return "";
+    // If it's already an optimized URL or local, return as is
+    if (url.startsWith('/_vercel/image')) return url;
+    
+    // Construct Vercel Image Optimization URL
+    const encodedUrl = encodeURIComponent(url);
+    return `/_vercel/image?url=${encodedUrl}&w=${width}&q=${quality}`;
+  });
+
   // ─── Collections ───
 
   // Collection of all city pages

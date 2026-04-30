@@ -1,9 +1,35 @@
 ---
 layout: layouts/base.njk
-title: "All Digital Nomad Comparisons: Cost of Living, Visas & Taxes"
-description: "Compare cities and countries for digital nomads side-by-side. Our data engine breaks down cost of living, taxes, and visa requirements."
+pageTitle: "Digital Nomad Comparison Engine: Cost of Living, Visas & Taxes"
+pageDescription: "Compare cities and countries for digital nomads side-by-side. Our 2026 data engine breaks down cost of living, taxes, and visa requirements for global relocation."
+pageSchema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Digital Nomad Comparison Engine",
+    "description": "Compare cities and countries for digital nomads side-by-side.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Compare",
+          "item": "{{ site.url }}{{ page.url }}"
+        }
+      ]
+    }
+  }
 permalink: /compare/
 ---
+
+{% include "partials/breadcrumbs.njk" %}
 <div class="section-container mt-16">
     <div class="text-center mb-16">
         <h1 class="aura-title large-title">Compare Nomad Hubs</h1>

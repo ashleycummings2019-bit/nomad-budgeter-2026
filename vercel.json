@@ -4,6 +4,11 @@
   "outputDirectory": "_site",
   "cleanUrls": true,
   "trailingSlash": false,
+  "images": {
+    "sizes": [400, 800, 1200, 1920],
+    "domains": ["images.unsplash.com"],
+    "minimumCacheTTL": 86400
+  },
   "headers": [
     {
       "source": "/css/(.*)",
@@ -36,3 +41,4 @@
     }
   ]
 }
+

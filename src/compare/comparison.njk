@@ -38,6 +38,29 @@ eleventyComputed:
             }
           }
         ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Compare",
+            "item": "{{ site.url }}/compare/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ comp.cityA.name }} vs. {{ comp.cityB.name }}",
+            "item": "{{ site.url }}{{ page.url }}"
+          }
+        ]
       }
     }
 ---
@@ -233,7 +256,7 @@ eleventyComputed:
                         </div>
                     </div>
                     <div class="upsell-visual">
-                        <img src="/assets/images/pro-mockup.png" alt="Pro Report Mockup" class="pro-mockup">
+                    <img src="{{ '/assets/images/pro-mockup.png' | vimg(640, 80) }}" alt="Nomad Budgeter Pro Report Mockup" class="pro-mockup" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -251,7 +274,7 @@ eleventyComputed:
         <h2 class="aura-title text-center mb-8">More Strategic Comparisons</h2>
         <div class="stack-grid">
             {% set relatedCount = 0 %}
-            {% for related in comparisons %}
+            {% for related in comparisons.list %}
                 {% if related.slug != comp.slug and relatedCount < 4 %}
                     {% if related.cityA.slug == comp.cityA.slug or related.cityB.slug == comp.cityA.slug or related.cityA.slug == comp.cityB.slug or related.cityB.slug == comp.cityB.slug %}
                         {% set relatedCount = relatedCount + 1 %}

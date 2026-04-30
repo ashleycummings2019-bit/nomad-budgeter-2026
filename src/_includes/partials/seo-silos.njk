@@ -5,40 +5,62 @@
     <div class="toolkit-grid">
         {# Silo 1: Top Tax Havens #}
         <div class="metric-card">
-            <h4 style="color: #10b981; margin-bottom: 1rem;">0% Tax Havens</h4>
-            <ul style="list-style: none; padding: 0;">
+            <h4 style="color: #10b981; margin-bottom: 1.5rem;">0% Tax Havens</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                {% set silo1_count = 0 %}
                 {% for c in cities %}
-                    {% if c.tax == 0 and loop.index <= 5 %}
-                    <li style="margin-bottom: 0.5rem;"><a href="/cities/{{ c.slug }}/" style="color: var(--text-main); text-decoration: none;">&rarr; {{ c.name }}, {{ c.country }}</a></li>
+                    {% if c.tax == 0 and silo1_count < 5 %}
+                    <a href="/cities/{{ c.slug }}/" class="silo-link">
+                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
+                        <div class="silo-info">
+                            <span class="silo-name">{{ c.name }}</span>
+                            <span class="silo-meta">{{ c.country }} · 0% Tax</span>
+                        </div>
+                    </a>
+                    {% set silo1_count = silo1_count + 1 %}
                     {% endif %}
                 {% endfor %}
-            </ul>
+            </div>
         </div>
 
         {# Silo 2: Digital Nomad Visa Hubs #}
         <div class="metric-card">
-            <h4 style="color: var(--aura-primary); margin-bottom: 1rem;">Digital Nomad Visas</h4>
-            <ul style="list-style: none; padding: 0;">
+            <h4 style="color: var(--aura-primary); margin-bottom: 1.5rem;">Digital Nomad Visas</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                {% set silo2_count = 0 %}
                 {% for c in cities %}
-                    {% if "Visa" in c.visa and loop.index <= 8 %}
-                    <li style="margin-bottom: 0.5rem;"><a href="/cities/{{ c.slug }}/" style="color: var(--text-main); text-decoration: none;">&rarr; {{ c.name }} ({{ c.visa | truncate(15) }})</a></li>
+                    {% if "Visa" in c.visa and silo2_count < 5 %}
+                    <a href="/cities/{{ c.slug }}/" class="silo-link">
+                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
+                        <div class="silo-info">
+                            <span class="silo-name">{{ c.name }}</span>
+                            <span class="silo-meta">{{ c.visa | truncate(20) }}</span>
+                        </div>
+                    </a>
+                    {% set silo2_count = silo2_count + 1 %}
                     {% endif %}
                 {% endfor %}
-            </ul>
+            </div>
         </div>
 
         {# Silo 3: Same Continent (Contextual) #}
         <div class="metric-card">
-            <h4 style="color: var(--text-dim); margin-bottom: 1rem;">More in {{ city.continent or "Global" }}</h4>
-            <ul style="list-style: none; padding: 0;">
-                {% set count = 0 %}
+            <h4 style="color: var(--text-dim); margin-bottom: 1.5rem;">More in {{ city.continent or "Global" }}</h4>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                {% set silo3_count = 0 %}
                 {% for c in cities %}
-                    {% if c.continent == city.continent and c.slug != city.slug and count < 5 %}
-                    <li style="margin-bottom: 0.5rem;"><a href="/cities/{{ c.slug }}/" style="color: var(--text-main); text-decoration: none;">&rarr; {{ c.name }}, {{ c.country }}</a></li>
-                    {% set count = count + 1 %}
+                    {% if c.continent == city.continent and c.slug != city.slug and silo3_count < 5 %}
+                    <a href="/cities/{{ c.slug }}/" class="silo-link">
+                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1444723121867-7a241cacace9') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
+                        <div class="silo-info">
+                            <span class="silo-name">{{ c.name }}</span>
+                            <span class="silo-meta">{{ c.country }}</span>
+                        </div>
+                    </a>
+                    {% set silo3_count = silo3_count + 1 %}
                     {% endif %}
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 </section>

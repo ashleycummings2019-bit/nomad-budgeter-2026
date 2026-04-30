@@ -105,6 +105,25 @@ async function fetchRates() {
   }
 }
 
+// ─── City Image Seeding ───
+const CITY_IMAGES = {
+  "lisbon": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6",
+  "porto": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b",
+  "valencia": "https://images.unsplash.com/photo-1534313314376-a72289b6181e",
+  "dubai": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
+  "london": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+  "bali": "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+  "chiang-mai": "https://images.unsplash.com/photo-1527333656061-ca7adf608ae1",
+  "medellin": "https://images.unsplash.com/photo-1594165230047-9257d07936a7",
+  "mexico-city": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03",
+  "bangkok": "https://images.unsplash.com/photo-1508004528368-1e4471569a9e",
+  "berlin": "https://images.unsplash.com/photo-1509233725247-49e657c54213",
+  "barcelona": "https://images.unsplash.com/photo-1583422409516-2895a77efded",
+  "tokyo": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
+  "singapore": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
+  "new-york-city": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9"
+};
+
 // ─── Enrich each city with live pricing ───
 function enrichCity(city, rates) {
   const currency = city.currency;
@@ -115,6 +134,11 @@ function enrichCity(city, rates) {
   // Exchange rate data
   city.exchangeRate = rate ? parseFloat(rate.toFixed(4)) : null;
   city.exchangeRateDate = new Date().toISOString().split('T')[0];
+  
+  // Image URL population (preserve existing, or seed from mapping)
+  if (!city.external_image_url && CITY_IMAGES[city.slug]) {
+    city.external_image_url = CITY_IMAGES[city.slug];
+  }
   
   // USD base prices
   city.prices_usd = {

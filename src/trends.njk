@@ -1,8 +1,43 @@
 ---
 layout: layouts/base.njk
-title: 2026 Nomad Tax & Budget Trends | Nomad Budgeter
-description: Real-time data study on the best tax arbitrage and cost-of-living destinations for digital nomads in 2026.
+pageTitle: "2026 Digital Nomad Tax & Budget Trends | Nomad Budgeter Data Study"
+pageDescription: "Real-time data study on the best tax arbitrage and cost-of-living destinations for digital nomads in 2026. Comparing {{ cities | length }}+ global destinations."
+pageSchema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "2026 Digital Nomad Tax & Budget Trends",
+    "description": "Real-time data study on the best tax arbitrage and cost-of-living destinations for digital nomads in 2026.",
+    "author": {
+      "@type": "Organization",
+      "name": "Nomad Budgeter"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nomad Budgeter"
+    },
+    "datePublished": "2026-01-01",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Trends",
+          "item": "{{ site.url }}/trends/"
+        }
+      ]
+    }
+  }
 ---
+
+{% include "partials/breadcrumbs.njk" %}
 
 <div class="section-container mt-16">
     <div class="text-center mb-16">

@@ -8,7 +8,39 @@ permalink: "/compare/city-vs-country/{{ comp.slug }}/"
 eleventyComputed:
   pageTitle: "{{ comp.city.name }} vs. {{ comp.country.name }}: 2026 Digital Nomad Comparison"
   pageDescription: "{{ comp.description }}"
+  pageSchema: |
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ comp.city.name }} vs. {{ comp.country.name }} Comparison",
+      "description": "{{ pageDescription }}",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ site.url }}/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Compare",
+            "item": "{{ site.url }}/compare/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ comp.city.name }} vs. {{ comp.country.name }}",
+            "item": "{{ site.url }}{{ page.url }}"
+          }
+        ]
+      }
+    }
 ---
+
+{% include "partials/breadcrumbs.njk" %}
 
 <div class="section-container mt-16">
     {# Hero #}
