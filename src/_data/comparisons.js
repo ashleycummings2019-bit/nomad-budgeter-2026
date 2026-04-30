@@ -32,6 +32,12 @@ module.exports = function () {
     { a: "kuala-lumpur", b: "manila", theme: "English-Speaking Asia", emoji: "🗣️", region: "Southeast Asia" },
     { a: "madrid", b: "lisbon", theme: "Iberian Showdown", emoji: "🇪🇸🇵🇹", region: "Europe" },
     { a: "bali", b: "bangkok", theme: "Tropical Titans", emoji: "🌴", region: "Southeast Asia" },
+    { a: "da-nang", b: "chiang-mai", theme: "Ultimate Budget", emoji: "🍜", region: "Southeast Asia" },
+    { a: "dubai", b: "kuala-lumpur", theme: "0% Tax Strategy", emoji: "🏦", region: "Global" },
+    { a: "lisbon", b: "porto", theme: "Portugal Select", emoji: "🇵🇹", region: "Europe" },
+    { a: "medellin", b: "buenos-aires", theme: "LatAm Savings", emoji: "💸", region: "Latin America" },
+    { a: "athens", b: "valencia", theme: "Mediterranean Value", emoji: "🏛️", region: "Europe" },
+    { a: "hanoi", b: "luang-prabang", theme: "Indochina Value", emoji: "🛶", region: "Southeast Asia" },
   ];
 
   // ─── Priority Hubs (Nomad Popularity) ───
@@ -39,7 +45,10 @@ module.exports = function () {
     "bali", "canggu", "ubud", "lisbon", "dubai", "medellin", 
     "chiang-mai", "bangkok", "mexico-city", "valencia", 
     "da-nang", "bansko", "austin", "miami", "barcelona",
-    "buenos-aires", "istanbul", "tbilisi", "cape-town"
+    "buenos-aires", "istanbul", "tbilisi", "cape-town",
+    "athens", "split", "budapest", "funchal", "tenerife", 
+    "porto", "tokyo", "singapore", "kuala-lumpur", "tallinn",
+    "hanoi"
   ];
 
   const results = [];
@@ -52,6 +61,7 @@ module.exports = function () {
 
     const savingsA100k = Math.round((100000 * (1 - cityA.tax)) / 12 - cityA.col);
     const savingsB100k = Math.round((100000 * (1 - cityB.tax)) / 12 - cityB.col);
+    const arbitrageValue = Math.abs(savingsA100k - savingsB100k);
     const winner = savingsA100k > savingsB100k ? cityA.name : cityB.name;
 
     results.push({
@@ -65,6 +75,7 @@ module.exports = function () {
       priority: 1000, // Highest priority
       savingsA: savingsA100k,
       savingsB: savingsB100k,
+      arbitrageValue: arbitrageValue,
       winner: winner,
       title: `${cityA.name} vs. ${cityB.name}: 2026 Digital Nomad Comparison`,
       description: `Compare cost of living, taxes, and savings potential for digital nomads: ${cityA.name} vs. ${cityB.name}. Which ${pair.region} hub fits your 2026 budget?`,
@@ -98,6 +109,7 @@ module.exports = function () {
 
       const savingsA = Math.round((100000 * (1 - cityA.tax)) / 12 - cityA.col);
       const savingsB = Math.round((100000 * (1 - cityB.tax)) / 12 - cityB.col);
+      const arbitrageValue = Math.abs(savingsA - savingsB);
 
       results.push({
         slug: forwardSlug,
@@ -110,6 +122,7 @@ module.exports = function () {
         priority: priorityScore,
         savingsA: savingsA,
         savingsB: savingsB,
+        arbitrageValue: arbitrageValue,
         winner: savingsA > savingsB ? cityA.name : cityB.name,
         title: `${cityA.name} vs. ${cityB.name}: 2026 Digital Nomad Cost of Living Comparison`,
         description: `Compare cost of living, taxes, and savings for digital nomads in ${cityA.name} vs. ${cityB.name}. Updated for 2026.`,
@@ -119,7 +132,51 @@ module.exports = function () {
     }
   }
 
+  // ─── Themes (Nomad Archetypes) ───
+  const themes = [
+    {
+      id: "zero-tax",
+      title: "Zero-to-Low Tax Havens",
+      description: "Optimize your savings in 2026's top tax-friendly destinations.",
+      slugs: ["dubai-vs-singapore", "dubai-vs-kuala-lumpur", "tallinn-vs-vilnius"],
+      emoji: "💰"
+    },
+    {
+      id: "asian-tech",
+      title: "Asian Tech Hubs",
+      description: "High-speed internet meets high-quality lifestyle.",
+      slugs: ["tokyo-vs-seoul", "bangkok-vs-ho-chi-minh-city", "bali-vs-bangkok"],
+      emoji: "🗼"
+    },
+    {
+      id: "eu-value",
+      title: "European Value Hubs",
+      description: "Premium European living without the price tag.",
+      slugs: ["lisbon-vs-valencia", "split-vs-athens", "budapest-vs-prague"],
+      emoji: "🇪🇺"
+    },
+    {
+      id: "indochina-budget",
+      title: "Indochina Budget Havens",
+      description: "Maximum financial leverage in Southeast Asia's most soulful cities.",
+      slugs: ["hanoi-vs-luang-prabang", "da-nang-vs-chiang-mai", "bangkok-vs-ho-chi-minh-city"],
+      emoji: "🛶"
+    },
+    {
+      id: "latam-rising",
+      title: "Latin American Rising Stars",
+      description: "The fastest growing nomad communities in the Americas.",
+      slugs: ["medellin-vs-mexico-city", "buenos-aires-vs-rio-de-janeiro", "san-jose-cr-vs-panama-city"],
+      emoji: "🌎"
+    }
+  ];
+
   // Sort by priority (featured first, then priority hubs, then others)
   // Limit to top 150 to prevent spam flags as requested by user
-  return results.sort((a, b) => b.priority - a.priority).slice(0, 150);
+  const sortedResults = results.sort((a, b) => b.priority - a.priority).slice(0, 150);
+
+  return {
+    list: sortedResults,
+    themes: themes
+  };
 };

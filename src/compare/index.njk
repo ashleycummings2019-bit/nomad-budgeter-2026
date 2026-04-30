@@ -4,40 +4,85 @@ title: "All Digital Nomad Comparisons: Cost of Living, Visas & Taxes"
 description: "Compare cities and countries for digital nomads side-by-side. Our data engine breaks down cost of living, taxes, and visa requirements."
 permalink: /compare/
 ---
-<main class="py-16 max-w-6xl mx-auto px-4">
-  <h1 class="text-4xl font-bold mb-6">Compare Nomad Hubs</h1>
-  <p class="text-xl text-dim mb-12 max-w-3xl">Explore our comprehensive database of city and country comparisons. Find the perfect digital nomad destination by comparing cost of living, visas, and tax benefits side-by-side.</p>
-
-  <section class="mb-16">
-    <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-white/10 text-accent">Top City vs City Comparisons</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    {% for comp in comparisons %}
-      <a href="/compare/{{ comp.slug }}/" class="block p-4 bg-white/5 rounded-lg border border-white/10 hover:border-accent/50 hover:bg-white/10 transition">
-        <span class="font-medium">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</span>
-      </a>
-    {% endfor %}
+<div class="section-container mt-16">
+    <div class="text-center mb-16">
+        <h1 class="aura-title large-title">Compare Nomad Hubs</h1>
+        <p class="text-dim subtitle-text max-800 mx-auto mt-6">Explore our comprehensive database of city and country comparisons. Find the perfect digital nomad destination by comparing cost of living, visas, and tax benefits side-by-side.</p>
     </div>
-  </section>
 
-  <section class="mb-16">
-    <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-white/10 text-accent">City vs Country Comparisons</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    {% for comp in cityCountryComparisons %}
-      <a href="/compare/city-vs-country/{{ comp.slug }}/" class="block p-4 bg-white/5 rounded-lg border border-white/10 hover:border-accent/50 hover:bg-white/10 transition">
-        <span class="font-medium">{{ comp.city.name }} vs {{ comp.country.name }}</span>
-      </a>
-    {% endfor %}
+    {# Themed Categories #}
+    <div class="mb-24">
+        <div class="grid-4 stack-on-mobile gap-6">
+            {% for theme in comparisons.themes %}
+            <div class="glass-panel p-6 theme-card text-center">
+                <div class="theme-icon mb-4" style="font-size: 2.5rem;">{{ theme.emoji }}</div>
+                <h3 class="aura-title mb-2" style="font-size: 1.2rem;">{{ theme.title }}</h3>
+                <p class="text-dim text-small mb-4">{{ theme.description }}</p>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    {% for slug in theme.slugs %}
+                        {% set found = false %}
+                        {% for comp in comparisons.list %}
+                            {% if comp.slug == slug %}
+                                <a href="/compare/{{ slug }}/" class="text-link text-small">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</a>
+                                {% set found = true %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-  </section>
 
-  <section class="mb-16">
-    <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-white/10 text-accent">Country vs Country Visas & Taxes</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-    {% for comp in countryComparisons %}
-      <a href="/compare/country/{{ comp.slug }}/" class="block p-4 bg-white/5 rounded-lg border border-white/10 hover:border-accent/50 hover:bg-white/10 transition">
-        <span class="font-medium">{{ comp.countryA.name }} vs {{ comp.countryB.name }}</span>
-      </a>
-    {% endfor %}
+    {# City vs City Comparisons #}
+    <div class="mb-24">
+        <h2 class="aura-title mb-8 text-center">Top City vs. City Comparisons</h2>
+        <div class="stack-grid">
+        {% for comp in comparisons.list %}
+            <a href="/compare/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+                <div class="hub-icon">{{ comp.emoji | default('⚖️') }}</div>
+                <div class="hub-info">
+                    <div class="hub-name">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</div>
+                    <div class="hub-desc">{{ comp.theme | default('Cost of Living & Taxes') }}</div>
+                    <div class="arbitrage-badge" style="margin-top: 0.5rem; display: inline-block; padding: 0.2rem 0.5rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">
+                        ${{ comp.arbitrageValue | localeString }}/mo Arbitrage
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
     </div>
-  </section>
-</main>
+
+    {# City vs Country Comparisons #}
+    <div class="mb-24">
+        <h2 class="aura-title mb-8 text-center">City vs. Country Comparisons</h2>
+        <div class="stack-grid">
+        {% for comp in cityCountryComparisons %}
+            <a href="/compare/city-vs-country/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+                <div class="hub-icon">🏙️</div>
+                <div class="hub-info">
+                    <div class="hub-name">{{ comp.city.name }} vs. {{ comp.country.name }}</div>
+                    <div class="hub-desc">Compare City to National Average</div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+
+    {# Country vs Country Comparisons #}
+    <div class="mb-24">
+        <h2 class="aura-title mb-8 text-center">Country vs. Country Comparisons</h2>
+        <div class="stack-grid">
+        {% for comp in countryComparisons %}
+            <a href="/compare/country/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+                <div class="hub-icon">🗺️</div>
+                <div class="hub-info">
+                    <div class="hub-name">{{ comp.countryA.name }} vs. {{ comp.countryB.name }}</div>
+                    <div class="hub-desc">National Visas & Tax Frameworks</div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+

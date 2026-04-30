@@ -1,14 +1,48 @@
 ---
 layout: layouts/base.njk
 pagination:
-  data: comparisons
+  data: comparisons.list
   size: 1
   alias: comp
 permalink: "/compare/{{ comp.slug }}/"
 eleventyComputed:
   pageTitle: "{{ comp.cityA.name }} vs. {{ comp.cityB.name }}: 2026 Digital Nomad Comparison"
   pageDescription: "{{ comp.description }}"
+  pageSchema: |
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "{{ comp.cityA.name }} vs. {{ comp.cityB.name }} Comparison",
+      "description": "{{ comp.description }}",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Comparison of {{ comp.cityA.name }} and {{ comp.cityB.name }}",
+        "numberOfItems": 2,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Place",
+              "name": "{{ comp.cityA.name }}",
+              "address": { "@type": "PostalAddress", "addressCountry": "{{ comp.cityA.country }}" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Place",
+              "name": "{{ comp.cityB.name }}",
+              "address": { "@type": "PostalAddress", "addressCountry": "{{ comp.cityB.country }}" }
+            }
+          }
+        ]
+      }
+    }
 ---
+
+{% include "partials/breadcrumbs.njk" %}
 
 <div class="section-container mt-16">
     {# Hero #}
@@ -129,7 +163,19 @@ eleventyComputed:
             <div class="analysis-prose">
                 <p><strong>{{ comp.cityA.name }}</strong> ({{ comp.cityA.country }}): {{ comp.cityA.intro }}</p>
                 <p class="mt-6"><strong>{{ comp.cityB.name }}</strong> ({{ comp.cityB.country }}): {{ comp.cityB.intro }}</p>
-                <p class="mt-6 highlight-text">At a $100,000 annual income, <strong>{{ comp.winner }}</strong> delivers higher monthly savings. {{ comp.cityA.name }} leaves you with <strong>${{ comp.savingsA | localeString }}/month</strong> while {{ comp.cityB.name }} leaves you with <strong>${{ comp.savingsB | localeString }}/month</strong> — a difference of <strong>${{ (comp.savingsA - comp.savingsB) | abs | localeString }}/month</strong>.</p>
+                
+                <div class="arbitrage-summary-box mt-10 p-6 glass-panel aura-border-primary" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--text-main); margin-bottom: 0.5rem;">2026 Monthly Savings Arbitrage</h4>
+                        <p class="text-dim text-small">The financial delta when earning $100k/year.</p>
+                    </div>
+                    <div class="text-right">
+                        <div style="font-size: 2rem; font-weight: 700; color: #10b981;">${{ comp.arbitrageValue | localeString }}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-dim);">per month</div>
+                    </div>
+                </div>
+
+                <p class="mt-10 highlight-text">At a $100,000 annual income, <strong>{{ comp.winner }}</strong> delivers higher monthly savings. {{ comp.cityA.name }} leaves you with <strong>${{ comp.savingsA | localeString }}/month</strong> while {{ comp.cityB.name }} leaves you with <strong>${{ comp.savingsB | localeString }}/month</strong> — a difference of <strong>${{ comp.arbitrageValue | localeString }}/month</strong>.</p>
             </div>
 
             {# Nomad Verdict #}

@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
         <priority>0.8</priority>
     </url>
     {% endfor %}
-    {% for comp in comparisons %}
+    {% for comp in comparisons.list %}
     <url>
         <loc>{{ site.url }}/compare/{{ comp.slug }}/</loc>
         <lastmod>{% sitemapDate %}</lastmod>

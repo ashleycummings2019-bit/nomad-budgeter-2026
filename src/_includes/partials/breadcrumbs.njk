@@ -1,0 +1,55 @@
+{# Breadcrumbs Partial - Boosts SEO and Navigation #}
+<nav class="breadcrumbs section-container" aria-label="Breadcrumb" style="margin-top: 1rem; margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-dim);">
+  <ol style="list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+    <li style="display: flex; align-items: center;">
+      <a href="/" style="color: var(--text-dim); text-decoration: none;">Home</a>
+      <span style="margin-left: 0.5rem;">/</span>
+    </li>
+    
+    {% if city %}
+    <li style="display: flex; align-items: center;">
+      <a href="/cities/{{ city.slug }}/" style="color: var(--aura-primary); text-decoration: none; font-weight: 500;">{{ city.name }} Profile</a>
+    </li>
+    {% endif %}
+
+    {% if comp %}
+    <li style="display: flex; align-items: center;">
+      <span style="color: var(--text-dim); margin-right: 0.5rem;">Compare</span>
+      <span style="margin-right: 0.5rem;">/</span>
+      <a href="/compare/{{ comp.slug }}/" style="color: var(--aura-primary); text-decoration: none; font-weight: 500;">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</a>
+    </li>
+    {% endif %}
+  </ol>
+</nav>
+
+{# Breadcrumb Schema #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    }
+    {% if city %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ city.name }} Digital Nomad Guide",
+      "item": "{{ site.url }}/cities/{{ city.slug }}/"
+    }
+    {% endif %}
+    {% if comp %}
+    ,{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Comparison: {{ comp.cityA.name }} vs {{ comp.cityB.name }}",
+      "item": "{{ site.url }}/compare/{{ comp.slug }}/"
+    }
+    {% endif %}
+  ]
+}
+</script>

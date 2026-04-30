@@ -37,8 +37,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Porto",
@@ -78,8 +78,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Valencia",
@@ -119,8 +119,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Barcelona",
@@ -160,8 +160,8 @@
       "coworkingDay": 27
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Madrid",
@@ -201,8 +201,8 @@
       "coworkingDay": 27
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "London",
@@ -242,8 +242,8 @@
       "coworkingDay": 33
     },
     "exchangeRate": 0.82,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Berlin",
@@ -283,8 +283,8 @@
       "coworkingDay": 27
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Amsterdam",
@@ -324,8 +324,8 @@
       "coworkingDay": 38
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Athens",
@@ -365,8 +365,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Split",
@@ -406,8 +406,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Budapest",
@@ -447,8 +447,8 @@
       "coworkingDay": 6700
     },
     "exchangeRate": 370,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Prague",
@@ -488,8 +488,8 @@
       "coworkingDay": 430
     },
     "exchangeRate": 24,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Tallinn",
@@ -529,8 +529,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Vilnius",
@@ -570,8 +570,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Bucharest",
@@ -613,7 +613,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Tenerife",
@@ -653,8 +653,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Funchal",
@@ -694,8 +694,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Tbilisi",
@@ -737,7 +737,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Istanbul",
@@ -777,8 +777,8 @@
       "coworkingDay": 620
     },
     "exchangeRate": 34.5,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Dubai",
@@ -818,8 +818,8 @@
       "coworkingDay": 150
     },
     "exchangeRate": 3.67,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Bangkok",
@@ -859,8 +859,8 @@
       "coworkingDay": 660
     },
     "exchangeRate": 36.5,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Chiang Mai",
@@ -900,8 +900,8 @@
       "coworkingDay": 290
     },
     "exchangeRate": 36.5,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Bali",
@@ -941,8 +941,8 @@
       "coworkingDay": 288000
     },
     "exchangeRate": 16000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Tokyo",
@@ -982,8 +982,8 @@
       "coworkingDay": 6000
     },
     "exchangeRate": 150.2,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Seoul",
@@ -1023,8 +1023,8 @@
       "coworkingDay": 39200
     },
     "exchangeRate": 1400,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Singapore",
@@ -1064,8 +1064,8 @@
       "coworkingDay": 54
     },
     "exchangeRate": 1.35,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Ho Chi Minh City",
@@ -1105,8 +1105,8 @@
       "coworkingDay": 300000
     },
     "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Kuala Lumpur",
@@ -1146,8 +1146,8 @@
       "coworkingDay": 58
     },
     "exchangeRate": 4.8,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Manila",
@@ -1187,8 +1187,8 @@
       "coworkingDay": 700
     },
     "exchangeRate": 58,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Da Nang",
@@ -1228,8 +1228,8 @@
       "coworkingDay": 300000
     },
     "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Yerevan",
@@ -1271,7 +1271,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "New York",
@@ -1312,8 +1312,8 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Montreal",
@@ -1353,8 +1353,8 @@
       "coworkingDay": 39
     },
     "exchangeRate": 1.38,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Toronto",
@@ -1394,8 +1394,8 @@
       "coworkingDay": 55
     },
     "exchangeRate": 1.38,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Mexico City",
@@ -1435,8 +1435,8 @@
       "coworkingDay": 330
     },
     "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Tulum",
@@ -1476,8 +1476,8 @@
       "coworkingDay": 510
     },
     "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Medellín",
@@ -1517,8 +1517,8 @@
       "coworkingDay": 49200
     },
     "exchangeRate": 4100,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Buenos Aires",
@@ -1558,8 +1558,8 @@
       "coworkingDay": 12000
     },
     "exchangeRate": 1000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Rio de Janeiro",
@@ -1599,8 +1599,8 @@
       "coworkingDay": 92
     },
     "exchangeRate": 5.1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "San José",
@@ -1640,8 +1640,8 @@
       "coworkingDay": 9200
     },
     "exchangeRate": 510,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Panama City",
@@ -1682,8 +1682,8 @@
       "groceryIndex": 0.8
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Cape Town",
@@ -1723,8 +1723,8 @@
       "coworkingDay": 350
     },
     "exchangeRate": 19.5,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Nairobi",
@@ -1764,8 +1764,8 @@
       "coworkingDay": 1600
     },
     "exchangeRate": 130,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Bansko",
@@ -1807,7 +1807,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Sofia",
@@ -1849,7 +1849,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Belgrade",
@@ -1891,7 +1891,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Tirana",
@@ -1933,7 +1933,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Montevideo",
@@ -1973,8 +1973,8 @@
       "coworkingDay": 700
     },
     "exchangeRate": 39,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Antigua",
@@ -2014,8 +2014,8 @@
       "coworkingDay": 94
     },
     "exchangeRate": 7.8,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Bratislava",
@@ -2055,8 +2055,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Cusco",
@@ -2096,8 +2096,8 @@
       "coworkingDay": 30
     },
     "exchangeRate": 3.7,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Playa del Carmen",
@@ -2137,8 +2137,8 @@
       "coworkingDay": 330
     },
     "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Florianópolis",
@@ -2178,8 +2178,8 @@
       "coworkingDay": 61
     },
     "exchangeRate": 5.1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Batumi",
@@ -2221,7 +2221,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "Koh Phangan",
@@ -2261,8 +2261,8 @@
       "coworkingDay": 440
     },
     "exchangeRate": 36.5,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.341Z"
   },
   {
     "name": "George Town",
@@ -2302,8 +2302,8 @@
       "coworkingDay": 58
     },
     "exchangeRate": 4.8,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Lagos",
@@ -2343,8 +2343,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Las Palmas",
@@ -2384,8 +2384,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Ericeira",
@@ -2425,8 +2425,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Seville",
@@ -2466,8 +2466,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Malaga",
@@ -2507,8 +2507,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Warsaw",
@@ -2548,8 +2548,8 @@
       "coworkingDay": 74
     },
     "exchangeRate": 4.1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Krakow",
@@ -2589,8 +2589,8 @@
       "coworkingDay": 74
     },
     "exchangeRate": 4.1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Zagreb",
@@ -2630,8 +2630,8 @@
       "coworkingDay": 17
     },
     "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Austin",
@@ -2672,8 +2672,8 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Miami",
@@ -2714,8 +2714,8 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Port Louis",
@@ -2755,8 +2755,8 @@
       "coworkingDay": 830
     },
     "exchangeRate": 46,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Ubud",
@@ -2796,8 +2796,8 @@
       "coworkingDay": 192000
     },
     "exchangeRate": 16000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Canggu",
@@ -2837,8 +2837,8 @@
       "coworkingDay": 288000
     },
     "exchangeRate": 16000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.853Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Sayulita",
@@ -2878,8 +2878,8 @@
       "coworkingDay": 330
     },
     "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.854Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Hoi An",
@@ -2919,8 +2919,8 @@
       "coworkingDay": 200000
     },
     "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.854Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
   },
   {
     "name": "Siargao",
@@ -2960,7 +2960,89 @@
       "coworkingDay": 700
     },
     "exchangeRate": 58,
-    "exchangeRateDate": "2026-04-29",
-    "pulse_updated": "2026-04-29T14:04:23.854Z"
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T03:35:58.342Z"
+  },
+  {
+    "name": "Hanoi",
+    "slug": "hanoi",
+    "country": "Vietnam",
+    "countrySlug": "vietnam",
+    "code": "VN",
+    "continent": "Asia",
+    "col": 1200,
+    "rent": 600,
+    "tax": 0.05,
+    "score": 85,
+    "visa": "E-Visa (90 days)",
+    "visaMinIncome": 0,
+    "currency": "VND",
+    "highlights": [
+      "Old Quarter energy",
+      "Street food capital",
+      "Hidden gem cafes"
+    ],
+    "intro": "Hanoi is the soulful capital of Vietnam, offering a high-energy mix of history and modern nomad life. In 2026, its ultra-low cost of living and vibrant street culture make it a top-tier value hub for those who don't mind the chaos.",
+    "prices_usd": {
+      "cappuccino": 1.5,
+      "mealCheap": 2.5,
+      "beerLocal": 1.0,
+      "milk1L": 1.2,
+      "chickenBreast1kg": 4.0,
+      "coworkingDay": 7,
+      "groceryIndex": 0.32
+    },
+    "prices_local": {
+      "cappuccino": 37500,
+      "mealCheap": 62500,
+      "beerLocal": 25000,
+      "milk1L": 30000,
+      "chickenBreast1kg": 100000,
+      "coworkingDay": 175000
+    },
+    "exchangeRate": 25000,
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T04:30:00.000Z"
+  },
+  {
+    "name": "Luang Prabang",
+    "slug": "luang-prabang",
+    "country": "Laos",
+    "countrySlug": "laos",
+    "code": "LA",
+    "continent": "Asia",
+    "col": 950,
+    "rent": 400,
+    "tax": 0.00,
+    "score": 80,
+    "visa": "Tourist Visa (30 days)",
+    "visaMinIncome": 0,
+    "currency": "LAK",
+    "highlights": [
+      "UNESCO river town",
+      "Slow living",
+      "Monastery quietude"
+    ],
+    "intro": "Luang Prabang is the ultimate 'slow nomad' destination in 2026. This UNESCO world heritage town in Laos offers extreme value, peaceful riverside coworking, and a spiritual atmosphere that's hard to find elsewhere.",
+    "prices_usd": {
+      "cappuccino": 2.0,
+      "mealCheap": 3.0,
+      "beerLocal": 1.5,
+      "milk1L": 1.5,
+      "chickenBreast1kg": 5.0,
+      "coworkingDay": 10,
+      "groceryIndex": 0.38
+    },
+    "prices_local": {
+      "cappuccino": 44000,
+      "mealCheap": 66000,
+      "beerLocal": 33000,
+      "milk1L": 33000,
+      "chickenBreast1kg": 110000,
+      "coworkingDay": 220000
+    },
+    "exchangeRate": 22000,
+    "exchangeRateDate": "2026-04-30",
+    "pulse_updated": "2026-04-30T04:30:00.000Z"
   }
 ]

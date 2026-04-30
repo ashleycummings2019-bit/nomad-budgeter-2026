@@ -9,7 +9,44 @@ eleventyComputed:
   pageTitle: "{{ city.name }} Digital Nomad Tax & Cost of Living Calculator (2026)"
   pageDescription: "Calculate your nomad budget in {{ city.name }}, {{ city.country }}. {{ city.visa }} with {{ city.tax | percentInt }} tax rate. Updated for 2026."
   prefillCity: "{{ city.name }}"
+  pageSchema: |
+    {
+      "@context": "https://schema.org",
+      "@type": "Place",
+      "name": "{{ city.name }}",
+      "description": "{{ pageDescription }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "{{ city.country }}"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Key Statistics for {{ city.name }}",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Monthly Cost of Living",
+            "text": "${{ city.col | localeString }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Average 1BR Rent",
+            "text": "${{ city.rent | localeString }}"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Nomad Tax Rate",
+            "text": "{{ city.tax | percentInt }}"
+          }
+        ]
+      }
+    }
 ---
+
+{% include "partials/breadcrumbs.njk" %}
 
 {# City Hero Section #}
 <div class="city-hero section-container">
@@ -319,6 +356,40 @@ eleventyComputed:
     {# Related Comparisons #}
     <div class="section-container mt-24">
         <h2 class="aura-title text-center mb-8">Compare {{ city.name }} with Other Hubs</h2>
+        
+        {# Quick Comparison Widget #}
+        <div class="glass-panel p-8 mb-12 text-center">
+            <h3 class="section-subtitle mb-4">Select a city to compare costs & taxes</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                {# Dynamic Comparison Logic: Same country or similar CoL #}
+                {% set suggestedComparisons = [] %}
+                {% for other in cities %}
+                    {% if other.slug != city.slug and suggestedComparisons.length < 5 %}
+                        {% if other.country == city.country or (other.col > city.col * 0.9 and other.col < city.col * 1.1) %}
+                            {% set _ = suggestedComparisons.push(other) %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+
+                {# Fallbacks if list is short #}
+                {% if suggestedComparisons.length < 3 %}
+                    {% for other in cities %}
+                        {% if other.slug != city.slug and other not in suggestedComparisons and suggestedComparisons.length < 5 %}
+                            {% if other.continent == city.continent %}
+                                {% set _ = suggestedComparisons.push(other) %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
+                {% for qCity in suggestedComparisons %}
+                    <a href="/compare/{{ city.slug }}-vs-{{ qCity.slug }}/" class="glass-btn-sm" style="padding: 0.75rem 1.5rem;">
+                        vs. {{ qCity.name }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="stack-grid">
             {% set compCount = 0 %}
             {% for comp in comparisons %}

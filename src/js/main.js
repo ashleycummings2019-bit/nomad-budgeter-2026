@@ -93,6 +93,11 @@ class NomadBudgeterCalculator {
             headerGoProBtn.addEventListener('click', (e) => this.handleProUnlock(e));
         }
 
+        const incomeSlider = document.getElementById('income-slider');
+        if (incomeSlider) {
+            incomeSlider.addEventListener('input', (e) => this.handleSliderUpdate(e.target.value));
+        }
+
         this.startTrustSignalPulse();
         this.checkUrlParams();
     }
@@ -382,6 +387,8 @@ class NomadBudgeterCalculator {
                 empType
             };
 
+            this.currentSimParams = finalData;
+
             this.updateUI(income, actualCityName, finalData, userExpenses);
         } catch (globalError) {
             console.error("Calculation Failure:", globalError);
@@ -435,6 +442,65 @@ class NomadBudgeterCalculator {
                 </div>
             `;
         }
+    }
+
+    handleSliderUpdate(newIncomeStr) {
+        const income = parseFloat(newIncomeStr);
+        const incomeValEl = document.getElementById('slider-income-val');
+        if (incomeValEl) incomeValEl.innerText = this.formatCurrency(income);
+        
+        if (!this.currentSimParams) return;
+        
+        const cityData = this.currentSimParams;
+        const grossAnnual = income;
+        const monthlyGross = grossAnnual / 12;
+        
+        let paysLocalTax = cityData.daysInCountry > 183;
+        let localTaxAmount = paysLocalTax ? (monthlyGross * cityData.tax) : 0;
+        
+        let usTaxAmount = 0;
+        let usFederalTax = 0;
+        let seTax = 0;
+        
+        if (cityData.isUsCitizen) {
+            const feieLimit = 132900;
+            let taxableUsIncome = Math.max(0, grossAnnual - feieLimit);
+            
+            if (taxableUsIncome > 0) {
+                usFederalTax = (taxableUsIncome * 0.24) / 12;
+            }
+            
+            if (cityData.empType === 'freelancer') {
+                seTax = (grossAnnual * 0.153) / 12;
+            }
+            
+            if (localTaxAmount > 0 && usFederalTax > 0) {
+                let offset = Math.min(usFederalTax, localTaxAmount);
+                usFederalTax -= offset;
+            }
+            
+            usTaxAmount = usFederalTax + seTax;
+        }
+
+        const totalTaxAmount = localTaxAmount + usTaxAmount;
+        const netMonthly = monthlyGross - totalTaxAmount;
+        
+        const annualTakeHome = netMonthly * 12;
+        const annualTax = totalTaxAmount * 12;
+        
+        const takeHomePct = Math.max(0, Math.min(100, (annualTakeHome / income) * 100));
+        const taxPct = Math.max(0, Math.min(100, (annualTax / income) * 100));
+        
+        const takeHomeBar = document.getElementById('chart-takehome-bar');
+        const taxBar = document.getElementById('chart-tax-bar');
+        const takeHomeVal = document.getElementById('chart-takehome-val');
+        const taxVal = document.getElementById('chart-tax-val');
+        
+        if (takeHomeBar) takeHomeBar.style.height = `${takeHomePct}%`;
+        if (taxBar) taxBar.style.height = `${taxPct}%`;
+        
+        if (takeHomeVal) takeHomeVal.innerText = this.formatCurrency(annualTakeHome);
+        if (taxVal) taxVal.innerText = this.formatCurrency(annualTax);
     }
 
     // ─── Formatting Helpers ───
@@ -517,6 +583,12 @@ class NomadBudgeterCalculator {
         this.updateCommentary(budgetScore, savings);
         this.updateROILogic(grossAnnual, totalTaxAmount, cityData);
         this.updateProReport(cityName, cityData, localTaxAmount, usTaxAmount, totalTaxAmount, totalExpenses);
+
+        const incomeSlider = document.getElementById('income-slider');
+        if (incomeSlider) {
+            incomeSlider.value = grossAnnual;
+            this.handleSliderUpdate(grossAnnual);
+        }
     }
 
     updateProReport(cityName, cityData, localTax, usTax, totalTax, totalExpenses) {

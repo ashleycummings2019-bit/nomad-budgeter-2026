@@ -31,6 +31,35 @@ pageSchema: |
           { "@type": "HowToStep", "position": 2, "name": "Choose Your Destination", "text": "Enter any city worldwide into the Target City field." },
           { "@type": "HowToStep", "position": 3, "name": "Review Your Results", "text": "Click 'Calculate My Budget' to see take-home pay, tax rate, and savings." }
         ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How are the 2026 digital nomad tax rates calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our 2026 tax estimates are based on current legislated tax laws for digital nomad visas, including special regimes like Spain's Beckham Law, Portugal's NHR successors, and the UAE's 0% personal income tax."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which countries offer 0% tax for digital nomads in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Countries like UAE, Malaysia, and Bermuda offer 0% personal income tax for nomads. Other nations like Greece and Italy offer significant tax reductions (up to 50%) for qualified applicants under their 2026 nomad visa programs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the cost of living data updated for 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our cost of living data is updated monthly and adjusted for 2026 inflation projections to ensure nomads have an accurate representation of their purchasing power in different global hubs."
+            }
+          }
+        ]
       }
     ]
   }
@@ -94,6 +123,37 @@ permalink: /
                 </div>
             </div>
             <a href="https://citizenremote.com/?ref=nomadbudgeter" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for Digital Nomad Visa →</a>
+        </div>
+
+        {# Live Tax Breakdown Chart #}
+        <div class="metric-card interactive-chart">
+            <div class="metric-label">Live Income Simulator</div>
+            <div class="slider-container" style="margin-top: 1rem; margin-bottom: 2rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-dim); font-size: 0.85rem;">Adjust Annual Income</span>
+                    <strong id="slider-income-val" style="color: var(--text-light);">$0</strong>
+                </div>
+                <input type="range" id="income-slider" min="30000" max="300000" step="5000" value="100000" style="width: 100%; accent-color: var(--aura-primary);">
+            </div>
+            
+            <div class="chart-bars" style="display: flex; height: 120px; align-items: flex-end; gap: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%;">
+                    <div id="chart-takehome-bar" style="width: 100%; max-width: 60px; background: #10b981; border-radius: 4px 4px 0 0; height: 0%;"></div>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%;">
+                    <div id="chart-tax-bar" style="width: 100%; max-width: 60px; background: #ef4444; border-radius: 4px 4px 0 0; height: 0%;"></div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-top: 0.5rem; text-align: center;">
+                <div style="flex: 1;">
+                    <div style="font-size: 0.75rem; color: var(--text-dim);">Take-Home Pay</div>
+                    <strong id="chart-takehome-val" style="font-size: 0.9rem; color: #10b981;">$0</strong>
+                </div>
+                <div style="flex: 1;">
+                    <div style="font-size: 0.75rem; color: var(--text-dim);">Total Taxes</div>
+                    <strong id="chart-tax-val" style="font-size: 0.9rem; color: #ef4444;">$0</strong>
+                </div>
+            </div>
         </div>
 
         {# Success Stack (Affiliates) #}
@@ -186,6 +246,37 @@ permalink: /
     </section>
 </div>
 
+{# Trending Comparisons Section #}
+<section class="section-container mt-24 reveal">
+    <div class="text-center mb-12">
+        <h2 class="aura-title">2026 Global Power Comparisons</h2>
+        <p class="text-dim">Direct face-offs between the world's most popular nomad hubs.</p>
+    </div>
+    
+    <div class="stack-grid">
+        {% set comp_count = 0 %}
+        {% for comp in comparisons.list %}
+            {% if comp_count < 8 %}
+            <a href="/compare/{{ comp.slug }}/" class="stack-item glass-panel hub-card" style="text-decoration: none;">
+                <div class="hub-icon" style="font-size: 2rem;">{{ comp.emoji }}</div>
+                <div class="hub-info">
+                    <div class="hub-name" style="font-weight: 600; color: var(--text-main);">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</div>
+                    <div class="hub-desc" style="font-size: 0.9rem; color: var(--text-dim);">{{ comp.theme }} · {{ site.year }} Analysis</div>
+                    <div class="arbitrage-badge" style="margin-top: 0.5rem; display: inline-block; padding: 0.2rem 0.5rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">
+                        ${{ comp.arbitrageValue | localeString }}/mo Arbitrage
+                    </div>
+                </div>
+            </a>
+            {% set comp_count = comp_count + 1 %}
+            {% endif %}
+        {% endfor %}
+    </div>
+    
+    <div class="text-center mt-12">
+        <a href="/compare/lisbon-vs-valencia/" class="glass-btn" style="padding: 1rem 2rem; display: inline-block; text-decoration: none; border: 1px solid var(--glass-border);">View More Comparisons</a>
+    </div>
+</section>
+
 {# Lead Capture Section #}
 <section class="lead-section reveal">
     <div class="lead-card glass-panel">
@@ -200,3 +291,7 @@ permalink: /
         </div>
     </div>
 </section>
+
+<div class="section-container mt-16">
+    {% include "partials/seo-silos.njk" %}
+</div>
