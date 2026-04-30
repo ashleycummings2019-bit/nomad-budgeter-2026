@@ -98,6 +98,9 @@ class NomadBudgeterCalculator {
             incomeSlider.addEventListener('input', (e) => this.handleSliderUpdate(e.target.value));
         }
 
+        const shareBtn = document.getElementById('share-results-btn');
+        if (shareBtn) shareBtn.addEventListener('click', () => this.handleShare());
+
         this.startTrustSignalPulse();
         this.checkUrlParams();
     }

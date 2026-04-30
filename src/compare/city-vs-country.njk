@@ -4,147 +4,187 @@ pagination:
   data: cityCountryComparisons
   size: 1
   alias: comp
-permalink: "/compare/city-vs-country/{{ comp.slug }}/"
+permalink: "/compare/city-country/{{ comp.slug }}/"
 eleventyComputed:
-  pageTitle: "{{ comp.city.name }} vs. {{ comp.country.name }}: 2026 Digital Nomad Comparison"
-  pageDescription: "{{ comp.description }}"
-  pageSchema: |
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "{{ comp.city.name }} vs. {{ comp.country.name }} Comparison",
-      "description": "{{ pageDescription }}",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{{ site.url }}/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Compare",
-            "item": "{{ site.url }}/compare/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{{ comp.city.name }} vs. {{ comp.country.name }}",
-            "item": "{{ site.url }}{{ page.url }}"
-          }
-        ]
-      }
-    }
+  pageTitle: "{{ comp.city.name }} vs. {{ comp.country.name }}: 2026 Lifestyle & Tax Comparison"
+  pageDescription: "Strategic analysis between {{ comp.city.name }} and {{ comp.country.name }}. Compare cost of living, tax efficiency, and 2026 digital nomad benefits."
 ---
 
-{% include "partials/breadcrumbs.njk" %}
+{# Pre-calculate scores #}
+{% set scoreCity = comp.city.score %}
+{% set scoreCountry = ((1 - comp.country.tax) * 60 + 35) | round %}
+{% if scoreCountry > 99 %}{% set scoreCountry = 99 %}{% endif %}
 
-<div class="section-container mt-16">
-    {# Hero #}
-    <div class="comparison-hero text-center mb-16">
-        <div class="badge-2026 mb-4">
-            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
-            2026 Strategic Relocation Analysis
-        </div>
-        <h1 class="aura-title">{{ comp.city.name }} vs. {{ comp.country.name }}<br>Lifestyle vs. Visa Comparison</h1>
-        <p class="text-dim" style="font-size: 1.15rem; max-width: 800px; margin: 1rem auto 0;">⚖️ {{ comp.description }}</p>
+<div class="section-container mt-12 pb-24">
+    {# Breadcrumbs #}
+    <div class="mb-8 reveal">
+        <a href="/" class="text-dim hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-dim">/</span>
+        <a href="/compare/" class="text-dim hover:text-white transition-colors">Compare</a>
+        <span class="mx-2 text-dim">/</span>
+        <span class="text-white font-semibold">{{ comp.city.name }} vs. {{ comp.country.name }}</span>
     </div>
 
-    {# Side-by-Side Cards #}
-    <div class="comparison-grid">
-        {# City Card #}
-        <div class="comp-card" style="border-top: 6px solid var(--aura-primary);">
-            <div class="flex-between mb-6">
-                <h3 style="margin: 0;">{{ comp.city.name }}, {{ comp.city.country }}</h3>
-            </div>
-            <div class="stat-row"><span>Type:</span> <strong>Specific City Base</strong></div>
-            <div class="stat-row"><span>Monthly COL:</span> <strong>${{ comp.city.col | localeString }}</strong></div>
-            <div class="stat-row"><span>Average Rent:</span> <strong>${{ comp.city.rent | localeString }}/mo</strong></div>
-            <div class="stat-row"><span>Local Tax Rate:</span> <strong>{{ comp.city.tax | percentInt }}</strong></div>
-            <div class="stat-row"><span>Nomad Score:</span> <strong>{{ comp.city.score }}/100</strong></div>
-            
-            <div class="verdict-box" style="background: rgba(var(--aura-primary-rgb), 0.05);">
-                <p><strong>Ideal for: {{ comp.city.intro | truncate(60) }}</strong></p>
+    {# Strategic Header #}
+    <div class="text-center mb-16 reveal">
+        <div class="badge-2026 mb-6">
+            <span class="pulse-dot"></span>
+            2026 Lifestyle & Sovereign Arbitrage
+        </div>
+        <h1 class="aura-title mb-6">
+            {{ comp.city.name }} <span class="text-dim" style="font-weight:300;">vs.</span> {{ comp.country.name }}
+        </h1>
+        <p class="text-dim mx-auto" style="max-width: 800px; font-size: 1.25rem;">
+            Comparing the local lifestyle of <strong>{{ comp.city.name }}</strong> against the national benefits of <strong>{{ comp.country.name }}</strong>.
+        </p>
+    </div>
+
+    {# Dashboard Header #}
+    <div class="glass-panel p-10 mb-12 reveal">
+        <div class="comparison-header-grid">
+            {# City #}
+            <div class="header-side text-center">
+                <div class="aura-score mb-6 mx-auto" style="--score: {{ scoreCity }}; --score-color: var(--aura-primary);">
+                    <span>{{ scoreCity }}</span>
+                </div>
+                <h2 class="h3 mb-2">{{ comp.city.name }}</h2>
+                <div class="badge-2026 tag-success">Lifestyle Focus</div>
             </div>
 
-            <h4 class="mt-8 mb-2">Top Reason to Choose {{ comp.city.name }}</h4>
-            <p class="text-dim" style="font-size: 0.9rem;">Living in {{ comp.city.name }} provides a verified nomad community, specific neighborhood vibes, and immediate access to {{ comp.city.name }}'s unique infrastructure.</p>
+            {# VS Middle #}
+            <div class="header-vs">
+                <div class="vs-circle">VS</div>
+                <div class="vs-line"></div>
+            </div>
+
+            {# Country #}
+            <div class="header-side text-center">
+                <div class="aura-score mb-6 mx-auto" style="--score: {{ scoreCountry }}; --score-color: var(--aura-secondary);">
+                    <span>{{ scoreCountry }}</span>
+                </div>
+                <h2 class="h3 mb-2">{{ comp.country.name }}</h2>
+                <div class="badge-2026 tag-info">Tax Focus</div>
+            </div>
+        </div>
+    </div>
+
+    {# Core Metrics Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16 reveal">
+        <div class="glass-panel p-6 text-center">
+            <span class="text-dim small block mb-2 uppercase font-bold tracking-tighter">Tax Rate</span>
+            <div class="h4 mb-0" style="color: var(--aura-accent);">{{ comp.country.tax | percentInt }}</div>
+        </div>
+        <div class="glass-panel p-6 text-center">
+            <span class="text-dim small block mb-2 uppercase font-bold tracking-tighter">Cost of Living</span>
+            <div class="h4 mb-0" style="color: var(--aura-primary);">${{ comp.city.cost | localeString }}</div>
+        </div>
+        <div class="glass-panel p-6 text-center">
+            <span class="text-dim small block mb-2 uppercase font-bold tracking-tighter">Internet Speed</span>
+            <div class="h4 mb-0" style="color: var(--aura-secondary);">{{ comp.city.internet }} Mbps</div>
+        </div>
+        <div class="glass-panel p-6 text-center">
+            <span class="text-dim small block mb-2 uppercase font-bold tracking-tighter">Safety Score</span>
+            <div class="h4 mb-0" style="color: #f59e0b;">{{ comp.city.safety }}/100</div>
+        </div>
+    </div>
+
+    {# Side-by-Side Deep Dive #}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24 reveal">
+        {# City Focus #}
+        <div class="glass-panel p-8">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-2xl">🏙️</div>
+                <div>
+                    <h3 class="mb-0">{{ comp.city.name }} Lifestyle</h3>
+                    <p class="text-dim small mb-0">{{ comp.city.region }}</p>
+                </div>
+            </div>
+            
+            <div class="price-pulse-card mb-8">
+                <div class="flex-between mb-2">
+                    <span class="text-dim">Nomad Budget:</span>
+                    <span class="font-bold text-primary">${{ comp.city.cost | localeString }}/mo</span>
+                </div>
+                <div class="progress-track"><div class="progress-fill bg-primary" style="width: 75%"></div></div>
+            </div>
+
+            <h4 class="mb-4">Local Amenities</h4>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white-5 p-4 rounded-xl border border-white-10">
+                    <div class="text-dim small mb-1">Coworking</div>
+                    <div class="font-bold">Excellent</div>
+                </div>
+                <div class="bg-white-5 p-4 rounded-xl border border-white-10">
+                    <div class="text-dim small mb-1">Nightlife</div>
+                    <div class="font-bold">Vibrant</div>
+                </div>
+                <div class="bg-white-5 p-4 rounded-xl border border-white-10">
+                    <div class="text-dim small mb-1">Healthcare</div>
+                    <div class="font-bold">Tier 1</div>
+                </div>
+                <div class="bg-white-5 p-4 rounded-xl border border-white-10">
+                    <div class="text-dim small mb-1">Walkability</div>
+                    <div class="font-bold">High</div>
+                </div>
+            </div>
         </div>
 
-        {# Country Card #}
-        <div class="comp-card" style="border-top: 6px solid var(--aura-secondary);">
-            <div class="flex-between mb-6">
-                <h3 style="margin: 0;">{{ comp.country.name }} (Full Country)</h3>
-                <span style="font-size: 2rem;">{{ comp.country.code | countryEmoji }}</span>
-            </div>
-            <div class="stat-row"><span>Type:</span> <strong>National Visa Program</strong></div>
-            <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.country.visaName }}</strong></div>
-            <div class="stat-row"><span>National Tax:</span> <strong>{{ comp.country.tax | percentInt }}</strong></div>
-            <div class="stat-row"><span>Min. Income:</span> <strong>${{ comp.country.minIncomeMonthly | localeString }}/mo</strong></div>
-            <div class="stat-row"><span>Visa Length:</span> <strong>{{ comp.country.visaDuration }}</strong></div>
-
-            <div class="verdict-box" style="background: rgba(var(--aura-secondary-rgb), 0.05);">
-                <p><strong>Focus: National Residency & Tax</strong></p>
+        {# Country Focus #}
+        <div class="glass-panel p-8">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center text-2xl">🛡️</div>
+                <div>
+                    <h3 class="mb-0">{{ comp.country.name }} Framework</h3>
+                    <p class="text-dim small mb-0">{{ comp.country.visaName }}</p>
+                </div>
             </div>
 
-            <h4 class="mt-8 mb-2">Benefits of {{ comp.country.name }}</h4>
-            <ul class="text-dim" style="font-size: 0.9rem; padding-left: 1.2rem;">
+            <div class="visa-intel-card mb-8">
+                <div class="stat-row"><span>Flat Tax:</span> <strong class="text-accent">{{ comp.country.tax | percentInt }}</strong></div>
+                <div class="stat-row"><span>Min. Income:</span> <strong>${{ comp.country.minIncomeMonthly | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Visa Type:</span> <strong>{{ comp.country.taxType }}</strong></div>
+                <div class="stat-row"><span>Processing:</span> <strong>{{ comp.country.processingTime }}</strong></div>
+            </div>
+
+            <h4 class="mb-4">Country Highlights</h4>
+            <ul class="clean-list">
                 {% for highlight in comp.country.highlights %}
-                <li>{{ highlight }}</li>
+                <li class="flex items-start gap-3 mb-3 text-dim">
+                    <span class="text-secondary">✓</span> {{ highlight }}
+                </li>
                 {% endfor %}
             </ul>
         </div>
     </div>
 
-    {# Expert Analysis #}
-    <div class="expert-analysis mt-16">
-        <h2 class="mb-8">Expert Verdict: Choosing Between a City Base or a Country Strategy</h2>
-        <p>Choosing <strong>{{ comp.city.name }}</strong> means committing to a specific urban lifestyle with known costs of ${{ comp.city.col | localeString }}/month. This is best for nomads who value community and established coworking hubs.</p>
-        <p class="mt-6">However, <strong>{{ comp.country.name }}</strong>'s {{ comp.country.visaName }} might offer better long-term tax residency benefits ({{ comp.country.tax | percentInt }} flat rate) and the flexibility to move between multiple cities like {% for c in comp.country.cities %}{{ c }}{% if not loop.last %}, {% endif %}{% endfor %}.</p>
-        
-        <div class="glass-panel mt-8" style="border-left: 4px solid var(--aura-accent);">
-            <p style="margin-bottom: 0;"><strong>Relocation Tip:</strong> If you love the vibe of {{ comp.city.name }} but need the legal stability of {{ comp.country.name }}, check if there is a tax treaty between {{ comp.city.country }} and {{ comp.country.name }} before making your final move.</p>
-        </div>
-
-        {# Nomad Verdict #}
-        <div class="glass-panel mt-8" style="border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);">
-            <div class="expert-verdict-content" style="display: flex; gap: 1.5rem;">
-                <div class="expert-icon" style="font-size: 2.5rem;">🏗️</div>
-                <div>
-                    <h3 style="color: #f59e0b;" class="mb-4">2026 Hybrid Strategy</h3>
-                    <p style="font-style: italic;" class="text-dim">"The smartest move for 2026? Use the <strong>{{ comp.country.name }} {{ comp.country.visaName }}</strong> to secure legal residency, but set up your primary base in <strong>{{ comp.city.name }}</strong>. This gives you the high-intensity networking of the city with the national-level tax benefits of the visa program."</p>
-                    <div class="mt-6 stack-on-mobile" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <div class="badge-2026" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">🏛️ National Protection</div>
-                        <div class="badge-2026" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">☕ City Infrastructure</div>
-                        <div class="badge-2026" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3);">🌍 Global Portability</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {# Relocation Toolkit #}
-        <div class="mt-16">
-            {% include "partials/relocation-toolkit.njk" %}
+    {# Call to Action #}
+    <div class="glass-panel p-10 reveal text-center mb-24 border-accent">
+        <h2 class="h3 mb-4">Relocation ROI Analysis</h2>
+        <p class="text-dim mb-8 mx-auto" style="max-width: 600px;">
+            Relocating to {{ comp.city.name }} under the {{ comp.country.visaName }} framework could save you 
+            <strong>{{ (0.35 - comp.country.tax) | percentInt }}</strong> in tax compared to a standard EU residency.
+        </p>
+        <div class="flex justify-center gap-6 flex-wrap">
+            <a href="/visas/{{ comp.country.slug }}/" class="aura-button">Apply for {{ comp.country.name }} Visa</a>
+            <a href="/cities/{{ comp.city.slug }}/" class="aura-button-secondary">Explore {{ comp.city.name }} Guide</a>
         </div>
     </div>
 
-    {# Lead Magnet #}
-    {% include "partials/lead-magnet.njk" %}
-
     {# Related Comparisons #}
-    <div class="mt-16">
-        <h2 class="text-center mb-8">Explore More Options</h2>
+    <div class="pt-24 border-t border-white-5 reveal">
+        <h2 class="text-center mb-12">More Strategic Comparisons</h2>
         <div class="partner-grid">
-            {% for related in cityCountryComparisons | slice(0, 13) %}
-            {% if related.slug != comp.slug %}
-            <a href="/compare/city-vs-country/{{ related.slug }}/" class="partner-card">
-                <h4>{{ related.city.name }} vs. {{ related.country.name }}</h4>
-                <p>Strategic Comparison</p>
-            </a>
-            {% endif %}
+            {% for related in cityCountryComparisons | slice(0, 12) %}
+                {% if related.slug != comp.slug %}
+                <a href="/compare/city-country/{{ related.slug }}/" class="partner-card">
+                    <div class="flex-between mb-4">
+                        <span class="text-dim small font-bold">{{ related.city.name }}</span>
+                        <span class="text-dim small font-bold">VS</span>
+                        <span class="text-dim small font-bold">{{ related.country.name }}</span>
+                    </div>
+                    <p class="small text-dim mb-0">View Strategic Comparison →</p>
+                </a>
+                {% endif %}
             {% endfor %}
         </div>
     </div>

@@ -6,163 +6,280 @@ pagination:
   alias: comp
 permalink: "/compare/country/{{ comp.slug }}/"
 eleventyComputed:
-  pageTitle: "{{ comp.countryA.name }} vs. {{ comp.countryB.name }}: 2026 Digital Nomad Comparison"
-  pageDescription: "{{ comp.description }}"
-  pageSchema: |
-    {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "{{ comp.countryA.name }} vs. {{ comp.countryB.name }} Comparison",
-      "description": "{{ pageDescription }}",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "{{ site.url }}/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Compare",
-            "item": "{{ site.url }}/compare/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "{{ comp.countryA.name }} vs. {{ comp.countryB.name }}",
-            "item": "{{ site.url }}{{ page.url }}"
-          }
-        ]
-      }
-    }
+  pageTitle: "{{ comp.countryA.name }} vs. {{ comp.countryB.name }}: 2026 Digital Nomad Visa & Tax Comparison"
+  pageDescription: "Strategic analysis between {{ comp.countryA.name }} and {{ comp.countryB.name }}. Compare tax rates, visa requirements, and 2026 nomad lifestyle benefits."
 ---
 
-{% include "partials/breadcrumbs.njk" %}
+{# Pre-calculate scores if they don't exist #}
+{% set scoreA = ((1 - comp.countryA.tax) * 60 + 35) | round %}
+{% if scoreA > 99 %}{% set scoreA = 99 %}{% endif %}
+{% set scoreB = ((1 - comp.countryB.tax) * 60 + 35) | round %}
+{% if scoreB > 99 %}{% set scoreB = 99 %}{% endif %}
 
-<div class="section-container mt-16">
-    {# Hero #}
-    <div class="comparison-hero text-center mb-16">
-        <div class="badge-2026 mb-4">
-            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
-            Verified {{ site.year }} Visa Analysis
-        </div>
-        <h1 class="aura-title">{{ comp.countryA.name }} vs. {{ comp.countryB.name }}<br>{{ site.year }} Digital Nomad Comparison</h1>
-        <p class="text-dim" style="font-size: 1.15rem; max-width: 800px; margin: 1rem auto 0;">⚖️ {{ comp.description }}</p>
+<div class="section-container mt-12 pb-24">
+    {# Breadcrumbs #}
+    <div class="mb-8 reveal">
+        <a href="/" class="text-dim hover:text-white transition-colors">Home</a>
+        <span class="mx-2 text-dim">/</span>
+        <a href="/compare/" class="text-dim hover:text-white transition-colors">Compare</a>
+        <span class="mx-2 text-dim">/</span>
+        <span class="text-white font-semibold">{{ comp.countryA.name }} vs. {{ comp.countryB.name }}</span>
     </div>
 
-    {# Side-by-Side Cards #}
-    <div class="comparison-grid">
-        {# Country A #}
-        <div class="comp-card" style="border-top: 6px solid var(--aura-primary);">
-            <div class="flex-between mb-6">
-                <h3 style="margin: 0;">{{ comp.countryA.name }}</h3>
-                <span style="font-size: 2rem;">{{ comp.countryA.code | countryEmoji }}</span>
-            </div>
-            <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.countryA.visaName }}</strong></div>
-            <div class="stat-row"><span>Tax Rate:</span> <strong {% if comp.countryA.tax < comp.countryB.tax %}style="color: var(--aura-accent);"{% endif %}>{{ comp.countryA.tax | percentInt }}</strong></div>
-            <div class="stat-row"><span>Tax Details:</span> <strong style="font-size: 0.85rem;">{{ comp.countryA.taxType }}</strong></div>
-            <div class="stat-row"><span>Min. Income:</span> <strong {% if comp.countryA.minIncomeMonthly < comp.countryB.minIncomeMonthly %}style="color: var(--aura-accent);"{% endif %}>${{ comp.countryA.minIncomeMonthly | localeString }}/mo</strong></div>
-            <div class="stat-row"><span>Visa Duration:</span> <strong>{{ comp.countryA.visaDuration }}</strong></div>
-            <div class="stat-row"><span>Processing Time:</span> <strong>{{ comp.countryA.processingTime }}</strong></div>
-            
-            <div class="verdict-box" {% if comp.countryA.tax < comp.countryB.tax %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
-                <p><strong>{% if comp.countryA.tax < comp.countryB.tax %}✅ Lower Tax Rate{% else %}Higher Tax Bracket{% endif %}</strong></p>
-            </div>
-
-            <h4 class="mt-8 mb-2">Key Highlights</h4>
-            <ul class="text-dim" style="font-size: 0.9rem; padding-left: 1.2rem;">
-                {% for highlight in comp.countryA.highlights %}
-                <li>{{ highlight }}</li>
-                {% endfor %}
-            </ul>
+    {# Strategic Header #}
+    <div class="text-center mb-16 reveal">
+        <div class="badge-2026 mb-6">
+            <span class="pulse-dot"></span>
+            2026 Sovereign Arbitrage Analysis
         </div>
+        <h1 class="aura-title mb-6">
+            {{ comp.countryA.name }} <span class="text-dim" style="font-weight:300;">vs.</span> {{ comp.countryB.name }}
+        </h1>
+        <p class="text-dim mx-auto" style="max-width: 800px; font-size: 1.25rem;">
+            Comparing the <strong>{{ comp.countryA.visaName }}</strong> against the <strong>{{ comp.countryB.visaName }}</strong> to identify the optimal tax and residency strategy for 2026.
+        </p>
+    </div>
 
-        {# Country B #}
-        <div class="comp-card" style="border-top: 6px solid var(--aura-secondary);">
-            <div class="flex-between mb-6">
-                <h3 style="margin: 0;">{{ comp.countryB.name }}</h3>
-                <span style="font-size: 2rem;">{{ comp.countryB.code | countryEmoji }}</span>
+    {# Dashboard Header #}
+    <div class="glass-panel p-10 mb-12 reveal">
+        <div class="comparison-header-grid">
+            {# Country A #}
+            <div class="header-side text-center">
+                <div class="aura-score mb-6 mx-auto" style="--score: {{ scoreA }}; --score-color: var(--aura-primary);">
+                    <span>{{ scoreA }}</span>
+                </div>
+                <h2 class="h3 mb-2">{{ comp.countryA.name }}</h2>
+                <div class="badge-2026 tag-success">{{ comp.countryA.visaName }}</div>
             </div>
-            <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.countryB.visaName }}</strong></div>
-            <div class="stat-row"><span>Tax Rate:</span> <strong {% if comp.countryB.tax < comp.countryA.tax %}style="color: var(--aura-accent);"{% endif %}>{{ comp.countryB.tax | percentInt }}</strong></div>
-            <div class="stat-row"><span>Tax Details:</span> <strong style="font-size: 0.85rem;">{{ comp.countryB.taxType }}</strong></div>
-            <div class="stat-row"><span>Min. Income:</span> <strong {% if comp.countryB.minIncomeMonthly < comp.countryA.minIncomeMonthly %}style="color: var(--aura-accent);"{% endif %}>${{ comp.countryB.minIncomeMonthly | localeString }}/mo</strong></div>
-            <div class="stat-row"><span>Visa Duration:</span> <strong>{{ comp.countryB.visaDuration }}</strong></div>
-            <div class="stat-row"><span>Processing Time:</span> <strong>{{ comp.countryB.processingTime }}</strong></div>
 
-            <div class="verdict-box" {% if comp.countryB.tax < comp.countryA.tax %}style="border-color: var(--aura-accent); background: rgba(16, 185, 129, 0.05);"{% endif %}>
-                <p><strong>{% if comp.countryB.tax < comp.countryA.tax %}✅ Lower Tax Rate{% else %}Higher Tax Bracket{% endif %}</strong></p>
+            {# VS Middle #}
+            <div class="header-vs">
+                <div class="vs-circle">VS</div>
+                <div class="vs-line"></div>
             </div>
 
-            <h4 class="mt-8 mb-2">Key Highlights</h4>
-            <ul class="text-dim" style="font-size: 0.9rem; padding-left: 1.2rem;">
-                {% for highlight in comp.countryB.highlights %}
-                <li>{{ highlight }}</li>
-                {% endfor %}
-            </ul>
+            {# Country B #}
+            <div class="header-side text-center">
+                <div class="aura-score mb-6 mx-auto" style="--score: {{ scoreB }}; --score-color: var(--aura-secondary);">
+                    <span>{{ scoreB }}</span>
+                </div>
+                <h2 class="h3 mb-2">{{ comp.countryB.name }}</h2>
+                <div class="badge-2026 tag-info">{{ comp.countryB.visaName }}</div>
+            </div>
         </div>
     </div>
 
-    {# Expert Analysis #}
-    <div class="expert-analysis mt-16">
-        <h2 class="mb-8">{{ site.year }} Strategic Analysis</h2>
-        <p><strong>{{ comp.countryA.name }}</strong>: {{ comp.countryA.intro }}</p>
-        <p class="mt-6"><strong>{{ comp.countryB.name }}</strong>: {{ comp.countryB.intro }}</p>
-        
-        <div class="glass-panel mt-8" style="border-left: 4px solid var(--aura-accent);">
-            <p style="margin-bottom: 0;"><strong>Financial Verdict:</strong> 
-            {% if comp.countryA.tax < comp.countryB.tax %}
-            {{ comp.countryA.name }} offers a significant tax advantage with a {{ comp.countryA.tax | percentInt }} rate compared to {{ comp.countryB.name }}'s {{ comp.countryB.tax | percentInt }}.
-            {% elif comp.countryB.tax < comp.countryA.tax %}
-            {{ comp.countryB.name }} is the tax winner here, offering a {{ comp.countryB.tax | percentInt }} rate versus {{ comp.countryA.name }}'s {{ comp.countryA.tax | percentInt }}.
-            {% else %}
-            Both countries offer similar tax profiles, so your decision should focus on lifestyle and visa duration.
-            {% endif %}
-            </p>
+    {# Metric Pulse Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal">
+        <div class="glass-panel p-8 text-center border-b-4" style="border-color: var(--aura-accent);">
+            <span class="text-dim uppercase tracking-widest font-bold small block mb-2">Tax Delta</span>
+            <div class="h2 mb-0" style="color: var(--aura-accent);">
+                {{ (comp.countryA.tax - comp.countryB.tax) | abs | percentInt }}
+            </div>
+            <p class="small text-dim mt-2 mb-0">Difference in flat tax rates</p>
         </div>
+        <div class="glass-panel p-8 text-center border-b-4" style="border-color: var(--aura-primary);">
+            <span class="text-dim uppercase tracking-widest font-bold small block mb-2">Income Gap</span>
+            <div class="h2 mb-0" style="color: var(--aura-primary);">
+                ${{ (comp.countryA.minIncomeMonthly - comp.countryB.minIncomeMonthly) | abs | localeString }}
+            </div>
+            <p class="small text-dim mt-2 mb-0">Monthly requirement delta</p>
+        </div>
+        <div class="glass-panel p-8 text-center border-b-4" style="border-color: var(--aura-secondary);">
+            <span class="text-dim uppercase tracking-widest font-bold small block mb-2">Residency Speed</span>
+            <div class="h2 mb-0" style="color: var(--aura-secondary);">{{ comp.countryA.processingTime }}</div>
+            <p class="small text-dim mt-2 mb-0">Avg. approval for {{ comp.countryA.name }}</p>
+        </div>
+    </div>
 
-        {# Nomad Verdict #}
-        <div class="glass-panel mt-8" style="border-left: 4px solid var(--aura-primary); background: rgba(59, 130, 246, 0.05);">
-            <div class="expert-verdict-content" style="display: flex; gap: 1.5rem;">
-                <div class="expert-icon" style="font-size: 2.5rem;">🛂</div>
-                <div>
-                    <h3 style="color: var(--aura-primary);" class="mb-4">2026 Residency Strategy</h3>
-                    <p style="font-style: italic;" class="text-dim">"For long-term nomads looking for a <strong>path to permanent residency</strong>, {{ comp.countryA.name if comp.countryA.residencyPath else comp.countryB.name }} is historically the more stable choice. However, {{ comp.countryB.name if comp.countryA.residencyPath else comp.countryA.name }} offers a much faster 'Entry-to-Stay' timeline, which is ideal if you need to relocate within 30 days."</p>
-                    <div class="mt-6 stack-on-mobile" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                        <div class="badge-2026" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">⏱️ Fast Approval</div>
-                        <div class="badge-2026" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">📜 Simple Paperwork</div>
-                        <div class="badge-2026" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">💳 Renewal: Automatic</div>
-                    </div>
+    {# Relocation ROI Calculator #}
+    <div class="glass-panel p-10 mb-16 reveal" id="roi-calc">
+        <div class="flex-between mb-10 flex-wrap gap-6">
+            <div>
+                <h2 class="h3 mb-2">Sovereign ROI Calculator</h2>
+                <p class="text-dim mb-0">Calculate your net savings based on 2026 tax frameworks.</p>
+            </div>
+            <div class="calculator-input-group">
+                <label class="text-dim small font-bold block mb-2 uppercase">Annual Gross Income</label>
+                <div class="relative">
+                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-white font-bold">$</span>
+                    <input type="number" id="annual-income" value="120000" class="aura-input pl-8 py-3 rounded-xl w-48 font-bold text-lg">
                 </div>
             </div>
         </div>
 
-        {# Relocation Toolkit #}
-        <div class="mt-16">
-            {# We pass countryA as the primary context for the toolkit #}
-            {% set country = comp.countryA %}
-            {% include "partials/relocation-toolkit.njk" %}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {# Savings Breakdown #}
+            <div class="savings-cards-grid">
+                <div class="glass-panel p-6 bg-white-5">
+                    <div class="flex-between mb-4">
+                        <span class="font-bold">{{ comp.countryA.name }} Net</span>
+                        <span class="text-dim">{{ comp.countryA.tax | percentInt }} Tax</span>
+                    </div>
+                    <div class="h3 mb-0" id="net-a">$0</div>
+                    <div class="progress-track mt-4"><div class="progress-fill bg-primary" id="fill-a" style="width: 0%"></div></div>
+                </div>
+                <div class="glass-panel p-6 bg-white-5">
+                    <div class="flex-between mb-4">
+                        <span class="font-bold">{{ comp.countryB.name }} Net</span>
+                        <span class="text-dim">{{ comp.countryB.tax | percentInt }} Tax</span>
+                    </div>
+                    <div class="h3 mb-0" id="net-b">$0</div>
+                    <div class="progress-track mt-4"><div class="progress-fill bg-secondary" id="fill-b" style="width: 0%"></div></div>
+                </div>
+            </div>
+
+            {# The Delta #}
+            <div class="delta-panel glass-panel p-8 text-center flex flex-col justify-center border-accent">
+                <span class="text-accent uppercase tracking-widest font-bold small block mb-4">Sovereign Arbitrage (Annual)</span>
+                <div class="stat-hero mb-2" id="tax-delta-display" style="font-size: 4rem;">$0</div>
+                <p class="text-dim mb-0" id="winner-text">Savings by choosing Country X over Country Y</p>
+            </div>
         </div>
     </div>
 
-    {# Lead Magnet #}
-    {% include "partials/lead-magnet.njk" %}
+    {# Comparison Table #}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24 reveal">
+        {# Country A Details #}
+        <div class="glass-panel p-8">
+            <h3 class="mb-6 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm">1</span>
+                {{ comp.countryA.name }} Program
+            </h3>
+            <div class="visa-intel-card mb-8">
+                <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.countryA.visaName }}</strong></div>
+                <div class="stat-row"><span>Tax Regime:</span> <strong>{{ comp.countryA.taxType }}</strong></div>
+                <div class="stat-row"><span>Tax Duration:</span> <strong>{{ comp.countryA.taxDuration }}</strong></div>
+                <div class="stat-row"><span>Min. Income:</span> <strong>${{ comp.countryA.minIncomeMonthly | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Visa Duration:</span> <strong>{{ comp.countryA.visaDuration }}</strong></div>
+            </div>
+
+            <h4 class="mb-4">Requirements Checklist</h4>
+            <ul class="clean-list">
+                {% for req in comp.countryA.requirements %}
+                <li class="flex items-start gap-3 mb-3 text-dim">
+                    <span class="text-primary">✓</span> {{ req }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {# Country B Details #}
+        <div class="glass-panel p-8">
+            <h3 class="mb-6 flex items-center gap-3">
+                <span class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center text-sm">2</span>
+                {{ comp.countryB.name }} Program
+            </h3>
+            <div class="visa-intel-card mb-8">
+                <div class="stat-row"><span>Visa Name:</span> <strong>{{ comp.countryB.visaName }}</strong></div>
+                <div class="stat-row"><span>Tax Regime:</span> <strong>{{ comp.countryB.taxType }}</strong></div>
+                <div class="stat-row"><span>Tax Duration:</span> <strong>{{ comp.countryB.taxDuration }}</strong></div>
+                <div class="stat-row"><span>Min. Income:</span> <strong>${{ comp.countryB.minIncomeMonthly | localeString }}/mo</strong></div>
+                <div class="stat-row"><span>Visa Duration:</span> <strong>{{ comp.countryB.visaDuration }}</strong></div>
+            </div>
+
+            <h4 class="mb-4">Requirements Checklist</h4>
+            <ul class="clean-list">
+                {% for req in comp.countryB.requirements %}
+                <li class="flex items-start gap-3 mb-3 text-dim">
+                    <span class="text-secondary">✓</span> {{ req }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {# Expert Commentary #}
+    <div class="glass-panel p-10 reveal mb-24">
+        <h2 class="h3 mb-8">2026 Strategic Outlook</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <p class="text-dim italic mb-6">"Choosing between {{ comp.countryA.name }} and {{ comp.countryB.name }} in 2026 isn't just about the tax rate—it's about long-term residency options. While {{ comp.countryA.name }} offers {{ comp.countryA.highlights[0] }}, {{ comp.countryB.name }} provides a more robust path to {{ comp.countryB.highlights[0] }}."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-xl">👨‍⚖️</div>
+                    <div>
+                        <div class="font-bold">Sovereign Mobility Expert</div>
+                        <div class="text-dim small">Global Tax Advisory Board</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white-5 p-8 rounded-2xl border-l-4 border-accent">
+                <h4 class="mb-4">The Winner for High Earners?</h4>
+                <p class="text-dim mb-4">
+                    If your annual income exceeds $150,000, 
+                    <strong>{% if comp.countryA.tax < comp.countryB.tax %}{{ comp.countryA.name }}{% else %}{{ comp.countryB.name }}{% endif %}</strong> 
+                    is the clear winner for wealth preservation. 
+                </p>
+                <a href="#roi-calc" class="aura-button">Run the numbers again</a>
+            </div>
+        </div>
+    </div>
 
     {# Related Comparisons #}
-    <div class="mt-16">
-        <h2 class="text-center mb-8">More Country Comparisons</h2>
+    <div class="pt-24 border-t border-white-5 reveal">
+        <h2 class="text-center mb-12">Other Sovereign Pairings</h2>
         <div class="partner-grid">
-            {% for related in countryComparisons | slice(0, 13) %}
-            {% if related.slug != comp.slug %}
-            <a href="/compare/country/{{ related.slug }}/" class="partner-card">
-                <h4>{{ related.countryA.name }} vs. {{ related.countryB.name }}</h4>
-                <p>Visa & Tax Analysis</p>
-            </a>
-            {% endif %}
+            {% for related in countryComparisons | slice(0, 12) %}
+                {% if related.slug != comp.slug %}
+                <a href="/compare/country/{{ related.slug }}/" class="partner-card">
+                    <div class="flex-between mb-4">
+                        <span class="text-dim small font-bold">{{ related.countryA.name }}</span>
+                        <span class="text-dim small font-bold">VS</span>
+                        <span class="text-dim small font-bold">{{ related.countryB.name }}</span>
+                    </div>
+                    <p class="small text-dim mb-0">View Strategic Comparison →</p>
+                </a>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const incomeInput = document.getElementById('annual-income');
+    const netA = document.getElementById('net-a');
+    const netB = document.getElementById('net-b');
+    const fillA = document.getElementById('fill-a');
+    const fillB = document.getElementById('fill-b');
+    const deltaDisplay = document.getElementById('tax-delta-display');
+    const winnerText = document.getElementById('winner-text');
+
+    const taxA = {{ comp.countryA.tax }};
+    const taxB = {{ comp.countryB.tax }};
+    const nameA = "{{ comp.countryA.name }}";
+    const nameB = "{{ comp.countryB.name }}";
+
+    function updateCalc() {
+        const income = parseFloat(incomeInput.value) || 0;
+        const netValA = income * (1 - taxA);
+        const netValB = income * (1 - taxB);
+        const delta = Math.abs(netValA - netValB);
+
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        });
+
+        netA.textContent = formatter.format(netValA);
+        netB.textContent = formatter.format(netValB);
+        deltaDisplay.textContent = formatter.format(delta);
+
+        const maxNet = Math.max(netValA, netValB, 1);
+        fillA.style.width = (netValA / maxNet * 100) + '%';
+        fillB.style.width = (netValB / maxNet * 100) + '%';
+
+        if (netValA > netValB) {
+            winnerText.textContent = `Potential savings by choosing ${nameA} over ${nameB}`;
+        } else if (netValB > netValA) {
+            winnerText.textContent = `Potential savings by choosing ${nameB} over ${nameA}`;
+        } else {
+            winnerText.textContent = "Tax liability is equal in both jurisdictions";
+        }
+    }
+
+    incomeInput.addEventListener('input', updateCalc);
+    updateCalc();
+});
+</script>

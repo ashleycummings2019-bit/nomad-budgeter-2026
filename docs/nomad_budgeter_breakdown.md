@@ -38,7 +38,7 @@ The platform is architected as a sales funnel with integrated affiliate triggers
 
 *   **Global Configuration:** All affiliate data (URLs, descriptions, UTMs) is centralized in `src/_data/site.json`.
 *   **Key Partners:**
-    *   **Blueground & Agoda:** Accommodations (Currently utilizing a 2025/2026 promo code strategy).
+    *   **Blueground & Agoda:** Accommodations (Currently utilizing the 2026 campaign and promo code strategy).
     *   **Lexidy:** Visa & Legal Services.
     *   **SafetyWing:** Digital Nomad Health Insurance.
     *   **Wise:** Global Banking and Currency Exchange.

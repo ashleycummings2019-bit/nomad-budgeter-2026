@@ -49,7 +49,7 @@ permalink: /compare/
                         {% set found = false %}
                         {% for comp in comparisons.list %}
                             {% if comp.slug == slug %}
-                                <a href="/compare/{{ slug }}/" class="text-link text-small">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</a>
+                                <a href="/compare/city/{{ slug }}/" class="text-link text-small">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</a>
                                 {% set found = true %}
                             {% endif %}
                         {% endfor %}
@@ -65,7 +65,7 @@ permalink: /compare/
         <h2 class="aura-title mb-8 text-center">Top City vs. City Comparisons</h2>
         <div class="stack-grid">
         {% for comp in comparisons.list %}
-            <a href="/compare/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+            <a href="/compare/city/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
                 <div class="hub-icon">{{ comp.emoji | default('⚖️') }}</div>
                 <div class="hub-info">
                     <div class="hub-name">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</div>
@@ -84,7 +84,7 @@ permalink: /compare/
         <h2 class="aura-title mb-8 text-center">City vs. Country Comparisons</h2>
         <div class="stack-grid">
         {% for comp in cityCountryComparisons %}
-            <a href="/compare/city-vs-country/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+            <a href="/compare/city-country/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
                 <div class="hub-icon">🏙️</div>
                 <div class="hub-info">
                     <div class="hub-name">{{ comp.city.name }} vs. {{ comp.country.name }}</div>

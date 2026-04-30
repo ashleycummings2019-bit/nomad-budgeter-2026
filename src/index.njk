@@ -257,7 +257,7 @@ permalink: /
         {% set comp_count = 0 %}
         {% for comp in comparisons.list %}
             {% if comp_count < 8 %}
-            <a href="/compare/{{ comp.slug }}/" class="stack-item glass-panel hub-card" style="text-decoration: none;">
+            <a href="/compare/city/{{ comp.slug }}/" class="stack-item glass-panel hub-card" style="text-decoration: none;">
                 <div class="hub-icon" style="font-size: 2rem;">{{ comp.emoji }}</div>
                 <div class="hub-info">
                     <div class="hub-name" style="font-weight: 600; color: var(--text-main);">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</div>
@@ -273,7 +273,7 @@ permalink: /
     </div>
     
     <div class="text-center mt-12">
-        <a href="/compare/lisbon-vs-valencia/" class="glass-btn" style="padding: 1rem 2rem; display: inline-block; text-decoration: none; border: 1px solid var(--glass-border);">View More Comparisons</a>
+        <a href="/compare/city/lisbon-vs-valencia/" class="glass-btn" style="padding: 1rem 2rem; display: inline-block; text-decoration: none; border: 1px solid var(--glass-border);">View More Comparisons</a>
     </div>
 </section>
 

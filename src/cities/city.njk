@@ -61,7 +61,7 @@ eleventyComputed:
             Verified {{ site.year }} Market Data
         </div>
         <h1 class="aura-title large-title">{{ city.name }} Nomad Tax<br>& Budget Calculator</h1>
-        <p class="text-dim subtitle-text">{{ city.country }} · {{ city.visa }} · {{ city.tax * 100 }}% Nomad Tax Rate</p>
+        <p class="text-dim subtitle-text">{{ city.country }} · {{ city.visa }} · {{ city.tax | percentInt }} Nomad Tax Rate</p>
 
         <div class="city-highlights mt-8">
             {% for highlight in city.highlights %}
@@ -84,19 +84,19 @@ eleventyComputed:
         <div class="metric-grid mt-8">
             <div class="metric-card">
                 <div class="metric-label">Monthly Cost of Living</div>
-                <div class="metric-value highlight"><span class="nb-price" data-usd="{{ city.col }}">${{ city.col | localeString }}</span></div>
+                <div class="metric-value highlight"><span class="nb-price" data-usd="{{ city.col }}">{{ city.col | usd }}</span></div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Average Rent (1BR Center)</div>
-                <div class="metric-value"><span class="nb-price" data-usd="{{ city.rent }}">${{ city.rent | localeString }}</span></div>
+                <div class="metric-value"><span class="nb-price" data-usd="{{ city.rent }}">{{ city.rent | usd }}</span></div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Nomad Visa Tax Rate</div>
-                <div class="metric-value {% if city.tax == 0 %}positive-text{% endif %}">{{ city.tax * 100 }}%</div>
+                <div class="metric-value {% if city.tax == 0 %}positive-text{% endif %}">{{ city.tax | percentInt }}</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Min. Annual Income</div>
-                <div class="metric-value"><span class="nb-price" data-usd="{{ city.visaMinIncome * 12 }}">${{ (city.visaMinIncome * 12) | localeString }}</span></div>
+                <div class="metric-value"><span class="nb-price" data-usd="{{ city.visaMinIncome * 12 }}">{{ (city.visaMinIncome * 12) | usd }}</span></div>
             </div>
         </div>
 
@@ -135,7 +135,7 @@ eleventyComputed:
                 <div class="price-emoji">☕</div>
                 <div class="price-info">
                     <div class="price-item-name">Cappuccino</div>
-                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.cappuccino }}">${{ city.prices_usd.cappuccino }}</span></div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.cappuccino }}">{{ city.prices_usd.cappuccino | usdPrecise }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.cappuccino }} {{ city.currency }}</div>
                     {% endif %}
@@ -145,7 +145,7 @@ eleventyComputed:
                 <div class="price-emoji">🍽️</div>
                 <div class="price-info">
                     <div class="price-item-name">Budget Meal</div>
-                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.mealCheap }}">${{ city.prices_usd.mealCheap }}</span></div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.mealCheap }}">{{ city.prices_usd.mealCheap | usdPrecise }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.mealCheap }} {{ city.currency }}</div>
                     {% endif %}
@@ -155,7 +155,7 @@ eleventyComputed:
                 <div class="price-emoji">🍺</div>
                 <div class="price-info">
                     <div class="price-item-name">Local Beer</div>
-                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.beerLocal }}">${{ city.prices_usd.beerLocal }}</span></div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.beerLocal }}">{{ city.prices_usd.beerLocal | usdPrecise }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.beerLocal }} {{ city.currency }}</div>
                     {% endif %}
@@ -165,7 +165,7 @@ eleventyComputed:
                 <div class="price-emoji">🥛</div>
                 <div class="price-info">
                     <div class="price-item-name">Milk (1 Liter)</div>
-                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.milk1L }}">${{ city.prices_usd.milk1L }}</span></div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.milk1L }}">{{ city.prices_usd.milk1L | usdPrecise }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.milk1L }} {{ city.currency }}</div>
                     {% endif %}
@@ -175,7 +175,7 @@ eleventyComputed:
                 <div class="price-emoji">🍗</div>
                 <div class="price-info">
                     <div class="price-item-name">Chicken Breast (1kg)</div>
-                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.chickenBreast1kg }}">${{ city.prices_usd.chickenBreast1kg }}</span></div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.chickenBreast1kg }}">{{ city.prices_usd.chickenBreast1kg | usdPrecise }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.chickenBreast1kg }} {{ city.currency }}</div>
                     {% endif %}
@@ -185,7 +185,7 @@ eleventyComputed:
                 <div class="price-emoji">💻</div>
                 <div class="price-info">
                     <div class="price-item-name">Coworking (Day)</div>
-                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.coworkingDay }}">${{ city.prices_usd.coworkingDay }}</span></div>
+                    <div class="price-value"><span class="nb-price" data-usd="{{ city.prices_usd.coworkingDay }}">{{ city.prices_usd.coworkingDay | usdPrecise }}</span></div>
                     {% if city.prices_local and city.currency != "USD" %}
                     <div class="price-local">{{ city.prices_local.coworkingDay }} {{ city.currency }}</div>
                     {% endif %}
@@ -319,7 +319,7 @@ eleventyComputed:
                     <div class="upsell-footer">
                         {% set currentTier = pricing.getCountryTier(city.country) %}
                         {% set currentPrice = pricing.tiers[currentTier].price %}
-                        <div class="upsell-price"><span class="nb-price" data-usd="{{ currentPrice }}">${{ currentPrice }}</span></div>
+                        <div class="upsell-price"><span class="nb-price" data-usd="{{ currentPrice }}">{{ currentPrice | usd }}</span></div>
                         <button id="unlock-pro-btn" class="action-btn upsell-btn" data-price="{{ currentPrice }}">Unlock Pro →</button>
                     </div>
                 </div>
@@ -374,8 +374,8 @@ eleventyComputed:
                 {# Dynamic Comparison Logic: Same country or similar CoL #}
                 {% set suggestedComparisons = [] %}
                 {% for other in cities %}
-                    {% if other.slug != city.slug and suggestedComparisons.length < 5 %}
-                        {% if other.country == city.country or (other.col > city.col * 0.9 and other.col < city.col * 1.1) %}
+                    {% if other.slug != city.slug and suggestedComparisons.length < 6 %}
+                        {% if other.country == city.country or (other.col > city.col * 0.85 and other.col < city.col * 1.15) %}
                             {% set _ = suggestedComparisons.push(other) %}
                         {% endif %}
                     {% endif %}
@@ -384,7 +384,7 @@ eleventyComputed:
                 {# Fallbacks if list is short #}
                 {% if suggestedComparisons.length < 3 %}
                     {% for other in cities %}
-                        {% if other.slug != city.slug and other not in suggestedComparisons and suggestedComparisons.length < 5 %}
+                        {% if other.slug != city.slug and other not in suggestedComparisons and suggestedComparisons.length < 6 %}
                             {% if other.continent == city.continent %}
                                 {% set _ = suggestedComparisons.push(other) %}
                             {% endif %}
@@ -393,7 +393,8 @@ eleventyComputed:
                 {% endif %}
 
                 {% for qCity in suggestedComparisons %}
-                    <a href="/compare/{{ city.slug }}-vs-{{ qCity.slug }}/" class="glass-btn-sm" style="padding: 0.75rem 1.5rem;">
+                    <a href="/compare/city/{{ city.slug }}-vs-{{ qCity.slug }}/" class="glass-btn-sm aura-hover-lift" style="padding: 0.75rem 1.25rem; border-radius: 50px;">
+                        <span style="opacity: 0.7; font-size: 0.9rem;">{{ qCity.emoji | default('📍') }}</span>
                         vs. {{ qCity.name }}
                     </a>
                 {% endfor %}
@@ -405,7 +406,7 @@ eleventyComputed:
             {% for comp in comparisons %}
                 {% if (comp.cityA.slug == city.slug or comp.cityB.slug == city.slug) and compCount < 4 %}
                     {% set compCount = compCount + 1 %}
-                    <a href="/compare/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+                    <a href="/compare/city/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
                         <div class="hub-icon">{{ comp.emoji }}</div>
                         <div class="hub-info">
                             <div class="hub-name">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</div>

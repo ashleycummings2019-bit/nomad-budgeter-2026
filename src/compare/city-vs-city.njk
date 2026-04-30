@@ -4,7 +4,7 @@ pagination:
   data: comparisons.list
   size: 1
   alias: comp
-permalink: "/compare/{{ comp.slug }}/"
+permalink: "/compare/city/{{ comp.slug }}/"
 eleventyComputed:
   pageTitle: "{{ comp.cityA.name }} vs. {{ comp.cityB.name }}: 2026 Digital Nomad Comparison"
   pageDescription: "{{ comp.description }}"
@@ -79,45 +79,38 @@ eleventyComputed:
         <p class="text-dim text-small mt-4"><i class="fa fa-clock-o"></i> Prices updated: {{ comp.cityA.pulse_updated | formatDate }}<br>Exchange Rate: 1 USD = {{ comp.cityA.exchangeRate }} {{ comp.cityA.currency }}, 1 USD = {{ comp.cityB.exchangeRate }} {{ comp.cityB.currency }}</p>
     </div>
 
-    {# Side-by-Side Cards #}
-    <div class="comparison-grid grid-2 stack-on-mobile">
-        {# City A #}
-        <div class="comp-card glass-panel p-8 aura-border-primary">
-            <h2 class="aura-title mb-6">{{ comp.cityA.name }}, {{ comp.cityA.country }}</h2>
-            <div class="stat-rows">
-                <div class="stat-row"><span>Visa Type</span> <strong>{{ comp.cityA.visa }}</strong></div>
-                <div class="stat-row"><span>Tax Rate</span> <strong>{{ comp.cityA.tax | percentInt }}</strong></div>
-                <div class="stat-row"><span>Monthly COL</span> <strong><span class="nb-price" data-usd="{{ comp.cityA.col }}">${{ comp.cityA.col | localeString }}</span></strong></div>
-                <div class="stat-row"><span>Average Rent</span> <strong><span class="nb-price" data-usd="{{ comp.cityA.rent }}">${{ comp.cityA.rent | localeString }}</span></strong></div>
-                <div class="stat-row"><span>Min. Income</span> <strong><span class="nb-price" data-usd="{{ comp.cityA.visaMinIncome }}">${{ comp.cityA.visaMinIncome | localeString }}</span>/mo</strong></div>
-                <div class="stat-row"><span>Nomad Score</span> <strong>{{ comp.cityA.score }}/100</strong></div>
-                <div class="stat-row highlight-row">
-                    <span>Savings @ $100k/yr</span>
-                    <strong class="{% if comp.savingsA > comp.savingsB %}positive-text{% endif %}"><span class="nb-price" data-usd="{{ comp.savingsA }}">${{ comp.savingsA | localeString }}</span>/mo</strong>
-                </div>
+    {# Dashboard Header #}
+    <div class="glass-panel mb-12 reveal p-10">
+        <div class="results-header">
+            <div>
+                <h2 class="aura-title">2026 Strategic Comparison</h2>
+                <p>Side-by-side analysis of {{ comp.cityA.name }} and {{ comp.cityB.name }}</p>
             </div>
-            <div class="verdict-box mt-6 {% if comp.savingsA > comp.savingsB %}winner-box{% endif %}">
-                <p><strong>{% if comp.savingsA > comp.savingsB %}✅ Winner for Wealth Accumulation{% else %}Premium Cost Profile{% endif %}</strong></p>
+            <div style="display: flex; gap: 1.5rem;">
+                <div class="aura-score" title="{{ comp.cityA.name }} Nomad Score">
+                    <span id="aura-score-a">{{ comp.cityA.score }}</span>
+                </div>
+                <div class="aura-score secondary" title="{{ comp.cityB.name }} Nomad Score">
+                    <span id="aura-score-b">{{ comp.cityB.score }}</span>
+                </div>
             </div>
         </div>
 
-        {# City B #}
-        <div class="comp-card glass-panel p-8 aura-border-secondary">
-            <h2 class="aura-title mb-6">{{ comp.cityB.name }}, {{ comp.cityB.country }}</h2>
-            <div class="stat-rows">
-                <div class="stat-row"><span>Visa Type</span> <strong>{{ comp.cityB.visa }}</strong></div>
-                <div class="stat-row"><span>Tax Rate</span> <strong>{{ comp.cityB.tax | percentInt }}</strong></div>
-                <div class="stat-row"><span>Monthly COL</span> <strong><span class="nb-price" data-usd="{{ comp.cityB.col }}">${{ comp.cityB.col | localeString }}</span></strong></div>
-                <div class="stat-row"><span>Average Rent</span> <strong><span class="nb-price" data-usd="{{ comp.cityB.rent }}">${{ comp.cityB.rent | localeString }}</span></strong></div>
-                <div class="stat-row"><span>Min. Income</span> <strong><span class="nb-price" data-usd="{{ comp.cityB.visaMinIncome }}">${{ comp.cityB.visaMinIncome | localeString }}</span>/mo</strong></div>
-                <div class="stat-row"><span>Nomad Score</span> <strong>{{ comp.cityB.score }}/100</strong></div>
-                <div class="stat-row highlight-row">
-                    <span>Savings @ $100k/yr</span>
-                    <strong class="{% if comp.savingsB > comp.savingsA %}positive-text{% endif %}"><span class="nb-price" data-usd="{{ comp.savingsB }}">${{ comp.savingsB | localeString }}</span>/mo</strong>
+        <div class="metric-grid">
+            {# Financial Arbitrage #}
+            <div class="metric-card">
+                <div class="metric-label">Monthly Arbitrage Delta</div>
+                <div class="metric-value highlight">${{ comp.arbitrageValue | localeString }}</div>
+                <div class="calculator-input-group mt-4 sm:mt-0">
+                    <label for="relocation-income">Annual Income (USD)</label>
+                    <input type="number" id="relocation-income" value="100000" step="5000" class="mini-input">
                 </div>
             </div>
-            <div class="verdict-box mt-6 {% if comp.savingsB > comp.savingsA %}winner-box{% endif %}">
-                <p><strong>{% if comp.savingsB > comp.savingsA %}✅ Winner for Wealth Accumulation{% else %}Premium Cost Profile{% endif %}</strong></p>
+            
+            <div class="roi-result-row mt-8 p-6 bg-dark border-radius-sm text-center">
+                <div class="text-dim text-small mb-2">Estimated Annual Savings Arbitrage</div>
+                <div id="annual-roi-display" class="metric-value highlight" style="font-size: 3rem;">$0</div>
+                <p class="text-dim text-small mt-4">Calculated based on 2026 local tax rates and COL indices.</p>
             </div>
         </div>
     </div>
@@ -278,7 +271,7 @@ eleventyComputed:
                 {% if related.slug != comp.slug and relatedCount < 4 %}
                     {% if related.cityA.slug == comp.cityA.slug or related.cityB.slug == comp.cityA.slug or related.cityA.slug == comp.cityB.slug or related.cityB.slug == comp.cityB.slug %}
                         {% set relatedCount = relatedCount + 1 %}
-                        <a href="/compare/{{ related.slug }}/" class="stack-item glass-panel hub-card">
+                        <a href="/compare/city/{{ related.slug }}/" class="stack-item glass-panel hub-card">
                             <div class="hub-icon">{{ related.emoji }}</div>
                             <div class="hub-info">
                                 <div class="hub-name">{{ related.cityA.name }} vs. {{ related.cityB.name }}</div>
@@ -295,3 +288,43 @@ eleventyComputed:
         </div>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const incomeInput = document.getElementById('relocation-income');
+    const roiDisplay = document.getElementById('annual-roi-display');
+    const cityACol = {{ comp.cityA.col }};
+    const cityBCol = {{ comp.cityB.col }};
+    const cityATax = {{ comp.cityA.tax }};
+    const cityBTax = {{ comp.cityB.tax }};
+
+    function calculateROI() {
+        const income = parseFloat(incomeInput.value) || 0;
+        
+        // Simplified monthly savings calculation
+        const monthlyIncome = income / 12;
+        const savingsA = (monthlyIncome * (1 - cityATax)) - cityACol;
+        const savingsB = (monthlyIncome * (1 - cityBTax)) - cityBCol;
+        
+        const monthlyDiff = Math.abs(savingsA - savingsB);
+        const annualROI = monthlyDiff * 12;
+        
+        roiDisplay.textContent = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+        }).format(annualROI);
+
+        // Add a little pop animation
+        roiDisplay.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+            roiDisplay.style.transform = 'scale(1)';
+        }, 200);
+    }
+
+    incomeInput.addEventListener('input', calculateROI);
+    
+    // Initial calculation
+    calculateROI();
+});
+</script>

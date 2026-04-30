@@ -15,7 +15,7 @@
             <ul class="footer-links">
                 {% for comp in comparisons | slice(0, 100) %}
                 {% if comp.featured %}
-                <li><a href="/compare/{{ comp.slug }}/">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</a></li>
+                <li><a href="/compare/city/{{ comp.slug }}/">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</a></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -33,7 +33,7 @@
             <h3>Lifestyle vs. Visa Battles</h3>
             <ul class="footer-links">
                 {% for comp in cityCountryComparisons | slice(0, 8) %}
-                <li><a href="/compare/city-vs-country/{{ comp.slug }}/">{{ comp.city.name }} vs. {{ comp.country.name }}</a></li>
+                <li><a href="/compare/city-country/{{ comp.slug }}/">{{ comp.city.name }} vs. {{ comp.country.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>
