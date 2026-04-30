@@ -512,12 +512,6 @@ button:disabled {
 .partner-card p { font-size: 0.85rem; color: var(--text-dim); }
 
 /* ─── City Page Styles ─── */
-.city-hero {
-    text-align: center;
-    padding: 4rem 2rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 .city-hero h1 {
     font-size: 2.8rem;
@@ -525,13 +519,6 @@ button:disabled {
     margin-bottom: 1rem;
 }
 
-.city-highlights {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
-}
 
 .highlight-chip {
     background: #2e1065; /* Opaque dark purple */
@@ -1193,7 +1180,6 @@ button:disabled {
     background: rgba(255, 255, 255, 0.03);
 }
 
-.positive-text { color: var(--aura-accent); }
 
 /* ─── Roadmap Steps already defined at line 1038 ─── */
 
@@ -1234,11 +1220,9 @@ button:disabled {
     background: var(--aura-primary);
     color: #fff;
 }
-.negative-text { color: #ef4444; }
 
 /* ─── Calculator Component Styles ─── */
 .calculator-header { margin-bottom: 2.5rem; }
-.large-title { font-size: 2.2rem !important; line-height: 1.1; letter-spacing: -0.02em; }
 .badge-dot { display: inline-block; width: 8px; height: 8px; background: var(--aura-accent); border-radius: 50%; margin-right: 6px; }
 
 /* .aura-range and thumb already defined at line 1099 */
@@ -1640,6 +1624,9 @@ button:disabled {
     position: relative;
     z-index: 1;
     text-align: center;
+    padding: 4rem 2rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .city-hero .badge-2026 {
@@ -1648,10 +1635,11 @@ button:disabled {
 }
 
 .large-title {
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
     line-height: 1.1;
     margin-bottom: 1rem;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.02em;
 }
 
 .subtitle-text {
@@ -1665,10 +1653,11 @@ button:disabled {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .highlight-tag {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
