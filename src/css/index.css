@@ -95,16 +95,18 @@ body::before {
     width: 60vw;
     height: 60vw;
     border-radius: 50%;
-    filter: blur(120px);
+    filter: blur(140px);
     z-index: -1;
-    opacity: 0.15;
+    opacity: 0.12;
     pointer-events: none;
-    animation: blob-float 20s infinite alternate ease-in-out;
+    animation: blob-float 30s infinite alternate ease-in-out;
 }
+.blob-1 { top: -10%; left: -10%; background: var(--aura-primary); }
+.blob-2 { bottom: -10%; right: -10%; background: var(--aura-secondary); animation-delay: -5s; }
 
 @keyframes blob-float {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(10%, 10%) scale(1.1); }
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    100% { transform: translate(15%, 10%) scale(1.15) rotate(15deg); }
 }
 
 a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
@@ -138,16 +140,16 @@ img { max-width: 100%; height: auto; }
 
 /* Glass Panels */
 .glass-panel {
-    background: var(--bg-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: rgba(24, 24, 27, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-glass);
     border-radius: 24px;
-    padding: 2.5rem;
+    padding: 2rem;
     box-shadow: var(--glass-shadow);
     transition: var(--transition-smooth);
     position: relative;
-    overflow: hidden;
+    display: block;
 }
 
 .glass-panel::before {
@@ -295,13 +297,13 @@ img { max-width: 100%; height: auto; }
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #fff 20%, var(--aura-primary), var(--aura-secondary), var(--aura-accent), #fff);
-    background-size: 300% 300%;
+    background: linear-gradient(135deg, #fff 30%, var(--aura-primary), var(--aura-secondary));
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.04em;
-    animation: titleGradient 8s ease infinite;
+    filter: drop-shadow(0 0 30px rgba(var(--aura-primary-rgb), 0.15));
 }
 .aura-subtitle {
     font-size: clamp(1.1rem, 3vw, 1.4rem);
@@ -451,11 +453,43 @@ img { max-width: 100%; height: auto; }
 /* ─── 9. DOMAIN SPECIFIC COMPONENTS ─── */
 
 /* Partner & Toolkit Grids */
-.partner-grid, .toolkit-grid, .price-grid, .grocery-grid {
+.partner-grid, .toolkit-grid, .price-grid, .grocery-grid, .stack-grid, .trends-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
+}
+
+/* Success Stack & Hub Cards */
+.stack-item, .hub-card, .trend-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem !important;
+    text-decoration: none !important;
+}
+
+.stack-icon, .hub-icon, .trend-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.stack-info, .hub-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stack-name, .hub-name {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.stack-desc, .hub-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.4;
 }
 
 /* Comparison Showdown */
