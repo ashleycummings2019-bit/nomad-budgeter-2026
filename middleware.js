@@ -30,7 +30,7 @@ const COUNTRY_CURRENCY = {
   CH: 'CHF', LI: 'CHF',
   SE: 'SEK', NO: 'NOK', DK: 'DKK',
   PL: 'PLN', CZ: 'CZK', HU: 'HUF', RO: 'RON', BG: 'BGN',
-  TR: 'TRY',
+  TR: 'TRY', AM: 'AMD', GE: 'GEL', AL: 'ALL', RS: 'RSD',
 
   // Asia-Pacific
   TH: 'THB', VN: 'VND', ID: 'IDR', MY: 'MYR', PH: 'PHP',
@@ -40,7 +40,7 @@ const COUNTRY_CURRENCY = {
 
   // Americas
   CA: 'CAD', MX: 'MXN', BR: 'BRL', CO: 'COP', AR: 'ARS',
-  CL: 'CLP', PE: 'PEN', UY: 'UYU', CR: 'CRC', PA: 'PAB',
+  CL: 'CLP', PE: 'PEN', UY: 'UYU', CR: 'CRC', PA: 'PAB', GT: 'GTQ',
 
   // Middle East & Africa
   AE: 'AED', SA: 'SAR', QA: 'QAR', KW: 'KWD', BH: 'BHD',
@@ -60,6 +60,7 @@ const CURRENCY_SYMBOLS = {
   AED: 'د.إ', SAR: '﷼', QAR: 'QR', KWD: 'KD', BHD: 'BD',
   ILS: '₪', JOD: 'JD', EGP: 'E£',
   ZAR: 'R', KES: 'KSh', NGN: '₦', GHS: 'GH₵', MAD: 'MAD',
+  AMD: '֏', GEL: '₾', ALL: 'L', RSD: 'дин.', GTQ: 'Q',
 };
 
 export const config = {

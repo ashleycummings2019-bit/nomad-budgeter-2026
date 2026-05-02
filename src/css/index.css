@@ -483,18 +483,62 @@ img { max-width: 100%; height: auto; }
     display: flex;
     justify-content: center;
     margin: 2rem 0;
-    gap: 1rem;
+    padding: 0 1rem;
+}
+.lifestyle-selector-container {
+    max-width: 450px;
+    width: 100%;
 }
 .lifestyle-selector {
-    background: var(--glass-bg);
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    padding: 0.5rem;
-    display: flex;
-    gap: 0.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 50px;
+    padding: 0.4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
+    box-shadow: var(--glass-shadow);
     position: relative;
     z-index: 10;
+}
+.lifestyle-btn {
+    background: transparent;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 40px;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.lifestyle-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+.lifestyle-btn.active {
+    background: var(--aura-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+.lifestyle-btn .emoji {
+    font-size: 1.1rem;
+    transition: var(--transition-bounce);
+}
+.lifestyle-btn.active .emoji {
+    transform: scale(1.2);
+}
+
+@media (max-width: 480px) {
+    .lifestyle-btn { font-size: 0.75rem; padding: 0.6rem 0.5rem; }
+    .lifestyle-btn .emoji { font-size: 1rem; }
 }
 
 /* ROI & Tracking */
