@@ -4,22 +4,11 @@
  * ║   Geo-detects user country → sets currency       ║
  * ╚══════════════════════════════════════════════════╝
  *
- * How it works:
- * 1. Vercel injects `request.geo.country` on every request (Pro tier).
- * 2. We map that ISO country code to a currency code (GBP, EUR, THB, etc.).
- * 3. We set a `nb_currency` cookie so the client-side JS can read it
- *    and display prices in the visitor's local currency.
- * 4. We also set `nb_country` for any geo-specific logic (visa pages, etc.).
- *
- * The cookie approach (vs. rewriting HTML) keeps our static 11ty pages
- * fully cacheable on the CDN — no per-user HTML generation required.
+ * Refactored for standard Web APIs (Eleventy compatible).
+ * Uses Vercel Edge Runtime internal signaling to set cookies on static requests.
  */
 
-import { NextResponse } from 'next/server';
-
 // ─── Country → Currency Mapping ───
-// Covers the top 50+ nomad-relevant countries.
-// Falls back to USD for unknown regions.
 const COUNTRY_CURRENCY = {
   // Europe
   GB: 'GBP', IE: 'GBP',
@@ -48,7 +37,7 @@ const COUNTRY_CURRENCY = {
   ZA: 'ZAR', KE: 'KES', NG: 'NGN', GH: 'GHS', MA: 'MAD',
 };
 
-// ─── Currency Symbols (for client-side display) ───
+// ─── Currency Symbols ───
 const CURRENCY_SYMBOLS = {
   USD: '$', GBP: '£', EUR: '€', CHF: 'CHF', SEK: 'kr', NOK: 'kr', DKK: 'kr',
   PLN: 'zł', CZK: 'Kč', HUF: 'Ft', TRY: '₺',
@@ -65,37 +54,41 @@ const CURRENCY_SYMBOLS = {
 
 export const config = {
   // Run on all page routes, skip static assets & API calls
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico|css|js|assets|robots.txt|sitemap).*)'],
+  matcher: ['/((?!api|favicon.ico|css|js|assets|images|robots.txt|sitemap).*)'],
 };
 
 export default function middleware(request) {
-  const response = NextResponse.next();
+  // We use the internal 'x-middleware-next' header to tell Vercel
+  // to proceed to the origin (static file) while allowing us to set headers.
+  const response = new Response(null, {
+    headers: {
+      'x-middleware-next': '1',
+    },
+  });
 
-  // ── Don't overwrite if user has manually chosen a currency ──
-  const manualOverride = request.cookies.get('nb_currency_manual');
-  if (manualOverride?.value === 'true') {
+  // 1. Check for manual override from cookies
+  const cookieHeader = request.headers.get('cookie') || '';
+  if (cookieHeader.includes('nb_currency_manual=true')) {
     return response;
   }
 
-  // ── Geo-detection (Vercel Pro injects this automatically) ──
-  const country = request.geo?.country || 'US';
-  const city = request.geo?.city || '';
+  // 2. Geo-detection from Vercel's platform headers
+  const country = request.headers.get('x-vercel-ip-country') || 'US';
+  const city = request.headers.get('x-vercel-ip-city') || '';
+  
+  // 3. Determine local currency
   const currency = COUNTRY_CURRENCY[country] || 'USD';
   const symbol = CURRENCY_SYMBOLS[currency] || '$';
 
-  // ── Set cookies (accessible by client-side JS) ──
-  // Max-age: 24 hours — re-detected on next visit
-  const cookieOptions = {
-    path: '/',
-    maxAge: 86400,
-    sameSite: 'lax',
-  };
+  // 4. Set cookies (Path=/ is critical for global access)
+  const cookieOptions = '; Path=/; Max-Age=86400; SameSite=Lax';
 
-  response.cookies.set('nb_country', country, cookieOptions);
-  response.cookies.set('nb_currency', currency, cookieOptions);
-  response.cookies.set('nb_symbol', symbol, cookieOptions);
+  response.headers.append('Set-Cookie', `nb_country=${country}${cookieOptions}`);
+  response.headers.append('Set-Cookie', `nb_currency=${currency}${cookieOptions}`);
+  response.headers.append('Set-Cookie', `nb_symbol=${encodeURIComponent(symbol)}${cookieOptions}`);
+  
   if (city) {
-    response.cookies.set('nb_city', city, cookieOptions);
+    response.headers.append('Set-Cookie', `nb_city=${encodeURIComponent(city)}${cookieOptions}`);
   }
 
   return response;
