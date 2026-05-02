@@ -81,15 +81,39 @@ permalink: /
                     <p class="trust-indicator"><span id="trust-signal">18</span> nomads calculating live</p>
                 </div>
             </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
+            <div class="header-actions">
                 <button id="share-results-btn" class="glass-btn-sm" title="Share My Results">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 4px;"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg>
                     Share
                 </button>
+            </div>
+        </div>
+
+        <div class="aura-score-card">
+            <div class="aura-visual">
                 <div class="aura-score" id="aura-ring">
-                    <span id="aura-value">85</span>
+                    <div class="aura-info">
+                        <span class="aura-value" id="aura-value">0</span>
+                        <span class="aura-label">Vitality Score</span>
+                    </div>
                 </div>
             </div>
+            
+            <div class="aura-details">
+                <div class="aura-detail-item">
+                    <span class="detail-label">Tax Efficiency</span>
+                    <span class="detail-value" id="aura-tax-efficiency">--</span>
+                </div>
+                <div class="aura-detail-separator"></div>
+                <div class="aura-detail-item">
+                    <span class="detail-label">Savings Power</span>
+                    <span class="detail-value" id="aura-savings-power">--</span>
+                </div>
+            </div>
+
+            <p id="aura-commentary" class="aura-commentary">
+                Enter your details to generate your financial vitality analysis.
+            </p>
         </div>
 
         <div class="metric-grid">
@@ -104,10 +128,16 @@ permalink: /
             <div class="metric-card">
                 <div class="metric-label">Cost of Living Index</div>
                 <div class="metric-value" id="res-col-index">High</div>
+                <div class="health-gauge-container">
+                    <div id="col-health-bar" class="health-gauge-bar" style="width: 0%"></div>
+                </div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Monthly Savings Potential</div>
                 <div class="metric-value positive" id="res-savings">$0</div>
+                <div class="health-gauge-container">
+                    <div id="savings-health-bar" class="health-gauge-bar" style="width: 0%"></div>
+                </div>
             </div>
         </div>
 
@@ -198,12 +228,6 @@ permalink: /
             </div>
         </div>
 
-        <div class="metric-card commentary-box">
-            <div class="metric-label">Budget Commentary</div>
-            <p id="aura-commentary" class="commentary-text">
-                Your financial vitality is strong. Based on current tax laws and city metrics, you are in the top 15% of earners in this location.
-            </p>
-        </div>
 
         {# Pro Report (Premium View) #}
         {% include "partials/pro-report.njk" %}
@@ -237,14 +261,57 @@ permalink: /
     </section>
 
     {# Empty State (Visible on load) #}
-    <section id="empty-state" class="empty-state reveal">
+    <section id="empty-state" class="empty-state reveal premium-glow">
         <div class="empty-content">
             <div class="aura-pulse"></div>
-            <h2 class="aura-title">Awaiting Calculations...</h2>
-            <p>Enter your income and destination to generate your 2026 financial roadmap.</p>
+            <h1 class="aura-title text-6xl mb-6">Master Your 2026<br><span class="text-gradient">Tax Strategy</span></h1>
+            <p class="text-xl text-dim mb-12 max-w-xl mx-auto">Calculate your take-home pay across 45+ digital nomad visas with live cost-of-living data.</p>
+            <div class="hero-stats flex justify-center gap-12 mt-8">
+                <div class="h-stat">
+                    <span class="h-val">45+</span>
+                    <span class="h-lab">Visa Programs</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-val">Live</span>
+                    <span class="h-lab">Market Rates</span>
+                </div>
+                <div class="h-stat">
+                    <span class="h-val">0%</span>
+                    <span class="h-lab">Tax Options</span>
+                </div>
+            </div>
         </div>
     </section>
 </div>
+
+{# Trending Now (pSEO Links) #}
+<section class="section-container mt-32 reveal">
+    <div class="flex-between mb-12">
+        <div>
+            <h2 class="aura-title">Trending in 2026</h2>
+            <p class="text-dim">Programmatic insights based on live financial pulse.</p>
+        </div>
+        <a href="/trends/highest-aura-score-nomad-cities/" class="text-link">View All Rankings →</a>
+    </div>
+    
+    <div class="trends-grid">
+        <a href="/trends/lowest-tax-digital-nomad-countries-2026/" class="trend-card glass-panel">
+            <div class="trend-icon">📉</div>
+            <h3>Tax Havens</h3>
+            <p>10 countries with the lowest personal tax in 2026.</p>
+        </a>
+        <a href="/trends/cheapest-nomad-cities-2026/" class="trend-card glass-panel">
+            <div class="trend-icon">💰</div>
+            <h3>Budget Hubs</h3>
+            <p>Cities where $2k/mo feels like $5k/mo.</p>
+        </a>
+        <a href="/trends/highest-aura-score-nomad-cities/" class="trend-card glass-panel">
+            <div class="trend-icon">✨</div>
+            <h3>Best Lifestyle</h3>
+            <p>Highest aura-scored cities for work-life balance.</p>
+        </a>
+    </div>
+</section>
 
 {# Trending Comparisons Section #}
 <section class="section-container mt-24 reveal">
@@ -278,20 +345,19 @@ permalink: /
 </section>
 
 {# Lead Capture Section #}
-<section class="lead-section reveal">
-    <div class="lead-card glass-panel">
-        <div class="lead-content">
-            <h2 class="aura-title">2026 Global Tax Guide</h2>
-            <p>Get our updated PDF on the top 10 tax-free countries for digital nomads in 2026.</p>
-            <div class="lead-form">
-                <input type="email" id="lead-email" placeholder="nomad@example.com" class="aura-input">
-                <button id="send-guide-btn" class="action-btn accent-bg">Send Me the Guide</button>
-            </div>
-            <p id="lead-success" class="success-msg hidden">✅ Sent! Check your inbox in a few minutes.</p>
-        </div>
-    </div>
+<section class="section-container mt-24 reveal">
+    {% include "partials/lead-magnet.njk" %}
 </section>
 
 <div class="section-container mt-16">
+    <div class="ticker-wrap">
+        <div class="ticker">
+            {% for item in ticker %}
+            <div class="ticker-item {% if not item.positive %}negative{% endif %}">
+                {{ item.label }} <strong>{{ item.value }}</strong> <span>{{ item.change }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
     {% include "partials/seo-silos.njk" %}
 </div>

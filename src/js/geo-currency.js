@@ -38,6 +38,14 @@
   let activeSymbol = detectedSymbol;
   let rates = null;
   let isLocalMode = activeCurrency !== 'USD';
+  
+  // Lifestyle state
+  let lifestyleTier = localStorage.getItem('nb-lifestyle') || 'comfort';
+  const lifestyleMultipliers = {
+    budget: 0.72,
+    comfort: 1.0,
+    luxury: 1.95
+  };
 
   // ─── Load Rates ───
   async function loadRates() {
@@ -55,10 +63,10 @@
   // ─── Convert & Render ───
   function convertPrices() {
     const priceEls = document.querySelectorAll('.nb-price');
-    if (!priceEls.length || !rates) return;
+    if (!priceEls.length) return;
 
-    const rate = rates[activeCurrency];
-    if (!rate) return;
+    const rate = rates ? (rates[activeCurrency] || 1) : 1;
+    const lfm = lifestyleMultipliers[lifestyleTier] || 1.0;
 
     // Add swap animation class
     priceEls.forEach(el => el.classList.add('swapping'));
@@ -66,90 +74,104 @@
     // Wait for fade-out then update text
     setTimeout(() => {
       priceEls.forEach(el => {
-        const usd = parseFloat(el.dataset.usd);
-        if (isNaN(usd)) return;
+        const usdBase = parseFloat(el.dataset.usd);
+        if (isNaN(usdBase)) return;
 
-        if (isLocalMode && activeCurrency !== 'USD') {
-          const converted = usd * rate;
+        // Apply lifestyle multiplier first
+        const adjustedUsd = usdBase * lfm;
+
+        if (isLocalMode && activeCurrency !== 'USD' && rates) {
+          const converted = adjustedUsd * rate;
           el.textContent = formatPrice(converted, activeCurrency, activeSymbol);
-          el.setAttribute('title', `$${usd.toLocaleString('en-US')} USD`);
+          el.setAttribute('title', `$${adjustedUsd.toLocaleString('en-US', { maximumFractionDigits: 0 })} USD (${lifestyleTier})`);
         } else {
-          el.textContent = `$${usd.toLocaleString('en-US', { maximumFractionDigits: 0 })}`;
+          el.textContent = formatPrice(adjustedUsd, 'USD', '$');
           el.removeAttribute('title');
         }
 
         el.classList.remove('swapping');
       });
 
-      // Show the "Converted to X" note if present
-      const note = document.querySelector('.user-currency-note');
-      const nameEl = document.querySelector('.user-currency-name');
-      if (note && nameEl) {
-        if (isLocalMode && activeCurrency !== 'USD') {
-          nameEl.textContent = activeCurrency;
-          note.style.display = 'inline';
-        } else {
-          note.style.display = 'none';
-        }
+      // Update descriptors if they exist
+      const descEl = document.getElementById('lifestyleDesc');
+      if (descEl) {
+        const descs = {
+          budget: "Estimating for a lean, high-flex budget lifestyle.",
+          comfort: "Estimating for a comfortable, standard nomad lifestyle.",
+          luxury: "Estimating for a premium, high-end nomad lifestyle."
+        };
+        descEl.textContent = descs[lifestyleTier];
       }
     }, 150);
-
-    // Update any currency label badges
-    const badges = document.querySelectorAll('.nb-currency-badge');
-    badges.forEach(badge => {
-      badge.textContent = isLocalMode ? activeCurrency : 'USD';
-    });
   }
 
   function formatPrice(amount, currency, symbol) {
-    // Large-value currencies: no decimals, group separators
-    if (amount > 10000) {
-      return `${symbol}${Math.round(amount).toLocaleString('en-US')}`;
-    }
-    if (amount > 100) {
-      return `${symbol}${Math.round(amount).toLocaleString('en-US')}`;
-    }
-    return `${symbol}${amount.toFixed(2)}`;
+    const decimals = amount < 20 ? 2 : 0;
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: currency,
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals
+    }).format(amount).replace(currency, '').trim(); // Use provided symbol
+    
+    // Fallback if Intl fails or we want specific symbol placement
+    // return `${symbol}${amount.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}`;
   }
 
-  // ─── Toggle Button ───
-  function initToggle() {
+  // ─── Toggle Button (Currency) ───
+  function initCurrencyToggle() {
     const toggle = document.getElementById('currency-toggle');
     if (!toggle) return;
-
-    // Show detected currency on the toggle
     updateToggleLabel(toggle);
-
     toggle.addEventListener('click', () => {
       isLocalMode = !isLocalMode;
-
-      if (isLocalMode) {
-        activeCurrency = detectedCurrency;
-        activeSymbol = detectedSymbol;
-      } else {
-        activeCurrency = 'USD';
-        activeSymbol = '$';
-      }
-
-      // Remember the user's preference — don't let middleware override it
+      activeCurrency = isLocalMode ? detectedCurrency : 'USD';
+      activeSymbol = isLocalMode ? detectedSymbol : '$';
       setCookie('nb_currency_manual', 'true', 30);
-
       updateToggleLabel(toggle);
       convertPrices();
     });
   }
 
+  // ─── Lifestyle Toggle ───
+  function initLifestyleToggle() {
+    const selector = document.getElementById('lifestyleSelector');
+    if (!selector) return;
+    
+    const buttons = selector.querySelectorAll('.lifestyle-btn');
+    
+    // Set initial active state
+    buttons.forEach(btn => {
+      if (btn.dataset.tier === lifestyleTier) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+      
+      btn.addEventListener('click', () => {
+        if (btn.classList.contains('active')) return;
+        
+        lifestyleTier = btn.dataset.tier;
+        localStorage.setItem('nb-lifestyle', lifestyleTier);
+        
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        convertPrices();
+        document.dispatchEvent(new CustomEvent('nb-lifestyle-change', { detail: { tier: lifestyleTier } }));
+      });
+    });
+  }
+
   function updateToggleLabel(toggle) {
     if (detectedCurrency === 'USD') {
-      toggle.style.display = 'none'; // No point toggling if they're already in USD
+      toggle.style.display = 'none';
       return;
     }
     const flag = countryToFlag(detectedCountry);
     toggle.innerHTML = isLocalMode
       ? `${flag} ${activeCurrency} → <strong>Show USD</strong>`
       : `💵 USD → <strong>Show ${detectedCurrency}</strong>`;
-    toggle.setAttribute('aria-label',
-      isLocalMode ? 'Switch to USD prices' : `Switch to ${detectedCurrency} prices`);
   }
 
   // ─── Country code → Emoji Flag ───
@@ -166,29 +188,18 @@
     currency: detectedCurrency,
     symbol: detectedSymbol,
     isLocal: () => isLocalMode,
-    getRate: (c) => rates?.[c] || null,
-    convert: (usd, toCurrency) => {
-      const r = rates?.[toCurrency];
-      return r ? usd * r : usd;
-    },
+    getTier: () => lifestyleTier,
     refresh: convertPrices,
   };
 
   // ─── Init ───
   async function init() {
     await loadRates();
+    initCurrencyToggle();
+    initLifestyleToggle();
     convertPrices();
-    initToggle();
-
-    // Log for debugging (remove in production if you want)
-    if (detectedCurrency !== 'USD') {
-      console.log(
-        `[GeoCurrency] 🌍 Detected: ${detectedCountry} → showing prices in ${detectedCurrency} (${detectedSymbol})`
-      );
-    }
   }
 
-  // Run after DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

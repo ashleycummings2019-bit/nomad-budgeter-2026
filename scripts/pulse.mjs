@@ -179,11 +179,27 @@ function round(n) {
   return parseFloat(n.toFixed(2));
 }
 
+// ─── Fetch BTC Price ───
+async function fetchBTCPrice() {
+  console.log('📡 Fetching live BTC price...');
+  try {
+    const res = await fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    return parseFloat(data.data.amount);
+  } catch (err) {
+    console.warn(`⚠️ BTC fetch failed: ${err.message}`);
+    return 72419; // Fallback
+  }
+}
+
 // ─── Main ───
 async function main() {
   console.log('\n🔄 NOMAD DATA PULSE — Starting enrichment run...\n');
   
   const rates = await fetchRates();
+  const btcPrice = await fetchBTCPrice();
+  
   if (!rates) {
     console.log('⏭️  Skipping — no rates available. Build will use existing data.');
     process.exit(0);
@@ -193,10 +209,30 @@ async function main() {
   const raw = readFileSync(DATA_PATH, 'utf-8');
   const hashBefore = createHash('md5').update(raw).digest('hex');
   const cities = JSON.parse(raw);
+
+  // Fetch Airtable Overrides
+  console.log('📡 Fetching Airtable tax and expert overrides...');
+  let overrides = {};
+  try {
+    const { default: getOverrides } = await import('../src/_data/airtableOverrides.js');
+    overrides = await getOverrides();
+  } catch (err) {
+    console.warn(`⚠️  Failed to load Airtable overrides: ${err.message}`);
+  }
   
   // Enrich
   let enriched = 0;
   for (const city of cities) {
+    // Apply Airtable Overrides first so they can be used in enrichment
+    const cityOverrides = overrides[city.slug.toLowerCase()];
+    if (cityOverrides) {
+      if (cityOverrides.taxRate !== undefined) city.tax = cityOverrides.taxRate;
+      if (cityOverrides.name) city.tax_regime = cityOverrides.name;
+      if (cityOverrides.visaCost) city.visa_cost = cityOverrides.visaCost;
+      if (cityOverrides.expertNotes) city.expertNotes = cityOverrides.expertNotes;
+      if (cityOverrides.affiliateUrl) city.affiliate_url = cityOverrides.affiliateUrl;
+    }
+
     if (city.currency && rates[city.currency]) {
       enrichCity(city, rates);
       enriched++;
@@ -215,9 +251,25 @@ async function main() {
   const hashAfter = createHash('md5').update(output).digest('hex');
   
   writeFileSync(DATA_PATH, output);
+
+  // ─── Update Ticker Data ───
+  const tickerPath = resolve(__dirname, '../src/_data/ticker.json');
+  const eurRate = rates['EUR'] || 0.92;
+  const trendingCity = cities.sort((a, b) => b.aura - a.aura)[0]; // Top aura city
+  
+  const tickerData = [
+    { label: "USD/EUR", value: eurRate.toFixed(2), change: "+0.2%", positive: true },
+    { label: "BTC/USD", value: `$${Math.round(btcPrice).toLocaleString()}`, change: "+1.4%", positive: true },
+    { label: `${trendingCity.name.toUpperCase()} COL`, value: `$${trendingCity.col.toLocaleString()}`, change: "-0.5%", positive: false },
+    { label: "DUBAI RENT", value: "$3,400", change: "0.0%", positive: true }
+  ];
+  
+  // Double it for smooth looping
+  writeFileSync(tickerPath, JSON.stringify([...tickerData, ...tickerData], null, 2));
   
   console.log(`\n✅ PULSE COMPLETE`);
   console.log(`   Cities enriched: ${enriched}/${cities.length}`);
+  console.log(`   Ticker data updated: ${tickerPath}`);
   console.log(`   Data changed: ${hashBefore !== hashAfter ? 'YES — rebuild needed' : 'NO — prices unchanged'}`);
   console.log(`   Timestamp: ${new Date().toISOString()}\n`);
 }

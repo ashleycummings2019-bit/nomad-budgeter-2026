@@ -1,89 +1,275 @@
-{# Embeddable Calculator Widget — Used on homepage, city pages, and comparison pages #}
-{# Pass prefillCity and/or compareMode variables to customize behavior #}
+<div class="calculator-section reveal">
+    <div class="calculator-grid-wrapper">
+        <!-- Inputs Column -->
+        <div class="calculator-panel inputs-panel">
+            <header class="panel-header">
+                <h2 class="h3 font-heading">Financial Parameters</h2>
+                <p class="text-dim text-sm">Configure your 2026 nomad strategy.</p>
+            </header>
 
-{% if compareMode %}
-{# Comparison Calculator (for comparison pages) #}
-<div class="calculator-widget glass-panel">
-    <header class="calculator-header">
-        <h2 class="aura-title">Savings Comparison</h2>
-        <p class="text-dim">Compare your monthly "Leftover" after tax &amp; rent across these locations.</p>
-    </header>
-    <div class="calculator-form">
-        <div class="input-group">
-            <label for="compare-income">Your Annual Gross Income (USD)</label>
-            <input type="number" id="compare-income" class="aura-input" placeholder="e.g. 100000"
-                   data-desta="{{ destA }}" data-destb="{{ destB }}" required>
+            <div class="calculator-form">
+                <div class="input-group">
+                    <label for="calc-income" class="aura-label">Annual Gross Income</label>
+                    <div class="aura-input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="calc-income" class="premium-input" placeholder="0" value="85000">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="calc-city" class="aura-label">Destination City</label>
+                    <div class="aura-input-wrapper">
+                        <span class="icon">📍</span>
+                        <input type="text" id="calc-city" class="premium-input" value="{{ city.name or prefillCity or 'Lisbon' }}">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="aura-label">Accommodation Standard</label>
+                    <div class="select-wrapper">
+                        <select id="calc-housing" class="premium-select">
+                            <option value="1.0">Premium Studio / 1BR</option>
+                            <option value="0.6">Shared / Nomad Coliving</option>
+                            <option value="1.5">Modern 2BR Condo</option>
+                            <option value="2.5">Luxury Penthouse</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="aura-label">Lifestyle Tier</label>
+                    <div class="lifestyle-grid">
+                        <label class="tier-card">
+                            <input type="radio" name="lifestyle" value="0.7">
+                            <div class="tier-content">
+                                <span class="tier-icon">🎒</span>
+                                <span class="tier-name">Budget</span>
+                            </div>
+                        </label>
+                        <label class="tier-card active">
+                            <input type="radio" name="lifestyle" value="1.0" checked>
+                            <div class="tier-content">
+                                <span class="tier-icon">💼</span>
+                                <span class="tier-name">Comfort</span>
+                            </div>
+                        </label>
+                        <label class="tier-card">
+                            <input type="radio" name="lifestyle" value="1.8">
+                            <div class="tier-content">
+                                <span class="tier-icon">🥂</span>
+                                <span class="tier-name">Luxury</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="calculate-btn" class="premium-btn w-full">
+                    <span>Analyze Roadmap</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.16663 10H15.8333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 4.16663L15.8333 9.99996L10 15.8333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <button id="compare-btn" class="action-btn w-full">Compare Net Savings</button>
+
+        <!-- Results Column -->
+        <div class="calculator-panel results-panel">
+            <div class="score-card">
+                <div class="score-header">
+                    <span class="label">Financial Freedom Score</span>
+                    <span id="savings-percent" class="score-value">0%</span>
+                </div>
+                <div class="score-progress">
+                    <div id="savings-progress-bar" class="progress-fill"></div>
+                </div>
+                <p id="calc-feedback" class="score-feedback">Enter details to see your score.</p>
+            </div>
+
+            <div class="results-breakdown">
+                <div class="result-item">
+                    <span class="label">Monthly Net (After Tax)</span>
+                    <span id="calc-net" class="value">$0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Estimated Expenses</span>
+                    <span id="calc-total-expenses" class="value">$0</span>
+                </div>
+                <div class="result-item highlight">
+                    <span class="label">Projected Savings</span>
+                    <span id="calc-savings" class="value">$0</span>
+                </div>
+            </div>
+
+            <div class="mini-breakdown">
+                <div class="mini-item">
+                    <span class="icon">☕</span>
+                    <div class="details">
+                        <span class="label">30x Coffee</span>
+                        <span class="value" id="price-coffee">$0</span>
+                    </div>
+                </div>
+                <div class="mini-item">
+                    <span class="icon">🍱</span>
+                    <div class="details">
+                        <span class="label">20x Meals</span>
+                        <span class="value" id="price-meal">$0</span>
+                    </div>
+                </div>
+                <div class="mini-item">
+                    <span class="icon">💻</span>
+                    <div class="details">
+                        <span class="label">Coworking</span>
+                        <span class="value" id="price-coworking">$0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="comparison-result" class="comparison-result-container"></div>
+
+    <!-- Premium Lead Magnet -->
+    <div class="premium-lead-magnet reveal">
+        <div class="magnet-image">
+            <img src="/assets/images/guide-mockup.png" alt="Nomad Budgeting Guide 2026" width="280">
+        </div>
+        <div class="magnet-content">
+            <span class="badge">Exclusive 2026 Edition</span>
+            <h3>Master Global Tax Arbitrage</h3>
+            <p>Download our deep-dive into {{ city.name or 'top nomad hubs' }} and learn how to optimize your global footprint for maximum savings.</p>
+            <div class="magnet-actions">
+                <button class="cta-btn secondary">View Sample</button>
+                <button class="cta-btn primary">Get Full PDF</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-{% else %}
-{# Standard Calculator (for homepage and city pages) #}
-<aside class="glass-panel calculator-sidebar">
-    <header class="calculator-header">
-        <div class="badge-2026 mb-4">
-            <span class="badge-dot"></span>
-            Verified {{ site.year }} Market Data
-        </div>
-        <h2 class="aura-title large-title">{{ site.name }}</h2>
-        <p class="text-dim">Calculate your true "Leftover" savings potential. Trusted by <strong>{{ site.socialProof }}</strong> this month.</p>
-    </header>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const incomeInput = document.getElementById('calc-income');
+        const cityInput = document.getElementById('calc-city');
+        const housingSelect = document.getElementById('calc-housing');
+        const calculateBtn = document.getElementById('calculate-btn');
+        
+        const netEl = document.getElementById('calc-net');
+        const totalExpensesEl = document.getElementById('calc-total-expenses');
+        const savingsEl = document.getElementById('calc-savings');
+        const savingsPercentEl = document.getElementById('savings-percent');
+        const progressBar = document.getElementById('savings-progress-bar');
+        const feedbackEl = document.getElementById('calc-feedback');
 
-    <div class="calculator-form">
-        <div class="input-group">
-            <label for="income">Annual Gross Income (USD)</label>
-            <input type="number" id="income" class="aura-input" placeholder="e.g. 100000" required>
-        </div>
+        // Price estimates
+        const coffeeEl = document.getElementById('price-coffee');
+        const mealEl = document.getElementById('price-meal');
+        const coworkingEl = document.getElementById('price-coworking');
 
-        <div class="input-group">
-            <label for="location">Target City</label>
-            <input type="text" id="location" class="aura-input" placeholder="e.g. Lisbon, Bali, Dubai"
-                   {% if prefillCity %}value="{{ prefillCity }}"{% endif %} required>
-        </div>
+        // City Data from server
+        const cityData = {
+            tax: {{ city.tax | default(0.2) }},
+            rent: {{ city.rent | default(1500) }},
+            col: {{ city.col | default(2500) }},
+            name: "{{ city.name | default('') }}",
+            prices: {
+                coffee: {{ city.prices_usd.cappuccino | default(3.5) }},
+                meal: {{ city.prices_usd.mealCheap | default(15) }},
+                coworking: {{ city.prices_usd.coworkingDay | default(20) }}
+            }
+        };
 
-        <div class="input-group">
-            <label for="expenses">Custom Monthly Expenses (Optional)</label>
-            <input type="number" id="expenses" class="aura-input" placeholder="We'll use {{ site.year }} local averages if empty">
-        </div>
+        const formatUSD = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(val);
 
-        <div class="input-group">
-            <label for="days-in-country">Days in Country (Tax Residency)</label>
-            <input type="range" id="days-in-country" min="1" max="365" value="365" class="aura-range">
-            <div class="range-labels">
-                <span>1 day</span>
-                <span id="days-val" class="range-value">365 days</span>
-                <span>365 days</span>
-            </div>
-            <div id="residency-warning" class="residency-warning">
-                ⚠️ Over 183 days usually triggers local tax residency.
-            </div>
-        </div>
+        const animateValue = (el, start, end, duration) => {
+            if (!el) return;
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                el.textContent = formatUSD(current);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
 
-        <div class="input-group grid-2 stack-on-mobile">
-            <div class="input-field">
-                <label for="employment-type" class="field-label">Work Status</label>
-                <select id="employment-type" class="aura-input">
-                    <option value="freelancer">Freelancer / B2B</option>
-                    <option value="employee">W2 Employee</option>
-                </select>
-            </div>
-            <div class="input-field">
-                <label for="us-citizen" class="field-label">US Citizen?</label>
-                <select id="us-citizen" class="aura-input">
-                    <option value="no">No</option>
-                    <option value="yes">Yes (FEIE)</option>
-                </select>
-            </div>
-        </div>
+        const calculate = () => {
+            const income = parseFloat(incomeInput.value);
+            const housingMult = parseFloat(housingSelect.value);
+            const lifestyleMult = parseFloat(document.querySelector('input[name="lifestyle"]:checked').value);
 
-        <button id="calculate-btn" class="action-btn w-full centered-btn">Sync Market Data &amp; Calculate</button>
-    </div>
+            if (isNaN(income) || income <= 0) {
+                feedbackEl.textContent = "Please enter a valid income.";
+                feedbackEl.style.color = "#ef4444";
+                return;
+            }
 
-    <div id="loading" class="hidden loading-container">
-        <div class="spinner"></div>
-        <p class="loading-text">Connecting to Live Data Nodes...</p>
-    </div>
-</aside>
-{% endif %}
+            const monthlyGross = income / 12;
+            const monthlyTax = monthlyGross * cityData.tax;
+            const monthlyNet = monthlyGross - monthlyTax;
+            
+            const estimatedRent = cityData.rent * housingMult;
+            const estimatedLifestyle = (cityData.col - cityData.rent) * lifestyleMult;
+            const totalExpenses = estimatedRent + estimatedLifestyle;
+            const savings = monthlyNet - totalExpenses;
+            const savingsPercent = Math.max(0, (savings / monthlyNet) * 100);
+
+            // Animate results
+            animateValue(netEl, 0, monthlyNet, 800);
+            animateValue(totalExpensesEl, 0, totalExpenses, 800);
+            animateValue(savingsEl, 0, savings, 800);
+
+            // Progress Bar Logic
+            progressBar.style.width = `${Math.min(100, savingsPercent)}%`;
+            savingsPercentEl.textContent = Math.round(savingsPercent) + '%';
+            
+            // Set color based on health
+            let healthColor = "var(--accent-primary)";
+            if (savingsPercent < 15) healthColor = "#ef4444";
+            else if (savingsPercent < 30) healthColor = "#f59e0b";
+            
+            progressBar.style.background = healthColor;
+            savingsPercentEl.style.color = healthColor;
+
+            // Update Price Estimates (Monthly)
+            if (coffeeEl) coffeeEl.textContent = formatUSD(cityData.prices.coffee * 30);
+            if (mealEl) mealEl.textContent = formatUSD(cityData.prices.meal * 20); 
+            if (coworkingEl) coworkingEl.textContent = formatUSD(cityData.prices.coworking * 20);
+
+            // Feedback logic
+            if (savingsPercent > 40) {
+                feedbackEl.textContent = "🚀 High Sustainability: You can save significantly here!";
+                feedbackEl.style.color = "var(--accent-primary)";
+            } else if (savingsPercent > 15) {
+                feedbackEl.textContent = "✅ Balanced: Your income comfortably covers this lifestyle.";
+                feedbackEl.style.color = "var(--text-main)";
+            } else if (savingsPercent > 0) {
+                feedbackEl.textContent = "⚠️ Tight: You'll need to watch your discretionary spending.";
+                feedbackEl.style.color = "#f59e0b";
+            } else {
+                feedbackEl.textContent = "🛑 Critical: This lifestyle exceeds your net income in this city.";
+                feedbackEl.style.color = "#ef4444";
+            }
+        };
+
+        // Radio button visual feedback
+        const tierCards = document.querySelectorAll('.tier-card');
+        tierCards.forEach(card => {
+            card.addEventListener('click', () => {
+                tierCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+            });
+        });
+
+        calculateBtn.addEventListener('click', calculate);
+        incomeInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') calculate();
+        });
+
+        // Initial calculation
+        if (cityData.name) {
+            calculate();
+        }
+    });
+
+</script>

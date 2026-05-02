@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm install && node scripts/pulse.mjs && node ./node_modules/@11ty/eleventy/cmd.cjs",
+  "buildCommand": "npm run build",
   "outputDirectory": "_site",
   "cleanUrls": true,
   "trailingSlash": false,

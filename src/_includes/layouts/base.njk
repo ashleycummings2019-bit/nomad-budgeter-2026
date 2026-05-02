@@ -24,7 +24,10 @@
     </script>
 </head>
 <body>
+    <div class="aura-blob blob-1"></div>
+    <div class="aura-blob blob-2"></div>
     {% include "partials/cookie-banner.njk" %}
+    {% include "partials/aura-modal.njk" %}
     {% include "partials/header.njk" %}
     {% include "partials/mobile-cta.njk" %}
 
@@ -37,7 +40,8 @@
     {% include "partials/footer.njk" %}
 
     <script src="/js/geo-currency.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="/js/aura-ticker.js"></script>
+    <script type="module" src="/js/main.js"></script>
     <script src="/js/capture-lead.js"></script>
 </body>
 </html>

@@ -29,13 +29,7 @@ eleventyExcludeFromCollections: true
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
-        <loc>{{ site.url }}/{{ city.slug }}/cost-of-living-calculator/</loc>
-        <lastmod>{% sitemapDate %}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    {% endfor %}
+{% endfor %}
     {% for comp in comparisons.list %}
     <url>
         <loc>{{ site.url }}/compare/city/{{ comp.slug }}/</loc>

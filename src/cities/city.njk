@@ -7,42 +7,51 @@ pagination:
 permalink: "/cities/{{ city.slug }}/"
 eleventyComputed:
   pageTitle: "{{ city.name }} Digital Nomad Tax & Cost of Living Calculator (2026)"
-  pageDescription: "Calculate your nomad budget in {{ city.name }}, {{ city.country }}. {{ city.visa }} with {{ city.tax | percentInt }} tax rate. Updated for 2026."
+  pageDescription: "Calculate your nomad budget in {{ city.name }}, {{ city.country }}. {{ city.visa }} with {{ city.tax | percentInt }} tax rate. Is {{ city.name }} worth it in 2026? Find out with our expert tax analysis and cost of living breakdown."
   prefillCity: "{{ city.name }}"
   pageSchema: |
     {
       "@context": "https://schema.org",
-      "@type": "Place",
-      "name": "{{ city.name }}",
-      "description": "{{ pageDescription }}",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "{{ city.country }}"
-      },
-      "mainEntity": {
-        "@type": "ItemList",
-        "name": "Key Statistics for {{ city.name }}",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Monthly Cost of Living",
-            "text": "${{ city.col | localeString }}"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Average 1BR Rent",
-            "text": "${{ city.rent | localeString }}"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Nomad Tax Rate",
-            "text": "{{ city.tax | percentInt }}"
+      "@graph": [
+        {
+          "@type": "Place",
+          "name": "{{ city.name }}",
+          "description": "{{ pageDescription }}",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "{{ city.country }}"
           }
-        ]
-      }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the cost of living in {{ city.name }} for digital nomads?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The estimated monthly cost of living in {{ city.name }} for a digital nomad is approximately ${{ city.col | localeString }}. This includes mid-range accommodation, local food, and basic co-working expenses."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the tax rate for nomads in {{ city.name }}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nomads in {{ city.name }} typically pay an effective tax rate of {{ city.tax | percentInt }} under the {{ city.visa }}. This makes it a highly {{ 'efficient' if city.tax < 10 else 'standard' }} destination for tax arbitrage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a digital nomad visa for {{ city.name }}?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, {{ city.name }} is served by the {{ city.visa }}. To qualify, you generally need a minimum monthly income of ${{ city.visaMinIncome | localeString }}."
+              }
+            }
+          ]
+        }
+      ]
     }
 ---
 
@@ -77,8 +86,22 @@ eleventyComputed:
 {# City Introduction #}
 <div class="section-container mt-16">
     <div class="expert-analysis glass-panel p-8">
-        <h2 class="aura-title mb-6">{{ city.name }} for Digital Nomads in {{ site.year }}</h2>
         <p class="text-main">{{ city.intro }}</p>
+
+        {% if city.expertNotes %}
+        <div class="expert-verdict mt-8">
+            <div class="verdict-header">
+                <span class="verdict-icon">💡</span>
+                <span class="verdict-title">Expert Verdict: {{ city.name }} 2026</span>
+            </div>
+            <div class="verdict-body">
+                {{ city.expertNotes }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% include "partials/lifestyle-selector.njk" %}
+
 
         {# Key Stats Grid #}
         <div class="metric-grid mt-8">
@@ -107,6 +130,12 @@ eleventyComputed:
             <p class="text-dim text-sm">Based on tax efficiency, CoL, and 2026 quality of life indices.</p>
         </div>
     </div>
+    
+    {# Expert Market Intelligence #}
+    {% include "partials/expert-breakdown.njk" %}
+
+    {# Relocation Roadmap #}
+    {% include "partials/tax-roadmap.njk" %}
 </div>
 
 {# ━━━ LIVE LOCAL PRICES (Pulse Data) ━━━ #}
@@ -213,7 +242,10 @@ eleventyComputed:
                 <div class="header-meta">
                     <p id="city-badge" class="city-badge">{{ city.name }}, {{ city.country }}</p>
                     <span class="meta-dot"></span>
-                    <p class="trust-indicator">Verified for 2026</p>
+                    <p class="trust-indicator">
+                        <span class="badge-dot pulse-dot"></span>
+                        <span id="live-nomads-count">...</span> nomads analyzing {{ city.name }} live
+                    </p>
                 </div>
             </div>
             <div class="aura-score" id="aura-ring">
@@ -266,7 +298,7 @@ eleventyComputed:
                     </div>
                 </a>
                 <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">💳</div>
+                    <div class="stack-icon">💸</div>
                     <div class="stack-info">
                         <div class="stack-name">Wise</div>
                         <div class="stack-desc">Borderless Banking</div>
@@ -337,6 +369,137 @@ eleventyComputed:
         {# Lead Magnet #}
         {% include "partials/lead-magnet.njk" %}
     </section>
+
+    {# Tax Roadmap & Relocation Toolkit (Strategic Automation) #}
+    <div class="section-container mt-16 reveal">
+        <div class="grid-2 gap-8">
+            <div class="roadmap-wrapper">
+                {% include "partials/tax-roadmap.njk" %}
+            </div>
+            <div class="toolkit-wrapper">
+                {% include "partials/relocation-toolkit.njk" %}
+            </div>
+        </div>
+    </div>
+
+    {# Tax Competitors (Internal Linking & SEO) #}
+    <section class="section-container mt-24 reveal">
+        <div class="flex-between mb-12">
+            <div>
+                <h2 class="aura-title mb-2">Tax Competitors</h2>
+                <p class="text-dim">Looking for a better deal? These cities offer similar or lower taxes than {{ city.name }}.</p>
+            </div>
+            <a href="/cities/" class="text-link">View all cities &rarr;</a>
+        </div>
+        
+        <div class="competitor-grid">
+            {% set competitors = cities | selectattr("tax", "le", city.tax) | rejectattr("slug", "equalto", city.slug) %}
+            {% for comp in competitors | slice(0, 4) %}
+            <a href="/cities/{{ comp.slug }}/" class="competitor-card glass-panel aura-hover-glow">
+                <div class="comp-top">
+                    <span class="comp-name">{{ comp.name }}</span>
+                    <span class="comp-flag">{% if comp.code == "PT" %}🇵🇹{% elif comp.code == "ES" %}🇪🇸{% elif comp.code == "AE" %}🇦🇪{% elif comp.code == "ID" %}🇮🇩{% elif comp.code == "GE" %}🇬🇪{% else %}📍{% endif %}</span>
+                </div>
+                <div class="comp-stats">
+                    <div class="comp-stat">
+                        <span class="stat-label">Tax Rate</span>
+                        <span class="stat-value highlight">{{ comp.tax | percentInt }}</span>
+                    </div>
+                    <div class="comp-stat">
+                        <span class="stat-label">Monthly Cost</span>
+                        <span class="stat-value">${{ comp.col | localeString }}</span>
+                    </div>
+                </div>
+                <div class="comp-benefit">
+                    {% if comp.tax < city.tax %}
+                    <span class="benefit-tag positive">Save {{ ((city.tax - comp.tax) * 100) | round }}%</span>
+                    {% else %}
+                    <span class="benefit-tag">Better Value</span>
+                    {% endif %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {# ━━━ THE SHOWDOWN: SIDE-BY-SIDE ━━━ #}
+    <div class="section-container mt-24">
+        <h2 class="aura-title text-center mb-12">The {{ site.year }} Financial Showdown</h2>
+        
+        <div class="showdown-grid">
+            {# Primary City #}
+            <div class="showdown-card primary-hub glass-panel reveal">
+                <div class="showdown-badge">CURRENT FOCUS</div>
+                <div class="showdown-header">
+                    <div class="hub-emoji">{{ city.emoji | default('📍') }}</div>
+                    <div class="hub-meta">
+                        <h3>{{ city.name }}</h3>
+                        <p>{{ city.country }}</p>
+                    </div>
+                </div>
+                <div class="showdown-metrics">
+                    <div class="s-metric">
+                        <span>Nomad Tax</span>
+                        <strong>{{ city.tax | percentInt }}</strong>
+                    </div>
+                    <div class="s-metric">
+                        <span>Rent (1BR)</span>
+                        <strong>{{ city.rent | usd }}</strong>
+                    </div>
+                    <div class="s-metric">
+                        <span>Quality Score</span>
+                        <strong>{{ city.score }}/100</strong>
+                    </div>
+                </div>
+                <div class="showdown-verdict">
+                    <p>{{ city.intro | truncate(80) }}</p>
+                </div>
+            </div>
+
+            <div class="showdown-vs">VS</div>
+
+            {# Comparison Target (Dynamic suggested city) #}
+            {% set compTarget = null %}
+            {% for other in cities %}
+                {% if other.slug != city.slug and not compTarget %}
+                    {% if other.country == city.country or (other.col > city.col * 0.8 and other.col < city.col * 1.2) %}
+                        {% set compTarget = other %}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+
+            {% if compTarget %}
+            <div class="showdown-card target-hub glass-panel reveal">
+                <div class="showdown-badge secondary">SUGGESTED ALT</div>
+                <div class="showdown-header">
+                    <div class="hub-emoji">{{ compTarget.emoji | default('📍') }}</div>
+                    <div class="hub-meta">
+                        <h3>{{ compTarget.name }}</h3>
+                        <p>{{ compTarget.country }}</p>
+                    </div>
+                </div>
+                <div class="showdown-metrics">
+                    <div class="s-metric">
+                        <span>Nomad Tax</span>
+                        <strong>{{ compTarget.tax | percentInt }}</strong>
+                    </div>
+                    <div class="s-metric">
+                        <span>Rent (1BR)</span>
+                        <strong>{{ compTarget.rent | usd }}</strong>
+                    </div>
+                    <div class="s-metric">
+                        <span>Quality Score</span>
+                        <strong>{{ compTarget.score }}/100</strong>
+                    </div>
+                </div>
+                <div class="showdown-verdict">
+                    <p>{{ compTarget.intro | truncate(80) }}</p>
+                </div>
+                <a href="/compare/city/{{ city.slug }}-vs-{{ compTarget.slug }}/" class="action-btn-sm mt-4">Full Side-by-Side →</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
 
     {# Similar Destinations Section #}
     <div class="section-container mt-24">
@@ -423,3 +586,4 @@ eleventyComputed:
     {% include "partials/relocation-toolkit.njk" %}
     {% include "partials/seo-silos.njk" %}
 </div>
+{% endblock %}

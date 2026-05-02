@@ -78,6 +78,12 @@ eleventyComputed:
         <p class="text-dim subtitle-text max-800">{{ comp.emoji }} {{ comp.description }}</p>
         <p class="text-dim text-small mt-4"><i class="fa fa-clock-o"></i> Prices updated: {{ comp.cityA.pulse_updated | formatDate }}<br>Exchange Rate: 1 USD = {{ comp.cityA.exchangeRate }} {{ comp.cityA.currency }}, 1 USD = {{ comp.cityB.exchangeRate }} {{ comp.cityB.currency }}</p>
     </div>
+    
+    {# Lifestyle Selector #}
+    <div class="mb-12">
+        {% include "partials/lifestyle-selector.njk" %}
+    </div>
+
 
     {# Dashboard Header #}
     <div class="glass-panel mb-12 reveal p-10">
@@ -100,7 +106,7 @@ eleventyComputed:
             {# Financial Arbitrage #}
             <div class="metric-card">
                 <div class="metric-label">Monthly Arbitrage Delta</div>
-                <div class="metric-value highlight">${{ comp.arbitrageValue | localeString }}</div>
+                <div class="metric-value highlight" id="arbitrage-delta-display">$0</div>
                 <div class="calculator-input-group mt-4 sm:mt-0">
                     <label for="relocation-income">Annual Income (USD)</label>
                     <input type="number" id="relocation-income" value="100000" step="5000" class="mini-input">
@@ -125,47 +131,52 @@ eleventyComputed:
                 <div class="grocery-header text-dim text-right">{{ comp.cityB.name }} (USD)</div>
                 <div class="grocery-header text-dim text-right">Difference</div>
                 
-                {# Cappuccino #}
                 <div class="grocery-row">
                     <div class="grocery-item">☕ Cappuccino</div>
-                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.cappuccino | default(0) | usdPrecise }}</div>
-                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.cappuccino | default(0) | usdPrecise }}</div>
-                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.cappuccino < comp.cityB.prices_usd.cappuccino %}positive-text{% else %}negative-text{% endif %}">
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityA.prices_usd.cappuccino | default(0) }}">{{ comp.cityA.prices_usd.cappuccino | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityB.prices_usd.cappuccino | default(0) }}">{{ comp.cityB.prices_usd.cappuccino | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-diff text-right" id="diff-cappuccino">
+                        {# JS will handle diff updates if we want, but keeping static for now or wrapping #}
                         {% set diffCap = comp.cityA.prices_usd.cappuccino - comp.cityB.prices_usd.cappuccino %}
-                        {% if diffCap > 0 %}+{% endif %}{{ diffCap | abs | usdPrecise }}
+                        <span class="{% if diffCap < 0 %}positive-text{% else %}negative-text{% endif %}">
+                            {% if diffCap > 0 %}+{% endif %}{{ diffCap | abs | usdPrecise }}
+                        </span>
                     </div>
                 </div>
 
-                {# Cheap Meal #}
                 <div class="grocery-row">
                     <div class="grocery-item">🍽️ Cheap Restaurant Meal</div>
-                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.mealCheap | default(0) | usdPrecise }}</div>
-                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.mealCheap | default(0) | usdPrecise }}</div>
-                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.mealCheap < comp.cityB.prices_usd.mealCheap %}positive-text{% else %}negative-text{% endif %}">
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityA.prices_usd.mealCheap | default(0) }}">{{ comp.cityA.prices_usd.mealCheap | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityB.prices_usd.mealCheap | default(0) }}">{{ comp.cityB.prices_usd.mealCheap | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-diff text-right">
                         {% set diffMeal = comp.cityA.prices_usd.mealCheap - comp.cityB.prices_usd.mealCheap %}
-                        {% if diffMeal > 0 %}+{% endif %}{{ diffMeal | abs | usdPrecise }}
+                        <span class="{% if diffMeal < 0 %}positive-text{% else %}negative-text{% endif %}">
+                            {% if diffMeal > 0 %}+{% endif %}{{ diffMeal | abs | usdPrecise }}
+                        </span>
                     </div>
                 </div>
 
-                {# Local Beer #}
                 <div class="grocery-row">
                     <div class="grocery-item">🍺 Local Beer (0.5L)</div>
-                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.beerLocal | default(0) | usdPrecise }}</div>
-                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.beerLocal | default(0) | usdPrecise }}</div>
-                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.beerLocal < comp.cityB.prices_usd.beerLocal %}positive-text{% else %}negative-text{% endif %}">
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityA.prices_usd.beerLocal | default(0) }}">{{ comp.cityA.prices_usd.beerLocal | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityB.prices_usd.beerLocal | default(0) }}">{{ comp.cityB.prices_usd.beerLocal | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-diff text-right">
                         {% set diffBeer = comp.cityA.prices_usd.beerLocal - comp.cityB.prices_usd.beerLocal %}
-                        {% if diffBeer > 0 %}+{% endif %}{{ diffBeer | abs | usdPrecise }}
+                        <span class="{% if diffBeer < 0 %}positive-text{% else %}negative-text{% endif %}">
+                            {% if diffBeer > 0 %}+{% endif %}{{ diffBeer | abs | usdPrecise }}
+                        </span>
                     </div>
                 </div>
 
-                {# Coworking #}
                 <div class="grocery-row">
                     <div class="grocery-item">💻 Coworking (1 Day)</div>
-                    <div class="grocery-price text-right">{{ comp.cityA.prices_usd.coworkingDay | default(0) | usdPrecise }}</div>
-                    <div class="grocery-price text-right">{{ comp.cityB.prices_usd.coworkingDay | default(0) | usdPrecise }}</div>
-                    <div class="grocery-diff text-right {% if comp.cityA.prices_usd.coworkingDay < comp.cityB.prices_usd.coworkingDay %}positive-text{% else %}negative-text{% endif %}">
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityA.prices_usd.coworkingDay | default(0) }}">{{ comp.cityA.prices_usd.coworkingDay | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-price text-right"><span class="nb-price" data-usd="{{ comp.cityB.prices_usd.coworkingDay | default(0) }}">{{ comp.cityB.prices_usd.coworkingDay | default(0) | usdPrecise }}</span></div>
+                    <div class="grocery-diff text-right">
                         {% set diffCowork = comp.cityA.prices_usd.coworkingDay - comp.cityB.prices_usd.coworkingDay %}
-                        {% if diffCowork > 0 %}+{% endif %}{{ diffCowork | abs | usdPrecise }}
+                        <span class="{% if diffCowork < 0 %}positive-text{% else %}negative-text{% endif %}">
+                            {% if diffCowork > 0 %}+{% endif %}{{ diffCowork | abs | usdPrecise }}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -293,6 +304,7 @@ eleventyComputed:
 document.addEventListener('DOMContentLoaded', () => {
     const incomeInput = document.getElementById('relocation-income');
     const roiDisplay = document.getElementById('annual-roi-display');
+    const arbitrageDeltaEl = document.getElementById('arbitrage-delta-display');
     const cityACol = {{ comp.cityA.col }};
     const cityBCol = {{ comp.cityB.col }};
     const cityATax = {{ comp.cityA.tax }};
@@ -300,20 +312,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateROI() {
         const income = parseFloat(incomeInput.value) || 0;
+        const lfm = (window.__NB_GEO__ && window.__NB_GEO__.getTier) ? 
+            { budget: 0.72, comfort: 1.0, luxury: 1.95 }[window.__NB_GEO__.getTier()] : 1.0;
         
+        // Adjusted monthly COL based on lifestyle
+        const adjustedColA = cityACol * lfm;
+        const adjustedColB = cityBCol * lfm;
+
         // Simplified monthly savings calculation
         const monthlyIncome = income / 12;
-        const savingsA = (monthlyIncome * (1 - cityATax)) - cityACol;
-        const savingsB = (monthlyIncome * (1 - cityBTax)) - cityBCol;
+        const savingsA = (monthlyIncome * (1 - cityATax)) - adjustedColA;
+        const savingsB = (monthlyIncome * (1 - cityBTax)) - adjustedColB;
         
         const monthlyDiff = Math.abs(savingsA - savingsB);
         const annualROI = monthlyDiff * 12;
         
-        roiDisplay.textContent = new Intl.NumberFormat('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            maximumFractionDigits: 0
-        }).format(annualROI);
+        roiDisplay.textContent = formatUSD(annualROI);
+
+        if (arbitrageDeltaEl) {
+            arbitrageDeltaEl.textContent = formatUSD(monthlyDiff);
+        }
+        
+        function formatUSD(val) {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(val);
+        }
 
         // Add a little pop animation
         roiDisplay.style.transform = 'scale(1.1)';
@@ -323,6 +349,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     incomeInput.addEventListener('input', calculateROI);
+    
+    // Listen for lifestyle changes from the geo engine
+    document.addEventListener('nb-lifestyle-change', calculateROI);
     
     // Initial calculation
     calculateROI();

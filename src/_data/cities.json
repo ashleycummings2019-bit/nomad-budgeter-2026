@@ -29,17 +29,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6",
+    "tax_regime": "ITS Regime",
+    "visa_cost": 1500,
+    "expertNotes": "Lisbon remains the primary EU hub in 2026, though the housing crunch is real. Target the 'ITS Regime' for 20% flat tax."
   },
   {
     "name": "Porto",
@@ -71,16 +74,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
     "external_image_url": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b"
   },
   {
@@ -113,17 +116,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1534313314376-a72289b6181e"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1534313314376-a72289b6181e",
+    "tax_regime": "Beckham Law",
+    "visa_cost": 1200,
+    "expertNotes": "The best alternative to Lisbon for 2026. Slightly higher tax (24%) but significantly better housing availability and local infrastructure."
   },
   {
     "name": "Barcelona",
@@ -155,16 +161,16 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 3.99,
-      "mealCheap": 13,
-      "beerLocal": 5.22,
-      "milk1L": 2.09,
-      "chickenBreast1kg": 9.5,
-      "coworkingDay": 27
+      "cappuccino": 3.59,
+      "mealCheap": 12,
+      "beerLocal": 4.7,
+      "milk1L": 1.88,
+      "chickenBreast1kg": 8.55,
+      "coworkingDay": 24
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
     "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
   },
   {
@@ -197,16 +203,16 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 3.99,
-      "mealCheap": 13,
-      "beerLocal": 5.22,
-      "milk1L": 2.09,
-      "chickenBreast1kg": 9.5,
-      "coworkingDay": 27
+      "cappuccino": 3.59,
+      "mealCheap": 12,
+      "beerLocal": 4.7,
+      "milk1L": 1.88,
+      "chickenBreast1kg": 8.55,
+      "coworkingDay": 24
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "London",
@@ -238,16 +244,16 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 4.51,
-      "mealCheap": 16,
-      "beerLocal": 6.56,
-      "milk1L": 2.3,
-      "chickenBreast1kg": 11,
-      "coworkingDay": 33
+      "cappuccino": 4.07,
+      "mealCheap": 15,
+      "beerLocal": 5.92,
+      "milk1L": 2.07,
+      "chickenBreast1kg": 10,
+      "coworkingDay": 30
     },
-    "exchangeRate": 0.82,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
+    "exchangeRate": 0.7403,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
     "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
   },
   {
@@ -280,16 +286,16 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 3.99,
-      "mealCheap": 13,
-      "beerLocal": 5.22,
-      "milk1L": 2.09,
-      "chickenBreast1kg": 9.5,
-      "coworkingDay": 27
+      "cappuccino": 3.59,
+      "mealCheap": 12,
+      "beerLocal": 4.7,
+      "milk1L": 1.88,
+      "chickenBreast1kg": 8.55,
+      "coworkingDay": 24
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
     "external_image_url": "https://images.unsplash.com/photo-1509233725247-49e657c54213"
   },
   {
@@ -322,16 +328,16 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 5.22,
-      "mealCheap": 19,
-      "beerLocal": 7.6,
-      "milk1L": 2.66,
-      "chickenBreast1kg": 13,
-      "coworkingDay": 38
+      "cappuccino": 4.7,
+      "mealCheap": 17,
+      "beerLocal": 6.84,
+      "milk1L": 2.39,
+      "chickenBreast1kg": 12,
+      "coworkingDay": 34
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Athens",
@@ -363,16 +369,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Split",
@@ -404,16 +410,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Budapest",
@@ -445,16 +451,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 1200,
-      "mealCheap": 3000,
-      "beerLocal": 1100,
-      "milk1L": 670,
-      "chickenBreast1kg": 2800,
-      "coworkingDay": 6700
+      "cappuccino": 1000,
+      "mealCheap": 2500,
+      "beerLocal": 940,
+      "milk1L": 560,
+      "chickenBreast1kg": 2300,
+      "coworkingDay": 5600
     },
-    "exchangeRate": 370,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 311.78,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Prague",
@@ -486,16 +492,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 77,
-      "mealCheap": 190,
-      "beerLocal": 72,
-      "milk1L": 43,
-      "chickenBreast1kg": 180,
-      "coworkingDay": 430
+      "cappuccino": 67,
+      "mealCheap": 170,
+      "beerLocal": 62,
+      "milk1L": 37,
+      "chickenBreast1kg": 160,
+      "coworkingDay": 370
     },
-    "exchangeRate": 24,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 20.822,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Tallinn",
@@ -527,16 +533,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Vilnius",
@@ -568,16 +574,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Bucharest",
@@ -609,17 +615,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.2,
-      "mealCheap": 8,
-      "beerLocal": 3,
-      "milk1L": 1.8,
-      "chickenBreast1kg": 7.5,
-      "coworkingDay": 18,
-      "groceryIndex": 0.65
+      "cappuccino": 14,
+      "mealCheap": 35,
+      "beerLocal": 13,
+      "milk1L": 7.97,
+      "chickenBreast1kg": 33,
+      "coworkingDay": 80
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 4.4286,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Tenerife",
@@ -651,16 +656,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Funchal",
@@ -692,16 +697,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Tbilisi",
@@ -743,7 +748,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Istanbul",
@@ -775,16 +780,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 110,
-      "mealCheap": 280,
-      "beerLocal": 100,
-      "milk1L": 62,
-      "chickenBreast1kg": 260,
-      "coworkingDay": 620
+      "cappuccino": 140,
+      "mealCheap": 360,
+      "beerLocal": 140,
+      "milk1L": 81,
+      "chickenBreast1kg": 340,
+      "coworkingDay": 810
     },
-    "exchangeRate": 34.5,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 45.185,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Dubai",
@@ -816,17 +821,21 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 20,
-      "mealCheap": 73,
-      "beerLocal": 29,
-      "milk1L": 10,
-      "chickenBreast1kg": 51,
-      "coworkingDay": 150
+      "cappuccino": 5.5,
+      "mealCheap": 20,
+      "beerLocal": 8,
+      "milk1L": 2.8,
+      "chickenBreast1kg": 14,
+      "coworkingDay": 40,
+      "groceryIndex": 1
     },
-    "exchangeRate": 3.67,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
+    "tax_regime": "Zero Tax Regime",
+    "visa_cost": 3500,
+    "expertNotes": "The ultimate 0% tax play. High entry cost but zero friction once inside. Best for high-revenue business owners."
   },
   {
     "name": "Bangkok",
@@ -858,16 +867,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 120,
-      "mealCheap": 290,
-      "beerLocal": 110,
-      "milk1L": 66,
-      "chickenBreast1kg": 270,
-      "coworkingDay": 660
+      "cappuccino": 100,
+      "mealCheap": 260,
+      "beerLocal": 98,
+      "milk1L": 59,
+      "chickenBreast1kg": 240,
+      "coworkingDay": 590
     },
-    "exchangeRate": 36.5,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
+    "exchangeRate": 32.545,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
     "external_image_url": "https://images.unsplash.com/photo-1508004528368-1e4471569a9e"
   },
   {
@@ -879,7 +888,7 @@
     "continent": "Asia",
     "col": 1100,
     "rent": 500,
-    "tax": 0.15,
+    "tax": 0,
     "score": 94,
     "visa": "LTR Visa (Long-Term Resident)",
     "visaMinIncome": 3000,
@@ -900,17 +909,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 66,
-      "mealCheap": 130,
-      "beerLocal": 44,
-      "milk1L": 40,
-      "chickenBreast1kg": 160,
-      "coworkingDay": 290
+      "cappuccino": 59,
+      "mealCheap": 110,
+      "beerLocal": 39,
+      "milk1L": 36,
+      "chickenBreast1kg": 150,
+      "coworkingDay": 260
     },
-    "exchangeRate": 36.5,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1527333656061-ca7adf608ae1"
+    "exchangeRate": 32.545,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1527333656061-ca7adf608ae1",
+    "tax_regime": "LTR Visa (Remote)",
+    "visa_cost": 1600,
+    "expertNotes": "Ultra-low CoL with elite infrastructure. The LTR visa is expensive up front but pays off in 0% tax friction over 10 years."
   },
   {
     "name": "Bali",
@@ -942,17 +954,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 51200,
-      "mealCheap": 128000,
-      "beerLocal": 48000,
-      "milk1L": 28800,
-      "chickenBreast1kg": 120000,
-      "coworkingDay": 288000
+      "cappuccino": 55500,
+      "mealCheap": 138800,
+      "beerLocal": 52000,
+      "milk1L": 31200,
+      "chickenBreast1kg": 130100,
+      "coworkingDay": 312200
     },
-    "exchangeRate": 16000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4"
+    "exchangeRate": 17346,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
+    "tax_regime": "Remote Worker (B211A)",
+    "visa_cost": 600,
+    "expertNotes": "Still the budget king. The new 2026 Remote Worker visa is a game changer for long-term stays. Avoid the Canggu traffic if possible."
   },
   {
     "name": "Tokyo",
@@ -984,16 +999,16 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 830,
-      "mealCheap": 3000,
-      "beerLocal": 1200,
-      "milk1L": 420,
-      "chickenBreast1kg": 2100,
-      "coworkingDay": 6000
+      "cappuccino": 860,
+      "mealCheap": 3100,
+      "beerLocal": 1300,
+      "milk1L": 440,
+      "chickenBreast1kg": 2200,
+      "coworkingDay": 6300
     },
-    "exchangeRate": 150.2,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
+    "exchangeRate": 156.56,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
     "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26"
   },
   {
@@ -1026,16 +1041,16 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 5900,
-      "mealCheap": 19600,
-      "beerLocal": 7700,
-      "milk1L": 3100,
-      "chickenBreast1kg": 14000,
-      "coworkingDay": 39200
+      "cappuccino": 6200,
+      "mealCheap": 20700,
+      "beerLocal": 8100,
+      "milk1L": 3200,
+      "chickenBreast1kg": 14800,
+      "coworkingDay": 41400
     },
-    "exchangeRate": 1400,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 1477,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Singapore",
@@ -1046,7 +1061,7 @@
     "continent": "Asia",
     "col": 4800,
     "rent": 3000,
-    "tax": 0,
+    "tax": 0.15,
     "score": 90,
     "visa": "Tech.Pass / EntrePass",
     "visaMinIncome": 8333,
@@ -1067,17 +1082,20 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 7.43,
-      "mealCheap": 27,
-      "beerLocal": 11,
-      "milk1L": 3.78,
-      "chickenBreast1kg": 19,
-      "coworkingDay": 54
+      "cappuccino": 7.02,
+      "mealCheap": 26,
+      "beerLocal": 10,
+      "milk1L": 3.57,
+      "chickenBreast1kg": 18,
+      "coworkingDay": 51
     },
-    "exchangeRate": 1.35,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd"
+    "exchangeRate": 1.2762,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
+    "tax_regime": "Standard Tiered",
+    "visa_cost": 5000,
+    "expertNotes": "Premium Asia hub. Expensive but ultra-stable. Use as a base if your business requires a Tier-1 financial jurisdiction."
   },
   {
     "name": "Ho Chi Minh City",
@@ -1109,16 +1127,17 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 60000,
-      "mealCheap": 125000,
-      "beerLocal": 45000,
-      "milk1L": 35000,
-      "chickenBreast1kg": 137500,
-      "coworkingDay": 300000
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Kuala Lumpur",
@@ -1150,16 +1169,16 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 12,
-      "mealCheap": 24,
-      "beerLocal": 8.64,
-      "milk1L": 6.72,
-      "chickenBreast1kg": 26,
-      "coworkingDay": 58
+      "cappuccino": 9.53,
+      "mealCheap": 20,
+      "beerLocal": 7.15,
+      "milk1L": 5.56,
+      "chickenBreast1kg": 22,
+      "coworkingDay": 48
     },
-    "exchangeRate": 4.8,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 3.97,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Manila",
@@ -1191,16 +1210,16 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 140,
-      "mealCheap": 290,
-      "beerLocal": 100,
-      "milk1L": 81,
-      "chickenBreast1kg": 320,
-      "coworkingDay": 700
+      "cappuccino": 150,
+      "mealCheap": 310,
+      "beerLocal": 110,
+      "milk1L": 86,
+      "chickenBreast1kg": 340,
+      "coworkingDay": 740
     },
-    "exchangeRate": 58,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 61.458,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Da Nang",
@@ -1232,16 +1251,17 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 60000,
-      "mealCheap": 125000,
-      "beerLocal": 45000,
-      "milk1L": 35000,
-      "chickenBreast1kg": 137500,
-      "coworkingDay": 300000
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Yerevan",
@@ -1283,7 +1303,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "New York",
@@ -1324,8 +1344,8 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Montreal",
@@ -1357,16 +1377,16 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 5.8,
+      "cappuccino": 5.74,
       "mealCheap": 19,
-      "beerLocal": 7.59,
-      "milk1L": 3.04,
+      "beerLocal": 7.52,
+      "milk1L": 3.01,
       "chickenBreast1kg": 14,
-      "coworkingDay": 39
+      "coworkingDay": 38
     },
-    "exchangeRate": 1.38,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 1.3668,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Toronto",
@@ -1398,16 +1418,16 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 7.59,
-      "mealCheap": 28,
+      "cappuccino": 7.52,
+      "mealCheap": 27,
       "beerLocal": 11,
-      "milk1L": 3.86,
+      "milk1L": 3.83,
       "chickenBreast1kg": 19,
       "coworkingDay": 55
     },
-    "exchangeRate": 1.38,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 1.3668,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Mexico City",
@@ -1418,7 +1438,7 @@
     "continent": "Americas",
     "col": 2000,
     "rent": 1000,
-    "tax": 0.25,
+    "tax": 0,
     "score": 84,
     "visa": "Temporary Resident Visa",
     "visaMinIncome": 2500,
@@ -1439,17 +1459,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 58,
-      "mealCheap": 150,
-      "beerLocal": 55,
-      "milk1L": 33,
-      "chickenBreast1kg": 140,
-      "coworkingDay": 330
+      "cappuccino": 56,
+      "mealCheap": 140,
+      "beerLocal": 53,
+      "milk1L": 32,
+      "chickenBreast1kg": 130,
+      "coworkingDay": 320
     },
-    "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03"
+    "exchangeRate": 17.5158,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03",
+    "tax_regime": "Residente Temporal",
+    "visa_cost": 400,
+    "expertNotes": "Unbeatable culture and timezone alignment for US-based clients. The CDMX nomad community is at an all-time high in 2026."
   },
   {
     "name": "Tulum",
@@ -1481,16 +1504,16 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 76,
+      "cappuccino": 74,
       "mealCheap": 250,
-      "beerLocal": 100,
-      "milk1L": 40,
+      "beerLocal": 96,
+      "milk1L": 39,
       "chickenBreast1kg": 180,
-      "coworkingDay": 510
+      "coworkingDay": 490
     },
-    "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 17.5158,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z"
   },
   {
     "name": "Medellín",
@@ -1522,17 +1545,21 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 9800,
-      "mealCheap": 20500,
-      "beerLocal": 7400,
-      "milk1L": 5700,
-      "chickenBreast1kg": 22600,
-      "coworkingDay": 49200
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 4100,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z",
-    "external_image_url": "https://images.unsplash.com/photo-1594165230047-9257d07936a7"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.244Z",
+    "external_image_url": "https://images.unsplash.com/photo-1594165230047-9257d07936a7",
+    "tax_regime": "Foreign Income Exemption",
+    "visa_cost": 800,
+    "expertNotes": "The LATAM winner for 2026. Strong community and perfect weather, though safety awareness remains paramount."
   },
   {
     "name": "Buenos Aires",
@@ -1564,16 +1591,17 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2400,
-      "mealCheap": 5000,
-      "beerLocal": 1800,
-      "milk1L": 1400,
-      "chickenBreast1kg": 5500,
-      "coworkingDay": 12000
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 1000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Rio de Janeiro",
@@ -1606,15 +1634,15 @@
     },
     "prices_local": {
       "cappuccino": 16,
-      "mealCheap": 41,
+      "mealCheap": 40,
       "beerLocal": 15,
-      "milk1L": 9.18,
-      "chickenBreast1kg": 38,
-      "coworkingDay": 92
+      "milk1L": 8.97,
+      "chickenBreast1kg": 37,
+      "coworkingDay": 90
     },
-    "exchangeRate": 5.1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 4.9814,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "San José",
@@ -1646,16 +1674,17 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 1600,
-      "mealCheap": 4100,
-      "beerLocal": 1500,
-      "milk1L": 920,
-      "chickenBreast1kg": 3800,
-      "coworkingDay": 9200
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
     },
-    "exchangeRate": 510,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Panama City",
@@ -1696,8 +1725,8 @@
       "groceryIndex": 0.8
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Cape Town",
@@ -1729,16 +1758,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 62,
-      "mealCheap": 160,
-      "beerLocal": 59,
-      "milk1L": 35,
-      "chickenBreast1kg": 150,
-      "coworkingDay": 350
+      "cappuccino": 54,
+      "mealCheap": 130,
+      "beerLocal": 50,
+      "milk1L": 30,
+      "chickenBreast1kg": 130,
+      "coworkingDay": 300
     },
-    "exchangeRate": 19.5,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 16.7903,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Nairobi",
@@ -1770,16 +1799,17 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 310,
-      "mealCheap": 650,
-      "beerLocal": 230,
-      "milk1L": 180,
-      "chickenBreast1kg": 720,
-      "coworkingDay": 1600
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 130,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Bansko",
@@ -1821,7 +1851,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Sofia",
@@ -1863,7 +1893,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Belgrade",
@@ -1905,7 +1935,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Tirana",
@@ -1947,7 +1977,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Montevideo",
@@ -1979,16 +2009,17 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 120,
-      "mealCheap": 310,
-      "beerLocal": 120,
-      "milk1L": 70,
-      "chickenBreast1kg": 290,
-      "coworkingDay": 700
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
     },
-    "exchangeRate": 39,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Antigua",
@@ -2020,16 +2051,17 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 19,
-      "mealCheap": 39,
-      "beerLocal": 14,
-      "milk1L": 11,
-      "chickenBreast1kg": 43,
-      "coworkingDay": 94
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 7.8,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Bratislava",
@@ -2061,16 +2093,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Cusco",
@@ -2102,16 +2134,17 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 6.66,
-      "mealCheap": 13,
-      "beerLocal": 4.44,
-      "milk1L": 4.07,
-      "chickenBreast1kg": 17,
-      "coworkingDay": 30
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
     },
-    "exchangeRate": 3.7,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Playa del Carmen",
@@ -2143,16 +2176,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 58,
-      "mealCheap": 150,
-      "beerLocal": 55,
-      "milk1L": 33,
-      "chickenBreast1kg": 140,
-      "coworkingDay": 330
+      "cappuccino": 56,
+      "mealCheap": 140,
+      "beerLocal": 53,
+      "milk1L": 32,
+      "chickenBreast1kg": 130,
+      "coworkingDay": 320
     },
-    "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 17.5158,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Florianópolis",
@@ -2185,15 +2218,15 @@
     },
     "prices_local": {
       "cappuccino": 12,
-      "mealCheap": 26,
-      "beerLocal": 9.18,
-      "milk1L": 7.14,
-      "chickenBreast1kg": 28,
-      "coworkingDay": 61
+      "mealCheap": 25,
+      "beerLocal": 8.97,
+      "milk1L": 6.97,
+      "chickenBreast1kg": 27,
+      "coworkingDay": 60
     },
-    "exchangeRate": 5.1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 4.9814,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Batumi",
@@ -2235,7 +2268,7 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Koh Phangan",
@@ -2267,16 +2300,16 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 88,
-      "mealCheap": 180,
-      "beerLocal": 66,
-      "milk1L": 51,
-      "chickenBreast1kg": 200,
-      "coworkingDay": 440
+      "cappuccino": 78,
+      "mealCheap": 160,
+      "beerLocal": 59,
+      "milk1L": 46,
+      "chickenBreast1kg": 180,
+      "coworkingDay": 390
     },
-    "exchangeRate": 36.5,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 32.545,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "George Town",
@@ -2308,16 +2341,16 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 12,
-      "mealCheap": 24,
-      "beerLocal": 8.64,
-      "milk1L": 6.72,
-      "chickenBreast1kg": 26,
-      "coworkingDay": 58
+      "cappuccino": 9.53,
+      "mealCheap": 20,
+      "beerLocal": 7.15,
+      "milk1L": 5.56,
+      "chickenBreast1kg": 22,
+      "coworkingDay": 48
     },
-    "exchangeRate": 4.8,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 3.97,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Lagos",
@@ -2349,16 +2382,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Las Palmas",
@@ -2390,16 +2423,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Ericeira",
@@ -2431,16 +2464,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Seville",
@@ -2472,16 +2505,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Malaga",
@@ -2513,16 +2546,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Warsaw",
@@ -2554,16 +2587,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 13,
-      "mealCheap": 33,
-      "beerLocal": 12,
-      "milk1L": 7.38,
-      "chickenBreast1kg": 31,
-      "coworkingDay": 74
+      "cappuccino": 12,
+      "mealCheap": 29,
+      "beerLocal": 11,
+      "milk1L": 6.55,
+      "chickenBreast1kg": 27,
+      "coworkingDay": 66
     },
-    "exchangeRate": 4.1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 3.6408,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Krakow",
@@ -2595,16 +2628,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 13,
-      "mealCheap": 33,
-      "beerLocal": 12,
-      "milk1L": 7.38,
-      "chickenBreast1kg": 31,
-      "coworkingDay": 74
+      "cappuccino": 12,
+      "mealCheap": 29,
+      "beerLocal": 11,
+      "milk1L": 6.55,
+      "chickenBreast1kg": 27,
+      "coworkingDay": 66
     },
-    "exchangeRate": 4.1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 3.6408,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Zagreb",
@@ -2636,16 +2669,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.04,
-      "mealCheap": 7.6,
-      "beerLocal": 2.85,
-      "milk1L": 1.71,
-      "chickenBreast1kg": 7.13,
-      "coworkingDay": 17
+      "cappuccino": 2.73,
+      "mealCheap": 6.84,
+      "beerLocal": 2.56,
+      "milk1L": 1.54,
+      "chickenBreast1kg": 6.41,
+      "coworkingDay": 15
     },
-    "exchangeRate": 0.95,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 0.8546,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Austin",
@@ -2686,8 +2719,8 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Miami",
@@ -2728,8 +2761,8 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Port Louis",
@@ -2761,16 +2794,17 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 150,
-      "mealCheap": 370,
-      "beerLocal": 140,
-      "milk1L": 83,
-      "chickenBreast1kg": 350,
-      "coworkingDay": 830
+      "cappuccino": 3.2,
+      "mealCheap": 8,
+      "beerLocal": 3,
+      "milk1L": 1.8,
+      "chickenBreast1kg": 7.5,
+      "coworkingDay": 18,
+      "groceryIndex": 0.65
     },
-    "exchangeRate": 46,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Ubud",
@@ -2802,16 +2836,16 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 38400,
-      "mealCheap": 80000,
-      "beerLocal": 28800,
-      "milk1L": 22400,
-      "chickenBreast1kg": 88000,
-      "coworkingDay": 192000
+      "cappuccino": 41600,
+      "mealCheap": 86700,
+      "beerLocal": 31200,
+      "milk1L": 24300,
+      "chickenBreast1kg": 95400,
+      "coworkingDay": 208200
     },
-    "exchangeRate": 16000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 17346,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Canggu",
@@ -2843,16 +2877,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 51200,
-      "mealCheap": 128000,
-      "beerLocal": 48000,
-      "milk1L": 28800,
-      "chickenBreast1kg": 120000,
-      "coworkingDay": 288000
+      "cappuccino": 55500,
+      "mealCheap": 138800,
+      "beerLocal": 52000,
+      "milk1L": 31200,
+      "chickenBreast1kg": 130100,
+      "coworkingDay": 312200
     },
-    "exchangeRate": 16000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 17346,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Sayulita",
@@ -2884,16 +2918,16 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 58,
-      "mealCheap": 150,
-      "beerLocal": 55,
-      "milk1L": 33,
-      "chickenBreast1kg": 140,
-      "coworkingDay": 330
+      "cappuccino": 56,
+      "mealCheap": 140,
+      "beerLocal": 53,
+      "milk1L": 32,
+      "chickenBreast1kg": 130,
+      "coworkingDay": 320
     },
-    "exchangeRate": 18.2,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 17.5158,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Hoi An",
@@ -2925,16 +2959,17 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 45000,
-      "mealCheap": 87500,
-      "beerLocal": 30000,
-      "milk1L": 27500,
-      "chickenBreast1kg": 112500,
-      "coworkingDay": 200000
+      "cappuccino": 1.8,
+      "mealCheap": 3.5,
+      "beerLocal": 1.2,
+      "milk1L": 1.1,
+      "chickenBreast1kg": 4.5,
+      "coworkingDay": 8,
+      "groceryIndex": 0.35
     },
-    "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Siargao",
@@ -2966,16 +3001,16 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 140,
-      "mealCheap": 290,
-      "beerLocal": 100,
-      "milk1L": 81,
-      "chickenBreast1kg": 320,
-      "coworkingDay": 700
+      "cappuccino": 150,
+      "mealCheap": 310,
+      "beerLocal": 110,
+      "milk1L": 86,
+      "chickenBreast1kg": 340,
+      "coworkingDay": 740
     },
-    "exchangeRate": 58,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": 61.458,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Hanoi",
@@ -3007,16 +3042,17 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 60000,
-      "mealCheap": 125000,
-      "beerLocal": 45000,
-      "milk1L": 35000,
-      "chickenBreast1kg": 137500,
-      "coworkingDay": 300000
+      "cappuccino": 2.4,
+      "mealCheap": 5,
+      "beerLocal": 1.8,
+      "milk1L": 1.4,
+      "chickenBreast1kg": 5.5,
+      "coworkingDay": 12,
+      "groceryIndex": 0.5
     },
-    "exchangeRate": 25000,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "exchangeRate": null,
+    "exchangeRateDate": "2026-05-01",
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   },
   {
     "name": "Luang Prabang",
@@ -3058,6 +3094,6 @@
     },
     "exchangeRate": null,
     "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-04-30T23:01:40.928Z"
+    "pulse_updated": "2026-05-01T23:09:49.245Z"
   }
 ]

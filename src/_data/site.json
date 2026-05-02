@@ -13,12 +13,12 @@
     "apiNinjas": "w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt"
   },
   "affiliates": {
-    "lexidy": { "name": "Lexidy Legal", "url": "https://www.lexidy.com", "desc": "Top-rated firm for European Nomad Visas in 2026." },
-    "safetywing": { "name": "SafetyWing", "url": "https://safetywing.com/?referenceID=26514835&utm_source=26514835&utm_medium=Ambassador", "desc": "Global nomad health insurance meeting all 2026 visa requirements." },
-    "wise": { "name": "Wise", "url": "https://wise.com/invite/u/nomadbudgeter", "desc": "Move money globally with the lowest 2026 exchange rate fees." },
-    "remote": { "name": "Remote.com", "url": "https://remote.com/nomad-budgeter", "desc": "Payroll & Compliance for global teams." },
-    "nomadlist": { "name": "Nomad List", "url": "https://nomadlist.com", "desc": "The #1 community for digital nomads." },
-    "agoda": { "name": "Agoda Stays", "url": "https://www.agoda.com", "desc": "Best rates for monthly nomad rentals in Asia & beyond." },
-    "blueground": { "name": "Blueground", "url": "https://www.theblueground.com/?utm_source=braze&utm_medium=email&utm_campaign=All_2026_BuildMngrAuto", "desc": "Looking for a fully furnished apartment? Use my promo code to save on your stay with Blueground." }
+    "lexidy": { "name": "Lexidy Legal", "url": "https://www.lexidy.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Calculator", "desc": "Top-rated firm for European Nomad Visas in 2026." },
+    "safetywing": { "name": "SafetyWing", "url": "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance", "desc": "Global nomad health insurance meeting all 2026 visa requirements." },
+    "wise": { "name": "Wise", "url": "https://wise.com/invite/u/nomadbudgeter?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=NB_2026_Banking", "desc": "Move money globally with the lowest 2026 exchange rate fees." },
+    "remote": { "name": "Remote.com", "url": "https://remote.com/nomad-budgeter?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Remote", "desc": "Payroll & Compliance for global teams." },
+    "nomadlist": { "name": "Nomad List", "url": "https://nomadlist.com?utm_source=nomadbudgeter&utm_medium=community&utm_campaign=NB_2026_Silo", "desc": "The #1 community for digital nomads." },
+    "agoda": { "name": "Agoda Stays", "url": "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia", "desc": "Best rates for monthly nomad rentals in Asia & beyond." },
+    "blueground": { "name": "Blueground", "url": "https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto", "desc": "Looking for a fully furnished apartment? Use my promo code to save on your stay with Blueground." }
   }
 }

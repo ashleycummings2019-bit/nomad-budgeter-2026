@@ -72,4 +72,86 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    // ─── Automated Premium Modal Logic ───
+    const modal = document.getElementById('aura-modal');
+    const modalClose = document.getElementById('modal-close-btn');
+    const modalSubmit = document.getElementById('modal-submit-btn');
+    const modalEmail = document.getElementById('modal-email');
+    const modalSuccess = document.getElementById('modal-success');
+    const modalForm = document.getElementById('modal-lead-form');
+
+    const showModal = () => {
+        if (!sessionStorage.getItem('auraModalShown')) {
+            modal.classList.add('active');
+            sessionStorage.setItem('auraModalShown', 'true');
+        }
+    };
+
+    // Trigger after 30 seconds
+    setTimeout(showModal, 30000);
+
+    // Trigger after 50% scroll
+    window.addEventListener('scroll', () => {
+        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        if (scrollPercent > 50) {
+            showModal();
+        }
+    }, { passive: true });
+
+    // Close modal
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    }
+
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+        }
+    });
+
+    // Handle modal submission
+    if (modalSubmit) {
+        modalSubmit.addEventListener('click', async () => {
+            const email = modalEmail.value;
+            if (email && email.includes('@')) {
+                modalSubmit.disabled = true;
+                const originalText = modalSubmit.innerHTML;
+                modalSubmit.innerHTML = 'Sending...';
+
+                try {
+                    const response = await fetch('/api/capture-lead', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            email: email,
+                            source: 'automated-modal-' + window.location.pathname
+                        })
+                    });
+
+                    if (response.ok) {
+                        modalForm.style.display = 'none';
+                        modalSuccess.style.display = 'flex';
+                        modalSuccess.classList.remove('hidden');
+                        
+                        setTimeout(() => {
+                            modal.classList.remove('active');
+                        }, 3000);
+                    }
+                } catch (err) {
+                    console.error('Modal Lead Error:', err);
+                } finally {
+                    modalSubmit.disabled = false;
+                    modalSubmit.innerHTML = originalText;
+                }
+            } else {
+                modalEmail.style.border = '2px solid #ef4444';
+                modalEmail.focus();
+                setTimeout(() => modalEmail.style.border = '', 2000);
+            }
+        });
+    }
 });

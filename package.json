@@ -4,9 +4,10 @@
   "description": "Digital Nomad Tax & Cost of Living Calculator — Powered by Eleventy",
   "scripts": {
     "pulse": "node scripts/pulse.mjs",
-    "dev": "node scripts/pulse.mjs && node --env-file=.env ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
-    "build": "node scripts/pulse.mjs && node --env-file=.env ./node_modules/@11ty/eleventy/cmd.cjs",
-    "build:no-pulse": "node --env-file=.env ./node_modules/@11ty/eleventy/cmd.cjs",
+    "trends": "node scripts/generate-best-of.mjs",
+    "dev": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
+    "build": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "build:no-pulse": "node ./node_modules/@11ty/eleventy/cmd.cjs",
     "clean": "rm -rf _site"
   },
   "devDependencies": {

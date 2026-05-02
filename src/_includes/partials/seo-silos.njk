@@ -9,7 +9,7 @@
             <div style="display: flex; flex-direction: column; gap: 1rem;">
                 {% set silo1_count = 0 %}
                 {% for c in cities %}
-                    {% if c.tax == 0 and silo1_count < 5 %}
+                    {% if c.tax == 0 and silo1_count < 4 %}
                     <a href="/cities/{{ c.slug }}/" class="silo-link">
                         <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
                         <div class="silo-info">
@@ -29,7 +29,7 @@
             <div style="display: flex; flex-direction: column; gap: 1rem;">
                 {% set silo2_count = 0 %}
                 {% for c in cities %}
-                    {% if "Visa" in c.visa and silo2_count < 5 %}
+                    {% if "Visa" in c.visa and silo2_count < 4 %}
                     <a href="/cities/{{ c.slug }}/" class="silo-link">
                         <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
                         <div class="silo-info">
@@ -43,23 +43,38 @@
             </div>
         </div>
 
-        {# Silo 3: Same Continent (Contextual) #}
+        {# Silo 3: Trending 2026 Reports #}
         <div class="metric-card">
-            <h4 style="color: var(--text-dim); margin-bottom: 1.5rem;">More in {{ city.continent or "Global" }}</h4>
+            <h4 style="color: #f59e0b; margin-bottom: 1.5rem;">Trending 2026 Reports</h4>
             <div style="display: flex; flex-direction: column; gap: 1rem;">
-                {% set silo3_count = 0 %}
-                {% for c in cities %}
-                    {% if c.continent == city.continent and c.slug != city.slug and silo3_count < 5 %}
-                    <a href="/cities/{{ c.slug }}/" class="silo-link">
-                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1444723121867-7a241cacace9') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
-                        <div class="silo-info">
-                            <span class="silo-name">{{ c.name }}</span>
-                            <span class="silo-meta">{{ c.country }}</span>
-                        </div>
-                    </a>
-                    {% set silo3_count = silo3_count + 1 %}
-                    {% endif %}
-                {% endfor %}
+                <a href="/trends/lowest-tax-digital-nomad-countries-2026/" class="silo-link">
+                    <div class="silo-icon-box">📉</div>
+                    <div class="silo-info">
+                        <span class="silo-name">Tax Havens 2026</span>
+                        <span class="silo-meta">Top 10 Global Rankings</span>
+                    </div>
+                </a>
+                <a href="/trends/cheapest-nomad-cities-2026/" class="silo-link">
+                    <div class="silo-icon-box">💰</div>
+                    <div class="silo-info">
+                        <span class="silo-name">Budget Hubs</span>
+                        <span class="silo-meta">Lowest Cost of Living</span>
+                    </div>
+                </a>
+                <a href="/trends/highest-aura-score-nomad-cities/" class="silo-link">
+                    <div class="silo-icon-box">✨</div>
+                    <div class="silo-info">
+                        <span class="silo-name">Lifestyle Hubs</span>
+                        <span class="silo-meta">High Aura Rankings</span>
+                    </div>
+                </a>
+                <a href="/trends/safest-nomad-cities-2026/" class="silo-link">
+                    <div class="silo-icon-box">🛡️</div>
+                    <div class="silo-info">
+                        <span class="silo-name">Safest Cities</span>
+                        <span class="silo-meta">Security & Stability</span>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

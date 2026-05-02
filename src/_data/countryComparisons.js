@@ -8,7 +8,6 @@ module.exports = function () {
 
   const slugs = countries.map(c => c.slug);
   const results = [];
-  const existingSlugs = new Set();
 
   for (let i = 0; i < slugs.length; i++) {
     for (let j = i + 1; j < slugs.length; j++) {
@@ -21,22 +20,26 @@ module.exports = function () {
 
       if (!countryA || !countryB) continue;
 
-      // Comparison metrics
-      const taxDiff = Math.abs(countryA.tax - countryB.tax);
-      const incomeDiff = Math.abs(countryA.minIncomeMonthly - countryB.minIncomeMonthly);
+      // Priority scoring: same continent is more relevant
+      let priorityScore = 0;
+      if (countryA.continent === countryB.continent) priorityScore += 10;
       
+      // Bonus for popular regions
+      if (countryA.continent === "Europe" || countryB.continent === "Europe") priorityScore += 5;
+
       results.push({
         slug: forwardSlug,
         countryA: countryA,
         countryB: countryB,
+        priority: priorityScore,
         title: `${countryA.name} vs. ${countryB.name}: 2026 Digital Nomad Visa & Tax Comparison`,
         description: `Compare digital nomad visas, tax rates, and residency requirements: ${countryA.name} vs. ${countryB.name}. Which country is better for remote workers in 2026?`,
         type: "country-vs-country"
       });
-
-      existingSlugs.add(forwardSlug);
     }
   }
 
-  return results;
+  // Limit to top 100 to avoid low-value SEO pages
+  return results.sort((a, b) => b.priority - a.priority).slice(0, 100);
 };
+

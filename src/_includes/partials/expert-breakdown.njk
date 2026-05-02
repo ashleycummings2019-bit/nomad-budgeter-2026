@@ -1,0 +1,160 @@
+<div class="expert-breakdown-container reveal mt-12">
+    <div class="glass-panel expert-card">
+        <div class="expert-header mb-6">
+            <div class="expert-meta">
+                <div class="expert-avatar">
+                    <span class="avatar-emoji">👨‍💻</span>
+                </div>
+                <div class="expert-info">
+                    <h3 class="expert-name">Aura Market Intelligence</h3>
+                    <p class="expert-status">
+                        <span class="status-dot"></span>
+                        Human Verified — {{ site.year }}
+                    </p>
+                </div>
+            </div>
+            <div class="expert-badge-premium">
+                PRO INSIGHT
+            </div>
+        </div>
+
+        <div class="expert-content">
+            <p class="expert-text">
+                {{ city.expertNotes | default("Our financial analysts are currently verifying the latest tax optimizations for " + city.name + ". Check back shortly for the 2026 breakdown.") }}
+            </p>
+            
+            {% if city.tax_regime %}
+            <div class="expert-tag-list mt-6">
+                <div class="expert-tag">
+                    <span class="tag-label">Tax Regime</span>
+                    <span class="tag-value">{{ city.tax_regime }}</span>
+                </div>
+                <div class="expert-tag">
+                    <span class="tag-label">Visa Entry Cost</span>
+                    <span class="tag-value">{{ city.visa_cost | usd }}</span>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="expert-footer mt-8">
+            <p class="text-dim text-xs uppercase tracking-widest">Confidential market intelligence for {{ city.name }}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.expert-card {
+    border-left: 4px solid var(--aura-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.expert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expert-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.expert-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--aura-primary), var(--aura-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.expert-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.expert-status {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--aura-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--aura-accent);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.2); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.expert-badge-premium {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid var(--aura-primary);
+    color: var(--aura-primary);
+    padding: 0.4rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.expert-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    font-style: italic;
+}
+
+.expert-tag-list {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.expert-tag {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--glass-border);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.tag-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+}
+
+.tag-value {
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    .expert-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .expert-badge-premium { align-self: flex-start; }
+}
+</style>

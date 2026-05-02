@@ -1,0 +1,94 @@
+<div class="tax-roadmap-container mt-16 reveal">
+    <h2 class="aura-title mb-8">Your Relocation Roadmap: {{ city.name }}</h2>
+    
+    <div class="roadmap-grid">
+        <div class="roadmap-step">
+            <div class="step-icon">📅</div>
+            <div class="step-content">
+                <div class="step-time">3 Months Out</div>
+                <h4 class="step-title">Initial Research & Eligibility</h4>
+                <p class="step-desc">Confirm your income meets the ${{ (city.visaMinIncome * 12) | localeString }} requirement. Check your {{ city.visa }} eligibility.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-step">
+            <div class="step-icon">📄</div>
+            <div class="step-content">
+                <div class="step-time">2 Months Out</div>
+                <h4 class="step-title">Document Gathering</h4>
+                <p class="step-desc">Apostille your birth certificate, background check, and proof of remote employment. Open a local-friendly bank account.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-step">
+            <div class="step-icon">🛫</div>
+            <div class="step-content">
+                <div class="step-time">1 Month Out</div>
+                <h4 class="step-title">Final Prep & Arrival</h4>
+                <p class="step-desc">Book your initial accommodation (minimum 1 month). Secure your health insurance and finalize your tax plan for the {{ city.tax | percentInt }} rate.</p>
+            </div>
+        </div>
+        
+        <div class="roadmap-step highlight">
+            <div class="step-icon">🏠</div>
+            <div class="step-content">
+                <div class="step-time">Arrival Week</div>
+                <h4 class="step-title">Settling In</h4>
+                <p class="step-desc">Register your local address. Complete your visa interview. Start enjoying the {{ city.name }} lifestyle at ${{ city.col | localeString }}/mo.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.roadmap-step {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.roadmap-step:hover {
+    border-color: var(--aura-primary);
+    transform: translateY(-5px);
+}
+
+.roadmap-step.highlight {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: var(--aura-primary);
+}
+
+.step-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.step-time {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--aura-primary);
+    letter-spacing: 1px;
+}
+
+.step-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0.25rem 0 0.75rem 0;
+    color: #fff;
+}
+
+.step-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+</style>
