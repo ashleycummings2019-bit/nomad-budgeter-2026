@@ -63,8 +63,8 @@ function generateMarkdown(cat, list) {
   const date = new Date().toISOString().split('T')[0];
   let content = `---
 layout: layouts/base.njk
-pageTitle: "${cat.title}"
-pageDescription: "${cat.description}"
+pageTitle: ${JSON.stringify(cat.title)}
+pageDescription: ${JSON.stringify(cat.description)}
 date: ${date}
 permalink: /trends/${cat.slug}/
 ---

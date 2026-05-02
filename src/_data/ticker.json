@@ -1,0 +1,50 @@
+[
+  {
+    "label": "USD/EUR",
+    "value": "0.85",
+    "change": "+0.2%",
+    "positive": true
+  },
+  {
+    "label": "BTC/USD",
+    "value": "$72,419",
+    "change": "+1.4%",
+    "positive": true
+  },
+  {
+    "label": "LISBON COL",
+    "value": "$2,400",
+    "change": "-0.5%",
+    "positive": false
+  },
+  {
+    "label": "DUBAI RENT",
+    "value": "$3,400",
+    "change": "0.0%",
+    "positive": true
+  },
+  {
+    "label": "USD/EUR",
+    "value": "0.85",
+    "change": "+0.2%",
+    "positive": true
+  },
+  {
+    "label": "BTC/USD",
+    "value": "$72,419",
+    "change": "+1.4%",
+    "positive": true
+  },
+  {
+    "label": "LISBON COL",
+    "value": "$2,400",
+    "change": "-0.5%",
+    "positive": false
+  },
+  {
+    "label": "DUBAI RENT",
+    "value": "$3,400",
+    "change": "0.0%",
+    "positive": true
+  }
+]

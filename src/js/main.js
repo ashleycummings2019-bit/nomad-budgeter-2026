@@ -9,7 +9,7 @@ import { getTaxRate, calculateNetIncome } from './modules/tax-engine.js';
 import { getCityData, getExchangeRates } from './modules/api-client.js';
 import { animateScore, updateMetricBars, updateIncomeSimulator, showToast } from './modules/ui-engine.js';
 import { getVisaInfo, calculateVisaROI } from './modules/affiliates.js';
-import { formatCurrency, formatPercent, debounce } from './modules/utils.js';
+import { formatCurrency, formatPercent, debounce, isValidEmail } from './modules/utils.js';
 
 // ─── State Management ───
 const state = {
@@ -99,6 +99,46 @@ function initEventListeners() {
             updateUI(results);
         }
     });
+
+    // Lead Magnet Capture
+    const leadBtn = document.getElementById('send-guide-btn');
+    const leadEmail = document.getElementById('lead-email');
+    
+    if (leadBtn && leadEmail) {
+        leadBtn.addEventListener('click', async () => {
+            const email = leadEmail.value.trim();
+            
+            if (!isValidEmail(email)) {
+                showToast('Please enter a valid email address.', 'warning');
+                return;
+            }
+
+            leadBtn.disabled = true;
+            leadBtn.textContent = 'Sending...';
+
+            try {
+                // Simulate or hit capture API
+                const response = await fetch('/api/capture-lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: 'home_lead_magnet' })
+                });
+
+                if (response.ok) {
+                    showToast('Guide sent! Check your inbox.', 'success');
+                    document.getElementById('lead-success')?.classList.remove('hidden');
+                    leadEmail.value = '';
+                } else {
+                    throw new Error('Could not process request.');
+                }
+            } catch (e) {
+                showToast('Something went wrong. Please try again.', 'error');
+            } finally {
+                leadBtn.disabled = false;
+                leadBtn.textContent = 'Send My Free Copy →';
+            }
+        });
+    }
 }
 
 // ─── Core Logic ───

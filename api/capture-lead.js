@@ -58,7 +58,7 @@ module.exports = async (req, res) => {
             if (response.status === 404) {
                 errorMessage = `Airtable Table Not Found: Ensure your base (${AIRTABLE_BASE_ID}) has a table named exactly "${TABLE_NAME}".`;
             } else if (response.status === 422) {
-                errorMessage = `Airtable Field Mismatch: Ensure the "${TABLE_NAME}" table has these exact fields: "Email" (Email type), "Source" (Single line text), and "Date" (Date/Time or Text).`;
+                errorMessage = `Airtable Field Mismatch: Ensure the "${TABLE_NAME}" table has these exact fields: "Email" (Email type), "Notes" (Long text), and "Created" (Date or Text).`;
             } else if (response.status === 401) {
                 errorMessage = "Airtable Authentication Failed: Check your AIRTABLE_API_KEY.";
             }
