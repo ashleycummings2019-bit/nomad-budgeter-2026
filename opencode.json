@@ -4,7 +4,7 @@
     "architect": {
       "provider": "moonshot",
       "model": "kimi-2.6",
-      "api_key": "${KIMI_API_KEY}",
+      "api_key": "{env:KIMI_API_KEY}",
       "max_tokens": 4096,
       "temperature": 0.3,
       "context_window": 128000
