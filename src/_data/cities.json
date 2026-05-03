@@ -37,12 +37,16 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6",
-    "tax_regime": "ITS Regime",
-    "visa_cost": 1500,
-    "expertNotes": "Lisbon remains the primary EU hub in 2026, though the housing crunch is real. Target the 'ITS Regime' for 20% flat tax."
+    "tax_regime": "ITS Regime (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Lisbon is a top pick for Europe nomads.",
+    "affiliate_url": "https://lexidy.com/portugal",
+    "expertTaxNotes": "Residency verification for Lisbon requires professional audit.",
+    "complianceScore": 90,
+    "lastEnriched": "2026-05-03T04:56:42.627Z"
   },
   {
     "name": "Porto",
@@ -82,9 +86,15 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
-    "external_image_url": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "external_image_url": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b",
+    "tax_regime": "ITS Regime (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Porto is a top pick for Europe nomads.",
+    "expertTaxNotes": "Residency verification for Porto requires professional audit.",
+    "complianceScore": 85,
+    "lastEnriched": "2026-05-03T04:56:43.134Z"
   },
   {
     "name": "Valencia",
@@ -124,12 +134,15 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1534313314376-a72289b6181e",
-    "tax_regime": "Beckham Law",
-    "visa_cost": 1200,
-    "expertNotes": "The best alternative to Lisbon for 2026. Slightly higher tax (24%) but significantly better housing availability and local infrastructure."
+    "tax_regime": "Beckham Law (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Valencia is a top pick for Europe nomads.",
+    "expertTaxNotes": "Residency verification for Valencia requires professional audit.",
+    "complianceScore": 96,
+    "lastEnriched": "2026-05-03T04:56:43.641Z"
   },
   {
     "name": "Barcelona",
@@ -169,9 +182,15 @@
       "coworkingDay": 24
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
-    "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded",
+    "tax_regime": "Beckham Law (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Barcelona is a top pick for Europe nomads.",
+    "expertTaxNotes": "Residency verification for Barcelona requires professional audit.",
+    "complianceScore": 86,
+    "lastEnriched": "2026-05-03T04:56:44.148Z"
   },
   {
     "name": "Madrid",
@@ -211,8 +230,15 @@
       "coworkingDay": 24
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Beckham Law (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Madrid is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4",
+    "expertTaxNotes": "Residency verification for Madrid requires professional audit.",
+    "complianceScore": 99,
+    "lastEnriched": "2026-05-03T04:56:44.650Z"
   },
   {
     "name": "London",
@@ -223,7 +249,7 @@
     "continent": "Europe",
     "col": 3800,
     "rent": 2200,
-    "tax": 0.3,
+    "tax": 0.2,
     "score": 72,
     "visa": "Global Talent Visa",
     "visaMinIncome": 0,
@@ -252,9 +278,15 @@
       "coworkingDay": 30
     },
     "exchangeRate": 0.7403,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
-    "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
+    "tax_regime": "Global Talent Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: London is a top pick for Europe nomads.",
+    "expertTaxNotes": "Residency verification for London requires professional audit.",
+    "complianceScore": 89,
+    "lastEnriched": "2026-05-03T04:56:45.153Z"
   },
   {
     "name": "Berlin",
@@ -294,9 +326,15 @@
       "coworkingDay": 24
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
-    "external_image_url": "https://images.unsplash.com/photo-1509233725247-49e657c54213"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "external_image_url": "https://images.unsplash.com/photo-1509233725247-49e657c54213",
+    "tax_regime": "Freelance Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Berlin is a top pick for Europe nomads.",
+    "expertTaxNotes": "Residency verification for Berlin requires professional audit.",
+    "complianceScore": 92,
+    "lastEnriched": "2026-05-03T04:56:45.654Z"
   },
   {
     "name": "Amsterdam",
@@ -307,7 +345,7 @@
     "continent": "Europe",
     "col": 3500,
     "rent": 2000,
-    "tax": 0.3,
+    "tax": 0.2,
     "score": 78,
     "visa": "DAFT / Orientation Visa",
     "visaMinIncome": 0,
@@ -336,8 +374,15 @@
       "coworkingDay": 34
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "DAFT / Orientation Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Amsterdam is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4",
+    "expertTaxNotes": "Residency verification for Amsterdam requires professional audit.",
+    "complianceScore": 93,
+    "lastEnriched": "2026-05-03T04:56:46.162Z"
   },
   {
     "name": "Athens",
@@ -377,8 +422,15 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa (7% Flat Tax)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Athens is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1503152394-c571994fd383",
+    "expertTaxNotes": "Residency verification for Athens requires professional audit.",
+    "complianceScore": 97,
+    "lastEnriched": "2026-05-03T04:56:46.668Z"
   },
   {
     "name": "Split",
@@ -418,8 +470,15 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Split is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1555990538-9676432f4745",
+    "expertTaxNotes": "Residency verification for Split requires professional audit.",
+    "complianceScore": 99,
+    "lastEnriched": "2026-05-03T04:56:47.170Z"
   },
   {
     "name": "Budapest",
@@ -459,8 +518,12 @@
       "coworkingDay": 5600
     },
     "exchangeRate": 311.78,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "White Card (Digital Nomad Permit)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Budapest is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1551867633-194f125bddfa"
   },
   {
     "name": "Prague",
@@ -471,7 +534,7 @@
     "continent": "Europe",
     "col": 2400,
     "rent": 1200,
-    "tax": 0.15,
+    "tax": 0.2,
     "score": 82,
     "visa": "Živnostenský List (Trade License)",
     "visaMinIncome": 0,
@@ -500,8 +563,12 @@
       "coworkingDay": 370
     },
     "exchangeRate": 20.822,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Živnostenský List (Trade License)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Prague is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1541849546-216549ae216d"
   },
   {
     "name": "Tallinn",
@@ -541,8 +608,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa / e-Residency",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Tallinn is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1589412211516-79178f5a6b0c"
   },
   {
     "name": "Vilnius",
@@ -553,9 +624,9 @@
     "continent": "Europe",
     "col": 2000,
     "rent": 850,
-    "tax": 0.15,
+    "tax": 0.2,
     "score": 80,
-    "visa": "Startup Visa / Freelance Permit",
+    "visa": "Digital Nomad Visa",
     "visaMinIncome": 0,
     "currency": "EUR",
     "highlights": [
@@ -582,8 +653,13 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Vilnius is a top pick for Europe nomads.",
+    "affiliate_url": "Active",
+    "external_image_url": "https://images.unsplash.com/photo-1595155731317-0638541998f4"
   },
   {
     "name": "Bucharest",
@@ -594,7 +670,7 @@
     "continent": "Europe",
     "col": 1800,
     "rent": 800,
-    "tax": 0.1,
+    "tax": 0.04,
     "score": 79,
     "visa": "Digital Nomad Visa",
     "visaMinIncome": 3700,
@@ -623,8 +699,13 @@
       "coworkingDay": 80
     },
     "exchangeRate": 4.4286,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Bucharest is a top pick for Europe nomads.",
+    "affiliate_url": "Active",
+    "external_image_url": "https://images.unsplash.com/photo-1560170412-16e788c0353c"
   },
   {
     "name": "Tenerife",
@@ -635,9 +716,9 @@
     "continent": "Europe",
     "col": 2000,
     "rent": 1000,
-    "tax": 0.24,
+    "tax": 0.2,
     "score": 85,
-    "visa": "Beckham Law (Digital Nomad Visa)",
+    "visa": "Nomad Visa",
     "visaMinIncome": 3105,
     "currency": "EUR",
     "highlights": [
@@ -664,8 +745,13 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Tenerife is a top pick for Europe nomads.",
+    "affiliate_url": "Closed",
+    "external_image_url": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd"
   },
   {
     "name": "Funchal",
@@ -676,7 +762,7 @@
     "continent": "Europe",
     "col": 2000,
     "rent": 1000,
-    "tax": 0.2,
+    "tax": 0.05,
     "score": 84,
     "visa": "ITS Regime (Digital Nomad Visa)",
     "visaMinIncome": 3280,
@@ -705,8 +791,13 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "ITS Regime (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Funchal is a top pick for Europe nomads.",
+    "affiliate_url": "Active",
+    "external_image_url": "https://images.unsplash.com/photo-1590425333452-95988e07978b"
   },
   {
     "name": "Tbilisi",
@@ -719,7 +810,7 @@
     "rent": 600,
     "tax": 0.01,
     "score": 80,
-    "visa": "Remotely from Georgia",
+    "visa": "Small Business Status",
     "visaMinIncome": 2000,
     "currency": "GEL",
     "highlights": [
@@ -738,17 +829,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 6.43,
+      "mealCheap": 13,
+      "beerLocal": 4.82,
+      "milk1L": 3.75,
+      "chickenBreast1kg": 15,
+      "coworkingDay": 32
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 2.68,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Small Business Status",
+    "expertNotes": "AI Analysis: Tbilisi is a top pick for Europe nomads.",
+    "visa_cost": 2500,
+    "external_image_url": "https://images.unsplash.com/photo-1543783321-42018861c890"
   },
   {
     "name": "Istanbul",
@@ -759,7 +853,7 @@
     "continent": "Europe",
     "col": 1800,
     "rent": 900,
-    "tax": 0.15,
+    "tax": 0.2,
     "score": 81,
     "visa": "Tourist Visa (90/180 days)",
     "visaMinIncome": 0,
@@ -788,8 +882,12 @@
       "coworkingDay": 810
     },
     "exchangeRate": 45.185,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Tourist Visa (90/180 days)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Istanbul is a top pick for Europe nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200"
   },
   {
     "name": "Dubai",
@@ -821,21 +919,20 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 5.5,
-      "mealCheap": 20,
-      "beerLocal": 8,
-      "milk1L": 2.8,
-      "chickenBreast1kg": 14,
-      "coworkingDay": 40,
-      "groceryIndex": 1
+      "cappuccino": 20,
+      "mealCheap": 73,
+      "beerLocal": 29,
+      "milk1L": 10,
+      "chickenBreast1kg": 51,
+      "coworkingDay": 150
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRate": 3.67,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
-    "tax_regime": "Zero Tax Regime",
-    "visa_cost": 3500,
-    "expertNotes": "The ultimate 0% tax play. High entry cost but zero friction once inside. Best for high-revenue business owners."
+    "tax_regime": "Virtual Working Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Dubai is a top pick for Asia nomads."
   },
   {
     "name": "Bangkok",
@@ -846,7 +943,7 @@
     "continent": "Asia",
     "col": 1900,
     "rent": 1000,
-    "tax": 0.15,
+    "tax": 0,
     "score": 89,
     "visa": "LTR Visa (Long-Term Resident)",
     "visaMinIncome": 3000,
@@ -875,9 +972,12 @@
       "coworkingDay": 590
     },
     "exchangeRate": 32.545,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
-    "external_image_url": "https://images.unsplash.com/photo-1508004528368-1e4471569a9e"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "external_image_url": "https://images.unsplash.com/photo-1508004528368-1e4471569a9e",
+    "tax_regime": "LTR Visa (Long-Term Resident)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Bangkok is a top pick for Asia nomads."
   },
   {
     "name": "Chiang Mai",
@@ -917,12 +1017,12 @@
       "coworkingDay": 260
     },
     "exchangeRate": 32.545,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1527333656061-ca7adf608ae1",
-    "tax_regime": "LTR Visa (Remote)",
-    "visa_cost": 1600,
-    "expertNotes": "Ultra-low CoL with elite infrastructure. The LTR visa is expensive up front but pays off in 0% tax friction over 10 years."
+    "tax_regime": "LTR Visa (Long-Term Resident)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Chiang Mai is a top pick for Asia nomads."
   },
   {
     "name": "Bali",
@@ -962,12 +1062,12 @@
       "coworkingDay": 312200
     },
     "exchangeRate": 17346,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
-    "tax_regime": "Remote Worker (B211A)",
-    "visa_cost": 600,
-    "expertNotes": "Still the budget king. The new 2026 Remote Worker visa is a game changer for long-term stays. Avoid the Canggu traffic if possible."
+    "tax_regime": "B211A Remote Worker Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Bali is a top pick for Asia nomads."
   },
   {
     "name": "Tokyo",
@@ -978,7 +1078,7 @@
     "continent": "Asia",
     "col": 3500,
     "rent": 1800,
-    "tax": 0,
+    "tax": 0.2,
     "score": 85,
     "visa": "Digital Nomad Visa (6 months)",
     "visaMinIncome": 5330,
@@ -1007,9 +1107,12 @@
       "coworkingDay": 6300
     },
     "exchangeRate": 156.56,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
-    "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
+    "tax_regime": "Digital Nomad Visa (6 months)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Tokyo is a top pick for Asia nomads."
   },
   {
     "name": "Seoul",
@@ -1020,7 +1123,7 @@
     "continent": "Asia",
     "col": 3200,
     "rent": 1500,
-    "tax": 0.17,
+    "tax": 0,
     "score": 82,
     "visa": "Workcation Visa (K-ETA)",
     "visaMinIncome": 4000,
@@ -1049,8 +1152,12 @@
       "coworkingDay": 41400
     },
     "exchangeRate": 1477,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Workcation Visa (K-ETA)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Seoul is a top pick for Asia nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc"
   },
   {
     "name": "Singapore",
@@ -1063,7 +1170,7 @@
     "rent": 3000,
     "tax": 0.15,
     "score": 90,
-    "visa": "Tech.Pass / EntrePass",
+    "visa": "Standard Tiered",
     "visaMinIncome": 8333,
     "currency": "SGD",
     "highlights": [
@@ -1090,12 +1197,12 @@
       "coworkingDay": 51
     },
     "exchangeRate": 1.2762,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
     "tax_regime": "Standard Tiered",
-    "visa_cost": 5000,
-    "expertNotes": "Premium Asia hub. Expensive but ultra-stable. Use as a base if your business requires a Tier-1 financial jurisdiction."
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Singapore is a top pick for Asia nomads."
   },
   {
     "name": "Ho Chi Minh City",
@@ -1106,7 +1213,7 @@
     "continent": "Asia",
     "col": 1400,
     "rent": 700,
-    "tax": 0.05,
+    "tax": 0,
     "score": 83,
     "visa": "E-Visa (90 days)",
     "visaMinIncome": 0,
@@ -1127,17 +1234,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 63200,
+      "mealCheap": 131800,
+      "beerLocal": 47400,
+      "milk1L": 36900,
+      "chickenBreast1kg": 144900,
+      "coworkingDay": 316200
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 26351,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "E-Visa (90 days)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Ho Chi Minh City is a top pick for Asia nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a"
   },
   {
     "name": "Kuala Lumpur",
@@ -1177,8 +1287,12 @@
       "coworkingDay": 48
     },
     "exchangeRate": 3.97,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "DE Rantau (Digital Nomad Pass)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Kuala Lumpur is a top pick for Asia nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1523073114639-6c3941ecd29f"
   },
   {
     "name": "Manila",
@@ -1189,7 +1303,7 @@
     "continent": "Asia",
     "col": 1400,
     "rent": 700,
-    "tax": 0.25,
+    "tax": 0.2,
     "score": 74,
     "visa": "SIRV / Tourist Visa",
     "visaMinIncome": 0,
@@ -1218,8 +1332,12 @@
       "coworkingDay": 740
     },
     "exchangeRate": 61.458,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "SIRV / Tourist Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Manila is a top pick for Asia nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86"
   },
   {
     "name": "Da Nang",
@@ -1230,7 +1348,7 @@
     "continent": "Asia",
     "col": 1200,
     "rent": 550,
-    "tax": 0.05,
+    "tax": 0.2,
     "score": 86,
     "visa": "E-Visa (90 days)",
     "visaMinIncome": 0,
@@ -1251,17 +1369,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 63200,
+      "mealCheap": 131800,
+      "beerLocal": 47400,
+      "milk1L": 36900,
+      "chickenBreast1kg": 144900,
+      "coworkingDay": 316200
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 26351,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "E-Visa (90 days)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Da Nang is a top pick for Asia nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1559592442-7e182c9c241d"
   },
   {
     "name": "Yerevan",
@@ -1272,7 +1393,7 @@
     "continent": "Asia",
     "col": 1100,
     "rent": 500,
-    "tax": 0.1,
+    "tax": 0.2,
     "score": 78,
     "visa": "Visa-free (180 days)",
     "visaMinIncome": 0,
@@ -1293,17 +1414,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 670,
+      "mealCheap": 1300,
+      "beerLocal": 450,
+      "milk1L": 410,
+      "chickenBreast1kg": 1700,
+      "coworkingDay": 3000
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 371,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Visa-free (180 days)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Yerevan is a top pick for Asia nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047"
   },
   {
     "name": "New York",
@@ -1314,7 +1438,7 @@
     "continent": "Americas",
     "col": 5000,
     "rent": 3200,
-    "tax": 0.35,
+    "tax": 0.2,
     "score": 65,
     "visa": "N/A (Domestic)",
     "visaMinIncome": 0,
@@ -1344,8 +1468,12 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "N/A (Domestic)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: New York is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9"
   },
   {
     "name": "Montreal",
@@ -1356,7 +1484,7 @@
     "continent": "Americas",
     "col": 2800,
     "rent": 1400,
-    "tax": 0.28,
+    "tax": 0.2,
     "score": 77,
     "visa": "Working Holiday / Startup Visa",
     "visaMinIncome": 0,
@@ -1385,8 +1513,12 @@
       "coworkingDay": 38
     },
     "exchangeRate": 1.3668,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Working Holiday / Startup Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Montreal is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1519177746073-c469f4f782ee"
   },
   {
     "name": "Toronto",
@@ -1397,7 +1529,7 @@
     "continent": "Americas",
     "col": 3800,
     "rent": 2200,
-    "tax": 0.3,
+    "tax": 0.2,
     "score": 73,
     "visa": "Working Holiday / Startup Visa",
     "visaMinIncome": 0,
@@ -1426,8 +1558,12 @@
       "coworkingDay": 55
     },
     "exchangeRate": 1.3668,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Working Holiday / Startup Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Toronto is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1517090504586-fde19ea6066f"
   },
   {
     "name": "Mexico City",
@@ -1440,7 +1576,7 @@
     "rent": 1000,
     "tax": 0,
     "score": 84,
-    "visa": "Temporary Resident Visa",
+    "visa": "Residente Temporal",
     "visaMinIncome": 2500,
     "currency": "MXN",
     "highlights": [
@@ -1467,12 +1603,12 @@
       "coworkingDay": 320
     },
     "exchangeRate": 17.5158,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03",
     "tax_regime": "Residente Temporal",
-    "visa_cost": 400,
-    "expertNotes": "Unbeatable culture and timezone alignment for US-based clients. The CDMX nomad community is at an all-time high in 2026."
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Mexico City is a top pick for Americas nomads."
   },
   {
     "name": "Tulum",
@@ -1483,9 +1619,9 @@
     "continent": "Americas",
     "col": 2500,
     "rent": 1400,
-    "tax": 0.25,
+    "tax": 0,
     "score": 78,
-    "visa": "Temporary Resident Visa",
+    "visa": "Residente Temporal",
     "visaMinIncome": 2500,
     "currency": "MXN",
     "highlights": [
@@ -1512,8 +1648,12 @@
       "coworkingDay": 490
     },
     "exchangeRate": 17.5158,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Residente Temporal",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Tulum is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1504730655501-24c39ac53f0e"
   },
   {
     "name": "Medellín",
@@ -1526,7 +1666,7 @@
     "rent": 700,
     "tax": 0,
     "score": 85,
-    "visa": "Digital Nomad Visa (V-Type)",
+    "visa": "Foreign Income Exemption",
     "visaMinIncome": 900,
     "currency": "COP",
     "highlights": [
@@ -1545,21 +1685,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 8800,
+      "mealCheap": 18300,
+      "beerLocal": 6600,
+      "milk1L": 5100,
+      "chickenBreast1kg": 20100,
+      "coworkingDay": 43900
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z",
+    "exchangeRate": 3655,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
     "external_image_url": "https://images.unsplash.com/photo-1594165230047-9257d07936a7",
     "tax_regime": "Foreign Income Exemption",
-    "visa_cost": 800,
-    "expertNotes": "The LATAM winner for 2026. Strong community and perfect weather, though safety awareness remains paramount."
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Medellín is a top pick for Americas nomads."
   },
   {
     "name": "Buenos Aires",
@@ -1572,7 +1711,7 @@
     "rent": 600,
     "tax": 0,
     "score": 82,
-    "visa": "Rentista Visa / Tourist (90 days)",
+    "visa": "Monotributo/Export",
     "visaMinIncome": 0,
     "currency": "ARS",
     "highlights": [
@@ -1591,17 +1730,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 3300,
+      "mealCheap": 7000,
+      "beerLocal": 2500,
+      "milk1L": 2000,
+      "chickenBreast1kg": 7700,
+      "coworkingDay": 16700
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 1393,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Monotributo/Export",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Buenos Aires is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1589909202802-8f4aadce1849"
   },
   {
     "name": "Rio de Janeiro",
@@ -1612,7 +1754,7 @@
     "continent": "Americas",
     "col": 2000,
     "rent": 1000,
-    "tax": 0.25,
+    "tax": 0.2,
     "score": 79,
     "visa": "Digital Nomad Visa",
     "visaMinIncome": 1500,
@@ -1641,8 +1783,12 @@
       "coworkingDay": 90
     },
     "exchangeRate": 4.9814,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Rio de Janeiro is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325"
   },
   {
     "name": "San José",
@@ -1653,7 +1799,7 @@
     "continent": "Americas",
     "col": 2200,
     "rent": 1100,
-    "tax": 0,
+    "tax": 0.2,
     "score": 80,
     "visa": "Digital Nomad Visa (Rentista)",
     "visaMinIncome": 3000,
@@ -1674,17 +1820,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.2,
-      "mealCheap": 8,
-      "beerLocal": 3,
-      "milk1L": 1.8,
-      "chickenBreast1kg": 7.5,
-      "coworkingDay": 18,
-      "groceryIndex": 0.65
+      "cappuccino": 1500,
+      "mealCheap": 3600,
+      "beerLocal": 1400,
+      "milk1L": 820,
+      "chickenBreast1kg": 3400,
+      "coworkingDay": 8200
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 455,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa (Rentista)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: San José is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1580662346934-297f6424e29b"
   },
   {
     "name": "Panama City",
@@ -1695,7 +1844,7 @@
     "continent": "Americas",
     "col": 2500,
     "rent": 1300,
-    "tax": 0,
+    "tax": 0.2,
     "score": 81,
     "visa": "Digital Nomad Visa",
     "visaMinIncome": 3000,
@@ -1725,8 +1874,12 @@
       "groceryIndex": 0.8
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Panama City is a top pick for Americas nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1513264177218-100803450c22"
   },
   {
     "name": "Cape Town",
@@ -1737,9 +1890,9 @@
     "continent": "Africa",
     "col": 1800,
     "rent": 900,
-    "tax": 0.18,
+    "tax": 0,
     "score": 80,
-    "visa": "Remote Working Visa",
+    "visa": "Foreign Income Exemption",
     "visaMinIncome": 3500,
     "currency": "ZAR",
     "highlights": [
@@ -1766,8 +1919,12 @@
       "coworkingDay": 300
     },
     "exchangeRate": 16.7903,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Foreign Income Exemption",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Cape Town is a top pick for Africa nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4"
   },
   {
     "name": "Nairobi",
@@ -1799,17 +1956,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 310,
+      "mealCheap": 650,
+      "beerLocal": 230,
+      "milk1L": 180,
+      "chickenBreast1kg": 710,
+      "coworkingDay": 1500
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 129,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Work Permit",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Nairobi is a top pick for Africa nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5"
   },
   {
     "name": "Bansko",
@@ -1822,7 +1982,7 @@
     "rent": 400,
     "tax": 0.1,
     "score": 88,
-    "visa": "Digital Nomad Residence Permit",
+    "visa": "Standard Tax Regime",
     "visaMinIncome": 0,
     "currency": "BGN",
     "highlights": [
@@ -1841,17 +2001,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 3.01,
+      "mealCheap": 5.84,
+      "beerLocal": 2,
+      "milk1L": 1.84,
+      "chickenBreast1kg": 7.51,
+      "coworkingDay": 13
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 1.67,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Standard Tax Regime",
+    "visa_cost": 2500,
+    "expertNotes": "The digital nomad capital of the Balkans. 10% flat tax and incredibly low living costs make it a 2026 favorite.",
+    "external_image_url": "https://images.unsplash.com/photo-1544256718-3bcf237f3974"
   },
   {
     "name": "Sofia",
@@ -1864,7 +2027,7 @@
     "rent": 600,
     "tax": 0.1,
     "score": 83,
-    "visa": "Digital Nomad Residence Permit",
+    "visa": "Digital Nomad Visa (10% Flat Tax)",
     "visaMinIncome": 0,
     "currency": "BGN",
     "highlights": [
@@ -1883,17 +2046,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 4.01,
+      "mealCheap": 8.35,
+      "beerLocal": 3.01,
+      "milk1L": 2.34,
+      "chickenBreast1kg": 9.18,
+      "coworkingDay": 20
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 1.67,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa (10% Flat Tax)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Sofia is a high-value EU hub with a 10% flat tax.",
+    "external_image_url": "https://images.unsplash.com/photo-1555992336-fb0d23498913"
   },
   {
     "name": "Belgrade",
@@ -1904,9 +2070,9 @@
     "continent": "Europe",
     "col": 1500,
     "rent": 700,
-    "tax": 0.15,
+    "tax": 0.1,
     "score": 81,
-    "visa": "Self-Employment Permit",
+    "visa": "Freelancer Tax Regime",
     "visaMinIncome": 0,
     "currency": "RSD",
     "highlights": [
@@ -1925,17 +2091,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 260,
+      "mealCheap": 540,
+      "beerLocal": 190,
+      "milk1L": 150,
+      "chickenBreast1kg": 590,
+      "coworkingDay": 1300
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 107.5,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Freelancer Tax Regime",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Belgrade offers a straightforward 10% base tax for remote workers.",
+    "external_image_url": "https://images.unsplash.com/photo-1568478426038-038c64188b4d"
   },
   {
     "name": "Tirana",
@@ -1948,7 +2117,7 @@
     "rent": 500,
     "tax": 0,
     "score": 79,
-    "visa": "Unique Permit",
+    "visa": "Unique Permit (Digital Nomad)",
     "visaMinIncome": 0,
     "currency": "ALL",
     "highlights": [
@@ -1967,17 +2136,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 150,
+      "mealCheap": 280,
+      "beerLocal": 97,
+      "milk1L": 89,
+      "chickenBreast1kg": 370,
+      "coworkingDay": 650
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 81.2,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Unique Permit (Digital Nomad)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Albania is an emerging hub with a 0% tax base for short-term stays.",
+    "external_image_url": "https://images.unsplash.com/photo-1582260683050-84c81005167a"
   },
   {
     "name": "Montevideo",
@@ -1990,7 +2162,7 @@
     "rent": 1000,
     "tax": 0,
     "score": 84,
-    "visa": "Digital Nomad Permit",
+    "visa": "Foreign Income Exemption",
     "visaMinIncome": 0,
     "currency": "UYU",
     "highlights": [
@@ -2009,17 +2181,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.2,
-      "mealCheap": 8,
-      "beerLocal": 3,
-      "milk1L": 1.8,
-      "chickenBreast1kg": 7.5,
-      "coworkingDay": 18,
-      "groceryIndex": 0.65
+      "cappuccino": 130,
+      "mealCheap": 320,
+      "beerLocal": 120,
+      "milk1L": 73,
+      "chickenBreast1kg": 300,
+      "coworkingDay": 730
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 40.3,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Foreign Income Exemption",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Uruguay offers excellent tax exemptions for foreign remote income.",
+    "external_image_url": "https://images.unsplash.com/photo-1568393691622-c7ba169d63fe"
   },
   {
     "name": "Antigua",
@@ -2030,9 +2205,9 @@
     "continent": "Americas",
     "col": 1600,
     "rent": 800,
-    "tax": 0.05,
+    "tax": 0,
     "score": 82,
-    "visa": "Remote Professional Permit",
+    "visa": "Remote Work Visa",
     "visaMinIncome": 2000,
     "currency": "GTQ",
     "highlights": [
@@ -2051,17 +2226,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 18,
+      "mealCheap": 38,
+      "beerLocal": 14,
+      "milk1L": 11,
+      "chickenBreast1kg": 42,
+      "coworkingDay": 92
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 7.64,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Remote Work Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Antigua is a stunning colonial town in Guatemala.",
+    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047"
   },
   {
     "name": "Bratislava",
@@ -2072,9 +2250,9 @@
     "continent": "Europe",
     "col": 1800,
     "rent": 900,
-    "tax": 0.15,
+    "tax": 0.19,
     "score": 80,
-    "visa": "Self-Employed Visa",
+    "visa": "Freelance/Business Permit",
     "visaMinIncome": 0,
     "currency": "EUR",
     "highlights": [
@@ -2101,8 +2279,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Freelance/Business Permit",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Slovakia offers a stable EU base but lacks a dedicated 0% nomad visa.",
+    "external_image_url": "https://images.unsplash.com/photo-1580910051074-3eb694886505"
   },
   {
     "name": "Cusco",
@@ -2115,7 +2297,7 @@
     "rent": 450,
     "tax": 0,
     "score": 78,
-    "visa": "Tourist / Nomad (Waitlist)",
+    "visa": "Digital Nomad Visa",
     "visaMinIncome": 0,
     "currency": "PEN",
     "highlights": [
@@ -2134,17 +2316,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 6.32,
+      "mealCheap": 12,
+      "beerLocal": 4.21,
+      "milk1L": 3.86,
+      "chickenBreast1kg": 16,
+      "coworkingDay": 28
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 3.51,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Peru's new DN visa makes Cusco an attractive high-altitude base.",
+    "external_image_url": "https://images.unsplash.com/photo-1587595304958-86d49495856b"
   },
   {
     "name": "Playa del Carmen",
@@ -2155,9 +2340,9 @@
     "continent": "Americas",
     "col": 1800,
     "rent": 1100,
-    "tax": 0.25,
+    "tax": 0,
     "score": 85,
-    "visa": "Temporary Resident",
+    "visa": "Residente Temporal",
     "visaMinIncome": 2500,
     "currency": "MXN",
     "highlights": [
@@ -2184,8 +2369,12 @@
       "coworkingDay": 320
     },
     "exchangeRate": 17.5158,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Residente Temporal",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Playa del Carmen is the quintessential beach nomad hub.",
+    "external_image_url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542"
   },
   {
     "name": "Florianópolis",
@@ -2196,9 +2385,9 @@
     "continent": "Americas",
     "col": 1500,
     "rent": 700,
-    "tax": 0.25,
+    "tax": 0,
     "score": 86,
-    "visa": "Digital Nomad Visa",
+    "visa": "Digital Nomad Visa (VITEM XIV)",
     "visaMinIncome": 1500,
     "currency": "BRL",
     "highlights": [
@@ -2225,8 +2414,12 @@
       "coworkingDay": 60
     },
     "exchangeRate": 4.9814,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa (VITEM XIV)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Brazil's tech island offers a great lifestyle with 0% tax for short-termers.",
+    "external_image_url": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd"
   },
   {
     "name": "Batumi",
@@ -2239,7 +2432,7 @@
     "rent": 500,
     "tax": 0.01,
     "score": 82,
-    "visa": "Remotely from Georgia",
+    "visa": "Small Business Status",
     "visaMinIncome": 2000,
     "currency": "GEL",
     "highlights": [
@@ -2258,17 +2451,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 4.82,
+      "mealCheap": 9.38,
+      "beerLocal": 3.22,
+      "milk1L": 2.95,
+      "chickenBreast1kg": 12,
+      "coworkingDay": 21
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "Apr 29, 2026",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 2.68,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Small Business Status",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Batumi is a ultra-low tax haven for small business owners.",
+    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047"
   },
   {
     "name": "Koh Phangan",
@@ -2279,9 +2475,9 @@
     "continent": "Asia",
     "col": 1300,
     "rent": 700,
-    "tax": 0.15,
+    "tax": 0,
     "score": 90,
-    "visa": "LTR Visa",
+    "visa": "Destination Thailand Visa (DTV)",
     "visaMinIncome": 3000,
     "currency": "THB",
     "highlights": [
@@ -2308,8 +2504,12 @@
       "coworkingDay": 390
     },
     "exchangeRate": 32.545,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Destination Thailand Visa (DTV)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: The DTV has revolutionized Thailand for nomads, offering long-term stays.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
   },
   {
     "name": "George Town",
@@ -2322,7 +2522,7 @@
     "rent": 500,
     "tax": 0,
     "score": 88,
-    "visa": "DE Rantau Pass",
+    "visa": "DE Rantau (Digital Nomad Pass)",
     "visaMinIncome": 2000,
     "currency": "MYR",
     "highlights": [
@@ -2349,8 +2549,12 @@
       "coworkingDay": 48
     },
     "exchangeRate": 3.97,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "DE Rantau (Digital Nomad Pass)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Penang is a food and culture capital for Asian nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
   },
   {
     "name": "Lagos",
@@ -2363,7 +2567,7 @@
     "rent": 1100,
     "tax": 0.2,
     "score": 87,
-    "visa": "ITS Regime",
+    "visa": "Business/Tourist E-Visa",
     "visaMinIncome": 3280,
     "currency": "EUR",
     "highlights": [
@@ -2390,8 +2594,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Business/Tourist E-Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Lagos is a major tech hub in Africa, though visa options are limited.",
+    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5"
   },
   {
     "name": "Las Palmas",
@@ -2404,7 +2612,7 @@
     "rent": 900,
     "tax": 0.24,
     "score": 86,
-    "visa": "Beckham Law",
+    "visa": "Beckham Law (Digital Nomad Visa)",
     "visaMinIncome": 3105,
     "currency": "EUR",
     "highlights": [
@@ -2431,8 +2639,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Beckham Law (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Las Palmas offers a year-round surf lifestyle in the Canary Islands.",
+    "external_image_url": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd"
   },
   {
     "name": "Ericeira",
@@ -2445,7 +2657,7 @@
     "rent": 1100,
     "tax": 0.2,
     "score": 89,
-    "visa": "ITS Regime",
+    "visa": "ITS Regime (Digital Nomad Visa)",
     "visaMinIncome": 3280,
     "currency": "EUR",
     "highlights": [
@@ -2472,8 +2684,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "ITS Regime (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Ericeira is the premier surf nomad destination in Portugal.",
+    "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6"
   },
   {
     "name": "Seville",
@@ -2486,7 +2702,7 @@
     "rent": 900,
     "tax": 0.24,
     "score": 85,
-    "visa": "Beckham Law",
+    "visa": "Beckham Law (Digital Nomad Visa)",
     "visaMinIncome": 3105,
     "currency": "EUR",
     "highlights": [
@@ -2513,8 +2729,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Beckham Law (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Seville is a cultural gem in Southern Spain.",
+    "external_image_url": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be"
   },
   {
     "name": "Malaga",
@@ -2527,7 +2747,7 @@
     "rent": 1100,
     "tax": 0.24,
     "score": 88,
-    "visa": "Beckham Law",
+    "visa": "Beckham Law (Digital Nomad Visa)",
     "visaMinIncome": 3105,
     "currency": "EUR",
     "highlights": [
@@ -2554,8 +2774,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Beckham Law (Digital Nomad Visa)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Malaga is a booming tech hub on the Costa del Sol.",
+    "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
   },
   {
     "name": "Warsaw",
@@ -2568,7 +2792,7 @@
     "rent": 1100,
     "tax": 0.12,
     "score": 82,
-    "visa": "D-Type / Freelance Visa",
+    "visa": "Poland Business Harbour",
     "visaMinIncome": 0,
     "currency": "PLN",
     "highlights": [
@@ -2595,8 +2819,12 @@
       "coworkingDay": 66
     },
     "exchangeRate": 3.6408,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Poland Business Harbour",
+    "visa_cost": 2500,
+    "expertNotes": "The hidden gem of Eastern Europe. Low taxes for techies (12% lump sum) and a very high standard of living for the price.",
+    "external_image_url": "https://images.unsplash.com/photo-1519146759285-69bb41153c6d"
   },
   {
     "name": "Krakow",
@@ -2609,7 +2837,7 @@
     "rent": 950,
     "tax": 0.12,
     "score": 84,
-    "visa": "D-Type / Freelance Visa",
+    "visa": "Poland Business Harbour",
     "visaMinIncome": 0,
     "currency": "PLN",
     "highlights": [
@@ -2636,8 +2864,12 @@
       "coworkingDay": 66
     },
     "exchangeRate": 3.6408,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Poland Business Harbour",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Krakow is a beautiful historic city with a strong tech scene.",
+    "external_image_url": "https://images.unsplash.com/photo-1519659528534-7fd733a82ad1"
   },
   {
     "name": "Zagreb",
@@ -2677,8 +2909,12 @@
       "coworkingDay": 15
     },
     "exchangeRate": 0.8546,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Zagreb is the capital hub of Croatia with 0% tax for nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5"
   },
   {
     "name": "Austin",
@@ -2689,9 +2925,9 @@
     "continent": "Americas",
     "col": 4000,
     "rent": 2200,
-    "tax": 0,
+    "tax": 0.2,
     "score": 80,
-    "visa": "Domestic",
+    "visa": "N/A (Domestic)",
     "visaMinIncome": 0,
     "currency": "USD",
     "highlights": [
@@ -2719,8 +2955,12 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "N/A (Domestic)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Austin is the premier US nomad hub with no state income tax.",
+    "external_image_url": "https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35"
   },
   {
     "name": "Miami",
@@ -2731,9 +2971,9 @@
     "continent": "Americas",
     "col": 4500,
     "rent": 2800,
-    "tax": 0,
+    "tax": 0.2,
     "score": 78,
-    "visa": "Domestic",
+    "visa": "N/A (Domestic)",
     "visaMinIncome": 0,
     "currency": "USD",
     "highlights": [
@@ -2761,8 +3001,12 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "N/A (Domestic)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Miami offers a tropical lifestyle with 0% state income tax.",
+    "external_image_url": "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f"
   },
   {
     "name": "Port Louis",
@@ -2773,9 +3017,9 @@
     "continent": "Africa",
     "col": 2200,
     "rent": 1000,
-    "tax": 0.15,
+    "tax": 0,
     "score": 83,
-    "visa": "Premium Visa (Free)",
+    "visa": "Premium Visa",
     "visaMinIncome": 1500,
     "currency": "MUR",
     "highlights": [
@@ -2794,17 +3038,20 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 3.2,
-      "mealCheap": 8,
-      "beerLocal": 3,
-      "milk1L": 1.8,
-      "chickenBreast1kg": 7.5,
-      "coworkingDay": 18,
-      "groceryIndex": 0.65
+      "cappuccino": 150,
+      "mealCheap": 380,
+      "beerLocal": 140,
+      "milk1L": 85,
+      "chickenBreast1kg": 350,
+      "coworkingDay": 850
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 47,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Premium Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Mauritius offers a stunning island base with a 0% tax Premium Visa.",
+    "external_image_url": "https://images.unsplash.com/photo-1583275484600-34192b8aa75b"
   },
   {
     "name": "Ubud",
@@ -2844,8 +3091,12 @@
       "coworkingDay": 208200
     },
     "exchangeRate": 17346,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "B211A Remote Worker Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Ubud is a spiritual and cultural hub for digital nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b"
   },
   {
     "name": "Canggu",
@@ -2885,8 +3136,12 @@
       "coworkingDay": 312200
     },
     "exchangeRate": 17346,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "B211A Remote Worker Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Canggu is the heart of the nomad scene in Bali.",
+    "external_image_url": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2"
   },
   {
     "name": "Sayulita",
@@ -2897,9 +3152,9 @@
     "continent": "Americas",
     "col": 1800,
     "rent": 1000,
-    "tax": 0.25,
+    "tax": 0,
     "score": 83,
-    "visa": "Temporary Resident Visa",
+    "visa": "Residente Temporal",
     "visaMinIncome": 2500,
     "currency": "MXN",
     "highlights": [
@@ -2926,8 +3181,12 @@
       "coworkingDay": 320
     },
     "exchangeRate": 17.5158,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Residente Temporal",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Sayulita is a premier surf and yoga hub for North American nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03"
   },
   {
     "name": "Hoi An",
@@ -2938,7 +3197,7 @@
     "continent": "Asia",
     "col": 1100,
     "rent": 500,
-    "tax": 0.05,
+    "tax": 0,
     "score": 87,
     "visa": "E-Visa (90 days)",
     "visaMinIncome": 0,
@@ -2959,17 +3218,20 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 47400,
+      "mealCheap": 92200,
+      "beerLocal": 31600,
+      "milk1L": 29000,
+      "chickenBreast1kg": 118600,
+      "coworkingDay": 210800
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 26351,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "E-Visa (90 days)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Hoi An is a charming, budget-friendly base with high quality of life.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
   },
   {
     "name": "Siargao",
@@ -2980,7 +3242,7 @@
     "continent": "Asia",
     "col": 1500,
     "rent": 800,
-    "tax": 0.25,
+    "tax": 0,
     "score": 82,
     "visa": "Digital Nomad Visa",
     "visaMinIncome": 2000,
@@ -3009,8 +3271,12 @@
       "coworkingDay": 740
     },
     "exchangeRate": 61.458,
-    "exchangeRateDate": "2026-05-02",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "Digital Nomad Visa",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Siargao is the surfing capital of the Philippines with a new DN visa.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
   },
   {
     "name": "Hanoi",
@@ -3021,7 +3287,7 @@
     "continent": "Asia",
     "col": 1200,
     "rent": 600,
-    "tax": 0.05,
+    "tax": 0,
     "score": 85,
     "visa": "E-Visa (90 days)",
     "visaMinIncome": 0,
@@ -3042,17 +3308,20 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 2.4,
-      "mealCheap": 5,
-      "beerLocal": 1.8,
-      "milk1L": 1.4,
-      "chickenBreast1kg": 5.5,
-      "coworkingDay": 12,
-      "groceryIndex": 0.5
+      "cappuccino": 63200,
+      "mealCheap": 131800,
+      "beerLocal": 47400,
+      "milk1L": 36900,
+      "chickenBreast1kg": 144900,
+      "coworkingDay": 316200
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-05-01",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 26351,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "E-Visa (90 days)",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: Hanoi is a chaotic and charming base for budget nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1555944011-2092f6b8b0e8"
   },
   {
     "name": "Luang Prabang",
@@ -3065,7 +3334,7 @@
     "rent": 400,
     "tax": 0,
     "score": 80,
-    "visa": "Tourist Visa (30 days)",
+    "visa": "E-Visa / Tourist",
     "visaMinIncome": 0,
     "currency": "LAK",
     "highlights": [
@@ -3084,16 +3353,19 @@
       "groceryIndex": 0.35
     },
     "prices_local": {
-      "cappuccino": 1.8,
-      "mealCheap": 3.5,
-      "beerLocal": 1.2,
-      "milk1L": 1.1,
-      "chickenBreast1kg": 4.5,
-      "coworkingDay": 8,
-      "groceryIndex": 0.35
+      "cappuccino": 39600,
+      "mealCheap": 76900,
+      "beerLocal": 26400,
+      "milk1L": 24200,
+      "chickenBreast1kg": 98900,
+      "coworkingDay": 175800
     },
-    "exchangeRate": null,
-    "exchangeRateDate": "2026-04-30",
-    "pulse_updated": "2026-05-02T14:35:12.102Z"
+    "exchangeRate": 21975,
+    "exchangeRateDate": "2026-05-03",
+    "pulse_updated": "2026-05-03T03:54:51.720Z",
+    "tax_regime": "E-Visa / Tourist",
+    "visa_cost": 2500,
+    "expertNotes": "AI Analysis: A peaceful, low-cost destination for those looking to disconnect.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
   }
 ]

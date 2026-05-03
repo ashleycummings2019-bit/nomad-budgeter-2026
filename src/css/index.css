@@ -24,7 +24,7 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --border-glass: var(--glass-border);
     --glass-bg: rgba(24, 24, 27, 0.6);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+    --glass-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.5);
     --neon-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
     
     /* Radius */
@@ -140,9 +140,9 @@ img { max-width: 100%; height: auto; }
 
 /* Glass Panels */
 .glass-panel {
-    background: rgba(24, 24, 27, 0.5);
-    backdrop-filter: blur(12px);
+    background: rgba(24, 24, 27, 0.6);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border-glass);
     border-radius: 24px;
     padding: 2rem;
@@ -150,6 +150,7 @@ img { max-width: 100%; height: auto; }
     transition: var(--transition-smooth);
     position: relative;
     display: block;
+    transform: translateZ(0); /* Hardware acceleration for blur */
 }
 
 .glass-panel::before {
@@ -167,6 +168,7 @@ img { max-width: 100%; height: auto; }
     mask-composite: exclude;
     pointer-events: none;
     transition: var(--transition-smooth);
+    border-radius: inherit; /* Fixes corner artifacts */
 }
 
 .glass-panel:hover {
@@ -264,6 +266,7 @@ img { max-width: 100%; height: auto; }
 
 .aura-range {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 6px;
     background: rgba(255, 255, 255, 0.1);
@@ -354,9 +357,10 @@ img { max-width: 100%; height: auto; }
     z-index: 1000;
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    background: rgba(2, 6, 23, 0.7);
+    background: rgba(2, 6, 23, 0.75);
     border-bottom: 1px solid var(--glass-border);
     padding: 1.25rem 0;
+    transform: translateZ(0);
 }
 .nav-content { display: flex; justify-content: space-between; align-items: center; }
 .nav-links { display: flex; gap: 2.5rem; }
@@ -525,8 +529,8 @@ img { max-width: 100%; height: auto; }
 }
 .lifestyle-selector {
     background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     border-radius: 50px;
     padding: 0.4rem;
@@ -536,6 +540,7 @@ img { max-width: 100%; height: auto; }
     box-shadow: var(--glass-shadow);
     position: relative;
     z-index: 10;
+    transform: translateZ(0);
 }
 .lifestyle-btn {
     background: transparent;
@@ -555,7 +560,7 @@ img { max-width: 100%; height: auto; }
 }
 .lifestyle-btn:hover {
     color: white;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(15, 23, 42, 0.8);
 }
 .lifestyle-btn.active {
     background: var(--aura-primary);
@@ -624,8 +629,8 @@ img { max-width: 100%; height: auto; }
 
 .calculator-panel {
     background: var(--bg-card);
-    backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
     border: 1px solid var(--border-glass);
     border-radius: 32px;
     padding: 2.5rem;
@@ -633,6 +638,7 @@ img { max-width: 100%; height: auto; }
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    transform: translateZ(0);
 }
 
 .panel-header {
@@ -802,6 +808,7 @@ img { max-width: 100%; height: auto; }
     flex-direction: column;
     gap: 1.25rem;
     border: 1px solid var(--border-glass);
+    transform: translateZ(0); /* Hardware acceleration */
 }
 
 .score-header {
@@ -983,8 +990,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .cta-btn.secondary {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
+    background: rgba(15, 23, 42, 0.6);
+    color: #ffffff;
     border: 1px solid var(--border-glass);
 }
 
@@ -1000,8 +1007,10 @@ img { max-width: 100%; height: auto; }
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
     border: 1px solid var(--border-glass);
     border-radius: 40px;
+    transform: translateZ(0); /* Hardware acceleration */
     position: relative;
     overflow: hidden;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.2),
@@ -1046,7 +1055,6 @@ img { max-width: 100%; height: auto; }
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: conic-gradient(var(--aura-primary) 0%, rgba(255,255,255,0.05) 0%); */
     transition: var(--transition-smooth);
     box-shadow: 
         0 0 60px rgba(var(--aura-primary-rgb, 139, 92, 246), 0.2),
@@ -1079,10 +1087,11 @@ img { max-width: 100%; height: auto; }
     line-height: 1;
     background: linear-gradient(135deg, #fff, var(--aura-primary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.aura-label {
+.aura-score-label {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 2px;

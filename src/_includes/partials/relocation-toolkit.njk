@@ -10,8 +10,8 @@
     
     <div class="toolkit-grid">
         {% set isEurope = (city and city.continent == "Europe") or (country and country.continent == "Europe") or (country and country.isEurope) %}
-        {% if isEurope %}
-        <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+        {% if isEurope or city.affiliate_url %}
+        <a href="{{ city.affiliate_url if city.affiliate_url else site.affiliates.lexidy.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">🏛️</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.lexidy.name }}</h4>
@@ -20,6 +20,7 @@
             </div>
         </a>
         {% endif %}
+
 
         <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">🛡️</div>

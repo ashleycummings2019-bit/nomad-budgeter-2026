@@ -10,7 +10,8 @@
   "socialProof": "12,402 nomads",
   "apiKeys": {
     "exchangeRate": "4fee8fc6019902b0118cd93b",
-    "apiNinjas": "w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt"
+    "apiNinjas": "w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt",
+    "clerkPubKey": "pk_test_Y2xlcmsuYXVyYS5kZXYk"
   },
   "affiliates": {
     "lexidy": { "name": "Lexidy Legal", "url": "https://www.lexidy.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Calculator", "desc": "Top-rated firm for European Nomad Visas in 2026." },

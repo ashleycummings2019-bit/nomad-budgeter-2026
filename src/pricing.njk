@@ -1,0 +1,207 @@
+---
+layout: layouts/base.njk
+title: "Choose Your Plan"
+---
+
+<div class="pricing-container">
+    <div class="pricing-header">
+        <h1>Scale Your Nomad Lifestyle</h1>
+        <p>Expert tax residency monitoring and premium city data for serious remote workers.</p>
+    </div>
+
+    <div class="pricing-grid">
+        {# Free Tier #}
+        <div class="pricing-card">
+            <div class="card-tier">Free</div>
+            <div class="card-price">$0<span>/forever</span></div>
+            <ul class="card-features">
+                <li><span class="check">✓</span> Basic City Cost of Living</li>
+                <li><span class="check">✓</span> Tax Overviews</li>
+                <li><span class="check">✓</span> Community Visa Guides</li>
+            </ul>
+            <a href="/" class="btn-secondary">Start Exploring</a>
+        </div>
+
+        {# Pro Tier #}
+        <div class="pricing-card featured">
+            <div class="popular-tag">Most Popular</div>
+            <div class="card-tier">Pro</div>
+            <div class="card-price">$19<span>/month</span></div>
+            <ul class="card-features">
+                <li><span class="check">✓</span> <strong>Tax Residency Monitor</strong></li>
+                <li><span class="check">✓</span> Personalized Stay Alerts</li>
+                <li><span class="check">✓</span> Travel History Logging</li>
+                <li><span class="check">✓</span> Expert Tax Savings Reports</li>
+            </ul>
+            <button class="btn-primary" id="btn-subscribe-pro">Get Pro Access</button>
+        </div>
+
+        {# Business Tier #}
+        <div class="pricing-card">
+            <div class="card-tier">Business</div>
+            <div class="card-price">$99<span>/month</span></div>
+            <ul class="card-features">
+                <li><span class="check">✓</span> <strong>B2B API Access</strong></li>
+                <li><span class="check">✓</span> Bulk City Data Exports</li>
+                <li><span class="check">✓</span> Multi-user Dashboards</li>
+                <li><span class="check">✓</span> Compliance Priority Support</li>
+            </ul>
+            <button class="btn-secondary" id="btn-subscribe-biz">Contact Sales</button>
+        </div>
+    </div>
+
+    <div class="pricing-footer">
+        <p>Secure payments powered by <strong>Stripe</strong>. Identity by <strong>Clerk</strong>.</p>
+    </div>
+</div>
+
+<style>
+.pricing-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.pricing-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fff 0%, var(--text-dim) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 32px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pricing-card.featured {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--aura-primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--aura-primary);
+    color: #000;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 100px;
+    text-transform: uppercase;
+}
+
+.card-tier {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.card-price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+.card-price span {
+    font-size: 1.25rem;
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+    flex-grow: 1;
+}
+
+.card-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    color: var(--text-dim);
+}
+
+.card-features li strong {
+    color: #fff;
+}
+
+.check {
+    color: var(--aura-primary);
+    font-weight: 900;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 1.25rem;
+    border-radius: 16px;
+    font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--aura-primary);
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(var(--aura-primary-rgb), 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.pricing-footer {
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+</style>

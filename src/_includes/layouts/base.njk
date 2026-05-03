@@ -15,11 +15,21 @@
       gtag('config', '{{ site.ga4 }}');
     </script>
 
+    {# Clerk Authentication #}
+    <script
+      async
+      crossorigin="anonymous"
+      data-clerk-publishable-key="{{ site.apiKeys.clerkPubKey }}"
+      src="https://cdn.clerk.com/clerk.browser.js"
+      type="text/javascript"
+    ></script>
+
     {# Inject API keys from 11ty data so they aren't hardcoded in main.js #}
     <script>
       window.__NB_CONFIG__ = {
         exchangeRate: "{{ site.apiKeys.exchangeRate }}",
-        apiNinjas: "{{ site.apiKeys.apiNinjas }}"
+        apiNinjas: "{{ site.apiKeys.apiNinjas }}",
+        clerkPubKey: "{{ site.apiKeys.clerkPubKey }}"
       };
     </script>
 </head>
@@ -43,5 +53,6 @@
     <script src="/js/aura-ticker.js"></script>
     <script type="module" src="/js/main.js"></script>
     <script src="/js/capture-lead.js"></script>
+    <script src="/js/auth.js"></script>
 </body>
 </html>

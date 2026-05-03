@@ -72,15 +72,22 @@ async function fetchRates() {
   const url = 'https://api.frankfurter.app/latest?from=USD';
   console.log('📡 Fetching live exchange rates from Frankfurter API...');
   
+  // Baseline fallbacks for currencies not in Frankfurter
+  const fallbacks = {
+    GEL: 2.68, AED: 3.67, VND: 26351, AMD: 371, COP: 3655, ARS: 1393,
+    CRC: 455, KES: 129, BGN: 1.67, RSD: 107.5, ALL: 81.2, UYU: 40.3,
+    GTQ: 7.64, PEN: 3.51, MUR: 47.0, LAK: 21975
+  };
+
   try {
     const res = await fetch(url);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     
-    // Add USD=1 so every currency is covered
-    const rates = { USD: 1, ...data.rates };
+    // Add USD=1 and manual fallbacks
+    const rates = { USD: 1, ...data.rates, ...fallbacks };
     
-    // Cache rates to a separate file (useful for client-side JS)
+    // Cache rates to a separate file
     writeFileSync(RATES_CACHE_PATH, JSON.stringify({
       base: 'USD',
       date: data.date,
@@ -91,16 +98,15 @@ async function fetchRates() {
     console.log(`✅ Got ${Object.keys(rates).length} currency rates (date: ${data.date})`);
     return rates;
   } catch (err) {
-    console.warn(`⚠️  Rate fetch failed: ${err.message}. Using cached rates if available.`);
+    console.warn(`⚠️  Rate fetch failed: ${err.message}. Using cached rates with manual fallbacks.`);
     
-    // Try to use cached rates
     try {
       const cached = JSON.parse(readFileSync(RATES_CACHE_PATH, 'utf-8'));
       console.log(`📦 Using cached rates from ${cached.date}`);
-      return cached.rates;
+      return { ...cached.rates, ...fallbacks };
     } catch {
-      console.error('❌ No cached rates available. Skipping price enrichment.');
-      return null;
+      console.warn('⚠️ No cached rates available. Using only manual fallbacks.');
+      return { USD: 1, ...fallbacks };
     }
   }
 }
@@ -121,7 +127,66 @@ const CITY_IMAGES = {
   "barcelona": "https://images.unsplash.com/photo-1583422409516-2895a77efded",
   "tokyo": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
   "singapore": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
-  "new-york-city": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9"
+  "austin": "https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35",
+  "miami": "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f",
+  "seoul": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc",
+  "buenos-aires": "https://images.unsplash.com/photo-1589909202802-8f4aadce1849",
+  "cape-town": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4",
+  "istanbul": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
+  "athens": "https://images.unsplash.com/photo-1503152394-c571994fd383",
+  "madrid": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4",
+  "amsterdam": "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4",
+  "ho-chi-minh-city": "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a",
+  "kuala-lumpur": "https://images.unsplash.com/photo-1523073114639-6c3941ecd29f",
+  "da-nang": "https://images.unsplash.com/photo-1559592442-7e182c9c241d",
+  "budapest": "https://images.unsplash.com/photo-1551867633-194f125bddfa",
+  "prague": "https://images.unsplash.com/photo-1541849546-216549ae216d",
+  "tulum": "https://images.unsplash.com/photo-1504730655501-24c39ac53f0e",
+  "new-york": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9",
+  "hanoi": "https://images.unsplash.com/photo-1555944011-2092f6b8b0e8",
+  "ubud": "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b",
+  "canggu": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2",
+  "rio-de-janeiro": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
+  "tbilisi": "https://images.unsplash.com/photo-1543783321-42018861c890",
+  "split": "https://images.unsplash.com/photo-1555990538-9676432f4745",
+  "tallinn": "https://images.unsplash.com/photo-1589412211516-79178f5a6b0c",
+  "vilnius": "https://images.unsplash.com/photo-1595155731317-0638541998f4",
+  "bucharest": "https://images.unsplash.com/photo-1560170412-16e788c0353c",
+  "tenerife": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd",
+  "funchal": "https://images.unsplash.com/photo-1590425333452-95988e07978b",
+  "manila": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86",
+  "yerevan": "https://images.unsplash.com/photo-1548625361-949666f7f047",
+  "montreal": "https://images.unsplash.com/photo-1519177746073-c469f4f782ee",
+  "toronto": "https://images.unsplash.com/photo-1517090504586-fde19ea6066f",
+  "san-jose-cr": "https://images.unsplash.com/photo-1580662346934-297f6424e29b",
+  "panama-city": "https://images.unsplash.com/photo-1513264177218-100803450c22",
+  "nairobi": "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+  "bansko": "https://images.unsplash.com/photo-1544256718-3bcf237f3974",
+  "sofia": "https://images.unsplash.com/photo-1555992336-fb0d23498913",
+  "belgrade": "https://images.unsplash.com/photo-1568478426038-038c64188b4d",
+  "tirana": "https://images.unsplash.com/photo-1582260683050-84c81005167a",
+  "montevideo": "https://images.unsplash.com/photo-1568393691622-c7ba169d63fe",
+  "antigua": "https://images.unsplash.com/photo-1548625361-949666f7f047",
+  "bratislava": "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+  "cusco": "https://images.unsplash.com/photo-1587595304958-86d49495856b",
+  "playa-del-carmen": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542",
+  "florianopolis": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd",
+  "batumi": "https://images.unsplash.com/photo-1548625361-949666f7f047",
+  "koh-phangan": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+  "george-town": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+  "lagos": "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+  "las-palmas": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd",
+  "ericeira": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6",
+  "seville": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be",
+  "malaga": "https://images.unsplash.com/photo-1583422409516-2895a77efded",
+  "warsaw": "https://images.unsplash.com/photo-1519146759285-69bb41153c6d",
+  "krakow": "https://images.unsplash.com/photo-1519659528534-7fd733a82ad1",
+  "zagreb": "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+  "port-louis": "https://images.unsplash.com/photo-1583275484600-34192b8aa75b",
+  "sayulita": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03",
+  "hoi-an": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+  "siargao": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+  "luang-prabang": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
 };
 
 // ─── Enrich each city with live pricing ───
@@ -213,9 +278,14 @@ async function main() {
   // Fetch Airtable Overrides
   console.log('📡 Fetching Airtable tax and expert overrides...');
   let overrides = {};
+  let isAirtableLive = false;
   try {
     const { default: getOverrides } = await import('../src/_data/airtableOverrides.js');
-    overrides = await getOverrides();
+    const result = await getOverrides();
+    overrides = result.data;
+    isAirtableLive = result.isLive;
+    
+    console.log(isAirtableLive ? "✅ Using LIVE Airtable overrides" : "📦 Using CACHED Airtable overrides");
   } catch (err) {
     console.warn(`⚠️  Failed to load Airtable overrides: ${err.message}`);
   }
@@ -227,7 +297,10 @@ async function main() {
     const cityOverrides = overrides[city.slug.toLowerCase()];
     if (cityOverrides) {
       if (cityOverrides.taxRate !== undefined) city.tax = cityOverrides.taxRate;
-      if (cityOverrides.name) city.tax_regime = cityOverrides.name;
+      if (cityOverrides.name) {
+        city.tax_regime = cityOverrides.name;
+        city.visa = cityOverrides.name; // Keep visa field in sync with tax_regime for UI
+      }
       if (cityOverrides.visaCost) city.visa_cost = cityOverrides.visaCost;
       if (cityOverrides.expertNotes) city.expertNotes = cityOverrides.expertNotes;
       if (cityOverrides.affiliateUrl) city.affiliate_url = cityOverrides.affiliateUrl;
