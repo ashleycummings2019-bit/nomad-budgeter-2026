@@ -244,6 +244,13 @@ permalink: /
                         <li>Nomad Community & Co-working Heatmap</li>
                         <li>Direct Visa Lawyer Contact List</li>
                     </ul>
+                    
+                    <div class="upsell-comparison">
+                        <div class="comp-row"><span>2026 Tax Rates</span><span class="check">✓</span><span class="check">✓</span></div>
+                        <div class="comp-row"><span>Burn Rate Charts</span><span class="cross">✕</span><span class="check">✓</span></div>
+                        <div class="comp-row"><span>Legal Contact List</span><span class="cross">✕</span><span class="check">✓</span></div>
+                        <div class="comp-row"><span>PDF Intelligence</span><span class="cross">✕</span><span class="check">✓</span></div>
+                    </div>
                     <div class="upsell-footer">
                         <div class="upsell-price">$19</div>
                         <button id="unlock-pro-btn" class="action-btn accent-bg">Unlock Full Report →</button>
@@ -284,65 +291,66 @@ permalink: /
     </section>
 </div>
 
-{# Trending Now (pSEO Links) #}
-<section class="section-container mt-32 reveal">
-    <div class="flex-between mb-12">
-        <div>
-            <h2 class="aura-title">Trending in 2026</h2>
-            <p class="text-dim">Programmatic insights based on live financial pulse.</p>
+    {# Discovery Hub (Replaces messy link grids) #}
+    <section class="section-container mt-32 reveal">
+        <div class="text-center mb-16">
+            <h2 class="aura-title" style="font-size: 3rem;">Global Intelligence Hub</h2>
+            <p class="text-dim text-xl max-w-2xl mx-auto">Skip the research. We've mapped the 2026 nomad economy into three core pillars.</p>
         </div>
-        <a href="/trends/highest-aura-score-nomad-cities/" class="text-link">View All Rankings →</a>
-    </div>
-    
-    <div class="trends-grid">
-        <a href="/trends/lowest-tax-digital-nomad-countries-2026/" class="trend-card glass-panel">
-            <div class="trend-icon">📉</div>
-            <h3>Tax Havens</h3>
-            <p>10 countries with the lowest personal tax in 2026.</p>
-        </a>
-        <a href="/trends/cheapest-nomad-cities-2026/" class="trend-card glass-panel">
-            <div class="trend-icon">💰</div>
-            <h3>Budget Hubs</h3>
-            <p>Cities where $2k/mo feels like $5k/mo.</p>
-        </a>
-        <a href="/trends/highest-aura-score-nomad-cities/" class="trend-card glass-panel">
-            <div class="trend-icon">✨</div>
-            <h3>Best Lifestyle</h3>
-            <p>Highest aura-scored cities for work-life balance.</p>
-        </a>
-    </div>
-</section>
 
-{# Trending Comparisons Section #}
-<section class="section-container mt-24 reveal">
-    <div class="text-center mb-12">
-        <h2 class="aura-title">2026 Global Power Comparisons</h2>
-        <p class="text-dim">Direct face-offs between the world's most popular nomad hubs.</p>
-    </div>
-    
-    <div class="stack-grid">
-        {% set comp_count = 0 %}
-        {% for comp in comparisons.list %}
-            {% if comp_count < 8 %}
-            <a href="/compare/city/{{ comp.slug }}/" class="stack-item glass-panel hub-card" style="text-decoration: none;">
-                <div class="hub-icon" style="font-size: 2rem;">{{ comp.emoji }}</div>
-                <div class="hub-info">
-                    <div class="hub-name" style="font-weight: 600; color: var(--text-main);">{{ comp.cityA.name }} vs {{ comp.cityB.name }}</div>
-                    <div class="hub-desc" style="font-size: 0.9rem; color: var(--text-dim);">{{ comp.theme }} · {{ site.year }} Analysis</div>
-                    <div class="arbitrage-badge" style="margin-top: 0.5rem; display: inline-block; padding: 0.2rem 0.5rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">
-                        ${{ comp.arbitrageValue | localeString }}/mo Arbitrage
-                    </div>
+        <div class="discovery-grid">
+            <a href="/trends/lowest-tax-digital-nomad-countries-2026/" class="discovery-card glass-panel">
+                <div class="discovery-icon">🛡️</div>
+                <div class="discovery-body">
+                    <h3>Tax & Compliance</h3>
+                    <p>Navigate the world's most efficient 0% and low-tax digital nomad regimes.</p>
+                    <span class="discovery-link">View Havens →</span>
                 </div>
             </a>
-            {% set comp_count = comp_count + 1 %}
-            {% endif %}
-        {% endfor %}
-    </div>
-    
-    <div class="text-center mt-12">
-        <a href="/compare/city/lisbon-vs-valencia/" class="glass-btn" style="padding: 1rem 2rem; display: inline-block; text-decoration: none; border: 1px solid var(--glass-border);">View More Comparisons</a>
-    </div>
-</section>
+
+            <a href="/trends/cheapest-nomad-cities-2026/" class="discovery-card glass-panel">
+                <div class="discovery-icon">📉</div>
+                <div class="discovery-body">
+                    <h3>Budget Optimization</h3>
+                    <p>Discover high-fidelity cost-of-living data for 2,500+ global remote work hubs.</p>
+                    <span class="discovery-link">Compare Cities →</span>
+                </div>
+            </a>
+
+            <a href="/trends/highest-aura-score-nomad-cities/" class="discovery-card glass-panel">
+                <div class="discovery-icon">✨</div>
+                <div class="discovery-body">
+                    <h3>Lifestyle & Aura</h3>
+                    <p>Find your tribe. Rankings based on community, work-life balance, and vitality.</p>
+                    <span class="discovery-link">See Rankings →</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    {# Featured Comparisons (Curated & Clean) #}
+    <section class="section-container mt-24 reveal">
+        <div class="flex-between mb-12">
+            <div>
+                <h2 class="aura-title" style="font-size: 2.5rem;">The Global Face-off</h2>
+                <p class="text-dim">Direct comparisons of 2026's most popular nomad dualities.</p>
+            </div>
+            <a href="/compare/" class="text-link">Full Comparison Matrix →</a>
+        </div>
+        
+        <div class="comparison-row">
+            {% for comp in comparisons.list | slice(0, 4) %}
+            <a href="/compare/city/{{ comp.slug }}/" class="comp-mini-card glass-panel">
+                <div class="comp-header">
+                    <span class="comp-emoji">{{ comp.emoji }}</span>
+                    <span class="comp-arbitrage">+${{ comp.arbitrageValue | localeString }}</span>
+                </div>
+                <h3>{{ comp.cityA.name }} <span class="vs">vs</span> {{ comp.cityB.name }}</h3>
+                <p>{{ comp.theme }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
 
 {# Lead Capture Section #}
 <section class="section-container mt-24 reveal">

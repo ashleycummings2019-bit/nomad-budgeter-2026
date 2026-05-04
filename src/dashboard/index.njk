@@ -74,6 +74,42 @@ title: "Tax Residency Monitor"
             </tbody>
         </table>
     </div>
+
+    {# Business Tier API Access - Only visible if .is-business-tier is on body #}
+    <div class="dashboard-card business-only api-access-card">
+        <div class="card-header">
+            <h3>B2B API Access</h3>
+            <span class="badge-gold">BUSINESS</span>
+        </div>
+        <p class="text-dim">Your high-fidelity city data feed is active. Use your registered email as the <code>x-user-email</code> header.</p>
+        <div class="api-details">
+            <div class="api-field">
+                <label>Endpoint</label>
+                <div class="copy-box">
+                    <code>https://nomadbudgeter.com/api/v1/cities</code>
+                </div>
+            </div>
+            <div class="api-field">
+                <label>Auth Method</label>
+                <div class="copy-box">
+                    <span>Clerk JWT (Bearer Token)</span>
+                </div>
+            </div>
+        </div>
+        <a href="/docs/api" class="link-aura">View API Documentation &rarr;</a>
+    </div>
+
+    {# Upgrade Callout - Hidden for business tier #}
+    <div class="dashboard-card upgrade-callout free-pro-only">
+        <div class="upgrade-content">
+            <div class="aura-icon">🚀</div>
+            <div>
+                <h3>Unlock B2B Data Access</h3>
+                <p>Get real-time tax and cost-of-living data for your own applications with our Business Tier.</p>
+            </div>
+        </div>
+        <button class="btn-gold" onclick="location.href='/pricing'">Upgrade to Business ($99/mo)</button>
+    </div>
 </div>
 
 {# Add Trip Modal #}
@@ -376,5 +412,89 @@ input:focus {
     padding: 1.25rem 1rem;
     font-size: 0.95rem;
     border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+/* Business & Upgrade Toggles */
+.business-only, .free-pro-only {
+    display: none;
+}
+
+body.is-business-tier .business-only {
+    display: block;
+}
+
+body:not(.is-business-tier) .free-pro-only {
+    display: block;
+}
+
+.api-access-card {
+    grid-column: 1 / 3;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.badge-gold {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.api-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.copy-box {
+    background: rgba(0,0,0,0.3);
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.upgrade-callout {
+    grid-column: 1 / 3;
+    background: linear-gradient(90deg, rgba(251, 191, 36, 0.05) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.upgrade-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.aura-icon {
+    font-size: 2.5rem;
+}
+
+.btn-gold {
+    background: #fbbf24;
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s;
+    white-space: nowrap;
+}
+
+.btn-gold:hover {
+    transform: scale(1.02);
+}
+
+.link-aura {
+    color: var(--aura-primary);
+    text-decoration: none;
+    font-weight: 600;
 }
 </style>

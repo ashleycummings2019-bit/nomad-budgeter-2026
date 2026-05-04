@@ -11,15 +11,15 @@ module.exports = async (req, res) => {
         return res.status(400).json({ error: 'Missing plan or userId' });
     }
 
-    // Define Prices (in a real app, these would be Stripe Price IDs from your dashboard)
+    // Define Prices from environment variables
     const prices = {
-        pro: 'price_pro_monthly_19', // PLACEHOLDER
-        biz: 'price_biz_monthly_99'  // PLACEHOLDER
+        pro: process.env.STRIPE_PRO_PRICE_ID,
+        biz: process.env.STRIPE_BIZ_PRICE_ID
     };
 
     const priceId = prices[plan];
     if (!priceId) {
-        return res.status(400).json({ error: 'Invalid plan' });
+        return res.status(400).json({ error: 'Invalid plan or missing Price ID in environment' });
     }
 
     try {
@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
                     quantity: 1,
                 },
             ],
-            mode: 'subscription',
+            mode: plan === 'biz' ? 'subscription' : 'payment',
             success_url: `${req.headers.origin}/dashboard/?session_id={CHECKOUT_SESSION_ID}&status=success`,
             cancel_url: `${req.headers.origin}/pricing/?status=cancelled`,
             metadata: {

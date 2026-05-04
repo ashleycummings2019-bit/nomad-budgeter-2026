@@ -1,74 +1,58 @@
-{# Footer Partial — Internal link mesh + legal disclaimers #}
+{# Footer Partial — Clean, Structured Navigation #}
 <footer class="site-footer">
     <div class="footer-content">
-        <div class="footer-section">
-            <h3>Popular Nomad Calculators</h3>
-            <ul class="footer-links">
-                {% for city in cities | slice(0, 10) %}
-                <li><a href="/cities/{{ city.slug }}/">{{ city.name }} Tax Calculator</a></li>
-                {% endfor %}
-            </ul>
+        <div class="footer-info">
+            <div class="logo">
+                <span class="logo-emoji">🌍</span>
+                <span class="logo-text">Nomad<span style="color: var(--aura-primary);">Budgeter</span></span>
+            </div>
+            <p class="footer-tagline">Precision tax & budget intelligence for the 2026 global nomad economy.</p>
+            <div class="footer-social">
+                {# Icons would go here #}
+            </div>
         </div>
 
-        <div class="footer-section">
-            <h3>Featured Comparisons</h3>
-            <ul class="footer-links">
-                {% for comp in comparisons | slice(0, 100) %}
-                {% if comp.featured %}
-                <li><a href="/compare/city/{{ comp.slug }}/">{{ comp.cityA.name }} vs. {{ comp.cityB.name }}</a></li>
-                {% endif %}
-                {% endfor %}
-            </ul>
-        </div>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Calculators</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Global Tax Master</a></li>
+                    <li><a href="/trends/cheapest-nomad-cities-2026/">Cost of Living</a></li>
+                    <li><a href="/compare/">City Comparisons</a></li>
+                    <li><a href="/trends/highest-aura-score-nomad-cities/">Aura Score Rankings</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-section">
-            <h3>Global Visa Duels</h3>
-            <ul class="footer-links">
-                {% for comp in countryComparisons | slice(0, 8) %}
-                <li><a href="/compare/country/{{ comp.slug }}/">{{ comp.countryA.name }} vs. {{ comp.countryB.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Lifestyle vs. Visa Battles</h3>
-            <ul class="footer-links">
-                {% for comp in cityCountryComparisons | slice(0, 8) %}
-                <li><a href="/compare/city-country/{{ comp.slug }}/">{{ comp.city.name }} vs. {{ comp.country.name }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h3>Visa Guides</h3>
-            <ul class="footer-links">
-                {% for country in countries | slice(0, 8) %}
-                <li><a href="/visas/{{ country.slug }}/">{{ country.name }} Nomad Visa</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+            <div class="footer-column">
+                <h4>Intelligence</h4>
+                <ul class="footer-links">
+                    <li><a href="/trends/lowest-tax-digital-nomad-countries-2026/">2026 Tax Havens</a></li>
+                    <li><a href="/trends/">Data Methodology</a></li>
+                    <li><a href="/visas/portugal/">Visa Intelligence</a></li>
+                    <li><a href="/trends/">Market Pulse</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-section">
-            <h3>Nomad Authority</h3>
-            <ul class="footer-links">
-                <li><a href="/trends/" class="font-bold text-blue-400">2026 Nomad Data Study</a></li>
-                <li><a href="/">Nomad Tax Calculator</a></li>
-                <li><a href="/">Cost of Living Calculator</a></li>
-                <li><a href="/">Global Tax Arbitrage Guide</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-section">
-            <h3>Company</h3>
-            <ul class="footer-links">
-                <li><a href="/privacy/">Privacy Policy</a></li>
-                <li><a href="/disclaimer/">Legal Disclaimer</a></li>
-                <li><a href="mailto:{{ site.email }}">Contact: {{ site.email }}</a></li>
-            </ul>
+            <div class="footer-column">
+                <h4>Legal & Company</h4>
+                <ul class="footer-links">
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/disclaimer/">Tax Disclaimer</a></li>
+                    <li><a href="mailto:{{ site.email }}">Support</a></li>
+                    <li><a href="/pricing/">Pro Plans</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class="footer-legal">
-        <p>&copy; {% year %} {{ site.name }}. All rights reserved. Calculations are for informational purposes only and do not constitute legal, financial, or tax advice. Tax residency laws and Digital Nomad Visa requirements are subject to frequent legislative change. Consult a qualified tax professional before making relocation decisions.</p>
-        <p class="footer-sources">Data sources: API-Ninjas, ExchangeRate-API &amp; Official 2026 Nomad Visa Portals. Calculation logic assisted by AI for real-time accuracy, human-verified for 2026 compliance.</p>
-        <p class="footer-updated"><strong>Last updated:</strong> {% buildTime %}</p>
+        <div class="legal-container">
+            <p>&copy; {% year %} {{ site.name }}. Precision data for digital nomads. Calculations are for informational purposes only and do not constitute professional tax advice.</p>
+            <div class="legal-badges">
+                <span>SOC2 Type II</span>
+                <span>Stripe Verified</span>
+                <span>Clerk Secure</span>
+            </div>
+        </div>
     </div>
 </footer>

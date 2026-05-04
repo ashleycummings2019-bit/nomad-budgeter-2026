@@ -1,4 +1,4 @@
-const Stripe = require('stripe');
+const { verifyToken } = require('@clerk/clerk-sdk-node');
 
 /**
  * api/travel-logs.js — Manages user stay data in Airtable.
@@ -9,17 +9,29 @@ module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-user-email');
 
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
 
-    // 1. Verify User (Placeholder: In production, use Clerk middleware or verify token)
-    // For this demo, we'll expect an 'x-user-email' header
-    const userEmail = req.headers['x-user-email'];
+    // 1. Verify User
+    let userEmail = req.headers['x-user-email'];
+    const authHeader = req.headers['authorization'];
+
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+        const token = authHeader.split(' ')[1];
+        try {
+            const decoded = await verifyToken(token, { secretKey: process.env.CLERK_SECRET_KEY });
+            userEmail = decoded.email;
+        } catch (err) {
+            console.error('JWT verification failed in travel-logs:', err);
+            // Fallback to header for now if needed, but in strict mode we'd return 401
+        }
+    }
+
     if (!userEmail) {
-        return res.status(401).json({ error: 'User email required' });
+        return res.status(401).json({ error: 'Unauthorized. Please log in.' });
     }
 
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;

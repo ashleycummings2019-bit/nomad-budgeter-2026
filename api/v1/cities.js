@@ -1,48 +1,105 @@
 const fs = require('fs');
 const path = require('path');
+const { verifyToken } = require('@clerk/clerk-sdk-node');
 
 /**
  * B2B API Endpoint: serves high-fidelity city data to Business-tier subscribers.
  */
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW = 15 * 60 * 1000; // 15 minutes
+const MAX_REQUESTS = 100;
+
 module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, x-user-email');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
 
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
+    const ADMIN_BYPASS_KEY = 'NB_ADMIN_TEST';
 
-    // 1. Verify User & Subscription Status
-    // In a production environment, we'd verify the Clerk JWT here.
-    // For this flow, we'll check the 'x-user-email' header passed by our dashboard.
-    const userEmail = req.headers['x-user-email'];
+    // 1. Rate Limiting (Basic In-Memory for Serverless)
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const now = Date.now();
+    const userLimit = rateLimitMap.get(ip) || { count: 0, reset: now + RATE_LIMIT_WINDOW };
+
+    if (now > userLimit.reset) {
+        userLimit.count = 1;
+        userLimit.reset = now + RATE_LIMIT_WINDOW;
+    } else {
+        userLimit.count++;
+    }
+    rateLimitMap.set(ip, userLimit);
+
+    res.setHeader('X-RateLimit-Limit', MAX_REQUESTS);
+    res.setHeader('X-RateLimit-Remaining', Math.max(0, MAX_REQUESTS - userLimit.count));
+
+    if (userLimit.count > MAX_REQUESTS) {
+        return res.status(429).json({ 
+            error: 'Too Many Requests', 
+            message: 'Rate limit exceeded. Please try again later.' 
+        });
+    }
+
+    // 2. Verify User & Subscription Status
+    let userEmail = req.headers['x-user-email'];
+    const authHeader = req.headers['authorization'];
+
+    // Formal Auth Verification (Clerk JWT)
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+        const token = authHeader.split(' ')[1];
+        try {
+            const decoded = await verifyToken(token, { secretKey: process.env.CLERK_SECRET_KEY });
+            userEmail = decoded.email;
+            console.log('JWT verified successfully for:', userEmail);
+            
+            // For now, we'll continue to support the header if the token is present but we can't verify yet
+            console.log('JWT detected, proceeding with verification logic...');
+        } catch (err) {
+            console.error('JWT verification failed:', err);
+            return res.status(401).json({ error: 'Invalid authentication token.' });
+        }
+    }
     
     if (!userEmail) {
         return res.status(401).json({ error: 'Unauthorized. Please log in.' });
     }
 
-    try {
-        // Check Airtable for active Business subscription
-        const airtableResponse = await fetch(
-            `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Subscribers?filterByFormula=${encodeURIComponent(`AND({Email}='${userEmail}', {Status}='Active', {Plan}='Business')`)}`,
-            {
-                headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
+    // 2. Admin Bypass & Subscription Check
+    if (userEmail !== ADMIN_BYPASS_KEY) {
+        try {
+            // Check Airtable for active Business subscription
+            const airtableResponse = await fetch(
+                `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Subscribers?filterByFormula=${encodeURIComponent(`AND({Email}='${userEmail}', {Status}='Active', {Plan}='Business')`)}`,
+                {
+                    headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
+                }
+            );
+
+            const subscriberData = await airtableResponse.json();
+            const isBusinessUser = subscriberData.records && subscriberData.records.length > 0;
+
+            if (!isBusinessUser) {
+                return res.status(403).json({ 
+                    error: 'Forbidden. Business tier required for API access.',
+                    message: 'Upgrade at https://nomadbudgeter.com/pricing'
+                });
             }
-        );
-
-        const subscriberData = await airtableResponse.json();
-        const isBusinessUser = subscriberData.records && subscriberData.records.length > 0;
-
-        if (!isBusinessUser && userEmail !== 'NB_ADMIN_TEST') { // Allow test admin
-            return res.status(403).json({ error: 'Forbidden. Business tier required for API access.' });
+        } catch (err) {
+            console.error('Subscription verification failed:', err);
+            return res.status(500).json({ error: 'Failed to verify subscription status.' });
         }
-    } catch (err) {
-        console.error('Subscription verification failed:', err);
-        return res.status(500).json({ error: 'Failed to verify subscription status.' });
+    } else {
+        console.log('Admin bypass triggered for NB_ADMIN_TEST');
     }
 
     try {
-        // 2. Load and filter data
+        // 3. Load and filter data
         const citiesPath = path.join(process.cwd(), 'src/_data/cities.json');
         if (!fs.existsSync(citiesPath)) {
             return res.status(500).json({ error: 'Data source not found' });
@@ -57,19 +114,19 @@ module.exports = async (req, res) => {
             cities = cities.filter(c => c.continent?.toLowerCase() === continent.toLowerCase());
         }
 
-        // 3. Pagination logic
+        // 4. Pagination logic
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
         const total = cities.length;
         const paginatedCities = cities.slice(startIndex, endIndex);
 
-        // 4. Data Transformation for B2B use case
+        // 5. Data Transformation for B2B use case
         const apiOutput = paginatedCities.map(city => ({
             name: city.name,
             slug: city.slug,
             country: city.country,
             continent: city.continent,
-            taxRate: city.tax, // normalized tax rate
+            taxRate: city.tax, 
             costOfLivingUsd: city.col,
             rentUsd: city.rent,
             visaRegime: city.visa,
@@ -83,7 +140,8 @@ module.exports = async (req, res) => {
                 total,
                 page: parseInt(page),
                 limit: parseInt(limit),
-                continent: continent || 'all'
+                continent: continent || 'all',
+                plan: userEmail === ADMIN_BYPASS_KEY ? 'Admin' : 'Business'
             },
             data: apiOutput
         });
@@ -92,3 +150,4 @@ module.exports = async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 };
+

@@ -57,7 +57,20 @@ export const config = {
   matcher: ['/((?!api|favicon.ico|css|js|assets|images|robots.txt|sitemap).*)'],
 };
 
-export default function middleware(request) {
+  const url = new URL(request.url);
+
+  // 1. Dashboard Protection: Check for Clerk Session
+  if (url.pathname.startsWith('/dashboard')) {
+    // Vercel Edge Middleware request.cookies is a Map-like object
+    const cookieHeader = request.headers.get('cookie') || '';
+    const hasSession = cookieHeader.includes('__session=');
+    
+    if (!hasSession) {
+      console.log('🔒 Unauthenticated access to dashboard, redirecting to pricing...');
+      return Response.redirect(new URL('/pricing/', request.url));
+    }
+  }
+
   // We use the internal 'x-middleware-next' header to tell Vercel
   // to proceed to the origin (static file) while allowing us to set headers.
   const response = new Response(null, {
