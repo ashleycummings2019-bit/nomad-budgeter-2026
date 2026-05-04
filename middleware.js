@@ -57,6 +57,7 @@ export const config = {
   matcher: ['/((?!api|favicon.ico|css|js|assets|images|robots.txt|sitemap).*)'],
 };
 
+export default function middleware(request) {
   const url = new URL(request.url);
 
   // 1. Dashboard Protection: Check for Clerk Session
