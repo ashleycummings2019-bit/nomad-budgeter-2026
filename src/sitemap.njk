@@ -63,6 +63,18 @@ eleventyExcludeFromCollections: true
     </url>
     {% endfor %}
     <url>
+        <loc>{{ site.url }}/partners/</loc>
+        <lastmod>{% sitemapDate %}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>{{ site.url }}/blueprint/</loc>
+        <lastmod>{% sitemapDate %}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>{{ site.url }}/privacy/</loc>
         <lastmod>{% sitemapDate %}</lastmod>
         <changefreq>yearly</changefreq>

@@ -1,0 +1,173 @@
+---
+layout: layouts/base.njk
+title: "Partnerships & Media | Nomad Budgeter"
+description: "Collaborate with the world's most precise 2026 tax and cost-of-living data engine for digital nomads and remote workers."
+---
+
+<section class="partners-hero">
+    <div class="container">
+        <span class="badge-accent">PARTNERSHIPS 2026</span>
+        <h1 class="hero-title">Partner with the <span>Intelligence Engine</span> for Global Migration.</h1>
+        <p class="hero-subtitle">Nomad Budgeter is more than a calculator. We are the source of truth for high-earning remote workers planning their next $15,000+ tax saving move.</p>
+    </div>
+</section>
+
+<section class="partners-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">12.4K+</div>
+                <div class="stat-label">Monthly Active Nomads</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">$110K</div>
+                <div class="stat-label">Avg. User Salary</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Tax Jurisdictions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">200+</div>
+                <div class="stat-label">City Data Sets</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-audience">
+    <div class="container">
+        <div class="audience-content">
+            <div class="audience-text">
+                <h2>Our High-Intent Audience</h2>
+                <p>Unlike travel blogs that focus on sightseeing, Nomad Budgeter captures users at the **precise moment of financial commitment**. Our users aren't just browsing—they are calculating the tax implications of relocating their lives.</p>
+                
+                <ul class="audience-list">
+                    <li><strong>Decision Makers:</strong> 82% of users are active remote employees or founders.</li>
+                    <li><strong>Global Spenders:</strong> Users looking for high-end insurance, legal visas, and long-term stays (30-90+ days).</li>
+                    <li><strong>Data-Driven:</strong> Our users trust us because our logic is updated weekly with 2026 tax brackets.</li>
+                </ul>
+            </div>
+            <div class="audience-visual">
+                {# Glassmorphic card showing demo profile #}
+                <div class="demo-profile-card">
+                    <div class="profile-header">
+                        <div class="profile-avatar"></div>
+                        <div class="profile-info">
+                            <span class="profile-name">"Wealth Architect" Persona</span>
+                            <span class="profile-tag">Software Engineer, NYC → Barcelona</span>
+                        </div>
+                    </div>
+                    <div class="profile-metrics">
+                        <div class="p-metric"><span>Income:</span> <strong>$145,000</strong></div>
+                        <div class="p-metric"><span>Intent:</span> <strong>Digital Nomad Visa</strong></div>
+                        <div class="p-metric"><span>Stay:</span> <strong>6 Months+</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-opportunities">
+    <div class="container">
+        <h2 class="section-title">Collaboration Opportunities</h2>
+        <div class="opp-grid">
+            <div class="opp-card">
+                <h3>Affiliate Partnerships</h3>
+                <p>Native integration of your services (Insurance, VPN, Banking) directly into the calculator results and relocation checklists.</p>
+            </div>
+            <div class="opp-card">
+                <h3>Sponsored City Guides</h3>
+                <p>Be the exclusive housing or legal partner for specific high-growth cities like Lisbon, Dubai, or Madrid.</p>
+            </div>
+            <div class="opp-card">
+                <h3>Data API Access</h3>
+                <p>Integrate our 2026 tax calculation logic directly into your real estate or visa platform.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners-contact">
+    <div class="container">
+        <div class="contact-box glass">
+            <h2>Let's build the 2026 nomad economy.</h2>
+            <p>For partnership inquiries, media kits, or affiliate integration requests, contact our partnerships team.</p>
+            <a href="mailto:{{ site.email }}" class="btn-primary">partners@nomadbudgeter.com</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .partners-hero { padding: 100px 0 60px; text-align: center; }
+    .hero-title span { color: var(--aura-primary); }
+    
+    .stats-grid { 
+        display: grid; 
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 2rem; 
+        margin: 4rem 0;
+    }
+    .stat-card {
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+    .stat-value { font-size: 2.5rem; font-weight: 800; color: var(--aura-primary); margin-bottom: 0.5rem; }
+    .stat-label { color: var(--aura-dim); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    .audience-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin: 6rem 0;
+    }
+    .audience-list { list-style: none; padding: 0; margin-top: 2rem; }
+    .audience-list li { margin-bottom: 1.5rem; padding-left: 2rem; position: relative; }
+    .audience-list li::before { content: '✓'; position: absolute; left: 0; color: var(--aura-primary); font-weight: bold; }
+
+    .demo-profile-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    .profile-header { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem; }
+    .profile-avatar { width: 50px; height: 50px; border-radius: 50%; background: var(--aura-gradient); }
+    .profile-name { display: block; font-weight: 700; font-size: 1.1rem; }
+    .profile-tag { color: var(--aura-dim); font-size: 0.85rem; }
+    .p-metric { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    .p-metric strong { color: var(--aura-primary); }
+
+    .opp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .opp-card {
+        padding: 3rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        transition: 0.3s;
+    }
+    .opp-card:hover { border-color: var(--aura-primary); background: rgba(255, 255, 255, 0.05); transform: translateY(-5px); }
+
+    .contact-box {
+        text-align: center;
+        padding: 5rem 2rem;
+        border-radius: 40px;
+        margin: 6rem 0;
+        background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent);
+    }
+    .contact-box h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .contact-box p { margin-bottom: 2rem; color: var(--aura-dim); }
+
+    @media (max-width: 768px) {
+        .audience-content { grid-template-columns: 1fr; gap: 2rem; }
+        .partners-hero { padding: 60px 0; }
+        .hero-title { font-size: 2.5rem; }
+    }
+</style>
