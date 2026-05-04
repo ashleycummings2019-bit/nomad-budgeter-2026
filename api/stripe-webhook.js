@@ -135,7 +135,7 @@ module.exports = async (req, res) => {
                 const priceId = lineItem?.price?.id;
                 
                 let planName = 'Pro';
-                if (priceId === process.env.STRIPE_BIZ_PRICE_ID) {
+                if (priceId === process.env.STRIPE_BIZ_PRICE_ID || priceId === process.env.STRIPE_BIZ_ANNUAL_PRICE_ID) {
                     planName = 'Business';
                 }
 

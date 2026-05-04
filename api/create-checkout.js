@@ -11,15 +11,20 @@ module.exports = async (req, res) => {
         return res.status(400).json({ error: 'Missing plan or userId' });
     }
 
-    // Define Prices from environment variables
+    // Price ID Mapping - Supports Monthly and Annual (mapped from .env)
     const prices = {
-        pro: process.env.STRIPE_PRO_PRICE_ID,
-        biz: process.env.STRIPE_BIZ_PRICE_ID
+        'pro_monthly': process.env.STRIPE_PRO_PRICE_ID,
+        'pro_annual': process.env.STRIPE_PRO_ANNUAL_PRICE_ID || process.env.STRIPE_PRO_PRICE_ID,
+        'biz_monthly': process.env.STRIPE_BIZ_PRICE_ID,
+        'biz_annual': process.env.STRIPE_BIZ_ANNUAL_PRICE_ID || process.env.STRIPE_BIZ_PRICE_ID
     };
 
-    const priceId = prices[plan];
+    const cycle = req.body.cycle || 'monthly';
+    const priceKey = `${plan}_${cycle}`;
+    const priceId = prices[priceKey];
+
     if (!priceId) {
-        return res.status(400).json({ error: 'Invalid plan or missing Price ID in environment' });
+        return res.status(400).json({ error: `Invalid plan/cycle or missing Price ID (${priceKey})` });
     }
 
     try {
@@ -32,12 +37,13 @@ module.exports = async (req, res) => {
                     quantity: 1,
                 },
             ],
-            mode: plan === 'biz' ? 'subscription' : 'payment',
+            mode: 'subscription',
             success_url: `${req.headers.origin}/dashboard/?session_id={CHECKOUT_SESSION_ID}&status=success`,
             cancel_url: `${req.headers.origin}/pricing/?status=cancelled`,
             metadata: {
                 userId: userId,
-                plan: plan
+                plan: plan,
+                cycle: cycle
             },
         });
 

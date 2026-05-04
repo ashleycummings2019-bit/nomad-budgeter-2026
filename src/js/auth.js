@@ -29,12 +29,16 @@ async function initAuth() {
 
             // Handle Pricing Page Buttons
             const handleSubscribe = async (plan) => {
+                const billingToggle = document.getElementById('billing-toggle');
+                const cycle = billingToggle && billingToggle.classList.contains('annual') ? 'annual' : 'monthly';
+                
                 try {
                     const response = await fetch('/api/create-checkout', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             plan: plan,
+                            cycle: cycle,
                             userId: window.Clerk.user.id,
                             email: window.Clerk.user.primaryEmailAddress.emailAddress
                         })
@@ -58,7 +62,6 @@ async function initAuth() {
 
             const bizBtn = document.getElementById('btn-subscribe-biz');
             if (bizBtn) {
-                bizBtn.innerText = 'Go Business'; // Update from "Contact Sales"
                 bizBtn.addEventListener('click', () => handleSubscribe('biz'));
             }
 
@@ -75,10 +78,13 @@ async function initAuth() {
             }
 
             // Intercept pricing buttons for login
-            const proBtn = document.getElementById('btn-subscribe-pro');
-            if (proBtn) {
-                proBtn.addEventListener('click', () => window.Clerk.openSignIn());
-            }
+            const subscribeBtns = ['btn-subscribe-pro', 'btn-subscribe-biz'];
+            subscribeBtns.forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) {
+                    btn.addEventListener('click', () => window.Clerk.openSignIn());
+                }
+            });
         }
     } catch (err) {
         console.error('Error initializing Clerk:', err);
