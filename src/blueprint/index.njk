@@ -1,0 +1,330 @@
+---
+layout: false
+title: "Free Download: The 2026 Geo-Arbitrage Blueprint | NomadBudgeter"
+description: "Download the free 2026 Geo-Arbitrage Blueprint — the Wealth Architect's guide to legally reducing your taxes and upgrading your net worth as a remote worker."
+permalink: /blueprint/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta property="og:title" content="Free: The 2026 Geo-Arbitrage Blueprint">
+    <meta property="og:description" content="How high-earning remote workers legally save $15,000+/year in taxes. Free 8-chapter playbook.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nomadbudgeter.com/blueprint/">
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CLF80Q4JZJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CLF80Q4JZJ');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#06060b;--surface:#0e0e16;--border:rgba(255,255,255,.06);
+            --text:#d4d4d8;--dim:#71717a;--white:#fafafa;
+            --gold:#fbbf24;--gold-dark:#b45309;
+            --emerald:#10b981;--violet:#8b5cf6;--blue:#3b82f6;
+            --font:'Outfit',sans-serif;--body:'Manrope',sans-serif;
+        }
+        html{scroll-behavior:smooth}
+        body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+        /* ═══ HERO ═══ */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;position:relative}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(139,92,246,.08),transparent 70%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(251,191,36,.05),transparent 60%)}
+        .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;width:100%;position:relative;z-index:1;align-items:center}
+        .hero-text h1{font-family:var(--font);font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:var(--white);margin-bottom:1.25rem}
+        .hero-text h1 span{background:linear-gradient(135deg,var(--gold),#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero-text .subtitle{font-size:1.1rem;color:var(--dim);margin-bottom:2rem;max-width:480px}
+        .hero-text .badge{display:inline-block;background:rgba(16,185,129,.1);color:var(--emerald);font-size:.75rem;font-weight:800;padding:4px 14px;border-radius:100px;letter-spacing:1px;margin-bottom:1.5rem;border:1px solid rgba(16,185,129,.2)}
+
+        /* BOOK MOCKUP */
+        .book-mockup{position:relative;display:flex;justify-content:center;align-items:center}
+        .book-mockup img{width:85%;max-width:420px;border-radius:16px;box-shadow:0 60px 120px rgba(0,0,0,.5),0 0 80px rgba(139,92,246,.08);transform:perspective(800px) rotateY(-6deg);transition:transform .5s ease}
+        .book-mockup:hover img{transform:perspective(800px) rotateY(0deg)}
+        .book-mockup .glow{position:absolute;width:300px;height:300px;background:radial-gradient(circle,rgba(251,191,36,.12),transparent 70%);border-radius:50%;filter:blur(60px);z-index:-1}
+
+        /* ═══ FORM ═══ */
+        .capture-form{display:flex;flex-direction:column;gap:.75rem;max-width:420px}
+        .form-input{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 18px;font-size:1rem;color:var(--white);font-family:var(--body);outline:none;transition:border .3s}
+        .form-input:focus{border-color:var(--gold)}
+        .form-input::placeholder{color:var(--dim)}
+        .btn-gold{background:linear-gradient(135deg,var(--gold),#f59e0b);color:#000;font-family:var(--font);font-size:1rem;font-weight:800;padding:14px 24px;border:none;border-radius:12px;cursor:pointer;letter-spacing:.02em;transition:all .3s;position:relative;overflow:hidden}
+        .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(251,191,36,.25)}
+        .btn-gold:disabled{opacity:.6;cursor:not-allowed;transform:none}
+        .form-note{font-size:.75rem;color:var(--dim);text-align:center}
+
+        /* SUCCESS STATE */
+        .success-state{display:none;text-align:center;max-width:420px}
+        .success-state.show{display:block}
+        .capture-form.hide{display:none}
+        .success-icon{font-size:3rem;margin-bottom:1rem}
+        .success-state h3{font-family:var(--font);font-size:1.5rem;color:var(--white);margin-bottom:.75rem}
+        .success-state p{color:var(--dim);margin-bottom:1.5rem}
+        .btn-download{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--emerald),#059669);color:#fff;font-family:var(--font);font-size:1.05rem;font-weight:800;padding:16px 32px;border:none;border-radius:12px;cursor:pointer;text-decoration:none;transition:all .3s}
+        .btn-download:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(16,185,129,.3)}
+
+        /* ═══ SOCIAL PROOF ═══ */
+        .proof-bar{display:flex;justify-content:center;gap:3rem;padding:3rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap}
+        .proof-item{text-align:center}
+        .proof-num{font-family:var(--font);font-size:2rem;font-weight:900;color:var(--white)}
+        .proof-label{font-size:.8rem;color:var(--dim);margin-top:.25rem}
+
+        /* ═══ CHAPTERS PREVIEW ═══ */
+        .chapters{max-width:900px;margin:0 auto;padding:5rem 2rem}
+        .chapters h2{font-family:var(--font);font-size:2rem;font-weight:900;color:var(--white);text-align:center;margin-bottom:.75rem}
+        .chapters .section-sub{text-align:center;color:var(--dim);margin-bottom:3rem;font-size:1.05rem}
+        .ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+        .ch-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.5rem;transition:all .3s;position:relative;overflow:hidden}
+        .ch-card:hover{border-color:rgba(251,191,36,.15);transform:translateY(-3px)}
+        .ch-card .ch-num{font-size:.7rem;font-weight:800;color:var(--gold);letter-spacing:2px;margin-bottom:.5rem}
+        .ch-card h3{font-family:var(--font);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+        .ch-card p{font-size:.85rem;color:var(--dim);line-height:1.5}
+
+        /* ═══ CTA STRIP ═══ */
+        .cta-strip{background:linear-gradient(135deg,rgba(251,191,36,.08),rgba(139,92,246,.05));border-top:1px solid rgba(251,191,36,.1);border-bottom:1px solid rgba(251,191,36,.1);padding:4rem 2rem;text-align:center}
+        .cta-strip h2{font-family:var(--font);font-size:1.8rem;font-weight:900;color:var(--white);margin-bottom:.5rem}
+        .cta-strip p{color:var(--dim);margin-bottom:2rem;font-size:1.05rem}
+        .cta-strip .capture-form-bottom{display:flex;gap:.75rem;max-width:500px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+        .cta-strip .form-input{flex:1;min-width:240px}
+        .cta-strip .btn-gold{white-space:nowrap}
+
+        /* ═══ FOOTER ═══ */
+        .lp-footer{padding:2rem;text-align:center;color:var(--dim);font-size:.8rem;border-top:1px solid var(--border)}
+        .lp-footer a{color:var(--gold);text-decoration:none}
+
+        /* ═══ TOAST ═══ */
+        .toast{position:fixed;bottom:2rem;right:2rem;background:#ef4444;color:#fff;padding:12px 20px;border-radius:12px;font-size:.9rem;font-weight:600;z-index:999;display:none;animation:slideUp .3s ease}
+        .toast.show{display:block}
+        @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+        /* ═══ RESPONSIVE ═══ */
+        @media(max-width:768px){
+            .hero-grid{grid-template-columns:1fr;gap:2rem;text-align:center}
+            .capture-form{margin:0 auto}
+            .success-state{margin:0 auto}
+            .book-mockup{order:-1}
+            .book-mockup img{width:60%;transform:none}
+            .ch-grid{grid-template-columns:1fr}
+            .proof-bar{gap:2rem}
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid">
+        <div class="hero-text">
+            <div class="badge">📘 FREE 8-CHAPTER PLAYBOOK — 2026 EDITION</div>
+            <h1>How Remote Workers Legally Save <span>$15,000+/Year</span> in Taxes</h1>
+            <p class="subtitle">The Wealth Architect's playbook trusted by high-earning professionals in 45+ countries. Download the full blueprint — free, no strings.</p>
+
+            <!-- EMAIL FORM -->
+            <form class="capture-form" id="leadForm" novalidate>
+                <input type="email" class="form-input" id="emailInput" placeholder="Enter your best email" required autocomplete="email">
+                <button type="submit" class="btn-gold" id="submitBtn">🔓 Get Free Instant Access</button>
+                <p class="form-note">No spam. Unsubscribe anytime. Your data stays private.</p>
+            </form>
+
+            <!-- SUCCESS STATE (hidden until submit) -->
+            <div class="success-state" id="successState">
+                <div class="success-icon">🎉</div>
+                <h3>You're In!</h3>
+                <p>Your copy of The 2026 Geo-Arbitrage Blueprint is ready.</p>
+                <a href="/book/" class="btn-download" id="downloadBtn">⬇ Download Your Blueprint</a>
+            </div>
+        </div>
+
+        <div class="book-mockup">
+            <div class="glow"></div>
+            <img src="/assets/book/front-cover.png" alt="The 2026 Geo-Arbitrage Blueprint">
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="proof-bar">
+    <div class="proof-item">
+        <div class="proof-num">8</div>
+        <div class="proof-label">In-Depth Chapters</div>
+    </div>
+    <div class="proof-item">
+        <div class="proof-num">45+</div>
+        <div class="proof-label">Countries Covered</div>
+    </div>
+    <div class="proof-item">
+        <div class="proof-num">$15K+</div>
+        <div class="proof-label">Avg. Annual Savings</div>
+    </div>
+    <div class="proof-item">
+        <div class="proof-num">30-Day</div>
+        <div class="proof-label">Relocation Checklist</div>
+    </div>
+</div>
+
+<!-- CHAPTERS PREVIEW -->
+<section class="chapters">
+    <h2>What's Inside the Blueprint</h2>
+    <p class="section-sub">Eight chapters of actionable intelligence — not fluff.</p>
+
+    <div class="ch-grid">
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 01</div>
+            <h3>The Wealth Architect vs. The Nomad</h3>
+            <p>The mindset shift from "cheap rent tourist" to someone who structures their life for maximum net wealth.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 02</div>
+            <h3>The "Habit Tax" &amp; Cheap Rent Trap</h3>
+            <p>Why $800 rent in Bali costs you $19,200/year when you forget about tax. The hard math nobody shows you.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 03</div>
+            <h3>The 2026 Global Tax Matrix</h3>
+            <p>Spain's Beckham Law, Italy's 5% rate, UAE's 0% engine, Portugal NHR 2.0, and Greece's 50% exemption.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 04</div>
+            <h3>Residency &amp; Second Passports</h3>
+            <p>The 5-year pipeline from digital nomad visa to EU passport. Country-by-country timelines.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 05</div>
+            <h3>The Infrastructure Stack</h3>
+            <p>Banking without 3% FX fees, global health insurance, and the corporate structure that saves you thousands.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 06</div>
+            <h3>Lifestyle Engineering</h3>
+            <p>Micro-communities, family nomading, and healthcare deep-dives for professionals who want quality of life.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 07</div>
+            <h3>The 30-Day Relocation Checklist</h3>
+            <p>25 actionable steps across 4 phases. Print it, pin it, execute it. Decision to departure in 30 days.</p>
+        </div>
+        <div class="ch-card">
+            <div class="ch-num">CHAPTER 08</div>
+            <h3>The Showdown Engine</h3>
+            <p>How to use NomadBudgeter.com to compare cities side-by-side with live 2026 tax data and cost of living.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-strip">
+    <h2>Ready to Give Yourself a $15K Raise?</h2>
+    <p>Enter your email and get instant access to the full 8-chapter blueprint.</p>
+    <form class="capture-form-bottom" id="leadFormBottom" novalidate>
+        <input type="email" class="form-input" id="emailInputBottom" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" class="btn-gold" id="submitBtnBottom">Get Free Access →</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+    <p>© 2026 <a href="/">NomadBudgeter.com</a> — The Wealth Architect's Command Center.</p>
+    <p style="margin-top:.5rem;">This guide is for educational purposes only. Always consult a qualified tax professional.</p>
+</footer>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+(function() {
+    const FORM_TOP = document.getElementById('leadForm');
+    const FORM_BTM = document.getElementById('leadFormBottom');
+    const EMAIL_TOP = document.getElementById('emailInput');
+    const EMAIL_BTM = document.getElementById('emailInputBottom');
+    const BTN_TOP = document.getElementById('submitBtn');
+    const BTN_BTM = document.getElementById('submitBtnBottom');
+    const SUCCESS = document.getElementById('successState');
+    const TOAST = document.getElementById('toast');
+
+    // Check if already subscribed
+    if (localStorage.getItem('nb_lead_captured')) {
+        FORM_TOP.classList.add('hide');
+        SUCCESS.classList.add('show');
+    }
+
+    function showToast(msg, isError) {
+        TOAST.textContent = msg;
+        TOAST.style.background = isError ? '#ef4444' : '#10b981';
+        TOAST.classList.add('show');
+        setTimeout(() => TOAST.classList.remove('show'), 4000);
+    }
+
+    function validateEmail(e) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+    }
+
+    async function handleSubmit(email, btn) {
+        if (!validateEmail(email)) {
+            showToast('Please enter a valid email address.', true);
+            return;
+        }
+        const origText = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+
+        try {
+            const res = await fetch('/api/capture-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: 'Geo-Arbitrage Blueprint Landing Page' })
+            });
+            const data = await res.json();
+
+            if (res.ok) {
+                localStorage.setItem('nb_lead_captured', email);
+                // Track conversion in GA4
+                if (window.gtag) {
+                    gtag('event', 'generate_lead', {
+                        event_category: 'Lead Magnet',
+                        event_label: 'Geo-Arbitrage Blueprint',
+                        value: 1
+                    });
+                }
+                FORM_TOP.classList.add('hide');
+                SUCCESS.classList.add('show');
+                FORM_BTM.innerHTML = '<p style="color:#10b981;font-weight:700;font-size:1.1rem;">✅ Check above — your download is ready!</p>';
+                showToast('Success! Your blueprint is ready to download.', false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                showToast(data.error || 'Something went wrong. Try again.', true);
+                btn.disabled = false;
+                btn.textContent = origText;
+            }
+        } catch (err) {
+            // Offline fallback — still let them through
+            localStorage.setItem('nb_lead_captured', email);
+            FORM_TOP.classList.add('hide');
+            SUCCESS.classList.add('show');
+            showToast('You\'re in! Download your blueprint now.', false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    FORM_TOP.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSubmit(EMAIL_TOP.value.trim(), BTN_TOP);
+    });
+
+    FORM_BTM.addEventListener('submit', (e) => {
+        e.preventDefault();
+        handleSubmit(EMAIL_BTM.value.trim(), BTN_BTM);
+    });
+})();
+</script>
+
+</body>
+</html>

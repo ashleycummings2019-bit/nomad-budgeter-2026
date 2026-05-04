@@ -5,74 +5,140 @@ title: "Tax Residency Monitor"
 
 <div class="monitor-grid">
     {# Main Stay Tracker #}
-    <div class="dashboard-card main-tracker">
+    <div class="dashboard-card main-tracker aura-glow-emerald">
         <div class="card-header">
-            <h3>Active Stay Tracker</h3>
-            <span class="pulse-indicator">LIVE</span>
+            <div>
+                <h3 class="premium-text-gradient">Residency Status</h3>
+                <p class="text-dim">Real-time monitoring active</p>
+            </div>
+            <span class="pulse-indicator">LIVE MONITOR</span>
         </div>
         
-        <div class="stay-info">
-            <div class="country-display">
-                <img src="https://flagcdn.com/w80/pt.png" alt="Portugal" class="country-flag">
-                <div>
-                    <h4>Portugal</h4>
-                    <p class="text-dim">Digital Nomad Visa (ITS)</p>
+        <div class="tracker-layout">
+            <div class="gauge-container">
+                <svg class="residency-gauge" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="gauge-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="var(--aura-primary)" />
+                            <stop offset="100%" stop-color="#34d399" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="gauge-bg" cx="50" cy="50" r="45"></circle>
+                    <circle class="gauge-progress" cx="50" cy="50" r="45" style="stroke-dasharray: 217.7, 282.7;"></circle>
+                </svg>
+                <div class="gauge-content">
+                    <span class="gauge-value">142</span>
+                    <span class="gauge-label">Days</span>
                 </div>
             </div>
-            <div class="days-counter">
-                <span class="count">142</span>
-                <span class="label">Days Stayed</span>
+
+            <div class="stay-details">
+                <div class="current-location">
+                    <img src="https://flagcdn.com/w80/pt.png" alt="Portugal" class="premium-flag">
+                    <div>
+                        <h4 class="location-name">Portugal</h4>
+                        <span class="visa-badge">Digital Nomad (ITS)</span>
+                    </div>
+                </div>
+
+                <div class="residency-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Threshold</span>
+                        <span class="stat-value">183 Days</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Remaining</span>
+                        <span class="stat-value warning-text">41 Days</span>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="progress-section">
-            <div class="progress-header">
-                <span>Tax Residency Threshold (183 Days)</span>
-                <span class="percentage">77%</span>
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: 77%;"></div>
-                <div class="threshold-marker" style="left: 183px;"></div>
-            </div>
-            <p class="warning-text">⚠️ <strong>41 days remaining</strong> until you trigger Portuguese tax residency.</p>
+        <div class="action-row">
+            <p class="insight-pill">⚠️ Resident status triggered in <strong>41 days</strong></p>
         </div>
     </div>
 
     {# Quick Insights #}
-    <div class="dashboard-card insights">
-        <h3>2026 Strategy Insights</h3>
-        <ul class="insights-list">
-            <li>
-                <span class="insight-icon">💡</span>
-                <p>Move to <strong>Spain</strong> by June 15th to maintain non-resident status in both jurisdictions.</p>
-            </li>
-            <li>
-                <span class="insight-icon">📈</span>
-                <p>Your estimated tax savings this year: <strong>$14,200</strong> vs. UK standard residency.</p>
-            </li>
-        </ul>
-        <button class="btn-primary-sm">Generate Optimization Plan</button>
+    <div class="dashboard-card insights aura-glow-violet">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">AI Intelligence</h3>
+            <span class="badge-ai">PRO</span>
+        </div>
+        <div class="insights-scroll">
+            <div class="insight-card">
+                <div class="insight-visual">
+                    <div class="visual-circle"></div>
+                    <span class="insight-emoji">💡</span>
+                </div>
+                <div class="insight-info">
+                    <p>Move to <strong>Spain</strong> by June 15th to maintain non-resident status.</p>
+                </div>
+            </div>
+            <div class="insight-card">
+                <div class="insight-visual">
+                    <div class="visual-circle"></div>
+                    <span class="insight-emoji">📈</span>
+                </div>
+                <div class="insight-info">
+                    <p>Estimated 2026 Tax Savings: <strong class="text-emerald">$14,200</strong></p>
+                </div>
+            </div>
+        </div>
+        <button class="btn-shimmer">Generate Full Report</button>
     </div>
 
     {# Travel History #}
     <div class="dashboard-card history">
         <div class="card-header">
-            <h3>Travel Logs</h3>
-            <button class="btn-ghost-sm" id="btn-open-modal">+ Add Trip</button>
+            <h3 class="premium-text-gradient">Travel Logs</h3>
+            <button class="btn-add-trip" id="btn-open-modal">
+                <span class="plus-icon">+</span>
+                <span>Add Log</span>
+            </button>
         </div>
-        <table class="history-table">
-            <thead>
-                <tr>
-                    <th>Country</th>
-                    <th>Entry</th>
-                    <th>Exit</th>
-                    <th>Days</th>
-                </tr>
-            </thead>
-            <tbody>
-                {# Populated by dashboard.js #}
-            </tbody>
-        </table>
+        
+        <div class="trip-timeline">
+            {# Mock current trip for viral feel #}
+            <div class="trip-log-item active">
+                <div class="trip-status">
+                    <div class="status-dot"></div>
+                    <div class="status-line"></div>
+                </div>
+                <div class="trip-info-card">
+                    <div class="trip-meta">
+                        <img src="https://flagcdn.com/w40/pt.png" alt="Portugal" class="mini-flag">
+                        <span class="trip-country">Portugal</span>
+                        <span class="trip-badge current">Current</span>
+                    </div>
+                    <div class="trip-dates">
+                        <span>Jan 15, 2026</span>
+                        <span class="date-arrow">&rarr;</span>
+                        <span>Present</span>
+                    </div>
+                    <div class="trip-days">142 Days</div>
+                </div>
+            </div>
+
+            <div class="trip-log-item">
+                <div class="trip-status">
+                    <div class="status-dot dimmed"></div>
+                </div>
+                <div class="trip-info-card">
+                    <div class="trip-meta">
+                        <img src="https://flagcdn.com/w40/ae.png" alt="UAE" class="mini-flag">
+                        <span class="trip-country">United Arab Emirates</span>
+                        <span class="trip-badge">Completed</span>
+                    </div>
+                    <div class="trip-dates">
+                        <span>Dec 1, 2025</span>
+                        <span class="date-arrow">&rarr;</span>
+                        <span>Jan 10, 2026</span>
+                    </div>
+                    <div class="trip-days">41 Days</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     {# Business Tier API Access - Only visible if .is-business-tier is on body #}
@@ -99,16 +165,25 @@ title: "Tax Residency Monitor"
         <a href="/docs/api" class="link-aura">View API Documentation &rarr;</a>
     </div>
 
-    {# Upgrade Callout - Hidden for business tier #}
+    {# Upgrade Callout - Viral 2026 Edition #}
     <div class="dashboard-card upgrade-callout free-pro-only">
-        <div class="upgrade-content">
-            <div class="aura-icon">🚀</div>
-            <div>
-                <h3>Unlock B2B Data Access</h3>
-                <p>Get real-time tax and cost-of-living data for your own applications with our Business Tier.</p>
+        <div class="upgrade-inner">
+            <div class="upgrade-content">
+                <div class="aura-icon-wrapper">
+                    <span class="aura-icon">⚡️</span>
+                    <div class="aura-pulse"></div>
+                </div>
+                <div>
+                    <div class="badge-premium">LIMITED ACCESS</div>
+                    <h3 class="heading-premium">Unlock Enterprise Intelligence</h3>
+                    <p class="text-premium">Integrate real-time global tax & COL data directly into your business workflow.</p>
+                </div>
             </div>
+            <button class="btn-premium-gold" onclick="location.href='/pricing'">
+                <span>Upgrade to Business</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </button>
         </div>
-        <button class="btn-gold" onclick="location.href='/pricing'">Upgrade to Business ($99/mo)</button>
     </div>
 </div>
 
@@ -142,277 +217,361 @@ title: "Tax Residency Monitor"
 <style>
 .monitor-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1.6fr 1.4fr;
+    grid-template-rows: auto auto auto;
     gap: 1.5rem;
 }
 
 .dashboard-card {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(40px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
+    border-radius: 32px;
     padding: 2rem;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    animation: cardEntrance 1s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Modal Styles */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.dashboard-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.06), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
 }
 
-.modal-content {
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 2.5rem;
-    width: 100%;
-    max-width: 450px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+.dashboard-card:hover::after { opacity: 1; }
+
+.aura-glow-emerald { box-shadow: 0 0 40px -15px rgba(16, 185, 129, 0.2); }
+.aura-glow-violet { box-shadow: 0 0 40px -15px rgba(139, 92, 246, 0.2); }
+
+.premium-text-gradient {
+    background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
-.modal-header {
+/* Residency Gauge */
+.tracker-layout {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    gap: 3rem;
+    margin: 1.5rem 0;
 }
 
-.btn-close {
-    background: transparent;
-    border: none;
-    color: var(--text-dim);
-    font-size: 1.5rem;
-    cursor: pointer;
+.gauge-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
 }
 
-.form-group {
-    margin-bottom: 1.5rem;
+.residency-gauge {
+    transform: rotate(-90deg);
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+.gauge-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.05);
+    stroke-width: 8;
 }
 
-label {
+.gauge-progress {
+    fill: none;
+    stroke: url(#gauge-gradient);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 1s ease-in-out;
+}
+
+.gauge-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.gauge-value {
     display: block;
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    margin-bottom: 0.5rem;
-}
-
-input {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    padding: 0.8rem 1rem;
+    font-size: 2.5rem;
+    font-weight: 900;
     color: #fff;
-    font-size: 1rem;
+    line-height: 1;
 }
 
-input:focus {
-    outline: none;
-    border-color: var(--aura-primary);
-    background: rgba(255, 255, 255, 0.08);
-}
-/* ... rest of existing styles ... */
-
-.main-tracker {
-    grid-column: 1 / 2;
+.gauge-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    letter-spacing: 0.1em;
 }
 
-.insights {
-    grid-column: 2 / 3;
-}
-
-.history {
-    grid-column: 1 / 3;
-}
-
-.card-header {
+.current-location {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     margin-bottom: 2rem;
 }
 
-.card-header h3 {
+.premium-flag {
+    width: 50px;
+    height: 34px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.location-name {
     font-size: 1.25rem;
     font-weight: 700;
+    margin: 0;
 }
 
-.pulse-indicator {
-    background: rgba(34, 197, 94, 0.1);
-    color: #22c55e;
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 4px 10px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.pulse-indicator::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: #22c55e;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-}
-
-.stay-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2.5rem;
-}
-
-.country-display {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-}
-
-.country-flag {
-    width: 60px;
-    height: 40px;
-    border-radius: 8px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-.days-counter {
-    text-align: right;
-}
-
-.days-counter .count {
-    display: block;
-    font-size: 3rem;
-    font-weight: 900;
-    line-height: 1;
+.visa-badge {
+    font-size: 0.75rem;
     color: var(--aura-primary);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
 }
 
-.days-counter .label {
-    font-size: 0.85rem;
-    color: var(--text-dim);
+.residency-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.7rem;
     text-transform: uppercase;
+    color: var(--text-dim);
     letter-spacing: 0.05em;
 }
 
-.progress-section {
-    background: rgba(0,0,0,0.2);
-    padding: 1.5rem;
-    border-radius: 16px;
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
 }
 
-.progress-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-}
-
-.progress-bar {
-    height: 12px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 1rem;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--aura-primary), #fcd34d);
-    border-radius: 6px;
-}
-
-.warning-text {
-    font-size: 0.85rem;
+.insight-pill {
+    background: rgba(245, 158, 11, 0.1);
     color: #f59e0b;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    display: inline-block;
+    border: 1px solid rgba(245, 158, 11, 0.1);
 }
 
-.insights-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
+/* AI Insights */
+.insights-scroll {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
+    margin: 1.5rem 0;
 }
 
-.insights-list li {
+.insight-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.25rem;
     display: flex;
     gap: 1rem;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
-.insight-icon {
-    font-size: 1.25rem;
+.insight-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateX(5px);
 }
 
-.btn-primary-sm {
+.insight-visual {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+}
+
+.visual-circle {
+    position: absolute;
+    width: 100%; height: 100%;
+    border: 2px solid var(--aura-secondary);
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: pulseAura 3s infinite;
+}
+
+.insight-emoji {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+}
+
+.btn-shimmer {
     width: 100%;
-    background: var(--aura-primary);
-    color: #000;
-    border: none;
-    padding: 0.75rem;
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--aura-secondary);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 0.8rem;
     border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-ghost-sm {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.1);
+.btn-shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
+    animation: shimmer 4s infinite;
+}
+
+/* Trip Timeline */
+.trip-timeline {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.trip-log-item {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.trip-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--aura-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--aura-primary);
+}
+
+.status-dot.dimmed {
+    background: var(--text-dim);
+    box-shadow: none;
+    opacity: 0.5;
+}
+
+.status-line {
+    width: 2px;
+    flex-grow: 1;
+    background: linear-gradient(to bottom, var(--aura-primary), transparent);
+    opacity: 0.3;
+}
+
+.trip-info-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trip-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mini-flag {
+    width: 24px;
+    border-radius: 3px;
+}
+
+.trip-country {
+    font-weight: 700;
+}
+
+.trip-badge {
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
     color: var(--text-dim);
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    cursor: pointer;
 }
 
-.history-table {
-    width: 100%;
-    border-collapse: collapse;
+.trip-badge.current {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--aura-primary);
 }
 
-.history-table th {
-    text-align: left;
-    color: var(--text-dim);
-    font-weight: 500;
+.trip-dates {
     font-size: 0.85rem;
-    padding: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-dim);
+    display: flex;
+    gap: 0.5rem;
 }
 
-.history-table td {
-    padding: 1.25rem 1rem;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
+.trip-days {
+    font-weight: 800;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px 10px;
+    border-radius: 8px;
 }
+
+.btn-add-trip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+}
+
+.btn-add-trip:hover {
+    background: var(--aura-primary);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.plus-icon { font-size: 1.2rem; line-height: 1; }
+
+/* Existing ... */
+.dashboard-card:nth-child(1) { animation-delay: 0.1s; }
+.dashboard-card:nth-child(2) { animation-delay: 0.2s; }
+.dashboard-card:nth-child(3) { animation-delay: 0.3s; }
+.dashboard-card:nth-child(4) { animation-delay: 0.4s; }
+.dashboard-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardEntrance {
+    from { opacity: 0; transform: translateY(30px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Modal and other styles ... */
 /* Business & Upgrade Toggles */
 .business-only, .free-pro-only {
     display: none;
@@ -459,7 +618,44 @@ body:not(.is-business-tier) .free-pro-only {
 
 .upgrade-callout {
     grid-column: 1 / 3;
-    background: linear-gradient(90deg, rgba(251, 191, 36, 0.05) 0%, rgba(0,0,0,0) 100%);
+    position: relative;
+    padding: 1px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    border: none;
+    box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+}
+
+.upgrade-callout::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        rgba(251, 191, 36, 0.4), 
+        transparent 20%
+    );
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.upgrade-inner {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, rgba(24, 24, 27, 0.95), rgba(9, 9, 11, 0.98));
+    backdrop-filter: blur(20px);
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    border-radius: 19px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -469,27 +665,107 @@ body:not(.is-business-tier) .free-pro-only {
 .upgrade-content {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
+}
+
+.aura-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 16px;
+    border: 1px solid rgba(251, 191, 36, 0.2);
 }
 
 .aura-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    z-index: 2;
 }
 
-.btn-gold {
+.aura-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--aura-accent);
+    border-radius: 16px;
+    opacity: 0.2;
+    animation: pulseIcon 2s ease-out infinite;
+}
+
+@keyframes pulseIcon {
+    0% { transform: scale(1); opacity: 0.2; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.badge-premium {
+    display: inline-block;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.heading-premium {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    background: linear-gradient(to right, #fff, #fbbf24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-premium {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    max-width: 450px;
+}
+
+.btn-premium-gold {
+    position: relative;
     background: #fbbf24;
     color: #000;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1rem 1.75rem;
     border-radius: 12px;
     font-weight: 800;
+    font-size: 1rem;
     cursor: pointer;
-    transition: transform 0.2s;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.3);
 }
 
-.btn-gold:hover {
-    transform: scale(1.02);
+.btn-premium-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px -5px rgba(251, 191, 36, 0.5);
+}
+
+.btn-premium-gold::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: 0.5s;
+    animation: shimmer 3s infinite;
 }
 
 .link-aura {
@@ -497,4 +773,330 @@ body:not(.is-business-tier) .free-pro-only {
     text-decoration: none;
     font-weight: 600;
 }
+
+.text-emerald { color: var(--aura-primary); }
+.text-dim { color: var(--text-dim); }
+
+.warning-text { color: #f59e0b; }
+
+.badge-ai {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--aura-secondary);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 100px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    letter-spacing: 0.08em;
+}
+
+.pulse-indicator {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--aura-primary);
+    background: rgba(16, 185, 129, 0.08);
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid rgba(16, 185, 129, 0.15);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pulse-indicator::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--aura-primary);
+    border-radius: 50%;
+    animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.action-row {
+    margin-top: 1rem;
+}
+
+/* ─── Modal Overlay ─── */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, rgba(24, 24, 27, 0.98), rgba(9, 9, 11, 0.99));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
+    transform: translateY(20px) scale(0.97);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-overlay.open .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.modal-header h3 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-close {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-dim);
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-close:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+/* ─── Form Styles ─── */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: var(--font-main);
+    transition: all 0.25s;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--aura-primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.btn-primary-sm {
+    width: 100%;
+    padding: 0.9rem;
+    background: linear-gradient(135deg, var(--aura-primary), #34d399);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0.5rem;
+}
+
+.btn-primary-sm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+.btn-primary-sm:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ─── Responsive Design ─── */
+@media (max-width: 1024px) {
+    .monitor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .api-access-card,
+    .upgrade-callout {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .tracker-layout {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .gauge-container {
+        margin: 0 auto;
+    }
+
+    .current-location {
+        justify-content: center;
+    }
+
+    .residency-stats {
+        justify-items: center;
+        text-align: center;
+    }
+
+    .trip-info-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .trip-days {
+        align-self: flex-start;
+    }
+
+    .upgrade-inner {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .upgrade-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .btn-premium-gold {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .api-details {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: 1.5rem;
+        border-radius: 24px;
+    }
+
+    .heading-premium {
+        font-size: 1.2rem;
+    }
+}
+
+/* ─── Print / PDF Styles ─── */
+@media print {
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .dashboard-sidebar,
+    .dashboard-header,
+    .upgrade-callout,
+    .btn-add-trip,
+    .btn-shimmer,
+    .btn-premium-gold,
+    .modal-overlay,
+    .pulse-indicator,
+    .action-row {
+        display: none !important;
+    }
+
+    .dashboard-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        background: #fff !important;
+        color: #000 !important;
+        -webkit-text-fill-color: #000 !important;
+        backdrop-filter: none !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .premium-text-gradient {
+        -webkit-text-fill-color: #000 !important;
+        background: none !important;
+    }
+
+    .gauge-value,
+    .stat-value,
+    .trip-country,
+    .trip-days {
+        color: #000 !important;
+    }
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
 </style>
+

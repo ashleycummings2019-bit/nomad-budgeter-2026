@@ -283,12 +283,33 @@ title: "Nomad Budgeter — Professional Plans"
     inset: -2px;
     border-radius: 34px;
     padding: 2px;
-    background: linear-gradient(135deg, var(--aura-primary), transparent, var(--aura-secondary));
+    background: linear-gradient(135deg, var(--aura-primary), transparent, var(--aura-primary));
+    animation: rotate 8s linear infinite;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+}
+
+.business-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 34px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--aura-secondary), transparent, var(--aura-secondary));
+    animation: rotate 6s linear infinite reverse;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .popular-tag {
@@ -413,6 +434,24 @@ title: "Nomad Budgeter — Professional Plans"
     background: linear-gradient(135deg, var(--aura-secondary), var(--aura-primary));
     color: #fff;
     box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 3s infinite;
 }
 
 .btn-primary:hover, .btn-premium:hover {
