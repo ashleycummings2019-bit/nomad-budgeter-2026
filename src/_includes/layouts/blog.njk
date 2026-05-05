@@ -19,10 +19,10 @@ layout: layouts/base.njk
                 {% endif %}
             </div>
 
-            <h1 class="blog-article__title" itemprop="headline">{{ pageTitle }}</h1>
+            <h1 class="blog-article__title" itemprop="headline">{{ pageTitle or title }}</h1>
 
-            {% if pageDescription %}
-            <p class="blog-article__subtitle" itemprop="description">{{ pageDescription }}</p>
+            {% if pageDescription or description %}
+            <p class="blog-article__subtitle" itemprop="description">{{ pageDescription or description }}</p>
             {% endif %}
         </div>
     </div>
@@ -62,8 +62,8 @@ layout: layouts/base.njk
                             {% if post.data.category %}
                             <span class="blog-tag blog-tag--sm">{{ post.data.category }}</span>
                             {% endif %}
-                            <h4>{{ post.data.pageTitle }}</h4>
-                            <p>{{ post.data.pageDescription | truncate(120) }}</p>
+                            <h4>{{ post.data.pageTitle or post.data.title }}</h4>
+                            <p>{{ (post.data.pageDescription or post.data.description) | truncate(120) }}</p>
                             <span class="blog-card__link">Read more →</span>
                         </div>
                     </a>
