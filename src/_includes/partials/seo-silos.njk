@@ -31,10 +31,10 @@
                 {% for c in cities %}
                     {% if "Visa" in c.visa and silo2_count < 4 %}
                     <a href="/cities/{{ c.slug }}/" class="silo-link">
-                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
+                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}, {{ c.country }}" loading="lazy" decoding="async">
                         <div class="silo-info">
-                            <span class="silo-name">{{ c.name }}</span>
-                            <span class="silo-meta">{{ c.visa | truncate(20) }}</span>
+                            <span class="silo-name">{{ c.name }}, {{ c.country }}</span>
+                            <span class="silo-meta">{{ c.visa | truncate(30) }}</span>
                         </div>
                     </a>
                     {% set silo2_count = silo2_count + 1 %}

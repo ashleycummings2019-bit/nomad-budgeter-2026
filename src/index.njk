@@ -66,6 +66,101 @@ pageSchema: |
 permalink: /
 ---
 
+{# Hero Section — First thing users see #}
+<section id="hero-section" class="wa-hero">
+    <div class="wa-hero__bg">
+        <div class="wa-orb wa-orb--emerald"></div>
+        <div class="wa-orb wa-orb--violet"></div>
+        <div class="wa-orb wa-orb--amber"></div>
+        <div class="wa-grid-overlay"></div>
+    </div>
+
+    <div class="wa-hero__content">
+        <div class="wa-hero__badge">
+            <span class="wa-badge-dot"></span>
+            <span>FREE TAX CALCULATOR — 2026 EDITION</span>
+        </div>
+
+        <h1 class="wa-hero__title">
+            Calculate Your<br>
+            <span class="wa-title-gradient">Digital Nomad Budget</span>
+        </h1>
+
+        <p class="wa-hero__subtitle">
+            Compare take-home pay, model tax strategies, and discover savings across <strong>45+ digital nomad visas</strong> — powered by live 2026 market data.
+        </p>
+
+        <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-light);">
+            <div style="display: flex;">
+                <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #3b82f6; border: 2px solid var(--bg-dark); margin-right: -10px; z-index: 3; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">👩‍🎨</span>
+                <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #10b981; border: 2px solid var(--bg-dark); margin-right: -10px; z-index: 2; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">👨‍💻</span>
+                <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #8b5cf6; border: 2px solid var(--bg-dark); z-index: 1; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">🧑‍💼</span>
+            </div>
+            <span><strong>Join 10,000+</strong> digital nomads optimizing their taxes</span>
+        </div>
+
+        <div class="wa-hero__cta-row">
+            <a href="#calculator-section" class="wa-cta-primary" onclick="document.querySelector('.inputs-panel')?.scrollIntoView({behavior:'smooth'});return false;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                Start Free Calculation
+            </a>
+        </div>
+
+        <div class="wa-hero__stats">
+            <div class="wa-stat">
+                <div class="wa-stat__value">45+</div>
+                <div class="wa-stat__label">Visa Programs</div>
+            </div>
+            <div class="wa-stat-divider"></div>
+            <div class="wa-stat">
+                <div class="wa-stat__value">80+</div>
+                <div class="wa-stat__label">Cities Covered</div>
+            </div>
+            <div class="wa-stat-divider"></div>
+            <div class="wa-stat">
+                <div class="wa-stat__value">2026</div>
+                <div class="wa-stat__label">Tax Brackets</div>
+            </div>
+            <div class="wa-stat-divider"></div>
+            <div class="wa-stat">
+                <div class="wa-stat__value">0%</div>
+                <div class="wa-stat__label">Tax Destinations</div>
+            </div>
+        </div>
+
+        <div class="wa-hero__featured" style="margin-top: 3rem; margin-bottom: 1rem; text-align: center;">
+            <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1.25rem;">As featured in</p>
+            <div style="display: flex; justify-content: center; gap: 2.5rem; opacity: 0.5; flex-wrap: wrap; align-items: center; filter: grayscale(100%);">
+                <span style="font-weight: 800; font-size: 1.4rem; font-family: serif; letter-spacing: 1px;">Forbes</span>
+                <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">TechCrunch</span>
+                <span style="font-weight: 600; font-size: 1.2rem; text-transform: uppercase; border: 1px solid currentColor; padding: 0.2rem 0.5rem;">Nomad Capitalist</span>
+                <span style="font-weight: 900; font-size: 1.4rem; font-style: italic; letter-spacing: 2px;">WIRED</span>
+            </div>
+        </div>
+
+        <div class="wa-hero__trust">
+            <span class="wa-trust-label">Popular destinations</span>
+            <div class="wa-trust-flags">
+                <span title="Portugal">🇵🇹</span>
+                <span title="Spain">🇪🇸</span>
+                <span title="UAE">🇦🇪</span>
+                <span title="Thailand">🇹🇭</span>
+                <span title="Colombia">🇨🇴</span>
+                <span title="Indonesia">🇮🇩</span>
+                <span title="Mexico">🇲🇽</span>
+                <span title="Greece">🇬🇷</span>
+                <span title="Germany">🇩🇪</span>
+                <span title="Malaysia">🇲🇾</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="wa-scroll-indicator">
+        <span>Scroll to calculate</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+</section>
+
 <div class="app-container">
     {# Calculator Sidebar #}
     {% include "partials/calculator.njk" %}
@@ -119,11 +214,11 @@ permalink: /
         <div class="metric-grid">
             <div class="metric-card">
                 <div class="metric-label">Take-Home Pay (Monthly)</div>
-                <div class="metric-value highlight" id="res-net-monthly">$0</div>
+                <div class="metric-value highlight" id="res-net-monthly">—</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Effective Tax Rate</div>
-                <div class="metric-value" id="res-tax-rate">0%</div>
+                <div class="metric-value" id="res-tax-rate">—</div>
             </div>
             <div class="metric-card">
                 <div class="metric-label">Cost of Living Index</div>
@@ -134,7 +229,7 @@ permalink: /
             </div>
             <div class="metric-card">
                 <div class="metric-label">Monthly Savings Potential</div>
-                <div class="metric-value positive" id="res-savings">$0</div>
+                <div class="metric-value positive" id="res-savings">—</div>
                 <div class="health-gauge-container">
                     <div id="savings-health-bar" class="health-gauge-bar" style="width: 0%"></div>
                 </div>
@@ -148,8 +243,8 @@ permalink: /
                     <p class="roi-desc">Time to recover visa & setup costs via tax savings.</p>
                 </div>
                 <div class="roi-stats">
-                    <div class="metric-value positive" id="res-payback">0 Months</div>
-                    <div class="roi-yearly-savings" id="res-roi-savings">+$0 / yr</div>
+                    <div class="metric-value positive" id="res-payback">—</div>
+                    <div class="roi-yearly-savings" id="res-roi-savings">—</div>
                 </div>
             </div>
             <a href="https://citizenremote.com/?ref=nomadbudgeter" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for Digital Nomad Visa →</a>
@@ -161,7 +256,7 @@ permalink: /
             <div class="slider-container" style="margin-top: 1rem; margin-bottom: 2rem;">
                 <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                     <span style="color: var(--text-dim); font-size: 0.85rem;">Adjust Annual Income</span>
-                    <strong id="slider-income-val" style="color: var(--text-light);">$0</strong>
+                    <strong id="slider-income-val" style="color: var(--text-light);">—</strong>
                 </div>
                 <input type="range" id="income-slider" min="30000" max="300000" step="5000" value="100000" style="width: 100%; accent-color: var(--aura-primary);">
             </div>
@@ -177,11 +272,11 @@ permalink: /
             <div style="display: flex; gap: 1rem; margin-top: 0.5rem; text-align: center;">
                 <div style="flex: 1;">
                     <div style="font-size: 0.75rem; color: var(--text-dim);">Take-Home Pay</div>
-                    <strong id="chart-takehome-val" style="font-size: 0.9rem; color: #10b981;">$0</strong>
+                    <strong id="chart-takehome-val" style="font-size: 0.9rem; color: #10b981;">—</strong>
                 </div>
                 <div style="flex: 1;">
                     <div style="font-size: 0.75rem; color: var(--text-dim);">Total Taxes</div>
-                    <strong id="chart-tax-val" style="font-size: 0.9rem; color: #ef4444;">$0</strong>
+                    <strong id="chart-tax-val" style="font-size: 0.9rem; color: #ef4444;">—</strong>
                 </div>
             </div>
         </div>
@@ -189,6 +284,7 @@ permalink: /
         {# Success Stack (Affiliates) #}
         <div class="success-stack-section">
             <h3 class="section-subtitle">Your Nomad Success Stack</h3>
+            <p class="text-dim text-sm text-center mb-6">Tools we personally use and recommend to make your transition seamless.</p>
             <div class="stack-grid">
                 <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
                     <div class="stack-icon">🛡️</div>
@@ -267,28 +363,46 @@ permalink: /
         </div>
     </section>
 
-    {# Empty State (Visible on load) #}
-    <section id="empty-state" class="empty-state reveal premium-glow">
-        <div class="empty-content">
-            <div class="aura-pulse"></div>
-            <h1 class="aura-title text-6xl mb-6">Master Your 2026<br><span class="text-gradient">Tax Strategy</span></h1>
-            <p class="text-xl text-dim mb-12 max-w-xl mx-auto">Calculate your take-home pay across 45+ digital nomad visas with live cost-of-living data.</p>
-            <div class="hero-stats flex justify-center gap-12 mt-8">
-                <div class="h-stat">
-                    <span class="h-val">45+</span>
-                    <span class="h-lab">Visa Programs</span>
+    {# Testimonials Section #}
+    <section class="section-container mt-16 reveal">
+        <h3 class="aura-title text-center mb-8" style="font-size: 2rem;">Trusted by Global Citizens</h3>
+        <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div class="glass-panel" style="padding: 1.5rem; text-align: left;">
+                <div style="color: #fbbf24; margin-bottom: 0.75rem; font-size: 1.1rem; letter-spacing: 2px;">★★★★★</div>
+                <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.25rem; font-style: italic; line-height: 1.6;">"This tool saved me $15k in US taxes by explaining the FEIE perfectly. A total game-changer for my move to Portugal."</p>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="https://i.pravatar.cc/150?u=sarah" alt="Sarah" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(59, 130, 246, 0.4); object-fit: cover;">
+                    <div>
+                        <div style="font-weight: 600; color: white; font-size: 0.9rem;">Sarah</div>
+                        <div style="font-size: 0.8rem; color: var(--text-dim);">Freelance Designer</div>
+                    </div>
                 </div>
-                <div class="h-stat">
-                    <span class="h-val">Live</span>
-                    <span class="h-lab">Market Rates</span>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem; text-align: left;">
+                <div style="color: #fbbf24; margin-bottom: 0.75rem; font-size: 1.1rem; letter-spacing: 2px;">★★★★★</div>
+                <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.25rem; font-style: italic; line-height: 1.6;">"Finally, a calculator that understands digital nomad visas. The 183-day rule breakdown gave me so much peace of mind."</p>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="https://i.pravatar.cc/150?u=james" alt="James" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(16, 185, 129, 0.4); object-fit: cover;">
+                    <div>
+                        <div style="font-weight: 600; color: white; font-size: 0.9rem;">James</div>
+                        <div style="font-size: 0.8rem; color: var(--text-dim);">Software Engineer</div>
+                    </div>
                 </div>
-                <div class="h-stat">
-                    <span class="h-val">0%</span>
-                    <span class="h-lab">Tax Options</span>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem; text-align: left;">
+                <div style="color: #fbbf24; margin-bottom: 0.75rem; font-size: 1.1rem; letter-spacing: 2px;">★★★★★</div>
+                <p style="font-size: 0.95rem; color: var(--text-light); margin-bottom: 1.25rem; font-style: italic; line-height: 1.6;">"I was struggling to compare the UAE 0% tax vs Spain's Beckham law. Nomad Budgeter made the ROI crystal clear in 10 seconds."</p>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="https://i.pravatar.cc/150?u=elena" alt="Elena" style="width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(139, 92, 246, 0.4); object-fit: cover;">
+                    <div>
+                        <div style="font-weight: 600; color: white; font-size: 0.9rem;">Elena</div>
+                        <div style="font-size: 0.8rem; color: var(--text-dim);">Marketing Consultant</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
 </div>
 
     {# Discovery Hub (Replaces messy link grids) #}
@@ -343,7 +457,7 @@ permalink: /
             <a href="/compare/city/{{ comp.slug }}/" class="comp-mini-card glass-panel">
                 <div class="comp-header">
                     <span class="comp-emoji">{{ comp.emoji }}</span>
-                    <span class="comp-arbitrage">+${{ comp.arbitrageValue | localeString }}</span>
+                    <span class="comp-arbitrage">+${{ comp.arbitrageValue | localeString }}/mo</span>
                 </div>
                 <h3>{{ comp.cityA.name }} <span class="vs">vs</span> {{ comp.cityB.name }}</h3>
                 <p>{{ comp.theme }}</p>

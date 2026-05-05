@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "partials/head.njk" %}
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/blog.css">
 
     {# Google Analytics 4 #}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
@@ -24,11 +25,9 @@
       type="text/javascript"
     ></script>
 
-    {# Inject API keys from 11ty data so they aren't hardcoded in main.js #}
+    {# Inject public config only — API keys handled server-side via /api/ proxies #}
     <script>
       window.__NB_CONFIG__ = {
-        exchangeRate: "{{ site.apiKeys.exchangeRate }}",
-        apiNinjas: "{{ site.apiKeys.apiNinjas }}",
         clerkPubKey: "{{ site.apiKeys.clerkPubKey }}"
       };
     </script>

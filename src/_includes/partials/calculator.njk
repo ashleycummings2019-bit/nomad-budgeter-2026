@@ -8,12 +8,25 @@
                     <span class="step-dot" data-step="2"></span>
                     <span class="step-dot" data-step="3"></span>
                 </div>
-                <h2 class="h3 font-heading">Financial Parameters</h2>
-                <p class="text-dim text-sm">Configure your 2026 nomad strategy.</p>
+                <h2 class="h3 font-heading">Where will you live next?</h2>
+                <p class="text-dim text-sm">Enter your income and destination — we'll run the numbers.</p>
             </header>
 
             <div class="calculator-form wizard-form">
                 <div class="wizard-step active" data-step="1">
+                    <div class="input-group">
+                        <label for="calc-nationality" class="aura-label">Citizenship</label>
+                        <div class="select-wrapper">
+                            <select id="calc-nationality" class="premium-select">
+                                <option value="US" selected>🇺🇸 United States (Optimised)</option>
+                                <option value="UK">🇬🇧 United Kingdom (Beta)</option>
+                                <option value="CA">🇨🇦 Canada (Beta)</option>
+                                <option value="AU">🇦🇺 Australia (Beta)</option>
+                                <option value="EU">🇪🇺 EU (Beta)</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="input-group">
                         <label for="calc-income" class="aura-label">Annual Gross Income</label>
                         <div class="aura-input-wrapper">
@@ -81,13 +94,14 @@
                     <div class="flex gap-4">
                         <button type="button" class="wizard-prev secondary-btn mobile-only">Back</button>
                         <button id="calculate-btn" class="premium-btn w-full">
-                            <span>Analyze Roadmap</span>
+                            <span>Calculate My Budget</span>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.16663 10H15.8333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M10 4.16663L15.8333 9.99996L10 15.8333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
                     </div>
+                    <p class="calc-disclaimer">⚠️ For informational purposes only — not professional tax advice. <a href="/disclaimer/">Full disclaimer</a>.</p>
                 </div>
             </div>
         </div>
@@ -176,21 +190,7 @@
         </div>
     </div>
 
-    <!-- Premium Lead Magnet -->
-    <div class="premium-lead-magnet reveal">
-        <div class="magnet-image">
-            <img src="/assets/images/guide-mockup.png" alt="Nomad Budgeting Guide 2026" width="280">
-        </div>
-        <div class="magnet-content">
-            <span class="badge">Exclusive 2026 Edition</span>
-            <h3>Master Global Tax Arbitrage</h3>
-            <p>Download our deep-dive into {{ city.name or 'top nomad hubs' }} and learn how to optimize your global footprint for maximum savings.</p>
-            <div class="magnet-actions">
-                <button class="cta-btn secondary">View Sample</button>
-                <button class="cta-btn primary">Get Full PDF</button>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 <script>

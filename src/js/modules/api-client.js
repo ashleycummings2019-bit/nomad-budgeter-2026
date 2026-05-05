@@ -1,6 +1,7 @@
 /**
  * api-client.js
- * Handles all network requests with timeout and caching
+ * Handles all network requests with timeout and caching.
+ * API keys are now kept server-side — calls go through /api/ proxies.
  */
 
 const CACHE_NAME = 'nb-api-cache-v1';
@@ -25,7 +26,7 @@ const fetchWithTimeout = async (url, options = {}) => {
 
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
-export const getCityData = async (city, apiKey) => {
+export const getCityData = async (city) => {
     const cacheKey = `nb_city_${city.toLowerCase().replace(/\s+/g, '_')}`;
     const cached = localStorage.getItem(cacheKey);
     
@@ -38,9 +39,7 @@ export const getCityData = async (city, apiKey) => {
     }
 
     try {
-        const response = await fetch(`https://api.api-ninjas.com/v1/city?name=${encodeURIComponent(city)}`, {
-            headers: { 'X-Api-Key': apiKey }
-        });
+        const response = await fetchWithTimeout(`/api/city-data?name=${encodeURIComponent(city)}`);
         
         if (!response.ok) {
             throw new Error(`API error: ${response.status}`);
@@ -58,12 +57,12 @@ export const getCityData = async (city, apiKey) => {
 
         return cityData;
     } catch (e) {
-        console.error('API Ninjas Error:', e);
+        console.error('City Data Error:', e);
         throw new Error('Failed to fetch city data. Please try again later.');
     }
 };
 
-export const getExchangeRates = async (apiKey) => {
+export const getExchangeRates = async () => {
     const cacheKey = 'nb_exchange_rates';
     const cached = localStorage.getItem(cacheKey);
 
@@ -76,8 +75,7 @@ export const getExchangeRates = async (apiKey) => {
     }
 
     try {
-        const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
-        const response = await fetchWithTimeout(url);
+        const response = await fetchWithTimeout('/api/exchange-rates');
         if (!response.ok) throw new Error('Failed to fetch rates');
         
         const data = await response.json();
@@ -104,4 +102,3 @@ export const getExchangeRates = async (apiKey) => {
         }
     }
 };
-

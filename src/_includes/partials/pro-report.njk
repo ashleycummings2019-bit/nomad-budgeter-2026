@@ -86,7 +86,211 @@
     </div>
 
     <div class="pro-actions">
-        <button onclick="window.print()" class="action-btn outline-btn">Download PDF Report</button>
-        <a href="mailto:expert@nomadbudgeter.com?subject=Pro%20Report%20Support" class="action-btn">Chat with a Tax Expert</a>
+        <button id="download-pdf-report" class="action-btn outline-btn">⬇ Download PDF Report</button>
     </div>
 </div>
+
+{# ═══ PDF GENERATOR SCRIPT ═══ #}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const dlBtn = document.getElementById('download-pdf-report');
+    if (!dlBtn) return;
+
+    dlBtn.addEventListener('click', () => {
+        // Gather all the live data from the pro report
+        const cityName = document.getElementById('pro-city-name')?.textContent || 'Target City';
+        const countryName = document.getElementById('pro-country-name')?.textContent || 'Target Country';
+        const localTax = document.getElementById('pro-local-tax')?.textContent || '$0';
+        const seTax = document.getElementById('pro-se-tax')?.textContent || '$0';
+        const usTax = document.getElementById('pro-us-tax')?.textContent || '$0';
+        const totalTax = document.getElementById('pro-total-tax')?.textContent || '$0';
+        const rent = document.getElementById('pro-rent')?.textContent || '$0';
+        const groceries = document.getElementById('pro-groceries')?.textContent || '$0';
+        const coworking = document.getElementById('pro-coworking')?.textContent || '$0';
+        const utilities = document.getElementById('pro-utilities')?.textContent || '$0';
+        const totalCol = document.getElementById('pro-total-col')?.textContent || '$0';
+
+        // Also grab summary data
+        const netMonthly = document.getElementById('res-net-monthly')?.textContent || '$0';
+        const taxRate = document.getElementById('res-tax-rate')?.textContent || '0%';
+        const savings = document.getElementById('res-savings')?.textContent || '$0';
+        const auraScore = document.getElementById('aura-value')?.textContent || '0';
+
+        const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+        const pdfHTML = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NomadBudgeter – ${cityName} Financial Blueprint</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&family=Manrope:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Manrope', sans-serif; background: #0a0f1a; color: #e2e8f0; padding: 0; }
+@media print {
+    body { background: #0a0f1a !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .page-break { page-break-before: always; }
+    @page { size: A4; margin: 0; }
+}
+
+.cover {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: linear-gradient(160deg, #0a0f1a 0%, #1a1145 40%, #0d2137 100%);
+    text-align: center; padding: 4rem 2rem; position: relative; overflow: hidden;
+}
+.cover::before {
+    content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent 70%); border-radius: 50%;
+}
+.cover::after {
+    content: ''; position: absolute; bottom: -100px; left: -100px; width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent 70%); border-radius: 50%;
+}
+.cover-badge { font-size: 0.75rem; letter-spacing: 3px; color: #10b981; font-weight: 700; margin-bottom: 2rem; }
+.cover h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+.cover h1 span { background: linear-gradient(135deg, #10b981, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.cover-sub { font-size: 1.2rem; color: #94a3b8; max-width: 500px; margin-bottom: 3rem; }
+.cover-meta { display: flex; gap: 2rem; font-size: 0.85rem; color: #64748b; }
+.cover-meta div { display: flex; align-items: center; gap: 0.5rem; }
+
+.report-page { min-height: 100vh; padding: 4rem 3rem; background: #0a0f1a; }
+.report-page h2 { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: #fff; }
+.section-badge { font-size: 0.7rem; letter-spacing: 2px; color: #10b981; font-weight: 700; margin-bottom: 0.5rem; display: block; }
+
+.summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+.summary-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; text-align: center; }
+.summary-card .label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+.summary-card .value { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700; color: #10b981; }
+
+.data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+.data-table th { text-align: left; padding: 1rem; color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.data-table td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.data-table td:last-child { text-align: right; font-weight: 700; color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.1rem; }
+.data-table tr.total td { border-top: 2px solid rgba(16, 185, 129, 0.3); font-weight: 700; font-size: 1.15rem; }
+.data-table tr.total td:last-child { color: #10b981; }
+
+.roadmap { margin-top: 2rem; }
+.roadmap-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; }
+.roadmap-num { flex: 0 0 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #10b981, #059669); display: flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; }
+.roadmap-body h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.roadmap-body p { font-size: 0.85rem; color: #94a3b8; }
+
+.footer-bar { padding: 2rem 3rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-bar p { font-size: 0.8rem; color: #475569; }
+.footer-bar .brand { color: #10b981; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+    <div class="cover-badge">NOMADBUDGETER.COM — 2026 PREMIUM REPORT</div>
+    <h1>Financial Blueprint:<br><span>${cityName}</span></h1>
+    <p class="cover-sub">Your personalised tax optimisation and cost-of-living analysis for relocating to ${cityName}, ${countryName}.</p>
+    <div class="cover-meta">
+        <div>📅 ${today}</div>
+        <div>📊 2026 Tax Data</div>
+        <div>🏛️ Wealth Architect Edition</div>
+    </div>
+</div>
+
+<!-- PAGE 2: EXECUTIVE SUMMARY -->
+<div class="report-page page-break">
+    <span class="section-badge">EXECUTIVE SUMMARY</span>
+    <h2>Your Financial Snapshot</h2>
+    <div class="summary-grid">
+        <div class="summary-card">
+            <div class="label">Take-Home (Monthly)</div>
+            <div class="value">${netMonthly}</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Effective Tax Rate</div>
+            <div class="value">${taxRate}</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Monthly Savings</div>
+            <div class="value">${savings}</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Vitality Score</div>
+            <div class="value">${auraScore}</div>
+        </div>
+    </div>
+
+    <span class="section-badge">TAX OPTIMIZATION STACK</span>
+    <h2>Tax Liability Breakdown</h2>
+    <table class="data-table">
+        <thead><tr><th>Category</th><th>Monthly Amount</th></tr></thead>
+        <tbody>
+            <tr><td>Local Income Tax (Digital Nomad Visa)</td><td>${localTax}</td></tr>
+            <tr><td>Social Security / Self-Employment Tax</td><td>${seTax}</td></tr>
+            <tr><td>US Federal Liability (after FEIE/FTC)</td><td>${usTax}</td></tr>
+            <tr class="total"><td>Total Effective Tax Liability</td><td>${totalTax}</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- PAGE 3: COST OF LIVING -->
+<div class="report-page page-break">
+    <span class="section-badge">COST OF LIVING ANALYSIS</span>
+    <h2>Monthly Burn Rate — ${cityName}</h2>
+    <table class="data-table">
+        <thead><tr><th>Expense</th><th>Monthly Estimate</th></tr></thead>
+        <tbody>
+            <tr><td>1BR Apartment (Central Location)</td><td>${rent}</td></tr>
+            <tr><td>Groceries & Local Dining</td><td>${groceries}</td></tr>
+            <tr><td>Co-working Space (Hot Desk)</td><td>${coworking}</td></tr>
+            <tr><td>Utilities & Fiber Internet</td><td>${utilities}</td></tr>
+            <tr class="total"><td>Estimated Monthly Burn</td><td>${totalCol}</td></tr>
+        </tbody>
+    </table>
+
+    <span class="section-badge" style="margin-top: 3rem;">STRATEGIC ROADMAP</span>
+    <h2>Your 2026 Relocation Plan</h2>
+    <div class="roadmap">
+        <div class="roadmap-item">
+            <div class="roadmap-num">01</div>
+            <div class="roadmap-body">
+                <h4>Visa Intake & Legal Review</h4>
+                <p>Contact verified immigration lawyers to initiate your 2026 residency permit application for ${countryName}.</p>
+            </div>
+        </div>
+        <div class="roadmap-item">
+            <div class="roadmap-num">02</div>
+            <div class="roadmap-body">
+                <h4>FEIE / FTC Optimization</h4>
+                <p>Schedule your physical presence test (330 days) to maximize US tax exclusion under the Foreign Earned Income Exclusion.</p>
+            </div>
+        </div>
+        <div class="roadmap-item">
+            <div class="roadmap-num">03</div>
+            <div class="roadmap-body">
+                <h4>Local Bank Account Setup</h4>
+                <p>Open a Wise multi-currency account and a local bank account 3 months prior to satisfy proof of funds requirements.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-bar page-break" style="min-height: auto; padding: 3rem;">
+    <p>Generated by <span class="brand">NomadBudgeter.com</span> — The 2026 Digital Nomad Financial Engine</p>
+    <p style="margin-top: 0.5rem;">This report is for informational purposes only and does not constitute professional tax or legal advice.</p>
+</div>
+
+</body>
+</html>`;
+
+        // Open a new window, write the HTML, trigger print (Save as PDF)
+        const printWindow = window.open('', '_blank', 'width=900,height=700');
+        printWindow.document.write(pdfHTML);
+        printWindow.document.close();
+
+        // Wait for fonts to load, then trigger print
+        setTimeout(() => {
+            printWindow.focus();
+            printWindow.print();
+        }, 800);
+    });
+});
+</script>

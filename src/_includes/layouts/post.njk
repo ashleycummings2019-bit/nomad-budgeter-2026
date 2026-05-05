@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+---
+<style>
+.post-content h2 { font-size: 2.2rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #fff; font-weight: 800; font-family: 'Outfit', sans-serif; line-height: 1.2; }
+.post-content h3 { font-size: 1.6rem; margin-top: 2rem; margin-bottom: 1rem; color: #e2e8f0; font-weight: 700; font-family: 'Outfit', sans-serif; }
+.post-content p { margin-bottom: 1.5rem; color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; }
+.post-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc; color: #cbd5e1; font-size: 1.1rem; line-height: 1.8; }
+.post-content li { margin-bottom: 0.5rem; }
+.post-content a { color: var(--aura-primary); text-decoration: none; border-bottom: 1px solid rgba(16, 185, 129, 0.4); transition: all 0.2s ease; }
+.post-content a:hover { color: #fff; border-bottom-color: var(--aura-primary); }
+.post-content strong { color: #fff; font-weight: 700; }
+.post-content blockquote { border-left: 4px solid var(--aura-primary); padding-left: 1rem; margin-bottom: 1.5rem; font-style: italic; color: #94a3b8; }
+</style>
+
+<article class="section-container mt-32 max-w-3xl mx-auto">
+  <div class="mb-8">
+    <a href="/blog/" class="text-sm font-bold text-dim hover:text-white transition-colors" style="text-decoration: none;">&larr; Back to all guides</a>
+  </div>
+  <h1 class="aura-title mb-4" style="font-size: 3rem; line-height: 1.1;">{{ title }}</h1>
+  <div class="text-dim mb-12 flex items-center gap-4 text-sm font-semibold">
+    <span>Published on {{ page.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
+    <span>•</span>
+    <span>{{ content | striptags | wordcount // 200 }} min read</span>
+  </div>
+  
+  <div class="post-content glass-panel p-8 md:p-12">
+    {{ content | safe }}
+  </div>
+
+  <div class="mt-16 p-8 glass-panel text-center" style="background: linear-gradient(135deg, rgba(10, 15, 26, 0.8), rgba(16, 185, 129, 0.05)); border: 1px solid rgba(16, 185, 129, 0.2);">
+    <h3 class="aura-title mb-4" style="font-size: 2rem;">Ready to calculate your exact nomad budget?</h3>
+    <p class="mb-8 text-dim text-lg max-w-xl mx-auto">Use our free 2026 calculator to compare taxes, cost of living, and visa ROI for 45+ global destinations.</p>
+    <a href="/#calculator-section" class="action-btn accent-bg inline-block" style="font-size: 1.1rem; padding: 1rem 2rem;" onclick="document.querySelector('.inputs-panel')?.scrollIntoView({behavior:'smooth'});">Run Your Free Calculation &rarr;</a>
+  </div>
+</article>

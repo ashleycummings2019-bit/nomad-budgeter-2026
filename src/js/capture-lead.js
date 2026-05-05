@@ -88,13 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Trigger after 30 seconds
-    setTimeout(showModal, 30000);
+    // Trigger after 45 seconds (delayed for better UX)
+    setTimeout(showModal, 45000);
 
-    // Trigger after 50% scroll
+    // Trigger after 70% scroll
     window.addEventListener('scroll', () => {
         const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        if (scrollPercent > 50) {
+        if (scrollPercent > 70) {
             showModal();
         }
     }, { passive: true });

@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+pageTitle: "Data Methodology | Nomad Budgeter"
+pageDescription: "How we calculate taxes, cost of living, and the Aura Score."
+permalink: /methodology/
+---
+<section class="section-container mt-32 reveal">
+    <div class="glass-panel" style="max-width: 800px; margin: 0 auto; padding: 3rem;">
+        <h1 class="aura-title text-center mb-8" style="font-size: 2.5rem;">Data Methodology</h1>
+        
+        <div class="prose" style="color: var(--text-light); line-height: 1.8;">
+            <p class="mb-6">At Nomad Budgeter, accuracy is our priority. We know you're making major life decisions based on this data, so we want to be completely transparent about how our engine works.</p>
+
+            <h3 class="font-heading mb-4 mt-8" style="font-size: 1.5rem; color: white;">Tax Calculations (2026 Edition)</h3>
+            <p class="mb-4">Our tax engine is manually updated to reflect the latest legislated tax brackets for 2026. This includes:</p>
+            <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-dim);">
+                <li>Digital Nomad Visa specific tax regimes (e.g., Spain's Beckham Law, Greece's 50% exemption).</li>
+                <li>Progressive income tax brackets for standard residency.</li>
+                <li>Social security contributions where applicable.</li>
+                <li>0% tax jurisdictions (e.g., UAE, Malaysia).</li>
+            </ul>
+
+            <h3 class="font-heading mb-4 mt-8" style="font-size: 1.5rem; color: white;">Cost of Living Data</h3>
+            <p class="mb-4">Cost of living (COL) figures are aggregated from multiple APIs and adjusted for recent inflation. Our estimates cover:</p>
+            <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-dim);">
+                <li><strong>Accommodation:</strong> Based on 1-bedroom apartments in city centers.</li>
+                <li><strong>Food:</strong> A mix of groceries and dining out.</li>
+                <li><strong>Workspace:</strong> Monthly co-working desk rates.</li>
+                <li><strong>Utilities & Internet:</strong> Standard monthly bills.</li>
+            </ul>
+            <p class="mb-6 text-sm text-dim"><em>Note: Lifestyle choices heavily impact COL. We provide baseline estimates for a comfortable expat standard of living.</em></p>
+
+            <h3 class="font-heading mb-4 mt-8" style="font-size: 1.5rem; color: white;">The Vitality Score (Aura)</h3>
+            <p class="mb-4">The "Vitality Score" or "Aura Score" (0-100) is our proprietary algorithm designed to grade the overall financial efficiency of a move. It balances three factors:</p>
+            <ol style="list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-dim);">
+                <li><strong>Tax Efficiency (30%):</strong> How much of your gross income you keep.</li>
+                <li><strong>Savings Power (40%):</strong> Your ability to save absolute dollars after expenses.</li>
+                <li><strong>Cost of Living Health (30%):</strong> The relative affordability of the destination.</li>
+            </ol>
+            <p class="mb-6">A score above 80 indicates an exceptional opportunity for wealth building.</p>
+
+            <div class="mt-12 text-center">
+                <a href="/#calculator-section" class="action-btn accent-bg">Run Your Numbers &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>

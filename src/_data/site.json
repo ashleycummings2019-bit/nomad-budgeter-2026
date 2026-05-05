@@ -4,13 +4,11 @@
   "ga4": "G-CLF80Q4JZJ",
   "description": "Calculate your net income, taxes, and cost of living on global Digital Nomad Visas. Updated with 2026 tax brackets for 45+ countries.",
   "tagline": "Your 2026 Digital Nomad Financial Engine",
-  "email": "hellonomadbudgeter@gmail.com",
+  "email": "hello@nomadbudgeter.com",
   "year": "2026",
   "dataLastVerified": "April 2026",
   "socialProof": "12,402 nomads",
   "apiKeys": {
-    "exchangeRate": "4fee8fc6019902b0118cd93b",
-    "apiNinjas": "w6V4eBiDD9LbVmMTaKevQ5BWZIH350AKg1AoGBYt",
     "clerkPubKey": "pk_test_Y2xlcmsuYXVyYS5kZXYk"
   },
   "affiliates": {
@@ -20,6 +18,7 @@
     "remote": { "name": "Remote.com", "url": "https://remote.com/nomad-budgeter?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Remote", "desc": "Payroll & Compliance for global teams." },
     "nomadlist": { "name": "Nomad List", "url": "https://nomadlist.com?utm_source=nomadbudgeter&utm_medium=community&utm_campaign=NB_2026_Silo", "desc": "The #1 community for digital nomads." },
     "agoda": { "name": "Agoda Stays", "url": "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia", "desc": "Best rates for monthly nomad rentals in Asia & beyond." },
-    "blueground": { "name": "Blueground", "url": "https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto", "desc": "Looking for a fully furnished apartment? Use my promo code to save on your stay with Blueground." }
+    "blueground": { "name": "Blueground", "url": "https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto", "desc": "Looking for a fully furnished apartment? Use my promo code to save on your stay with Blueground." },
+    "interactiveBrokers": { "name": "Interactive Brokers", "url": "https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php", "desc": "The best brokerage for international expats and nomads." }
   }
 }

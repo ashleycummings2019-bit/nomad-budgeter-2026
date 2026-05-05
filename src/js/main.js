@@ -41,11 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function preloadData() {
     try {
-        const config = window.__NB_CONFIG__ || {};
-        if (!config.exchangeRate) {
-            console.warn('Exchange rate API key missing');
-        }
-        state.rates = await getExchangeRates(config.exchangeRate);
+        state.rates = await getExchangeRates();
         console.log('✅ Rates preloaded');
     } catch (e) {
         console.warn('Preload failed:', e.message);
@@ -55,9 +51,9 @@ async function preloadData() {
 
 // ─── Event Listeners ───
 function initEventListeners() {
-    const calcBtn = document.getElementById('calc-btn');
-    const incomeInput = document.getElementById('gross-income');
-    const cityInput = document.getElementById('target-city');
+    const calcBtn = document.getElementById('calculate-btn');
+    const incomeInput = document.getElementById('calc-income');
+    const cityInput = document.getElementById('calc-city');
     const incomeSlider = document.getElementById('income-slider');
 
     if (calcBtn) calcBtn.addEventListener('click', () => runCalculation());
@@ -145,9 +141,19 @@ function initEventListeners() {
 async function runCalculation() {
     if (state.isCalculating) return;
     
-    const city = document.getElementById('target-city').value;
-    const income = parseFloat(document.getElementById('gross-income').value);
-    const currentCountry = document.getElementById('current-country').value;
+    const city = document.getElementById('calc-city').value;
+    const income = parseFloat(document.getElementById('calc-income').value);
+    
+    let currentCountry = 'United States';
+    const nationalitySelect = document.getElementById('calc-nationality');
+    if (nationalitySelect) {
+        const val = nationalitySelect.value;
+        if (val === 'US') currentCountry = 'United States';
+        else if (val === 'UK') currentCountry = 'United Kingdom';
+        else if (val === 'CA') currentCountry = 'Canada';
+        else if (val === 'AU') currentCountry = 'Australia';
+        else if (val === 'EU') currentCountry = 'Germany'; // default EU
+    }
 
     if (!city || !income) {
         showError('Please enter both your income and target city.');
@@ -160,16 +166,11 @@ async function runCalculation() {
     state.currentCountry = currentCountry;
 
     // Show loading state
-    const btnText = document.querySelector('#calc-btn span');
+    const btnText = document.querySelector('#calculate-btn span');
     if (btnText) btnText.textContent = 'Analyzing...';
 
     try {
-        const config = window.__NB_CONFIG__ || {};
-        if (!config.apiNinjas) {
-            throw new Error('City API key is missing. Please check configuration.');
-        }
-        
-        const data = await getCityData(city, config.apiNinjas);
+        const data = await getCityData(city);
         
         if (!data) {
             throw new Error(`Could not find data for "${city}"`);
@@ -263,6 +264,26 @@ function updateUI(data) {
     document.getElementById('aura-tax-efficiency').textContent = formatPercent(1 - data.taxRate);
     document.getElementById('aura-savings-power').textContent = formatPercent(data.monthlySavings / data.monthlyNet);
 
+    // Update PRO Report Data for PDF Generator
+    const proCityName = document.getElementById('pro-city-name');
+    if (proCityName) {
+        proCityName.textContent = state.targetCity;
+        document.getElementById('pro-country-name').textContent = state.targetCountry;
+        
+        // Taxes (Mock breakdown of total tax)
+        document.getElementById('pro-local-tax').textContent = formatCurrency(data.taxAmount / 12 * 0.7); 
+        document.getElementById('pro-se-tax').textContent = formatCurrency(data.taxAmount / 12 * 0.3); 
+        document.getElementById('pro-us-tax').textContent = '$0'; // FEIE assumption
+        document.getElementById('pro-total-tax').textContent = formatCurrency(data.taxAmount / 12);
+        
+        // COL Breakdown
+        document.getElementById('pro-rent').textContent = formatCurrency(data.monthlyCost * 0.45);
+        document.getElementById('pro-groceries').textContent = formatCurrency(data.monthlyCost * 0.25);
+        document.getElementById('pro-coworking').textContent = formatCurrency(data.monthlyCost * 0.10);
+        document.getElementById('pro-utilities').textContent = formatCurrency(data.monthlyCost * 0.20);
+        document.getElementById('pro-total-col').textContent = formatCurrency(data.monthlyCost);
+    }
+
     // Score & Bars
     const score = calculateAuraScore(data);
     animateScore(score);
@@ -271,9 +292,13 @@ function updateUI(data) {
     updateVisaCard(data);
 
     // ROI Logic
-    const roiVal = document.getElementById('roi-value');
+    const roiVal = document.getElementById('res-payback');
     if (roiVal) {
         roiVal.textContent = data.roiMonths ? `${data.roiMonths} Months` : 'Instant';
+    }
+    const roiSavings = document.getElementById('res-roi-savings');
+    if (roiSavings) {
+        roiSavings.textContent = data.taxSavings > 0 ? `Saves ${formatCurrency(data.taxSavings)}/yr` : 'No tax arbitrage';
     }
 
     // Scroll to results on mobile
@@ -305,10 +330,18 @@ function updateCommentary(score, data) {
 }
 
 function updateVisaCard(data) {
-    const link = document.getElementById('visa-link');
+    const link = document.getElementById('visa-cta');
+    const card = document.getElementById('visa-roi-card');
     if (link) {
         link.href = data.visa.url;
-        link.innerHTML = `Get My ${state.targetCountry} Visa <i class="fas fa-arrow-right"></i>`;
+        link.innerHTML = `Apply for ${state.targetCountry} Visa &rarr;`;
+    }
+    if (card) {
+        if (data.taxSavings > 0) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
     }
 }
 
