@@ -3,16 +3,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 
-<title>{{ pageTitle | default(site.name + " | " + site.tagline) }}</title>
-<meta name="description" content="{{ pageDescription | default(site.description) }}">
+<title>{{ pageTitle or title or (site.name + " | " + site.tagline) }}</title>
+<meta name="description" content="{{ pageDescription or description or site.description }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <meta name="author" content="{{ site.name }}">
 <meta name="last-modified" content="{{ site.dataLastVerified }}">
 <meta name="agd-partner-manual-verification" />
 
 {# Open Graph #}
-<meta property="og:title" content="{{ pageTitle | default(site.name) }}">
-<meta property="og:description" content="{{ pageDescription | default(site.description) }}">
+<meta property="og:title" content="{{ pageTitle or title or site.name }}">
+<meta property="og:description" content="{{ pageDescription or description or site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:image" content="{{ site.url }}{{ ogImage | default('/img/og-main.jpg') }}">
@@ -21,8 +21,8 @@
 {# Twitter Card #}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@nomadbudgeter">
-<meta name="twitter:title" content="{{ pageTitle | default(site.name) }}">
-<meta name="twitter:description" content="{{ pageDescription | default(site.description) }}">
+<meta name="twitter:title" content="{{ pageTitle or title or site.name }}">
+<meta name="twitter:description" content="{{ pageDescription or description or site.description }}">
 <meta name="twitter:image" content="{{ site.url }}{{ ogImage | default('/img/og-main.jpg') }}">
 
 {# JSON-LD Structured Data — Page-specific blocks injected via pageSchema variable #}

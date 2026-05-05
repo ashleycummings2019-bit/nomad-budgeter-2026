@@ -70,6 +70,11 @@ async function initAuth() {
                 proBtn.addEventListener('click', () => handleSubscribe('pro'));
             }
 
+            const upsellProBtn = document.getElementById('unlock-pro-btn');
+            if (upsellProBtn) {
+                upsellProBtn.addEventListener('click', () => handleSubscribe('pro'));
+            }
+
             const bizBtn = document.getElementById('btn-subscribe-biz');
             if (bizBtn) {
                 bizBtn.addEventListener('click', () => handleSubscribe('biz'));
@@ -88,12 +93,12 @@ async function initAuth() {
             }
 
             // Intercept pricing buttons for login
-            const subscribeBtns = ['btn-subscribe-pro', 'btn-subscribe-biz'];
+            const subscribeBtns = ['btn-subscribe-pro', 'btn-subscribe-biz', 'unlock-pro-btn'];
             subscribeBtns.forEach(id => {
                 const btn = document.getElementById(id);
                 if (btn) {
                     btn.addEventListener('click', () => {
-                        // Track Login Intent from Pricing
+                        // Track Login Intent from Pricing or Home
                         if (window.gtag) {
                             window.gtag('event', 'pricing_cta_click', {
                                 'plan_button': id,

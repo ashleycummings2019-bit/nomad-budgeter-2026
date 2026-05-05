@@ -17,7 +17,7 @@ layout: layouts/base.njk
   <div class="mb-8">
     <a href="/blog/" class="text-sm font-bold text-dim hover:text-white transition-colors" style="text-decoration: none;">&larr; Back to all guides</a>
   </div>
-  <h1 class="aura-title mb-4" style="font-size: 3rem; line-height: 1.1;">{{ title }}</h1>
+  <h1 class="aura-title mb-4" style="font-size: 3rem; line-height: 1.1;">{{ pageTitle or title }}</h1>
   <div class="text-dim mb-12 flex items-center gap-4 text-sm font-semibold">
     <span>Published on {{ page.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
     <span>•</span>
