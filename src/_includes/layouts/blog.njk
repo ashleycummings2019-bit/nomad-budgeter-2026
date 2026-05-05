@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="blog-article" itemscope itemtype="https://schema.org/Article">
+    <meta itemprop="author" content="Nomad Budgeter Team">
+    <meta itemprop="publisher" content="Nomad Budgeter">
+    <meta itemprop="datePublished" content="{{ date | isoDate }}">
+
+    <div class="blog-article__hero">
+        <div class="aura-container">
+            <div class="blog-article__meta">
+                {% if category %}
+                <span class="blog-tag">{{ category }}</span>
+                {% endif %}
+                <span class="blog-date">{{ date | formatDate }}</span>
+                {% if readingTime %}
+                <span class="blog-reading-time">{{ readingTime }} min read</span>
+                {% endif %}
+            </div>
+
+            <h1 class="blog-article__title" itemprop="headline">{{ pageTitle }}</h1>
+
+            {% if pageDescription %}
+            <p class="blog-article__subtitle" itemprop="description">{{ pageDescription }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="aura-container">
+        <div class="blog-article__body" itemprop="articleBody">
+            {{ content | safe }}
+        </div>
+
+        {# Author Card #}
+        <div class="blog-author-card glass-panel">
+            <div class="blog-author-card__info">
+                <div class="blog-author-card__avatar">🌍</div>
+                <div>
+                    <strong class="blog-author-card__name">Nomad Budgeter Team</strong>
+                    <p class="blog-author-card__bio">We help digital nomads make smarter financial decisions with real data, not guesswork. <a href="/methodology/">See our methodology</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        {# CTA — Calculator #}
+        <div class="blog-cta glass-panel">
+            <h3>🧮 Run the numbers yourself</h3>
+            <p>Our free calculator compares take-home pay, taxes, and cost of living across 80+ cities and 45+ visa programs.</p>
+            <a href="/" class="action-btn accent-bg">Start Free Calculation →</a>
+        </div>
+
+        {# Related Articles #}
+        {% if collections.blogPosts.length > 1 %}
+        <div class="blog-related">
+            <h3>Keep reading</h3>
+            <div class="blog-related__grid">
+                {% for post in collections.blogPosts | reverse %}
+                    {% if post.url !== page.url %}
+                    <a href="{{ post.url }}" class="blog-card glass-panel">
+                        <div class="blog-card__body">
+                            {% if post.data.category %}
+                            <span class="blog-tag blog-tag--sm">{{ post.data.category }}</span>
+                            {% endif %}
+                            <h4>{{ post.data.pageTitle }}</h4>
+                            <p>{{ post.data.pageDescription | truncate(120) }}</p>
+                            <span class="blog-card__link">Read more →</span>
+                        </div>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</article>

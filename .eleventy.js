@@ -79,6 +79,19 @@ module.exports = function (eleventyConfig) {
     return date.toLocaleDateString("en-US", { year: 'numeric', month: 'short', day: 'numeric' });
   });
 
+  // ISO date for structured data
+  eleventyConfig.addFilter("isoDate", function(dateString) {
+    if (!dateString) return "";
+    return new Date(dateString).toISOString();
+  });
+
+  // Truncate string to N characters
+  eleventyConfig.addFilter("truncate", function(str, len) {
+    if (!str) return "";
+    if (str.length <= len) return str;
+    return str.substring(0, len).replace(/\s+\S*$/, '') + '…';
+  });
+
   // Get current year
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -125,6 +138,13 @@ module.exports = function (eleventyConfig) {
   // Collection of all visa guide pages
   eleventyConfig.addCollection("visaPages", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/visas/**/*.njk");
+  });
+
+  // Collection of all blog posts (sorted by date)
+  eleventyConfig.addCollection("blogPosts", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.njk")
+      .filter(item => !item.data.eleventyExcludeFromCollections && item.data.date)
+      .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
   });
 
   // ─── Config ───

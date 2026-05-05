@@ -1,0 +1,27 @@
+---
+permalink: /blog/feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Nomad Budgeter Blog</title>
+        <link>{{ site.url }}/blog/</link>
+        <description>Tax strategies, visa guides, and cost-of-living analysis for digital nomads — backed by real data.</description>
+        <language>en-us</language>
+        <lastBuildDate>{% buildTime %}</lastBuildDate>
+        <atom:link href="{{ site.url }}/blog/feed.xml" rel="self" type="application/rss+xml"/>
+        {% for post in collections.blogPosts | reverse %}
+        <item>
+            <title>{{ post.data.pageTitle }}</title>
+            <link>{{ site.url }}{{ post.url }}</link>
+            <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+            <pubDate>{{ post.data.date }}</pubDate>
+            <description>{{ post.data.pageDescription }}</description>
+            {% if post.data.category %}
+            <category>{{ post.data.category }}</category>
+            {% endif %}
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

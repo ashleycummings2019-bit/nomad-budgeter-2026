@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+pageTitle: "Nomad Finance Blog — Tax Tips, Visa Guides & Budget Strategies"
+pageDescription: "Expert guides on digital nomad taxes, cost of living, visa applications, and financial planning for remote workers abroad."
+permalink: /blog/
+---
+
+<div class="aura-container section-container">
+    <div class="blog-listing__header">
+        <span class="badge-2026">Blog</span>
+        <h1 class="h2 font-heading" style="margin-top: 1rem; margin-bottom: 0.5rem;">Nomad Finance Intel</h1>
+        <p class="text-dim" style="font-size: 1.1rem; max-width: 620px; line-height: 1.7;">
+            Tax strategies, visa deep-dives, and cost-of-living analysis — backed by the same data that powers our calculator.
+        </p>
+    </div>
+
+    {# Category Filter #}
+    <div class="blog-filters" style="margin: 2rem 0;">
+        <button class="blog-filter-btn active" data-filter="all">All</button>
+        <button class="blog-filter-btn" data-filter="tax-guide">Tax Guides</button>
+        <button class="blog-filter-btn" data-filter="visa-guide">Visa Guides</button>
+        <button class="blog-filter-btn" data-filter="cost-of-living">Cost of Living</button>
+        <button class="blog-filter-btn" data-filter="comparison">Comparisons</button>
+    </div>
+
+    <div class="blog-grid">
+        {% for post in collections.blogPosts | reverse %}
+        <a href="{{ post.url }}" class="blog-card glass-panel" data-category="{{ post.data.category | lower | replace(' ', '-') }}">
+            <div class="blog-card__body">
+                <div class="blog-card__meta">
+                    {% if post.data.category %}
+                    <span class="blog-tag">{{ post.data.category }}</span>
+                    {% endif %}
+                    <span class="blog-date">{{ post.data.date | formatDate }}</span>
+                </div>
+                <h2 class="blog-card__title">{{ post.data.pageTitle }}</h2>
+                <p class="blog-card__excerpt">{{ post.data.pageDescription }}</p>
+                <span class="blog-card__link">Read article →</span>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+
+    {# CTA at bottom #}
+    <div class="blog-cta glass-panel" style="margin-top: 3rem;">
+        <h3>📬 Get nomad finance tips in your inbox</h3>
+        <p>Weekly tax insights, visa updates, and cost-of-living data — no spam, unsubscribe anytime.</p>
+        <a href="/blueprint/" class="action-btn accent-bg">Get Free PDF Guide →</a>
+    </div>
+</div>
+
+<script>
+// Simple client-side category filter
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.blog-filter-btn');
+    const cards = document.querySelectorAll('.blog-card[data-category]');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            cards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
