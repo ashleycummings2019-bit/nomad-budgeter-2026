@@ -32,6 +32,16 @@ async function initAuth() {
                 const billingToggle = document.getElementById('billing-toggle');
                 const cycle = billingToggle && billingToggle.classList.contains('annual') ? 'annual' : 'monthly';
                 
+                // Track Checkout Intent
+                if (window.gtag) {
+                    window.gtag('event', 'begin_checkout', {
+                        'plan': plan,
+                        'cycle': cycle,
+                        'value': plan === 'pro' ? (cycle === 'annual' ? 180 : 19) : (cycle === 'annual' ? 948 : 99),
+                        'currency': 'USD'
+                    });
+                }
+
                 try {
                     const response = await fetch('/api/create-checkout', {
                         method: 'POST',
@@ -82,7 +92,16 @@ async function initAuth() {
             subscribeBtns.forEach(id => {
                 const btn = document.getElementById(id);
                 if (btn) {
-                    btn.addEventListener('click', () => window.Clerk.openSignIn());
+                    btn.addEventListener('click', () => {
+                        // Track Login Intent from Pricing
+                        if (window.gtag) {
+                            window.gtag('event', 'pricing_cta_click', {
+                                'plan_button': id,
+                                'status': 'logged_out'
+                            });
+                        }
+                        window.Clerk.openSignIn();
+                    });
                 }
             });
         }
