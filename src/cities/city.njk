@@ -55,6 +55,16 @@ eleventyComputed:
     }
 ---
 
+{# Inject static city data for client-side fallback when API is unavailable #}
+<script>
+window.__NB_STATIC_CITY__ = {
+    name: "{{ city.name }}",
+    country: "{{ city.country }}",
+    population: {{ city.population | default(500000) }},
+    is_capital: {{ 'true' if city.is_capital else 'false' }}
+};
+</script>
+
 {% include "partials/breadcrumbs.njk" %}
 
 {# City Hero Section #}

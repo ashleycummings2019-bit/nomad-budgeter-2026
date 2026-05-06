@@ -115,11 +115,34 @@ async function initAuth() {
     }
 }
 
-// Wait for Clerk to be available on window
-if (window.Clerk) {
-    initAuth();
+// Wait for Clerk to be available on window — with robust retry
+function waitForClerk(maxAttempts = 50) {
+    let attempts = 0;
+    const check = () => {
+        if (window.Clerk) {
+            initAuth();
+            return;
+        }
+        attempts++;
+        if (attempts < maxAttempts) {
+            setTimeout(check, 200);
+        } else {
+            console.warn('Clerk did not load in time — attaching fallback handlers');
+            // Fallback: wire unlock-pro-btn to redirect to pricing
+            const fallbackBtn = document.getElementById('unlock-pro-btn');
+            if (fallbackBtn && !fallbackBtn._hasHandler) {
+                fallbackBtn.addEventListener('click', () => {
+                    window.location.href = '/pricing/';
+                });
+                fallbackBtn._hasHandler = true;
+            }
+        }
+    };
+    check();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => waitForClerk());
 } else {
-    window.addEventListener('load', () => {
-        if (window.Clerk) initAuth();
-    });
+    waitForClerk();
 }

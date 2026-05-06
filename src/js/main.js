@@ -177,12 +177,17 @@ async function runCalculation() {
         }
 
         state.cityData = data;
-        state.targetCountry = data.country; // Ideally mapping code -> name if needed
+        state.targetCountry = data.country;
         
         const results = calculateResults();
         updateUI(results);
         
-        showToast(`Analyzed ${city} successfully!`, 'success');
+        // Show appropriate toast based on data quality
+        if (data.country === 'Unknown') {
+            showToast(`Using estimated data for ${city}. Results may be approximate.`, 'warning');
+        } else {
+            showToast(`Analyzed ${city} successfully!`, 'success');
+        }
 
         // Track Event
         if (window.gtag) {
