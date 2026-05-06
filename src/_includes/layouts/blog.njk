@@ -50,6 +50,35 @@ layout: layouts/base.njk
             <a href="/" class="action-btn accent-bg">Start Free Calculation →</a>
         </div>
 
+        {# Nomad Toolkit — Affiliate Strip #}
+        <div class="blog-toolkit glass-panel" style="margin-top:2rem;padding:1.5rem 2rem;">
+            <h3 style="font-size:1rem;font-weight:700;margin-bottom:1rem;">🧰 Nomad Toolkit</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+                <a href="{{ site.affiliates.safetywing.url | affUrl('blog') }}" target="_blank" rel="sponsored noopener" style="text-decoration:none;color:var(--text-main);display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);transition:all 0.2s;">
+                    <span style="font-size:1.4rem;">🛡️</span>
+                    <div>
+                        <div style="font-weight:600;font-size:0.85rem;">SafetyWing</div>
+                        <div class="text-dim" style="font-size:0.75rem;">Nomad Insurance</div>
+                    </div>
+                </a>
+                <a href="{{ site.affiliates.wise.url | affUrl('blog') }}" target="_blank" rel="sponsored noopener" style="text-decoration:none;color:var(--text-main);display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);transition:all 0.2s;">
+                    <span style="font-size:1.4rem;">💸</span>
+                    <div>
+                        <div style="font-weight:600;font-size:0.85rem;">Wise</div>
+                        <div class="text-dim" style="font-size:0.75rem;">Multi-Currency Account</div>
+                    </div>
+                </a>
+                <a href="{{ site.affiliates.interactiveBrokers.url | affUrl('blog') }}" target="_blank" rel="sponsored noopener" style="text-decoration:none;color:var(--text-main);display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);transition:all 0.2s;">
+                    <span style="font-size:1.4rem;">📈</span>
+                    <div>
+                        <div style="font-weight:600;font-size:0.85rem;">Interactive Brokers</div>
+                        <div class="text-dim" style="font-size:0.75rem;">Expat Investing</div>
+                    </div>
+                </a>
+            </div>
+            <p class="text-dim" style="font-size:0.7rem;margin-top:10px;opacity:0.6;">We may earn a commission at no extra cost to you.</p>
+        </div>
+
         {# Related Articles #}
         {% if collections.blogPosts.length > 1 %}
         <div class="blog-related">
@@ -74,3 +103,25 @@ layout: layouts/base.njk
         {% endif %}
     </div>
 </article>
+
+{# FAQ Schema #}
+{% if faqs %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.question }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.answer | replace('"', '\\"') | safe }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

@@ -1,6 +1,6 @@
 /**
- * dashboard.js — Logic for the Residency Monitor (v3.0)
- * Updated to work with the radial gauge + timeline UI
+ * dashboard.js — Days Tracker Dashboard (v4.0)
+ * Wires into days-tracker.js for multi-country residency monitoring
  */
 
 async function initDashboard() {
@@ -8,36 +8,8 @@ async function initDashboard() {
     if (!user) return;
 
     const email = user.primaryEmailAddress.emailAddress;
-
-    // New selectors matching the viral dashboard overhaul
-    const gaugeProgress = document.querySelector('.gauge-progress');
-    const gaugeValue = document.querySelector('.gauge-value');
-    const gaugeLabel = document.querySelector('.gauge-label');
-    const insightPill = document.querySelector('.insight-pill');
-    const warningText = document.querySelector('.stat-value.warning-text');
-    const tripTimeline = document.querySelector('.trip-timeline');
-    const locationName = document.querySelector('.location-name');
-    const visaBadge = document.querySelector('.visa-badge');
-    const premiumFlag = document.querySelector('.premium-flag');
-    const taxSavingsEl = document.querySelector('.text-emerald');
-
-    // Country -> flag code mapping
-    const flagMap = {
-        'portugal': 'pt', 'spain': 'es', 'united arab emirates': 'ae',
-        'uae': 'ae', 'thailand': 'th', 'germany': 'de', 'france': 'fr',
-        'italy': 'it', 'united kingdom': 'gb', 'uk': 'gb', 'japan': 'jp',
-        'south korea': 'kr', 'mexico': 'mx', 'colombia': 'co',
-        'brazil': 'br', 'indonesia': 'id', 'malaysia': 'my',
-        'vietnam': 'vn', 'greece': 'gr', 'croatia': 'hr',
-        'georgia': 'ge', 'turkey': 'tr', 'czechia': 'cz',
-        'poland': 'pl', 'romania': 'ro', 'hungary': 'hu',
-        'argentina': 'ar', 'chile': 'cl', 'peru': 'pe',
-        'canada': 'ca', 'australia': 'au', 'new zealand': 'nz'
-    };
-
-    function getFlagCode(country) {
-        return flagMap[country.toLowerCase()] || 'un';
-    }
+    let isPro = false;
+    let cachedLogs = [];
 
     async function fetchLogs() {
         try {
@@ -48,8 +20,15 @@ async function initDashboard() {
                     'x-user-email': email 
                 }
             });
-            const logs = await res.json();
-            renderLogs(logs);
+            cachedLogs = await res.json();
+
+            // Render the multi-country Days Tracker (from days-tracker.js)
+            if (window.NB_DaysTracker) {
+                window.NB_DaysTracker.renderDaysTracker(cachedLogs, isPro);
+            }
+
+            // Also render the travel timeline
+            renderTimeline(cachedLogs);
         } catch (err) {
             console.error('Failed to fetch logs:', err);
         }
@@ -58,134 +37,89 @@ async function initDashboard() {
     async function checkSubscription() {
         try {
             const token = await window.Clerk.session.getToken();
+            // Check for Pro via Clerk metadata
+            const meta = user.publicMetadata || {};
+            if (meta.plan === 'pro' || meta.plan === 'business') {
+                isPro = true;
+                document.body.classList.add('is-pro-tier');
+            }
+
+            // Check for Business tier API access
             const res = await fetch(`/api/v1/cities?page=1&limit=1`, {
                 headers: { 
                     'Authorization': `Bearer ${token}`,
                     'x-user-email': email 
                 }
             });
-            if (res.status === 403) {
-                console.log('User is on Free/Pro Tier (No B2B API Access)');
-            } else if (res.ok) {
-                console.log('User is on Business Tier');
+            if (res.ok) {
                 document.body.classList.add('is-business-tier');
+                isPro = true;
             }
         } catch (err) {
             console.error('Failed to check subscription:', err);
         }
     }
 
-    function renderLogs(records) {
-        const countryTotals = {};
-        const sortedRecords = [...records].sort((a, b) => {
-            return new Date(b.fields.EntryDate) - new Date(a.fields.EntryDate);
-        });
+    function renderTimeline(records) {
+        const tripTimeline = document.querySelector('.trip-timeline');
+        if (!tripTimeline) return;
 
-        // Build country totals
-        records.forEach(record => {
+        const flagMap = {
+            'portugal': 'pt', 'spain': 'es', 'united arab emirates': 'ae',
+            'uae': 'ae', 'thailand': 'th', 'germany': 'de', 'france': 'fr',
+            'italy': 'it', 'united kingdom': 'gb', 'uk': 'gb', 'japan': 'jp',
+            'south korea': 'kr', 'mexico': 'mx', 'colombia': 'co',
+            'brazil': 'br', 'indonesia': 'id', 'malaysia': 'my',
+            'vietnam': 'vn', 'greece': 'gr', 'croatia': 'hr',
+            'georgia': 'ge', 'turkey': 'tr', 'czechia': 'cz',
+            'poland': 'pl', 'romania': 'ro', 'hungary': 'hu',
+            'argentina': 'ar', 'chile': 'cl', 'peru': 'pe',
+            'canada': 'ca', 'australia': 'au', 'new zealand': 'nz'
+        };
+        const getFlag = c => flagMap[c.toLowerCase()] || 'un';
+
+        const sorted = [...records].sort((a, b) =>
+            new Date(b.fields.EntryDate) - new Date(a.fields.EntryDate)
+        );
+
+        tripTimeline.innerHTML = '';
+        sorted.forEach((record, index) => {
             const f = record.fields;
             const entry = new Date(f.EntryDate);
-            const exit = f.ExitDate ? new Date(f.ExitDate) : new Date();
-            const days = Math.max(1, Math.ceil((exit - entry) / (1000 * 60 * 60 * 24)) + 1);
-            countryTotals[f.Country] = (countryTotals[f.Country] || 0) + days;
+            const exit = f.ExitDate ? new Date(f.ExitDate) : null;
+            const days = exit 
+                ? Math.max(1, Math.ceil((exit - entry) / 864e5) + 1)
+                : Math.max(1, Math.ceil((new Date() - entry) / 864e5) + 1);
+            const isCurrent = !exit || exit >= new Date();
+            const isLast = index === sorted.length - 1;
+
+            const item = document.createElement('div');
+            item.className = `trip-log-item${isCurrent ? ' active' : ''}`;
+            item.innerHTML = `
+                <div class="trip-status">
+                    <div class="status-dot${isCurrent ? '' : ' dimmed'}"></div>
+                    ${!isLast ? '<div class="status-line"></div>' : ''}
+                </div>
+                <div class="trip-info-card">
+                    <div class="trip-meta">
+                        <img src="https://flagcdn.com/w40/${getFlag(f.Country)}.png" alt="${f.Country}" class="mini-flag">
+                        <span class="trip-country">${f.Country}</span>
+                        <span class="trip-badge${isCurrent ? ' current' : ''}">${isCurrent ? 'Current' : 'Completed'}</span>
+                    </div>
+                    <div class="trip-dates">
+                        <span>${entry.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                        <span class="date-arrow">&rarr;</span>
+                        <span>${exit ? exit.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'Present'}</span>
+                    </div>
+                    <div class="trip-days">${days} Days</div>
+                </div>
+            `;
+            tripTimeline.appendChild(item);
         });
-
-        // Render trip timeline
-        if (tripTimeline) {
-            tripTimeline.innerHTML = '';
-            sortedRecords.forEach((record, index) => {
-                const f = record.fields;
-                const entry = new Date(f.EntryDate);
-                const exit = f.ExitDate ? new Date(f.ExitDate) : null;
-                const days = exit 
-                    ? Math.max(1, Math.ceil((exit - entry) / (1000 * 60 * 60 * 24)) + 1)
-                    : Math.max(1, Math.ceil((new Date() - entry) / (1000 * 60 * 60 * 24)) + 1);
-                const isCurrent = !exit || exit >= new Date();
-                const flagCode = getFlagCode(f.Country);
-                const isLast = index === sortedRecords.length - 1;
-
-                const item = document.createElement('div');
-                item.className = `trip-log-item${isCurrent ? ' active' : ''}`;
-                item.innerHTML = `
-                    <div class="trip-status">
-                        <div class="status-dot${isCurrent ? '' : ' dimmed'}"></div>
-                        ${!isLast ? '<div class="status-line"></div>' : ''}
-                    </div>
-                    <div class="trip-info-card">
-                        <div class="trip-meta">
-                            <img src="https://flagcdn.com/w40/${flagCode}.png" alt="${f.Country}" class="mini-flag">
-                            <span class="trip-country">${f.Country}</span>
-                            <span class="trip-badge${isCurrent ? ' current' : ''}">${isCurrent ? 'Current' : 'Completed'}</span>
-                        </div>
-                        <div class="trip-dates">
-                            <span>${entry.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-                            <span class="date-arrow">&rarr;</span>
-                            <span>${exit ? exit.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'Present'}</span>
-                        </div>
-                        <div class="trip-days">${days} Days</div>
-                    </div>
-                `;
-                tripTimeline.appendChild(item);
-            });
-        }
-
-        // Update gauge with the top country
-        const maxCountry = Object.entries(countryTotals).sort((a, b) => b[1] - a[1])[0] || ['None', 0];
-        updateGauge(maxCountry[1], maxCountry[0]);
     }
 
-    function updateGauge(totalDays, countryName) {
-        const threshold = 183;
-        const circumference = 2 * Math.PI * 45; // r=45 from SVG
-        const fraction = Math.min(totalDays / threshold, 1);
-        const dashLength = fraction * circumference;
-        const dashGap = circumference - dashLength;
-
-        // Animate gauge ring
-        if (gaugeProgress) {
-            gaugeProgress.style.strokeDasharray = `${dashLength}, ${dashGap}`;
-        }
-
-        // Update center number
-        if (gaugeValue) gaugeValue.textContent = totalDays;
-        if (gaugeLabel) gaugeLabel.textContent = 'Days';
-
-        // Update remaining days
-        const remaining = Math.max(0, threshold - totalDays);
-        if (warningText) {
-            warningText.textContent = `${remaining} Days`;
-            if (remaining <= 30) {
-                warningText.style.color = '#ef4444';
-            } else if (remaining <= 60) {
-                warningText.style.color = '#f59e0b';
-            }
-        }
-
-        // Update insight pill
-        if (insightPill) {
-            if (remaining > 0) {
-                insightPill.innerHTML = `⚠️ Resident status triggered in <strong>${remaining} days</strong>`;
-            } else {
-                insightPill.innerHTML = `🚨 <strong>THRESHOLD REACHED</strong>. You are likely a tax resident.`;
-                insightPill.style.background = 'rgba(239, 68, 68, 0.1)';
-                insightPill.style.color = '#ef4444';
-                insightPill.style.borderColor = 'rgba(239, 68, 68, 0.2)';
-            }
-        }
-
-        // Update location display if we have a top country
-        if (countryName && countryName !== 'None') {
-            const flagCode = getFlagCode(countryName);
-            if (locationName) locationName.textContent = countryName;
-            if (premiumFlag) {
-                premiumFlag.src = `https://flagcdn.com/w80/${flagCode}.png`;
-                premiumFlag.alt = countryName;
-            }
-        }
-    }
-
-    // Initial checks
-    checkSubscription();
+    // Run subscription check first, then fetch logs (so isPro is set)
+    await checkSubscription();
     fetchLogs();
 
     // ─── Modal Logic ───

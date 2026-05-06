@@ -60,6 +60,27 @@ permalink: /compare/
         </div>
     </div>
 
+    {# Showdown Deep Dives (Rich, editorial comparisons) #}
+    <div class="mb-24">
+        <h2 class="aura-title mb-4 text-center">🏆 Showdown Deep Dives</h2>
+        <p class="text-dim text-center text-small mb-8 max-800 mx-auto">Our most detailed analyses — including tax regimes, visa breakdowns, FAQs, and data-backed verdicts for the world's top nomad hubs.</p>
+        <div class="stack-grid">
+        {% for sdSlug in showdowns | keys %}
+            {% set sd = showdowns[sdSlug] %}
+            <a href="/compare/showdown/{{ sd.slug }}/" class="stack-item glass-panel hub-card" style="border-left:3px solid var(--primary);">
+                <div class="hub-icon">{{ sd.emoji_a }}{{ sd.emoji_b }}</div>
+                <div class="hub-info">
+                    <div class="hub-name">{{ sd.city_a }} vs. {{ sd.city_b }}</div>
+                    <div class="hub-desc">{{ sd.subtitle }}</div>
+                    <div style="margin-top:0.5rem;display:inline-block;padding:0.2rem 0.5rem;background:rgba(108,143,255,0.1);color:var(--primary);border-radius:4px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">
+                        Deep Dive · {{ sd.last_verified }}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+
     {# City vs City Comparisons #}
     <div class="mb-24">
         <h2 class="aura-title mb-8 text-center">Top City vs. City Comparisons</h2>

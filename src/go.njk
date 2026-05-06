@@ -1,0 +1,151 @@
+---
+layout: layouts/base.njk
+pageTitle: "Claim Your Nomad Arbitrage | Nomad Budgeter 2026"
+pageDescription: "Welcome from social! Calculate your 2026 tax savings and cost of living arbitrage in seconds."
+permalink: /go/
+---
+
+<style>
+    :root {
+        --viral-accent: #8b5cf6;
+    }
+    .viral-hero {
+        padding: 4rem 1.5rem 2rem;
+        text-align: center;
+        background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+    }
+    .viral-badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(139, 92, 246, 0.1);
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        border-radius: 100px;
+        color: #a78bfa;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+    .viral-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #fff, #a78bfa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .viral-subtitle {
+        color: var(--text-dim);
+        font-size: 1.1rem;
+        max-width: 500px;
+        margin: 0 auto 2.5rem;
+    }
+    .viral-cities-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+    .viral-city-card {
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        text-align: left;
+    }
+    .viral-city-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+    .viral-city-card .tax-gain {
+        color: #10b981;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+    .cta-container {
+        position: sticky;
+        bottom: 2rem;
+        z-index: 100;
+        padding: 0 1.5rem;
+    }
+    .floating-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 1.25rem;
+        background: var(--viral-accent);
+        color: white;
+        text-decoration: none;
+        border-radius: 16px;
+        font-weight: 700;
+        box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
+        transition: transform 0.2s;
+    }
+    .floating-cta:active {
+        transform: scale(0.98);
+    }
+</style>
+
+<section class="viral-hero">
+    <div class="viral-badge">As Seen on Social</div>
+    <h1 class="viral-title">Find Your 2026<br>Tax Arbitrage</h1>
+    <p class="viral-subtitle">Stop guessing. See exactly how much you save by moving your tax residency this year.</p>
+
+    <div class="viral-cities-grid">
+        <div class="viral-city-card">
+            <span style="font-size: 1.5rem;">🇵🇹</span>
+            <h3>Lisbon</h3>
+            <div class="tax-gain">+ $1,420/mo</div>
+        </div>
+        <div class="viral-city-card">
+            <span style="font-size: 1.5rem;">🇪🇸</span>
+            <h3>Valencia</h3>
+            <div class="tax-gain">+ $1,150/mo</div>
+        </div>
+        <div class="viral-city-card">
+            <span style="font-size: 1.5rem;">🇦🇪</span>
+            <h3>Dubai</h3>
+            <div class="tax-gain">+ $2,800/mo</div>
+        </div>
+        <div class="viral-city-card">
+            <span style="font-size: 1.5rem;">🇹🇭</span>
+            <h3>Bangkok</h3>
+            <div class="tax-gain">+ $980/mo</div>
+        </div>
+    </div>
+</section>
+
+<div class="app-container" style="padding-top: 0;">
+    {# Primary Calculator #}
+    {% include "partials/calculator.njk" %}
+    
+    {# Mini Results (Simplified for Viral Traffic) #}
+    <div id="results-placeholder" style="padding: 2rem; text-align: center; border: 2px dashed rgba(255,255,255,0.1); border-radius: 24px; margin-top: 2rem;">
+        <p style="color: var(--text-dim);">Enter your income above to see your<br><strong>2026 Arbitrage Score</strong></p>
+    </div>
+
+    {# Results Panel (Shared from Index) #}
+    <section id="results-panel" class="glass-panel hidden" style="margin-top: 2rem;">
+         {# We'll use the same results panel as the homepage #}
+         <div class="results-header">
+            <h2 class="aura-title">Your Analysis</h2>
+         </div>
+         {# ... rest is populated by main.js ... #}
+    </section>
+</div>
+
+<div class="cta-container">
+    <a href="#calculator-section" class="floating-cta" onclick="document.querySelector('.inputs-panel')?.scrollIntoView({behavior:'smooth'});return false;">
+        Calculate My Savings Now
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+</div>
+
+{# Lead Magnet for Viral Visitors #}
+<section class="section-container mt-16">
+    {% include "partials/lead-magnet.njk" %}
+</section>

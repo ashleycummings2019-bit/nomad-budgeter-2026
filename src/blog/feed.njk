@@ -13,11 +13,11 @@ eleventyExcludeFromCollections: true
         <atom:link href="{{ site.url }}/blog/feed.xml" rel="self" type="application/rss+xml"/>
         {% for post in collections.blogPosts | reverse %}
         <item>
-            <title>{{ post.data.pageTitle }}</title>
+            <title>{{ post.data.pageTitle or post.data.title }}</title>
             <link>{{ site.url }}{{ post.url }}</link>
             <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
             <pubDate>{{ post.data.date }}</pubDate>
-            <description>{{ post.data.pageDescription }}</description>
+            <description>{{ post.data.pageDescription or post.data.description }}</description>
             {% if post.data.category %}
             <category>{{ post.data.category }}</category>
             {% endif %}

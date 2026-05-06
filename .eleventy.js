@@ -123,7 +123,28 @@ module.exports = function (eleventyConfig) {
     return `/_vercel/image?url=${encodedUrl}&w=${width}&q=${quality}`;
   });
 
+  // Affiliate URL with page-context UTM tracking
+  // Usage: {{ site.affiliates.wise.url | affUrl("showdown") }}
+  eleventyConfig.addFilter("affUrl", function (baseUrl, placement) {
+    if (!baseUrl) return "";
+    const sep = baseUrl.includes("?") ? "&" : "?";
+    return `${baseUrl}${sep}utm_content=${placement || "general"}`;
+  });
+
+  // Object keys filter for iterating showdown slugs in Nunjucks
+  eleventyConfig.addFilter("keys", obj => obj ? Object.keys(obj) : []);
+
+  // Object-aware length (Nunjucks only counts arrays natively)
+  eleventyConfig.addFilter("objLength", obj =>
+    Array.isArray(obj) ? obj.length : Object.keys(obj || {}).length
+  );
+
   // ─── Collections ───
+
+  // Collection of all showdown pages (rich city-vs-city deep dives)
+  eleventyConfig.addCollection("showdownPages", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/compare/showdown.njk");
+  });
 
   // Collection of all city pages
   eleventyConfig.addCollection("cityPages", function (collectionApi) {
@@ -142,7 +163,7 @@ module.exports = function (eleventyConfig) {
 
   // Collection of all blog posts (sorted by date)
   eleventyConfig.addCollection("blogPosts", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.njk")
+    return collectionApi.getFilteredByGlob(["src/blog/*.njk", "src/blog/*.md"])
       .filter(item => !item.data.eleventyExcludeFromCollections && item.data.date)
       .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
   });

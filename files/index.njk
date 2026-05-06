@@ -1,0 +1,222 @@
+---
+layout: layouts/showdown.njk
+permalink: /compare/
+title: City Showdowns — Digital Nomad Comparisons 2026
+description: Side-by-side city comparisons for digital nomads. Real 2026 tax rates, verified cost of living data, and visa requirements for every major nomad destination.
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Showdowns — Digital Nomad Comparisons 2026 | NomadBudgeter</title>
+  <meta name="description" content="Side-by-side city comparisons for digital nomads. Real 2026 tax rates, verified cost of living data, and visa requirements for every major nomad destination.">
+  <link rel="canonical" href="https://nomadbudgeter.com/compare/">
+  <meta property="og:title" content="City Showdowns — Digital Nomad City Comparisons 2026 | NomadBudgeter">
+  <meta property="og:description" content="Side-by-side city comparisons for digital nomads. Real 2026 data.">
+  <meta property="og:url" content="https://nomadbudgeter.com/compare/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@nomadbudgeter">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aura-bg: #080c14;
+      --aura-surface: rgba(255,255,255,0.04);
+      --aura-border: rgba(255,255,255,0.08);
+      --aura-text: #e8edf5;
+      --aura-muted: #8a94a8;
+      --aura-accent: #6c8fff;
+      --aura-green: #3dffa0;
+      --aura-amber: #ffb740;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--aura-bg);
+      color: var(--aura-text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 50% at 15% 10%, rgba(108,143,255,0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 85% 85%, rgba(61,255,160,0.07) 0%, transparent 60%);
+    }
+    .page-wrap { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* HERO */
+    .hub-hero { padding: 64px 0 52px; text-align: center; }
+    .hub-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(108,143,255,0.1);
+      border: 1px solid rgba(108,143,255,0.25);
+      border-radius: 100px; padding: 6px 18px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+      color: var(--aura-accent); text-transform: uppercase; margin-bottom: 28px;
+    }
+    .hub-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .hub-title span { color: var(--aura-accent); }
+    .hub-desc { color: #9aa5bc; max-width: 560px; margin: 0 auto 16px; font-size: 1.05rem; line-height: 1.7; }
+    .hub-meta { font-size: 0.82rem; color: var(--aura-muted); }
+    .hub-meta strong { color: var(--aura-green); }
+
+    /* FILTER PILLS */
+    .filter-row {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 40px; justify-content: center;
+    }
+    .filter-pill {
+      background: var(--aura-surface);
+      border: 1px solid var(--aura-border);
+      border-radius: 100px; padding: 7px 16px;
+      font-size: 0.82rem; color: var(--aura-muted);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .filter-pill:hover, .filter-pill.active {
+      border-color: rgba(108,143,255,0.4);
+      color: var(--aura-accent);
+      background: rgba(108,143,255,0.08);
+    }
+
+    /* GRID */
+    .showdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .showdown-card {
+      background: var(--aura-surface);
+      border: 1px solid var(--aura-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-decoration: none; color: var(--aura-text);
+      transition: all 0.25s;
+      display: flex; flex-direction: column; gap: 0;
+      backdrop-filter: blur(12px);
+      position: relative; overflow: hidden;
+    }
+    .showdown-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--aura-accent), var(--aura-green));
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .showdown-card:hover { border-color: rgba(108,143,255,0.3); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+    .showdown-card:hover::before { opacity: 1; }
+    .card-flags { font-size: 2rem; margin-bottom: 14px; line-height: 1; letter-spacing: 4px; }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .card-subtitle {
+      font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em;
+      color: var(--aura-accent); font-weight: 700; margin-bottom: 12px;
+    }
+    .card-tagline { font-size: 0.88rem; color: #8a94a8; line-height: 1.55; margin-bottom: 20px; flex: 1; }
+    .card-meta {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      border-top: 1px solid var(--aura-border); padding-top: 16px; margin-top: auto;
+    }
+    .card-tag {
+      font-size: 0.75rem; padding: 4px 10px;
+      border-radius: 100px; font-weight: 600;
+    }
+    .tag-cost { background: rgba(108,143,255,0.1); color: var(--aura-accent); }
+    .tag-tax  { background: rgba(61,255,160,0.1);  color: var(--aura-green); }
+    .tag-visa { background: rgba(255,183,64,0.1);  color: var(--aura-amber); }
+    .card-arrow {
+      position: absolute; top: 24px; right: 24px;
+      color: var(--aura-muted); font-size: 1rem;
+      transition: transform 0.2s, color 0.2s;
+    }
+    .showdown-card:hover .card-arrow { transform: translate(3px,-3px); color: var(--aura-accent); }
+
+    /* BOTTOM CTA */
+    .hub-cta {
+      margin-top: 64px;
+      background: linear-gradient(135deg, rgba(108,143,255,0.1), rgba(61,255,160,0.07));
+      border: 1px solid rgba(108,143,255,0.2);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px; text-align: center;
+    }
+    .hub-cta h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+    .hub-cta p { color: var(--aura-muted); max-width: 420px; margin: 0 auto 28px; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--aura-accent); color: #fff;
+      font-weight: 700; font-size: 0.95rem;
+      padding: 14px 30px; border-radius: 100px;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .btn-primary:hover { background: #7fa0ff; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(108,143,255,0.3); }
+
+    @media(max-width:640px) {
+      .showdown-grid { grid-template-columns: 1fr; }
+      .hub-cta { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+  {% include "partials/nav.njk" %}
+
+  <main class="page-wrap">
+    <div class="hub-hero">
+      <div class="hub-badge">⚡ 2026 Real Data Only</div>
+      <h1 class="hub-title">City <span>Showdowns</span></h1>
+      <p class="hub-desc">Side-by-side comparisons of the world's top digital nomad destinations. Tax rates, cost of living, and visa requirements — all verified for 2026.</p>
+      <p class="hub-meta">
+        <strong>{{ showdowns | length }} comparisons</strong> · Last updated May 2026 · Sources cited on every page
+      </p>
+    </div>
+
+    <div class="filter-row">
+      <div class="filter-pill active">All Cities</div>
+      <div class="filter-pill">🇪🇺 Europe</div>
+      <div class="filter-pill">🌏 Asia</div>
+      <div class="filter-pill">🌎 LATAM</div>
+      <div class="filter-pill">🇦🇪 Middle East</div>
+      <div class="filter-pill">💰 Budget</div>
+      <div class="filter-pill">📊 Tax Efficiency</div>
+    </div>
+
+    <div class="showdown-grid">
+      {% for slug, d in showdowns %}
+      <a href="/compare/city/{{ d.slug }}/" class="showdown-card">
+        <span class="card-arrow">↗</span>
+        <div class="card-flags">{{ d.emoji_a }}{{ d.emoji_b }}</div>
+        <div class="card-title">{{ d.city_a }} vs {{ d.city_b }}</div>
+        <div class="card-subtitle">{{ d.subtitle }}</div>
+        <div class="card-tagline">{{ d.tagline }}</div>
+        <div class="card-meta">
+          <span class="card-tag tag-cost">💰 {{ d.cost_winner }} cheaper</span>
+          <span class="card-tag tag-tax">📊 {{ d.tax_winner }} wins tax</span>
+          <span class="card-tag tag-visa">🛂 {{ d.visa_winner }} wins visa</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+
+    <div class="hub-cta">
+      <h2>Run Your Real Numbers</h2>
+      <p>Our 2026 tax engine calculates exact net income for 45+ countries. See where you actually keep the most.</p>
+      <a href="/" class="btn-primary">⚡ Open Tax Calculator</a>
+    </div>
+  </main>
+
+  {% include "partials/footer.njk" %}
+</body>
+</html>

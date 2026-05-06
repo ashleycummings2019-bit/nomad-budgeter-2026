@@ -1,0 +1,356 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: showdowns
+  size: 1
+  alias: slug
+  resolve: keys
+permalink: "/compare/showdown/{{ slug }}/"
+eleventyComputed:
+  pageTitle: "{{ showdowns[slug].city_a }} vs {{ showdowns[slug].city_b }}: 2026 Digital Nomad Tax & Cost Comparison | NomadBudgeter"
+  pageDescription: "{{ showdowns[slug].tagline }}"
+  pageSchema: |
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "{{ showdowns[slug].city_a }} vs {{ showdowns[slug].city_b }} for Digital Nomads: 2026 Full Comparison",
+      "description": "{{ showdowns[slug].tagline }}",
+      "dateModified": "2026-05-01",
+      "author": { "@type": "Organization", "name": "Nomad Budgeter" },
+      "publisher": { "@type": "Organization", "name": "Nomad Budgeter", "url": "https://nomadbudgeter.com" },
+      "mainEntityOfPage": "https://nomadbudgeter.com/compare/showdown/{{ showdowns[slug].slug }}/"
+    }
+---
+{%- set d = showdowns[slug] -%}
+
+{% include "partials/breadcrumbs.njk" %}
+
+{# ─── SHOWDOWN HERO ─── #}
+<div class="section-container mt-16">
+  <div class="text-center mb-16">
+    <div class="badge-2026 mb-4">
+      <span class="badge-dot"></span>
+      2026 Real Data · {{ d.subtitle }}
+    </div>
+    <h1 class="aura-title large-title">
+      {{ d.emoji_a }} {{ d.city_a }}
+      <span class="text-dim" style="font-size:0.55em;margin:0 12px;">VS</span>
+      {{ d.city_b }} {{ d.emoji_b }}
+    </h1>
+    <p class="text-dim subtitle-text max-800 mx-auto mt-6">{{ d.tagline }}</p>
+  </div>
+
+  {# ─── STAT STRIP ─── #}
+  <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:16px;max-width:720px;margin:0 auto 48px;align-items:center;">
+    <div class="glass-panel p-6 text-center" style="border-top:3px solid var(--primary);">
+      <div style="font-size:2.4rem;margin-bottom:8px;">{{ d.emoji_a }}</div>
+      <div class="aura-title" style="font-size:1.2rem;">{{ d.city_a }}</div>
+      <div class="text-dim text-small" style="text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;">{{ d.country_a }}</div>
+      <div class="aura-title" style="font-size:1.4rem;">{{ d.hero_stat_a }}</div>
+      <div class="text-dim text-small">{{ d.hero_label }}</div>
+    </div>
+    <div class="text-center" style="display:none;" id="vs-desktop">
+      <span class="glass-panel" style="display:inline-block;padding:10px 18px;border-radius:100px;font-weight:700;color:var(--text-dim);">VS</span>
+    </div>
+    <div class="glass-panel p-6 text-center" style="border-top:3px solid #10b981;">
+      <div style="font-size:2.4rem;margin-bottom:8px;">{{ d.emoji_b }}</div>
+      <div class="aura-title" style="font-size:1.2rem;color:#10b981;">{{ d.city_b }}</div>
+      <div class="text-dim text-small" style="text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;">{{ d.country_b }}</div>
+      <div class="aura-title" style="font-size:1.4rem;color:#10b981;">{{ d.hero_stat_b }}</div>
+      <div class="text-dim text-small">{{ d.hero_label }}</div>
+    </div>
+  </div>
+
+  {# ─── VERDICT BANNER ─── #}
+  <div class="glass-panel p-8 mb-16" style="border:1px solid rgba(16,185,129,0.3);background:linear-gradient(135deg,rgba(16,185,129,0.06) 0%,rgba(108,143,255,0.04) 100%);">
+    <div style="display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+      <div style="font-size:2.4rem;flex-shrink:0;">🏆</div>
+      <div>
+        <div class="text-small" style="text-transform:uppercase;letter-spacing:0.1em;color:#10b981;font-weight:700;margin-bottom:6px;">Overall Verdict 2026</div>
+        <div class="aura-title" style="font-size:1.4rem;margin-bottom:8px;">Winner: {{ d.verdict }}</div>
+        <p class="text-dim">{{ d.verdict_reason }}</p>
+      </div>
+    </div>
+  </div>
+
+  {# ─── CATEGORY WINNER PILLS ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-6">Category Winners</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;">
+      <div class="glass-panel" style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-size:0.85rem;">
+        <span class="text-dim">💰 Cost:</span>
+        <span style="font-weight:600;color:{% if d.cost_winner == d.city_a %}var(--primary){% elif d.cost_winner == d.city_b %}#10b981{% else %}#ffb740{% endif %};">{{ d.cost_winner }}</span>
+      </div>
+      <div class="glass-panel" style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-size:0.85rem;">
+        <span class="text-dim">📊 Tax:</span>
+        <span style="font-weight:600;color:{% if d.tax_winner == d.city_a %}var(--primary){% elif d.tax_winner == d.city_b %}#10b981{% else %}#ffb740{% endif %};">{{ d.tax_winner }}</span>
+      </div>
+      <div class="glass-panel" style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-size:0.85rem;">
+        <span class="text-dim">🛂 Visa:</span>
+        <span style="font-weight:600;color:{% if d.visa_winner == d.city_a %}var(--primary){% elif d.visa_winner == d.city_b %}#10b981{% else %}#ffb740{% endif %};">{{ d.visa_winner }}</span>
+      </div>
+      <div class="glass-panel" style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:100px;font-size:0.85rem;">
+        <span class="text-dim">🌅 Lifestyle:</span>
+        <span style="font-weight:600;color:{% if d.lifestyle_winner == d.city_a %}var(--primary){% elif d.lifestyle_winner == d.city_b %}#10b981{% else %}#ffb740{% endif %};">{{ d.lifestyle_winner }}</span>
+      </div>
+    </div>
+  </div>
+
+  {# ─── COST COMPARISON TABLE ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-6">Cost of Living Comparison</h2>
+    <div class="glass-panel" style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.92rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--glass-border);">
+            <th style="padding:14px 20px;text-align:left;color:var(--text-dim);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.04em;">Category</th>
+            <th style="padding:14px 20px;text-align:left;color:var(--primary);font-size:0.82rem;text-transform:uppercase;letter-spacing:0.04em;">{{ d.emoji_a }} {{ d.city_a }}</th>
+            <th style="padding:14px 20px;text-align:left;color:#10b981;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.04em;">{{ d.emoji_b }} {{ d.city_b }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">1BR Apartment</td><td style="padding:12px 20px;">{{ d.costs_a.rent_1br }}/mo</td><td style="padding:12px 20px;">{{ d.costs_b.rent_1br }}/mo</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Local Meal</td><td style="padding:12px 20px;">{{ d.costs_a.meal_local }}</td><td style="padding:12px 20px;">{{ d.costs_b.meal_local }}</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Coworking</td><td style="padding:12px 20px;">{{ d.costs_a.coworking }}</td><td style="padding:12px 20px;">{{ d.costs_b.coworking }}</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Coffee</td><td style="padding:12px 20px;">{{ d.costs_a.coffee }}</td><td style="padding:12px 20px;">{{ d.costs_b.coffee }}</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Groceries/mo</td><td style="padding:12px 20px;">{{ d.costs_a.groceries_mo }}</td><td style="padding:12px 20px;">{{ d.costs_b.groceries_mo }}</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Transport/mo</td><td style="padding:12px 20px;">{{ d.costs_a.transport_mo }}</td><td style="padding:12px 20px;">{{ d.costs_b.transport_mo }}</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Internet</td><td style="padding:12px 20px;">{{ d.costs_a.internet_speed }}</td><td style="padding:12px 20px;">{{ d.costs_b.internet_speed }}</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.04);"><td class="text-dim" style="padding:12px 20px;">Tax Rate</td><td style="padding:12px 20px;">{{ d.tax_a.rate }}</td><td style="padding:12px 20px;">{{ d.tax_b.rate }}</td></tr>
+          <tr><td class="text-dim" style="padding:12px 20px;">Visa Income Req</td><td style="padding:12px 20px;">{{ d.visa_a.income_req }}</td><td style="padding:12px 20px;">{{ d.visa_b.income_req }}</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  {# ─── TAX DEEP DIVE ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-2">Tax Regime Deep Dive</h2>
+    <p class="text-dim mb-8 text-small">Verified 2026 rates. Always confirm with a qualified tax advisor.</p>
+    <div class="grid-2 stack-on-mobile gap-6">
+      <div class="glass-panel p-8" style="border-top:3px solid var(--primary);">
+        <div style="font-size:1.8rem;margin-bottom:12px;">{{ d.emoji_a }}</div>
+        <div class="aura-title" style="font-size:1.1rem;margin-bottom:4px;">{{ d.city_a }}, {{ d.country_a }}</div>
+        <div class="text-dim text-small" style="text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px;">{{ d.tax_a.regime }}</div>
+        <div class="aura-title" style="font-size:2.5rem;margin-bottom:4px;">{{ d.tax_a.rate }}</div>
+        <div class="text-dim text-small" style="margin-bottom:20px;">Duration: {{ d.tax_a.duration }}</div>
+        <div style="font-size:0.83rem;color:var(--text-dim);padding:12px 14px;background:rgba(0,0,0,0.2);border-radius:8px;border-left:3px solid var(--glass-border);line-height:1.6;">{{ d.tax_a.notes }}</div>
+        <div class="text-dim text-small mt-4" style="opacity:0.7;">Source: {{ d.tax_a.source }}</div>
+      </div>
+      <div class="glass-panel p-8" style="border-top:3px solid #10b981;">
+        <div style="font-size:1.8rem;margin-bottom:12px;">{{ d.emoji_b }}</div>
+        <div class="aura-title" style="font-size:1.1rem;color:#10b981;margin-bottom:4px;">{{ d.city_b }}, {{ d.country_b }}</div>
+        <div class="text-dim text-small" style="text-transform:uppercase;letter-spacing:0.06em;margin-bottom:16px;">{{ d.tax_b.regime }}</div>
+        <div class="aura-title" style="font-size:2.5rem;color:#10b981;margin-bottom:4px;">{{ d.tax_b.rate }}</div>
+        <div class="text-dim text-small" style="margin-bottom:20px;">Duration: {{ d.tax_b.duration }}</div>
+        <div style="font-size:0.83rem;color:var(--text-dim);padding:12px 14px;background:rgba(0,0,0,0.2);border-radius:8px;border-left:3px solid var(--glass-border);line-height:1.6;">{{ d.tax_b.notes }}</div>
+        <div class="text-dim text-small mt-4" style="opacity:0.7;">Source: {{ d.tax_b.source }}</div>
+      </div>
+    </div>
+
+    {# Calculator CTA #}
+    <div class="glass-panel p-10 text-center mt-12" style="border:1px solid rgba(108,143,255,0.2);background:linear-gradient(135deg,rgba(108,143,255,0.06) 0%,rgba(16,185,129,0.04) 100%);">
+      <h3 class="aura-title mb-4">Calculate Your Exact Net Income</h3>
+      <p class="text-dim mb-8 max-500 mx-auto text-small">Run your real numbers through our 2026 tax engine. See your take-home pay in {{ d.city_a }} vs {{ d.city_b }}.</p>
+      <a class="action-btn" href="/?city={{ d.city_a | lower | replace(' ', '-') }}">⚡ Open Tax Calculator</a>
+      <a class="action-btn secondary ml-4" href="/pricing/" style="margin-left:12px;">Unlock Pro Report →</a>
+    </div>
+  </div>
+
+  {# ─── VISA COMPARISON ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-2">2026 Visa Comparison</h2>
+    <p class="text-dim mb-8 text-small">Verified as of {{ d.last_verified }}. Immigration rules change — verify with an attorney before applying.</p>
+    <div class="grid-2 stack-on-mobile gap-6">
+      <div class="glass-panel p-8" style="border-top:3px solid var(--primary);">
+        <div class="aura-title mb-6" style="font-size:1rem;">{{ d.emoji_a }} {{ d.visa_a.name }}</div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Income Req</span><span style="font-weight:500;text-align:right;">{{ d.visa_a.income_req }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Duration</span><span style="font-weight:500;text-align:right;">{{ d.visa_a.duration }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Cost</span><span style="font-weight:500;text-align:right;">{{ d.visa_a.cost }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Processing</span><span style="font-weight:500;text-align:right;">{{ d.visa_a.processing }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;font-size:0.88rem;"><span class="text-dim">Residency Path</span><span style="font-weight:500;text-align:right;">{{ d.visa_a.path_to_residency }}</span></div>
+      </div>
+      <div class="glass-panel p-8" style="border-top:3px solid #10b981;">
+        <div class="aura-title mb-6" style="font-size:1rem;color:#10b981;">{{ d.emoji_b }} {{ d.visa_b.name }}</div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Income Req</span><span style="font-weight:500;text-align:right;">{{ d.visa_b.income_req }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Duration</span><span style="font-weight:500;text-align:right;">{{ d.visa_b.duration }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Cost</span><span style="font-weight:500;text-align:right;">{{ d.visa_b.cost }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.88rem;"><span class="text-dim">Processing</span><span style="font-weight:500;text-align:right;">{{ d.visa_b.processing }}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:10px 0;font-size:0.88rem;"><span class="text-dim">Residency Path</span><span style="font-weight:500;text-align:right;">{{ d.visa_b.path_to_residency }}</span></div>
+        {% if d.visa_b.note_2026 %}
+        <div style="margin-top:16px;font-size:0.8rem;color:#ffb740;background:rgba(255,183,64,0.06);border:1px solid rgba(255,183,64,0.2);border-radius:8px;padding:10px 12px;line-height:1.5;">
+          ⚠ 2026 Update: {{ d.visa_b.note_2026 }}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {# ─── DECISION GUIDE ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-2">Which City Is Right for You?</h2>
+    <p class="text-dim mb-8 text-small">Based on income level, lifestyle, and visa goals.</p>
+    <div class="grid-2 stack-on-mobile gap-6">
+      <div class="glass-panel p-8" style="border-top:3px solid var(--primary);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <span style="font-size:1.6rem;">{{ d.emoji_a }}</span>
+          <span class="aura-title" style="font-size:1rem;">Pick {{ d.city_a }} if…</span>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          {% for item in d.pick_a_if %}
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.9rem;line-height:1.5;color:var(--text-dim);"><span style="color:var(--primary);font-weight:700;flex-shrink:0;">→</span> {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="glass-panel p-8" style="border-top:3px solid #10b981;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+          <span style="font-size:1.6rem;">{{ d.emoji_b }}</span>
+          <span class="aura-title" style="font-size:1rem;color:#10b981;">Pick {{ d.city_b }} if…</span>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          {% for item in d.pick_b_if %}
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:0.9rem;line-height:1.5;color:var(--text-dim);"><span style="color:#10b981;font-weight:700;flex-shrink:0;">→</span> {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {# ─── FAQ ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-6">Frequently Asked Questions</h2>
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      {% for faq in d.faqs %}
+      <details class="glass-panel" style="overflow:hidden;">
+        <summary style="padding:20px 24px;font-weight:600;font-size:0.95rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none;">
+          {{ faq.q }}
+          <span style="color:var(--primary);font-size:1.4rem;font-weight:300;flex-shrink:0;transition:transform 0.2s;">+</span>
+        </summary>
+        <div style="padding:0 24px 20px;font-size:0.9rem;color:var(--text-dim);line-height:1.7;border-top:1px solid rgba(255,255,255,0.04);padding-top:16px;">
+          {{ faq.a }}
+        </div>
+      </details>
+      {% endfor %}
+    </div>
+
+    {# Data Sources #}
+    <div class="glass-panel p-6 mt-8" style="background:rgba(0,0,0,0.2);">
+      <div class="text-small" style="text-transform:uppercase;letter-spacing:0.1em;color:var(--text-dim);font-weight:700;margin-bottom:12px;">Data Sources & Methodology</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
+        {% for src in d.data_sources %}
+        <li style="font-size:0.8rem;color:var(--text-dim);display:flex;gap:8px;"><span style="color:var(--primary);flex-shrink:0;">↗</span> {{ src }}</li>
+        {% endfor %}
+      </ul>
+      <p class="text-dim text-small mt-4">All data last verified: <span style="color:#10b981;font-weight:600;">{{ d.last_verified }}</span>. Calculations are for informational purposes only and do not constitute professional tax or legal advice.</p>
+    </div>
+  </div>
+
+  {# ─── RELOCATE TOOLKIT (Affiliate Section) ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-2">Your Relocation Toolkit</h2>
+    <p class="text-dim mb-8 text-small">Essential services for your move to {{ d.verdict }}. We may earn a commission — at no extra cost to you.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+
+      {# SafetyWing — every nomad needs insurance #}
+      <a href="{{ site.affiliates.safetywing.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #10b981;">
+        <div style="font-size:1.8rem;flex-shrink:0;">🛡️</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">SafetyWing Insurance</div>
+          <div class="text-dim text-small" style="line-height:1.5;">Global nomad health cover from $45/mo. Meets all {{ d.country_a }} & {{ d.country_b }} visa requirements.</div>
+        </div>
+      </a>
+
+      {# Wise — money transfers #}
+      <a href="{{ site.affiliates.wise.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid var(--primary);">
+        <div style="font-size:1.8rem;flex-shrink:0;">💸</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Wise Multi-Currency</div>
+          <div class="text-dim text-small" style="line-height:1.5;">Hold, send & convert {{ d.costs_a.rent_1br | replace("€","EUR ") | replace("$","USD ") | replace("฿","THB ") | truncate(3) }} at the real exchange rate. No hidden bank markups.</div>
+        </div>
+      </a>
+
+      {# Interactive Brokers — investment #}
+      <a href="{{ site.affiliates.interactiveBrokers.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #fbbf24;">
+        <div style="font-size:1.8rem;flex-shrink:0;">📈</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Interactive Brokers</div>
+          <div class="text-dim text-small" style="line-height:1.5;">The #1 brokerage for international expats. Trade stocks, ETFs & forex from anywhere. Low fees.</div>
+        </div>
+      </a>
+
+      {# Lexidy — visa/legal (EU-focused) #}
+      <a href="{{ site.affiliates.lexidy.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #a78bfa;">
+        <div style="font-size:1.8rem;flex-shrink:0;">⚖️</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Lexidy Legal</div>
+          <div class="text-dim text-small" style="line-height:1.5;">Top-rated firm for European Nomad Visa applications. Handles {{ d.country_a }} & {{ d.country_b }} residency.</div>
+        </div>
+      </a>
+
+      {# Blueground — furnished apartments #}
+      <a href="{{ site.affiliates.blueground.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #f472b6;">
+        <div style="font-size:1.8rem;flex-shrink:0;">🏠</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Blueground Apartments</div>
+          <div class="text-dim text-small" style="line-height:1.5;">Fully furnished apartments in {{ d.city_a }} & {{ d.city_b }}. Move-in ready, flexible leases.</div>
+        </div>
+      </a>
+
+      {# Agoda — Asia accommodation #}
+      <a href="{{ site.affiliates.agoda.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #fb923c;">
+        <div style="font-size:1.8rem;flex-shrink:0;">🏨</div>
+        <div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Agoda Stays</div>
+          <div class="text-dim text-small" style="line-height:1.5;">Monthly nomad rentals at the best rates. Great for scouting {{ d.city_a }} or {{ d.city_b }} before committing.</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  {# ─── RELATED SHOWDOWNS ─── #}
+  <div class="mb-16">
+    <h2 class="aura-title mb-6">More City Showdowns</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+      {% set all_slugs = showdowns | keys %}
+      {% for rel_slug in all_slugs %}
+        {% if rel_slug != d.slug %}
+        {% set r = showdowns[rel_slug] %}
+        <a href="/compare/showdown/{{ r.slug }}/" class="glass-panel p-4" style="text-decoration:none;color:var(--text-main);display:flex;flex-direction:column;gap:6px;transition:all 0.2s;">
+          <div style="font-size:1.2rem;">{{ r.emoji_a }}{{ r.emoji_b }}</div>
+          <div style="font-weight:600;font-size:0.9rem;">{{ r.city_a }} vs {{ r.city_b }}</div>
+          <div class="text-dim text-small">{{ r.subtitle }}</div>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {# ─── LEAD MAGNET ─── #}
+  {% include "partials/lead-magnet.njk" %}
+
+  {# ─── SEO SILOS ─── #}
+  <div class="mt-16">
+    {% include "partials/seo-silos.njk" %}
+  </div>
+</div>
+
+{# JSON-LD FAQPage for rich results #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in d.faqs %}
+    {
+      "@type": "Question",
+      "name": "{{ faq.q | escape }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ faq.a | escape }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
