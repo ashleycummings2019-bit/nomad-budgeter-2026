@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { verifyToken } = require('@clerk/clerk-sdk-node');
+const { airtableFetch } = require('../_lib/airtable-client');
 
 /**
  * B2B API Endpoint: serves high-fidelity city data to Business-tier subscribers.
@@ -73,13 +74,12 @@ module.exports = async (req, res) => {
     // 2. Admin Bypass & Subscription Check
     if (userEmail !== ADMIN_BYPASS_KEY) {
         try {
-            // Check Airtable for active Business subscription
-            const airtableResponse = await fetch(
-                `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Subscribers?filterByFormula=${encodeURIComponent(`AND({Email}='${userEmail}', {Status}='Active', {Plan}='Business')`)}`,
-                {
-                    headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
-                }
-            );
+            // Check Airtable for active Business subscription — resilient with retry
+            const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Subscribers?filterByFormula=${encodeURIComponent(`AND({Email}='${userEmail}', {Status}='Active', {Plan}='Business')`)}`;
+            
+            const airtableResponse = await airtableFetch(url, {
+                headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` },
+            });
 
             const subscriberData = await airtableResponse.json();
             const isBusinessUser = subscriberData.records && subscriberData.records.length > 0;
@@ -91,8 +91,9 @@ module.exports = async (req, res) => {
                 });
             }
         } catch (err) {
-            console.error('Subscription verification failed:', err);
-            return res.status(500).json({ error: 'Failed to verify subscription status.' });
+            // FAIL-OPEN: If Airtable is down, allow authenticated users through
+            // rather than locking paying customers out of the API they're paying for.
+            console.error('Subscription verification failed (allowing through):', err.message);
         }
     } else {
         console.log('Admin bypass triggered for NB_ADMIN_TEST');

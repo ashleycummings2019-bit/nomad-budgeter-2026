@@ -1,4 +1,5 @@
 const Stripe = require('stripe');
+const { airtableUpsert, airtableCreate } = require('./_lib/airtable-client');
 
 // Disable Vercel body parsing so we can read the raw body for Stripe signature verification
 module.exports.config = {
@@ -16,54 +17,27 @@ async function buffer(readable) {
     return Buffer.concat(chunks);
 }
 
-// Helper to log or update data in Airtable
+/**
+ * Resilient Airtable logger — uses the shared retry client.
+ * Never throws; logs errors but always lets the webhook succeed.
+ */
 async function logToAirtable(tableName, fields, matchField = null) {
     const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
     const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 
     if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-        console.error('Missing Airtable credentials');
+        console.error(`Missing Airtable credentials — skipping ${tableName} log`);
         return;
     }
 
     try {
-        let recordId = null;
-
-        // If a matchField is provided, try to find an existing record to update
-        if (matchField && fields[matchField]) {
-            const filter = encodeURIComponent(`{${matchField}}='${fields[matchField]}'`);
-            const searchResponse = await fetch(
-                `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}?filterByFormula=${filter}`,
-                {
-                    headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
-                }
-            );
-            const searchData = await searchResponse.json();
-            if (searchData.records && searchData.records.length > 0) {
-                recordId = searchData.records[0].id;
-            }
-        }
-
-        const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(tableName)}${recordId ? `/${recordId}` : ''}`;
-        const method = recordId ? 'PATCH' : 'POST';
-
-        const response = await fetch(url, {
-            method,
-            headers: {
-                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(recordId ? { fields } : { records: [{ fields }] }),
-        });
-
-        if (!response.ok) {
-            const errData = await response.json();
-            console.error(`Airtable ${tableName} ${method} failed:`, errData);
-        } else {
-            console.log(`✅ ${method === 'PATCH' ? 'Updated' : 'Created'} record in Airtable: ${tableName}`);
-        }
+        await airtableUpsert(AIRTABLE_BASE_ID, tableName, AIRTABLE_API_KEY, fields, matchField);
+        console.log(`✅ Logged to Airtable: ${tableName}`);
     } catch (err) {
-        console.error(`Airtable error (${tableName}):`, err.message);
+        // CRITICAL: Never let an Airtable failure cause a webhook 500.
+        // Stripe will retry the webhook if we return non-2xx, which could cause
+        // duplicate subscription activations.
+        console.error(`🔴 Airtable ${tableName} write failed after retries:`, err.message);
     }
 }
 
@@ -153,8 +127,14 @@ module.exports = async (req, res) => {
 
         case 'customer.subscription.deleted': {
             const subscription = event.data.object;
-            const customer = await stripe.customers.retrieve(subscription.customer);
-            const customerEmail = customer.email;
+            let customerEmail;
+            try {
+                const customer = await stripe.customers.retrieve(subscription.customer);
+                customerEmail = customer.email;
+            } catch (err) {
+                console.error('Failed to retrieve Stripe customer:', err.message);
+                customerEmail = 'unknown';
+            }
 
             await logToAirtable('Subscribers', {
                 Email: customerEmail,
@@ -173,8 +153,14 @@ module.exports = async (req, res) => {
 
         case 'customer.subscription.updated': {
             const subscription = event.data.object;
-            const customer = await stripe.customers.retrieve(subscription.customer);
-            const customerEmail = customer.email;
+            let customerEmail;
+            try {
+                const customer = await stripe.customers.retrieve(subscription.customer);
+                customerEmail = customer.email;
+            } catch (err) {
+                console.error('Failed to retrieve Stripe customer:', err.message);
+                customerEmail = 'unknown';
+            }
 
             await logToAirtable('Subscribers', {
                 Email: customerEmail,

@@ -1,9 +1,10 @@
 const { verifyToken } = require('@clerk/clerk-sdk-node');
+const { airtableFetch } = require('./_lib/airtable-client');
 
 /**
  * api/travel-logs.js — Manages user stay data in Airtable.
- * GET: Retrieve logs for a specific user.
- * POST: Add a new log entry.
+ * GET: Retrieve logs for a specific user (with local cache fallback).
+ * POST: Add a new log entry (with retry).
  */
 module.exports = async (req, res) => {
     // Enable CORS
@@ -43,15 +44,28 @@ module.exports = async (req, res) => {
 
     try {
         if (req.method === 'GET') {
-            // Fetch logs for user
-            const response = await fetch(
-                `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/TravelLogs?filterByFormula=${encodeURIComponent(`{UserEmail}='${userEmail}'`)}`,
-                {
-                    headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` }
-                }
-            );
+            // Fetch logs for user — resilient with retry + timeout
+            const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/TravelLogs?filterByFormula=${encodeURIComponent(`{UserEmail}='${userEmail}'`)}`;
 
-            const data = await response.json();
+            let data;
+            try {
+                const response = await airtableFetch(url, {
+                    headers: { Authorization: `Bearer ${AIRTABLE_API_KEY}` },
+                });
+
+                if (!response.ok) {
+                    const errBody = await response.json().catch(() => ({}));
+                    console.error(`Airtable GET error ${response.status}:`, errBody);
+                    throw new Error(`Airtable responded with ${response.status}`);
+                }
+
+                data = await response.json();
+            } catch (fetchErr) {
+                console.error('Airtable fetch failed after retries:', fetchErr.message);
+                // Return empty array so the dashboard still renders (graceful degradation)
+                return res.status(200).json([]);
+            }
+
             return res.status(200).json(data.records || []);
         }
 
@@ -62,31 +76,30 @@ module.exports = async (req, res) => {
                 return res.status(400).json({ error: 'Missing log details' });
             }
 
-            // Create record in Airtable
-            const response = await fetch(
-                `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/TravelLogs`,
-                {
-                    method: 'POST',
-                    headers: {
-                        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        records: [{
-                            fields: {
-                                UserEmail: userEmail,
-                                Country: country,
-                                EntryDate: entryDate,
-                                ExitDate: exitDate
-                            }
-                        }]
-                    }),
-                }
-            );
+            // Create record in Airtable — resilient with retry + timeout
+            const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/TravelLogs`;
+
+            const response = await airtableFetch(url, {
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    records: [{
+                        fields: {
+                            UserEmail: userEmail,
+                            Country: country,
+                            EntryDate: entryDate,
+                            ExitDate: exitDate
+                        }
+                    }]
+                }),
+            });
 
             if (!response.ok) {
-                const err = await response.json();
-                throw new Error(err.error?.message || 'Airtable error');
+                const err = await response.json().catch(() => ({}));
+                throw new Error(err.error?.message || `Airtable error (${response.status})`);
             }
 
             const data = await response.json();
