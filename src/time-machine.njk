@@ -53,7 +53,7 @@ permalink: /time-machine/
                     <input type="range" id="monthly-savings" class="tm-slider" min="0" max="10000" step="100" value="1500">
                 </div>
 
-                <button class="btn btn-primary" onclick="window.timeMachine.nextStep(2)">Next: Choose Destination <span class="arrow">→</span></button>
+                <button class="btn btn-primary" id="tm-btn-next">Next: Choose Destination <span class="arrow">→</span></button>
             </div>
 
             <!-- Step 2: Target -->
@@ -87,8 +87,8 @@ permalink: /time-machine/
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn btn-outline" onclick="window.timeMachine.nextStep(1)">← Back</button>
-                    <button class="btn btn-primary" onclick="window.timeMachine.calculate()">Run Simulator 🚀</button>
+                    <button class="btn btn-outline" id="tm-btn-back">← Back</button>
+                    <button class="btn btn-primary" id="tm-btn-run">Run Simulator 🚀</button>
                 </div>
             </div>
 
@@ -133,7 +133,7 @@ permalink: /time-machine/
 
             <!-- 4. Viral Loop -->
             <div class="viral-loop">
-                <button class="btn btn-secondary share-btn" onclick="window.timeMachine.shareResult()">
+                <button class="btn btn-secondary share-btn" id="tm-btn-share">
                     <span>📸</span> Share Your Wealth Gap
                 </button>
             </div>
@@ -153,12 +153,12 @@ permalink: /time-machine/
                         <div class="cta-badge pro">Expert Help</div>
                         <h4>Talk to a vetted Tax Lawyer</h4>
                         <p>Don't mess up the application. Get matched with our verified partners.</p>
-                        <button class="btn btn-primary btn-sm" onclick="window.timeMachine.captureLead()">Get Matched</button>
+                        <button class="btn btn-primary btn-sm" id="tm-btn-lead">Get Matched</button>
                     </div>
                 </div>
             </div>
             
-            <button class="btn btn-outline reset-btn" onclick="window.timeMachine.reset()">Start Over</button>
+            <button class="btn btn-outline reset-btn" id="tm-btn-reset">Start Over</button>
         </div>
     </main>
 </div>

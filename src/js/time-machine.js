@@ -20,14 +20,16 @@ class TimeMachine {
     init() {
         console.log('[TimeMachine] Initializing. Cities loaded:', this.data.length);
 
-        // Bind UI Elements
+        var self = this;
+
+        // Bind slider
         this.savingsSlider = document.getElementById('monthly-savings');
         this.savingsDisplay = document.getElementById('savings-display');
         
         if (this.savingsSlider) {
-            this.savingsSlider.addEventListener('input', (e) => {
-                const val = parseInt(e.target.value).toLocaleString();
-                this.savingsDisplay.innerText = '$' + val;
+            this.savingsSlider.addEventListener('input', function(e) {
+                var val = parseInt(e.target.value).toLocaleString();
+                self.savingsDisplay.innerText = '$' + val;
             });
         }
 
@@ -36,6 +38,57 @@ class TimeMachine {
         if (step1) {
             step1.style.display = 'block';
         }
+
+        // Wire up all buttons with proper event listeners
+        var btnNext = document.getElementById('tm-btn-next');
+        if (btnNext) {
+            btnNext.addEventListener('click', function() {
+                console.log('[TimeMachine] Next button clicked');
+                self.nextStep(2);
+            });
+        }
+
+        var btnBack = document.getElementById('tm-btn-back');
+        if (btnBack) {
+            btnBack.addEventListener('click', function() {
+                console.log('[TimeMachine] Back button clicked');
+                self.nextStep(1);
+            });
+        }
+
+        var btnRun = document.getElementById('tm-btn-run');
+        if (btnRun) {
+            btnRun.addEventListener('click', function() {
+                console.log('[TimeMachine] Run Simulator clicked');
+                self.calculate();
+            });
+        }
+
+        var btnShare = document.getElementById('tm-btn-share');
+        if (btnShare) {
+            btnShare.addEventListener('click', function() {
+                console.log('[TimeMachine] Share clicked');
+                self.shareResult();
+            });
+        }
+
+        var btnLead = document.getElementById('tm-btn-lead');
+        if (btnLead) {
+            btnLead.addEventListener('click', function() {
+                console.log('[TimeMachine] Get Matched clicked');
+                self.captureLead();
+            });
+        }
+
+        var btnReset = document.getElementById('tm-btn-reset');
+        if (btnReset) {
+            btnReset.addEventListener('click', function() {
+                console.log('[TimeMachine] Start Over clicked');
+                self.reset();
+            });
+        }
+
+        console.log('[TimeMachine] All button handlers wired up');
     }
 
     nextStep(step) {

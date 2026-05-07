@@ -53,7 +53,7 @@ title: "Nomad Budgeter — Professional Plans"
                 <li><span class="check">✓</span> <strong>AI Budget Optimizer</strong></li>
                 <li><span class="check">✓</span> Priority Data Requests</li>
             </ul>
-            <button class="btn-primary" id="btn-subscribe-pro">Unlock Pro Features</button>
+            <button class="btn-primary" id="btn-subscribe-pro" onclick="if(!this._authWired){if(window.Clerk&&!window.Clerk.user){window.Clerk.openSignIn()}else if(!window.Clerk){alert('Loading authentication... please try again in a moment.')}else{alert('Processing...')}}">Unlock Pro Features</button>
         </div>
 
         {# Business Tier #}
@@ -72,7 +72,7 @@ title: "Nomad Budgeter — Professional Plans"
                 <li><span class="check">✓</span> Global Compliance Dashboard</li>
                 <li><span class="check">✓</span> <strong>Unlimited</strong> Country Tracking</li>
             </ul>
-            <button class="btn-premium" id="btn-subscribe-biz">Unlock Business Hub</button>
+            <button class="btn-premium" id="btn-subscribe-biz" onclick="if(!this._authWired){if(window.Clerk&&!window.Clerk.user){window.Clerk.openSignIn()}else if(!window.Clerk){alert('Loading authentication... please try again in a moment.')}else{alert('Processing...')}}">Unlock Business Hub</button>
         </div>
     </div>
 

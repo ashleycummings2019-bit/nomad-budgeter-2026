@@ -92,6 +92,7 @@ async function initAuth() {
             const proBtn = document.getElementById('btn-subscribe-pro');
             if (proBtn) {
                 console.log('[Auth] Found btn-subscribe-pro, adding click listener (Logged In)');
+                proBtn._authWired = true;
                 proBtn.addEventListener('click', () => handleSubscribe('pro'));
             } else {
                 console.log('[Auth] btn-subscribe-pro NOT found on page');
@@ -100,12 +101,14 @@ async function initAuth() {
             const upsellProBtn = document.getElementById('unlock-pro-btn');
             if (upsellProBtn) {
                 console.log('[Auth] Found unlock-pro-btn, adding click listener (Logged In)');
+                upsellProBtn._authWired = true;
                 upsellProBtn.addEventListener('click', () => handleSubscribe('pro'));
             }
 
             const bizBtn = document.getElementById('btn-subscribe-biz');
             if (bizBtn) {
                 console.log('[Auth] Found btn-subscribe-biz, adding click listener (Logged In)');
+                bizBtn._authWired = true;
                 bizBtn.addEventListener('click', () => handleSubscribe('biz'));
             } else {
                 console.log('[Auth] btn-subscribe-biz NOT found on page');
@@ -129,6 +132,7 @@ async function initAuth() {
                 const btn = document.getElementById(id);
                 if (btn) {
                     console.log(`[Auth] Found ${id}, adding click listener (Logged Out)`);
+                    btn._authWired = true;
                     btn.addEventListener('click', () => {
                         console.log(`[Auth] Clicked ${id} while logged out. Opening SignIn modal.`);
                         if (window.gtag) {
