@@ -179,12 +179,21 @@
 
 /* Animations */
 .tm-step {
+    opacity: 1;
+}
+
+.tm-step.animating {
     animation: fadeIn 0.5s ease forwards;
 }
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Glass Card base (used on breakdown columns) */
+.glass-card {
+    border: 1px solid var(--border-glass, rgba(255,255,255,0.08));
 }
 
 /* Loader */

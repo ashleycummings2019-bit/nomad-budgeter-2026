@@ -3,13 +3,13 @@
 class TimeMachine {
     constructor() {
         this.baseCities = {
-            'london': { name: 'London', taxRate: 0.35, symbol: '£' },
-            'new_york': { name: 'New York', taxRate: 0.35, symbol: '$' },
-            'toronto': { name: 'Toronto', taxRate: 0.35, symbol: '$' },
-            'sydney': { name: 'Sydney', taxRate: 0.30, symbol: '$' },
-            'berlin': { name: 'Berlin', taxRate: 0.40, symbol: '€' },
-            'amsterdam': { name: 'Amsterdam', taxRate: 0.37, symbol: '€' },
-            'dublin': { name: 'Dublin', taxRate: 0.40, symbol: '€' }
+            'london': { name: 'London', taxRate: 0.35, symbol: '£', col: 3800 },
+            'new_york': { name: 'New York', taxRate: 0.35, symbol: '$', col: 4200 },
+            'toronto': { name: 'Toronto', taxRate: 0.35, symbol: '$', col: 3200 },
+            'sydney': { name: 'Sydney', taxRate: 0.30, symbol: '$', col: 3500 },
+            'berlin': { name: 'Berlin', taxRate: 0.40, symbol: '€', col: 3000 },
+            'amsterdam': { name: 'Amsterdam', taxRate: 0.37, symbol: '€', col: 3500 },
+            'dublin': { name: 'Dublin', taxRate: 0.40, symbol: '€', col: 3400 }
         };
 
         this.chart = null;
@@ -18,6 +18,8 @@ class TimeMachine {
     }
 
     init() {
+        console.log('[TimeMachine] Initializing. Cities loaded:', this.data.length);
+
         // Bind UI Elements
         this.savingsSlider = document.getElementById('monthly-savings');
         this.savingsDisplay = document.getElementById('savings-display');
@@ -25,152 +27,218 @@ class TimeMachine {
         if (this.savingsSlider) {
             this.savingsSlider.addEventListener('input', (e) => {
                 const val = parseInt(e.target.value).toLocaleString();
-                this.savingsDisplay.innerText = `$${val}`;
+                this.savingsDisplay.innerText = '$' + val;
             });
+        }
+
+        // Ensure Step 1 is visible
+        var step1 = document.getElementById('step-1');
+        if (step1) {
+            step1.style.display = 'block';
         }
     }
 
     nextStep(step) {
-        document.querySelectorAll('.tm-step').forEach(el => el.style.display = 'none');
-        document.getElementById(`step-${step}`).style.display = 'block';
+        console.log('[TimeMachine] Switching to step:', step);
+        var allSteps = document.querySelectorAll('.tm-step');
+        for (var i = 0; i < allSteps.length; i++) {
+            allSteps[i].style.display = 'none';
+        }
+        var target = document.getElementById('step-' + step);
+        if (target) {
+            target.style.display = 'block';
+        }
     }
 
     calculate() {
-        // Show loading
+        console.log('[TimeMachine] Calculate triggered');
+        
+        // Show loading step
         this.nextStep('processing');
         
-        const texts = [
+        var texts = [
             "Calculating 2026 tax treaties...",
             "Adjusting for local cost of living...",
             "Simulating compound interest..."
         ];
         
-        const textEl = document.getElementById('loading-text');
-        let idx = 0;
+        var textEl = document.getElementById('loading-text');
+        var idx = 0;
         
-        const interval = setInterval(() => {
+        var interval = setInterval(function() {
             idx++;
             if (idx < texts.length) {
                 textEl.innerText = texts[idx];
             }
         }, 1000);
 
-        setTimeout(() => {
+        var self = this;
+        setTimeout(function() {
             clearInterval(interval);
-            this.processData();
-            this.nextStep('output'); // Show output, but it's not a tm-step, so:
-            document.querySelectorAll('.tm-step').forEach(el => el.style.display = 'none');
-            document.getElementById('tm-output').style.display = 'block';
+            
+            try {
+                self.processData();
+            } catch (err) {
+                console.error('[TimeMachine] Error in processData:', err);
+            }
+            
+            // Hide all form steps
+            var allSteps = document.querySelectorAll('.tm-step');
+            for (var i = 0; i < allSteps.length; i++) {
+                allSteps[i].style.display = 'none';
+            }
+            
+            // Also hide the input flow wrapper
+            var inputFlow = document.getElementById('tm-input-flow');
+            if (inputFlow) inputFlow.style.display = 'none';
+            
+            // Show the output
+            var output = document.getElementById('tm-output');
+            if (output) {
+                output.style.display = 'block';
+                console.log('[TimeMachine] Output displayed');
+            } else {
+                console.error('[TimeMachine] tm-output element not found!');
+            }
         }, 3000);
     }
 
     processData() {
         // 1. Gather Inputs
-        const currentCityKey = document.getElementById('current-city').value;
-        const income = parseFloat(document.getElementById('annual-income').value);
-        const currentMonthlySavings = parseFloat(document.getElementById('monthly-savings').value);
-        const destCitySlug = document.getElementById('destination-city').value;
-        const lifestyle = document.querySelector('input[name="lifestyle"]:checked').value;
+        var currentCityKey = document.getElementById('current-city').value;
+        var income = parseFloat(document.getElementById('annual-income').value);
+        var currentMonthlySavings = parseFloat(document.getElementById('monthly-savings').value);
+        var destCitySlug = document.getElementById('destination-city').value;
+        var lifestyleEl = document.querySelector('input[name="lifestyle"]:checked');
+        var lifestyle = lifestyleEl ? lifestyleEl.value : 'standard';
         
-        const baseCity = this.baseCities[currentCityKey];
-        const destCity = this.data.find(c => c.slug === destCitySlug) || this.data[0];
+        console.log('[TimeMachine] Inputs:', { currentCityKey, income, currentMonthlySavings, destCitySlug, lifestyle });
+
+        var baseCity = this.baseCities[currentCityKey];
+        if (!baseCity) {
+            console.error('[TimeMachine] Base city not found:', currentCityKey);
+            return;
+        }
+        
+        var destCity = null;
+        for (var i = 0; i < this.data.length; i++) {
+            if (this.data[i].slug === destCitySlug) {
+                destCity = this.data[i];
+                break;
+            }
+        }
+        if (!destCity) destCity = this.data[0];
+        
+        console.log('[TimeMachine] Dest city:', destCity.name, 'Tax:', destCity.tax, 'COL:', destCity.col, 'Rent:', destCity.rent);
 
         // 2. Base Math
-        const currentAnnualSavings = currentMonthlySavings * 12;
-        const currentAnnualTax = income * baseCity.taxRate;
-        const currentAnnualBurn = income - currentAnnualTax - currentAnnualSavings;
+        var currentAnnualSavings = currentMonthlySavings * 12;
+        var currentAnnualTax = income * baseCity.taxRate;
+        var currentAnnualBurn = income - currentAnnualTax - currentAnnualSavings;
 
         // 3. Target Math
-        const destTaxRate = destCity.tax || 0.15; // fallback
-        const destAnnualTax = income * destTaxRate;
+        var destTaxRate = destCity.tax !== undefined ? destCity.tax : 0.15;
+        var destAnnualTax = income * destTaxRate;
         
-        let multiplier = 1;
+        var multiplier = 1;
         if (lifestyle === 'budget') multiplier = 0.6;
         if (lifestyle === 'luxury') multiplier = 1.8;
         
-        const destMonthlyBurn = ((destCity.rent || 1000) + (destCity.col || 1000)) * multiplier;
-        const destAnnualBurn = destMonthlyBurn * 12;
+        var destMonthlyBurn = ((destCity.rent || 1000) + (destCity.col || 1000)) * multiplier;
+        var destAnnualBurn = destMonthlyBurn * 12;
 
-        const newAnnualSavings = income - destAnnualTax - destAnnualBurn;
+        var newAnnualSavings = income - destAnnualTax - destAnnualBurn;
 
         // Deltas
-        const taxSavings = currentAnnualTax - destAnnualTax;
-        const colSavings = currentAnnualBurn - destAnnualBurn;
+        var taxSavings = currentAnnualTax - destAnnualTax;
+        var colSavings = currentAnnualBurn - destAnnualBurn;
         
         // Compound Interest (10 years at 7%)
-        const r = 0.07;
-        const n = 10;
-        const extraAnnualSavings = Math.max(0, taxSavings + colSavings);
-        const compoundExtra = extraAnnualSavings * ((Math.pow(1 + r, n) - 1) / r);
+        var r = 0.07;
+        var n = 10;
+        var extraAnnualSavings = Math.max(0, taxSavings + colSavings);
+        var compoundExtra = extraAnnualSavings * ((Math.pow(1 + r, n) - 1) / r);
 
         // FIRE Math (Target = 25x current burn)
-        const targetWealth = currentAnnualBurn * 25;
+        var targetWealth = Math.max(currentAnnualBurn, 30000) * 25; // min floor of 30k
         
-        const getYearsToTarget = (savings) => {
-            if (savings <= 0) return 99; // Never
-            const years = Math.log((targetWealth * r) / savings + 1) / Math.log(1 + r);
-            return years;
+        var getYearsToTarget = function(savings) {
+            if (savings <= 0) return 99;
+            var years = Math.log((targetWealth * r) / savings + 1) / Math.log(1 + r);
+            return Math.min(years, 99);
         };
 
-        const currentYears = getYearsToTarget(currentAnnualSavings);
-        const newYears = getYearsToTarget(newAnnualSavings);
+        var currentYears = getYearsToTarget(currentAnnualSavings);
+        var newYears = getYearsToTarget(Math.max(newAnnualSavings, 0));
         
-        let yearsSaved = currentYears - newYears;
+        var yearsSaved = currentYears - newYears;
         if (yearsSaved < 0) yearsSaved = 0;
-        if (currentYears === 99) yearsSaved = 20; // Default marketing hook if they aren't saving
+        if (currentYears >= 99) yearsSaved = 20; // Marketing hook
 
-        const ySaved = Math.floor(yearsSaved);
-        const mSaved = Math.round((yearsSaved - ySaved) * 12);
+        var ySaved = Math.floor(yearsSaved);
+        var mSaved = Math.round((yearsSaved - ySaved) * 12);
+
+        console.log('[TimeMachine] Results:', { yearsSaved: ySaved, monthsSaved: mSaved, compoundExtra: compoundExtra });
 
         // 4. Update UI
         document.getElementById('out-dest').innerText = destCity.name;
         document.getElementById('out-years').innerText = ySaved;
         document.getElementById('out-months').innerText = mSaved;
         
-        document.getElementById('out-current-tax').innerText = `${Math.round(baseCity.taxRate * 100)}%`;
-        document.getElementById('out-new-tax').innerText = `${Math.round(destTaxRate * 100)}%`;
-        document.getElementById('out-tax-delta').innerText = `+$${Math.round(taxSavings).toLocaleString()}/year`;
+        document.getElementById('out-current-tax').innerText = Math.round(baseCity.taxRate * 100) + '%';
+        document.getElementById('out-new-tax').innerText = Math.round(destTaxRate * 100) + '%';
+        document.getElementById('out-tax-delta').innerText = '+$' + Math.round(taxSavings).toLocaleString() + '/year';
         
-        document.getElementById('out-current-burn').innerText = `$${Math.round(currentAnnualBurn/12).toLocaleString()}/mo`;
-        document.getElementById('out-new-burn').innerText = `$${Math.round(destMonthlyBurn).toLocaleString()}/mo`;
-        document.getElementById('out-col-delta').innerText = `+$${Math.round(colSavings).toLocaleString()}/year`;
+        document.getElementById('out-current-burn').innerText = '$' + Math.round(currentAnnualBurn / 12).toLocaleString() + '/mo';
+        document.getElementById('out-new-burn').innerText = '$' + Math.round(destMonthlyBurn).toLocaleString() + '/mo';
+        document.getElementById('out-col-delta').innerText = '+$' + Math.round(colSavings).toLocaleString() + '/year';
         
-        document.getElementById('out-compound').innerText = `$${Math.round(compoundExtra).toLocaleString()}`;
+        document.getElementById('out-compound').innerText = '$' + Math.round(compoundExtra).toLocaleString();
         
         document.getElementById('cta-dest-name').innerText = destCity.name;
 
         // Update URL state for sharing
-        const urlParams = new URLSearchParams(window.location.search);
-        urlParams.set('from', currentCityKey);
-        urlParams.set('to', destCitySlug);
-        urlParams.set('income', income);
-        window.history.replaceState({}, '', `${window.location.pathname}?${urlParams}`);
+        try {
+            var urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('from', currentCityKey);
+            urlParams.set('to', destCitySlug);
+            urlParams.set('income', income);
+            window.history.replaceState({}, '', window.location.pathname + '?' + urlParams.toString());
+        } catch(e) {
+            console.warn('[TimeMachine] Could not update URL:', e);
+        }
 
         this.renderChart(currentAnnualSavings, newAnnualSavings, r);
     }
 
     renderChart(currentSavings, newSavings, rate) {
-        const ctx = document.getElementById('wealthChart').getContext('2d');
+        var canvas = document.getElementById('wealthChart');
+        if (!canvas) {
+            console.error('[TimeMachine] Canvas element not found');
+            return;
+        }
+        var ctx = canvas.getContext('2d');
         
         if (this.chart) {
             this.chart.destroy();
         }
 
-        const years = Array.from({length: 16}, (_, i) => i);
+        var years = [];
+        for (var i = 0; i <= 15; i++) years.push(i);
         
-        // FV = P * (((1+r)^t - 1) / r)
-        const calcGrowth = (savings, t) => {
+        var calcGrowth = function(savings, t) {
             if (t === 0) return 0;
+            if (savings <= 0) return 0;
             return savings * ((Math.pow(1 + rate, t) - 1) / rate);
         };
 
-        const dataCurrent = years.map(y => calcGrowth(currentSavings, y));
-        const dataNew = years.map(y => calcGrowth(newSavings, y));
+        var dataCurrent = years.map(function(y) { return calcGrowth(currentSavings, y); });
+        var dataNew = years.map(function(y) { return calcGrowth(Math.max(newSavings, 0), y); });
 
         this.chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: years.map(y => `Year ${y}`),
+                labels: years.map(function(y) { return 'Year ' + y; }),
                 datasets: [
                     {
                         label: 'Current City',
@@ -201,10 +269,8 @@ class TimeMachine {
                     tooltip: {
                         callbacks: {
                             label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) {
-                                    label += ': ';
-                                }
+                                var label = context.dataset.label || '';
+                                if (label) label += ': ';
                                 if (context.parsed.y !== null) {
                                     label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(context.parsed.y);
                                 }
@@ -232,24 +298,25 @@ class TimeMachine {
                 }
             }
         });
+        
+        console.log('[TimeMachine] Chart rendered');
     }
 
     shareResult() {
-        const dest = document.getElementById('out-dest').innerText;
-        const years = document.getElementById('out-years').innerText;
+        var dest = document.getElementById('out-dest').innerText;
+        var years = document.getElementById('out-years').innerText;
         
-        const text = `I just shaved ${years} years off my retirement by swapping my city for ${dest}. Calculate your Nomad Wealth Gap at NomadBudgeter.com`;
-        const url = window.location.href;
+        var text = 'I just shaved ' + years + ' years off my retirement by swapping my city for ' + dest + '. Calculate your Nomad Wealth Gap at NomadBudgeter.com';
+        var url = window.location.href;
         
         if (navigator.share) {
             navigator.share({
                 title: 'My Wealth Trajectory',
                 text: text,
                 url: url
-            }).catch(console.error);
+            }).catch(function(err) { console.error(err); });
         } else {
-            // Fallback to copy clipboard
-            navigator.clipboard.writeText(`${text}\n\n${url}`).then(() => {
+            navigator.clipboard.writeText(text + '\n\n' + url).then(function() {
                 alert('Copied to clipboard! Ready to share on X or Reddit.');
             });
         }
@@ -269,26 +336,39 @@ class TimeMachine {
 
     reset() {
         document.getElementById('tm-output').style.display = 'none';
+        var inputFlow = document.getElementById('tm-input-flow');
+        if (inputFlow) inputFlow.style.display = 'block';
         this.nextStep(1);
     }
 }
 
 // Initialize on load
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        window.timeMachine = new TimeMachine();
+        checkUrlParams();
+    });
+} else {
     window.timeMachine = new TimeMachine();
-    
-    // Check URL params for direct sharing
-    const urlParams = new URLSearchParams(window.location.search);
+    checkUrlParams();
+}
+
+function checkUrlParams() {
+    var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('from') && urlParams.has('to')) {
-        const from = urlParams.get('from');
-        const to = urlParams.get('to');
-        const income = urlParams.get('income');
+        var from = urlParams.get('from');
+        var to = urlParams.get('to');
+        var income = urlParams.get('income');
         
-        if (document.getElementById('current-city')) document.getElementById('current-city').value = from;
-        if (document.getElementById('destination-city')) document.getElementById('destination-city').value = to;
-        if (document.getElementById('annual-income') && income) document.getElementById('annual-income').value = income;
+        var currentCityEl = document.getElementById('current-city');
+        var destCityEl = document.getElementById('destination-city');
+        var incomeEl = document.getElementById('annual-income');
+        
+        if (currentCityEl) currentCityEl.value = from;
+        if (destCityEl) destCityEl.value = to;
+        if (incomeEl && income) incomeEl.value = income;
         
         // Auto run
         window.timeMachine.calculate();
     }
-});
+}
