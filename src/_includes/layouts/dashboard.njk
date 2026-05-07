@@ -4,13 +4,13 @@ layout: layouts/base.njk
 <div class="dashboard-wrapper">
     <aside class="dashboard-sidebar">
         <nav class="dashboard-nav">
-            <a href="/dashboard/" class="nav-item active">
+            <a href="/dashboard/" class="nav-item{% if page.url == '/dashboard/' %} active{% endif %}">
                 <span class="icon">🗺️</span> Days Tracker
             </a>
-            <a href="/dashboard/reports/" class="nav-item">
+            <a href="/dashboard/reports/" class="nav-item{% if page.url == '/dashboard/reports/' %} active{% endif %}">
                 <span class="icon">📄</span> My Reports
             </a>
-            <a href="/dashboard/settings/" class="nav-item">
+            <a href="/dashboard/settings/" class="nav-item{% if page.url == '/dashboard/settings/' %} active{% endif %}">
                 <span class="icon">⚙️</span> Settings
             </a>
         </nav>

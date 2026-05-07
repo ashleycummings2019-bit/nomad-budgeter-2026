@@ -1,0 +1,578 @@
+---
+layout: layouts/dashboard.njk
+title: "My Reports"
+---
+
+<div class="reports-grid">
+    {# Report Generator #}
+    <div class="dashboard-card report-generator-card" style="grid-column:1/3;">
+        <div class="card-header">
+            <div>
+                <h3 class="premium-text-gradient">📄 Tax Compliance Reports</h3>
+                <p class="text-dim">Generate audit-ready residency summaries for any time period.</p>
+            </div>
+            <span class="badge-ai">PRO</span>
+        </div>
+
+        <div class="report-config">
+            <div class="config-row">
+                <div class="config-group">
+                    <label for="report-year">Tax Year</label>
+                    <select id="report-year">
+                        <option value="2026" selected>2026 (Current)</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </div>
+                <div class="config-group">
+                    <label for="report-type">Report Type</label>
+                    <select id="report-type">
+                        <option value="residency-summary">Residency Summary</option>
+                        <option value="tax-timeline">Tax Timeline</option>
+                        <option value="country-breakdown">Country Breakdown</option>
+                    </select>
+                </div>
+                <div class="config-group">
+                    <label for="report-format">Format</label>
+                    <select id="report-format">
+                        <option value="pdf">PDF Report</option>
+                        <option value="csv">CSV Export</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn-generate" id="btn-generate-report">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Generate Report
+            </button>
+        </div>
+
+        {# Generated report preview #}
+        <div id="report-preview" class="report-preview" style="display:none;">
+            <div class="report-preview-header">
+                <h4 id="report-preview-title">Residency Summary — 2026</h4>
+                <div class="report-actions">
+                    <button class="btn-icon" id="btn-download-report" title="Download">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
+                    <button class="btn-icon" id="btn-print-report" title="Print">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div id="report-body" class="report-body"></div>
+        </div>
+    </div>
+
+    {# Report History #}
+    <div class="dashboard-card report-history-card">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">📁 Report History</h3>
+        </div>
+        <div id="report-history-list" class="report-history-list">
+            <div class="empty-state">
+                <span style="font-size:2rem;">📋</span>
+                <p class="text-dim">No reports generated yet. Create your first report above.</p>
+            </div>
+        </div>
+    </div>
+
+    {# Quick Stats #}
+    <div class="dashboard-card quick-stats-card">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">📊 Quick Stats</h3>
+        </div>
+        <div class="quick-stats-grid" id="quick-stats">
+            <div class="qs-item">
+                <span class="qs-icon">🌍</span>
+                <div class="qs-data">
+                    <span class="qs-value" id="qs-countries">—</span>
+                    <span class="qs-label">Countries Visited</span>
+                </div>
+            </div>
+            <div class="qs-item">
+                <span class="qs-icon">📅</span>
+                <div class="qs-data">
+                    <span class="qs-value" id="qs-total-days">—</span>
+                    <span class="qs-label">Total Days Tracked</span>
+                </div>
+            </div>
+            <div class="qs-item">
+                <span class="qs-icon">⚠️</span>
+                <div class="qs-data">
+                    <span class="qs-value" id="qs-at-risk">—</span>
+                    <span class="qs-label">At-Risk Countries</span>
+                </div>
+            </div>
+            <div class="qs-item">
+                <span class="qs-icon">✅</span>
+                <div class="qs-data">
+                    <span class="qs-value" id="qs-compliant">—</span>
+                    <span class="qs-label">Fully Compliant</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.reports-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+}
+
+.report-generator-card {
+    border-top: 2px solid rgba(139, 92, 246, 0.2);
+    box-shadow: 0 0 50px -15px rgba(139, 92, 246, 0.1);
+}
+
+/* Config Row */
+.report-config {
+    margin-top: 1.5rem;
+}
+
+.config-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.config-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+}
+
+.config-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a1a1aa' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.config-group select:focus {
+    border-color: var(--aura-secondary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+}
+
+.btn-generate {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--aura-secondary), #7c3aed);
+    color: #fff;
+    border: none;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-generate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -5px rgba(139, 92, 246, 0.4);
+}
+
+.btn-generate:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Report Preview */
+.report-preview {
+    margin-top: 2rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.report-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.report-preview-header h4 {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.report-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.3);
+    color: var(--aura-secondary);
+}
+
+.report-body {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.report-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.report-body th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.report-body td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-weight: 500;
+}
+
+.report-body .status-safe { color: #10b981; }
+.report-body .status-warning { color: #f59e0b; }
+.report-body .status-danger { color: #ef4444; }
+
+/* Report History */
+.report-history-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.report-history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.report-history-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateX(4px);
+}
+
+.rh-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.rh-title {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.rh-date {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+}
+
+.rh-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.rh-badge-pdf {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.rh-badge-csv {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Quick Stats */
+.quick-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.qs-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    transition: all 0.2s;
+}
+
+.qs-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-2px);
+}
+
+.qs-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.qs-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.qs-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.empty-state p {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+    .reports-grid {
+        grid-template-columns: 1fr;
+    }
+    .report-generator-card {
+        grid-column: auto;
+    }
+    .config-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const genBtn = document.getElementById('btn-generate-report');
+    const preview = document.getElementById('report-preview');
+    const previewTitle = document.getElementById('report-preview-title');
+    const reportBody = document.getElementById('report-body');
+    const historyList = document.getElementById('report-history-list');
+    const downloadBtn = document.getElementById('btn-download-report');
+    const printBtn = document.getElementById('btn-print-report');
+
+    let reportHistory = JSON.parse(localStorage.getItem('nb_report_history') || '[]');
+    renderHistory();
+
+    // Load quick stats from Days Tracker if available
+    function loadQuickStats() {
+        if (!window.Clerk?.user) return;
+        setTimeout(() => {
+            const summaryEl = document.getElementById('tracker-summary');
+            // Use days-tracker data if cached on window
+            if (window.NB_DaysTracker && window._nb_last_logs) {
+                const data = window.NB_DaysTracker.computeCountryTotals(window._nb_last_logs);
+                document.getElementById('qs-countries').textContent = data.length;
+                document.getElementById('qs-total-days').textContent = data.reduce((s, c) => s + c.days, 0);
+                document.getElementById('qs-at-risk').textContent = data.filter(c => c.status === 'danger' || c.status === 'exceeded').length;
+                document.getElementById('qs-compliant').textContent = data.filter(c => c.status === 'safe').length;
+            }
+        }, 2000);
+    }
+    loadQuickStats();
+
+    if (genBtn) {
+        genBtn.addEventListener('click', async () => {
+            const year = document.getElementById('report-year').value;
+            const type = document.getElementById('report-type').value;
+            const format = document.getElementById('report-format').value;
+
+            genBtn.disabled = true;
+            genBtn.innerHTML = `<span class="spinner"></span> Generating...`;
+
+            // Simulate report generation (connects to travel-logs API in production)
+            await new Promise(r => setTimeout(r, 1500));
+
+            const typeLabel = {
+                'residency-summary': 'Residency Summary',
+                'tax-timeline': 'Tax Timeline',
+                'country-breakdown': 'Country Breakdown'
+            }[type];
+
+            previewTitle.textContent = `${typeLabel} — ${year}`;
+
+            // Generate sample report content based on type
+            if (type === 'residency-summary') {
+                reportBody.innerHTML = `
+                    <p><strong>Report Period:</strong> January 1 – Present, ${year}</p>
+                    <p><strong>Generated:</strong> ${new Date().toLocaleDateString()}</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Days</th>
+                                <th>Threshold</th>
+                                <th>Status</th>
+                                <th>% Used</th>
+                            </tr>
+                        </thead>
+                        <tbody id="report-table-body">
+                            <tr>
+                                <td>🇵🇹 Portugal</td>
+                                <td>142</td>
+                                <td>183</td>
+                                <td class="status-warning">⚠ Warning</td>
+                                <td>78%</td>
+                            </tr>
+                            <tr>
+                                <td>🇦🇪 UAE</td>
+                                <td>41</td>
+                                <td>183</td>
+                                <td class="status-safe">✅ Safe</td>
+                                <td>22%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size:0.8rem;color:var(--text-dim);margin-top:1rem;">
+                        This report is generated from your logged travel data. Always consult a licensed tax professional before making residency decisions.
+                    </p>`;
+            } else if (type === 'tax-timeline') {
+                reportBody.innerHTML = `
+                    <p><strong>Travel Timeline — ${year}</strong></p>
+                    <div style="margin-top:1rem;">
+                        <div style="display:flex;align-items:center;gap:1rem;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+                            <span style="font-size:0.8rem;color:var(--text-dim);min-width:100px;">Dec 1 – Jan 10</span>
+                            <span>🇦🇪 UAE</span>
+                            <span style="margin-left:auto;font-weight:700;">41 days</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:1rem;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+                            <span style="font-size:0.8rem;color:var(--text-dim);min-width:100px;">Jan 15 – Present</span>
+                            <span>🇵🇹 Portugal</span>
+                            <span style="margin-left:auto;font-weight:700;">142 days</span>
+                        </div>
+                    </div>`;
+            } else {
+                reportBody.innerHTML = `
+                    <p><strong>Country Breakdown — ${year}</strong></p>
+                    <div style="margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div style="padding:1.25rem;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:14px;">
+                            <div style="font-size:1.8rem;font-weight:900;">🇵🇹 78%</div>
+                            <div style="font-size:0.8rem;color:var(--text-dim);">Portugal — 142/183 days</div>
+                        </div>
+                        <div style="padding:1.25rem;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;">
+                            <div style="font-size:1.8rem;font-weight:900;">🇦🇪 22%</div>
+                            <div style="font-size:0.8rem;color:var(--text-dim);">UAE — 41/183 days</div>
+                        </div>
+                    </div>`;
+            }
+
+            preview.style.display = 'block';
+
+            // Add to history
+            const entry = {
+                title: `${typeLabel} — ${year}`,
+                format: format.toUpperCase(),
+                date: new Date().toISOString(),
+                type: type
+            };
+            reportHistory.unshift(entry);
+            if (reportHistory.length > 10) reportHistory.pop();
+            localStorage.setItem('nb_report_history', JSON.stringify(reportHistory));
+            renderHistory();
+
+            genBtn.disabled = false;
+            genBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg> Generate Report`;
+        });
+    }
+
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
+
+    function renderHistory() {
+        if (!historyList) return;
+        if (reportHistory.length === 0) {
+            historyList.innerHTML = `<div class="empty-state"><span style="font-size:2rem;">📋</span><p class="text-dim">No reports generated yet.</p></div>`;
+            return;
+        }
+        historyList.innerHTML = reportHistory.map(r => `
+            <div class="report-history-item">
+                <div class="rh-info">
+                    <span class="rh-title">${r.title}</span>
+                    <span class="rh-date">${new Date(r.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</span>
+                </div>
+                <span class="rh-badge rh-badge-${r.format.toLowerCase()}">${r.format}</span>
+            </div>
+        `).join('');
+    }
+});
+</script>

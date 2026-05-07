@@ -1,0 +1,684 @@
+---
+layout: layouts/dashboard.njk
+title: "Settings"
+---
+
+<div class="settings-grid">
+    {# Profile Settings #}
+    <div class="dashboard-card profile-card">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">👤 Profile</h3>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-avatar" id="profile-avatar">
+                <span class="avatar-placeholder">NB</span>
+            </div>
+            <div class="profile-info">
+                <h4 id="profile-name">Loading...</h4>
+                <p class="text-dim" id="profile-email">—</p>
+            </div>
+        </div>
+
+        <div class="settings-form">
+            <div class="form-group">
+                <label for="settings-base-currency">Base Currency</label>
+                <select id="settings-base-currency">
+                    <option value="USD" selected>USD — US Dollar</option>
+                    <option value="EUR">EUR — Euro</option>
+                    <option value="GBP">GBP — British Pound</option>
+                    <option value="AUD">AUD — Australian Dollar</option>
+                    <option value="CAD">CAD — Canadian Dollar</option>
+                    <option value="CHF">CHF — Swiss Franc</option>
+                    <option value="JPY">JPY — Japanese Yen</option>
+                    <option value="SGD">SGD — Singapore Dollar</option>
+                    <option value="THB">THB — Thai Baht</option>
+                    <option value="BRL">BRL — Brazilian Real</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="settings-tax-residence">Primary Tax Residence</label>
+                <input type="text" id="settings-tax-residence" placeholder="e.g. United Kingdom">
+            </div>
+
+            <div class="form-group">
+                <label for="settings-income">Annual Income (pre-tax)</label>
+                <input type="number" id="settings-income" placeholder="e.g. 75000">
+            </div>
+
+            <button class="btn-save" id="btn-save-profile">
+                Save Changes
+            </button>
+        </div>
+    </div>
+
+    {# Subscription Management #}
+    <div class="dashboard-card subscription-mgmt-card">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">💳 Subscription</h3>
+        </div>
+
+        <div class="sub-status-banner" id="sub-status-banner">
+            <div class="sub-plan-badge" id="sub-plan-badge">FREE</div>
+            <div>
+                <h4 id="sub-plan-name">Explorer Plan</h4>
+                <p class="text-dim" id="sub-plan-desc">Basic features included.</p>
+            </div>
+        </div>
+
+        <div class="sub-details">
+            <div class="sub-detail-row">
+                <span class="text-dim">Status</span>
+                <span class="sub-active" id="sub-status-text">Free Tier</span>
+            </div>
+            <div class="sub-detail-row">
+                <span class="text-dim">Next Billing</span>
+                <span id="sub-next-billing">—</span>
+            </div>
+            <div class="sub-detail-row">
+                <span class="text-dim">Amount</span>
+                <span id="sub-amount">$0/mo</span>
+            </div>
+        </div>
+
+        <div class="sub-actions">
+            <a href="/pricing/" class="btn-upgrade" id="btn-upgrade-plan">
+                Upgrade Plan
+            </a>
+            <button class="btn-cancel-sub" id="btn-cancel-sub" style="display:none;">
+                Cancel Subscription
+            </button>
+        </div>
+    </div>
+
+    {# Notification Preferences #}
+    <div class="dashboard-card notifications-card">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">🔔 Notifications</h3>
+            <span class="badge-ai">PRO</span>
+        </div>
+
+        <div class="notification-toggles">
+            <div class="notif-row">
+                <div>
+                    <span class="notif-title">Threshold Alerts</span>
+                    <span class="notif-desc text-dim">Get warned when approaching tax residency thresholds</span>
+                </div>
+                <label class="toggle-switch-sm">
+                    <input type="checkbox" id="notif-threshold" checked>
+                    <span class="slider-sm"></span>
+                </label>
+            </div>
+
+            <div class="notif-row">
+                <div>
+                    <span class="notif-title">Weekly Summary</span>
+                    <span class="notif-desc text-dim">Receive a weekly email with your compliance status</span>
+                </div>
+                <label class="toggle-switch-sm">
+                    <input type="checkbox" id="notif-weekly">
+                    <span class="slider-sm"></span>
+                </label>
+            </div>
+
+            <div class="notif-row">
+                <div>
+                    <span class="notif-title">Tax Rate Changes</span>
+                    <span class="notif-desc text-dim">Alerts when tracked countries update tax policies</span>
+                </div>
+                <label class="toggle-switch-sm">
+                    <input type="checkbox" id="notif-tax-changes" checked>
+                    <span class="slider-sm"></span>
+                </label>
+            </div>
+
+            <div class="notif-row">
+                <div>
+                    <span class="notif-title">Product Updates</span>
+                    <span class="notif-desc text-dim">New features, data updates, and platform news</span>
+                </div>
+                <label class="toggle-switch-sm">
+                    <input type="checkbox" id="notif-product" checked>
+                    <span class="slider-sm"></span>
+                </label>
+            </div>
+        </div>
+
+        <button class="btn-save" id="btn-save-notifications" style="margin-top:1.5rem;">
+            Save Preferences
+        </button>
+    </div>
+
+    {# Data & Privacy #}
+    <div class="dashboard-card privacy-card">
+        <div class="card-header">
+            <h3 class="premium-text-gradient">🔒 Data & Privacy</h3>
+        </div>
+
+        <div class="privacy-actions">
+            <button class="btn-outline-action" id="btn-export-data">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export All My Data
+            </button>
+            <button class="btn-outline-danger" id="btn-delete-account">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                Delete My Account
+            </button>
+        </div>
+
+        <p class="text-dim privacy-note">
+            Your data is encrypted at rest and in transit. We never sell your personal information. 
+            See our <a href="/privacy/" class="link-aura">Privacy Policy</a>.
+        </p>
+    </div>
+</div>
+
+<style>
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Profile */
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+}
+
+.profile-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--aura-primary), var(--aura-secondary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.profile-info h4 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+/* Settings Form */
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.settings-form .form-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+}
+
+.settings-form select,
+.settings-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: var(--font-main);
+    outline: none;
+    transition: all 0.25s;
+}
+
+.settings-form select {
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23a1a1aa' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    cursor: pointer;
+}
+
+.settings-form input:focus,
+.settings-form select:focus {
+    border-color: var(--aura-primary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.settings-form input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+.btn-save {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--aura-primary);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+}
+
+/* Subscription */
+.sub-status-banner {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    margin: 1.5rem 0;
+}
+
+.sub-plan-badge {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-dim);
+    font-weight: 900;
+    font-size: 0.7rem;
+    padding: 6px 14px;
+    border-radius: 8px;
+    letter-spacing: 0.1em;
+}
+
+.sub-plan-badge.pro {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+    color: var(--aura-primary);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.sub-plan-badge.business {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(251, 191, 36, 0.05));
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.sub-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.sub-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 0.9rem;
+}
+
+.sub-active {
+    color: var(--aura-primary);
+    font-weight: 600;
+}
+
+.sub-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.btn-upgrade {
+    display: block;
+    text-align: center;
+    padding: 0.85rem;
+    background: linear-gradient(135deg, var(--aura-primary), #34d399);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-upgrade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+}
+
+.btn-cancel-sub {
+    padding: 0.65rem;
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: rgba(239, 68, 68, 0.7);
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel-sub:hover {
+    background: rgba(239, 68, 68, 0.05);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* Notifications */
+.notification-toggles {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.notif-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.notif-title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.notif-desc {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 2px;
+}
+
+/* Toggle switch */
+.toggle-switch-sm {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.toggle-switch-sm input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-sm {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    transition: 0.3s;
+}
+
+.slider-sm:before {
+    content: '';
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.toggle-switch-sm input:checked + .slider-sm {
+    background: var(--aura-primary);
+}
+
+.toggle-switch-sm input:checked + .slider-sm:before {
+    transform: translateX(20px);
+}
+
+/* Privacy */
+.privacy-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.btn-outline-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-outline-action:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-1px);
+}
+
+.btn-outline-danger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    background: rgba(239, 68, 68, 0.03);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    border-radius: 12px;
+    color: rgba(239, 68, 68, 0.7);
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-outline-danger:hover {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.privacy-note {
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Load saved settings from localStorage
+    const saved = JSON.parse(localStorage.getItem('nb_settings') || '{}');
+
+    if (saved.currency) document.getElementById('settings-base-currency').value = saved.currency;
+    if (saved.taxResidence) document.getElementById('settings-tax-residence').value = saved.taxResidence;
+    if (saved.income) document.getElementById('settings-income').value = saved.income;
+
+    // Populate profile from Clerk
+    function populateProfile() {
+        if (!window.Clerk?.user) return;
+        const user = window.Clerk.user;
+        const nameEl = document.getElementById('profile-name');
+        const emailEl = document.getElementById('profile-email');
+        const avatarEl = document.getElementById('profile-avatar');
+
+        if (nameEl) nameEl.textContent = user.fullName || user.firstName || 'Nomad';
+        if (emailEl) emailEl.textContent = user.primaryEmailAddress?.emailAddress || '';
+
+        if (user.imageUrl && avatarEl) {
+            avatarEl.innerHTML = `<img src="${user.imageUrl}" alt="Profile">`;
+        } else if (avatarEl) {
+            const initials = (user.firstName?.[0] || 'N') + (user.lastName?.[0] || 'B');
+            avatarEl.innerHTML = `<span class="avatar-placeholder">${initials.toUpperCase()}</span>`;
+        }
+
+        // Check subscription status
+        const meta = user.publicMetadata || {};
+        const badgeEl = document.getElementById('sub-plan-badge');
+        const nameEl2 = document.getElementById('sub-plan-name');
+        const descEl = document.getElementById('sub-plan-desc');
+        const statusEl = document.getElementById('sub-status-text');
+        const amountEl = document.getElementById('sub-amount');
+        const upgradeBtn = document.getElementById('btn-upgrade-plan');
+        const cancelBtn = document.getElementById('btn-cancel-sub');
+
+        if (meta.plan === 'business') {
+            badgeEl.textContent = 'BUSINESS';
+            badgeEl.classList.add('business');
+            nameEl2.textContent = 'Business Plan';
+            descEl.textContent = 'Full API access, unlimited tracking, dedicated support.';
+            statusEl.textContent = 'Active';
+            amountEl.textContent = '$99/mo';
+            upgradeBtn.textContent = 'Manage Plan';
+            cancelBtn.style.display = 'block';
+        } else if (meta.plan === 'pro') {
+            badgeEl.textContent = 'PRO';
+            badgeEl.classList.add('pro');
+            nameEl2.textContent = 'Professional Plan';
+            descEl.textContent = 'Threshold alerts, projections, and compliance tools.';
+            statusEl.textContent = 'Active';
+            amountEl.textContent = '$19/mo';
+            upgradeBtn.textContent = 'Upgrade to Business';
+            upgradeBtn.href = '/pricing/';
+            cancelBtn.style.display = 'block';
+        }
+    }
+
+    // Wait for Clerk
+    if (window.Clerk?.user) {
+        populateProfile();
+    } else if (window.Clerk) {
+        window.Clerk.addListener(({ user }) => {
+            if (user) populateProfile();
+        });
+    } else {
+        let attempts = 0;
+        const check = () => {
+            if (window.Clerk) {
+                if (window.Clerk.user) populateProfile();
+                else window.Clerk.addListener(({ user }) => { if (user) populateProfile(); });
+                return;
+            }
+            if (++attempts < 50) setTimeout(check, 200);
+        };
+        check();
+    }
+
+    // Save profile
+    document.getElementById('btn-save-profile')?.addEventListener('click', () => {
+        const settings = {
+            currency: document.getElementById('settings-base-currency').value,
+            taxResidence: document.getElementById('settings-tax-residence').value,
+            income: document.getElementById('settings-income').value
+        };
+        localStorage.setItem('nb_settings', JSON.stringify(settings));
+        
+        const btn = document.getElementById('btn-save-profile');
+        btn.textContent = '✓ Saved!';
+        btn.style.background = 'rgba(16, 185, 129, 0.2)';
+        btn.style.color = '#10b981';
+        setTimeout(() => {
+            btn.textContent = 'Save Changes';
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    });
+
+    // Save notifications
+    document.getElementById('btn-save-notifications')?.addEventListener('click', () => {
+        const prefs = {
+            threshold: document.getElementById('notif-threshold').checked,
+            weekly: document.getElementById('notif-weekly').checked,
+            taxChanges: document.getElementById('notif-tax-changes').checked,
+            product: document.getElementById('notif-product').checked
+        };
+        localStorage.setItem('nb_notification_prefs', JSON.stringify(prefs));
+        
+        const btn = document.getElementById('btn-save-notifications');
+        btn.textContent = '✓ Saved!';
+        btn.style.background = 'rgba(16, 185, 129, 0.2)';
+        btn.style.color = '#10b981';
+        setTimeout(() => {
+            btn.textContent = 'Save Preferences';
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    });
+
+    // Load saved notification prefs
+    const notifPrefs = JSON.parse(localStorage.getItem('nb_notification_prefs') || '{}');
+    if (notifPrefs.threshold !== undefined) document.getElementById('notif-threshold').checked = notifPrefs.threshold;
+    if (notifPrefs.weekly !== undefined) document.getElementById('notif-weekly').checked = notifPrefs.weekly;
+    if (notifPrefs.taxChanges !== undefined) document.getElementById('notif-tax-changes').checked = notifPrefs.taxChanges;
+    if (notifPrefs.product !== undefined) document.getElementById('notif-product').checked = notifPrefs.product;
+
+    // Export data
+    document.getElementById('btn-export-data')?.addEventListener('click', () => {
+        const data = {
+            settings: JSON.parse(localStorage.getItem('nb_settings') || '{}'),
+            notifications: JSON.parse(localStorage.getItem('nb_notification_prefs') || '{}'),
+            reports: JSON.parse(localStorage.getItem('nb_report_history') || '[]'),
+            exportDate: new Date().toISOString()
+        };
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `nomadbudgeter-data-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+    });
+
+    // Delete account
+    document.getElementById('btn-delete-account')?.addEventListener('click', () => {
+        if (confirm('Are you sure you want to delete your account? This action cannot be undone.')) {
+            alert('Please contact hello@nomadbudgeter.com to process account deletion. We will remove all your data within 30 days.');
+        }
+    });
+
+    // Cancel subscription
+    document.getElementById('btn-cancel-sub')?.addEventListener('click', () => {
+        if (confirm('Are you sure you want to cancel your subscription? You will lose access to Pro features at the end of your current billing period.')) {
+            alert('Please contact hello@nomadbudgeter.com or manage your subscription through the Stripe customer portal.');
+        }
+    });
+});
+</script>
