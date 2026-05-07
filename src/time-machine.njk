@@ -1,0 +1,170 @@
+---
+layout: layouts/base.njk
+title: The Time Machine Calculator
+permalink: /time-machine/
+---
+
+<link rel="stylesheet" href="/css/time-machine.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="time-machine-container">
+    <!-- 1. Above-the-Fold UI -->
+    <header class="tm-header">
+        <h1 class="text-gradient">Don't just change your city.<br>Change your retirement date.</h1>
+        <h2 class="text-dim">See exactly how many years of your working life you can buy back by optimizing your taxes and cost of living.</h2>
+        <div class="trust-badge">
+            <span class="icon">⚡</span> Powered by 2026 Live Tax Data for 45+ Countries
+        </div>
+    </header>
+
+    <main class="tm-main glass-card">
+        <!-- 2. The Input Flow -->
+        <div id="tm-input-flow">
+            <!-- Step 1: Baseline -->
+            <div class="tm-step active" id="step-1">
+                <h3>Step 1: Your Baseline</h3>
+                <div class="form-group">
+                    <label>Current City</label>
+                    <select id="current-city" class="tm-input">
+                        <option value="london">London, UK</option>
+                        <option value="new_york">New York, USA</option>
+                        <option value="toronto">Toronto, Canada</option>
+                        <option value="sydney">Sydney, Australia</option>
+                        <option value="berlin">Berlin, Germany</option>
+                        <option value="amsterdam">Amsterdam, Netherlands</option>
+                        <option value="dublin">Dublin, Ireland</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Annual Gross Income</label>
+                    <div class="currency-input">
+                        <select id="currency-toggle" class="tm-input-small">
+                            <option value="USD">$</option>
+                            <option value="EUR">€</option>
+                            <option value="GBP">£</option>
+                        </select>
+                        <input type="number" id="annual-income" class="tm-input" placeholder="e.g. 100000" value="100000">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Current Monthly Savings: <span id="savings-display" class="text-gradient">$1,500</span></label>
+                    <input type="range" id="monthly-savings" class="tm-slider" min="0" max="10000" step="100" value="1500">
+                </div>
+
+                <button class="btn btn-primary" onclick="window.timeMachine.nextStep(2)">Next: Choose Destination <span class="arrow">→</span></button>
+            </div>
+
+            <!-- Step 2: Target -->
+            <div class="tm-step" id="step-2" style="display: none;">
+                <h3>Step 2: Your Dream State</h3>
+                <div class="form-group">
+                    <label>Destination City</label>
+                    <select id="destination-city" class="tm-input">
+                        {% for city in cities %}
+                            <option value="{{ city.slug }}">{{ city.name }}, {{ city.country }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Expected Lifestyle</label>
+                    <div class="radio-group">
+                        <label class="radio-card">
+                            <input type="radio" name="lifestyle" value="budget" checked>
+                            <span class="card-content">🎒 Budget Backpack</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="lifestyle" value="standard">
+                            <span class="card-content">💻 Standard Nomad</span>
+                        </label>
+                        <label class="radio-card">
+                            <input type="radio" name="lifestyle" value="luxury">
+                            <span class="card-content">🍸 Luxury Penthouse</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn btn-outline" onclick="window.timeMachine.nextStep(1)">← Back</button>
+                    <button class="btn btn-primary" onclick="window.timeMachine.calculate()">Run Simulator 🚀</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Processing Animation -->
+            <div class="tm-step" id="step-processing" style="display: none; text-align: center; padding: 4rem 0;">
+                <div class="tm-loader"></div>
+                <h3 id="loading-text" class="text-gradient">Calculating 2026 tax treaties...</h3>
+            </div>
+        </div>
+
+        <!-- 3. The Output UI -->
+        <div id="tm-output" style="display: none;">
+            <div class="top-banner">
+                🚨 By moving to <span id="out-dest" class="text-accent">Lisbon</span>, you can retire <strong class="text-primary"><span id="out-years">12</span> years and <span id="out-months">4</span> months</strong> earlier.
+            </div>
+
+            <div class="chart-container">
+                <canvas id="wealthChart"></canvas>
+            </div>
+
+            <div class="data-breakdown grid-3">
+                <div class="breakdown-col glass-card">
+                    <h4>Tax Savings</h4>
+                    <p class="stat-row"><span>Current Tax:</span> <span id="out-current-tax">38%</span></p>
+                    <p class="stat-row"><span>New Tax:</span> <span id="out-new-tax" class="text-primary">20%</span></p>
+                    <div class="stat-delta">Delta: <span id="out-tax-delta" class="text-primary">+$14,500/year</span></div>
+                </div>
+                
+                <div class="breakdown-col glass-card">
+                    <h4>Cost of Living</h4>
+                    <p class="stat-row"><span>Current Burn:</span> <span id="out-current-burn">$4,500/mo</span></p>
+                    <p class="stat-row"><span>New Burn:</span> <span id="out-new-burn" class="text-primary">$2,100/mo</span></p>
+                    <div class="stat-delta">Delta: <span id="out-col-delta" class="text-primary">+$28,800/year</span></div>
+                </div>
+
+                <div class="breakdown-col glass-card highlight">
+                    <h4>The Compound Effect</h4>
+                    <p class="stat-desc">Total extra cash invested at 7% over 10 years:</p>
+                    <div class="stat-massive text-gradient" id="out-compound">$654,000</div>
+                </div>
+            </div>
+
+            <!-- 4. Viral Loop -->
+            <div class="viral-loop">
+                <button class="btn btn-secondary share-btn" onclick="window.timeMachine.shareResult()">
+                    <span>📸</span> Share Your Wealth Gap
+                </button>
+            </div>
+
+            <!-- 5. Monetization Hand-off -->
+            <div class="monetization-block">
+                <h3>Make It Reality</h3>
+                <div class="cta-grid">
+                    <a href="/pricing/" class="cta-card low-ticket">
+                        <div class="cta-badge">Unlock Guide</div>
+                        <h4>Get the <span id="cta-dest-name">Lisbon</span> Blueprint</h4>
+                        <p>Exact tax codes, neighborhood guides, and visa loopholes.</p>
+                        <span class="price-tag">Just $19</span>
+                    </a>
+                    
+                    <div class="cta-card high-ticket">
+                        <div class="cta-badge pro">Expert Help</div>
+                        <h4>Talk to a vetted Tax Lawyer</h4>
+                        <p>Don't mess up the application. Get matched with our verified partners.</p>
+                        <button class="btn btn-primary btn-sm" onclick="window.timeMachine.captureLead()">Get Matched</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn btn-outline reset-btn" onclick="window.timeMachine.reset()">Start Over</button>
+        </div>
+    </main>
+</div>
+
+<!-- Inject city data for client-side JS -->
+<script>
+    window.__CITIES_DATA__ = {{ cities | dump | safe }};
+</script>
+<script type="module" src="/js/time-machine.js"></script>
