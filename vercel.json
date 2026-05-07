@@ -6,6 +6,19 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "nomad-budgeter-2026.vercel.app"
+        }
+      ],
+      "destination": "https://nomadbudgeter.com/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -13,16 +26,10 @@
           "value": "nomad-budgeter-2026.vercel.app"
         }
       ],
-      "destination": "https://nomadbudgeter.com/$1",
-      "permanent": true
-    }
-  ],
-  "images": {
-    "sizes": [400, 800, 1200, 1920],
-    "domains": ["images.unsplash.com"],
-    "minimumCacheTTL": 86400
-  },
-  "headers": [
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    },
     {
       "source": "/css/(.*)",
       "headers": [
@@ -54,4 +61,3 @@
     }
   ]
 }
-
