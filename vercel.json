@@ -4,6 +4,19 @@
   "outputDirectory": "_site",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "nomad-budgeter-2026.vercel.app"
+        }
+      ],
+      "destination": "https://nomadbudgeter.com/$1",
+      "permanent": true
+    }
+  ],
   "images": {
     "sizes": [400, 800, 1200, 1920],
     "domains": ["images.unsplash.com"],
