@@ -8,7 +8,11 @@
     "dev": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
     "build": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs",
     "build:no-pulse": "node ./node_modules/@11ty/eleventy/cmd.cjs",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "swarm": "node --env-file=.env backend-intelligence/orchestrator.mjs",
+    "swarm:scan": "node --env-file=.env backend-intelligence/orchestrator.mjs --scan-only",
+    "swarm:audit": "node --env-file=.env backend-intelligence/orchestrator.mjs --audit-only",
+    "swarm:write": "node --env-file=.env backend-intelligence/agents/writer.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
@@ -16,7 +20,6 @@
   "dependencies": {
     "stripe": "^15.0.0",
     "axios": "^1.6.0",
-    "dotenv": "^16.3.0",
     "@clerk/clerk-sdk-node": "^5.0.0"
   },
   "engines": {
