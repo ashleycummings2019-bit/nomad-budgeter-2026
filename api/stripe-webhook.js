@@ -1,179 +1,180 @@
 const Stripe = require('stripe');
-const { airtableUpsert, airtableCreate } = require('./_lib/airtable-client');
+const { createClerkClient } = require('@clerk/clerk-sdk-node');
+const { airtableUpsert } = require('./_lib/airtable-client');
 
-// Disable Vercel body parsing so we can read the raw body for Stripe signature verification
+// Initialize Clerk client
+const clerkClient = createClerkClient({ secretKey: process.env.CLERK_SECRET_KEY });
+
+// Disable Vercel body parsing for raw body access
 module.exports.config = {
-    api: {
-        bodyParser: false,
-    },
+        api: {
+                    bodyParser: false,
+        },
 };
 
-// Helper function to read the raw body from Vercel's req stream
+// Helper function to read raw body
 async function buffer(readable) {
-    const chunks = [];
-    for await (const chunk of readable) {
-        chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
-    }
-    return Buffer.concat(chunks);
+        const chunks = [];
+        for await (const chunk of readable) {
+                    chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
+        }
+        return Buffer.concat(chunks);
 }
 
 /**
- * Resilient Airtable logger — uses the shared retry client.
- * Never throws; logs errors but always lets the webhook succeed.
+ * Resilient Airtable logger
  */
 async function logToAirtable(tableName, fields, matchField = null) {
-    const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
-    const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
+        const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
+        const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 
     if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-        console.error(`Missing Airtable credentials — skipping ${tableName} log`);
-        return;
+                console.error(`[Webhook] Missing Airtable credentials -- skipping ${tableName} log`);
+                return;
     }
-
-    try {
-        await airtableUpsert(AIRTABLE_BASE_ID, tableName, AIRTABLE_API_KEY, fields, matchField);
-        console.log(`✅ Logged to Airtable: ${tableName}`);
-    } catch (err) {
-        // CRITICAL: Never let an Airtable failure cause a webhook 500.
-        // Stripe will retry the webhook if we return non-2xx, which could cause
-        // duplicate subscription activations.
-        console.error(`🔴 Airtable ${tableName} write failed after retries:`, err.message);
-    }
+        try {
+                    await airtableUpsert(AIRTABLE_BASE_ID, tableName, AIRTABLE_API_KEY, fields, matchField);
+                    console.log(`[Webhook] Logged to Airtable: ${tableName}`);
+        } catch (err) {
+                    console.error(`[Webhook] Airtable ${tableName} write failed:`, err.message);
+        }
 }
 
-
-module.exports = async (req, res) => {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ message: 'Method Not Allowed' });
-    }
-
-    const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
-    const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
-
-    if (!STRIPE_SECRET_KEY || !STRIPE_WEBHOOK_SECRET) {
-        console.error('Missing Stripe environment variables');
-        return res.status(500).json({ error: 'Server configuration error' });
-    }
-
-    const stripe = new Stripe(STRIPE_SECRET_KEY);
-    const sig = req.headers['stripe-signature'];
-
-    let event;
+/**
+ * Update Clerk User Metadata for immediate UI unlocking
+ */
+async function updateClerkUser(userId, plan) {
+        if (!userId || !process.env.CLERK_SECRET_KEY) {
+                    console.warn('[Webhook] Skipping Clerk update (missing userId or key)');
+                    return;
+        }
 
     try {
-        const buf = await buffer(req);
-        event = stripe.webhooks.constructEvent(buf, sig, STRIPE_WEBHOOK_SECRET);
-    } catch (err) {
-        console.error(`Webhook signature verification failed: ${err.message}`);
-        return res.status(400).send(`Webhook Error: ${err.message}`);
-    }
-
-    console.log(`🔔 Received event: ${event.type}`);
-
-    switch (event.type) {
-        case 'checkout.session.completed': {
-            const session = event.data.object;
-            const customerEmail = session.customer_details?.email || session.customer_email;
-            
-            if (session.mode === 'subscription') {
-                // Initial subscription creation
-                let planName = session.metadata?.plan === 'biz' ? 'Business' : 'Pro';
-                
-                await logToAirtable('Subscribers', {
-                    Email: customerEmail,
-                    StripeSubscriptionId: session.subscription,
-                    Status: 'Active',
-                    Plan: planName,
-                    LastPayment: new Date().toISOString().split('T')[0],
-                }, 'Email'); // Upsert by Email
-            } else if (session.mode === 'payment') {
-                // Handle legacy one-time product
-                await logToAirtable('Purchases', {
-                    Email: customerEmail,
-                    City: session.client_reference_id || 'One-time Pro',
-                    Status: 'Paid',
-                    StripeSessionId: session.id,
-                    Amount: (session.amount_total || 0) / 100,
-                    Date: new Date().toISOString().split('T')[0],
+                await clerkClient.users.updateUser(userId, {
+                                publicMetadata: {
+                                                    subscriptionStatus: 'active',
+                                                    plan: plan.toLowerCase(),
+                                                    unlockedAt: new Date().toISOString()
+                                }
                 });
-            }
-            break;
-        }
-
-        case 'invoice.payment_succeeded': {
-            const invoice = event.data.object;
-            const customerEmail = invoice.customer_email;
-            
-            if (invoice.subscription) {
-                const lineItem = invoice.lines.data[0];
-                const priceId = lineItem?.price?.id;
-                
-                let planName = 'Pro';
-                if (priceId === process.env.STRIPE_BIZ_PRICE_ID || priceId === process.env.STRIPE_BIZ_ANNUAL_PRICE_ID) {
-                    planName = 'Business';
-                }
-
-                await logToAirtable('Subscribers', {
-                    Email: customerEmail,
-                    StripeSubscriptionId: invoice.subscription,
-                    Status: 'Active',
-                    Amount: (invoice.amount_paid || 0) / 100,
-                    Plan: planName,
-                    LastPayment: new Date().toISOString().split('T')[0],
-                }, 'Email');
-            }
-            break;
-        }
-
-        case 'customer.subscription.deleted': {
-            const subscription = event.data.object;
-            let customerEmail;
-            try {
-                const customer = await stripe.customers.retrieve(subscription.customer);
-                customerEmail = customer.email;
-            } catch (err) {
-                console.error('Failed to retrieve Stripe customer:', err.message);
-                customerEmail = 'unknown';
-            }
-
-            await logToAirtable('Subscribers', {
-                Email: customerEmail,
-                Status: 'Cancelled',
-                StripeSubscriptionId: subscription.id
-            }, 'Email');
-
-            await logToAirtable('ActivityLogs', {
-                Email: customerEmail || 'unknown',
-                Action: 'Subscription Cancelled',
-                Details: `Sub ID: ${subscription.id}`,
-                Date: new Date().toISOString().split('T')[0],
-            });
-            break;
-        }
-
-        case 'customer.subscription.updated': {
-            const subscription = event.data.object;
-            let customerEmail;
-            try {
-                const customer = await stripe.customers.retrieve(subscription.customer);
-                customerEmail = customer.email;
-            } catch (err) {
-                console.error('Failed to retrieve Stripe customer:', err.message);
-                customerEmail = 'unknown';
-            }
-
-            await logToAirtable('Subscribers', {
-                Email: customerEmail,
-                Status: subscription.status === 'active' ? 'Active' : 'Past Due',
-                StripeSubscriptionId: subscription.id
-            }, 'Email');
-            break;
-        }
-
-        default:
-            console.log(`Unhandled event type ${event.type}`);
+                console.log(`[Webhook] Clerk metadata updated for user ${userId}`);
+    } catch (err) {
+                console.error(`[Webhook] Clerk update failed for user ${userId}:`, err.message);
     }
+}
+module.exports = async (req, res) => {
+        if (req.method !== 'POST') {
+                    return res.status(405).json({ message: 'Method Not Allowed' });
+        }
 
+        const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
+        const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
-    res.status(200).json({ received: true });
+        if (!STRIPE_SECRET_KEY || !STRIPE_WEBHOOK_SECRET) {
+                    console.error('[Webhook] Missing Stripe environment variables');
+                    return res.status(500).json({ error: 'Server configuration error' });
+        }
+
+        const stripe = new Stripe(STRIPE_SECRET_KEY);
+        const sig = req.headers['stripe-signature'];
+
+        let event;
+
+        try {
+                    const buf = await buffer(req);
+                    event = stripe.webhooks.constructEvent(buf, sig, STRIPE_WEBHOOK_SECRET);
+        } catch (err) {
+                    console.error(`[Webhook] Signature verification failed: ${err.message}`);
+                    return res.status(400).send(`Webhook Error: ${err.message}`);
+        }
+
+        console.log(`[Webhook] Received event: ${event.type}`);
+
+        try {
+                    switch (event.type) {
+                        case 'checkout.session.completed': {
+                                            const session = event.data.object;
+
+                                            // Metadata extracted from create-checkout.js
+                                            const userId = session.metadata?.userId;
+                                            const email = session.metadata?.email || session.customer_details?.email;
+                                            const plan = session.metadata?.plan || 'Pro';
+                                            const customerId = session.customer;
+                                            const subscriptionId = session.subscription;
+
+                                            console.log(`[Webhook] Processing successful checkout for ${email}`);
+
+                                            // 1. Log to Airtable
+                                            await logToAirtable('Subscribers', {
+                                                                    Email: email,
+                                                                    UserId: userId || "",
+                                                                    Status: 'Active',
+                                                                    Tier: plan,
+                                                                    StripeCustomerId: customerId,
+                                                                    StripeSubscriptionId: subscriptionId || "",
+                                                                    LastUpdated: new Date().toISOString()
+                                            }, 'Email');
+
+                                            // 2. Unlock in Clerk
+                                            if (userId) {
+                                                                    await updateClerkUser(userId, plan);
+                                            }
+                                            break;
+                        }
+
+                        case 'invoice.payment_succeeded': {
+                                            const invoice = event.data.object;
+                                            const customerEmail = invoice.customer_email;
+
+                                            if (invoice.subscription) {
+                                                                    const priceId = invoice.lines.data[0]?.price?.id;
+                                                                    let planName = 'Pro';
+                                                                    if (priceId === process.env.STRIPE_BIZ_PRICE_ID || priceId === process.env.STRIPE_BIZ_ANNUAL_PRICE_ID) {
+                                                                                                planName = 'Business';
+                                                                    }
+
+                                                await logToAirtable('Subscribers', {
+                                                                            Email: customerEmail,
+                                                                            Status: 'Active',
+                                                                            Tier: planName,
+                                                                            LastPayment: new Date().toISOString()
+                                                }, 'Email');
+                                            }
+                                            break;
+                        }
+
+                        case 'customer.subscription.deleted': {
+                                            const subscription = event.data.object;
+                                            const customer = await stripe.customers.retrieve(subscription.customer);
+                                            const email = customer.email;
+
+                                            await logToAirtable('Subscribers', {
+                                                                    Email: email,
+                                                                    Status: 'Cancelled',
+                                                                    StripeSubscriptionId: subscription.id
+                                            }, 'Email');
+                                            break;
+                        }
+
+                        case 'customer.subscription.updated': {
+                                            const subscription = event.data.object;
+                                            const customer = await stripe.customers.retrieve(subscription.customer);
+                                            const email = customer.email;
+
+                                            await logToAirtable('Subscribers', {
+                                                                    Email: email,
+                                                                    Status: subscription.status === 'active' ? 'Active' : 'Past Due',
+                                                                    StripeSubscriptionId: subscription.id
+                                            }, 'Email');
+                                            break;
+                        }
+
+                        default:
+                                            console.log(`[Webhook] Unhandled event type ${event.type}`);
+                    }
+        } catch (err) {
+                    console.error(`[Webhook] Critical error during event processing:`, err.message);
+        }
+
+        res.status(200).json({ received: true });
 };
