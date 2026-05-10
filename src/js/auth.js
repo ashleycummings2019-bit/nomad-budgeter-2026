@@ -38,7 +38,6 @@ async function initAuth() {
                 console.log(`[Auth] handleSubscribe clicked for plan: ${plan}`);
                 const billingToggle = document.getElementById('billing-toggle');
                 const cycle = billingToggle && billingToggle.classList.contains('annual') ? 'annual' : 'monthly';
-                console.log(`[Auth] Detected cycle: ${cycle}`);
                 
                 // Track Checkout Intent
                 if (window.gtag) {
@@ -50,45 +49,60 @@ async function initAuth() {
                     });
                 }
 
+                // Ensure user is still signed in
+                if (!window.Clerk?.user) {
+                    console.warn('[Auth] User session not found. Prompting sign-in.');
+                    window.Clerk?.openSignIn();
+                    return;
+                }
+
+                const btnId = plan === 'pro' ? 'btn-subscribe-pro' : 'btn-subscribe-biz';
+                const btn = document.getElementById(btnId);
+                const originalText = btn ? btn.innerText : 'Unlock Features';
+
                 try {
-                    console.log(`[Auth] Fetching /api/create-checkout for ${plan}`);
-                    // Ensure the button shows loading state if possible
-                    const btnId = plan === 'pro' ? 'btn-subscribe-pro' : 'btn-subscribe-biz';
-                    const btn = document.getElementById(btnId);
+                    console.log(`[Auth] Requesting checkout: ${plan} (${cycle})`);
+                    
                     if (btn) {
-                        const originalText = btn.innerText;
-                        btn.innerText = 'Processing...';
+                        btn.innerText = 'Preparing Secure Checkout...';
                         btn.disabled = true;
-                        
-                        setTimeout(() => { // Revert back in case of error
-                            if(btn) { btn.innerText = originalText; btn.disabled = false; }
-                        }, 5000);
                     }
+
+                    const payload = {
+                        plan: plan,
+                        cycle: cycle,
+                        userId: window.Clerk.user.id,
+                        email: window.Clerk.user.primaryEmailAddress?.emailAddress
+                    };
+
+                    console.log('[Auth] Checkout Payload:', payload);
 
                     const response = await fetch('/api/create-checkout', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            plan: plan,
-                            cycle: cycle,
-                            userId: window.Clerk.user.id,
-                            email: window.Clerk.user.primaryEmailAddress.emailAddress
-                        })
+                        body: JSON.stringify(payload)
                     });
                     
                     const data = await response.json();
-                    console.log('[Auth] /api/create-checkout response:', data);
+                    console.log('[Auth] Server Response:', data);
                     
+                    if (!response.ok) {
+                        throw new Error(data.error || `Server Error (${response.status})`);
+                    }
+
                     if (data.url) {
-                        console.log('[Auth] Redirecting to Stripe checkout URL:', data.url);
+                        console.log('[Auth] Redirecting to Stripe:', data.url);
                         window.location.href = data.url;
                     } else {
-                        console.error('[Auth] Checkout failed without URL:', data.error);
-                        alert('Could not start checkout. Please try again: ' + (data.error || 'Unknown error'));
+                        throw new Error('Server did not return a checkout URL.');
                     }
                 } catch (err) {
-                    console.error('[Auth] Checkout network error:', err);
-                    alert('Network error connecting to checkout provider. Please try again.');
+                    console.error('[Auth] Checkout Error:', err);
+                    alert(`Unable to start checkout: ${err.message}\n\nPlease refresh and try again or contact hello@nomadbudgeter.com if this persists.`);
+                    if (btn) {
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                    }
                 }
             };
 
