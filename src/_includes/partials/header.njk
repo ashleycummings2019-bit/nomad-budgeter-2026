@@ -1,69 +1,30 @@
-<header class="site-header">
+{# Site Header — Premium Glassmorphic Navigation #}
+<header class="site-header glass-panel" role="banner">
     <div class="header-container">
-        <a href="/" class="logo">
+        <a href="/" class="logo" aria-label="Nomad Budgeter Home">
             <span class="logo-emoji">🌍</span>
             <span class="logo-text">Nomad<span style="color: var(--aura-primary);">Budgeter</span></span>
             <span class="logo-year">2026</span>
         </a>
         
-        <div class="live-pulse">
-            <div class="pulse-dot"></div>
-            <span>45+ Visa Programs · Live 2026 Data</span>
-        </div>
-
-        <nav class="main-nav">
-            <div class="nav-item has-megamenu">
-                <a href="/cities/lisbon/" class="nav-link">Cities <span class="chevron">↓</span></a>
-                <div class="megamenu glass-panel">
-                    <div class="megamenu-grid">
-                        <div class="megamenu-col">
-                            <h4>Europe Hubs</h4>
-                            <a href="/cities/lisbon/">🇵🇹 Lisbon, Portugal</a>
-                            <a href="/cities/valencia/">🇪🇸 Valencia, Spain</a>
-                            <a href="/cities/berlin/">🇩🇪 Berlin, Germany</a>
-                        </div>
-                        <div class="megamenu-col">
-                            <h4>Asia & LATAM</h4>
-                            <a href="/cities/bali/">🇮🇩 Canggu, Bali</a>
-                            <a href="/cities/medellin/">🇨🇴 Medellin, Colombia</a>
-                            <a href="/cities/mexico-city/">🇲🇽 Mexico City, MX</a>
-                        </div>
-                        <div class="megamenu-col promo">
-                            <div class="promo-content">
-                                <span>Trending Now</span>
-                                <h5>2026 Lowest Tax Havens</h5>
-                                <p>Discover where your income stays yours.</p>
-                                <a href="/trends/lowest-tax-digital-nomad-countries-2026/" class="text-link">Read Guide →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="nav-item has-megamenu">
-                <a href="/visas/portugal/" class="nav-link">Visas <span class="chevron">↓</span></a>
-                <div class="megamenu glass-panel">
-                    <div class="megamenu-grid">
-                        <div class="megamenu-col">
-                            <h4>0% Tax Options</h4>
-                            <a href="/visas/dubai/">🇦🇪 Dubai Remote Visa</a>
-                            <a href="/visas/bahamas/">🇧🇸 Bahamas Extended Stay</a>
-                        </div>
-                        <div class="megamenu-col">
-                            <h4>European D7/D8</h4>
-                            <a href="/visas/portugal/">🇵🇹 Portugal Nomad Visa</a>
-                            <a href="/visas/spain/">🇪🇸 Spain Digital Nomad</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            <a href="/cities/" class="nav-link">Cities</a>
+            <a href="/visas/" class="nav-link">Visas</a>
             <a href="/compare/" class="nav-link">Compare</a>
+            <a href="{{ site.affiliates.blueground.url }}" class="nav-link highlight-link" target="_blank">Housing</a>
             <a href="/blog/" class="nav-link">Blog</a>
         </nav>
 
         <div class="header-actions">
-            <a href="/pricing/" id="header-go-pro" class="action-btn" style="padding: 0.6rem 1.2rem; font-size: 0.85rem; border-radius: 12px; background: var(--aura-primary);">Go Pro</a>
+            <a href="/pricing/" id="header-go-pro" class="pro-tag-btn">
+                <span class="pro-tag">PRO</span>
+                Unlock Reports
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </div>
 </header>
+

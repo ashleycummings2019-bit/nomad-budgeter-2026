@@ -3,6 +3,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
 
+{# Favicon & PWA #}
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" type="image/svg+xml">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#09090b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+{# Noscript fallback #}
+<noscript>
+    <style>.site-header,.mobile-tab-bar,.mobile-sticky-cta,.aura-blob{display:none!important}body{background:#0f172a;color:#e2e8f0;font-family:system-ui,sans-serif}</style>
+</noscript>
+
 <title>{{ pageTitle or title or (site.name + " | " + site.tagline) }}</title>
 <meta name="description" content="{{ pageDescription or description or site.description }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">

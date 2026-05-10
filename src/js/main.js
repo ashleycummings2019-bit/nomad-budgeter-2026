@@ -255,38 +255,57 @@ function updateUI(data) {
     if (emptyState) emptyState.classList.add('hidden');
     if (resultsPanel) resultsPanel.classList.remove('hidden');
 
-    // Update Result Numbers
-    document.getElementById('res-monthly-net').textContent = formatCurrency(data.monthlyNet);
-    document.getElementById('res-monthly-col').textContent = formatCurrency(data.monthlyCost);
-    document.getElementById('res-monthly-savings').textContent = formatCurrency(data.monthlySavings);
-    document.getElementById('res-tax-savings').textContent = formatCurrency(data.taxSavings);
-    
-    // Savings Color
-    const savingsEl = document.getElementById('res-monthly-savings');
-    savingsEl.style.color = data.monthlySavings > 0 ? 'var(--aura-primary)' : '#ef4444';
+    // Update Result Numbers (IDs must match the HTML templates)
+    const netMonthlyEl = document.getElementById('res-net-monthly');
+    const taxRateEl = document.getElementById('res-tax-rate');
+    const colIndexEl = document.getElementById('res-col-index');
+    const savingsEl = document.getElementById('res-savings');
+
+    if (netMonthlyEl) netMonthlyEl.textContent = formatCurrency(data.monthlyNet);
+    if (taxRateEl) taxRateEl.textContent = formatPercent(data.taxRate);
+    if (colIndexEl) colIndexEl.textContent = data.colIndex > 80 ? 'High' : data.colIndex > 50 ? 'Medium' : 'Low';
+    if (savingsEl) {
+        savingsEl.textContent = formatCurrency(data.monthlySavings);
+        savingsEl.style.color = data.monthlySavings > 0 ? 'var(--aura-primary)' : '#ef4444';
+    }
 
     // Metrics
-    document.getElementById('aura-tax-efficiency').textContent = formatPercent(1 - data.taxRate);
-    document.getElementById('aura-savings-power').textContent = formatPercent(data.monthlySavings / data.monthlyNet);
+    const taxEffEl = document.getElementById('aura-tax-efficiency');
+    const savPowerEl = document.getElementById('aura-savings-power');
+    if (taxEffEl) taxEffEl.textContent = formatPercent(1 - data.taxRate);
+    if (savPowerEl) savPowerEl.textContent = formatPercent(data.monthlySavings / data.monthlyNet);
 
-    // Update PRO Report Data for PDF Generator
+    // Update PRO Report Data for PDF Generator (with safety guards)
     const proCityName = document.getElementById('pro-city-name');
     if (proCityName) {
-        proCityName.textContent = state.targetCity;
-        document.getElementById('pro-country-name').textContent = state.targetCountry;
+        proCityName.textContent = state.targetCity || 'Selected City';
+        
+        const proCountryName = document.getElementById('pro-country-name');
+        if (proCountryName) proCountryName.textContent = state.targetCountry || 'Selected Country';
         
         // Taxes (Mock breakdown of total tax)
-        document.getElementById('pro-local-tax').textContent = formatCurrency(data.taxAmount / 12 * 0.7); 
-        document.getElementById('pro-se-tax').textContent = formatCurrency(data.taxAmount / 12 * 0.3); 
-        document.getElementById('pro-us-tax').textContent = '$0'; // FEIE assumption
-        document.getElementById('pro-total-tax').textContent = formatCurrency(data.taxAmount / 12);
+        const localTax = document.getElementById('pro-local-tax');
+        const seTax = document.getElementById('pro-se-tax');
+        const usTax = document.getElementById('pro-us-tax');
+        const totalTax = document.getElementById('pro-total-tax');
+
+        if (localTax) localTax.textContent = formatCurrency(data.taxAmount / 12 * 0.7); 
+        if (seTax) seTax.textContent = formatCurrency(data.taxAmount / 12 * 0.3); 
+        if (usTax) usTax.textContent = '$0'; // FEIE assumption
+        if (totalTax) totalTax.textContent = formatCurrency(data.taxAmount / 12);
         
         // COL Breakdown
-        document.getElementById('pro-rent').textContent = formatCurrency(data.monthlyCost * 0.45);
-        document.getElementById('pro-groceries').textContent = formatCurrency(data.monthlyCost * 0.25);
-        document.getElementById('pro-coworking').textContent = formatCurrency(data.monthlyCost * 0.10);
-        document.getElementById('pro-utilities').textContent = formatCurrency(data.monthlyCost * 0.20);
-        document.getElementById('pro-total-col').textContent = formatCurrency(data.monthlyCost);
+        const proRent = document.getElementById('pro-rent');
+        const proGroceries = document.getElementById('pro-groceries');
+        const proCoworking = document.getElementById('pro-coworking');
+        const proUtilities = document.getElementById('pro-utilities');
+        const proTotalCol = document.getElementById('pro-total-col');
+
+        if (proRent) proRent.textContent = formatCurrency(data.monthlyCost * 0.45);
+        if (proGroceries) proGroceries.textContent = formatCurrency(data.monthlyCost * 0.25);
+        if (proCoworking) proCoworking.textContent = formatCurrency(data.monthlyCost * 0.10);
+        if (proUtilities) proUtilities.textContent = formatCurrency(data.monthlyCost * 0.20);
+        if (proTotalCol) proTotalCol.textContent = formatCurrency(data.monthlyCost);
     }
 
     // Score & Bars

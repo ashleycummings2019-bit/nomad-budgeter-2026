@@ -17,11 +17,14 @@ async function initAuth() {
         console.log('[Auth] window.Clerk.load() finished. User:', window.Clerk.user);
 
         const goProBtn = document.getElementById('header-go-pro');
-        const userButtonDiv = document.createElement('div');
-        userButtonDiv.id = 'clerk-user-button';
+        const signInLink = document.getElementById('header-signin-link');
+        const userButtonDiv = document.getElementById('header-user-btn');
         
         if (window.Clerk.user) {
             console.log('[Auth] User is logged in:', window.Clerk.user.primaryEmailAddress.emailAddress);
+            
+            // Hide Sign In link
+            if (signInLink) signInLink.style.display = 'none';
             
             // Transform "Go Pro" to "Dashboard"
             if (goProBtn) {
@@ -115,13 +118,20 @@ async function initAuth() {
             }
 
             // Mount user button
-            const headerActions = document.querySelector('.header-actions');
-            if (headerActions) {
-                headerActions.appendChild(userButtonDiv);
+            if (userButtonDiv) {
                 window.Clerk.mountUserButton(userButtonDiv);
             }
         } else {
             console.log('[Auth] User is logged out');
+            
+            // Show Sign In link and wire it
+            if (signInLink) {
+                signInLink.style.display = 'block';
+                signInLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.Clerk.openSignIn();
+                });
+            }
             if (goProBtn) {
                 goProBtn.href = '/pricing/'; // Point to pricing page
             }
@@ -183,8 +193,32 @@ function waitForClerk(maxAttempts = 50) {
     check();
 }
 
+// Immediately wire fallback handlers so buttons always respond to clicks,
+// even before Clerk has loaded. These are replaced once auth.js fully initialises.
+function wirePreAuthFallbacks() {
+    const btnIds = ['btn-subscribe-pro', 'btn-subscribe-biz', 'unlock-pro-btn'];
+    btnIds.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn && !btn._authWired) {
+            btn.addEventListener('click', function preAuthHandler(e) {
+                if (this._authWired) return; // Real handler will fire via auth.js
+                e.stopImmediatePropagation();
+                if (window.Clerk && !window.Clerk.user) {
+                    window.Clerk.openSignIn();
+                } else if (!window.Clerk) {
+                    alert('Loading authentication... please try again in a moment.');
+                }
+            });
+        }
+    });
+}
+
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => waitForClerk());
+    document.addEventListener('DOMContentLoaded', () => {
+        wirePreAuthFallbacks();
+        waitForClerk();
+    });
 } else {
+    wirePreAuthFallbacks();
     waitForClerk();
 }

@@ -21,6 +21,14 @@ Then, in late 2023, Portugal killed it.
 
 But what replaced it — **IFICI (Incentivo Fiscal à Investigação Científica e Inovação)**, informally known as **NHR 2.0** — is still one of the most competitive tax regimes in Europe. Here's what you need to know for 2026.
 
+<div class="glass-panel" style="margin: 2rem 0; padding: 2rem; border-left: 4px solid var(--aura-primary);">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <span style="font-size: 2rem;">⚖️</span>
+        <h3 style="margin: 0; color: var(--aura-primary); font-size: 1.5rem; font-family: 'Space Grotesk', system-ui, sans-serif;">The Expert Verdict</h3>
+    </div>
+    <p style="margin: 0; color: var(--text-light); line-height: 1.6; font-size: 1.05rem;">NHR 2.0 (IFICI) is highly lucrative but extremely narrow. Typical digital nomads (freelancers, course creators) will rarely qualify. If you don't fit the tech/startup criteria, look to Spain's Beckham Law or a standard LLC structuring strategy instead.</p>
+</div>
+
 ## What Is IFICI / NHR 2.0?
 
 IFICI is Portugal's replacement for the original NHR, effective from January 2024. It offers a **20% flat tax rate** on qualifying Portuguese-sourced employment and self-employment income for a period of **10 consecutive years**.

@@ -23,6 +23,14 @@ Spain's **Beckham Law** (officially *Régimen Especial de Trabajadores Desplazad
 
 In 2026, it remains one of the best tax deals in the EU. Here's everything you need to know.
 
+<div class="glass-panel" style="margin: 2rem 0; padding: 2rem; border-left: 4px solid var(--aura-primary);">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <span style="font-size: 2rem;">⚖️</span>
+        <h3 style="margin: 0; color: var(--aura-primary); font-size: 1.5rem; font-family: 'Space Grotesk', system-ui, sans-serif;">The Expert Verdict</h3>
+    </div>
+    <p style="margin: 0; color: var(--text-light); line-height: 1.6; font-size: 1.05rem;">The Beckham Law is exceptionally powerful for high earners (over €60,000/year). While Portugal's NHR 2.0 (IFICI) has a lower 20% rate, Spain's 24% rate is much easier to qualify for as a remote worker. The catch? You must apply within 6 months of arriving in Spain—do not miss this window.</p>
+</div>
+
 ## What Is the Beckham Law?
 
 The Beckham Law allows qualifying individuals who move to Spain to be taxed as **non-residents** for up to **6 years**. This means:

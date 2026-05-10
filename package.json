@@ -12,7 +12,8 @@
     "swarm": "node --env-file=.env backend-intelligence/orchestrator.mjs",
     "swarm:scan": "node --env-file=.env backend-intelligence/orchestrator.mjs --scan-only",
     "swarm:audit": "node --env-file=.env backend-intelligence/orchestrator.mjs --audit-only",
-    "swarm:write": "node --env-file=.env backend-intelligence/agents/writer.mjs"
+    "swarm:write": "node --env-file=.env backend-intelligence/agents/writer.mjs",
+    "swarm:notebook": "node --env-file=.env backend-intelligence/agents/notebook-gem.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"

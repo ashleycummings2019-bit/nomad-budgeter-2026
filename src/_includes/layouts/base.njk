@@ -40,6 +40,13 @@
     {% include "partials/header.njk" %}
     {% include "partials/mobile-cta.njk" %}
 
+    <noscript>
+        <div style="background: #1e293b; color: #e2e8f0; padding: 2rem; text-align: center; font-family: system-ui, sans-serif;">
+            <h2>JavaScript Required</h2>
+            <p style="margin-top: 0.5rem; color: #94a3b8;">Nomad Budgeter requires JavaScript to calculate taxes, compare cities, and display live data. Please enable JavaScript in your browser settings.</p>
+        </div>
+    </noscript>
+
     <main id="main-content">
         {{ content | safe }}
     </main>
@@ -53,5 +60,46 @@
     <script type="module" src="/js/main.js"></script>
     <script src="/js/capture-lead.js"></script>
     <script src="/js/auth.js"></script>
+
+    {# Header scroll effect + Clerk user button #}
+    <script>
+    (function() {
+        // Scroll effect
+        const header = document.querySelector('.site-header');
+        if (header) {
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        header.classList.toggle('scrolled', window.scrollY > 20);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+        }
+
+        // Mount Clerk user button when available
+        function mountClerkUser() {
+            const el = document.getElementById('header-user-btn');
+            if (!el) return;
+            if (window.Clerk) {
+                try {
+                    window.Clerk.mountUserButton(el, {
+                        afterSignOutUrl: '/',
+                        appearance: { elements: { userButtonAvatarBox: { width: '32px', height: '32px' } } }
+                    });
+                } catch(e) { /* Clerk not fully loaded yet */ }
+            } else {
+                setTimeout(mountClerkUser, 500);
+            }
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', mountClerkUser);
+        } else {
+            mountClerkUser();
+        }
+    })();
+    </script>
 </body>
 </html>

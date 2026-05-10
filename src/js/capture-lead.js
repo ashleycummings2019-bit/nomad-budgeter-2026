@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     sendGuideBtns.forEach(btn => {
         btn.addEventListener('click', async (e) => {
-            const container = e.target.closest('.lead-content, .expert-verdict-content, .lead-card');
+            const container = e.target.closest('.lead-content, .expert-verdict-content, .lead-card, .hero-actions');
             if (!container) return;
             
             const emailInput = container.querySelector('#lead-email');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalForm = document.getElementById('modal-lead-form');
 
     const showModal = () => {
-        if (!sessionStorage.getItem('auraModalShown')) {
+        if (modal && !sessionStorage.getItem('auraModalShown')) {
             modal.classList.add('active');
             sessionStorage.setItem('auraModalShown', 'true');
         }
@@ -107,11 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Close on backdrop click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
 
     // Handle modal submission
     if (modalSubmit) {

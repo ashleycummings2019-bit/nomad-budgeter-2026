@@ -64,8 +64,8 @@ export const updateIncomeSimulator = (grossIncome, taxRate) => {
     const netIncome = grossIncome - taxAmount;
 
     sliderVal.textContent = formatCurrency(grossIncome);
-    takehomeVal.textContent = formatCurrency(netIncome / 12);
-    taxVal.textContent = formatCurrency(taxAmount / 12);
+    if (takehomeVal) takehomeVal.textContent = formatCurrency(netIncome / 12);
+    if (taxVal) taxVal.textContent = formatCurrency(taxAmount / 12);
 
     // Update bars height
     const maxVal = grossIncome;

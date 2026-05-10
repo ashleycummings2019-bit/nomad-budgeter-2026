@@ -2,7 +2,9 @@ const comparisons = require('../src/_data/cityCountryComparisons.js')();
 const slugs = comparisons.map(c => c.slug);
 const uniqueSlugs = new Set(slugs);
 
-if (slugs.length !== uniqueSlugs.size) {
+if (slugs.length === uniqueSlugs.size) {
+  console.log('No duplicate slugs in cityCountryComparisons.');
+} else {
   console.log('Duplicate slugs found!');
   const counts = {};
   slugs.forEach(s => {
@@ -11,6 +13,4 @@ if (slugs.length !== uniqueSlugs.size) {
       console.log(`Duplicate slug: ${s}`);
     }
   });
-} else {
-  console.log('No duplicate slugs in cityCountryComparisons.');
 }

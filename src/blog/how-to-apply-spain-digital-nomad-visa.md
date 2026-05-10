@@ -11,6 +11,14 @@ Spain's Digital Nomad Visa (DNV) has become one of the most coveted remote work 
 
 If you are a non-EU citizen looking to move to Madrid, Barcelona, Valencia, or the Canary Islands in 2026, here is the exact step-by-step process to secure your visa.
 
+<div class="glass-panel" style="margin: 2rem 0; padding: 2rem; border-left: 4px solid var(--aura-primary);">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <span style="font-size: 2rem;">⚖️</span>
+        <h3 style="margin: 0; color: var(--aura-primary); font-size: 1.5rem; font-family: 'Space Grotesk', system-ui, sans-serif;">The Expert Verdict</h3>
+    </div>
+    <p style="margin: 0; color: var(--text-light); line-height: 1.6; font-size: 1.05rem;">Spain's Digital Nomad Visa paired with the Beckham Law is arguably the best tax setup in Western Europe for 2026. However, the bureaucracy can be punishing. Ensure your company can accommodate the Social Security requirements before applying, as this is the #1 reason applications stall.</p>
+</div>
+
 ## Step 1: Check Your Eligibility
 
 Before gathering documents, ensure you meet the 2026 baseline requirements:

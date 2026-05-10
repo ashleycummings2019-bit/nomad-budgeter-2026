@@ -47,7 +47,7 @@
                 <div class="toolkit-icon">🏙️</div>
                 <div class="toolkit-content">
                     <h4>{{ site.affiliates.blueground.name }}</h4>
-                    <p>Looking for a fully furnished apartment? Use my promo code to save on your stay with Blueground in {% if city %}{{ city.name }}{% else %}{{ country.name }}{% endif %}.</p>
+                    <p>{{ site.affiliates.blueground.desc | safe }}</p>
                     <span class="toolkit-cta">Find Apartments &rarr;</span>
                 </div>
             </a>

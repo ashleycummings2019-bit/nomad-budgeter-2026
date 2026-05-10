@@ -11,6 +11,14 @@ Portugal officially launched its dedicated Digital Nomad Visa (the D8) to separa
 
 Here are the hard numbers and requirements you need to know before applying.
 
+<div class="glass-panel" style="margin: 2rem 0; padding: 2rem; border-left: 4px solid var(--aura-primary);">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <span style="font-size: 2rem;">⚖️</span>
+        <h3 style="margin: 0; color: var(--aura-primary); font-size: 1.5rem; font-family: 'Space Grotesk', system-ui, sans-serif;">The Expert Verdict</h3>
+    </div>
+    <p style="margin: 0; color: var(--text-light); line-height: 1.6; font-size: 1.05rem;">The D8 remains a top-tier digital nomad visa because the 5-year clock to citizenship starts the moment your residency is approved. The biggest hurdle is securing a 12-month lease without a local guarantor—budget for 6-12 months of rent upfront.</p>
+</div>
+
 ## 1. The Income Threshold
 
 To qualify for the D8 visa in 2026, you must prove a monthly income of at least **four times the Portuguese minimum wage**. 

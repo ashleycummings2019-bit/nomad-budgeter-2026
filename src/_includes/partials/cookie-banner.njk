@@ -45,6 +45,14 @@
     function disableAnalytics() {
         // Disable GA4
         window['ga-disable-{{ site.ga4 }}'] = true;
+        // Clear existing GA cookies
+        document.cookie.split(';').forEach(function(c) {
+            var name = c.trim().split('=')[0];
+            if (name.startsWith('_ga') || name.startsWith('_gid')) {
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=' + location.hostname;
+                document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.' + location.hostname;
+            }
+        });
     }
 })();
 </script>

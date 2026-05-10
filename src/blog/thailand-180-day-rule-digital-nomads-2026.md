@@ -19,6 +19,14 @@ Thailand is the world's most popular digital nomad destination. Cheap pad thai, 
 
 But there's a trap that catches thousands of nomads every single year: **the 180-day rule**.
 
+<div class="glass-panel" style="margin: 2rem 0; padding: 2rem; border-left: 4px solid var(--aura-primary);">
+    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+        <span style="font-size: 2rem;">⚖️</span>
+        <h3 style="margin: 0; color: var(--aura-primary); font-size: 1.5rem; font-family: 'Space Grotesk', system-ui, sans-serif;">The Expert Verdict</h3>
+    </div>
+    <p style="margin: 0; color: var(--text-light); line-height: 1.6; font-size: 1.05rem;">Thailand's recent shift to tax foreign income brought into the country has changed the game. If you trip the 180-day rule in 2026, any money you transfer to a Thai bank account could be taxed up to 35%. The easiest fix? Leave at day 170 and keep a strict 10-day safety buffer.</p>
+</div>
+
 ## What Is Thailand's 180-Day Rule?
 
 If you spend **180 days or more** in Thailand within a single calendar year (January 1 – December 31), you become a **Thai tax resident**. This means Thailand can tax your **worldwide income** — not just income earned in Thailand.

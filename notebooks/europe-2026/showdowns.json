@@ -1,0 +1,1122 @@
+{
+  "lisbon-vs-barcelona": {
+    "slug": "lisbon-vs-barcelona",
+    "title": "Lisbon vs Barcelona",
+    "subtitle": "EU Tax War 2026",
+    "tagline": "Portugal's NHR heir faces Spain's Beckham Law — which Mediterranean base keeps more of your money?",
+    "emoji_a": "🇵🇹",
+    "emoji_b": "🇪🇸",
+    "city_a": "Lisbon",
+    "city_b": "Barcelona",
+    "country_a": "Portugal",
+    "country_b": "Spain",
+    "verdict": "Lisbon",
+    "verdict_reason": "10% cheaper overall with a lower visa income threshold — but Barcelona wins for career networking and startup access.",
+    "cost_diff": "+10%",
+    "cost_winner": "Lisbon",
+    "tax_winner": "Barcelona",
+    "visa_winner": "Barcelona",
+    "lifestyle_winner": "Lisbon",
+    "hero_stat_a": "€1,800–2,500/mo",
+    "hero_stat_b": "€2,200–2,800/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "IFICI (NHR 2.0)",
+      "rate": "20% flat",
+      "duration": "10 years",
+      "notes": "Applies to qualifying income. Must apply within 90 days of registering as resident.",
+      "source": "Portuguese Tax & Customs Authority, 2026"
+    },
+    "tax_b": {
+      "regime": "Beckham Law",
+      "rate": "24% flat",
+      "duration": "5 years",
+      "notes": "Applies to first €600,000 annual income. Income above that taxed at 47%.",
+      "source": "Spanish Tax Agency (AEAT), 2026"
+    },
+    "visa_a": {
+      "name": "D8 Digital Nomad Visa",
+      "income_req": "~€3,680/mo (~$3,940)",
+      "duration": "1 year + 2-year renewals",
+      "cost": "~€320 application",
+      "processing": "4–8 weeks",
+      "path_to_residency": "5 years to permanent residency"
+    },
+    "visa_b": {
+      "name": "Digital Nomad Visa (DNV)",
+      "income_req": "~€2,850/mo (~$3,050)",
+      "duration": "3 years, renewable",
+      "cost": "~€75 + consulate fees",
+      "processing": "2–4 weeks",
+      "path_to_residency": "5 years to permanent residency"
+    },
+    "costs_a": {
+      "rent_1br": "$1,155",
+      "meal_local": "$8–12",
+      "coworking": "$120–200/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$200–300",
+      "transport_mo": "$40–60",
+      "internet_speed": "150–500 Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$1,260",
+      "meal_local": "$12–16",
+      "coworking": "$150–250/mo",
+      "coffee": "$2.00–3.00",
+      "groceries_mo": "$220–350",
+      "transport_mo": "$60–80",
+      "internet_speed": "150+ Mbps"
+    },
+    "pick_a_if": [
+      "You want to stretch your budget further in Southern Europe",
+      "You're applying for residency and want a lower visa income threshold",
+      "You want an established, large-scale nomad community",
+      "You value Atlantic coast access and world-class surfing nearby",
+      "You're on the IFICI/NHR path and want 10 years of flat tax"
+    ],
+    "pick_b_if": [
+      "You earn high income and want Beckham Law's 24% flat rate",
+      "You want to integrate into a startup or tech ecosystem (Mobile World Congress city)",
+      "You need access to more international career opportunities",
+      "You prioritise nightlife, architecture, and Mediterranean beach culture",
+      "Your visa income is closer to the lower €2,850/mo threshold"
+    ],
+    "faqs": [
+      {
+        "q": "Which city is cheaper for digital nomads in 2026, Lisbon or Barcelona?",
+        "a": "Lisbon is approximately 10% cheaper than Barcelona in 2026. A comfortable monthly budget in Lisbon runs €1,800–2,500 all-in, versus €2,200–2,800 in Barcelona. The biggest difference is rent: 1BR central apartments average $1,155 in Lisbon vs $1,260 in Barcelona, with coworking and dining also marginally cheaper in Lisbon."
+      },
+      {
+        "q": "Which has the better digital nomad tax regime — Portugal's IFICI or Spain's Beckham Law?",
+        "a": "Spain's Beckham Law offers a 24% flat rate for 5 years. Portugal's IFICI (the successor to NHR) offers 20% flat for 10 years. Portugal wins on both rate and duration. However, Spain's visa income threshold is lower (~€2,850/mo vs Portugal's ~€3,680/mo), making Spain's regime more accessible to lower earners."
+      },
+      {
+        "q": "Do US citizens still pay US tax while living in Lisbon or Barcelona?",
+        "a": "Yes. US citizens pay US federal tax on worldwide income regardless of residency. The Foreign Earned Income Exclusion (FEIE) for 2026 is approximately $130,500, which can offset most or all of the local tax liability depending on income level. You should consult a US expat tax advisor before relying on FEIE in either location."
+      },
+      {
+        "q": "Which city has a stronger digital nomad community?",
+        "a": "Lisbon consistently ranks in the global top 10 for digital nomad infrastructure. Coworking spaces like Second Home, Outsite, and Selina are established, English is widely spoken, and the nomad meetup scene is mature. Barcelona has a strong tech and startup presence, centred around the Poblenou district, but general English proficiency is lower outside the expat bubble."
+      },
+      {
+        "q": "Is Lisbon still affordable in 2026?",
+        "a": "Lisbon is no longer cheap — it has moved from a budget destination to a mid-range European city. A comfortable lifestyle costs €1,800–2,500/month, comparable to Berlin or Milan five years ago. It still offers strong value for what it delivers: walkability, weather, food quality, and internet infrastructure. Budget-focused nomads increasingly look at Porto, Braga, or Tbilisi instead."
+      }
+    ],
+    "data_sources": [
+      "Numbeo Cost of Living Index, February 2026",
+      "World Cost of Living — Barcelona vs Lisbon, February 2026",
+      "ExpatLife.ai — Lisbon vs Barcelona 2026",
+      "Portuguese Tax & Customs Authority (AT)",
+      "Spanish Tax Agency (AEAT)",
+      "digitalnomad.press — Global Visa Comparison 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "chiang-mai-vs-dubai": {
+    "slug": "chiang-mai-vs-dubai",
+    "title": "Chiang Mai vs Dubai",
+    "subtitle": "Budget King vs Tax King 2026",
+    "tagline": "Southeast Asia's most-loved nomad hub against the world's most tax-efficient city. Which wins at your income level?",
+    "emoji_a": "🇹🇭",
+    "emoji_b": "🇦🇪",
+    "city_a": "Chiang Mai",
+    "city_b": "Dubai",
+    "country_a": "Thailand",
+    "country_b": "UAE",
+    "verdict": "Depends on income",
+    "verdict_reason": "Under ~$80k/yr: Chiang Mai wins on absolute savings. Over ~$120k/yr: Dubai's 0% tax erases its cost premium and pulls ahead.",
+    "cost_diff": "Dubai costs 2–3× more",
+    "cost_winner": "Chiang Mai",
+    "tax_winner": "Dubai",
+    "visa_winner": "Chiang Mai",
+    "lifestyle_winner": "Draw",
+    "hero_stat_a": "$1,800–2,500/mo",
+    "hero_stat_b": "$3,500–5,500/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "DTV — Foreign income exemption",
+      "rate": "Generally 0% on foreign-sourced income",
+      "duration": "Ongoing, subject to 180-day rule",
+      "notes": "Spending 180+ days in Thailand triggers Thai tax residency. Structure your stays carefully. Rules on worldwide income declarations are evolving — get professional advice.",
+      "source": "Thai Revenue Department, 2026"
+    },
+    "tax_b": {
+      "regime": "UAE — No income tax",
+      "rate": "0% income tax",
+      "duration": "Indefinite (while UAE tax resident)",
+      "notes": "UAE tax residency requires 183+ days/year in UAE, or 90+ days if UAE is primary place of business. UAE Cabinet Resolution No. 85 (2022) governs this.",
+      "source": "UAE Federal Tax Authority, 2026"
+    },
+    "visa_a": {
+      "name": "Destination Thailand Visa (DTV)",
+      "income_req": "$16,000/yr (~$1,333/mo)",
+      "duration": "5 years, multiple entry (180 days per stay)",
+      "cost": "10,000 THB (~$280)",
+      "processing": "1–4 weeks",
+      "path_to_residency": "No direct PR pathway"
+    },
+    "visa_b": {
+      "name": "UAE Remote Work Visa",
+      "income_req": "$3,500/mo minimum",
+      "duration": "1 year, renewable",
+      "cost": "~$287 + mandatory health insurance",
+      "processing": "2–5 business days",
+      "path_to_residency": "No direct PR pathway",
+      "note_2026": "As of January 27, 2026: requires 6 consecutive months of bank statements (previously 3)."
+    },
+    "costs_a": {
+      "rent_1br": "$300–600",
+      "meal_local": "$1.50–4",
+      "coworking": "$80–190/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$200–300",
+      "transport_mo": "$50–150",
+      "internet_speed": "50–200 Mbps (café average)"
+    },
+    "costs_b": {
+      "rent_1br": "$2,000–4,000",
+      "meal_local": "$12–25",
+      "coworking": "$200–500/mo",
+      "coffee": "$4–6",
+      "groceries_mo": "$400–700",
+      "transport_mo": "$200–400",
+      "internet_speed": "200+ Mbps"
+    },
+    "pick_a_if": [
+      "Your annual income is under $80,000 — Chiang Mai's low cost base saves more in absolute terms",
+      "You want the world's most established nomad community infrastructure",
+      "You value the DTV's 5-year, $280 visa over Dubai's $3,500/mo income requirement",
+      "You want flexibility to move between Southeast Asia without re-qualifying for a visa",
+      "You prefer a slower, community-oriented lifestyle over urban luxury"
+    ],
+    "pick_b_if": [
+      "You earn $120,000+/year — Dubai's 0% tax will outweigh its higher cost of living",
+      "You need a time zone that bridges US, Europe, and Asia (GMT+4)",
+      "You require world-class business infrastructure, banking, and networking",
+      "You want a luxury lifestyle: beaches, fine dining, and premium co-working",
+      "Your home country has a tax treaty with the UAE and you want clean residency documentation"
+    ],
+    "faqs": [
+      {
+        "q": "Is Chiang Mai still cheap for digital nomads in 2026?",
+        "a": "Chiang Mai remains one of the most affordable long-term nomad bases globally. A comfortable single-person lifestyle — private apartment, coworking, meals out, transport — runs $1,800–2,500/month in 2026. Budget setups can come in closer to $1,200. This is 20–40% of equivalent costs in Toronto or Lisbon."
+      },
+      {
+        "q": "Do I pay 0% tax in Chiang Mai as a digital nomad?",
+        "a": "Foreign-sourced income is generally not taxed in Thailand for nomads who spend fewer than 180 days per year in the country. However, spending 180+ days triggers Thai tax residency, which brings worldwide income into scope. Thailand's rules on foreign income declarations are also evolving in 2026 — this is an active area of tax law. Always verify with a qualified Thai tax advisor before assuming 0%."
+      },
+      {
+        "q": "What changed for the UAE Remote Work Visa in 2026?",
+        "a": "As of January 27, 2026, the UAE now requires 6 consecutive months of bank statements as part of the application (previously 3 months). If you recently changed jobs, started freelancing, or have any income gap in the past 6 months, you may need to wait before applying."
+      },
+      {
+        "q": "At what income level does Dubai become more financially efficient than Chiang Mai?",
+        "a": "The crossover point depends on your home country's tax rate. For a US freelancer using the FEIE (which excludes ~$130,500 of foreign income), the tax saving in Dubai vs Chiang Mai is smaller than expected. For a UK or Australian high earner, where home-country rates can reach 45–47%, Dubai's 0% can save $30,000–50,000+/year at $150k income, easily covering the higher monthly cost. A rough rule: Dubai starts winning in absolute savings around $100,000–120,000/year for most nationalities."
+      },
+      {
+        "q": "Which city has better internet for remote work?",
+        "a": "Both are reliable. Dubai averages 200+ Mbps with excellent infrastructure. Chiang Mai's fixed-fibre connections in apartments reach 100–300 Mbps, and café WiFi averages 50–200 Mbps. Chiang Mai nomads typically use a 4G/5G hotspot (AIS or True) as a backup. Dubai has more consistent city-wide coverage but comes at a significantly higher monthly cost."
+      }
+    ],
+    "data_sources": [
+      "Thai Revenue Department 2026",
+      "UAE Federal Tax Authority — Cabinet Resolution No. 85 (2022)",
+      "Silicon Valley Times — Best Digital Nomad Visas 2026",
+      "DMC Quote — Thailand DTV Guide, January 2026",
+      "Midlife Nomads — Chiang Mai Cost of Living 2026",
+      "countrytaxcalc.com — Digital Nomad Tax Comparison 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "medellin-vs-mexico-city": {
+    "slug": "medellin-vs-mexico-city",
+    "title": "Medellín vs Mexico City",
+    "subtitle": "LATAM Top Pick 2026",
+    "tagline": "The City of Eternal Spring vs the world's largest Spanish-speaking metropolis. Latin America's biggest nomad debate, settled with real numbers.",
+    "emoji_a": "🇨🇴",
+    "emoji_b": "🇲🇽",
+    "city_a": "Medellín",
+    "city_b": "Mexico City",
+    "country_a": "Colombia",
+    "country_b": "Mexico",
+    "verdict": "Medellín",
+    "verdict_reason": "30–40% cheaper with a favourable foreign income tax exemption and spring climate year-round. CDMX wins on infrastructure and global connectivity.",
+    "cost_diff": "Mexico City costs ~30–40% more",
+    "cost_winner": "Medellín",
+    "tax_winner": "Medellín",
+    "visa_winner": "Medellín",
+    "lifestyle_winner": "Mexico City",
+    "hero_stat_a": "$800–1,200/mo",
+    "hero_stat_b": "$1,200–2,000/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "Colombia — Foreign income exemption",
+      "rate": "0% on foreign-sourced income (for qualifying nomads)",
+      "duration": "While spending under 183 days/year in Colombia",
+      "notes": "If income source is entirely outside Colombia, most digital nomads do not pay local income tax. 183+ days triggers Colombian tax residency.",
+      "source": "DIAN — Colombian Tax Authority, 2026"
+    },
+    "tax_b": {
+      "regime": "Mexico — Residency-based taxation",
+      "rate": "0–35% (progressive, residency-dependent)",
+      "duration": "Triggered after 183 days in Mexico",
+      "notes": "Tourists and short-stay nomads generally don't owe Mexican income tax. Longer stays or obtaining a temporary resident card can trigger obligations. Tax treaties vary by home country.",
+      "source": "SAT — Mexico Tax Authority, 2026"
+    },
+    "visa_a": {
+      "name": "Colombia Digital Nomad Visa (M Visa)",
+      "income_req": "~$1,100/mo (3× Colombian minimum wage)",
+      "duration": "Up to 2 years, renewable",
+      "cost": "$52 application fee",
+      "processing": "3–15 business days",
+      "path_to_residency": "5 years to permanent residency"
+    },
+    "visa_b": {
+      "name": "Temporary Resident Visa (FM2 / work category)",
+      "income_req": "~$1,750/mo (financial solvency proof)",
+      "duration": "1–4 years",
+      "cost": "~$40–60 application",
+      "processing": "1–5 weeks",
+      "path_to_residency": "4 years temporary → permanent"
+    },
+    "costs_a": {
+      "rent_1br": "$400–700",
+      "meal_local": "$3–7",
+      "coworking": "$80–150/mo",
+      "coffee": "$1–2",
+      "groceries_mo": "$100–200",
+      "transport_mo": "$20–40",
+      "internet_speed": "50–100 Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$600–1,200",
+      "meal_local": "$5–12",
+      "coworking": "$100–250/mo",
+      "coffee": "$2–4",
+      "groceries_mo": "$150–300",
+      "transport_mo": "$30–60",
+      "internet_speed": "50–200 Mbps"
+    },
+    "pick_a_if": [
+      "You're budget-optimising and want the most affordable comfortable lifestyle in LATAM",
+      "You want perpetual spring weather (18–24°C year-round, no season adjustment)",
+      "You earn under $1,100/mo threshold and want a formal long-stay visa",
+      "You prefer a growing, tighter-knit nomad community over a sprawling megacity",
+      "You want to potentially qualify for Colombian tax exemption on foreign income"
+    ],
+    "pick_b_if": [
+      "You need world-class international connectivity — CDMX is a major global hub",
+      "You value cultural depth: museums, food scene, architecture, and nightlife at scale",
+      "You work with US clients and want nearshore time zone alignment (CST)",
+      "You want more neighbourhood variety and can afford the higher rent",
+      "You want access to Mexico's growing tech and startup ecosystem"
+    ],
+    "faqs": [
+      {
+        "q": "Is Medellín safe for digital nomads in 2026?",
+        "a": "Medellín has transformed significantly over the past decade. Popular nomad neighbourhoods — El Poblado, Laureles, and Envigado — are considered safe with active expat communities, well-lit streets, and established social scenes. As with any city, neighbourhood selection matters. Most nomads avoid the city centre and certain northern areas. Standard precautions (no phone out on the street, use apps for transport rather than hailing cabs) apply."
+      },
+      {
+        "q": "Can digital nomads legally work in Mexico without a work visa?",
+        "a": "Mexico does not have a dedicated digital nomad visa in 2026. Most nomads enter on a tourist stamp (valid up to 180 days, though border agents sometimes stamp fewer). Working for foreign clients while in Mexico as a tourist exists in a legal grey area — technically you're not 'working in Mexico' but for foreign entities. For stays beyond 180 days, a temporary resident visa is required. Consult an immigration attorney for clarity on your specific situation."
+      },
+      {
+        "q": "What is the internet reliability like in Medellín vs Mexico City?",
+        "a": "Mexico City has more consistent fibre infrastructure across neighbourhoods, with 100–200 Mbps readily available. Medellín's coverage has improved significantly, with 50–100 Mbps standard in El Poblado and Laureles. Both cities have established coworking ecosystems. Power outages are occasional in Medellín — many nomads use a UPS backup or rely on coworking spaces during their work hours."
+      },
+      {
+        "q": "Which LATAM city is better for meeting other digital nomads?",
+        "a": "Both cities have mature nomad communities in 2026. Medellín's El Poblado is a high-density zone for nomads — you'll meet people organically at cafes and coworking spaces. Mexico City's Condesa and Roma Norte neighbourhoods have a large, diverse expat and nomad population with active event scenes. Mexico City wins purely on scale; Medellín wins on community tightness and ease of meeting people."
+      }
+    ],
+    "data_sources": [
+      "DIAN — Colombian Tax Authority 2026",
+      "SAT — Mexico Tax Authority 2026",
+      "digitalnomad.press — Global Visa Comparison 2026",
+      "DigiDiamo — Cost of Living by Country 2026",
+      "Nomad List — Medellín and Mexico City profiles, Q1 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "tbilisi-vs-chiang-mai": {
+    "slug": "tbilisi-vs-chiang-mai",
+    "title": "Tbilisi vs Chiang Mai",
+    "subtitle": "Ultra Budget Showdown 2026",
+    "tagline": "The two cheapest serious nomad hubs in the world go head to head. Both cost under $1,200/mo — but the lifestyle trade-offs couldn't be more different.",
+    "emoji_a": "🇬🇪",
+    "emoji_b": "🇹🇭",
+    "city_a": "Tbilisi",
+    "city_b": "Chiang Mai",
+    "country_a": "Georgia",
+    "country_b": "Thailand",
+    "verdict": "Tbilisi",
+    "verdict_reason": "Marginally cheaper with a dramatically better tax structure for IT professionals (1% turnover tax via Virtual Zone). Chiang Mai wins on community maturity and DTV visa stability.",
+    "cost_diff": "Roughly equivalent — Tbilisi slightly cheaper",
+    "cost_winner": "Tbilisi",
+    "tax_winner": "Tbilisi",
+    "visa_winner": "Chiang Mai",
+    "lifestyle_winner": "Chiang Mai",
+    "hero_stat_a": "$800–1,200/mo",
+    "hero_stat_b": "$1,200–2,000/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "Georgia — Virtual Zone / Small Business",
+      "rate": "1% turnover tax (Virtual Zone IT companies)",
+      "duration": "Indefinite, while operating as Virtual Zone entity",
+      "notes": "Register as an Individual Entrepreneur (IE) or Virtual Zone company to access 1% rate on IT services sold outside Georgia. One of the lowest effective tax rates for digital nomads anywhere globally.",
+      "source": "Revenue Service of Georgia, 2026"
+    },
+    "tax_b": {
+      "regime": "Thailand — DTV Foreign Income Exemption",
+      "rate": "Generally 0% on foreign-sourced income",
+      "duration": "While spending under 180 days/year in Thailand",
+      "notes": "The 180-day trigger for Thai tax residency applies. Stay management is critical. Rules on remittance of foreign income are evolving — get professional advice for 2026.",
+      "source": "Thai Revenue Department, 2026"
+    },
+    "visa_a": {
+      "name": "Georgia — Visa-Free Entry",
+      "income_req": "None (for most nationalities, 365-day visa-free)",
+      "duration": "365 days visa-free (EU, US, UK, and 95+ other passports)",
+      "cost": "Free",
+      "processing": "On arrival",
+      "path_to_residency": "Residence permit available after 183 days"
+    },
+    "visa_b": {
+      "name": "Destination Thailand Visa (DTV)",
+      "income_req": "$16,000/yr (~$1,333/mo)",
+      "duration": "5 years, multiple entry (180 days per stay)",
+      "cost": "10,000 THB (~$280)",
+      "processing": "1–4 weeks",
+      "path_to_residency": "No direct PR pathway"
+    },
+    "costs_a": {
+      "rent_1br": "$300–600",
+      "meal_local": "$2–6",
+      "coworking": "$80–150/mo",
+      "coffee": "$1–2",
+      "groceries_mo": "$100–200",
+      "transport_mo": "$20–40",
+      "internet_speed": "50–200 Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$300–600",
+      "meal_local": "$1.50–4",
+      "coworking": "$80–190/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$150–250",
+      "transport_mo": "$50–150",
+      "internet_speed": "50–200 Mbps"
+    },
+    "pick_a_if": [
+      "You work in IT or digital services and want the 1% Virtual Zone tax rate",
+      "You hold a passport that qualifies for Georgia's 365-day visa-free access (US, EU, UK)",
+      "You want European cultural proximity — Tbilisi is 4 hours from major EU hubs",
+      "You want GMT+4 time zone for overlap with both European and Middle Eastern clients",
+      "You're looking for an emerging, less saturated nomad scene with authentic local culture"
+    ],
+    "pick_b_if": [
+      "You want the world's most established, mature digital nomad infrastructure",
+      "You need a 5-year, stable visa with multiple-entry flexibility (DTV)",
+      "You prefer Southeast Asian climate, cuisine, and lifestyle",
+      "You want access to a larger nomad community for networking and socialising",
+      "You plan to use Chiang Mai as a hub with easy access to Bali, Vietnam, and Japan"
+    ],
+    "faqs": [
+      {
+        "q": "How does Georgia's 1% Virtual Zone tax actually work?",
+        "a": "Georgia allows IT companies operating as 'Virtual Zone' entities to pay 1% turnover tax on revenue from services delivered to clients outside Georgia, with 0% corporate income tax on those earnings. You register an Individual Entrepreneur or LLC, designate it as a Virtual Zone company, and pay 1% of gross revenue. This is not an income tax — it's a turnover tax, meaning no deductions for expenses. For high-margin freelancers and software businesses, this is one of the lowest effective tax rates available to digital nomads anywhere in the world."
+      },
+      {
+        "q": "Is Tbilisi a legitimate digital nomad hub in 2026?",
+        "a": "Yes — Tbilisi has grown significantly as a nomad destination since 2022. It ranks in the top 20 globally on Nomad List. The city has fast fibre internet, a growing coworking scene, visa-free access for 95+ passport holders, and an extremely low cost of living. The Georgian startup ecosystem is developing but remains small. The scene is less mature than Chiang Mai or Lisbon, which is either a pro or a con depending on your preference."
+      },
+      {
+        "q": "Which is safer — Tbilisi or Chiang Mai?",
+        "a": "Both cities are considered safe for digital nomads by international standards. Tbilisi has very low street crime, Georgians are broadly hospitable to foreigners, and petty theft is uncommon. Chiang Mai is similarly safe, with a well-established nomad community and low violent crime rates. Chiang Mai's main safety consideration is traffic — scooter accidents are a leading cause of injury for foreigners. Tbilisi's driving culture is assertive but road infrastructure is improving."
+      },
+      {
+        "q": "Which has better food — Tbilisi or Chiang Mai?",
+        "a": "This is highly subjective but both cities punch well above their weight. Tbilisi is famous for Georgian cuisine — khinkali dumplings, khachapuri, slow-cooked meats, and the best natural wine culture in the world. Chiang Mai's Northern Thai food scene is considered among the best in Southeast Asia, with incredible street food, cooking schools, and a thriving café culture. Chiang Mai wins on variety and international dining options; Tbilisi wins on the uniqueness of its culinary tradition."
+      }
+    ],
+    "data_sources": [
+      "Revenue Service of Georgia — Virtual Zone regulations, 2026",
+      "Thai Revenue Department — DTV tax guidance, 2026",
+      "Silicon Valley Times — Best Digital Nomad Visas 2026",
+      "Midlife Nomads — Chiang Mai Cost of Living 2026",
+      "Nomad List — Tbilisi and Chiang Mai city data, Q1 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "dubai-vs-lisbon": {
+    "slug": "dubai-vs-lisbon",
+    "title": "Dubai vs Lisbon",
+    "subtitle": "0% Tax vs Europe's Best Regime 2026",
+    "tagline": "The world's premier tax-free city against Europe's most nomad-friendly capital. At what salary does Dubai's premium actually pay off?",
+    "emoji_a": "🇦🇪",
+    "emoji_b": "🇵🇹",
+    "city_a": "Dubai",
+    "city_b": "Lisbon",
+    "country_a": "UAE",
+    "country_b": "Portugal",
+    "verdict": "Lisbon (under $120k) / Dubai (over $150k)",
+    "verdict_reason": "Lisbon's IFICI at 20% flat plus lower cost base beats Dubai below ~$120,000/year. Dubai's 0% tax pulls ahead definitively above $150,000/year.",
+    "cost_diff": "Dubai costs 2–3× more than Lisbon",
+    "cost_winner": "Lisbon",
+    "tax_winner": "Dubai",
+    "visa_winner": "Lisbon",
+    "lifestyle_winner": "Draw",
+    "hero_stat_a": "$3,500–5,500/mo",
+    "hero_stat_b": "€1,800–2,500/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "UAE — No income tax",
+      "rate": "0% income tax",
+      "duration": "Indefinite while UAE tax resident (183+ days/year)",
+      "notes": "UAE Cabinet Resolution No. 85 (2022) governs tax residency. 0% is genuine — no wealth tax, no capital gains tax, no inheritance tax. Corporate tax of 9% applies to businesses earning over AED 375,000 (~$102,000).",
+      "source": "UAE Federal Tax Authority, 2026"
+    },
+    "tax_b": {
+      "regime": "IFICI (NHR 2.0)",
+      "rate": "20% flat on qualifying income",
+      "duration": "10 years",
+      "notes": "Must apply within 90 days of first registration as resident. Applies to qualifying employment and self-employment income. Some passive income streams taxed differently.",
+      "source": "Portuguese Tax & Customs Authority (AT), 2026"
+    },
+    "visa_a": {
+      "name": "UAE Remote Work Visa",
+      "income_req": "$3,500/mo minimum",
+      "duration": "1 year, renewable",
+      "cost": "~$287 + mandatory health insurance (~$100–200/mo)",
+      "processing": "2–5 business days",
+      "path_to_residency": "No direct PR pathway",
+      "note_2026": "January 2026 change: 6 months consecutive bank statements now required."
+    },
+    "visa_b": {
+      "name": "Portugal D8 Digital Nomad Visa",
+      "income_req": "~€3,680/mo (~$3,940)",
+      "duration": "1 year + 2-year renewals",
+      "cost": "~€320 application fee",
+      "processing": "4–8 weeks",
+      "path_to_residency": "5 years to permanent residency + citizenship path"
+    },
+    "costs_a": {
+      "rent_1br": "$2,000–4,000",
+      "meal_local": "$12–25",
+      "coworking": "$200–500/mo",
+      "coffee": "$4–6",
+      "groceries_mo": "$400–700",
+      "transport_mo": "$200–400",
+      "internet_speed": "200+ Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$1,155",
+      "meal_local": "$8–12",
+      "coworking": "$120–200/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$200–300",
+      "transport_mo": "$40–60",
+      "internet_speed": "150–500 Mbps"
+    },
+    "pick_a_if": [
+      "You earn $150,000+/year — 0% tax savings definitively outweigh the higher cost base",
+      "You need a GMT+4 time zone bridging US, Europe, and Asia clients simultaneously",
+      "You require luxury infrastructure, Tier 1 banking, and frequent business travel access",
+      "You operate a business generating over $100k and want to avoid any corporate tax below AED 375,000",
+      "You want rapid visa processing — Dubai's visa is issued in days vs Portugal's weeks"
+    ],
+    "pick_b_if": [
+      "You earn under $120,000/year — Lisbon's 20% IFICI plus lower costs beats Dubai in absolute savings",
+      "You want a European base with Schengen-adjacent access and an eventual residency/citizenship path",
+      "You prioritise walkability, culture, food quality, and lifestyle over pure tax efficiency",
+      "You want 10 years of flat tax certainty (IFICI) vs Dubai's annually-renewable visa arrangement",
+      "Your income occasionally dips — Lisbon's lower cost floor is more forgiving"
+    ],
+    "faqs": [
+      {
+        "q": "At what income level does Dubai actually save you more money than Lisbon?",
+        "a": "For most non-US nationalities earning under $120,000/year, Lisbon's IFICI (20% flat tax) plus its lower monthly cost base will leave you with more take-home money than Dubai. Dubai costs roughly $2,000–3,000/month more to live in, meaning you need the 20% tax saving to exceed that differential. At $150,000/year income, Dubai saves approximately $22,500 in tax vs IFICI (0% vs 20% on $112,500 after the IFICI threshold) — which more than covers the cost premium. Above $200,000/year, Dubai wins decisively."
+      },
+      {
+        "q": "Can US citizens benefit from Dubai's 0% tax?",
+        "a": "The benefit is real but limited. US citizens pay US federal tax on worldwide income regardless of residency. Dubai's 0% rate doesn't eliminate the US obligation — but the Foreign Tax Credit (FTC) mechanism means UAE residents can't claim a foreign tax credit (there's nothing paid to credit). The Foreign Earned Income Exclusion (FEIE, ~$130,500 for 2026) can still be used, but high earners will owe US tax on income above the exclusion. Dubai is most beneficial for high-income US nomads when combined with careful FEIE + Housing Exclusion planning."
+      },
+      {
+        "q": "Is the Portuguese IFICI (NHR 2.0) still available in 2026?",
+        "a": "Yes. Portugal's IFICI regime replaced the original NHR scheme and remains available in 2026 for new applicants. It offers a 20% flat rate on qualifying Portuguese-sourced income for 10 years. Applications must be submitted within 90 days of first registering as a tax resident. Eligibility and income categories have some differences from the original NHR — verify current scope with a Portuguese tax advisor before relying on specific income treatment."
+      },
+      {
+        "q": "Which city has better work-life quality in 2026?",
+        "a": "They target different lifestyles. Dubai offers extraordinary infrastructure, year-round heat, luxury amenities, and a cosmopolitan but transactional social environment. Lisbon offers walkability, Atlantic climate (mild winters, warm summers), world-class food and wine, and a more integrated nomad community. Lisbon wins for quality of life per euro spent. Dubai wins for ambition, business networking, and the psychological security of 0% tax simplicity."
+      }
+    ],
+    "data_sources": [
+      "UAE Federal Tax Authority — Cabinet Resolution No. 85 (2022)",
+      "Portuguese Tax & Customs Authority (AT) — IFICI 2026",
+      "countrytaxcalc.com — Digital Nomad Tax Comparison 2026",
+      "Silicon Valley Times — Best Digital Nomad Visas 2026",
+      "Numbeo Cost of Living Index, February 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "porto-vs-valencia": {
+    "slug": "porto-vs-valencia",
+    "title": "Porto vs Valencia",
+    "subtitle": "Affordable Europe Duel 2026",
+    "tagline": "The two best-value alternatives to overpriced Lisbon and Barcelona. Same tax regimes, same visas — but which city actually delivers more per euro?",
+    "emoji_a": "🇵🇹",
+    "emoji_b": "🇪🇸",
+    "city_a": "Porto",
+    "city_b": "Valencia",
+    "country_a": "Portugal",
+    "country_b": "Spain",
+    "verdict": "Porto",
+    "verdict_reason": "Porto runs 15–20% cheaper than Valencia for equivalent quality, with the same D8 visa and IFICI tax regime that made Lisbon famous — minus Lisbon's crowds.",
+    "cost_diff": "Valencia ~15% more expensive than Porto",
+    "cost_winner": "Porto",
+    "tax_winner": "Porto (IFICI 20% vs Beckham 24%)",
+    "visa_winner": "Valencia (lower income threshold)",
+    "lifestyle_winner": "Draw",
+    "hero_stat_a": "€1,400–2,000/mo",
+    "hero_stat_b": "€1,600–2,400/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "IFICI (NHR 2.0)",
+      "rate": "20% flat on qualifying income",
+      "duration": "10 years",
+      "notes": "Same regime as Lisbon — Porto qualifies identically. Must apply within 90 days of first tax registration.",
+      "source": "Portuguese Tax & Customs Authority (AT), 2026"
+    },
+    "tax_b": {
+      "regime": "Beckham Law",
+      "rate": "24% flat on income up to €600,000",
+      "duration": "5 years",
+      "notes": "Spain's digital nomad visa is the gateway to Beckham Law eligibility. Valencia is one of the most popular Beckham Law cities due to lower rent than Madrid/Barcelona.",
+      "source": "Spanish Tax Agency (AEAT), 2026"
+    },
+    "visa_a": {
+      "name": "Portugal D8 Digital Nomad Visa",
+      "income_req": "~€3,680/mo (~$3,940)",
+      "duration": "1 year + 2-year renewals",
+      "cost": "~€320",
+      "processing": "4–8 weeks",
+      "path_to_residency": "5 years to permanent residency"
+    },
+    "visa_b": {
+      "name": "Spain Digital Nomad Visa (DNV)",
+      "income_req": "~€2,850/mo (~$3,050)",
+      "duration": "3 years, renewable",
+      "cost": "~€75 + consulate fees",
+      "processing": "2–4 weeks",
+      "path_to_residency": "5 years to permanent residency"
+    },
+    "costs_a": {
+      "rent_1br": "$900–1,100",
+      "meal_local": "$7–11",
+      "coworking": "$100–180/mo",
+      "coffee": "$1.20–2.00",
+      "groceries_mo": "$180–280",
+      "transport_mo": "$35–55",
+      "internet_speed": "100–300 Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$950–1,200",
+      "meal_local": "$9–14",
+      "coworking": "$120–220/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$200–320",
+      "transport_mo": "$45–70",
+      "internet_speed": "150+ Mbps"
+    },
+    "pick_a_if": [
+      "You want Lisbon's IFICI tax benefits at 15–20% lower cost of living",
+      "You prefer a compact, walkable city with a strong creative and music scene",
+      "You want proximity to Lisbon (3 hours by train) while avoiding its crowds",
+      "You value Atlantic coast and world-class wine country (Douro Valley) on your doorstep",
+      "You're comfortable with Portugal's higher D8 income threshold in exchange for the better tax rate"
+    ],
+    "pick_b_if": [
+      "You want Spain's lower DNV income threshold (~€2,850 vs Portugal's ~€3,680)",
+      "You want Mediterranean beaches within the city — Valencia has 12km of urban coastline",
+      "You prefer year-round sunshine (Valencia has 300+ sunny days/year vs Porto's Atlantic weather)",
+      "You want a larger city with more international infrastructure and airlines",
+      "You want Beckham Law access despite the slightly higher 24% rate"
+    ],
+    "faqs": [
+      {
+        "q": "Is Porto cheaper than Valencia for digital nomads in 2026?",
+        "a": "Yes — Porto runs approximately 15–20% cheaper than Valencia for equivalent quality of life. A 1BR central apartment in Porto averages $900–1,100/month vs $950–1,200 in Valencia. Food and coworking costs are also marginally lower. Both are significantly cheaper than their capital cities (Lisbon and Barcelona) and represent the strongest value-for-money options for the IFICI and Beckham Law regimes respectively."
+      },
+      {
+        "q": "Which has better weather — Porto or Valencia?",
+        "a": "Valencia wins decisively on sunshine. It averages 300+ sunny days/year and has a true Mediterranean climate with mild winters and hot, dry summers. Porto has an Atlantic climate — milder summers (rarely above 30°C), wetter winters, and overcast grey days from November to February. If warm Mediterranean weather matters to your lifestyle choice, Valencia is the clear pick."
+      },
+      {
+        "q": "Can you use Portugal's D8 visa to live in Porto rather than Lisbon?",
+        "a": "Yes. Portugal's D8 Digital Nomad Visa grants you the right to live anywhere in Portugal — you are not restricted to Lisbon. Porto is increasingly popular among D8 holders precisely because it offers the same IFICI tax benefits and national visa access at lower rent and a different, arguably more authentic cultural experience."
+      },
+      {
+        "q": "What's the nomad community like in Porto compared to Valencia?",
+        "a": "Porto's nomad scene is smaller than Lisbon but growing fast — particularly around the Bonfim and Baixa neighbourhoods, with coworking spaces including Second Home (Porto branch) and several independent spaces. Valencia has a strong expat and nomad community, partly driven by Beckham Law applicants, and an active digital nomad meetup culture. Neither city has the density of Lisbon or Barcelona, which is either a benefit (less saturated, easier to connect) or a drawback depending on preference."
+      }
+    ],
+    "data_sources": [
+      "Portuguese Tax & Customs Authority (AT) — IFICI 2026",
+      "Spanish Tax Agency (AEAT) — Beckham Law 2026",
+      "digitalnomad.press — Global Visa Comparison 2026",
+      "ExpatLife.ai — Lisbon vs Barcelona 2026 (base data)",
+      "Numbeo Cost of Living Index, Portugal and Spain, February 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "bali-vs-medellin": {
+    "slug": "bali-vs-medellin",
+    "title": "Bali vs Medellín",
+    "subtitle": "Beach Budget vs Eternal Spring 2026",
+    "tagline": "Island paradise vs the City of Eternal Spring. Both are iconic budget hubs — but Bali's costs have climbed. Has Medellín taken the crown?",
+    "emoji_a": "🇮🇩",
+    "emoji_b": "🇨🇴",
+    "city_a": "Bali",
+    "city_b": "Medellín",
+    "country_a": "Indonesia",
+    "country_b": "Colombia",
+    "verdict": "Medellín",
+    "verdict_reason": "Medellín is 20–30% cheaper than Bali in 2026, with a cleaner foreign income tax exemption, a lower visa threshold, and no dependence on monsoon season timing.",
+    "cost_diff": "Bali ~20–30% more expensive in 2026",
+    "cost_winner": "Medellín",
+    "tax_winner": "Medellín",
+    "visa_winner": "Medellín",
+    "lifestyle_winner": "Bali",
+    "hero_stat_a": "$1,200–2,200/mo",
+    "hero_stat_b": "$800–1,200/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "Indonesia — Foreign income exemption (partial)",
+      "rate": "Generally 0% on foreign-sourced income",
+      "duration": "First 4 years of residency",
+      "notes": "Indonesia does not tax foreign-sourced income for the first 4 years under the Second Home Visa. After that, worldwide income may be in scope. Tax rules for nomads in Bali remain a grey area — professional advice essential.",
+      "source": "Direktorat Jenderal Pajak (DJP) — Indonesian Tax Authority, 2026"
+    },
+    "tax_b": {
+      "regime": "Colombia — Foreign income exemption",
+      "rate": "0% on foreign-sourced income (qualifying nomads)",
+      "duration": "While not tax resident (under 183 days/year)",
+      "notes": "If income source is outside Colombia, most digital nomads don't pay Colombian income tax. The M visa does not automatically create tax residency.",
+      "source": "DIAN — Colombian Tax Authority, 2026"
+    },
+    "visa_a": {
+      "name": "Indonesia Second Home Visa / B211A Tourist",
+      "income_req": "Second Home: $130,000 in Indonesian bank or $130k property. B211A: no income req (60 days, extendable to 180)",
+      "duration": "Second Home: 5–10 years. B211A: 60 days, extendable",
+      "cost": "Second Home: ~$1,500. B211A: ~$35",
+      "processing": "1–4 weeks",
+      "path_to_residency": "Limited pathway"
+    },
+    "visa_b": {
+      "name": "Colombia Digital Nomad Visa (M Visa)",
+      "income_req": "~$1,100/mo (3× Colombian minimum wage)",
+      "duration": "Up to 2 years, renewable",
+      "cost": "$52 application fee",
+      "processing": "3–15 business days",
+      "path_to_residency": "5 years to permanent residency"
+    },
+    "costs_a": {
+      "rent_1br": "$500–1,000",
+      "meal_local": "$2–8",
+      "coworking": "$100–200/mo",
+      "coffee": "$2–4",
+      "groceries_mo": "$150–300",
+      "transport_mo": "$60–120",
+      "internet_speed": "20–100 Mbps (variable by area)"
+    },
+    "costs_b": {
+      "rent_1br": "$400–700",
+      "meal_local": "$3–7",
+      "coworking": "$80–150/mo",
+      "coffee": "$1–2",
+      "groceries_mo": "$100–200",
+      "transport_mo": "$20–40",
+      "internet_speed": "50–100 Mbps"
+    },
+    "pick_a_if": [
+      "Lifestyle is paramount — Bali's beach, surf, yoga, and rice-field culture is unique",
+      "You want to be in Southeast Asia's largest, most international nomad hub",
+      "You value proximity to Ubud's wellness culture, Seminyak's beach club scene, or Canggu's surf breaks",
+      "You're willing to budget carefully and can tolerate internet variability",
+      "You plan short stays (B211A) without committing to a formal long-stay visa"
+    ],
+    "pick_b_if": [
+      "Budget is the primary filter — Medellín is 20–30% cheaper than Bali in 2026",
+      "You want a formal 2-year renewable visa with a low income bar ($1,100/mo)",
+      "You prefer urban infrastructure: metro system, reliable utilities, consistent internet",
+      "Year-round spring climate (18–24°C) without monsoon season disruption matters to you",
+      "You want a LATAM base with easy access to Colombia's incredible domestic travel options"
+    ],
+    "faqs": [
+      {
+        "q": "Is Bali still cheap for digital nomads in 2026?",
+        "a": "Bali is no longer the ultra-cheap destination it was in 2019. A comfortable lifestyle in Canggu or Seminyak now runs $1,200–2,200/month — comparable to mid-range cities in Eastern Europe or LATAM. The cost increase is driven by a surge in nomad demand, rising villa rents, and inflation in the hospitality sector. Budget nomads who cook at home and avoid tourist areas can still get by on $800–1,000/month, but the 2019 benchmark figures circulating online are outdated."
+      },
+      {
+        "q": "What is the best visa option for digital nomads in Bali in 2026?",
+        "a": "For most nomads, the B211A Social-Cultural Visit Visa remains the practical option — 60 days extendable to 180, low cost, widely available. The Second Home Visa (5–10 year duration) requires a $130,000 deposit in an Indonesian bank or equivalent property purchase, which is impractical for most. Indonesia has discussed but not yet launched a formal digital nomad visa. Many nomads cycle B211A extensions or do visa runs to Singapore or Malaysia."
+      },
+      {
+        "q": "How is internet reliability in Bali vs Medellín?",
+        "a": "Medellín has more consistent fixed internet infrastructure. El Poblado and Laureles neighbourhoods have reliable 50–100 Mbps in most apartments. Bali's internet quality varies significantly by area — Canggu and Ubud have improved, with many coworking spaces offering 50–100 Mbps, but outages during rainy season and slower residential connections remain a real consideration. Both cities have mature coworking ecosystems as the reliable backup."
+      },
+      {
+        "q": "Which has a better nomad social scene — Bali or Medellín?",
+        "a": "Bali, specifically Canggu, has arguably the highest density of digital nomads of any location on earth. The social scene is extremely active with daily events, beach clubs, coworking meetups, and a near-constant flow of new arrivals. Medellín's El Poblado has a strong and growing community, but it's smaller and more tight-knit. Bali wins on scale and variety of social options; Medellín wins on depth of connection and cost of socialising."
+      }
+    ],
+    "data_sources": [
+      "Direktorat Jenderal Pajak (DJP) — Indonesian Tax Authority, 2026",
+      "DIAN — Colombian Tax Authority 2026",
+      "DigiDiamo — Cost of Living by Country 2026",
+      "digitalnomad.press — Global Visa Comparison 2026",
+      "Nomad List — Bali and Medellín city data, Q1 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "lisbon-vs-valencia": {
+    "slug": "lisbon-vs-valencia",
+    "title": "Lisbon vs Valencia",
+    "subtitle": "EU Nomad Classic 2026",
+    "tagline": "Portugal's capital vs Spain's sunny coast city. Same hemisphere, very different tax regimes and very different vibes.",
+    "emoji_a": "🇵🇹",
+    "emoji_b": "🇪🇸",
+    "city_a": "Lisbon",
+    "city_b": "Valencia",
+    "country_a": "Portugal",
+    "country_b": "Spain",
+    "verdict": "Lisbon",
+    "verdict_reason": "Lisbon's IFICI gives a lower 20% flat rate vs Valencia's 24% Beckham Law, though Valencia's lower visa income requirement and better weather are genuine advantages.",
+    "cost_diff": "Similar — Valencia marginally cheaper",
+    "cost_winner": "Valencia",
+    "tax_winner": "Lisbon",
+    "visa_winner": "Valencia",
+    "lifestyle_winner": "Valencia",
+    "hero_stat_a": "€1,800–2,500/mo",
+    "hero_stat_b": "€1,600–2,400/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "IFICI (NHR 2.0)",
+      "rate": "20% flat",
+      "duration": "10 years",
+      "notes": "Longer duration (10 vs 5 years) and lower rate than Beckham Law.",
+      "source": "Portuguese Tax & Customs Authority (AT), 2026"
+    },
+    "tax_b": {
+      "regime": "Beckham Law",
+      "rate": "24% flat",
+      "duration": "5 years",
+      "notes": "Applied to first €600,000 income. Valencia is the most popular Beckham Law city outside Madrid/Barcelona.",
+      "source": "Spanish Tax Agency (AEAT), 2026"
+    },
+    "visa_a": {
+      "name": "Portugal D8 Digital Nomad Visa",
+      "income_req": "~€3,680/mo",
+      "duration": "1 year + 2-year renewals",
+      "cost": "~€320",
+      "processing": "4–8 weeks",
+      "path_to_residency": "5 years"
+    },
+    "visa_b": {
+      "name": "Spain Digital Nomad Visa",
+      "income_req": "~€2,850/mo",
+      "duration": "3 years, renewable",
+      "cost": "~€75",
+      "processing": "2–4 weeks",
+      "path_to_residency": "5 years"
+    },
+    "costs_a": {
+      "rent_1br": "$1,155",
+      "meal_local": "$8–12",
+      "coworking": "$120–200/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$200–300",
+      "transport_mo": "$40–60",
+      "internet_speed": "150–500 Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$950–1,200",
+      "meal_local": "$9–14",
+      "coworking": "$120–220/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$200–320",
+      "transport_mo": "$45–70",
+      "internet_speed": "150+ Mbps"
+    },
+    "pick_a_if": [
+      "You want the better tax rate (20% vs 24%) and longer regime duration (10 vs 5 years)",
+      "You want the world's largest established nomad community infrastructure",
+      "You value Atlantic coast access and a globally recognised startup scene (Web Summit)",
+      "You're targeting Portuguese residency and eventual citizenship (one of Europe's most accessible paths)",
+      "Your income comfortably clears the higher D8 threshold of €3,680/mo"
+    ],
+    "pick_b_if": [
+      "Your income is between €2,850–3,680/mo — you qualify for Spain but not Portugal's D8",
+      "You want guaranteed Mediterranean sunshine (300+ days/year) over Lisbon's Atlantic weather",
+      "You want urban beaches within the city itself — Valencia has 12km of city coastline",
+      "You want faster visa processing (2–4 weeks vs Portugal's 4–8 weeks)",
+      "You prefer a slightly slower-paced, less touristed city than either Lisbon or Barcelona"
+    ],
+    "faqs": [
+      {
+        "q": "Is Lisbon or Valencia better for digital nomads in 2026?",
+        "a": "For tax efficiency, Lisbon wins — Portugal's IFICI offers 20% flat for 10 years vs Spain's Beckham Law at 24% for 5 years. For visa accessibility, Valencia wins — Spain's income threshold (~€2,850/mo) is lower than Portugal's (~€3,680/mo). For lifestyle, the choice is personal: Lisbon offers a legendary nomad community and Atlantic coast culture; Valencia offers reliable Mediterranean sunshine, city beaches, and Spain's third-largest city infrastructure at below-Barcelona prices."
+      },
+      {
+        "q": "How does the climate compare between Lisbon and Valencia?",
+        "a": "Valencia has a drier, sunnier Mediterranean climate — 300+ sunny days/year, hot summers, mild winters, very little rain. Lisbon has an Atlantic climate — warm but not hot summers, mild but wetter winters, and more overcast days November through February. If sunshine and beach access from the city are priorities, Valencia has a clear edge."
+      },
+      {
+        "q": "Which city is easier to get the digital nomad visa for?",
+        "a": "Spain's digital nomad visa (for Valencia) is easier to qualify for — the income threshold is ~€2,850/month versus Portugal's ~€3,680/month, the application fee is lower (~€75 vs ~€320), and processing is faster (2–4 weeks vs 4–8 weeks). Portugal's D8 is harder to qualify for but delivers the better tax regime once obtained."
+      }
+    ],
+    "data_sources": [
+      "Portuguese Tax & Customs Authority (AT) — IFICI 2026",
+      "Spanish Tax Agency (AEAT) — Beckham Law 2026",
+      "ExpatLife.ai — Lisbon vs Barcelona 2026",
+      "Numbeo Cost of Living Index, February 2026",
+      "digitalnomad.press — Global Visa Comparison 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "bali-vs-chiang-mai": {
+    "slug": "bali-vs-chiang-mai",
+    "title": "Bali vs Chiang Mai",
+    "subtitle": "SEA Budget King 2026",
+    "tagline": "The two biggest Southeast Asian nomad hubs — one on an island, one in the mountains. The numbers in 2026 may surprise you.",
+    "emoji_a": "🇮🇩",
+    "emoji_b": "🇹🇭",
+    "city_a": "Bali",
+    "city_b": "Chiang Mai",
+    "country_a": "Indonesia",
+    "country_b": "Thailand",
+    "verdict": "Chiang Mai",
+    "verdict_reason": "Chiang Mai is 20–30% cheaper than Bali in 2026, has more consistent internet, and offers a superior formal long-stay visa (DTV) vs Bali's grey-area B211A cycling.",
+    "cost_diff": "Bali ~20–30% more expensive in 2026",
+    "cost_winner": "Chiang Mai",
+    "tax_winner": "Draw (both generally 0% foreign income)",
+    "visa_winner": "Chiang Mai",
+    "lifestyle_winner": "Bali",
+    "hero_stat_a": "$1,200–2,200/mo",
+    "hero_stat_b": "$1,200–2,500/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "Indonesia — Foreign income (generally untaxed, first 4 years)",
+      "rate": "Generally 0% on foreign-sourced income",
+      "duration": "First 4 years of residence",
+      "notes": "Tax treatment for nomads in Bali remain a grey area. Professional advice strongly recommended for stays exceeding 6 months.",
+      "source": "Direktorat Jenderal Pajak (DJP), 2026"
+    },
+    "tax_b": {
+      "regime": "Thailand — DTV Foreign Income Exemption",
+      "rate": "Generally 0% on foreign-sourced income",
+      "duration": "While spending under 180 days/year",
+      "notes": "180-day rule applies. Rules on remitted foreign income are evolving in 2026.",
+      "source": "Thai Revenue Department, 2026"
+    },
+    "visa_a": {
+      "name": "B211A Social-Cultural Visa (extendable)",
+      "income_req": "None",
+      "duration": "60 days, extendable to 180 days",
+      "cost": "~$35",
+      "processing": "Varies",
+      "path_to_residency": "No pathway"
+    },
+    "visa_b": {
+      "name": "Destination Thailand Visa (DTV)",
+      "income_req": "$16,000/yr",
+      "duration": "5 years, multiple entry",
+      "cost": "~$280",
+      "processing": "1–4 weeks",
+      "path_to_residency": "No direct pathway"
+    },
+    "costs_a": {
+      "rent_1br": "$500–1,000",
+      "meal_local": "$2–8",
+      "coworking": "$100–200/mo",
+      "coffee": "$2–4",
+      "groceries_mo": "$150–300",
+      "transport_mo": "$60–120",
+      "internet_speed": "20–100 Mbps (variable)"
+    },
+    "costs_b": {
+      "rent_1br": "$300–600",
+      "meal_local": "$1.50–4",
+      "coworking": "$80–190/mo",
+      "coffee": "$1.50–2.50",
+      "groceries_mo": "$150–250",
+      "transport_mo": "$50–150",
+      "internet_speed": "50–200 Mbps"
+    },
+    "pick_a_if": [
+      "Beach and surf lifestyle is non-negotiable for your productivity and happiness",
+      "You want the highest-density digital nomad community on earth (Canggu)",
+      "You value Bali's unique spiritual, wellness, and yoga culture",
+      "You plan to stay under 180 days and want maximum lifestyle for a short burst",
+      "You don't need a formal long-stay visa — the B211A extendable works for your timeline"
+    ],
+    "pick_b_if": [
+      "Budget is the primary filter — Chiang Mai is significantly cheaper in 2026",
+      "You want a formal 5-year multiple-entry visa (DTV) for stable, legal long-term stays",
+      "You need reliable, fast internet for video calls and upload-heavy work",
+      "You prefer Northern Thai mountain culture, street food, and a quieter pace",
+      "You want a central hub for easy access to Vietnam, Japan, Bali, and the rest of SEA"
+    ],
+    "faqs": [
+      {
+        "q": "Is Bali or Chiang Mai cheaper for digital nomads in 2026?",
+        "a": "Chiang Mai is cheaper. A comfortable lifestyle in Chiang Mai runs $1,200–2,500/month depending on accommodation standard, while Bali (Canggu/Seminyak) now costs $1,200–2,200/month for similar quality — with villa rentals and tourist-area pricing pushing Bali higher. The gap is smaller than it was in 2019, but Chiang Mai still has lower rents, cheaper street food, and lower transport costs."
+      },
+      {
+        "q": "Which is better for long-term stays — Bali or Chiang Mai?",
+        "a": "Chiang Mai wins on visa stability. Thailand's DTV offers 5 years of multiple-entry access (180 days per stay) for $280 and a $16,000/year income requirement. Bali's main long-stay option for nomads remains the B211A — 60 days extendable to 180 — which requires cycling or visa runs. Indonesia has discussed a digital nomad visa but has not launched one as of 2026. For a stable, legal long-term base, Chiang Mai is the more practical choice."
+      },
+      {
+        "q": "Which has better internet — Bali or Chiang Mai?",
+        "a": "Chiang Mai is more consistent. Fixed fibre in apartments reaches 100–300 Mbps; café WiFi averages 50–200 Mbps; and 5G mobile coverage (AIS/True) is reliable as a backup. Bali's internet has improved in Canggu and Ubud, but speeds vary significantly by area and outages during wet season remain a real concern. For upload-heavy work or video calls, Chiang Mai is the more reliable choice."
+      }
+    ],
+    "data_sources": [
+      "Direktorat Jenderal Pajak (DJP) — Indonesian Tax Authority, 2026",
+      "Thai Revenue Department — DTV guidance, 2026",
+      "Midlife Nomads — Chiang Mai Cost of Living 2026",
+      "DMC Quote — Thailand DTV Guide, January 2026",
+      "DigiDiamo — Cost of Living by Country 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  },
+
+  "dubai-vs-singapore": {
+    "slug": "dubai-vs-singapore",
+    "title": "Dubai vs Singapore",
+    "subtitle": "0% Tax Battle 2026",
+    "tagline": "Two world-class Asian financial hubs both claiming tax efficiency. But Singapore's effective rate is very different from Dubai's genuine zero.",
+    "emoji_a": "🇦🇪",
+    "emoji_b": "🇸🇬",
+    "city_a": "Dubai",
+    "city_b": "Singapore",
+    "country_a": "UAE",
+    "country_b": "Singapore",
+    "verdict": "Dubai",
+    "verdict_reason": "Dubai's 0% income tax is absolute. Singapore's headline rates look low but climbing top rates (24%), high cost of living, and difficult nomad visa access make Dubai the clearer winner for most high-income remote workers.",
+    "cost_diff": "Similar — Singapore marginally more expensive",
+    "cost_winner": "Dubai",
+    "tax_winner": "Dubai",
+    "visa_winner": "Dubai",
+    "lifestyle_winner": "Singapore",
+    "hero_stat_a": "$3,500–5,500/mo",
+    "hero_stat_b": "$4,000–6,500/mo",
+    "hero_label": "Monthly all-in (comfortable)",
+    "tax_a": {
+      "regime": "UAE — No income tax",
+      "rate": "0% income tax",
+      "duration": "Indefinite while UAE tax resident",
+      "notes": "No income tax, capital gains tax, inheritance tax, or wealth tax. Corporate tax of 9% on profits above AED 375,000 applies to businesses.",
+      "source": "UAE Federal Tax Authority, 2026"
+    },
+    "tax_b": {
+      "regime": "Singapore — Progressive income tax",
+      "rate": "0–24% (progressive, up to S$1M income cap; 24% above)",
+      "duration": "While Singapore tax resident (183+ days/year)",
+      "notes": "Singapore has no capital gains tax and no inheritance tax, making it attractive for investors. But employment income for residents is taxed progressively. The headline 'low tax' narrative requires scrutiny at higher income levels.",
+      "source": "Inland Revenue Authority of Singapore (IRAS), 2026"
+    },
+    "visa_a": {
+      "name": "UAE Remote Work Visa",
+      "income_req": "$3,500/mo",
+      "duration": "1 year, renewable",
+      "cost": "~$287 + health insurance",
+      "processing": "2–5 business days",
+      "path_to_residency": "No direct pathway",
+      "note_2026": "6 months bank statements required since January 2026."
+    },
+    "visa_b": {
+      "name": "Singapore ONE Pass / EntrePass",
+      "income_req": "ONE Pass: S$30,000/mo salary (~$22,500/mo). EntrePass: business incorporation required",
+      "duration": "5 years (ONE Pass), 1–2 years (EntrePass)",
+      "cost": "S$105–225",
+      "processing": "8 weeks+",
+      "path_to_residency": "Permanent Residency possible but competitive"
+    },
+    "costs_a": {
+      "rent_1br": "$2,000–4,000",
+      "meal_local": "$12–25",
+      "coworking": "$200–500/mo",
+      "coffee": "$4–6",
+      "groceries_mo": "$400–700",
+      "transport_mo": "$200–400",
+      "internet_speed": "200+ Mbps"
+    },
+    "costs_b": {
+      "rent_1br": "$2,500–4,500",
+      "meal_local": "$5–20 (hawker to restaurant)",
+      "coworking": "$250–600/mo",
+      "coffee": "$1.50–6 (hawker to café)",
+      "groceries_mo": "$400–800",
+      "transport_mo": "$80–200",
+      "internet_speed": "500+ Mbps"
+    },
+    "pick_a_if": [
+      "You want a genuine 0% income tax environment with no progressive rate at any income level",
+      "Your income qualifies for the Remote Work Visa ($3,500/mo) vs Singapore's ONE Pass ($22,500/mo)",
+      "You want visa simplicity — Dubai's process is fast, well-defined, and accessible",
+      "You want slightly lower cost of living than Singapore for equivalent quality",
+      "You prioritise the desert/luxury lifestyle and Middle Eastern cultural experience"
+    ],
+    "pick_b_if": [
+      "You want the world's best physical infrastructure, public transit, and rule-of-law environment",
+      "Your business already has Singapore incorporation or you're targeting SE Asian market access",
+      "You qualify for the ONE Pass or EntrePass and want a clear PR/residency pathway",
+      "You value Singapore's food culture — widely considered one of the world's best",
+      "You want the cleanest, safest, and most stable urban environment available globally"
+    ],
+    "faqs": [
+      {
+        "q": "Is Singapore really a low-tax destination for digital nomads in 2026?",
+        "a": "Singapore's tax rates are low by developed-nation standards, but they are not zero. Personal income tax is progressive from 0% to 24%, with the 24% top rate applying to income above S$1,000,000. At typical nomad income levels ($80k–200k/year), the effective rate in Singapore is roughly 8–18%. Dubai's 0% is genuinely better for income tax purposes. Singapore's advantage is no capital gains tax and no inheritance tax, which matters most for investors and founders with equity."
+      },
+      {
+        "q": "Which city is easier to get a long-stay visa for — Dubai or Singapore?",
+        "a": "Dubai is dramatically easier. The UAE Remote Work Visa requires $3,500/month income and is processed in days. Singapore's ONE Pass (the closest equivalent for high-income individuals) requires S$30,000/month salary (~$22,500/month) and takes 8+ weeks to process. Singapore does not have a general digital nomad visa — most nomads visit on a 30-day tourist stamp and cannot work for foreign clients during that period without legal risk."
+      },
+      {
+        "q": "Which is safer — Dubai or Singapore?",
+        "a": "Both are among the safest cities in the world. Singapore consistently ranks #1 or #2 globally for safety, rule of law, and corruption-free governance. Dubai is also extremely safe — violent crime is very rare and the UAE has strong law enforcement. Singapore edges ahead on institutional governance, legal transparency, and quality of public services. Dubai edges ahead on lifestyle freedom in some areas while having stricter laws around other behaviours (public conduct, substances)."
+      }
+    ],
+    "data_sources": [
+      "UAE Federal Tax Authority, 2026",
+      "Inland Revenue Authority of Singapore (IRAS), 2026",
+      "countrytaxcalc.com — Digital Nomad Tax Comparison 2026",
+      "Silicon Valley Times — Best Digital Nomad Visas 2026",
+      "Numbeo Cost of Living Index, February 2026"
+    ],
+    "last_verified": "May 2026",
+    "schema_type": "Comparison"
+  }
+}

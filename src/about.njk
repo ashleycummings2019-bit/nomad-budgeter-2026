@@ -3,6 +3,20 @@ layout: layouts/base.njk
 pageTitle: "About Nomad Budgeter"
 pageDescription: "The story behind Nomad Budgeter and our mission to simplify digital nomad taxes."
 permalink: /about/
+pageSchema: |
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Nomad Budgeter",
+    "description": "The story behind Nomad Budgeter and our mission to simplify digital nomad taxes.",
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nomadbudgeter.com/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://nomadbudgeter.com/about/" }
+      ]
+    }
+  }
 ---
 <section class="section-container mt-32 reveal">
     <div class="glass-panel" style="max-width: 800px; margin: 0 auto; padding: 3rem;">

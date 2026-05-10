@@ -72,7 +72,7 @@ async function supabaseRequest(table, method = 'GET', opts = {}) {
     return text ? JSON.parse(text) : null;
   } catch (err) {
     clearTimeout(timeout);
-    console.error(`❌ Supabase error [${table}]:`, err.message);
+    console.warn(`⚠️ Supabase unavailable [${table}] (${err.message}). Defaulting to offline mode.`);
     return null;
   }
 }

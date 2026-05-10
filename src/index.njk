@@ -69,95 +69,102 @@ permalink: /
 {# Hero Section — First thing users see #}
 <section id="hero-section" class="wa-hero">
     <div class="wa-hero__bg">
-        <div class="wa-orb wa-orb--emerald"></div>
-        <div class="wa-orb wa-orb--violet"></div>
-        <div class="wa-orb wa-orb--amber"></div>
+        <div class="aura-blob blob-1"></div>
+        <div class="aura-blob blob-2"></div>
         <div class="wa-grid-overlay"></div>
     </div>
 
-    <div class="wa-hero__content">
-        <div class="wa-hero__badge">
-            <span class="wa-badge-dot"></span>
-            <span>FREE TAX CALCULATOR — 2026 EDITION</span>
-        </div>
+    <div class="wa-hero__content aura-container">
+        <div class="grid-2 hero-split">
+            <!-- Left Column: Copy & CTA -->
+            <div class="hero-left">
+                <div class="wa-hero__badge">
+                    <span class="wa-badge-dot"></span>
+                    <span>EXCLUSIVE 2026 GUIDE</span>
+                </div>
 
-        <h1 class="wa-hero__title">
-            Calculate Your<br>
-            <span class="wa-title-gradient">Digital Nomad Budget</span>
-        </h1>
+                <h1 class="wa-hero__title">
+                    Master the Global<br>
+                    <span class="wa-title-gradient">Tax Arbitrage</span>
+                </h1>
 
-        <p class="wa-hero__subtitle">
-            Compare take-home pay, model tax strategies, and discover savings across <strong>45+ digital nomad visas</strong> — powered by live 2026 market data.
-        </p>
+                <p class="wa-hero__subtitle">
+                    Get our secret roadmap to saving <strong>$15,000+ per year</strong> in taxes by choosing the right digital nomad hub. Powered by live 2026 financial data.
+                </p>
 
-        <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-light);">
-            <div style="display: flex;">
-                <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #3b82f6; border: 2px solid var(--bg-dark); margin-right: -10px; z-index: 3; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">👩‍🎨</span>
-                <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #10b981; border: 2px solid var(--bg-dark); margin-right: -10px; z-index: 2; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">👨‍💻</span>
-                <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: #8b5cf6; border: 2px solid var(--bg-dark); z-index: 1; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">🧑‍💼</span>
+                <div class="hero-actions">
+                    <div class="wa-lead-form">
+                        <input type="email" id="lead-email" class="wa-lead-input" placeholder="Your best email address..." required>
+                        <button type="button" id="send-guide-btn" class="wa-lead-btn action-btn">
+                            <span class="wa-btn-icon">🚀</span>
+                            Send Me The PDF
+                        </button>
+                    </div>
+                    <div id="lead-success" class="wa-lead-success hidden" style="margin-bottom: 0.5rem; text-align: left;">
+                        <span class="wa-success-icon">✅</span>
+                        <span style="font-size: 0.85rem; color: var(--aura-primary);">Sent! Check your inbox (and spam).</span>
+                    </div>
+                    <p class="wa-lead-trust" style="text-align: left;">Join 12,402+ nomads optimizing their 2026 strategy.</p>
+                </div>
+
+                <div class="hero-secondary-actions">
+                    <a href="#calculator-section" class="glass-btn-sm" onclick="document.querySelector('.inputs-panel')?.scrollIntoView({behavior:'smooth'});return false;">
+                        📊 Open Calculator
+                    </a>
+                    <a href="/pricing/" class="glass-btn-sm wa-cta--pro" style="color: var(--aura-accent); border-color: rgba(245, 158, 11, 0.3);">
+                        💎 Go Pro ($19)
+                    </a>
+                </div>
+
+                <div class="wa-hero__featured">
+                    <p style="text-align: left;">As featured in</p>
+                    <div class="featured-logos">
+                        <span>Forbes</span>
+                        <span>TechCrunch</span>
+                        <span>Nomad Capitalist</span>
+                        <span>WIRED</span>
+                    </div>
+                </div>
             </div>
-            <span><strong>Join 10,000+</strong> digital nomads optimizing their taxes</span>
-        </div>
 
-        <div class="wa-hero__cta-row">
-            <a href="#calculator-section" class="wa-cta-primary" onclick="document.querySelector('.inputs-panel')?.scrollIntoView({behavior:'smooth'});return false;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
-                Start Free Calculation
-            </a>
-        </div>
+            <!-- Right Column: Visual / Mockup -->
+            <div class="hero-right">
+                <div class="hero-visual-stack">
+                    <div class="glass-panel main-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dots"><span></span><span></span><span></span></div>
+                            <div class="mockup-title">Tax Savings Projection</div>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-stat">
+                                <span class="stat-label">Net Income (Spain)</span>
+                                <span class="stat-value text-green">+$24,500</span>
+                            </div>
+                            <div class="mockup-chart">
+                                <div class="chart-bar bar-1"></div>
+                                <div class="chart-bar bar-2"></div>
+                                <div class="chart-bar bar-3"></div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="wa-hero__stats">
-            <div class="wa-stat">
-                <div class="wa-stat__value">45+</div>
-                <div class="wa-stat__label">Visa Programs</div>
-            </div>
-            <div class="wa-stat-divider"></div>
-            <div class="wa-stat">
-                <div class="wa-stat__value">80+</div>
-                <div class="wa-stat__label">Cities Covered</div>
-            </div>
-            <div class="wa-stat-divider"></div>
-            <div class="wa-stat">
-                <div class="wa-stat__value">2026</div>
-                <div class="wa-stat__label">Tax Brackets</div>
-            </div>
-            <div class="wa-stat-divider"></div>
-            <div class="wa-stat">
-                <div class="wa-stat__value">0%</div>
-                <div class="wa-stat__label">Tax Destinations</div>
-            </div>
-        </div>
-
-        <div class="wa-hero__featured" style="margin-top: 3rem; margin-bottom: 1rem; text-align: center;">
-            <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-dim); margin-bottom: 1.25rem;">As featured in</p>
-            <div style="display: flex; justify-content: center; gap: 2.5rem; opacity: 0.5; flex-wrap: wrap; align-items: center; filter: grayscale(100%);">
-                <span style="font-weight: 800; font-size: 1.4rem; font-family: serif; letter-spacing: 1px;">Forbes</span>
-                <span style="font-weight: 700; font-size: 1.3rem; letter-spacing: -0.5px;">TechCrunch</span>
-                <span style="font-weight: 600; font-size: 1.2rem; text-transform: uppercase; border: 1px solid currentColor; padding: 0.2rem 0.5rem;">Nomad Capitalist</span>
-                <span style="font-weight: 900; font-size: 1.4rem; font-style: italic; letter-spacing: 2px;">WIRED</span>
-            </div>
-        </div>
-
-        <div class="wa-hero__trust">
-            <span class="wa-trust-label">Popular destinations</span>
-            <div class="wa-trust-flags">
-                <span title="Portugal">🇵🇹</span>
-                <span title="Spain">🇪🇸</span>
-                <span title="UAE">🇦🇪</span>
-                <span title="Thailand">🇹🇭</span>
-                <span title="Colombia">🇨🇴</span>
-                <span title="Indonesia">🇮🇩</span>
-                <span title="Mexico">🇲🇽</span>
-                <span title="Greece">🇬🇷</span>
-                <span title="Germany">🇩🇪</span>
-                <span title="Malaysia">🇲🇾</span>
+                    <!-- Floating Partner Card -->
+                    <div class="glass-panel floating-card partner-card">
+                        <div class="wa-partner-info">
+                            <span class="wa-partner-badge">Partner Offer</span>
+                            <h3>Blueground furnished apartments</h3>
+                            <p>Save 5% on monthly stays with code <code class="wa-promo-code">NOMADBUDGETER</code></p>
+                        </div>
+                        <a href="{{ site.affiliates.blueground.url }}" target="_blank" class="wa-partner-link action-btn" style="padding: 0.5rem 1rem; font-size: 0.8rem; margin-top: 1rem; width: 100%; justify-content: center;">Claim Offer →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="wa-scroll-indicator">
-        <span>Scroll to calculate</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <div class="wa-scroll-indicator" style="animation: none;">
+        <span style="animation: pulseAura 2s infinite;">Scroll to calculate</span>
+        <svg style="animation: float 2s ease-in-out infinite;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
     </div>
 </section>
 
