@@ -70,6 +70,14 @@ eleventyExcludeFromCollections: true
         <priority>0.6</priority>
     </url>
     {% endfor %}
+    {% for comp in visaComparisons %}
+    <url>
+        <loc>{{ site.url }}/compare/visa-roi/{{ comp.slug }}/</loc>
+        <lastmod>{% sitemapDate %}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    {% endfor %}
     <url>
         <loc>{{ site.url }}/partners/</loc>
         <lastmod>{% sitemapDate %}</lastmod>
