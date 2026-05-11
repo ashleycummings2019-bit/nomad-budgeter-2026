@@ -21,13 +21,15 @@ module.exports = function() {
             const savings100k = Math.round(100000 * (home.taxRate - dest.tax));
             const monthlySavings = Math.round(savings100k / 12);
             
+            const roiMultiple = dest.tax === 0 ? "10+" : (home.taxRate / dest.tax).toFixed(1);
+            
             results.push({
                 slug: `${dest.slug}-visa-vs-${home.slug}-tax`,
                 destination: dest,
                 home: home,
                 savings100k: savings100k,
                 monthlySavings: monthlySavings,
-                roiMultiple: (home.taxRate / dest.tax).toFixed(1),
+                roiMultiple: roiMultiple,
                 title: `${dest.name} ${dest.visaName} vs. ${home.name} Tax Calculator (2026)`,
                 description: `Calculate your ROI moving to ${dest.name}. Save up to $${savings100k.toLocaleString()} in taxes vs. ${home.name} with the ${dest.visaName}.`
             });
