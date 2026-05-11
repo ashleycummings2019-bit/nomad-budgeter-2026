@@ -106,4 +106,4 @@ NHR 2.0 is not as generous as the original — but for qualifying professionals,
 
 If you don't qualify, don't worry. There are [plenty of 0% tax countries](/blog/best-0-tax-countries-for-freelancers/) that welcome freelancers with open arms.
 
-*Updated May 2026. Tax rules change frequently — always verify with a qualified professional. We recommend [Lexidy Legal](https://www.lexidy.com/?utm_source=nomadbudgeter&utm_medium=blog&utm_campaign=NB_2026_NHR2) for Portugal-specific visa and tax advice.*
+*Updated May 2026. Tax rules change frequently — always verify with a qualified professional. We recommend [{{ site.affiliates.lexidy.name }}]({{ site.affiliates.lexidy.url | affUrl('NHR2_Blog') }}) for Portugal-specific visa and tax advice.*

@@ -293,56 +293,12 @@ window.__NB_STATIC_CITY__ = {
                     <div class="roi-yearly-savings" id="res-roi-savings">+$0 / yr</div>
                 </div>
             </div>
-            <a href="https://citizenremote.com/?ref=nomadbudgeter" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for {{ city.name }} Visa →</a>
+            <a href="{{ site.affiliates.citizenremote.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for {{ city.name }} Visa →</a>
         </div>
 
-        {# Success Stack #}
-        <div class="success-stack-section mt-8">
-            <h3 class="section-subtitle">Your {{ city.name }} Success Stack</h3>
-            <div class="stack-grid">
-                <a href="{{ site.affiliates.safetywing.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">🛡️</div>
-                    <div class="stack-info">
-                        <div class="stack-name">SafetyWing</div>
-                        <div class="stack-desc">Global Health Cover</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.wise.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">💸</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Wise</div>
-                        <div class="stack-desc">Borderless Banking</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.remote.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">💼</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Remote.com</div>
-                        <div class="stack-desc">Payroll &amp; Compliance</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.nomadlist.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">🌍</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Nomad List</div>
-                        <div class="stack-desc">City &amp; Community</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.lexidy.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">⚖️</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Lexidy</div>
-                        <div class="stack-desc">Visa Legal Experts</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.interactiveBrokers.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">📈</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Interactive Brokers</div>
-                        <div class="stack-desc">Expat Investing</div>
-                    </div>
-                </a>
-            </div>
+        {# Expert Choice Top Pick #}
+        <div class="mt-8">
+            {% include "partials/affiliate-top-pick.njk" %}
         </div>
 
         <div class="metric-card commentary-box mt-6">

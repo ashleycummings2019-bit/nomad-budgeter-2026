@@ -11,7 +11,7 @@ module.exports = function () {
         "bali", "lisbon", "dubai", "medellin", "chiang-mai", 
         "bangkok", "mexico-city", "valencia", "da-nang", "bansko", 
         "barcelona", "buenos-aires", "istanbul", "tbilisi", "athens", 
-        "tokyo", "singapore", "kuala-lumpur", "tallinn"
+        "tokyo", "singapore", "kuala-lumpur", "tallinn", "cape-town"
     ];
 
     const results = [];
@@ -22,7 +22,7 @@ module.exports = function () {
             if (city.countrySlug === country.slug) return;
 
             const slug = `${city.slug}-vs-${country.slug}`;
-            
+
             let priorityScore = 0;
             if (priorityHubs.includes(city.slug)) priorityScore += 10;
             if (city.continent === country.continent) priorityScore += 5;
@@ -39,7 +39,7 @@ module.exports = function () {
         });
     });
 
-    // Deduplicate and limit to top 150 most relevant comparisons
+    // Deduplicate and limit to top 250 most relevant comparisons
     const uniqueResults = [];
     const seenSlugs = new Set();
 
@@ -51,7 +51,7 @@ module.exports = function () {
             uniqueResults.push(res);
             seenSlugs.add(res.slug);
         }
-        if (uniqueResults.length >= 150) break;
+        if (uniqueResults.length >= 250) break;
     }
 
     return uniqueResults;

@@ -11,7 +11,9 @@
     <div class="toolkit-grid">
         {% set isEurope = (city and city.continent == "Europe") or (country and country.continent == "Europe") or (country and country.isEurope) %}
         {% if isEurope or city.affiliate_url %}
-        <a href="{{ city.affiliate_url if city.affiliate_url else site.affiliates.lexidy.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+        {% set currentCountrySlug = (country.slug or city.countrySlug) %}
+        {% set lexidyUrl = site.affiliates.lexidy.countryUrls[currentCountrySlug] if (currentCountrySlug and site.affiliates.lexidy.countryUrls[currentCountrySlug]) else (city.affiliate_url if city.affiliate_url else site.affiliates.lexidy.url) %}
+        <a href="{{ lexidyUrl | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">🏛️</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.lexidy.name }}</h4>
@@ -22,7 +24,7 @@
         {% endif %}
 
 
-        <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+        <a href="{{ site.affiliates.safetywing.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">🛡️</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.safetywing.name }}</h4>
@@ -34,43 +36,110 @@
         {% if city or country %}
             {% set isAsia = (city and city.continent == "Asia") or (country and country.continent == "Asia") %}
             {% if isAsia %}
-            <a href="{{ site.affiliates.agoda.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <a href="{{ site.affiliates.agoda.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
                 <div class="toolkit-icon">🏖️</div>
                 <div class="toolkit-content">
                     <h4>{{ site.affiliates.agoda.name }}</h4>
-                    <p>Find the best monthly rental deals and long-term stays in {% if city %}{{ city.name }}{% else %}{{ country.name }}{% endif %}.</p>
+                    <p>Best rates for monthly rentals and long-term nomad stays in {% if city %}{{ city.name }}{% else %}{{ country.name }}{% endif %}.</p>
                     <span class="toolkit-cta">Find Housing &rarr;</span>
                 </div>
             </a>
             {% else %}
-            <a href="{{ site.affiliates.blueground.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
-                <div class="toolkit-icon">🏙️</div>
+            <a href="{{ site.affiliates.booking.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+                <div class="toolkit-icon">🏨</div>
                 <div class="toolkit-content">
-                    <h4>{{ site.affiliates.blueground.name }}</h4>
-                    <p>{{ site.affiliates.blueground.desc | safe }}</p>
-                    <span class="toolkit-cta">Find Apartments &rarr;</span>
+                    <h4>{{ site.affiliates.booking.name }}</h4>
+                    <p>Secure the best 2026 rates for your first month in {% if city %}{{ city.name }}{% else %}{{ country.name }}{% endif %}.</p>
+                    <span class="toolkit-cta">Search Hotels &rarr;</span>
                 </div>
             </a>
             {% endif %}
         {% else %}
         {# Global Fallback for Housing #}
-        <a href="{{ site.affiliates.blueground.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
-            <div class="toolkit-icon">🏙️</div>
+        <a href="{{ site.affiliates.booking.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🏨</div>
             <div class="toolkit-content">
-                <h4>{{ site.affiliates.blueground.name }}</h4>
-                <p>{{ site.affiliates.blueground.desc }}</p>
-                <span class="toolkit-cta">Explore Cities &rarr;</span>
+                <h4>{{ site.affiliates.booking.name }}</h4>
+                <p>{{ site.affiliates.booking.desc }}</p>
+                <span class="toolkit-cta">Explore Stays &rarr;</span>
             </div>
         </a>
         {% endif %}
 
-        <a href="{{ site.affiliates.wise.url }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+        <a href="{{ site.affiliates.nordvpn.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🔒</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.nordvpn.name }}</h4>
+                <p>{{ site.affiliates.nordvpn.desc | safe }}</p>
+                <span class="toolkit-cta">Stay Secure &rarr;</span>
+            </div>
+        </a>
+
+        <a href="{{ site.affiliates.wise.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
             <div class="toolkit-icon">💸</div>
             <div class="toolkit-content">
                 <h4>{{ site.affiliates.wise.name }}</h4>
-                <p>Transfer your funds {% if city %}to {{ city.currency }}{% elif country %}to {{ country.currency }}{% else %}globally{% endif %} with the lowest exchange fees.</p>
+                <p>Transfer funds {% if city %}to {{ city.currency }}{% elif country %}to {{ country.currency }}{% else %}globally{% endif %} with the lowest 2026 exchange fees.</p>
                 <span class="toolkit-cta">Open Account &rarr;</span>
             </div>
         </a>
+
+        <a href="{{ site.affiliates.interactiveBrokers.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">📈</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.interactiveBrokers.name }}</h4>
+                <p>{{ site.affiliates.interactiveBrokers.desc | safe }}</p>
+                <span class="toolkit-cta">Start Investing &rarr;</span>
+            </div>
+        </a>
+
+        <a href="{{ site.affiliates.blueground.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🏠</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.blueground.name }}</h4>
+                <p>{{ site.affiliates.blueground.desc | safe }}</p>
+                <span class="toolkit-cta">View Apartments &rarr;</span>
+            </div>
+        </a>
+
+        <a href="{{ site.affiliates.airalo.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">📶</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.airalo.name }}</h4>
+                <p>Stay connected instantly. Get local data plans for {% if city %}{{ city.country }}{% elif country %}{{ country.name }}{% else %}200+ countries{% endif %} without swapping SIMs.</p>
+                <span class="toolkit-cta">Get eSIM &rarr;</span>
+            </div>
+        </a>
+
+        <a href="{{ site.affiliates.remote.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">💼</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.remote.name }}</h4>
+                <p>Hire employees or get paid legally as a nomad. Global payroll and compliance for remote workers.</p>
+                <span class="toolkit-cta">Learn More &rarr;</span>
+            </div>
+        </a>
+
+        <a href="{{ site.affiliates.nomadlist.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🌍</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.nomadlist.name }}</h4>
+                <p>Connect with other nomads in {% if city %}{{ city.name }}{% else %}your destination{% endif %}. The world's largest nomad community.</p>
+                <span class="toolkit-cta">Join Community &rarr;</span>
+            </div>
+        </a>
+
+        {% set carHeavyCountries = ["USA", "United States", "Canada", "Australia", "New Zealand", "South Africa", "Portugal", "Spain", "Italy", "Greece", "Iceland", "Costa Rica", "Mexico"] %}
+        {% set isCarHeavy = (country.name in carHeavyCountries) or (city.country in carHeavyCountries) %}
+        {% if isCarHeavy or not (city or country) %}
+        <a href="{{ site.affiliates.discovercars.url | affUrl('toolkit') }}" target="_blank" rel="noopener sponsored" class="toolkit-card">
+            <div class="toolkit-icon">🚗</div>
+            <div class="toolkit-content">
+                <h4>{{ site.affiliates.discovercars.name }}</h4>
+                <p>The best way to explore {% if city %}{{ city.country }}{% elif country %}{{ country.name }}{% else %}your destination{% endif %}. Compare 2026 rental rates from local providers.</p>
+                <span class="toolkit-cta">Book Car &rarr;</span>
+            </div>
+        </a>
+        {% endif %}
     </div>
 </section>

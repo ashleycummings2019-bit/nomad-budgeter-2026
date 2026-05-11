@@ -81,6 +81,26 @@ permalink: /compare/
         </div>
     </div>
 
+    {# Visa ROI Comparisons #}
+    <div class="mb-24">
+        <h2 class="aura-title mb-4 text-center">📈 Visa ROI & Tax Savings</h2>
+        <p class="text-dim text-center text-small mb-8 max-800 mx-auto">Calculate your potential tax savings by relocating from a high-tax home country to a digital nomad visa destination.</p>
+        <div class="stack-grid">
+        {% for comp in visaComparisons | slice(0, 15) %}
+            <a href="/compare/visa-roi/{{ comp.slug }}/" class="stack-item glass-panel hub-card" style="border-left: 3px solid #10b981;">
+                <div class="hub-icon">💹</div>
+                <div class="hub-info">
+                    <div class="hub-name">{{ comp.destination.name }} vs. {{ comp.home.name }}</div>
+                    <div class="hub-desc">Save up to ${{ comp.savings100k | localeString }} per $100k earnings</div>
+                    <div class="arbitrage-badge" style="margin-top: 0.5rem; display: inline-block; padding: 0.2rem 0.5rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 4px; font-size: 0.75rem; font-weight: 600;">
+                        {{ comp.roiMultiple }}x Tax ROI
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+
     {# City vs City Comparisons #}
     <div class="mb-24">
         <h2 class="aura-title mb-8 text-center">Top City vs. City Comparisons</h2>
@@ -105,7 +125,7 @@ permalink: /compare/
         <h2 class="aura-title mb-8 text-center">City vs. Country Comparisons</h2>
         <div class="stack-grid">
         {% for comp in cityCountryComparisons %}
-            <a href="/compare/city-country/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
+            <a href="/compare/city-vs-country/{{ comp.slug }}/" class="stack-item glass-panel hub-card">
                 <div class="hub-icon">🏙️</div>
                 <div class="hub-info">
                     <div class="hub-name">{{ comp.city.name }} vs. {{ comp.country.name }}</div>

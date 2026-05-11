@@ -1,4 +1,4 @@
-module.exports = function (eleventyConfig) {
+module.exports = function config(eleventyConfig) {
   // ─── Passthrough Copy ───
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
@@ -69,7 +69,7 @@ module.exports = function (eleventyConfig) {
     if (!countryCode) return "";
     return countryCode
       .toUpperCase()
-      .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397));
+      .replaceAll(/./g, (char) => String.fromCodePoint(char.codePointAt(0) + 127397));
   });
 
   // Format date string

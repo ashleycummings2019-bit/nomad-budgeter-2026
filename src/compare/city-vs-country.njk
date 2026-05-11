@@ -4,7 +4,7 @@ pagination:
   data: cityCountryComparisons
   size: 1
   alias: comp
-permalink: "/compare/city-country/{{ comp.slug }}/"
+permalink: "/compare/city-vs-country/{{ comp.slug }}/"
 eleventyComputed:
   pageTitle: "{{ comp.city.name }} vs. {{ comp.country.name }}: 2026 Lifestyle & Tax Comparison"
   pageDescription: "Strategic analysis between {{ comp.city.name }} and {{ comp.country.name }}. Compare cost of living, tax efficiency, and 2026 digital nomad benefits."
@@ -176,7 +176,7 @@ eleventyComputed:
         <div class="partner-grid">
             {% for related in cityCountryComparisons | slice(0, 12) %}
                 {% if related.slug != comp.slug %}
-                <a href="/compare/city-country/{{ related.slug }}/" class="partner-card">
+                <a href="/compare/city-vs-country/{{ related.slug }}/" class="partner-card">
                     <div class="flex-between mb-4">
                         <span class="text-dim small font-bold">{{ related.city.name }}</span>
                         <span class="text-dim small font-bold">VS</span>

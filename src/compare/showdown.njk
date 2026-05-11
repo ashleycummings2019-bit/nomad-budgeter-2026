@@ -247,65 +247,8 @@ eleventyComputed:
 
   {# ─── RELOCATE TOOLKIT (Affiliate Section) ─── #}
   <div class="mb-16">
-    <h2 class="aura-title mb-2">Your Relocation Toolkit</h2>
-    <p class="text-dim mb-8 text-small">Essential services for your move to {{ d.verdict }}. We may earn a commission — at no extra cost to you.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
-
-      {# SafetyWing — every nomad needs insurance #}
-      <a href="{{ site.affiliates.safetywing.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #10b981;">
-        <div style="font-size:1.8rem;flex-shrink:0;">🛡️</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">SafetyWing Insurance</div>
-          <div class="text-dim text-small" style="line-height:1.5;">Global nomad health cover from $45/mo. Meets all {{ d.country_a }} & {{ d.country_b }} visa requirements.</div>
-        </div>
-      </a>
-
-      {# Wise — money transfers #}
-      <a href="{{ site.affiliates.wise.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid var(--primary);">
-        <div style="font-size:1.8rem;flex-shrink:0;">💸</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Wise Multi-Currency</div>
-          <div class="text-dim text-small" style="line-height:1.5;">Hold, send & convert {{ d.costs_a.rent_1br | replace("€","EUR ") | replace("$","USD ") | replace("฿","THB ") | truncate(3) }} at the real exchange rate. No hidden bank markups.</div>
-        </div>
-      </a>
-
-      {# Interactive Brokers — investment #}
-      <a href="{{ site.affiliates.interactiveBrokers.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #fbbf24;">
-        <div style="font-size:1.8rem;flex-shrink:0;">📈</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Interactive Brokers</div>
-          <div class="text-dim text-small" style="line-height:1.5;">The #1 brokerage for international expats. Trade stocks, ETFs & forex from anywhere. Low fees.</div>
-        </div>
-      </a>
-
-      {# Lexidy — visa/legal (EU-focused) #}
-      <a href="{{ site.affiliates.lexidy.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #a78bfa;">
-        <div style="font-size:1.8rem;flex-shrink:0;">⚖️</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Lexidy Legal</div>
-          <div class="text-dim text-small" style="line-height:1.5;">Top-rated firm for European Nomad Visa applications. Handles {{ d.country_a }} & {{ d.country_b }} residency.</div>
-        </div>
-      </a>
-
-      {# Blueground — furnished apartments #}
-      <a href="{{ site.affiliates.blueground.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #f472b6;">
-        <div style="font-size:1.8rem;flex-shrink:0;">🏠</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Blueground Apartments</div>
-          <div class="text-dim text-small" style="line-height:1.5;">Fully furnished apartments in {{ d.city_a }} & {{ d.city_b }}. Move-in ready, flexible leases.</div>
-        </div>
-      </a>
-
-      {# Agoda — Asia accommodation #}
-      <a href="{{ site.affiliates.agoda.url | affUrl('showdown') }}" target="_blank" rel="sponsored noopener" class="glass-panel p-6" style="text-decoration:none;color:var(--text-main);display:flex;gap:14px;align-items:flex-start;transition:all 0.2s;border-left:3px solid #fb923c;">
-        <div style="font-size:1.8rem;flex-shrink:0;">🏨</div>
-        <div>
-          <div style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">Agoda Stays</div>
-          <div class="text-dim text-small" style="line-height:1.5;">Monthly nomad rentals at the best rates. Great for scouting {{ d.city_a }} or {{ d.city_b }} before committing.</div>
-        </div>
-      </a>
-
-    </div>
+    {% set city = { name: d.city_a if d.verdict == d.city_a else d.city_b, country: d.country_a if d.verdict == d.city_a else d.country_b } %}
+    {% include "partials/relocation-toolkit.njk" %}
   </div>
 
   {# ─── RELATED SHOWDOWNS ─── #}

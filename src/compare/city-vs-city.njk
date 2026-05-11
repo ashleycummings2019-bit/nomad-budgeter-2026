@@ -224,6 +224,10 @@ eleventyComputed:
 
         {# Toolkits #}
         <div class="mt-16">
+            {% set city = comp.cityA %}
+            {% include "partials/affiliate-top-pick.njk" %}
+        </div>
+        <div class="mt-12">
             {% include "partials/relocation-toolkit.njk" %}
         </div>
     </div>

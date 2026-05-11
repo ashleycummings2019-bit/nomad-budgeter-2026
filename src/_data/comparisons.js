@@ -127,9 +127,22 @@ module.exports = function () {
         title: `${cityA.name} vs. ${cityB.name}: 2026 Digital Nomad Cost of Living Comparison`,
         description: `Compare cost of living, taxes, and savings for digital nomads in ${cityA.name} vs. ${cityB.name}. Updated for 2026.`,
       });
-
-      existingSlugs.add(forwardSlug);
     }
+  }
+
+  // Deduplicate and limit to top 250 most relevant comparisons
+  const uniqueResults = [];
+  const seenSlugs = new Set();
+  
+  // Sort by priority first so we keep the better quality ones if there's a collision
+  results.sort((a, b) => b.priority - a.priority);
+
+  for (const res of results) {
+    if (!seenSlugs.has(res.slug)) {
+      uniqueResults.push(res);
+      seenSlugs.add(res.slug);
+    }
+    if (uniqueResults.length >= 250) break;
   }
 
   // ─── Themes (Nomad Archetypes) ───
@@ -171,12 +184,8 @@ module.exports = function () {
     }
   ];
 
-  // Sort by priority (featured first, then priority hubs, then others)
-  // Limit to top 150 to prevent spam flags as requested by user
-  const sortedResults = results.sort((a, b) => b.priority - a.priority).slice(0, 150);
-
   return {
-    list: sortedResults,
+    list: uniqueResults,
     themes: themes
   };
 };

@@ -266,7 +266,7 @@ eleventyComputed:
 
         {# Relocation Toolkit #}
         <div class="mt-16">
-            {% set country_data = { name: country.name, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency, isEurope: (country.continent == "Europe") } %}
+            {% set country_data = { name: country.name, slug: country.slug, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency, isEurope: (country.continent == "Europe") } %}
             {% set country = country_data %}
             {% include "partials/relocation-toolkit.njk" %}
         </div>

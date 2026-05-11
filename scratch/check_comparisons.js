@@ -1,20 +1,18 @@
-const cities = require("../src/_data/cities.json");
-const countries = require("../src/_data/countries.json");
-const cityCountryComparisons = require("../src/_data/cityCountryComparisons.js")();
+const getComparisons = require('../src/_data/cityCountryComparisons.js');
+const results = getComparisons();
+const slugs = results.map(r => r.slug);
+const unique = new Set(slugs);
 
-const seenSlugs = new Set();
-const duplicates = [];
+console.log(`Total results: ${results.length}`);
+console.log(`Unique slugs: ${unique.size}`);
 
-cityCountryComparisons.forEach(item => {
-  if (seenSlugs.has(item.slug)) {
-    duplicates.push(item.slug);
-  }
-  seenSlugs.add(item.slug);
-});
-
-console.log("Total items:", cityCountryComparisons.length);
-console.log("Unique slugs:", seenSlugs.size);
-console.log("Duplicates:", duplicates.length);
-if (duplicates.length > 0) {
-  console.log("First 10 duplicates:", duplicates.slice(0, 10));
+if (slugs.length !== unique.size) {
+    console.log('❌ Duplicates found in cityCountryComparisons output!');
+    const counts = {};
+    slugs.forEach(s => counts[s] = (counts[s] || 0) + 1);
+    Object.entries(counts).filter(([s, c]) => c > 1).forEach(([s, c]) => {
+        console.log(`   - ${s}: ${c} occurrences`);
+    });
+} else {
+    console.log('✅ cityCountryComparisons output is clean.');
 }

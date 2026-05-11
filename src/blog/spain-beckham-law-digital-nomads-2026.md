@@ -155,4 +155,4 @@ Spain's Beckham Law is arguably the **most nomad-friendly tax regime in the EU**
 
 The key is acting fast: get your visa, register, and file Form 149 within the window. Miss that deadline and you're stuck with Spain's brutal progressive rates (up to 47%).
 
-*Updated May 2026. Spanish tax law evolves frequently. We recommend [Lexidy Legal](https://www.lexidy.com/?utm_source=nomadbudgeter&utm_medium=blog&utm_campaign=NB_2026_BeckhamLaw) for Beckham Law applications and Digital Nomad Visa assistance.*
+*Updated May 2026. Spanish tax law evolves frequently. We recommend [{{ site.affiliates.lexidy.name }}]({{ site.affiliates.lexidy.url | affUrl('BeckhamLaw_Blog') }}) for Beckham Law applications and Digital Nomad Visa assistance.*

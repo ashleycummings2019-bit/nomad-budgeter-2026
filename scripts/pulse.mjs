@@ -339,10 +339,22 @@ async function main() {
   
   // Double it for smooth looping
   writeFileSync(tickerPath, JSON.stringify([...tickerData, ...tickerData], null, 2));
+
+  // ─── NEW: Update Global Freshness Record (SEO Strategy 2026) ───
+  const freshnessPath = resolve(__dirname, '../src/_data/freshness.json');
+  const now = new Date();
+  const freshnessData = {
+    lastUpdated: now.toISOString(),
+    displayDate: now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+    version: "2026.4." + Math.floor(now.getTime() / 100000), // Dynamic versioning for AI crawlers
+    summary: `Global tax rates, currency exchange (USD/${Object.keys(rates).length} currencies), and city cost-of-living data verified for ${now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}.`
+  };
+  writeFileSync(freshnessPath, JSON.stringify(freshnessData, null, 2));
   
   console.log(`\n✅ PULSE COMPLETE`);
   console.log(`   Cities enriched: ${enriched}/${cities.length}`);
   console.log(`   Ticker data updated: ${tickerPath}`);
+  console.log(`   Freshness record updated: ${freshnessPath}`);
   console.log(`   Data changed: ${hashBefore !== hashAfter ? 'YES — rebuild needed' : 'NO — prices unchanged'}`);
   console.log(`   Timestamp: ${new Date().toISOString()}\n`);
 }

@@ -1,0 +1,62 @@
+{# Affiliate Top Pick Partial - Dynamic Contextual CTA #}
+{% set topPick = null %}
+
+{# Logic to determine the Top Pick based on context #}
+{% if city %}
+    {% if city.continent == "Europe" %}
+        {% set topPick = site.affiliates.lexidy %}
+        {% set topPickUrl = site.affiliates.lexidy.countryUrls[city.countrySlug] if (city.countrySlug and site.affiliates.lexidy.countryUrls[city.countrySlug]) else site.affiliates.lexidy.url %}
+        {% set topPickDesc = "Verified legal experts for " + city.country + " Digital Nomad Visas. Get a professional compliance audit before you move." %}
+        {% set topPickCTA = "Consult Lawyers" %}
+        {% set topPickIcon = "🏛️" %}
+    {% elif city.continent == "Asia" %}
+        {% set topPick = site.affiliates.agoda %}
+        {% set topPickUrl = site.affiliates.agoda.url %}
+        {% set topPickDesc = "The best 2026 rates for long-term nomad stays in " + city.name + ". Secure your first month with local discounts." %}
+        {% set topPickCTA = "Find Housing" %}
+        {% set topPickIcon = "🏝️" %}
+    {% endif %}
+{% elif country %}
+    {% if country.isEurope or country.continent == "Europe" %}
+        {% set topPick = site.affiliates.lexidy %}
+        {% set topPickUrl = site.affiliates.lexidy.countryUrls[country.slug] if (country.slug and site.affiliates.lexidy.countryUrls[country.slug]) else site.affiliates.lexidy.url %}
+        {% set topPickDesc = "Navigating " + country.name + "'s 2026 visa laws can be complex. Book a call with verified lawyers to handle your application." %}
+        {% set topPickCTA = "Get Legal Help" %}
+        {% set topPickIcon = "🏛️" %}
+    {% else %}
+        {% set topPick = site.affiliates.citizenremote %}
+        {% set topPickUrl = site.affiliates.citizenremote.url %}
+        {% set topPickDesc = "Ready to apply for the " + country.visaName + "? Use the official platform to manage your nomad visa from start to finish." %}
+        {% set topPickCTA = "Start Application" %}
+        {% set topPickIcon = "🛂" %}
+    {% endif %}
+{% endif %}
+
+{# Fallback to SafetyWing if no specific pick found #}
+{% if not topPick %}
+    {% set topPick = site.affiliates.safetywing %}
+    {% set topPickUrl = site.affiliates.safetywing.url %}
+    {% set topPickDesc = "Mandatory 2026 health insurance for nomads and remote workers. Meets all visa requirements for " + (city.country or country.name or "most countries") + "." %}
+    {% set topPickCTA = "Get Covered" %}
+    {% set topPickIcon = "🛡️" %}
+{% endif %}
+
+<div class="affiliate-top-pick-container reveal">
+    <div class="glass-panel p-8 aura-border-primary relative overflow-hidden" style="background: linear-gradient(135deg, rgba(var(--aura-primary-rgb), 0.1), rgba(15, 23, 42, 0.4));">
+        <div class="top-pick-badge">EXPERT CHOICE</div>
+        <div class="flex-between flex-wrap gap-8">
+            <div class="top-pick-info" style="flex: 1; min-width: 300px;">
+                <div class="flex items-center gap-4 mb-4">
+                    <span style="font-size: 2.5rem;">{{ topPickIcon }}</span>
+                    <h3 class="aura-title" style="margin: 0; font-size: 1.5rem;">{{ topPick.name }}</h3>
+                </div>
+                <p class="text-dim mb-0" style="font-size: 1.1rem; line-height: 1.6;">{{ topPickDesc }}</p>
+            </div>
+            <div class="top-pick-action">
+                <a href="{{ topPickUrl | affUrl('top_pick') }}" target="_blank" rel="noopener sponsored" class="aura-button pulse-button" style="padding: 1.25rem 2.5rem; font-size: 1.1rem;">
+                    {{ topPickCTA }} &rarr;
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

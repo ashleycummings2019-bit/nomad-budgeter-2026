@@ -39,7 +39,21 @@ module.exports = function () {
     }
   }
 
-  // Limit to top 100 to avoid low-value SEO pages
-  return results.sort((a, b) => b.priority - a.priority).slice(0, 100);
+  // Deduplicate and limit to top 250 most relevant comparisons
+  const uniqueResults = [];
+  const seenSlugs = new Set();
+  
+  // Sort by priority first so we keep the better quality ones if there's a collision
+  results.sort((a, b) => b.priority - a.priority);
+
+  for (const res of results) {
+    if (!seenSlugs.has(res.slug)) {
+      uniqueResults.push(res);
+      seenSlugs.add(res.slug);
+    }
+    if (uniqueResults.length >= 250) break;
+  }
+
+  return uniqueResults;
 };
 

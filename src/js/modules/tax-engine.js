@@ -26,6 +26,25 @@ const TAX_RULES = {
     "Germany": (income) => {
         if (income > 62810) return 0.42;
         return 0.30;
+    },
+    "Canada": (income) => {
+        if (income > 235675) return 0.33;
+        if (income > 165430) return 0.29;
+        return 0.20;
+    },
+    "Australia": (income) => {
+        if (income > 180000) return 0.45;
+        if (income > 120000) return 0.37;
+        return 0.30;
+    },
+    "France": (income) => {
+        if (income > 168994) return 0.45;
+        if (income > 78570) return 0.41;
+        return 0.30;
+    },
+    "Ireland": (income) => {
+        if (income > 40000) return 0.40;
+        return 0.20;
     }
 };
 

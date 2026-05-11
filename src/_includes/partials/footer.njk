@@ -54,6 +54,11 @@
 
     <div class="footer-legal">
         <div class="legal-container">
+            <div class="freshness-stamp" style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); font-size: 0.85rem;">
+                <span class="pulse-icon" style="color: #10b981; margin-right: 0.5rem;">●</span>
+                Last verified: <strong>{{ freshness.displayDate }}</strong> — {{ freshness.summary }}
+            </div>
+            <p class="mb-4"><strong>Affiliate Disclosure:</strong> Some links on Nomad Budgeter are affiliate links. If you use them to purchase a service, we may earn a small commission at no additional cost to you. We only partner with high-quality services like SafetyWing, Remote.com, and Wise that directly benefit the nomad community.</p>
             <p>&copy; {% year %} {{ site.name }}. Precision data for digital nomads. Calculations are for informational purposes only and do not constitute professional tax advice.</p>
             <div class="legal-badges">
                 <span>🔒 256-bit SSL</span>
