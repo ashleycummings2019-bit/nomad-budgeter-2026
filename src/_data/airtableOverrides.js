@@ -102,33 +102,49 @@ module.exports = async function() {
         return { data: cachedData, isLive: false };
     }
 
+    // Fetch all records with pagination
+    async function fetchAllRecords(tableName) {
+        let allRecords = [];
+        let offset = null;
+        do {
+            let url = `https://api.airtable.com/v0/${activeBase}/${encodeURIComponent(tableName)}`;
+            if (offset) {
+                url += `?offset=${encodeURIComponent(offset)}`;
+            }
+            const response = await fetchWithRetry(url, { headers: { Authorization: `Bearer ${activeKey}` } });
+            
+            if (response.status === 404) {
+                return { response, ok: false, notFound: true };
+            }
+            if (!response.ok) {
+                return { response, ok: false };
+            }
+            
+            const data = await response.json();
+            allRecords = allRecords.concat(data.records);
+            offset = data.offset;
+        } while (offset);
+        
+        return { records: allRecords, ok: true };
+    }
+
     try {
         let tableName = 'Tax Overrides';
-        let response = await fetchWithRetry(
-            `https://api.airtable.com/v0/${activeBase}/${encodeURIComponent(tableName)}`,
-            { headers: { Authorization: `Bearer ${activeKey}` } }
-        );
+        let result = await fetchAllRecords(tableName);
         
-        if (response.status === 404) {
+        if (!result.ok && result.notFound) {
             tableName = 'Table 1';
-            response = await fetchWithRetry(
-                `https://api.airtable.com/v0/${activeBase}/${encodeURIComponent(tableName)}`,
-                { headers: { Authorization: `Bearer ${activeKey}` } }
-            );
-        }
-
-        
-        if (!response.ok) {
-            throw new Error(`Airtable API responded with ${response.status}`);
+            result = await fetchAllRecords(tableName);
         }
         
-        const data = await response.json();
+        if (!result.ok) {
+            throw new Error(`Airtable API responded with ${result.response ? result.response.status : 'unknown error'}`);
+        }
+        
         const overrides = { ...cachedData }; // Merge live data over cache
-        
-        // Also prepare raw records for cache refresh
         const rawRecords = [];
 
-        data.records.forEach(record => {
+        result.records.forEach(record => {
             const fields = record.fields;
             if (fields['City Slug']) {
                 overrides[fields['City Slug'].toLowerCase()] = {
