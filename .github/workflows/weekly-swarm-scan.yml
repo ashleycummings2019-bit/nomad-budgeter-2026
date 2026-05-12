@@ -2,29 +2,27 @@ name: Weekly Tax/Visa Swarm Scan
 
 on:
   schedule:
-    - cron: '0 6 * * 1'
-  workflow_dispatch:
+      - cron: '0 6 * * 1'
+        workflow_dispatch:
 
-jobs:
-  swarm-scan:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - name: Run Swarm Researcher
-        env:
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: node backend-intelligence/orchestrator.mjs --scan-only
-      - name: Run Swarm Auditor
-        env:
-          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: node backend-intelligence/orchestrator.mjs --audit-only
+        jobs:
+          swarm-scan:
+              runs-on: ubuntu-latest
+                  timeout-minutes: 45
+                      steps:
+                            - uses: actions/checkout@v4
+                                  - uses: actions/setup-node@v4
+                                          with:
+                                                    node-version: '20'
+                                                              cache: 'npm'
+                                                                    - run: npm ci
+                                                                          - env:
+                                                                                    KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+                                                                                              SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+                                                                                                        SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+                                                                                                                run: node backend-intelligence/orchestrator.mjs --scan-only
+                                                                                                                      - env:
+                                                                                                                                KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+                                                                                                                                          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+                                                                                                                                                    SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+                                                                                                                                                            run: node backend-intelligence/orchestrator.mjs --audit-only
