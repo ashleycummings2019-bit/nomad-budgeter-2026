@@ -288,54 +288,10 @@ permalink: /
             </div>
         </div>
 
-        {# Success Stack (Affiliates) #}
-        <div class="success-stack-section">
-            <h3 class="section-subtitle">Your Nomad Success Stack</h3>
-            <p class="text-dim text-sm text-center mb-6">Tools we personally use and recommend to make your transition seamless.</p>
-            <div class="stack-grid">
-                <a href="{{ site.affiliates.safetywing.url | affUrl('homepage') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">🛡️</div>
-                    <div class="stack-info">
-                        <div class="stack-name">SafetyWing</div>
-                        <div class="stack-desc">Global Health Cover</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.wise.url | affUrl('homepage') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">💳</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Wise</div>
-                        <div class="stack-desc">Borderless Banking</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.remote.url | affUrl('homepage') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">💼</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Remote.com</div>
-                        <div class="stack-desc">Payroll & Compliance</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.nomadlist.url | affUrl('homepage') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">🌍</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Nomad List</div>
-                        <div class="stack-desc">City & Community</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.lexidy.url | affUrl('homepage') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">⚖️</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Lexidy</div>
-                        <div class="stack-desc">Visa Legal Experts</div>
-                    </div>
-                </a>
-                <a href="{{ site.affiliates.interactiveBrokers.url | affUrl('homepage') }}" target="_blank" rel="sponsored noopener" class="stack-item glass-panel">
-                    <div class="stack-icon">📈</div>
-                    <div class="stack-info">
-                        <div class="stack-name">Interactive Brokers</div>
-                        <div class="stack-desc">Expat Investing</div>
-                    </div>
-                </a>
-            </div>
+        {# Dynamic Affiliate Top Pick #}
+        <div class="mb-24 reveal mt-16">
+            {% set contextType = 'global' %}
+            {% include "partials/affiliate-top-pick.njk" %}
         </div>
 
 
@@ -343,16 +299,17 @@ permalink: /
         {% include "partials/pro-report.njk" %}
 
         {# Pro Report Upsell #}
-        <div id="pro-upsell" class="glass-panel upsell-panel">
+        <div id="pro-upsell" class="glass-panel upsell-panel mt-16">
             <div class="upsell-container">
                 <div class="upsell-content">
-                    <div class="badge-2026 upsell-badge">PREMIUM REPORT</div>
-                    <h3 class="upsell-title">Unlock Full Financial Breakdown</h3>
+                    <div class="badge-2026 upsell-badge">FINANCIAL CLARITY</div>
+                    <h3 class="upsell-title">Maximize Your Sovereign ROI</h3>
+                    <p class="text-dim mb-6">Stop guessing with your finances. We calculate your exact tax arbitrage and living costs for 2026, so you can relocate with total financial clarity.</p>
                     <ul class="upsell-features">
-                        <li>Detailed 2026 Tax Optimization Strategy</li>
-                        <li>Local Apartment & Utility Estimates</li>
-                        <li>Nomad Community & Co-working Heatmap</li>
-                        <li>Direct Visa Lawyer Contact List</li>
+                        <li>Step-by-Step 2026 Tax Optimization Strategy</li>
+                        <li>High-Fidelity Apartment & Utility Estimates</li>
+                        <li>Verified Visa Lawyer Direct Contacts</li>
+                        <li>Custom PDF Report with Live Calculations</li>
                     </ul>
                     
                     <div class="upsell-comparison">

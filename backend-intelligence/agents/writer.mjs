@@ -62,6 +62,15 @@ function getConfig() {
     return { mode: 'topic', topic: val };
   }
 
+  // --revise src/blog/drafts/file.md
+  const reviseArg = args.find(a => a.startsWith('--revise'));
+  if (reviseArg) {
+    const val = reviseArg.includes('=')
+      ? reviseArg.split('=')[1]
+      : args[args.indexOf(reviseArg) + 1];
+    return { mode: 'revise', file: val };
+  }
+
   // Default: generate a comparison for the most popular matchup
   return { mode: 'comparison', slugs: ['lisbon', 'bali'] };
 }
@@ -194,6 +203,58 @@ Set today's date in the frontmatter.`;
   return { filename, filepath, cost: response.cost };
 }
 
+// ─── Revise a draft based on SEO report ───
+async function reviseDraft(filePath) {
+  const absolutePath = resolve(process.cwd(), filePath);
+  console.log(`\n✍️  REVISING draft: ${absolutePath}`);
+  
+  let content = '';
+  try {
+    content = readFileSync(absolutePath, 'utf-8');
+  } catch (e) {
+    console.error(`❌ Could not read draft file: ${absolutePath}`);
+    return null;
+  }
+
+  const reportPath = absolutePath.replace('.md', '-seo-report.json');
+  let report = '';
+  try {
+    report = readFileSync(reportPath, 'utf-8');
+  } catch(e) {
+    console.error(`❌ Could not find SEO report at ${reportPath}. Please run SEO Optimizer first.`);
+    return null;
+  }
+
+  const userMessage = `Please revise this Markdown draft based on the following SEO Optimizer Report.
+Integrate the suggested title, meta description, H1, add missing keywords naturally, and implement the content recommendations.
+Ensure the final output is STILL a complete Markdown document with proper frontmatter. Keep draft: true.
+
+Original Draft:
+"""
+${content}
+"""
+
+SEO Report:
+"""
+${report}
+"""`;
+
+  const response = await kimiChat({
+    system: WRITER_PROMPT,
+    user: userMessage,
+    thinking: false,
+    json: false,
+    maxTokens: 8192,
+    temperature: 1.0,
+  });
+
+  writeFileSync(absolutePath, response.content);
+  console.log(`   📄 Draft revised: ${absolutePath}`);
+  console.log(`   📊 Tokens: ${response.tokensIn}+${response.tokensOut}, Cost: $${response.cost.toFixed(4)}`);
+
+  return { filepath: absolutePath, cost: response.cost };
+}
+
 // ─── Main ───
 async function main() {
   const config = getConfig();
@@ -206,6 +267,8 @@ async function main() {
 
   if (config.mode === 'comparison') {
     result = await generateComparison(config.slugs);
+  } else if (config.mode === 'revise') {
+    result = await reviseDraft(config.file);
   } else {
     result = await generateTopicArticle(config.topic);
   }

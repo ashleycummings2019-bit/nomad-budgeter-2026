@@ -1,0 +1,32 @@
+{
+  "seo_score": 74,
+  "title_suggestion": "Zero-Tax Countries for Digital Nomads: 2026 Cost Guide",
+  "meta_description": "Discover the best zero-tax countries for digital nomads in 2026. Compare real living costs and tax rates to maximize savings. Find your base today!",
+  "h1_suggestion": "Best Zero-Tax Destinations for Digital Nomads in 2026",
+  "keyword_gaps": [
+    "digital nomad visa",
+    "tax residency requirements",
+    "foreign sourced income",
+    "territorial tax",
+    "self-employed tax",
+    "crypto tax friendly"
+  ],
+  "content_recommendations": [
+    "Add an H1 heading immediately after the frontmatter; the draft currently opens with body text and jumps to H2.",
+    "Shorten the frontmatter meta description to under 155 characters and ensure it contains a clear call-to-action.",
+    "Integrate digital nomad visa requirements for each destination to align with tax-and-visa search intent.",
+    "Add a section explaining how to establish tax residency and legally qualify for the quoted zero or near-zero rates.",
+    "Include a FAQ section targeting long-tail queries such as 'What is the cheapest zero-tax country for digital nomads?'",
+    "Implement FAQ or HowTo schema markup around the comparison table and cost-of-living methodology.",
+    "Place a strong call-to-action at the conclusion linking to a visa checker or cost-of-living calculator.",
+    "Complete the truncated Bucharest section and expand the guide to cover all top-20 near-zero tax cities."
+  ],
+  "internal_links_to_add": [
+    "/visas/croatia-digital-nomad-visa",
+    "/visas/uae-remote-work-visa",
+    "/visas/georgia-digital-nomad-visa",
+    "/tax-guide/tax-residency-101",
+    "/compare/zero-tax/dubai-vs-split",
+    "/tools/cost-of-living-calculator"
+  ]
+}

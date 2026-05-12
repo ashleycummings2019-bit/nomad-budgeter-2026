@@ -119,23 +119,23 @@ eleventyComputed:
         </div>
     </div>
 
-    {# Success Stack / Toolkit #}
+    {# Dynamic Affiliate Top Pick #}
     <div class="mb-24 reveal">
-        <h2 class="text-center mb-12">The {{ comp.destination.name }} Relocation Toolkit</h2>
+        <h2 class="text-center mb-12">The {{ comp.destination.name }} Top Pick</h2>
         {% set country_data = { name: comp.destination.name, slug: comp.destination.slug, country: comp.destination.name, continent: comp.destination.continent, visa: comp.destination.visaName, currency: comp.destination.currency, isEurope: (comp.destination.continent == "Europe") } %}
         {% set country = country_data %}
-        {% include "partials/relocation-toolkit.njk" %}
+        {% include "partials/affiliate-top-pick.njk" %}
     </div>
 
     {# Pro Upsell #}
     <div id="pro-upsell" class="glass-panel reveal text-center p-12 border-accent" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(15, 23, 42, 0.8));">
-        <div class="badge-2026 mb-6" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-color: rgba(245, 158, 11, 0.2);">Limited Pro Report</div>
-        <h2 class="aura-title mb-6" style="font-size: 2.5rem;">Download the Full {{ comp.destination.name }} Tax Strategy</h2>
+        <div class="badge-2026 mb-6" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-color: rgba(245, 158, 11, 0.2);">Financial Clarity</div>
+        <h2 class="aura-title mb-6" style="font-size: 2.5rem;">Get Absolute Clarity on Your Move to {{ comp.destination.name }}</h2>
         <p class="text-dim mx-auto mb-10" style="max-width: 700px; font-size: 1.15rem;">
-            Go beyond the numbers. Our Pro Report includes lawyer contacts, local bank setup guides, and the exact paperwork checklist used by 500+ successful applicants.
+            Stop guessing about your tax liabilities. Get the exact step-by-step strategy, verified lawyer contacts, and the precise paperwork checklist used by 500+ successful applicants. Move with total confidence.
         </p>
         <div class="flex justify-center gap-6 flex-wrap">
-            <button id="unlock-pro-btn" class="aura-button" style="background: #f59e0b; color: #000; font-weight: 800;">Get Pro Report for $19 →</button>
+            <button id="unlock-pro-btn" class="aura-button" style="background: #f59e0b; color: #000; font-weight: 800;">Download Pro Report ($19) →</button>
             <a href="/visas/{{ comp.destination.slug }}/" class="aura-button-secondary">Read Full Visa Guide</a>
         </div>
     </div>

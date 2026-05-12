@@ -77,6 +77,8 @@ async function runWriter(cities) {
   console.log('═══════════════════════════════════════');
 
   const { execSync } = await import('child_process');
+  let filepath = '';
+  
   try {
     execSync(
       `node backend-intelligence/agents/writer.mjs --cities ${cities}`,
@@ -87,8 +89,74 @@ async function runWriter(cities) {
         timeout: 1_800_000,
       }
     );
+    
+    // Calculate filepath
+    const slugs = cities.split(',').map(c => c.trim());
+    if (slugs.length >= 2) {
+      const filename = `${slugs[0]}-vs-${slugs[1]}-digital-nomads-2026.md`;
+      filepath = `src/blog/drafts/${filename}`;
+    }
   } catch (err) {
     console.error('⚠️ Writer agent exited with error');
+    return;
+  }
+
+  if (!filepath) return;
+
+  console.log('\n═══════════════════════════════════════');
+  console.log('  PHASE 4: 🔎 SEO OPTIMIZER — Tuning...');
+  console.log('═══════════════════════════════════════');
+  
+  try {
+    execSync(
+      `node backend-intelligence/agents/seo-optimizer.mjs --file ${filepath}`,
+      {
+        cwd: process.cwd(),
+        stdio: 'inherit',
+        env: { ...process.env },
+        timeout: 1_800_000,
+      }
+    );
+    
+    // Check SEO report score
+    const { readFileSync } = await import('fs');
+    const { resolve } = await import('path');
+    const reportPath = resolve(process.cwd(), filepath.replace('.md', '-seo-report.json'));
+    
+    let needsRevision = false;
+    try {
+      const reportContent = readFileSync(reportPath, 'utf-8');
+      const reportData = JSON.parse(reportContent);
+      if (reportData.seo_score !== undefined && reportData.seo_score < 80) {
+        console.log(`\n⚠️ SEO Score is ${reportData.seo_score} (below 80 threshold). Triggering revision pass...`);
+        needsRevision = true;
+      } else if (reportData.seo_score === undefined) {
+         console.log(`\n⚠️ No SEO score found in report. Triggering revision pass just in case...`);
+         needsRevision = true;
+      } else {
+         console.log(`\n✅ SEO Score is ${reportData.seo_score}. No revision needed.`);
+      }
+    } catch (e) {
+       console.error('⚠️ Could not read SEO report to check score.', e);
+    }
+    
+    if (needsRevision) {
+      console.log('\n═══════════════════════════════════════');
+      console.log('  PHASE 5: ✍️  WRITER — Revision pass...');
+      console.log('═══════════════════════════════════════');
+      execSync(
+        `node backend-intelligence/agents/writer.mjs --revise ${filepath}`,
+        {
+          cwd: process.cwd(),
+          stdio: 'inherit',
+          env: { ...process.env },
+          timeout: 1_800_000,
+        }
+      );
+    }
+    
+  } catch (err) {
+    console.error('⚠️ SEO Optimizer or Writer Revision exited with error');
   }
 }
 

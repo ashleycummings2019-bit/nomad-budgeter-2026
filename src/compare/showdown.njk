@@ -248,7 +248,7 @@ eleventyComputed:
   {# ─── RELOCATE TOOLKIT (Affiliate Section) ─── #}
   <div class="mb-16">
     {% set city = { name: d.city_a if d.verdict == d.city_a else d.city_b, country: d.country_a if d.verdict == d.city_a else d.country_b } %}
-    {% include "partials/relocation-toolkit.njk" %}
+    {% include "partials/affiliate-top-pick.njk" %}
   </div>
 
   {# ─── RELATED SHOWDOWNS ─── #}

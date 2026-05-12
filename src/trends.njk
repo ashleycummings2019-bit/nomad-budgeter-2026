@@ -103,7 +103,8 @@ pageSchema: |
     </div>
 
     <div class="mb-16">
-        {% include "partials/relocation-toolkit.njk" %}
+        {% set contextType = 'global' %}
+        {% include "partials/affiliate-top-pick.njk" %}
     </div>
 
     <div class="glass-panel text-center mb-16" style="padding: 4rem 2rem; background: radial-gradient(circle at center, rgba(var(--aura-primary-rgb), 0.1) 0%, transparent 70%);">

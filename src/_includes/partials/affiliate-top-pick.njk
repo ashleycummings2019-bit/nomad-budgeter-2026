@@ -2,7 +2,19 @@
 {% set topPick = null %}
 
 {# Logic to determine the Top Pick based on context #}
-{% if city %}
+{% if contextType == "global" %}
+    {% set topPick = site.affiliates.nomadlist %}
+    {% set topPickUrl = site.affiliates.nomadlist.url %}
+    {% set topPickDesc = "Join the world's largest community for digital nomads. Connect with others globally and get real-time insights." %}
+    {% set topPickCTA = "Join Community" %}
+    {% set topPickIcon = "🌍" %}
+{% elif contextType == "remote" %}
+    {% set topPick = site.affiliates.remote %}
+    {% set topPickUrl = site.affiliates.remote.url %}
+    {% set topPickDesc = "Hire employees or get paid legally as a nomad. Global payroll and compliance for remote workers." %}
+    {% set topPickCTA = "Learn More" %}
+    {% set topPickIcon = "💼" %}
+{% elif city %}
     {% if city.continent == "Europe" %}
         {% set topPick = site.affiliates.lexidy %}
         {% set topPickUrl = site.affiliates.lexidy.countryUrls[city.countrySlug] if (city.countrySlug and site.affiliates.lexidy.countryUrls[city.countrySlug]) else site.affiliates.lexidy.url %}
@@ -15,6 +27,12 @@
         {% set topPickDesc = "The best 2026 rates for long-term nomad stays in " + city.name + ". Secure your first month with local discounts." %}
         {% set topPickCTA = "Find Housing" %}
         {% set topPickIcon = "🏝️" %}
+    {% else %}
+        {% set topPick = site.affiliates.nomadlist %}
+        {% set topPickUrl = site.affiliates.nomadlist.url %}
+        {% set topPickDesc = "Connect with other nomads in " + city.name + ". The world's largest nomad community." %}
+        {% set topPickCTA = "Join Community" %}
+        {% set topPickIcon = "🌍" %}
     {% endif %}
 {% elif country %}
     {% if country.isEurope or country.continent == "Europe" %}
@@ -36,7 +54,7 @@
 {% if not topPick %}
     {% set topPick = site.affiliates.safetywing %}
     {% set topPickUrl = site.affiliates.safetywing.url %}
-    {% set topPickDesc = "Mandatory 2026 health insurance for nomads and remote workers. Meets all visa requirements for " + (city.country or country.name or "most countries") + "." %}
+    {% set topPickDesc = "Mandatory 2026 health insurance for nomads and remote workers. Meets all visa requirements for " + (city.country if city else (country.name if country else "most countries")) + "." %}
     {% set topPickCTA = "Get Covered" %}
     {% set topPickIcon = "🛡️" %}
 {% endif %}

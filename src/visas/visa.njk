@@ -268,15 +268,16 @@ eleventyComputed:
         <div class="mt-16">
             {% set country_data = { name: country.name, slug: country.slug, country: country.name, continent: country.continent, visa: country.visaName, currency: country.currency, isEurope: (country.continent == "Europe") } %}
             {% set country = country_data %}
-            {% include "partials/relocation-toolkit.njk" %}
+            {% include "partials/affiliate-top-pick.njk" %}
         </div>
 
         {# Pro Report Upsell #}
         <div id="pro-upsell" class="glass-panel mt-16" style="border: 1px solid #f59e0b; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(15, 23, 42, 0.5)); overflow: hidden;">
             <div class="grid-2 stack-on-mobile" style="align-items: center; gap: 3rem;">
                 <div style="padding: 1rem;">
-                    <div class="badge-2026 mb-4" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">PREMIUM GUIDE</div>
-                    <h2 class="mb-4" style="color: #fff; font-size: 2.2rem;">Unlock the Full {{ country.name }} Tax & Legal Strategy</h2>
+                    <div class="badge-2026 mb-4" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">FINANCIAL CLARITY</div>
+                    <h2 class="mb-4" style="color: #fff; font-size: 2.2rem;">Maximize Your Sovereign ROI in {{ country.name }}</h2>
+                    <p class="text-dim mb-6" style="font-size: 0.95rem; line-height: 1.5;">Stop guessing with your visa and tax strategy. Get absolute clarity on exact tax arbitrage opportunities and the full legal roadmap for 2026.</p>
                     <ul class="text-dim mb-8" style="padding-left: 1.2rem; font-size: 0.95rem;">
                         <li class="mb-2">Detailed 2026 {{ country.name }} Tax Optimization Guide</li>
                         <li class="mb-2">Full Breakdown of Health Insurance & Banking Requirements</li>

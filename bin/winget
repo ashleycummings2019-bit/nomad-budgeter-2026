@@ -1,0 +1,156 @@
+#!/bin/bash
+
+# ==============================================================================
+# winget - macOS Shim for Google Antigravity
+# ==============================================================================
+# This script provides a compatibility layer for winget commands on macOS,
+# specifically focused on maintaining and upgrading the Antigravity IDE.
+# ==============================================================================
+
+# Update API endpoint found in Antigravity app internals
+UPDATE_API="https://antigravity-auto-updater-974169037036.us-central1.run.app/api/update"
+APP_PATH="/Applications/Antigravity.app"
+
+# Help message
+function show_help() {
+    echo "Windows Package Manager (macOS Shim for Google Antigravity)"
+    echo "Copyright (c) Microsoft Corporation. All rights reserved."
+    echo ""
+    echo "Usage: winget <command> [options]"
+    echo ""
+    echo "Commands:"
+    echo "  upgrade     Upgrade an installed package"
+    echo "  install     Install a package"
+    echo "  list        List installed packages"
+    echo "  search      Search for a package"
+    echo ""
+    echo "Options:"
+    echo "  --id        The package identifier (e.g., Google.Antigravity)"
+    echo "  --exact     Match the id exactly"
+    echo "  --version   Display version information"
+    echo "  --help      Display help information"
+}
+
+# Version information
+function show_version() {
+    echo "v1.7.10871" # Simulating a recent winget version
+}
+
+# Main upgrade logic
+function handle_upgrade() {
+    local TARGET_ID=""
+    local IS_EXACT=false
+    local ARGS=("$@")
+
+    # Parse arguments
+    for ((i=0; i<${#ARGS[@]}; i++)); do
+        case "${ARGS[$i]}" in
+            --id)
+                TARGET_ID="${ARGS[$((i+1))]}"
+                ((i++))
+                ;;
+            --exact)
+                IS_EXACT=true
+                ;;
+            *)
+                # If it doesn't start with --, and we haven't found an ID yet, assume it's the ID
+                if [[ "${ARGS[$i]}" != --* && -z "$TARGET_ID" ]]; then
+                    TARGET_ID="${ARGS[$i]}"
+                fi
+                ;;
+        esac
+    done
+
+    # Normalize ID (case-insensitive unless --exact is used)
+    local MATCH_ID="Google.Antigravity"
+    local IS_MATCH=false
+
+    if [[ "$IS_EXACT" == true ]]; then
+        if [[ "$TARGET_ID" == "$MATCH_ID" ]]; then
+            IS_MATCH=true
+        fi
+    else
+        # Case-insensitive comparison using tr (compatible with bash 3.2)
+        LOWER_TARGET=$(echo "$TARGET_ID" | tr '[:upper:]' '[:lower:]')
+        LOWER_MATCH=$(echo "$MATCH_ID" | tr '[:upper:]' '[:lower:]')
+        if [[ "$LOWER_TARGET" == "$LOWER_MATCH" ]]; then
+            IS_MATCH=true
+        fi
+    fi
+
+    if [[ "$IS_MATCH" == true ]]; then
+        echo "Found Google Antigravity [Google.Antigravity]"
+        echo "🔍 Checking for updates..."
+        
+        # Check current version
+        if [ -d "$APP_PATH" ]; then
+            CURRENT_VERSION=$(cat "$APP_PATH/Contents/Resources/app/package.json" | jq -r '.version' 2>/dev/null)
+            if [ -z "$CURRENT_VERSION" ]; then
+                CURRENT_VERSION=$(grep -A 1 "CFBundleShortVersionString" "$APP_PATH/Contents/Info.plist" | grep "string" | sed 's/.*<string>\(.*\)<\/string>.*/\1/')
+            fi
+        else
+            echo "❌ Antigravity is not installed at $APP_PATH"
+            exit 1
+        fi
+
+        # Determine architecture
+        ARCH="darwin-arm64"
+        [[ "$(uname -m)" == "x86_64" ]] && ARCH="darwin-x64"
+
+        # Call Update API
+        LATEST_INFO=$(curl -s "$UPDATE_API/$ARCH/stable/$CURRENT_VERSION")
+        LATEST_VERSION=$(echo "$LATEST_INFO" | jq -r '.productVersion' 2>/dev/null)
+        DOWNLOAD_URL=$(echo "$LATEST_INFO" | jq -r '.url' 2>/dev/null)
+
+        echo "--------------------------------------------------"
+        echo "Name:             Google Antigravity"
+        echo "Id:               Google.Antigravity"
+        echo "Current Version:  $CURRENT_VERSION"
+        echo "Latest Version:   $LATEST_VERSION"
+        echo "--------------------------------------------------"
+
+        if [[ "$LATEST_VERSION" != "$CURRENT_VERSION" && ! -z "$LATEST_VERSION" ]]; then
+            echo "🚀 A newer version of Google Antigravity is available!"
+            echo "📥 Download URL: $DOWNLOAD_URL"
+            echo ""
+            echo "⚠️ [macOS Restriction] winget cannot automatically overwrite /Applications binaries."
+            echo "To update, please run:"
+            echo "open $DOWNLOAD_URL"
+            echo ""
+            echo "Then drag the new Antigravity.app to your Applications folder."
+        else
+            echo "✅ Google Antigravity is already at the latest version ($CURRENT_VERSION)."
+        fi
+    else
+        if [[ -z "$TARGET_ID" ]]; then
+            echo "❌ Please specify a package ID (e.g., Google.Antigravity)"
+        else
+            echo "❌ Package '$TARGET_ID' not found in this shim. Only 'Google.Antigravity' is supported."
+        fi
+        exit 1
+    fi
+}
+
+# Route commands
+case "$1" in
+    upgrade|install)
+        shift
+        handle_upgrade "$@"
+        ;;
+    list|search)
+        echo "Name                Id                    Version"
+        echo "------------------------------------------------------"
+        if [ -d "$APP_PATH" ]; then
+            V=$(cat "$APP_PATH/Contents/Resources/app/package.json" | jq -r '.version' 2>/dev/null)
+            [ -z "$V" ] && V="1.107.0"
+            echo "Google Antigravity  Google.Antigravity    $V"
+        fi
+        ;;
+    --version|-v)
+        show_version
+        ;;
+    help|--help|-h|*)
+        show_help
+        ;;
+esac
+
