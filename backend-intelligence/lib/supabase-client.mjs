@@ -39,7 +39,7 @@ const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY; // Use service key for ba
  * Raw Supabase REST API call — no SDK dependency needed.
  * Uses the PostgREST API that Supabase exposes.
  */
-async function supabaseRequest(table, method = 'GET', opts = {}) {
+export async function supabaseRequest(table, method = 'GET', opts = {}) {
   if (!SUPABASE_URL || !SUPABASE_KEY) {
     console.warn('⚠️ Supabase not configured — logging to console only');
     return null;

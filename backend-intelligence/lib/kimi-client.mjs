@@ -90,52 +90,84 @@ export async function kimiChat(opts) {
   if (json) {
     body.response_format = { type: 'json_object' };
   }
-
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 300_000); // 300s timeout
 
-  try {
-    const res = await fetch(KIMI_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-      signal: controller.signal,
-    });
+  const maxRetries = 5;
+  let retryCount = 0;
 
-    clearTimeout(timeout);
+  while (retryCount <= maxRetries) {
+    try {
+      const res = await fetch(KIMI_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
 
-    if (!res.ok) {
-      const errBody = await res.text();
-      throw new Error(`Kimi API error ${res.status}: ${errBody}`);
+      if (res.status === 429) {
+        retryCount++;
+        if (retryCount > maxRetries) {
+          throw new Error(`Kimi API rate limit exceeded after ${maxRetries} retries.`);
+        }
+        const delay = Math.pow(2, retryCount) * 1000 + Math.random() * 1000;
+        console.warn(`⚠️ Rate limit hit (429). Retrying in ${(delay / 1000).toFixed(1)}s... (Attempt ${retryCount}/${maxRetries})`);
+        await new Promise(r => setTimeout(r, delay));
+        continue;
+      }
+
+      if (!res.ok) {
+        const errBody = await res.text();
+        throw new Error(`Kimi API error ${res.status}: ${errBody}`);
+      }
+
+      const data = await res.json();
+      const choice = data.choices?.[0];
+      const content = choice?.message?.content || '';
+
+      // Token tracking
+      const tokensIn = data.usage?.prompt_tokens || 0;
+      const tokensOut = data.usage?.completion_tokens || 0;
+      const cost = (tokensIn / 1_000_000 * COST_PER_M_INPUT) +
+                   (tokensOut / 1_000_000 * COST_PER_M_OUTPUT);
+
+      sessionSpend += cost;
+      sessionTokensIn += tokensIn;
+      sessionTokensOut += tokensOut;
+
+      clearTimeout(timeout);
+      return { content, tokensIn, tokensOut, cost };
+    } catch (err) {
+      if (err.name === 'AbortError') {
+        clearTimeout(timeout);
+        throw new Error('Kimi API request timed out after 300s');
+      }
+      
+      // If it's a budget error, rethrow it
+      if (err.message.includes('BUDGET EXCEEDED')) throw err;
+      
+      // If we still have retries and it might be a transient error, retry
+      if (retryCount < maxRetries) {
+        retryCount++;
+        const delay = Math.pow(2, retryCount) * 1000 + Math.random() * 1000;
+        console.warn(`⚠️ Kimi API error: ${err.message}. Retrying in ${(delay / 1000).toFixed(1)}s...`);
+        await new Promise(r => setTimeout(r, delay));
+        continue;
+      }
+
+      console.warn(`⚠️ Kimi API failed after ${retryCount} attempts (${err.message}). Using mocked fallback generator.`);
+      
+      clearTimeout(timeout);
+      // Fallback to mock generation
+      break;
     }
+  }
 
-    const data = await res.json();
-    const choice = data.choices?.[0];
-    const content = choice?.message?.content || '';
-
-    // Token tracking
-    const tokensIn = data.usage?.prompt_tokens || 0;
-    const tokensOut = data.usage?.completion_tokens || 0;
-    const cost = (tokensIn / 1_000_000 * COST_PER_M_INPUT) +
-                 (tokensOut / 1_000_000 * COST_PER_M_OUTPUT);
-
-    sessionSpend += cost;
-    sessionTokensIn += tokensIn;
-    sessionTokensOut += tokensOut;
-
-    return { content, tokensIn, tokensOut, cost };
-  } catch (err) {
-    clearTimeout(timeout);
-    if (err.name === 'AbortError') {
-      throw new Error('Kimi API request timed out after 300s');
-    }
-    
-    console.warn(`⚠️ Kimi API unavailable (${err.message}). Using mocked fallback generator.`);
-    
-    let title = "City Comparison";
+  // Mock generation logic
+  let title = "City Comparison";
     const cityMatch = user.match(/between ([\w\s]+) and ([\w\s]+) in/);
     if (cityMatch) {
       title = `${cityMatch[1].trim()} vs ${cityMatch[2].trim()} for Digital Nomads (2026)`;
@@ -190,7 +222,6 @@ Ultimately, the best choice depends on what you value more: cost, climate, or co
 
     return { content: mockContent, tokensIn: 1000, tokensOut: 500, cost: 0.001 };
   }
-}
 
 /**
  * Parse a JSON response from Kimi, handling markdown fences
@@ -198,8 +229,10 @@ Ultimately, the best choice depends on what you value more: cost, climate, or co
  */
 export function parseJSON(content) {
   // Strip markdown code fences if present
-  let cleaned = content
-    .replace(/^```json\s*/i, '')
+  let cleaned = content.trim();
+  
+  // Remove markdown code fences if present
+  cleaned = cleaned.replace(/^```json\s*/i, '')
     .replace(/^```\s*/i, '')
     .replace(/\s*```$/i, '')
     .trim();
@@ -221,6 +254,7 @@ export function parseJSON(content) {
   let closeChar = '}';
 
   if (objStart === -1 && arrStart === -1) {
+    console.error('🔴 RAW RESPONSE (NO JSON FOUND):', content);
     throw new Error(`No JSON found in response: ${cleaned.substring(0, 100)}...`);
   } else if (objStart === -1) {
     start = arrStart; openChar = '['; closeChar = ']';
@@ -249,7 +283,13 @@ export function parseJSON(content) {
   }
 
   const jsonStr = cleaned.substring(start, end + 1);
-  return JSON.parse(jsonStr);
+  try {
+    return JSON.parse(jsonStr);
+  } catch (e) {
+    console.error('🔴 RAW RESPONSE (JSON PARSE ERROR):', content);
+    console.error('🔴 ATTEMPTED TO PARSE:', jsonStr);
+    throw e;
+  }
 }
 
 /**

@@ -19,7 +19,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { kimiChat, getSessionStats } from '../lib/kimi-client.mjs';
-import { startRun, completeRun } from '../lib/supabase-client.mjs';
+import { startRun, completeRun, supabaseRequest } from '../lib/supabase-client.mjs';
 import { WRITER_PROMPT } from '../lib/prompts.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -69,6 +69,11 @@ function getConfig() {
       ? reviseArg.split('=')[1]
       : args[args.indexOf(reviseArg) + 1];
     return { mode: 'revise', file: val };
+  }
+
+  // --approved-only
+  if (args.includes('--approved-only')) {
+    return { mode: 'approved' };
   }
 
   // Default: generate a comparison for the most popular matchup
@@ -255,6 +260,85 @@ ${report}
   return { filepath: absolutePath, cost: response.cost };
 }
 
+// ─── Process approved findings from Supabase ───
+async function processApprovedFindings() {
+  console.log('📡 Fetching approved findings from Supabase...');
+  
+  const findings = await supabaseRequest('swarm_findings', 'GET', {
+    params: {
+      status: 'eq.approved',
+      order: 'reviewed_at.desc'
+    }
+  });
+
+  if (!findings || findings.length === 0) {
+    console.log('✨ No approved findings found to process.');
+    return null;
+  }
+
+  console.log(`✅ Found ${findings.length} approved findings. Checking for new work...`);
+
+  let processedCount = 0;
+  for (const finding of findings) {
+    const { finding_type, country_slug, city_slug, proposed_value, id } = finding;
+    
+    // Skip if not a content-worthy finding type
+    if (!['tax_change', 'visa_update', 'treaty_change'].includes(finding_type)) continue;
+
+    // Generate a unique slug for this draft
+    const draftSlug = `${country_slug}-${finding_type.replace('_', '-')}-${id.slice(0, 8)}`;
+    const filename = `${draftSlug}.md`;
+    const filepath = resolve(DRAFTS_DIR, filename);
+
+    // Skip if file already exists
+    try {
+        if (readFileSync(filepath, 'utf-8').length > 0) {
+            console.log(`⏭️  Draft already exists for finding ${id}: ${filename}`);
+            continue;
+        }
+    } catch (e) {
+        // File doesn't exist, which is fine, we continue to write it
+    }
+
+    console.log(`\n✍️  Writing content for approved finding: ${finding.proposed_value.summary}`);
+
+    const userMessage = `Write an urgent "Tax/Visa Update" article for digital nomads.
+    
+    FINDING DETAILS:
+    - Target: ${city_slug ? city_slug + ', ' : ''}${country_slug}
+    - Type: ${finding_type.replace('_', ' ').toUpperCase()}
+    - Summary: ${proposed_value.summary}
+    - New Info: ${proposed_value.value}
+    - Reasoning: ${proposed_value.reasoning}
+    - Source: ${finding.source_url || 'Official Government Channel'}
+
+    This should be a blog post that:
+    1. Explains exactly what changed.
+    2. Tells digital nomads if they need to act now.
+    3. Compares the new rule to the old one.
+    4. Includes a data table with the new numbers.
+
+    Target 800-1,200 words. Use a catchy, SEO-friendly headline like "BIG CHANGE: [Country] Updates [Topic] for 2026".
+    Link to: /city/${city_slug || country_slug}
+    `;
+
+    const response = await kimiChat({
+      system: WRITER_PROMPT,
+      user: userMessage,
+      thinking: false,
+      json: false,
+      maxTokens: 4096,
+      temperature: 1.0,
+    });
+
+    writeFileSync(filepath, response.content);
+    console.log(`   📄 Draft written: src/blog/drafts/${filename}`);
+    processedCount++;
+  }
+
+  return { findingsCount: processedCount };
+}
+
 // ─── Main ───
 async function main() {
   const config = getConfig();
@@ -269,6 +353,8 @@ async function main() {
     result = await generateComparison(config.slugs);
   } else if (config.mode === 'revise') {
     result = await reviseDraft(config.file);
+  } else if (config.mode === 'approved') {
+    result = await processApprovedFindings();
   } else {
     result = await generateTopicArticle(config.topic);
   }

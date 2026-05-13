@@ -14,6 +14,7 @@
  *   node backend-intelligence/orchestrator.mjs --scan-only        # Researcher only
  *   node backend-intelligence/orchestrator.mjs --audit-only       # Auditor only
  *   node backend-intelligence/orchestrator.mjs --write lisbon,dubai  # Writer only
+ *   node backend-intelligence/orchestrator.mjs --approved-only      # Process approved findings
  *
  * Safety:
  *   - Hard $5/day budget cap (configurable via SWARM_DAILY_BUDGET)
@@ -164,7 +165,15 @@ async function runWriter(cities) {
 function getMode() {
   const args = process.argv.slice(2);
 
-  if (args.includes('--scan-only')) return { mode: 'scan' };
+  // 1. Parse common flags
+  const countriesArg = args.find(a => a.startsWith('--countries'));
+  const countries = countriesArg
+    ? (countriesArg.includes('=') ? countriesArg.split('=')[1] : args[args.indexOf(countriesArg) + 1])
+    : null;
+
+  // 2. Determine mode
+  if (args.includes('--approved-only')) return { mode: 'approved' };
+  if (args.includes('--scan-only')) return { mode: 'scan', countries };
   if (args.includes('--audit-only')) return { mode: 'audit' };
 
   const writeArg = args.find(a => a.startsWith('--write'));
@@ -175,12 +184,28 @@ function getMode() {
     return { mode: 'write', cities };
   }
 
-  const countriesArg = args.find(a => a.startsWith('--countries'));
-  const countries = countriesArg
-    ? (countriesArg.includes('=') ? countriesArg.split('=')[1] : args[args.indexOf(countriesArg) + 1])
-    : null;
-
   return { mode: 'full', countries };
+}
+
+async function runApprovedProcessor() {
+  console.log('\n═══════════════════════════════════════');
+  console.log('  PHASE 6: 🚀 APPROVED PROCESSOR — Closing loop...');
+  console.log('═══════════════════════════════════════');
+
+  const { execSync } = await import('child_process');
+  try {
+    execSync(
+      'node backend-intelligence/agents/writer.mjs --approved-only',
+      {
+        cwd: process.cwd(),
+        stdio: 'inherit',
+        env: { ...process.env },
+        timeout: 3_600_000, // 1 hour timeout for content generation
+      }
+    );
+  } catch (err) {
+    console.error('⚠️ Approved findings processor failed');
+  }
 }
 
 // ─── Main ───
@@ -211,12 +236,16 @@ async function main() {
       await runWriter(config.cities);
       break;
 
+    case 'approved':
+      await runApprovedProcessor();
+      break;
+
     case 'full':
       // Full pipeline: Scan → Audit → (Writer is manual)
       await runResearcher(config.countries);
       await runAuditor();
-      console.log('\n💡 To generate content, run:');
-      console.log('   node backend-intelligence/orchestrator.mjs --write lisbon,dubai');
+      console.log('\n💡 To generate content from validated data, run:');
+      console.log('   node backend-intelligence/orchestrator.mjs --approved-only');
       break;
   }
 

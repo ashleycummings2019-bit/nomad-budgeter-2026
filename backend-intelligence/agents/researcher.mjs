@@ -133,8 +133,10 @@ Focus on official government sources published in 2025 or 2026.`;
       console.log(`   Found: ${findings.length} potential changes (tokens: ${response.tokensIn}+${response.tokensOut}, cost: $${response.cost.toFixed(4)})`);
 
       // Submit each finding to Supabase
+      const CONFIDENCE_THRESHOLD = parseFloat(process.env.RESEARCHER_CONFIDENCE_THRESHOLD || '0.3');
+      
       for (const finding of findings) {
-        if (finding.confidence >= 0.3) {
+        if (finding.confidence >= CONFIDENCE_THRESHOLD) {
           await submitFinding({
             agentType: 'researcher',
             countrySlug: finding.country_slug,
@@ -153,11 +155,16 @@ Focus on official government sources published in 2025 or 2026.`;
           });
           totalFindings++;
         } else {
-          console.log(`   ⏭️  Skipped low-confidence finding: ${finding.summary} (${(finding.confidence * 100).toFixed(0)}%)`);
+          console.log(`   ⏭️  Skipped low-confidence finding (${(finding.confidence * 100).toFixed(0)}% < ${(CONFIDENCE_THRESHOLD * 100).toFixed(0)}%): ${finding.summary}`);
         }
       }
     } catch (err) {
-      console.error(`   ❌ Batch failed: ${err.message}`);
+      console.error(`   ❌ Batch failed [${batch.join(', ')}]: ${err.message}`);
+      
+      // Better error diagnostics
+      if (err.message.includes('No JSON found')) {
+        console.warn('      Tip: The model might have failed to follow the JSON format or outputted too much thinking text.');
+      }
 
       // If budget exceeded, stop immediately
       if (err.message.includes('BUDGET EXCEEDED')) {
