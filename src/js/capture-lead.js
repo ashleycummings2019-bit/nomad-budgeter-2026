@@ -2,75 +2,70 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sendGuideBtns = document.querySelectorAll('#send-guide-btn');
     
-    sendGuideBtns.forEach(btn => {
-        btn.addEventListener('click', async (e) => {
-            const container = e.target.closest('.lead-content, .expert-verdict-content, .lead-card, .hero-actions');
-            if (!container) return;
-            
-            const emailInput = container.querySelector('#lead-email');
-            const successMsg = container.querySelector('#lead-success');
-            const originalBtnText = btn.textContent;
-            
-            if (emailInput && emailInput.value && emailInput.value.includes('@')) {
-                const email = emailInput.value;
-                
-                // Show loading state
-                btn.disabled = true;
-                btn.textContent = 'Sending...';
-                
-                try {
-                    const response = await fetch('/api/capture-lead', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            email: email,
-                            source: window.location.pathname
-                        })
-                    });
-                    
-                    const result = await response.json();
-                    
-                    if (response.ok) {
-                        // "Save for updates" functionality (Dynamic Monitoring)
-                        const subscriberList = JSON.parse(localStorage.getItem('nomadSubscribers') || '[]');
-                        if (!subscriberList.includes(email)) {
-                            subscriberList.push(email);
-                            localStorage.setItem('nomadSubscribers', JSON.stringify(subscriberList));
-                        }
+    const handleLeadCapture = async (btn, e) => {
+        const container = e.target.closest('.lead-content, .expert-verdict-content, .lead-card, .hero-actions');
+        if (!container) return;
+        
+        const emailInput = container.querySelector('#lead-email');
+        const successMsg = container.querySelector('#lead-success');
+        const originalBtnText = btn.textContent;
+        
+        if (!emailInput?.value?.includes('@')) {
+            if (emailInput) {
+                emailInput.style.border = '2px solid #ef4444';
+                emailInput.focus();
+                setTimeout(() => { emailInput.style.border = ''; }, 2000);
+            }
+            return;
+        }
 
-                        emailInput.value = '';
-                        if (successMsg) {
-                            successMsg.classList.remove('hidden');
-                            successMsg.style.display = 'flex';
-                            
-                            setTimeout(() => {
-                                successMsg.classList.add('hidden');
-                                successMsg.style.display = '';
-                            }, 8000);
-                        }
-                    } else {
-                        console.error('Lead Capture Error:', result.error);
-                        alert('Oops! ' + (result.error || 'Something went wrong. Please try again.'));
-                    }
-                } catch (err) {
-                    console.error('Network Error:', err);
-                    alert('Network error. Please check your connection.');
-                } finally {
-                    btn.disabled = false;
-                    btn.textContent = originalBtnText;
+        const email = emailInput.value;
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        
+        try {
+            const response = await fetch('/api/capture-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    source: globalThis.location.pathname
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok) {
+                const subscriberList = JSON.parse(localStorage.getItem('nomadSubscribers') || '[]');
+                if (!subscriberList.includes(email)) {
+                    subscriberList.push(email);
+                    localStorage.setItem('nomadSubscribers', JSON.stringify(subscriberList));
+                }
+
+                emailInput.value = '';
+                if (successMsg) {
+                    successMsg.classList.remove('hidden');
+                    successMsg.style.display = 'flex';
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                        successMsg.style.display = '';
+                    }, 8000);
                 }
             } else {
-                if (emailInput) {
-                    emailInput.style.border = '2px solid #ef4444';
-                    emailInput.focus();
-                    setTimeout(() => {
-                        emailInput.style.border = '';
-                    }, 2000);
-                }
+                console.error('Lead Capture Error:', result.error);
+                alert('Oops! ' + (result.error || 'Something went wrong. Please try again.'));
             }
-        });
+        } catch (err) {
+            console.error('Network Error:', err);
+            alert('Network error. Please check your connection.');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = originalBtnText;
+        }
+    };
+
+    sendGuideBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => handleLeadCapture(btn, e));
     });
     
     // ─── Automated Premium Modal Logic ───
@@ -88,25 +83,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Trigger after 45 seconds (delayed for better UX)
     setTimeout(showModal, 45000);
 
-    // Trigger after 70% scroll
-    window.addEventListener('scroll', () => {
-        const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    globalThis.addEventListener('scroll', () => {
+        const scrollPercent = (globalThis.scrollY / (document.documentElement.scrollHeight - globalThis.innerHeight)) * 100;
         if (scrollPercent > 70) {
             showModal();
         }
     }, { passive: true });
 
-    // Close modal
     if (modalClose) {
         modalClose.addEventListener('click', () => {
             modal.classList.remove('active');
         });
     }
 
-    // Close on backdrop click
     if (modal) {
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
@@ -115,11 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handle modal submission
     if (modalSubmit) {
         modalSubmit.addEventListener('click', async () => {
-            const email = modalEmail.value;
-            if (email && email.includes('@')) {
+            const email = modalEmail?.value;
+            if (email?.includes('@')) {
                 modalSubmit.disabled = true;
                 const originalText = modalSubmit.innerHTML;
                 modalSubmit.innerHTML = 'Sending...';
@@ -130,14 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             email: email,
-                            source: 'automated-modal-' + window.location.pathname
+                            source: 'automated-modal-' + globalThis.location.pathname
                         })
                     });
 
                     if (response.ok) {
-                        modalForm.style.display = 'none';
-                        modalSuccess.style.display = 'flex';
-                        modalSuccess.classList.remove('hidden');
+                        if (modalForm) modalForm.style.display = 'none';
+                        if (modalSuccess) {
+                            modalSuccess.style.display = 'flex';
+                            modalSuccess.classList.remove('hidden');
+                        }
                         
                         setTimeout(() => {
                             modal.classList.remove('active');
@@ -149,10 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalSubmit.disabled = false;
                     modalSubmit.innerHTML = originalText;
                 }
-            } else {
+            } else if (modalEmail) {
                 modalEmail.style.border = '2px solid #ef4444';
                 modalEmail.focus();
-                setTimeout(() => modalEmail.style.border = '', 2000);
+                setTimeout(() => { modalEmail.style.border = ''; }, 2000);
             }
         });
     }

@@ -106,16 +106,12 @@
   }
 
   function formatPrice(amount, currency, symbol) {
-    const decimals = amount < 20 ? 2 : 0;
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: currency,
-      minimumFractionDigits: decimals,
-      maximumFractionDigits: decimals
-    }).format(amount).replace(currency, '').trim(); // Use provided symbol
-    
-    // Fallback if Intl fails or we want specific symbol placement
-    // return `${symbol}${amount.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}`;
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(amount).replace(currency, '').trim(); 
   }
 
   // ─── Toggle Button (Currency) ───
@@ -183,7 +179,7 @@
   }
 
   // ─── Expose for other scripts ───
-  window.__NB_GEO__ = {
+  globalThis.__NB_GEO__ = {
     country: detectedCountry,
     currency: detectedCurrency,
     symbol: detectedSymbol,

@@ -4,7 +4,7 @@
  */
 
 async function initSwarmFeed() {
-    const user = window.Clerk?.user;
+    const user = globalThis.Clerk?.user;
     if (!user) return;
 
     const feedList = document.getElementById('swarm-feed-list');
@@ -18,7 +18,7 @@ async function initSwarmFeed() {
 
     async function fetchFindings() {
         try {
-            const token = await window.Clerk.session.getToken();
+            const token = await globalThis.Clerk.session.getToken();
             const res = await fetch('/api/swarm-findings', {
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -109,7 +109,7 @@ async function initSwarmFeed() {
         }).join('');
     }
 
-    window.handleReview = async (id, status) => {
+    globalThis.handleReview = async (id, status) => {
         const card = document.getElementById(`finding-${id}`);
         const actions = card.querySelector('.finding-actions');
         const originalContent = actions.innerHTML;
@@ -117,7 +117,7 @@ async function initSwarmFeed() {
         actions.innerHTML = `<div class="aura-spinner-sm"></div>`;
 
         try {
-            const token = await window.Clerk.session.getToken();
+            const token = await globalThis.Clerk.session.getToken();
             const res = await fetch('/api/swarm-findings', {
                 method: 'PATCH',
                 headers: {
@@ -157,11 +157,11 @@ async function initSwarmFeed() {
 }
 
 // Initialize when Clerk is ready
-if (window.Clerk) {
-    if (window.Clerk.user) {
+if (globalThis.Clerk) {
+    if (globalThis.Clerk.user) {
         initSwarmFeed();
     } else {
-        window.Clerk.addListener(({ user }) => {
+        globalThis.Clerk.addListener(({ user }) => {
             if (user) initSwarmFeed();
         });
     }

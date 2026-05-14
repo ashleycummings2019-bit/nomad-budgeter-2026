@@ -4,7 +4,7 @@
  */
 
 async function initDashboard() {
-    const user = window.Clerk?.user;
+    const user = globalThis.Clerk?.user;
     if (!user) return;
 
     const email = user.primaryEmailAddress.emailAddress;
@@ -13,7 +13,7 @@ async function initDashboard() {
 
     async function fetchLogs() {
         try {
-            const token = await window.Clerk.session.getToken();
+            const token = await globalThis.Clerk.session.getToken();
             const res = await fetch('/api/travel-logs', {
                 headers: { 
                     'Authorization': `Bearer ${token}`,
@@ -23,8 +23,8 @@ async function initDashboard() {
             cachedLogs = await res.json();
 
             // Render the multi-country Days Tracker (from days-tracker.js)
-            if (window.NB_DaysTracker) {
-                window.NB_DaysTracker.renderDaysTracker(cachedLogs, isPro);
+            if (globalThis.NB_DaysTracker) {
+                globalThis.NB_DaysTracker.renderDaysTracker(cachedLogs, isPro);
             }
 
             // Also render the travel timeline
@@ -36,7 +36,7 @@ async function initDashboard() {
 
     async function checkSubscription() {
         try {
-            const token = await window.Clerk.session.getToken();
+            const token = await globalThis.Clerk.session.getToken();
             // Check for Pro via Clerk metadata
             const meta = user.publicMetadata || {};
             if (meta.plan === 'pro' || meta.plan === 'business') {
@@ -89,8 +89,8 @@ async function initDashboard() {
             const exit = f.ExitDate ? new Date(f.ExitDate) : null;
             const days = exit 
                 ? Math.max(1, Math.ceil((exit - entry) / 864e5) + 1)
-                : Math.max(1, Math.ceil((new Date() - entry) / 864e5) + 1);
-            const isCurrent = !exit || exit >= new Date();
+                : Math.max(1, Math.ceil((Date.now() - entry) / 864e5) + 1);
+            const isCurrent = !exit || exit >= Date.now();
             const isLast = index === sorted.length - 1;
 
             const item = document.createElement('div');
@@ -98,7 +98,7 @@ async function initDashboard() {
             item.innerHTML = `
                 <div class="trip-status">
                     <div class="status-dot${isCurrent ? '' : ' dimmed'}"></div>
-                    ${!isLast ? '<div class="status-line"></div>' : ''}
+                    ${isLast ? '' : '<div class="status-line"></div>'}
                 </div>
                 <div class="trip-info-card">
                     <div class="trip-meta">
@@ -170,7 +170,7 @@ async function initDashboard() {
             }
 
             try {
-                const token = await window.Clerk.session.getToken();
+                const token = await globalThis.Clerk.session.getToken();
                 const res = await fetch('/api/travel-logs', {
                     method: 'POST',
                     headers: {
@@ -204,7 +204,7 @@ async function initDashboard() {
     if (reportBtn) {
         reportBtn.addEventListener('click', () => {
             // Navigate to the main calculator page with report anchor
-            window.location.href = '/#results-panel';
+            globalThis.location.href = '/#results-panel';
         });
     }
 
@@ -222,11 +222,11 @@ async function initDashboard() {
 }
 
 // Initialize when Clerk is ready
-if (window.Clerk) {
-    if (window.Clerk.user) {
+if (globalThis.Clerk) {
+    if (globalThis.Clerk.user) {
         initDashboard();
     } else {
-        window.Clerk.addListener(({ user }) => {
+        globalThis.Clerk.addListener(({ user }) => {
             if (user) initDashboard();
         });
     }

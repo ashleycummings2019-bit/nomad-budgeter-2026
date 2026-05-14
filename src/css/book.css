@@ -69,6 +69,7 @@ body.book-page {
   letter-spacing: -0.03em;
   background: linear-gradient(135deg, #fff 0%, #a1a1aa 60%, var(--book-gold) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
   max-width: 700px;

@@ -14,7 +14,8 @@ module.exports = function config(eleventyConfig) {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
-      maximumFractionDigits: 0,
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 2,
     }).format(value);
   });
 

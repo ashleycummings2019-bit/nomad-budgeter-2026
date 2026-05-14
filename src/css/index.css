@@ -409,7 +409,7 @@ img { max-width: 100%; height: auto; }
 
 .wa-lead-input {
     flex: 1;
-    background: rgba(255, 255, 255, 0.03); /* Darkened for contrast */
+    background: rgba(0, 0, 0, 0.2); /* Darkened for better contrast with white text */
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     padding: 0 1.25rem;
@@ -557,8 +557,8 @@ img { max-width: 100%; height: auto; }
 }
 
 .wa-partner-badge {
-    background: rgba(139, 92, 246, 0.15);
-    color: #c4b5fd; /* Lightened from #a78bfa for contrast */
+    background: rgba(139, 92, 246, 0.2);
+    color: #ddd6fe; /* Lightened for better contrast */
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     font-size: 0.7rem;
@@ -893,7 +893,7 @@ img { max-width: 100%; height: auto; }
 
 .modal-close:hover {
     color: #fff;
-    background: rgba(255, 255, 255, 0.08); /* Darkened for contrast */
+    background: rgba(255, 255, 255, 0.12); /* Darkened for contrast */
 }
 
 .modal-badge {
@@ -934,7 +934,7 @@ img { max-width: 100%; height: auto; }
 
 .modal-input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.03); /* Darkened for contrast */
+    background: rgba(0, 0, 0, 0.2); /* Darkened for better contrast */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
     padding: 1rem 1.25rem;
@@ -957,7 +957,7 @@ img { max-width: 100%; height: auto; }
     padding: 1rem;
     border: none;
     border-radius: 14px;
-    background: linear-gradient(135deg, #059669, #047857); /* Darkened for better contrast with white text */
+    background: linear-gradient(135deg, #047857, #065f46); /* Darkened for better contrast with white text */
     color: #fff;
     font-size: 1rem;
     font-weight: 700;
@@ -1072,7 +1072,7 @@ img { max-width: 100%; height: auto; }
     color: var(--text-dim);
 }
 .cookie-btn:hover { transform: translateY(-1px); }
-.cookie-btn--secondary:hover { background: rgba(255,255,255,0.1); color: #fff; } /* Darkened for contrast */
+.cookie-btn--secondary:hover { background: rgba(255,255,255,0.15); color: #fff; } /* Darkened for contrast */
 
 /* Calculator disclaimer */
 .calc-disclaimer {

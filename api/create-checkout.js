@@ -1,7 +1,7 @@
 // Initialize Stripe lazily to ensure environment variables are available
 let stripe;
 
-module.exports = async (req, res) => {
+module.exports = async function createCheckout(req, res) {
     // 1. Check for Secret Key
     const secretKey = process.env.STRIPE_SECRET_KEY;
     if (!secretKey) {
@@ -54,7 +54,9 @@ module.exports = async (req, res) => {
             try {
                 const refUrl = new URL(referer);
                 baseUrl = `${refUrl.protocol}//${refUrl.host}`;
-            } catch(e) {}
+            } catch(e) {
+                console.warn('Referer parsing failed, using fallback baseUrl:', e.message);
+            }
         }
 
         // Remove trailing slash if exists

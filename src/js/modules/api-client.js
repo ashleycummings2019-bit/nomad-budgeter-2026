@@ -7,6 +7,17 @@
 const CACHE_NAME = 'nb-api-cache-v1';
 const TIMEOUT_MS = 8000;
 
+const handleApiResponse = async (response, context) => {
+    if (response.ok) return response.json();
+    
+    let errorMessage = `API Error (${context}): ${response.status} ${response.statusText}`;
+    if (response.status === 404) errorMessage = `Resource not found: ${context}`;
+    if (response.status === 429) errorMessage = `Rate limited: ${context}. Please try again later.`;
+    if (response.status >= 500) errorMessage = `Server error on ${context}. Our team has been notified.`;
+    
+    throw new Error(errorMessage);
+};
+
 const fetchWithTimeout = async (url, options = {}) => {
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -20,6 +31,9 @@ const fetchWithTimeout = async (url, options = {}) => {
         return response;
     } catch (error) {
         clearTimeout(id);
+        if (error.name === 'AbortError') {
+            throw new Error(`Request timed out after ${TIMEOUT_MS}ms`);
+        }
         throw error;
     }
 };
@@ -40,12 +54,7 @@ export const getCityData = async (city) => {
 
     try {
         const response = await fetchWithTimeout(`/api/city-data?name=${encodeURIComponent(city)}`);
-        
-        if (!response.ok) {
-            throw new Error(`API error: ${response.status}`);
-        }
-        
-        const data = await response.json();
+        const data = await handleApiResponse(response, `city-data:${city}`);
         const cityData = data[0] || null;
 
         if (cityData) {
@@ -67,9 +76,9 @@ export const getCityData = async (city) => {
         }
 
         // Fallback 2: Build a synthetic object from the page's own data if on a city page
-        if (window.__NB_STATIC_CITY__ && window.__NB_STATIC_CITY__.name?.toLowerCase() === city.toLowerCase()) {
+        if (globalThis.__NB_STATIC_CITY__ && globalThis.__NB_STATIC_CITY__.name?.toLowerCase() === city.toLowerCase()) {
             console.log('📦 Using static page city data for:', city);
-            return window.__NB_STATIC_CITY__;
+            return globalThis.__NB_STATIC_CITY__;
         }
 
         // Fallback 3: Return a minimal synthetic object so the UI doesn't crash
@@ -97,9 +106,7 @@ export const getExchangeRates = async () => {
 
     try {
         const response = await fetchWithTimeout('/api/exchange-rates');
-        if (!response.ok) throw new Error('Failed to fetch rates');
-        
-        const data = await response.json();
+        const data = await handleApiResponse(response, 'exchange-rates');
         const rates = data.conversion_rates;
 
         localStorage.setItem(cacheKey, JSON.stringify({
@@ -118,8 +125,9 @@ export const getExchangeRates = async () => {
                 return fallbackData.conversion_rates || {};
             }
             throw new Error('Local fallback failed');
-        } catch (f) {
-            return { EUR: 0.92, GBP: 0.79, MXN: 17.0 }; // Extreme fallback
+        } catch (error_) {
+            console.warn('Local fallback for exchange rates failed:', error_.message);
+            return { EUR: 0.92, GBP: 0.79, MXN: 17 }; // Extreme fallback
         }
     }
 };

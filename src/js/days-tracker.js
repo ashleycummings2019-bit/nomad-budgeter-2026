@@ -27,6 +27,9 @@ const TAX_THRESHOLDS = {
   'south africa': 183, 'kenya': 183, 'morocco': 183,
 };
 
+const THRESHOLD_DANGER = 30;
+const THRESHOLD_WARNING = 60;
+
 // Country → ISO flag code
 const FLAG_MAP = {
   'portugal': 'pt', 'spain': 'es', 'france': 'fr', 'germany': 'de',
@@ -64,7 +67,6 @@ function computeCountryTotals(records) {
   const now = new Date();
   const yearStart = new Date(now.getFullYear(), 0, 1);
   const totals = {};
-  let currentCountry = null;
 
   // Sort chronologically to identify current trip
   const sorted = [...records].sort((a, b) =>
@@ -79,7 +81,7 @@ function computeCountryTotals(records) {
 
     // Only count days in current calendar year
     const countStart = entry < yearStart ? yearStart : entry;
-    const countEnd = exit > now ? now : exit;
+    const countEnd = Math.min(exit, now);
     if (countStart > countEnd) return;
 
     const days = Math.max(1, Math.ceil((countEnd - countStart) / 864e5) + 1);
@@ -89,7 +91,6 @@ function computeCountryTotals(records) {
     totals[country].days += days;
     if (isCurrent) {
       totals[country].isCurrent = true;
-      currentCountry = country;
     }
   });
 
@@ -210,7 +211,7 @@ function renderDaysTracker(records, isPro) {
       </div>
       <div class="tc-footer">
         <span class="text-dim" style="font-size:0.8rem;">${c.pct}% of threshold</span>
-        <span style="font-size:0.8rem;font-weight:600;color:${remaining <= 30 ? '#ef4444' : remaining <= 60 ? '#f59e0b' : 'var(--text-dim)'};">
+        <span style="font-size:0.8rem;font-weight:600;color:${remaining <= THRESHOLD_DANGER ? '#ef4444' : remaining <= THRESHOLD_WARNING ? '#f59e0b' : 'var(--text-dim)'};">
           ${remaining > 0 ? remaining + ' days remaining' : 'Threshold reached'}
         </span>
       </div>
@@ -239,4 +240,4 @@ function renderDaysTracker(records, isPro) {
 }
 
 // Export for dashboard.js
-window.NB_DaysTracker = { renderDaysTracker, computeCountryTotals };
+globalThis.NB_DaysTracker = { renderDaysTracker, computeCountryTotals };

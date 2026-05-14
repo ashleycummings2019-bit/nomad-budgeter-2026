@@ -13,7 +13,7 @@ class TimeMachine {
         };
 
         this.chart = null;
-        this.data = window.__CITIES_DATA__ || [];
+        this.data = globalThis.__CITIES_DATA__ || [];
         this.init();
     }
 
@@ -252,11 +252,11 @@ class TimeMachine {
 
         // Update URL state for sharing
         try {
-            var urlParams = new URLSearchParams(window.location.search);
+            const urlParams = new URLSearchParams(globalThis.location.search);
             urlParams.set('from', currentCityKey);
             urlParams.set('to', destCitySlug);
             urlParams.set('income', income);
-            window.history.replaceState({}, '', window.location.pathname + '?' + urlParams.toString());
+            globalThis.history.replaceState({}, '', globalThis.location.pathname + '?' + urlParams.toString());
         } catch(e) {
             console.warn('[TimeMachine] Could not update URL:', e);
         }
@@ -325,7 +325,7 @@ class TimeMachine {
                                 var label = context.dataset.label || '';
                                 if (label) label += ': ';
                                 if (context.parsed.y !== null) {
-                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(context.parsed.y);
+                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2, minimumFractionDigits: 2 }).format(context.parsed.y);
                                 }
                                 return label;
                             }
@@ -360,7 +360,7 @@ class TimeMachine {
         var years = document.getElementById('out-years').innerText;
         
         var text = 'I just shaved ' + years + ' years off my retirement by swapping my city for ' + dest + '. Calculate your Nomad Wealth Gap at NomadBudgeter.com';
-        var url = window.location.href;
+        var url = globalThis.location.href;
         
         if (navigator.share) {
             navigator.share({
@@ -376,11 +376,11 @@ class TimeMachine {
     }
 
     captureLead() {
-        if (window.Clerk && window.Clerk.user) {
+        if (globalThis.Clerk && globalThis.Clerk.user) {
             alert("Matching you with our legal partner. We'll email you shortly!");
         } else {
-            if (window.Clerk) {
-                window.Clerk.openSignIn();
+            if (globalThis.Clerk) {
+                globalThis.Clerk.openSignIn();
             } else {
                 alert("Please sign in to continue.");
             }
@@ -398,16 +398,16 @@ class TimeMachine {
 // Initialize on load
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
-        window.timeMachine = new TimeMachine();
+        globalThis.timeMachine = new TimeMachine();
         checkUrlParams();
     });
 } else {
-    window.timeMachine = new TimeMachine();
+    globalThis.timeMachine = new TimeMachine();
     checkUrlParams();
 }
 
 function checkUrlParams() {
-    var urlParams = new URLSearchParams(window.location.search);
+    var urlParams = new URLSearchParams(globalThis.location.search);
     if (urlParams.has('from') && urlParams.has('to')) {
         var from = urlParams.get('from');
         var to = urlParams.get('to');
@@ -422,6 +422,6 @@ function checkUrlParams() {
         if (incomeEl && income) incomeEl.value = income;
         
         // Auto run
-        window.timeMachine.calculate();
+        globalThis.timeMachine.calculate();
     }
 }
