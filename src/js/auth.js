@@ -213,17 +213,24 @@ function waitForClerk(maxAttempts = 50) {
             setTimeout(check, 200);
         } else {
             console.warn('[Auth] Clerk did not load in time — attaching fallback handlers to all pricing buttons');
-            // Fallback: wire all pricing buttons to redirect to /pricing or refresh
+            // Fallback: wire all pricing buttons to redirect to Stripe directly if Clerk is broken
             const subscribeBtns = ['btn-subscribe-pro', 'btn-subscribe-biz', 'unlock-pro-btn'];
             subscribeBtns.forEach(id => {
                 const fallbackBtn = document.getElementById(id);
-                if (fallbackBtn && !fallbackBtn._hasHandler) {
+                if (fallbackBtn && !fallbackBtn._authWired) {
                     fallbackBtn.addEventListener('click', (e) => {
                         e.preventDefault();
-                        console.log(`[Auth] Fallback button click for ${id}. Redirecting to /pricing/`);
-                        globalThis.location.href = '/pricing/';
+                        console.log(`[Auth] Fallback button click for ${id}. Redirecting to Stripe (Clerk failed to load).`);
+                        const config = globalThis.__NB_CONFIG__;
+                        const plan = (id === 'btn-subscribe-biz') ? 'biz' : 'pro';
+                        const stripeUrl = plan === 'biz' ? config?.stripeBizUrl : config?.stripeProUrl;
+                        if (stripeUrl) {
+                            globalThis.location.href = stripeUrl;
+                        } else {
+                            globalThis.location.href = '/pricing/';
+                        }
                     });
-                    fallbackBtn._hasHandler = true;
+                    fallbackBtn._authWired = true;
                 }
             });
         }
@@ -239,12 +246,27 @@ function wirePreAuthFallbacks() {
         const btn = document.getElementById(id);
         if (btn && !btn._authWired) {
             btn.addEventListener('click', function preAuthHandler(e) {
-                if (this._authWired) return; // Real handler will fire via auth.js
-                e.stopImmediatePropagation();
-                if (globalThis.Clerk && !globalThis.Clerk.user) {
-                    globalThis.Clerk.openSignIn();
-                } else if (!globalThis.Clerk) {
-                    alert('Loading authentication... please try again in a moment.');
+                if (this._authWired) return; 
+                
+                if (globalThis.Clerk?.isReady?.()) {
+                    if (!globalThis.Clerk.user) {
+                        e.stopImmediatePropagation();
+                        globalThis.Clerk.openSignIn();
+                    }
+                } else {
+                    // If Clerk hasn't loaded but user is clicking, they likely want to buy.
+                    // If it's been more than 3 seconds since page load, just let them go to Stripe.
+                    const pageLoadTime = globalThis.performance?.now() || 0;
+                    if (pageLoadTime > 3000) {
+                        console.warn('[Auth] Clerk not ready. Using direct Stripe fallback.');
+                        const config = globalThis.__NB_CONFIG__;
+                        const plan = (id === 'btn-subscribe-biz') ? 'biz' : 'pro';
+                        const stripeUrl = plan === 'biz' ? config?.stripeBizUrl : config?.stripeProUrl;
+                        if (stripeUrl) {
+                            e.stopImmediatePropagation();
+                            globalThis.location.href = stripeUrl;
+                        }
+                    }
                 }
             });
         }
