@@ -28,7 +28,9 @@
     {# Inject public config only — API keys handled server-side via /api/ proxies #}
     <script>
       window.__NB_CONFIG__ = {
-        clerkPubKey: "{{ site.apiKeys.clerkPubKey }}"
+        clerkPubKey: "{{ site.apiKeys.clerkPubKey }}",
+        stripeProUrl: "{{ site.stripe.pro }}",
+        stripeBizUrl: "{{ site.stripe.biz }}"
       };
     </script>
 </head>

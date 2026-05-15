@@ -68,6 +68,23 @@ async function handleSubscribe(plan) {
             btn.disabled = true;
         }
 
+        const config = globalThis.__NB_CONFIG__;
+        const stripeUrl = plan === 'pro' ? config?.stripeProUrl : config?.stripeBizUrl;
+
+        if (stripeUrl) {
+            console.log(`[Auth] Using Payment Link for ${plan}`);
+            const url = new URL(stripeUrl);
+            if (globalThis.Clerk?.user) {
+                url.searchParams.set('client_reference_id', globalThis.Clerk.user.id);
+                if (globalThis.Clerk.user.primaryEmailAddress?.emailAddress) {
+                    url.searchParams.set('prefilled_email', globalThis.Clerk.user.primaryEmailAddress.emailAddress);
+                }
+            }
+            globalThis.location.href = url.toString();
+            return;
+        }
+
+        // Fallback to dynamic session if links are missing
         const data = await createCheckoutSession(plan, cycle, globalThis.Clerk.user);
         
         if (data.url) {

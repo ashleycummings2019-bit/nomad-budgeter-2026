@@ -24,7 +24,7 @@
       "desc": "Top-rated firm for European Nomad Visas in 2026." 
     },
     "safetywing": { "name": "SafetyWing", "url": "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance", "desc": "Global nomad health insurance meeting all 2026 visa requirements." },
-    "wise": { "name": "Wise", "url": "https://wise.com/invite/u/nomadbudgeter?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=NB_2026_Banking", "desc": "Move money globally with the lowest 2026 exchange rate fees." },
+    "wise": { "name": "Wise", "url": "https://wise.prf.hn/click/camref:1101l5JGeT", "desc": "Move money globally with the lowest 2026 exchange rate fees." },
     "airalo": { "name": "Airalo eSIM", "url": "https://airalo.tp.st/nb_2026_esim", "desc": "Stay connected with local data plans in 200+ countries without swapping SIMs." },
     "discovercars": { "name": "Discover Cars", "url": "https://www.discovercars.com/?a_aid=nomadbudgeter&utm_source=nomadbudgeter&utm_medium=toolkit", "desc": "Compare 2026 rental car rates across 145+ countries." },
     "remote": { "name": "Remote.com", "url": "https://remote.com/nomad-budgeter?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Remote", "desc": "Payroll & Compliance for global teams." },
@@ -36,5 +36,9 @@
     "holafly": { "name": "Holafly", "url": "https://esim.holafly.com/?ref=nomadbudgeter", "desc": "Unlimited data eSIMs for nomads who can't afford to be offline." },
     "interactiveBrokers": { "name": "Interactive Brokers", "url": "https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php", "desc": "The best brokerage for international expats and nomads." },
     "citizenremote": { "name": "Citizen Remote", "url": "https://citizenremote.com/?ref=nomadbudgeter", "desc": "The official application platform for Digital Nomad Visas." }
+  },
+  "stripe": {
+    "pro": "https://buy.stripe.com/00wdR3aQeg521HXgzleAg0b",
+    "biz": "https://buy.stripe.com/eVq28lbUi7ywfyN2IveAg0c"
   }
 }

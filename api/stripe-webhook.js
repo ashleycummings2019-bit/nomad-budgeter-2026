@@ -97,8 +97,8 @@ module.exports = async (req, res) => {
             case 'checkout.session.completed': {
                 const session = event.data.object;
                 
-                // Metadata extracted from create-checkout.js
-                const userId = session.metadata?.userId;
+                // Metadata extracted from create-checkout.js OR client_reference_id from Payment Links
+                const userId = session.metadata?.userId || session.client_reference_id;
                 const email = session.metadata?.email || session.customer_details?.email;
                 const plan = session.metadata?.plan || 'Pro';
                 const customerId = session.customer;
