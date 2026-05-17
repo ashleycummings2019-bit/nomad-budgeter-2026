@@ -4,4 +4,4 @@ Disallow: /api/
 Disallow: /dashboard/
 Disallow: /_site/
 
-Sitemap: https://nomadbudgeter.com/sitemap.xml
+Sitemap: https://www.nomadbudgeter.com/sitemap.xml

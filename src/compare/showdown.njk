@@ -17,8 +17,8 @@ eleventyComputed:
       "description": "{{ showdowns[slug].tagline }}",
       "dateModified": "2026-05-01",
       "author": { "@type": "Organization", "name": "Nomad Budgeter" },
-      "publisher": { "@type": "Organization", "name": "Nomad Budgeter", "url": "https://nomadbudgeter.com" },
-      "mainEntityOfPage": "https://nomadbudgeter.com/compare/showdown/{{ showdowns[slug].slug }}/"
+      "publisher": { "@type": "Organization", "name": "Nomad Budgeter", "url": "{{ site.url }}" },
+      "mainEntityOfPage": "{{ site.url }}/compare/showdown/{{ showdowns[slug].slug }}/"
     }
 ---
 {%- set d = showdowns[slug] -%}
