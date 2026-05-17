@@ -16,13 +16,15 @@ on:
                                                     node-version: '20'
                                                               cache: 'npm'
                                                                     - run: npm ci
-                                                                          - env:
-                                                                                    KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-                                                                                              SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-                                                                                                        SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-                                                                                                                run: node backend-intelligence/orchestrator.mjs --scan-only
-                                                                                                                      - env:
-                                                                                                                                KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
-                                                                                                                                          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-                                                                                                                                                    SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-                                                                                                                                                            run: node backend-intelligence/orchestrator.mjs --audit-only
+                                                                          - name: Swarm Scan
+                                                                                  env:
+                                                                                            KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+                                                                                                      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+                                                                                                                SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+                                                                                                                        run: node backend-intelligence/orchestrator.mjs --scan-only
+                                                                                                                              - name: Swarm Audit
+                                                                                                                                      env:
+                                                                                                                                                KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+                                                                                                                                                          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+                                                                                                                                                                    SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+                                                                                                                                                                            run: node backend-intelligence/orchestrator.mjs --audit-only
