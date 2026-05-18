@@ -13,7 +13,7 @@
           "value": "nomad-budgeter-2026.vercel.app"
         }
       ],
-      "destination": "https://nomadbudgeter.com/:path*",
+      "destination": "https://www.nomadbudgeter.com/:path*",
       "permanent": true
     }
   ],

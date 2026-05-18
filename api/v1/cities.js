@@ -87,7 +87,7 @@ module.exports = async (req, res) => {
             if (!isBusinessUser) {
                 return res.status(403).json({ 
                     error: 'Forbidden. Business tier required for API access.',
-                    message: 'Upgrade at https://nomadbudgeter.com/pricing'
+                    message: 'Upgrade at https://www.nomadbudgeter.com/pricing'
                 });
             }
         } catch (err) {
