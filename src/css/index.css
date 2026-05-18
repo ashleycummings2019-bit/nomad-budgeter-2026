@@ -203,7 +203,7 @@ img { max-width: 100%; height: auto; }
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
     pointer-events: none;
-    transition: var(--transition-smooth);
+    transition: opacity 0.4s ease;
     border-radius: inherit; /* Fixes corner artifacts */
 }
 
@@ -266,9 +266,9 @@ img { max-width: 100%; height: auto; }
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition-smooth);
+    transition: background-color 0.4s ease, transform 0.4s ease;
 }
-.glass-btn-sm:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
+.glass-btn-sm:hover { background-color: rgba(255,255,255,0.1); transform: translateY(-1px); }
 
 /* Badges */
 .badge-2026 {
