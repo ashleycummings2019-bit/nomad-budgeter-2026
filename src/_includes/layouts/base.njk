@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "partials/head.njk" %}
-    <link rel="stylesheet" href="/css/index.css">
+    {# Critical CSS — inline to eliminate render-blocking stylesheet #}
+    <style>
+    :root{--bg-dark:#09090b;--bg-surface:#18181b;--text-main:#f4f4f5;--text-dim:#a1a1aa;--aura-primary:#10b981;--aura-primary-rgb:16,185,129;--aura-secondary:#8b5cf6;--aura-accent:#f59e0b;--glass-border:rgba(255,255,255,0.08);--radius-md:16px;--font-main:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-heading:'Outfit',sans-serif;--transition-smooth:all .4s cubic-bezier(.4,0,.2,1)}
+    *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg-dark);color:var(--text-main);font-family:var(--font-main);line-height:1.6;overflow-x:hidden;min-height:100vh;position:relative}
+    a{text-decoration:none;color:inherit}
+    button{font-family:inherit;cursor:pointer}
+    img{max-width:100%;height:auto}
+    .aura-container{max-width:1200px;margin:0 auto;padding:0 2rem}
+    .site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(9,9,11,.4);border-bottom:1px solid rgba(255,255,255,.05);transform:translateZ(0);contain:layout style}
+    .site-header.scrolled{background:rgba(9,9,11,.85);height:64px}
+    .header-container{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.75rem 2rem;height:72px}
+    .logo{display:flex;align-items:center;gap:.5rem;font-size:1.2rem;font-weight:800;font-family:var(--font-heading)}
+    .wa-hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:6rem 0 4rem;overflow:hidden}
+    @media(max-width:768px){.aura-container{padding:0 1.25rem}body{padding-bottom:140px}.site-header{background:rgba(9,9,11,.92)}.wa-hero{padding:5rem 1.5rem 3rem;min-height:90vh}}
+    </style>
+    {# Full stylesheet — loaded async to not block first paint #}
+    <link rel="preload" href="/css/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/index.css"></noscript>
     {% if '/blog' in page.url or '/post' in page.url %}
     <link rel="stylesheet" href="/css/blog.css">
     {% endif %}
