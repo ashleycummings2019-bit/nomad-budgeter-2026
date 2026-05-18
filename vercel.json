@@ -6,6 +6,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/compare/city-country/:path*",
+      "destination": "/compare/city-vs-country/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
