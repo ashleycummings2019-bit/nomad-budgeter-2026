@@ -104,7 +104,7 @@ body::before {
     );
     z-index: -1;
     pointer-events: none;
-    transition: background 0.15s ease-out;
+    will-change: background;
 }
 
 .aura-blob {
@@ -117,13 +117,14 @@ body::before {
     opacity: 0.12;
     pointer-events: none;
     animation: blob-float 30s infinite alternate ease-in-out;
+    will-change: transform;
 }
 .blob-1 { top: -10%; left: -10%; background: var(--aura-primary); }
 .blob-2 { bottom: -10%; right: -10%; background: var(--aura-secondary); animation-delay: -5s; }
 
 @keyframes blob-float {
-    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    100% { transform: translate(15%, 10%) scale(1.15) rotate(15deg); }
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(15%, 10%) scale(1.15); }
 }
 
 a { text-decoration: none; color: inherit; transition: var(--transition-smooth); }
@@ -150,7 +151,15 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 768px) { 
     .grid-2, .grid-3 { grid-template-columns: 1fr; } 
     .section-container { padding: 4rem 0; }
-    .aura-container { padding: 0 1.5rem; }
+    .aura-container { padding: 0 1.25rem; }
+
+    /* Performance: disable expensive effects on mobile */
+    body::before { display: none; }
+    .aura-blob { filter: blur(80px); opacity: 0.08; animation: none; }
+    .glass-panel { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(24, 24, 27, 0.85); }
+
+    /* Fix mobile bottom bars covering content */
+    #main-content { padding-bottom: 140px; }
 }
 
 /* ─── 4. CORE COMPONENTS ─── */

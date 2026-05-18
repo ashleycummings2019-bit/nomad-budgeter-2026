@@ -9,25 +9,7 @@
     <link rel="stylesheet" href="/css/blog.css">
     {% endif %}
 
-    {# Google Analytics 4 #}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ site.ga4 }}');
-    </script>
-
-    {# Clerk Authentication #}
-    <script
-      async
-      crossorigin="anonymous"
-      data-clerk-publishable-key="{{ site.apiKeys.clerkPubKey }}"
-      src="https://clerk.nomadbudgeter.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
-      type="text/javascript"
-    ></script>
-
-    {# Inject public config only — API keys handled server-side via /api/ proxies #}
+    {# Google Analytics 4 — deferred to not block rendering #}
     <script>
       window.__NB_CONFIG__ = {
         clerkPubKey: "{{ site.apiKeys.clerkPubKey }}",
@@ -65,16 +47,15 @@
     <script src="/js/capture-lead.js" defer></script>
     <script src="/js/auth.js" defer></script>
 
-    {# Header scroll effect + Clerk user button #}
+    {# Header scroll effect #}
     <script>
     (function() {
-        // Scroll effect
-        const header = document.querySelector('.site-header');
+        var header = document.querySelector('.site-header');
         if (header) {
-            let ticking = false;
-            window.addEventListener('scroll', () => {
+            var ticking = false;
+            window.addEventListener('scroll', function() {
                 if (!ticking) {
-                    requestAnimationFrame(() => {
+                    requestAnimationFrame(function() {
                         header.classList.toggle('scrolled', window.scrollY > 20);
                         ticking = false;
                     });
@@ -82,27 +63,55 @@
                 }
             }, { passive: true });
         }
+    })();
+    </script>
 
-        // Mount Clerk user button when available
-        function mountClerkUser() {
-            const el = document.getElementById('header-user-btn');
-            if (!el) return;
-            if (window.Clerk) {
-                try {
-                    window.Clerk.mountUserButton(el, {
-                        afterSignOutUrl: '/',
-                        appearance: { elements: { userButtonAvatarBox: { width: '32px', height: '32px' } } }
-                    });
-                } catch(e) { /* Clerk not fully loaded yet */ }
-            } else {
-                setTimeout(mountClerkUser, 500);
-            }
+    {# Lazy-load GA4 + Clerk after first user interaction for performance #}
+    <script>
+    (function() {
+        var loaded = false;
+        function loadThirdParty() {
+            if (loaded) return;
+            loaded = true;
+
+            // GA4
+            var ga = document.createElement('script');
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}';
+            ga.async = true;
+            document.head.appendChild(ga);
+            ga.onload = function() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                gtag('js', new Date());
+                gtag('config', '{{ site.ga4 }}');
+            };
+
+            // Clerk
+            var clerk = document.createElement('script');
+            clerk.src = 'https://clerk.nomadbudgeter.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
+            clerk.async = true;
+            clerk.crossOrigin = 'anonymous';
+            clerk.dataset.clerkPublishableKey = '{{ site.apiKeys.clerkPubKey }}';
+            document.head.appendChild(clerk);
+            clerk.onload = function() {
+                var el = document.getElementById('header-user-btn');
+                if (el && window.Clerk) {
+                    try {
+                        window.Clerk.mountUserButton(el, {
+                            afterSignOutUrl: '/',
+                            appearance: { elements: { userButtonAvatarBox: { width: '32px', height: '32px' } } }
+                        });
+                    } catch(e) {}
+                }
+            };
         }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', mountClerkUser);
-        } else {
-            mountClerkUser();
-        }
+
+        // Load on first interaction or after 4s idle
+        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+            window.addEventListener(evt, loadThirdParty, { once: true, passive: true });
+        });
+        setTimeout(loadThirdParty, 4000);
     })();
     </script>
 </body>
