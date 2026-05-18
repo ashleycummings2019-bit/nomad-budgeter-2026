@@ -67,7 +67,10 @@ function initEventListeners() {
     if (incomeInput) {
         incomeInput.addEventListener('input', debounce((e) => {
             state.income = Number.parseFloat(e.target.value) || 0;
-            if (state.cityData) updateCalculationsOnly();
+            if (state.cityData) {
+                const results = calculateResults();
+                updateUI(results);
+            }
         }, 500));
     }
 
