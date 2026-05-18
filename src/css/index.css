@@ -88,13 +88,14 @@
 
 /* ─── 2. BASE & RESET ─── */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 body {
     background: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-main);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     min-height: 100vh;
     position: relative;
 }
