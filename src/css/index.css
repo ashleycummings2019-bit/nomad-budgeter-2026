@@ -76,6 +76,16 @@
     100% { transform: translateX(-50%); }
 }
 
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* ─── 2. BASE & RESET ─── */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
 html { scroll-behavior: smooth; }
@@ -158,8 +168,8 @@ img { max-width: 100%; height: auto; }
     .aura-blob { filter: blur(80px); opacity: 0.08; animation: none; }
     .glass-panel { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgba(24, 24, 27, 0.85); }
 
-    /* Fix mobile bottom bars covering content */
-    #main-content { padding-bottom: 140px; }
+    /* Fix mobile bottom bars covering footer content */
+    body { padding-bottom: 140px; }
 }
 
 /* ─── 4. CORE COMPONENTS ─── */
