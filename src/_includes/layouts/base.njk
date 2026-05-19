@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "partials/head.njk" %}
-    <link rel="stylesheet" href="/css/index.css?v=1.0.1">
+    <link rel="stylesheet" href="/css/index.css?v=1.0.2">
     {% if '/blog' in page.url or '/post' in page.url %}
     <link rel="stylesheet" href="/css/blog.css">
     {% endif %}
@@ -107,11 +107,11 @@
             };
         }
 
-        // Load on first interaction or after 4s idle
-        ['scroll', 'click', 'touchstart', 'keydown'].forEach(function(evt) {
+        // Load on first interaction or after 8s fallback
+        ['scroll', 'click', 'touchstart', 'keydown', 'mousemove'].forEach(function(evt) {
             window.addEventListener(evt, loadThirdParty, { once: true, passive: true });
         });
-        setTimeout(loadThirdParty, 4000);
+        setTimeout(loadThirdParty, 8000);
     })();
     </script>
 </body>
