@@ -1,7 +1,7 @@
 {# SEO Head Partial — Renders title, meta, OG tags, canonical, and JSON-LD #}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=block">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=swap">
 
 {# Favicon & PWA #}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" type="image/svg+xml">
@@ -19,6 +19,9 @@
 <title>{{ pageTitle or title or (site.name + " | " + site.tagline) }}</title>
 <meta name="description" content="{{ pageDescription or description or site.description }}">
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+{% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.url }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.url }}">
 <meta name="author" content="{{ site.name }}">
 <meta name="last-modified" content="{{ site.dataLastVerified }}">
 <meta name="agd-partner-manual-verification" />
@@ -55,7 +58,12 @@
   "@type": "Organization",
   "name": "{{ site.name }}",
   "url": "{{ site.url }}",
-  "logo": "{{ site.url }}/img/logo.png",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "{{ site.url }}/img/logo.png",
+    "width": 512,
+    "height": 512
+  },
   "sameAs": [
     "https://twitter.com/nomadbudgeter",
     "https://linkedin.com/company/nomadbudgeter"

@@ -22,6 +22,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = resolve(__dirname, '../src/_data/cities.json');
 const RATES_CACHE_PATH = resolve(__dirname, '../src/_data/rates.json');
+const BTC_CACHE_PATH = resolve(__dirname, '../src/_data/btc_cache.json');
 
 // ─── Baseline grocery/lifestyle prices in USD ───
 // These are median Numbeo-style averages for each city tier.
@@ -251,10 +252,18 @@ async function fetchBTCPrice() {
     const res = await fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot');
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
-    return parseFloat(data.data.amount);
+    const price = parseFloat(data.data.amount);
+    
+    writeFileSync(BTC_CACHE_PATH, JSON.stringify({ price, date: new Date().toISOString() }, null, 2));
+    return price;
   } catch (err) {
-    console.warn(`⚠️ BTC fetch failed: ${err.message}`);
-    return 72419; // Fallback
+    console.warn(`⚠️ BTC fetch failed: ${err.message}. Using cached price.`);
+    try {
+      const cached = JSON.parse(readFileSync(BTC_CACHE_PATH, 'utf-8'));
+      return cached.price;
+    } catch {
+      return 72419; // Hardcoded fallback
+    }
   }
 }
 
@@ -262,8 +271,10 @@ async function fetchBTCPrice() {
 async function main() {
   console.log('\n🔄 NOMAD DATA PULSE — Starting enrichment run...\n');
   
-  const rates = await fetchRates();
-  const btcPrice = await fetchBTCPrice();
+  const [rates, btcPrice] = await Promise.all([
+    fetchRates(),
+    fetchBTCPrice()
+  ]);
   
   if (!rates) {
     console.log('⏭️  Skipping — no rates available. Build will use existing data.');

@@ -8,6 +8,9 @@
     "dev": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
     "build": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs",
     "build:no-pulse": "node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "minify:css": "postcss src/css/index.css -o _site/css/index.css",
+    "minify:js": "terser _site/js/main.js -o _site/js/main.js --compress --mangle",
+    "postbuild": "npm run minify:css && npm run minify:js",
     "clean": "rm -rf _site",
     "swarm": "node --env-file=.env backend-intelligence/orchestrator.mjs",
     "swarm:scan": "node --env-file=.env backend-intelligence/orchestrator.mjs --scan-only",
@@ -18,8 +21,12 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "@prisma/client": "^7.8.0",
+    "cssnano": "^8.0.1",
     "pg": "^8.20.0",
-    "prisma": "^7.8.0"
+    "postcss": "^8.5.15",
+    "postcss-cli": "^11.0.1",
+    "prisma": "^7.8.0",
+    "terser": "^5.47.1"
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.0",

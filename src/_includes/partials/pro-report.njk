@@ -147,8 +147,8 @@ body { font-family: 'Manrope', sans-serif; background: #0a0f1a; color: #e2e8f0; 
     background: radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent 70%); border-radius: 50%;
 }
 .cover-badge { font-size: 0.75rem; letter-spacing: 3px; color: #10b981; font-weight: 700; margin-bottom: 2rem; }
-.cover h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
-.cover h1 span { background: linear-gradient(135deg, #10b981, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.cover h2 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+.cover h2 span { background: linear-gradient(135deg, #10b981, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .cover-sub { font-size: 1.2rem; color: #94a3b8; max-width: 500px; margin-bottom: 3rem; }
 .cover-meta { display: flex; gap: 2rem; font-size: 0.85rem; color: #64748b; }
 .cover-meta div { display: flex; align-items: center; gap: 0.5rem; }
@@ -162,7 +162,7 @@ body { font-family: 'Manrope', sans-serif; background: #0a0f1a; color: #e2e8f0; 
 .summary-card .label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
 .summary-card .value { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700; color: #10b981; }
 
-.data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+.data-table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; display: block; overflow-x: auto; white-space: nowrap; }
 .data-table th { text-align: left; padding: 1rem; color: #64748b; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .data-table td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .data-table td:last-child { text-align: right; font-weight: 700; color: #fff; font-family: 'Outfit', sans-serif; font-size: 1.1rem; }
@@ -185,7 +185,7 @@ body { font-family: 'Manrope', sans-serif; background: #0a0f1a; color: #e2e8f0; 
 <!-- COVER PAGE -->
 <div class="cover">
     <div class="cover-badge">NOMADBUDGETER.COM — 2026 PREMIUM REPORT</div>
-    <h1>Financial Blueprint:<br><span>${cityName}</span></h1>
+    <h2>Financial Blueprint:<br><span>${cityName}</span></h2>
     <p class="cover-sub">Your personalised tax optimisation and cost-of-living analysis for relocating to ${cityName}, ${countryName}.</p>
     <div class="cover-meta">
         <div>📅 ${today}</div>

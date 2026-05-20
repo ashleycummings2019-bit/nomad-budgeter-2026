@@ -207,7 +207,13 @@ body.book-page {
   width: 100%;
   border-collapse: collapse;
   margin: 2rem 0;
-  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 .book-table th {

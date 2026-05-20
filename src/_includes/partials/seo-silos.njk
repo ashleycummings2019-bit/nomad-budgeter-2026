@@ -11,7 +11,7 @@
                 {% for c in cities %}
                     {% if c.tax == 0 and silo1_count < 4 %}
                     <a href="/cities/{{ c.slug }}/" class="silo-link">
-                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }}" loading="lazy" decoding="async">
+                        <img src="{{ (c.external_image_url or 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df') | vimg(400, 75) }}" class="silo-thumb" alt="{{ c.name }} skyline - digital nomad destination" loading="lazy" decoding="async">
                         <div class="silo-info">
                             <span class="silo-name">{{ c.name }}</span>
                             <span class="silo-meta">{{ c.country }} · 0% Tax</span>

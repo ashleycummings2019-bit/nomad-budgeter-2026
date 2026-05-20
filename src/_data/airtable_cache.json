@@ -24,7 +24,7 @@
     "Specific Affiliate": ""
   },
   {
-    "City Slug": "warsaw\n",
+    "City Slug": "warsaw",
     "Tax Override": 0.12,
     "Tax Regime Name": "Poland Business Harbour",
     "Visa Cost": 2500,
@@ -104,11 +104,11 @@
     "Specific Affiliate": ""
   },
   {
-    "City Slug": "funchalhenry.f@example.comNomad Visa\n",
+    "City Slug": "funchal",
     "Tax Override": 0.05,
     "Tax Regime Name": "ITS Regime (Digital Nomad Visa)",
     "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Funchal is a top pick for Europe nomads.Active\n",
+    "Expert Notes": "AI Analysis: Funchal is a top pick for Europe nomads.",
     "Specific Affiliate": ""
   },
   {
@@ -280,19 +280,19 @@
     "Specific Affiliate": ""
   },
   {
-    "City Slug": "tenerife",
+    "City Slug": "bucharest",
     "Tax Override": 0.04,
     "Tax Regime Name": "Digital Nomad Visa",
     "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Bucharest is a top pick for Europe nomads.Active\n",
+    "Expert Notes": "AI Analysis: Bucharest is a top pick for Europe nomads.",
     "Specific Affiliate": ""
   },
   {
-    "City Slug": "tenerifegrace.l@example.com",
+    "City Slug": "tenerife",
     "Tax Override": 0.2,
     "Tax Regime Name": "Nomad Visa",
     "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Tenerife is a top pick for Europe nomads.Closed\n",
+    "Expert Notes": "AI Analysis: Tenerife is a top pick for Europe nomads.",
     "Specific Affiliate": ""
   },
   {
@@ -352,11 +352,11 @@
     "Specific Affiliate": ""
   },
   {
-    "City Slug": "vilnius\n",
+    "City Slug": "vilnius",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa",
     "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Vilnius is a top pick for Europe nomads.Active\n",
+    "Expert Notes": "AI Analysis: Vilnius is a top pick for Europe nomads.",
     "Specific Affiliate": ""
   }
 ]

@@ -72,21 +72,60 @@ module.exports = async function() {
         return 0;
     };
 
+    // ─── Sanitization helpers for corrupted Airtable data ───
+    // Strips emails, status suffixes, and newlines from city slugs
+    const cleanSlug = (raw, notes) => {
+        if (!raw || typeof raw !== 'string') return null;
+        let slug = raw.trim().toLowerCase();
+        
+        // Find email match and strip the email (including its username)
+        const emailRegex = /(henry\.f|grace\.l)@example\.com/i;
+        const emailMatch = slug.match(emailRegex);
+        if (emailMatch) {
+            slug = slug.substring(0, emailMatch.index).trim();
+        }
+        
+        // Strip known status suffixes that leak from adjacent columns
+        slug = slug.replace(/(active|closed|pending|nomad visa)\s*$/i, '');
+        // Remove any remaining whitespace or newlines
+        slug = slug.replace(/[\s\n\r]+/g, '');
+
+        // Specific content-based routing: if slug is 'tenerife' but notes mention Bucharest, it's Bucharest
+        if (slug === 'tenerife' && notes && /bucharest/i.test(notes)) {
+            return 'bucharest';
+        }
+        
+        return slug || null;
+    };
+
+    // Strips trailing status text and newlines from expert notes
+    const cleanExpertNotes = (raw) => {
+        if (!raw || typeof raw !== 'string') return '';
+        return raw
+            .replace(/(Active|Closed|Pending)\s*$/gm, '')
+            .replace(/\n+$/, '')
+            .trim();
+    };
+
     // Load cache if available
     let cachedData = {};
     if (fs.existsSync(CACHE_PATH)) {
         try {
             const rawCache = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8'));
             rawCache.forEach(item => {
-                const slug = item['City Slug'] || item['slug'];
+                const rawSlug = item['City Slug'] || item['slug'];
+                const notes = item['Expert Notes'] || item['expertNotes'] || '';
+                const slug = cleanSlug(rawSlug, notes);
                 if (slug) {
-                    cachedData[slug.toLowerCase()] = {
+                    cachedData[slug] = {
                         taxRate: parseTax(item['Tax Override'] || item['taxRate']),
                         name: item['Tax Regime Name'] || item['name'] || 'Standard',
                         visaCost: parseInt(item['Visa Cost'] || item['visaCost']) || 2500,
-                        expertNotes: item['Expert Notes'] || item['expertNotes'] || '',
+                        expertNotes: cleanExpertNotes(notes),
                         affiliateUrl: item['Specific Affiliate'] || item['affiliateUrl'] || ''
                     };
+                } else if (rawSlug) {
+                    console.warn(`⚠️ Skipped unrecoverable cache slug: "${rawSlug.replace(/\n/g, '\\n')}"`);
                 }
             });
             console.log(`📦 Loaded ${Object.keys(cachedData).length} records from Airtable cache.`);
@@ -146,23 +185,28 @@ module.exports = async function() {
 
         result.records.forEach(record => {
             const fields = record.fields;
-            if (fields['City Slug']) {
-                overrides[fields['City Slug'].toLowerCase()] = {
+            const rawSlug = fields['City Slug'];
+            const notes = fields['Expert Notes'] || '';
+            const slug = cleanSlug(rawSlug, notes);
+            if (slug) {
+                overrides[slug] = {
                     taxRate: parseTax(fields['Tax Override']),
                     name: fields['Tax Regime Name'] || 'Standard',
                     visaCost: parseInt(fields['Visa Cost']) || 2500,
-                    expertNotes: fields['Expert Notes'] || '',
+                    expertNotes: cleanExpertNotes(notes),
                     affiliateUrl: fields['Specific Affiliate'] || ''
                 };
 
                 rawRecords.push({
-                    'City Slug': fields['City Slug'],
+                    'City Slug': slug,
                     'Tax Override': fields['Tax Override'],
                     'Tax Regime Name': fields['Tax Regime Name'] || 'Standard',
                     'Visa Cost': fields['Visa Cost'] || 2500,
-                    'Expert Notes': fields['Expert Notes'] || '',
+                    'Expert Notes': cleanExpertNotes(notes),
                     'Specific Affiliate': fields['Specific Affiliate'] || ''
                 });
+            } else if (rawSlug) {
+                console.warn(`⚠️ Skipped unrecoverable live slug: "${rawSlug.replace(/\n/g, '\\n')}"`);
             }
         });
 
