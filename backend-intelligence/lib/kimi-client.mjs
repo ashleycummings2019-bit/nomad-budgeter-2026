@@ -83,7 +83,7 @@ export async function kimiChat(opts) {
     model: MODEL,
     messages,
     max_tokens: maxTokens,
-    temperature: 0.6, // Kimi K2.6 requires exactly 0.6
+    temperature: thinking ? 1.0 : 0.6, // Kimi requires 1.0 for thinking, 0.6 for disabled
     thinking: thinking ? { type: 'enabled' } : { type: 'disabled' },
   };
 
