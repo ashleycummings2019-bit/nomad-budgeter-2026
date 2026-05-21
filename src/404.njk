@@ -3,13 +3,113 @@ layout: layouts/base.njk
 pageTitle: "Page Not Found | Nomad Budgeter"
 permalink: /404.html
 ---
-<section class="section-container mt-32 reveal text-center" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <h1 class="aura-title" style="font-size: 5rem; margin-bottom: 1rem;">404</h1>
-    <h2 class="font-heading" style="font-size: 2rem; color: white; margin-bottom: 2rem;">Looks like you've wandered off the map.</h2>
-    <p class="text-dim mb-8 max-w-xl mx-auto">The page you're looking for doesn't exist, has been moved, or is currently traveling the world.</p>
+<style>
+/* CSS radar animation for the 404 page */
+.radar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 3rem;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+.radar-grid {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-image: 
+        linear-gradient(rgba(16, 185, 129, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 185, 129, 0.2) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center center;
+}
+
+.radar-sweep {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background: conic-gradient(from 0deg, transparent 70%, rgba(16, 185, 129, 0.8) 100%);
+    transform-origin: 0 0;
+    animation: sweep 4s linear infinite;
+}
+
+@keyframes sweep {
+    to { transform: rotate(360deg); }
+}
+
+.radar-blip {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #ef4444;
+    border-radius: 50%;
+    top: 30%;
+    left: 60%;
+    box-shadow: 0 0 10px #ef4444;
+    animation: blink 4s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+</style>
+
+<section class="section-container mt-24 text-center reveal" style="min-height: 70vh;">
     
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="/" class="action-btn accent-bg">Go to Calculator</a>
-        <a href="/blog/" class="action-btn glass-panel" style="padding: 0.75rem 1.5rem; text-decoration: none; color: white; border-radius: 0.5rem;">Read Nomad Guides</a>
+    <div class="radar-container">
+        <div class="radar-grid"></div>
+        <div class="radar-sweep"></div>
+        <div class="radar-blip"></div>
+    </div>
+
+    <h1 class="aura-title" style="font-size: 5rem; margin-bottom: 0.5rem; line-height: 1;">404</h1>
+    <h2 class="font-heading" style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">Looks like you've wandered off the map.</h2>
+    <p class="text-dim mb-12 max-w-xl mx-auto" style="font-size: 1.1rem; line-height: 1.6;">
+        The destination you're looking for doesn't exist, has moved, or is currently traveling the world. Let's get you back on track.
+    </p>
+    
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem;">
+        <a href="/" class="action-btn accent-bg">
+            <span style="margin-right: 0.5rem;">📊</span> Global Tax Calculator
+        </a>
+    </div>
+
+    <h3 class="mb-6 text-dim">Popular Destinations</h3>
+    <div class="quick-links-grid">
+        <a href="/cities/" class="glass-panel aura-hover-glow" style="padding: 1.5rem; text-decoration: none; color: white;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📍</div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">City Rankings</div>
+            <p class="text-dim text-sm" style="margin: 0;">Find the best nomad hubs</p>
+        </a>
+        <a href="/visas/" class="glass-panel aura-hover-glow" style="padding: 1.5rem; text-decoration: none; color: white;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🛂</div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">Nomad Visas</div>
+            <p class="text-dim text-sm" style="margin: 0;">Compare tax regimes</p>
+        </a>
+        <a href="/compare/" class="glass-panel aura-hover-glow" style="padding: 1.5rem; text-decoration: none; color: white;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚖️</div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">Compare Hubs</div>
+            <p class="text-dim text-sm" style="margin: 0;">Side-by-side analysis</p>
+        </a>
+        <a href="/blog/" class="glass-panel aura-hover-glow" style="padding: 1.5rem; text-decoration: none; color: white;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📚</div>
+            <div style="font-weight: 600; margin-bottom: 0.25rem;">Expert Guides</div>
+            <p class="text-dim text-sm" style="margin: 0;">Read our latest intel</p>
+        </a>
     </div>
 </section>
