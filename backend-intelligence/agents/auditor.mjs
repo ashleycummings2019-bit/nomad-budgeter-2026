@@ -19,6 +19,7 @@ import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { kimiChat, parseJSON, getSessionStats } from '../lib/kimi-client.mjs';
 import { getPendingFindings, reviewFinding, startRun, completeRun } from '../lib/supabase-client.mjs';
+import { verifySourceUrls } from '../lib/source-verifier.mjs';
 import { AUDITOR_PROMPT } from '../lib/prompts.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -90,15 +91,35 @@ async function main() {
       };
     });
 
-    const userMessage = `Audit the following findings against our current production data.
+    // ── REAL-TIME SOURCE VERIFICATION ──
+    // Fetch the actual web pages the researcher claims as sources
+    const sourceUrls = batch
+      .map(f => f.source_url)
+      .filter(u => u && u !== 'null');
+
+    console.log(`\n   🌐 Verifying ${sourceUrls.length} source URLs...`);
+    const sourceResults = await verifySourceUrls(sourceUrls);
+
+    // Build source evidence for the LLM
+    const sourceEvidence = {};
+    for (const [url, result] of Object.entries(sourceResults)) {
+      sourceEvidence[url] = result.success
+        ? { status: 'fetched', content_snippet: result.content }
+        : { status: 'failed', error: result.error };
+    }
+
+    const userMessage = `Audit the following findings against our current production data AND the real fetched source content.
 
 FINDINGS TO AUDIT:
 ${JSON.stringify(contextData, null, 2)}
 
-For each finding, determine:
-1. Is this a genuine change from our current data?
-2. Does the source URL look legitimate?
-3. What confidence level would you assign?
+REAL SOURCE PAGE CONTENT (fetched live from the URLs above):
+${JSON.stringify(sourceEvidence, null, 2)}
+
+For each finding:
+1. Does the researcher's claim match what the FETCHED PAGE actually says?
+2. Is this a genuine change from our current data?
+3. What confidence level would you assign based on the REAL evidence?
 4. Should we approve, reject, or flag for human review?`;
 
     try {
