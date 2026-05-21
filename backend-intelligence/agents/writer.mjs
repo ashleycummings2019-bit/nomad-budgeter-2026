@@ -333,6 +333,7 @@ async function processApprovedFindings() {
 
     writeFileSync(filepath, response.content);
     console.log(`   📄 Draft written: src/blog/drafts/${filename}`);
+    console.log(`[PUBLISH_TARGET] ${filepath}`);
     processedCount++;
   }
 

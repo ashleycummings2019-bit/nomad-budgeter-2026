@@ -121,9 +121,10 @@ For each finding, determine:
         if (!finding) continue;
 
         // Auto-action based on auditor recommendation
-        if (result.recommendation === 'approve' && result.confidence_adjustment >= 0.8) {
-          // High confidence approval — still mark as pending for human, but flag
-          console.log(`   ✅ HIGH CONFIDENCE: ${finding.country_slug} — ${result.reasoning?.slice(0, 80)}`);
+        if (result.recommendation === 'approve' && result.confidence_adjustment >= 0.85) {
+          // High confidence approval — Auto-Approve it to the Database
+          await reviewFinding(finding.id, 'approved', 'auditor-agent');
+          console.log(`   ✅ HIGH CONFIDENCE (AUTO-APPROVED): ${finding.country_slug} — ${result.reasoning?.slice(0, 80)}`);
           autoApproved++;
         } else if (result.recommendation === 'reject') {
           // Auto-reject obvious hallucinations

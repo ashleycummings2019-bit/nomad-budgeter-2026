@@ -184,6 +184,8 @@ function getMode() {
     return { mode: 'write', cities };
   }
 
+  if (args.includes('--autonomous')) return { mode: 'autonomous', countries };
+
   return { mode: 'full', countries };
 }
 
@@ -194,17 +196,84 @@ async function runApprovedProcessor() {
 
   const { execSync } = await import('child_process');
   try {
-    execSync(
+    const output = execSync(
       'node backend-intelligence/agents/writer.mjs --approved-only',
+      {
+        cwd: process.cwd(),
+        stdio: ['inherit', 'pipe', 'inherit'],
+        env: { ...process.env },
+        timeout: 3_600_000, // 1 hour timeout for content generation
+      }
+    ).toString();
+
+    // Print output to console
+    console.log(output);
+
+    // Extract generated files
+    const targets = [];
+    for (const line of output.split('\n')) {
+      if (line.includes('[PUBLISH_TARGET]')) {
+        const filepath = line.split('[PUBLISH_TARGET]')[1].trim();
+        targets.push(filepath);
+      }
+    }
+
+    if (targets.length > 0) {
+      console.log(`\n═══════════════════════════════════════`);
+      console.log(`  PHASE 7: 🔎 SEO OPTIMIZER & REVISION...`);
+      console.log(`═══════════════════════════════════════`);
+      
+      for (const filepath of targets) {
+        console.log(`\n👉 Optimizing: ${filepath}`);
+        execSync(
+          `node backend-intelligence/agents/seo-optimizer.mjs --file ${filepath}`,
+          {
+            cwd: process.cwd(),
+            stdio: 'inherit',
+            env: { ...process.env },
+            timeout: 1_800_000,
+          }
+        );
+        
+        console.log(`\n👉 Revising: ${filepath}`);
+        execSync(
+          `node backend-intelligence/agents/writer.mjs --revise ${filepath}`,
+          {
+            cwd: process.cwd(),
+            stdio: 'inherit',
+            env: { ...process.env },
+            timeout: 1_800_000,
+          }
+        );
+      }
+    }
+    
+    return targets;
+  } catch (err) {
+    console.error('⚠️ Approved findings processor failed');
+  }
+}
+
+}
+
+async function runPublisher() {
+  console.log('\n═══════════════════════════════════════');
+  console.log('  PHASE 8: 🚀 PUBLISHER — Auto-deploying...');
+  console.log('═══════════════════════════════════════');
+
+  const { execSync } = await import('child_process');
+  try {
+    execSync(
+      'node backend-intelligence/agents/publisher.mjs',
       {
         cwd: process.cwd(),
         stdio: 'inherit',
         env: { ...process.env },
-        timeout: 3_600_000, // 1 hour timeout for content generation
+        timeout: 1_800_000,
       }
     );
   } catch (err) {
-    console.error('⚠️ Approved findings processor failed');
+    console.error('⚠️ Publisher agent failed');
   }
 }
 
@@ -246,6 +315,14 @@ async function main() {
       await runAuditor();
       console.log('\n💡 To generate content from validated data, run:');
       console.log('   node backend-intelligence/orchestrator.mjs --approved-only');
+      break;
+
+    case 'autonomous':
+      // Autonomous pipeline: Scan → Audit → Process Approved → Publish
+      await runResearcher(config.countries);
+      await runAuditor();
+      await runApprovedProcessor();
+      await runPublisher();
       break;
   }
 
