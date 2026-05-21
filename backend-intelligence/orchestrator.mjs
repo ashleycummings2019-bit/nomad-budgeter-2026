@@ -15,11 +15,17 @@
  *   node backend-intelligence/orchestrator.mjs --audit-only       # Auditor only
  *   node backend-intelligence/orchestrator.mjs --write lisbon,dubai  # Writer only
  *   node backend-intelligence/orchestrator.mjs --approved-only      # Process approved findings
+ *   node backend-intelligence/orchestrator.mjs --autonomous         # Full auto (scan→audit→write→publish)
+ *   node backend-intelligence/orchestrator.mjs --autonomous --dry-run  # Safest: full auto but no git push
  *
  * Safety:
  *   - Hard $5/day budget cap (configurable via SWARM_DAILY_BUDGET)
  *   - Circuit breaker: max 10 agent iterations per run
- *   - All findings go through human review before production
+ *   - Content quality validator catches hallucinations before publish
+ *   - Site build verification prevents broken deploys
+ *   - Git rollback tags on every publish for instant undo
+ *   - Max 3 articles published per run
+ *   - --dry-run flag for risk-free simulation
  */
 
 import { getSessionStats } from './lib/kimi-client.mjs';
@@ -184,9 +190,11 @@ function getMode() {
     return { mode: 'write', cities };
   }
 
-  if (args.includes('--autonomous')) return { mode: 'autonomous', countries };
+  const dryRun = args.includes('--dry-run');
 
-  return { mode: 'full', countries };
+  if (args.includes('--autonomous')) return { mode: 'autonomous', countries, dryRun };
+
+  return { mode: 'full', countries, dryRun };
 }
 
 async function runApprovedProcessor() {
@@ -256,7 +264,7 @@ async function runApprovedProcessor() {
 
 }
 
-async function runPublisher() {
+async function runPublisher(dryRun = false) {
   console.log('\n═══════════════════════════════════════');
   console.log('  PHASE 8: 🚀 PUBLISHER — Auto-deploying...');
   console.log('═══════════════════════════════════════');
@@ -264,7 +272,7 @@ async function runPublisher() {
   const { execSync } = await import('child_process');
   try {
     execSync(
-      'node backend-intelligence/agents/publisher.mjs',
+      `node backend-intelligence/agents/publisher.mjs${dryRun ? ' --dry-run' : ''}`,
       {
         cwd: process.cwd(),
         stdio: 'inherit',
@@ -322,7 +330,7 @@ async function main() {
       await runResearcher(config.countries);
       await runAuditor();
       await runApprovedProcessor();
-      await runPublisher();
+      await runPublisher(config.dryRun);
       break;
   }
 
