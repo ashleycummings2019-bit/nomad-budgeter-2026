@@ -262,8 +262,6 @@ async function runApprovedProcessor() {
   }
 }
 
-}
-
 async function runPublisher(dryRun = false) {
   console.log('\n═══════════════════════════════════════');
   console.log('  PHASE 8: 🚀 PUBLISHER — Auto-deploying...');
