@@ -121,10 +121,9 @@ Focus on official government sources published in 2025 or 2026.`;
       const response = await kimiChat({
         system: RESEARCHER_PROMPT,
         user: userMessage,
-        thinking: true,
+        thinking: false, // MUST be false when json: true — thinking pollutes JSON output
         json: true,
         maxTokens: 4096,
-        temperature: 1.0,
       });
 
       const parsed = parseJSON(response.content);

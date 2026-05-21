@@ -105,10 +105,9 @@ For each finding, determine:
       const response = await kimiChat({
         system: AUDITOR_PROMPT,
         user: userMessage,
-        thinking: true,
+        thinking: false, // MUST be false when json: true — thinking pollutes JSON output
         json: true,
         maxTokens: 4096,
-        temperature: 1.0, // Kimi K2.6 requires exactly 1.0
       });
 
       const parsed = parseJSON(response.content);
