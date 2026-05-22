@@ -1,0 +1,57 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: nationalities
+  size: 1
+  alias: nat
+permalink: "/visas/best-nomad-visas-for-{{ nat.slug }}/"
+eleventyComputed:
+  pageTitle: "Best Digital Nomad Visas for {{ nat.name }} in 2026"
+  pageDescription: "How {{ nat.name }} can navigate {{ nat.taxQuirk }} and use the {{ nat.taxSolution }} to minimize their global tax burden as a digital nomad."
+---
+
+{% include "partials/breadcrumbs.njk" %}
+
+<div class="section-container mt-16">
+    <div class="comparison-hero text-center mb-16">
+        <div class="badge-2026 mb-4">
+            <span style="display:inline-block; width:8px; height:8px; background:#10b981; border-radius:50%; margin-right:5px;"></span>
+            2026 Strategy Guide
+        </div>
+        <h1 class="aura-title">The Best Digital Nomad Visas<br>for {{ nat.name }}</h1>
+        <p class="text-dim mb-8" style="font-size: 1.15rem; max-width: 700px; margin: 1rem auto 0;">
+            {{ nat.description }}
+        </p>
+    </div>
+
+    <div class="expert-analysis">
+        <h2 class="mb-6">The {{ nat.name }} Tax Dilemma: {{ nat.taxQuirk | capitalize }}</h2>
+        <p class="mb-6">
+            When you hold a passport from the {{ nat.countryCode }}, international relocation requires structural financial planning. 
+            The biggest hurdle is navigating <strong>{{ nat.taxQuirk }}</strong>. Simply boarding a flight and working from Bali does not sever your obligations back home. 
+            However, by properly applying the <strong>{{ nat.taxSolution }}</strong>, you can radically reduce your effective tax rate.
+        </p>
+
+        <h3 class="mb-4 mt-8">Top Visa Recommendations for {{ nat.name }}</h3>
+        <ul style="list-style-type: none; padding: 0;">
+            {% for topVisa in nat.topVisas %}
+                <li style="margin-bottom: 1.5rem; padding: 1.5rem; border-radius: 8px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: var(--aura-primary); margin-bottom: 0.5rem; font-size: 1.25rem;">{{ topVisa }} Digital Nomad Visa</h4>
+                    <p style="margin-bottom: 1rem;">A popular choice for {{ nat.countryCode }} passport holders offering a streamlined path to residency.</p>
+                    <a href="/visas/{{ topVisa | slugify }}/" class="premium-btn w-full text-center" style="display: block;">View {{ topVisa }} Tax ROI</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="glass-panel mt-12 p-8 text-center" style="background: rgba(139, 92, 246, 0.1); border-color: var(--aura-primary);">
+            <h3 class="mb-4">Calculate Your Personal Tax Savings</h3>
+            <p class="mb-6">Use Nomad Budgeter to see exactly how much you can save in 2026.</p>
+            <a href="/?nationality={{ nat.countryCode }}" class="action-btn" style="padding: 1rem 2rem; display: inline-block;">Open Calculator →</a>
+        </div>
+    </div>
+</div>
+
+<!-- TravelPayouts General Widget for High Intent Traffic -->
+<div class="tp-widget-container mt-16" style="text-align: center;">
+    <script async src="https://tpembd.com/content?trs=531907&shmarker=731309&locale=en&show_header=true&powered_by=true&campaign_id=627&promo_id=8951" charset="utf-8"></script>
+</div>

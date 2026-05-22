@@ -267,6 +267,25 @@ async function fetchBTCPrice() {
   }
 }
 
+// ─── Fetch Teleport Scores ───
+async function fetchTeleportScore(slug) {
+  try {
+    const url = `https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`;
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    const data = await res.json();
+    let safety = 0;
+    let internet = 0;
+    for (const cat of data.categories) {
+      if (cat.name === 'Safety') safety = cat.score_out_of_10;
+      if (cat.name === 'Internet access') internet = cat.score_out_of_10;
+    }
+    return { safety, internet };
+  } catch {
+    return null;
+  }
+}
+
 // ─── Main ───
 async function main() {
   console.log('\n🔄 NOMAD DATA PULSE — Starting enrichment run...\n');
@@ -320,6 +339,13 @@ async function main() {
 
     if (city.currency && rates[city.currency]) {
       enrichCity(city, rates);
+      
+      const tp = await fetchTeleportScore(city.slug);
+      if (tp) {
+         city.safety_score = tp.safety;
+         city.internet_score = tp.internet;
+      }
+      
       enriched++;
     } else {
       // Still add USD prices even without a rate

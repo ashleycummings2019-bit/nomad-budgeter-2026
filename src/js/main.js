@@ -295,9 +295,9 @@ function updateProReportData(data) {
     const usTax = document.getElementById('pro-us-tax');
     const totalTax = document.getElementById('pro-total-tax');
 
-    if (localTax) localTax.textContent = formatCurrency(data.taxAmount / 12 * 0.7); 
-    if (seTax) seTax.textContent = formatCurrency(data.taxAmount / 12 * 0.3); 
-    if (usTax) usTax.textContent = '$0'; 
+    if (localTax) localTax.textContent = formatCurrency(data.breakdown ? (data.breakdown.localTax / 12) : (data.taxAmount / 12 * 0.7)); 
+    if (seTax) seTax.textContent = formatCurrency(data.breakdown ? (data.breakdown.seTax / 12) : (data.taxAmount / 12 * 0.3)); 
+    if (usTax) usTax.textContent = formatCurrency(data.breakdown ? (data.breakdown.usTax / 12) : 0); 
     if (totalTax) totalTax.textContent = formatCurrency(data.taxAmount / 12);
     
     // COL Breakdown
@@ -351,11 +351,36 @@ function updateUI(data) {
 }
 
 function calculateAuraScore(data) {
-    const savingsRatio = Math.max(0, Math.min(data.monthlySavings / (data.monthlyNet * 0.4), 1));
-    const taxEfficiency = 1 - data.taxRate;
-    const colHealth = 1 - Math.min(data.colIndex / 150, 1);
+    // 1. Base Variables
+    // Use real metrics from Teleport (backend) if they exist, otherwise simulate
+    const safetyIndex = data.safety_score ? (data.safety_score * 10) : Math.min(100, 50 + (data.colIndex * 0.3));
+    const internetIndex = data.internet_score ? (data.internet_score * 10) : 85; 
+    const walkabilityIndex = Math.max(40, 100 - (data.colIndex * 0.2)); 
+    const communityIndex = data.monthlySavings > 0 ? 80 : 50;
+
+    // Weights (Dynamic based on selected profile)
+    let w_f = 0.4, w_i = 0.2, w_s = 0.2, w_c = 0.2; // Default (Executive)
     
-    const score = (savingsRatio * 40) + (taxEfficiency * 30) + (colHealth * 30);
+    const profileEl = document.getElementById('calc-aura-profile');
+    const profile = profileEl ? profileEl.value : 'executive';
+    
+    if (profile === 'bootstrapper') {
+        w_f = 0.6; w_i = 0.2; w_s = 0.1; w_c = 0.1;
+    } else if (profile === 'family') {
+        w_f = 0.2; w_i = 0.1; w_s = 0.5; w_c = 0.2;
+    } else {
+        // executive
+        w_f = 0.2; w_i = 0.4; w_s = 0.3; w_c = 0.1;
+    }
+
+    // Financial Efficiency Sub-Score
+    const savingsRatio = Math.max(0, Math.min(data.monthlySavings / (data.monthlyNet * 0.4), 1)) * 100;
+    const taxEfficiency = (1 - data.taxRate) * 100;
+    const financialEfficiency = (savingsRatio * 0.6) + (taxEfficiency * 0.4);
+
+    // The Custom Weighted Algorithm: A = (w_f * F_e) + (w_i * I_c) + (w_s * S_s) + (w_c * C_f)
+    const score = (w_f * financialEfficiency) + (w_i * internetIndex) + (w_s * safetyIndex) + (w_c * communityIndex);
+    
     return Math.round(score);
 }
 

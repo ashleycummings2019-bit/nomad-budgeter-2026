@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "us-citizens",
+    "name": "US Citizens",
+    "countryCode": "US",
+    "taxQuirk": "citizenship-based taxation",
+    "taxSolution": "Foreign Earned Income Exclusion (FEIE)",
+    "description": "As a US citizen, moving abroad doesn't automatically erase your tax obligations. The IRS enforces citizenship-based taxation, meaning you must file federal returns no matter where you live. However, by leveraging the Foreign Earned Income Exclusion (FEIE) and targeting the right digital nomad visas, you can legally exclude over $130,000 of earned income from federal tax.",
+    "topVisas": ["Spain", "Portugal", "UAE"]
+  },
+  {
+    "slug": "uk-citizens",
+    "name": "UK Citizens",
+    "countryCode": "UK",
+    "taxQuirk": "statutory residence test",
+    "taxSolution": "non-residency declaration",
+    "description": "For UK citizens, severing tax residency requires passing the Statutory Residence Test (SRT). Simply leaving the UK isn't enough; you must strictly limit your days spent back home. Once non-resident, your foreign income is generally free from HMRC, allowing you to optimize your wealth in 0% or low-tax jurisdictions.",
+    "topVisas": ["UAE", "Malaysia", "Malta"]
+  },
+  {
+    "slug": "canadian-citizens",
+    "name": "Canadian Citizens",
+    "countryCode": "CA",
+    "taxQuirk": "residential ties",
+    "taxSolution": "severing residential ties",
+    "description": "The CRA determines tax residency based on 'residential ties.' To stop paying Canadian taxes as a digital nomad, you must establish non-residency by cutting significant ties (home, spouse, dependents) and potentially paying a departure tax. Once clear, you can legally earn tax-free abroad.",
+    "topVisas": ["Costa Rica", "Panama", "Spain"]
+  },
+  {
+    "slug": "australian-citizens",
+    "name": "Australian Citizens",
+    "countryCode": "AU",
+    "taxQuirk": "domicile test",
+    "taxSolution": "establishing a permanent home abroad",
+    "description": "The ATO is notoriously strict regarding tax residency. To shed Australian tax obligations, nomads must pass the 'resides' and 'domicile' tests, proving they have established a permanent home overseas. If successful, your foreign-sourced income is no longer taxed at Australia's high marginal rates.",
+    "topVisas": ["Malaysia", "Thailand", "Portugal"]
+  }
+]
