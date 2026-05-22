@@ -117,12 +117,15 @@ module.exports = async function() {
                 const notes = item['Expert Notes'] || item['expertNotes'] || '';
                 const slug = cleanSlug(rawSlug, notes);
                 if (slug) {
+                    const rawCost = item['Visa Cost'] !== undefined ? item['Visa Cost'] : item['visaCost'];
+                    const parsedCost = parseInt(rawCost);
                     cachedData[slug] = {
-                        taxRate: parseTax(item['Tax Override'] || item['taxRate']),
+                        taxRate: parseTax(item['Tax Override'] !== undefined ? item['Tax Override'] : item['taxRate']),
                         name: item['Tax Regime Name'] || item['name'] || 'Standard',
-                        visaCost: parseInt(item['Visa Cost'] || item['visaCost']) || 2500,
+                        visaCost: isNaN(parsedCost) ? 2500 : parsedCost,
                         expertNotes: cleanExpertNotes(notes),
-                        affiliateUrl: item['Specific Affiliate'] || item['affiliateUrl'] || ''
+                        affiliateUrl: item['Specific Affiliate'] || item['affiliateUrl'] || '',
+                        officialVisaPortal: item['Official Visa Portal'] || item['officialVisaPortal'] || ''
                     };
                 } else if (rawSlug) {
                     console.warn(`⚠️ Skipped unrecoverable cache slug: "${rawSlug.replace(/\n/g, '\\n')}"`);
@@ -189,32 +192,72 @@ module.exports = async function() {
             const notes = fields['Expert Notes'] || '';
             const slug = cleanSlug(rawSlug, notes);
             if (slug) {
+                const cachedOverride = cachedData[slug];
+                let taxRate = parseTax(fields['Tax Override']);
+                let name = fields['Tax Regime Name'] || 'Standard';
+                
+                const rawCost = fields['Visa Cost'];
+                let visaCost = rawCost !== undefined ? parseInt(rawCost) : NaN;
+                let expertNotes = cleanExpertNotes(notes);
+                let affiliateUrl = fields['Specific Affiliate'] || '';
+                let officialVisaPortal = fields['Official Visa Portal'] || '';
+
+                if (cachedOverride) {
+                    if ((isNaN(visaCost) || visaCost === 2500) && cachedOverride.visaCost !== undefined) {
+                        visaCost = cachedOverride.visaCost;
+                    }
+                    if ((!expertNotes || expertNotes.startsWith('AI Analysis:')) && cachedOverride.expertNotes && !cachedOverride.expertNotes.startsWith('AI Analysis:')) {
+                        expertNotes = cachedOverride.expertNotes;
+                    }
+                    if (!officialVisaPortal && cachedOverride.officialVisaPortal) {
+                        officialVisaPortal = cachedOverride.officialVisaPortal;
+                    }
+                }
+                
+                if (isNaN(visaCost)) visaCost = 2500;
+
                 overrides[slug] = {
-                    taxRate: parseTax(fields['Tax Override']),
-                    name: fields['Tax Regime Name'] || 'Standard',
-                    visaCost: parseInt(fields['Visa Cost']) || 2500,
-                    expertNotes: cleanExpertNotes(notes),
-                    affiliateUrl: fields['Specific Affiliate'] || ''
+                    taxRate,
+                    name,
+                    visaCost,
+                    expertNotes,
+                    affiliateUrl,
+                    officialVisaPortal
                 };
 
                 rawRecords.push({
                     'City Slug': slug,
                     'Tax Override': fields['Tax Override'],
-                    'Tax Regime Name': fields['Tax Regime Name'] || 'Standard',
-                    'Visa Cost': fields['Visa Cost'] || 2500,
-                    'Expert Notes': cleanExpertNotes(notes),
-                    'Specific Affiliate': fields['Specific Affiliate'] || ''
+                    'Tax Regime Name': name,
+                    'Visa Cost': visaCost,
+                    'Expert Notes': expertNotes,
+                    'Specific Affiliate': affiliateUrl,
+                    'Official Visa Portal': officialVisaPortal
                 });
             } else if (rawSlug) {
                 console.warn(`⚠️ Skipped unrecoverable live slug: "${rawSlug.replace(/\n/g, '\\n')}"`);
             }
         });
 
-        // Auto-refresh cache on successful live fetch
+        // Auto-refresh cache: merge live records INTO existing cache (preserve local-only records)
         if (rawRecords.length > 0) {
             try {
-                fs.writeFileSync(CACHE_PATH, JSON.stringify(rawRecords, null, 2));
-                console.log(`💾 Cache refreshed with ${rawRecords.length} live records.`);
+                // Load existing cache to preserve local-only records
+                let existingCache = [];
+                if (fs.existsSync(CACHE_PATH)) {
+                    try { existingCache = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8')); } catch {}
+                }
+                
+                const liveSlugs = new Set(rawRecords.map(r => r['City Slug']));
+                // Keep cache records that are NOT in live data (local-only additions)
+                const localOnly = existingCache.filter(r => {
+                    const slug = cleanSlug(r['City Slug'] || r['slug'], r['Expert Notes'] || '');
+                    return slug && !liveSlugs.has(slug);
+                });
+                
+                const merged = [...rawRecords, ...localOnly];
+                fs.writeFileSync(CACHE_PATH, JSON.stringify(merged, null, 2));
+                console.log(`💾 Cache refreshed: ${rawRecords.length} live + ${localOnly.length} local-only = ${merged.length} total records.`);
             } catch (writeErr) {
                 console.warn('⚠️ Failed to write cache file:', writeErr.message);
             }

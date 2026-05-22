@@ -3,360 +3,665 @@
     "City Slug": "valencia",
     "Tax Override": 0.24,
     "Tax Regime Name": "Beckham Law (Digital Nomad Visa)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Valencia is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat tax under Beckham Law. Spain's DNV requires €3,100/mo income proof.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "City Slug": "kuala-lumpur",
     "Tax Override": 0,
     "Tax Regime Name": "DE Rantau (Digital Nomad Pass)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Kuala Lumpur is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 218,
+    "Expert Notes": "0% tax on foreign income. DE Rantau requires $24k/yr income. 12-month renewable.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://mdec.my/derantau/foreign"
   },
   {
     "City Slug": "london",
     "Tax Override": 0.2,
     "Tax Regime Name": "Global Talent Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: London is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 790,
+    "Expert Notes": "20% basic rate (£12,571–£50,270). Global Talent requires endorsement from approved body.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.gov.uk/browse/visas-immigration/work-visas"
   },
   {
     "City Slug": "warsaw",
     "Tax Override": 0.12,
     "Tax Regime Name": "Poland Business Harbour",
-    "Visa Cost": 2500,
-    "Expert Notes": "",
-    "Specific Affiliate": ""
+    "Visa Cost": 80,
+    "Expert Notes": "12% flat tax on revenue under JDG sole trader. Business Harbour program for IT/tech workers.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.gov.pl/web/diplomacy/visas"
   },
   {
     "City Slug": "ho-chi-minh-city",
     "Tax Override": 0,
     "Tax Regime Name": "E-Visa (90 days)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Ho Chi Minh City is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 50,
+    "Expert Notes": "0% tax on foreign-sourced income as non-resident. E-Visa is single-entry, 90 days max.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
   },
   {
     "City Slug": "seoul",
     "Tax Override": 0,
     "Tax Regime Name": "Workcation Visa (K-ETA)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Seoul is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 90,
+    "Expert Notes": "0% tax for short-stay remote workers. Digital Nomad Visa (F-1-D) launched 2024, requires $65k/yr income.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.visa.go.kr/"
   },
   {
     "City Slug": "madrid",
     "Tax Override": 0.24,
     "Tax Regime Name": "Beckham Law (Digital Nomad Visa)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Madrid is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat tax under Beckham Law. Allows remote work for non-Spanish employers.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "City Slug": "tallinn",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa / e-Residency",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Tallinn is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 130,
+    "Expert Notes": "20% flat income tax. e-Residency costs €100-120. DNV allows 1 year stay.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.e-resident.gov.ee/nomadvisa/"
   },
   {
     "City Slug": "athens",
     "Tax Override": 0.07,
     "Tax Regime Name": "Digital Nomad Visa (7% Flat Tax)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Athens is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 75,
+    "Expert Notes": "7% flat tax for qualifying remote workers under Greece's non-dom regime. 2-year permit.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.mfa.gr/en/visas/visas-for-foreigners-traveling-to-greece/"
   },
   {
     "City Slug": "tokyo",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa (6 months)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Tokyo is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 20,
+    "Expert Notes": "Non-residents pay 20.42% on Japan-sourced income only. DNV launched March 2024, 6-month max.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.mofa.go.jp/j_info/visit/visa/long/visa16.html"
   },
   {
     "City Slug": "bansko",
     "Tax Override": 0.1,
     "Tax Regime Name": "Standard Tax Regime",
-    "Visa Cost": 2500,
-    "Expert Notes": "",
-    "Specific Affiliate": ""
+    "Visa Cost": 110,
+    "Expert Notes": "Bulgaria's 10% flat tax is among the EU's lowest. Popular coworking hub for European nomads.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria"
   },
   {
     "City Slug": "prague",
     "Tax Override": 0.2,
     "Tax Regime Name": "Živnostenský List (Trade License)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Prague is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 45,
+    "Expert Notes": "Trade license enables 15% flat tax on 60% of revenue (effective ~6-9%). CZK 1,000 fee.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.mzv.cz/jnp/en/information_for_aliens/index.html"
   },
   {
     "City Slug": "san-jose-cr",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa (Rentista)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: San José is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 250,
+    "Expert Notes": "Costa Rica taxes only local-source income. DNV requires $3,000/mo income proof. 1-year renewable.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://tramiteya.go.cr/dgme/"
   },
   {
     "City Slug": "funchal",
     "Tax Override": 0.05,
     "Tax Regime Name": "ITS Regime (Digital Nomad Visa)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Funchal is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 170,
+    "Expert Notes": "20% flat tax under ITS/NHR successor regime. Madeira has same rules as mainland Portugal.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "City Slug": "bali",
     "Tax Override": 0,
     "Tax Regime Name": "B211A Remote Worker Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Bali is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 300,
+    "Expert Notes": "0% tax on foreign income under B211A. Requires sponsor agent. 6-month single entry, extendable.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://molina.imigrasi.go.id/"
   },
   {
     "City Slug": "manila",
     "Tax Override": 0.2,
     "Tax Regime Name": "SIRV / Tourist Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Manila is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 60,
+    "Expert Notes": "0% tax on foreign income as non-resident. Tourist visa extendable up to 36 months (~$30-50/extension).",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.visa.gov.ph/"
   },
   {
     "City Slug": "bangkok",
     "Tax Override": 0,
     "Tax Regime Name": "LTR Visa (Long-Term Resident)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Bangkok is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 280,
+    "Expert Notes": "0% tax on foreign income under LTR Visa. Requires $80k/yr income or $250k in assets. 10-year visa.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://thaievisa.go.th/"
   },
   {
     "City Slug": "budapest",
     "Tax Override": 0.15,
     "Tax Regime Name": "White Card (Digital Nomad Permit)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Budapest is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 120,
+    "Expert Notes": "15% flat income tax + 13% social contribution. White Card is 1-year, renewable once.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://enterhungary.gov.hu/"
   },
   {
     "City Slug": "panama-city",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Panama City is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 300,
+    "Expert Notes": "Panama taxes only local-source income. DNV is 9 months, renewable up to 18. Requires $3,000/mo income.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.migracion.gob.pa/inicio/visas-de-turistas"
   },
   {
     "City Slug": "dubai",
     "Tax Override": 0,
     "Tax Regime Name": "Virtual Working Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Dubai is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 611,
+    "Expert Notes": "0% personal income tax. Virtual Working Visa costs AED 2,241 (~$611). Requires $3,500/mo income.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.visitdubai.com/en/invest-in-dubai/live-and-work/visas-and-entry/virtual-working-programme"
   },
   {
     "City Slug": "istanbul",
     "Tax Override": 0.2,
     "Tax Regime Name": "Tourist Visa (90/180 days)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Istanbul is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 60,
+    "Expert Notes": "0% tax for non-resident remote workers. E-visa: $50-60. Max 90 days in 180-day period.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.evisa.gov.tr/en/"
   },
   {
     "City Slug": "tulum",
     "Tax Override": 0,
     "Tax Regime Name": "Residente Temporal",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Tulum is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 350,
+    "Expert Notes": "Mexico taxes only Mexican-source income. Residente Temporal requires ~$2,500/mo income. Up to 4 years.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
   },
   {
     "City Slug": "mexico-city",
     "Tax Override": 0,
     "Tax Regime Name": "Residente Temporal",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Mexico City is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 350,
+    "Expert Notes": "Mexico taxes only Mexican-source income. 180-day tourist visa is free; Residente Temporal for longer stays.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
   },
   {
     "City Slug": "montreal",
     "Tax Override": 0.2,
     "Tax Regime Name": "Working Holiday / Startup Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Montreal is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 190,
+    "Expert Notes": "Combined federal + provincial tax ~20-33% depending on income. IEC Working Holiday: CAD 256.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html"
   },
   {
     "City Slug": "amsterdam",
     "Tax Override": 0.2,
     "Tax Regime Name": "DAFT / Orientation Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Amsterdam is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 1590,
+    "Expert Notes": "30% ruling exempts 30% of salary from tax. DAFT treaty for US/Japan entrepreneurs. IND fee: €1,446.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://ind.nl/en/residence-permits/work/working-as-a-self-employed-person"
   },
   {
     "City Slug": "nairobi",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Work Permit",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Nairobi is a top pick for Africa nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 250,
+    "Expert Notes": "Kenya does not tax foreign-sourced income for non-residents. Digital Nomad Permit is relatively new.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://evisa.go.ke/evisa.html"
   },
   {
     "City Slug": "porto",
     "Tax Override": 0.2,
     "Tax Regime Name": "ITS Regime (Digital Nomad Visa)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Porto is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 170,
+    "Expert Notes": "20% flat tax under ITS regime on qualifying income. D8 Visa requires €3,510/mo minimum income.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "City Slug": "medellin",
     "Tax Override": 0,
     "Tax Regime Name": "Foreign Income Exemption",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Medellín is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 55,
+    "Expert Notes": "Colombia taxes only local-source income for non-residents (183-day rule). V-Nomada Visa: ~$55.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.cancilleria.gov.co/v/nomada"
   },
   {
     "City Slug": "berlin",
     "Tax Override": 0.22,
     "Tax Regime Name": "Freelance Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Berlin is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 110,
+    "Expert Notes": "Progressive tax 14-45%. Freelance Visa requires proof of contracts and health insurance. ~€100 fee.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.make-it-in-germany.com/en/visa-residence/types/freelance-self-employed"
   },
   {
     "City Slug": "toronto",
     "Tax Override": 0.2,
     "Tax Regime Name": "Working Holiday / Startup Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Toronto is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 190,
+    "Expert Notes": "Combined federal + Ontario tax ~20-33%. IEC Working Holiday for 18-35 year olds from eligible countries.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html"
   },
   {
     "City Slug": "split",
     "Tax Override": 0,
     "Tax Regime Name": "Digital Nomad Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Split is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 80,
+    "Expert Notes": "0% Croatian tax under Digital Nomad Visa. Requires €2,539/mo income. 1-year permit, renewable.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://digitalnomadscroatia.mup.hr/"
   },
   {
     "City Slug": "lisbon",
     "Tax Override": 0.2,
     "Tax Regime Name": "ITS Regime (Digital Nomad Visa)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Lisbon is a top pick for Europe nomads.",
-    "Specific Affiliate": "https://lexidy.com/portugal"
+    "Visa Cost": 170,
+    "Expert Notes": "20% flat tax under ITS regime. D8 requires €3,510/mo income proof. 4-month processing average.",
+    "Specific Affiliate": "https://lexidy.com/portugal",
+    "Official Visa Portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "City Slug": "new-york",
     "Tax Override": 0.2,
     "Tax Regime Name": "N/A (Domestic)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: New York is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 0,
+    "Expert Notes": "Federal 22-24% + NY state 4-8.82% + NYC 3.078-3.876%. Total effective rate varies by bracket.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://travel.state.gov/content/travel/en/us-visas/employment.html"
   },
   {
     "City Slug": "chiang-mai",
     "Tax Override": 0,
     "Tax Regime Name": "LTR Visa (Long-Term Resident)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Chiang Mai is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 280,
+    "Expert Notes": "0% tax on foreign income under LTR. DTV (Destination Thailand Visa) is cheaper alternative at THB 10,000.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://thaievisa.go.th/"
   },
   {
     "City Slug": "tbilisi",
     "Tax Override": 0.01,
     "Tax Regime Name": "Small Business Status",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Tbilisi is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 0,
+    "Expert Notes": "1% tax on revenue under Small Business Status (up to GEL 500k/yr). Visa-free 1 year for most nationalities.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.geoconsul.gov.ge/en"
   },
   {
     "City Slug": "bucharest",
     "Tax Override": 0.04,
     "Tax Regime Name": "Digital Nomad Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Bucharest is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 55,
+    "Expert Notes": "Micro-enterprise tax: 1% (with employees) or 3% (without) on revenue. Standard income tax: 10% flat.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://evisa.mae.ro/"
   },
   {
     "City Slug": "tenerife",
     "Tax Override": 0.2,
     "Tax Regime Name": "Nomad Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Tenerife is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat under Beckham Law. Canary Islands have reduced IGIC (7%) instead of mainland IVA (21%).",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "City Slug": "buenos-aires",
     "Tax Override": 0,
     "Tax Regime Name": "Monotributo/Export",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Buenos Aires is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 0,
+    "Expert Notes": "Tourist visa holders pay 0% Argentine tax on foreign income. Monotributo for local billing is very low.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.migraciones.gov.ar/accesible/indexdnm.php?visas"
   },
   {
     "City Slug": "singapore",
     "Tax Override": 0.15,
     "Tax Regime Name": "Standard Tiered",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Singapore is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 200,
+    "Expert Notes": "Progressive 0-22% tax. No capital gains tax. EntrePass for entrepreneurs: SGD 200. High cost of living.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements"
   },
   {
     "City Slug": "yerevan",
     "Tax Override": 0.2,
     "Tax Regime Name": "Visa-free (180 days)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Yerevan is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 0,
+    "Expert Notes": "Non-residents: 0% on foreign income. IT sector: 0% corporate tax for qualified startups. Visa-free 180 days.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://evisa.mfa.am/"
   },
   {
     "City Slug": "rio-de-janeiro",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Rio de Janeiro is a top pick for Americas nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 100,
+    "Expert Notes": "0% tax on foreign-sourced income under Digital Nomad Visa. Requires $1,500/mo income. 1-year permit.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.gov.br/mre/pt-br/assuntos/portal-consular/vistos/informacoes-sobre-vistos-para-estrangeiros-viajarem-ao-brasil"
   },
   {
     "City Slug": "barcelona",
     "Tax Override": 0.24,
     "Tax Regime Name": "Beckham Law (Digital Nomad Visa)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Barcelona is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat under Beckham Law for up to 6 years. Catalunya has active digital nomad community.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "City Slug": "da-nang",
     "Tax Override": 0.2,
     "Tax Regime Name": "E-Visa (90 days)",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Da Nang is a top pick for Asia nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 50,
+    "Expert Notes": "0% tax on foreign income as non-resident. Vietnam E-Visa: $50 online, single entry, 90 days.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
   },
   {
     "City Slug": "cape-town",
     "Tax Override": 0,
     "Tax Regime Name": "Foreign Income Exemption",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Cape Town is a top pick for Africa nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 0,
+    "Expert Notes": "Foreign income exemption for non-residents. Visa-free entry for many nationalities (90 days).",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.dha.gov.za/index.php/immigration-services/exempt-countries"
   },
   {
     "City Slug": "vilnius",
     "Tax Override": 0.2,
     "Tax Regime Name": "Digital Nomad Visa",
-    "Visa Cost": 2500,
-    "Expert Notes": "AI Analysis: Vilnius is a top pick for Europe nomads.",
-    "Specific Affiliate": ""
+    "Visa Cost": 130,
+    "Expert Notes": "20% flat income tax. Lithuania DNV: 1-year permit for remote workers earning from abroad. €120 fee.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.migracija.lt/en/noriu-gauti-viza"
+  },
+  {
+    "City Slug": "sofia",
+    "Tax Override": 0.1,
+    "Tax Regime Name": "Digital Nomad Visa (10% Flat)",
+    "Visa Cost": 110,
+    "Expert Notes": "10% flat income tax — among lowest in EU. Bulgaria DNV for non-EU nationals. Growing tech scene.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria"
+  },
+  {
+    "City Slug": "belgrade",
+    "Tax Override": 0,
+    "Tax Regime Name": "Freelancer Tax Regime",
+    "Visa Cost": 0,
+    "Expert Notes": "Non-residents: 0% on foreign income. Visa-free 90 days for most nationalities. Very low cost of living.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.mfa.gov.rs/en/citizens/travel-serbia/visa-requirements"
+  },
+  {
+    "City Slug": "tirana",
+    "Tax Override": 0,
+    "Tax Regime Name": "Unique Permit (Digital Nomad)",
+    "Visa Cost": 0,
+    "Expert Notes": "Albania: 0% on foreign income for nomads. Visa-free 1 year for most nationalities. Ultra-low costs.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://e-visa.al/"
+  },
+  {
+    "City Slug": "montevideo",
+    "Tax Override": 0,
+    "Tax Regime Name": "Foreign Income Exemption",
+    "Visa Cost": 500,
+    "Expert Notes": "Uruguay exempts foreign-source income for first 11 fiscal years. Digital Nomad Visa: ~$500.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/nomadas-digitales"
+  },
+  {
+    "City Slug": "antigua",
+    "Tax Override": 0,
+    "Tax Regime Name": "Remote Work Visa",
+    "Visa Cost": 50,
+    "Expert Notes": "Guatemala: 0% on foreign income for non-residents. Tourist visa ~$50. Very affordable living.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://igm.gob.gt/"
+  },
+  {
+    "City Slug": "bratislava",
+    "Tax Override": 0.19,
+    "Tax Regime Name": "Freelance/Business Permit",
+    "Visa Cost": 240,
+    "Expert Notes": "19% flat tax (25% above €38,553). Slovakia Trade License for freelancers. EU Schengen access.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.mic.iom.sk/en/residence/temporary-residence.html"
+  },
+  {
+    "City Slug": "cusco",
+    "Tax Override": 0,
+    "Tax Regime Name": "Digital Nomad Visa",
+    "Visa Cost": 0,
+    "Expert Notes": "Peru: 0% on foreign income for non-domiciled individuals. Tourist visa free for most nationalities.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://www.consulado.pe/es/Paginas/Inicio.aspx"
+  },
+  {
+    "City Slug": "playa-del-carmen",
+    "Tax Override": 0,
+    "Tax Regime Name": "Residente Temporal",
+    "Visa Cost": 350,
+    "Expert Notes": "Mexico: 0% on foreign income (territorial taxation). Same visa regime as Mexico City/Tulum.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
+  },
+  {
+    "City Slug": "florianopolis",
+    "Tax Override": 0,
+    "Tax Regime Name": "Digital Nomad Visa (VITEM XIV)",
+    "Visa Cost": 100,
+    "Expert Notes": "0% tax on foreign income under Brazil's DNV. Island city with strong surf/startup culture.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://www.gov.br/mre/pt-br/assuntos/portal-consular/vistos/informacoes-sobre-vistos-para-estrangeiros-viajarem-ao-brasil"
+  },
+  {
+    "City Slug": "batumi",
+    "Tax Override": 0.01,
+    "Tax Regime Name": "Small Business Status (1%)",
+    "Visa Cost": 0,
+    "Expert Notes": "Same 1% Small Business regime as Tbilisi. Visa-free 1 year. Black Sea resort town, very affordable.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.geoconsul.gov.ge/en"
+  },
+  {
+    "City Slug": "koh-phangan",
+    "Tax Override": 0,
+    "Tax Regime Name": "Destination Thailand Visa (DTV)",
+    "Visa Cost": 280,
+    "Expert Notes": "0% tax on foreign income. DTV costs THB 10,000 (~$280). Popular island for remote workers.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://thaievisa.go.th/"
+  },
+  {
+    "City Slug": "george-town",
+    "Tax Override": 0,
+    "Tax Regime Name": "DE Rantau (Digital Nomad Pass)",
+    "Visa Cost": 218,
+    "Expert Notes": "0% tax on foreign income. Same DE Rantau as KL. Penang is cheaper with strong food culture.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://mdec.my/derantau/foreign"
+  },
+  {
+    "City Slug": "lagos",
+    "Tax Override": 0.2,
+    "Tax Regime Name": "NHR/ITS Regime (D8 Visa)",
+    "Visa Cost": 170,
+    "Expert Notes": "Same ITS/D8 regime as Lisbon. Algarve surf town popular with European nomads. Lower cost than Lisbon.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://vistos.mne.gov.pt/en/"
+  },
+  {
+    "City Slug": "las-palmas",
+    "Tax Override": 0.24,
+    "Tax Regime Name": "Beckham Law (Digital Nomad Visa)",
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat under Beckham Law. Canary Islands: reduced IGIC 7% vs mainland 21% VAT.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
+  },
+  {
+    "City Slug": "ericeira",
+    "Tax Override": 0.2,
+    "Tax Regime Name": "NHR/ITS Regime (D8 Visa)",
+    "Visa Cost": 170,
+    "Expert Notes": "Same ITS/D8 regime as Lisbon. World Surfing Reserve. 45 mins from Lisbon.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://vistos.mne.gov.pt/en/"
+  },
+  {
+    "City Slug": "seville",
+    "Tax Override": 0.24,
+    "Tax Regime Name": "Beckham Law (Digital Nomad Visa)",
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat under Beckham Law. Andalusia has lower cost of living than Madrid/Barcelona.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
+  },
+  {
+    "City Slug": "malaga",
+    "Tax Override": 0.24,
+    "Tax Regime Name": "Beckham Law (Digital Nomad Visa)",
+    "Visa Cost": 320,
+    "Expert Notes": "24% flat under Beckham Law. Malaga is Spain's emerging tech hub with Google HQ presence.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
+  },
+  {
+    "City Slug": "krakow",
+    "Tax Override": 0.12,
+    "Tax Regime Name": "Poland Business Harbour",
+    "Visa Cost": 80,
+    "Expert Notes": "12% flat on revenue under JDG. Same Business Harbour program as Warsaw. Lower cost of living.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://www.gov.pl/web/diplomacy/visas"
+  },
+  {
+    "City Slug": "zagreb",
+    "Tax Override": 0,
+    "Tax Regime Name": "Digital Nomad Visa",
+    "Visa Cost": 80,
+    "Expert Notes": "0% Croatian tax under DNV. Same program as Split. EU Schengen access. Continental climate.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://digitalnomadscroatia.mup.hr/"
+  },
+  {
+    "City Slug": "austin",
+    "Tax Override": 0.22,
+    "Tax Regime Name": "N/A (Domestic)",
+    "Visa Cost": 0,
+    "Expert Notes": "Federal 22-24% only — Texas has 0% state income tax. Major tech hub with growing nomad community.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://travel.state.gov/content/travel/en/us-visas/employment.html"
+  },
+  {
+    "City Slug": "miami",
+    "Tax Override": 0.22,
+    "Tax Regime Name": "N/A (Domestic)",
+    "Visa Cost": 0,
+    "Expert Notes": "Federal 22-24% only — Florida has 0% state income tax. Gateway to Latin America.",
+    "Specific Affiliate": "https://www.theblueground.com/",
+    "Official Visa Portal": "https://travel.state.gov/content/travel/en/us-visas/employment.html"
+  },
+  {
+    "City Slug": "port-louis",
+    "Tax Override": 0,
+    "Tax Regime Name": "Premium Visa (1 Year)",
+    "Visa Cost": 1000,
+    "Expert Notes": "Mauritius Premium Visa: $1,000/yr. 0% tax on foreign income. Requires proof of remote employment.",
+    "Specific Affiliate": "",
+    "Official Visa Portal": "https://www.edbmauritius.org/premium-visa"
+  },
+  {
+    "City Slug": "ubud",
+    "Tax Override": 0,
+    "Tax Regime Name": "B211A Remote Worker Visa",
+    "Visa Cost": 300,
+    "Expert Notes": "0% tax on foreign income. Same B211A as Bali/Canggu. Cultural hub with rice terraces and yoga retreats.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://molina.imigrasi.go.id/"
+  },
+  {
+    "City Slug": "canggu",
+    "Tax Override": 0,
+    "Tax Regime Name": "B211A Remote Worker Visa",
+    "Visa Cost": 300,
+    "Expert Notes": "0% tax on foreign income. Same B211A as Bali. Surf/coworking capital of Southeast Asia.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://molina.imigrasi.go.id/"
+  },
+  {
+    "City Slug": "sayulita",
+    "Tax Override": 0,
+    "Tax Regime Name": "Residente Temporal",
+    "Visa Cost": 350,
+    "Expert Notes": "Mexico: 0% on foreign income. Same visa as CDMX/Tulum. Nayarit surf town with growing nomad scene.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
+  },
+  {
+    "City Slug": "hoi-an",
+    "Tax Override": 0,
+    "Tax Regime Name": "E-Visa (90 days)",
+    "Visa Cost": 50,
+    "Expert Notes": "0% tax on foreign income. Same E-Visa as HCMC/Da Nang. UNESCO heritage town, very affordable.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
+  },
+  {
+    "City Slug": "siargao",
+    "Tax Override": 0,
+    "Tax Regime Name": "Tourist Visa Extension",
+    "Visa Cost": 60,
+    "Expert Notes": "0% tax on foreign income as non-resident. Tourist visa extendable. Philippines' top surf island.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://www.visa.gov.ph/"
+  },
+  {
+    "City Slug": "hanoi",
+    "Tax Override": 0,
+    "Tax Regime Name": "E-Visa (90 days)",
+    "Visa Cost": 50,
+    "Expert Notes": "0% tax on foreign income. Same E-Visa as HCMC. Northern Vietnam hub with lower costs than HCMC.",
+    "Specific Affiliate": "https://www.agoda.com/",
+    "Official Visa Portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
+  },
+  {
+    "City Slug": "luang-prabang",
+    "Tax Override": 0,
+    "Tax Regime Name": "E-Visa / Tourist",
+    "Visa Cost": 50,
+    "Expert Notes": "Laos: 0% on foreign income for tourists. E-Visa or visa on arrival ~$30-50. UNESCO World Heritage town.",
+    "Specific Affiliate": "https://www.agoda.com/"
   }
 ]

@@ -36,17 +36,18 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.266Z",
     "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6",
     "tax_regime": "ITS Regime (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Lisbon is a top pick for Europe nomads.",
+    "visa_cost": 170,
+    "expertNotes": "20% flat tax under ITS regime. D8 requires €3,510/mo income proof. 4-month processing average.",
     "affiliate_url": "https://lexidy.com/portugal",
     "expertTaxNotes": "Residency verification for Lisbon requires professional audit.",
     "complianceScore": 90,
-    "lastEnriched": "2026-05-03T04:56:42.627Z"
+    "lastEnriched": "2026-05-03T04:56:42.627Z",
+    "official_visa_portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "name": "Porto",
@@ -85,16 +86,17 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.266Z",
     "external_image_url": "https://images.unsplash.com/photo-1555881400-74d7acaacd8b",
     "tax_regime": "ITS Regime (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Porto is a top pick for Europe nomads.",
+    "visa_cost": 170,
+    "expertNotes": "20% flat tax under ITS regime on qualifying income. D8 Visa requires €3,510/mo minimum income.",
     "expertTaxNotes": "Residency verification for Porto requires professional audit.",
     "complianceScore": 85,
-    "lastEnriched": "2026-05-03T04:56:43.134Z"
+    "lastEnriched": "2026-05-03T04:56:43.134Z",
+    "official_visa_portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "name": "Valencia",
@@ -133,16 +135,17 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.266Z",
     "external_image_url": "https://images.unsplash.com/photo-1534313314376-a72289b6181e",
     "tax_regime": "Beckham Law (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Valencia is a top pick for Europe nomads.",
+    "visa_cost": 320,
+    "expertNotes": "24% flat tax under Beckham Law. Spain's DNV requires €3,100/mo income proof.",
     "expertTaxNotes": "Residency verification for Valencia requires professional audit.",
     "complianceScore": 96,
-    "lastEnriched": "2026-05-03T04:56:43.641Z"
+    "lastEnriched": "2026-05-03T04:56:43.641Z",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "Barcelona",
@@ -181,16 +184,17 @@
       "chickenBreast1kg": 8.62,
       "coworkingDay": 24
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.266Z",
     "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded",
     "tax_regime": "Beckham Law (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Barcelona is a top pick for Europe nomads.",
+    "visa_cost": 320,
+    "expertNotes": "24% flat under Beckham Law for up to 6 years. Catalunya has active digital nomad community.",
     "expertTaxNotes": "Residency verification for Barcelona requires professional audit.",
     "complianceScore": 86,
-    "lastEnriched": "2026-05-03T04:56:44.148Z"
+    "lastEnriched": "2026-05-03T04:56:44.148Z",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "Madrid",
@@ -229,16 +233,17 @@
       "chickenBreast1kg": 8.62,
       "coworkingDay": 24
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.266Z",
     "tax_regime": "Beckham Law (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Madrid is a top pick for Europe nomads.",
+    "visa_cost": 320,
+    "expertNotes": "24% flat tax under Beckham Law. Allows remote work for non-Spanish employers.",
     "external_image_url": "https://images.unsplash.com/photo-1539037116277-4db20889f2d4",
     "expertTaxNotes": "Residency verification for Madrid requires professional audit.",
     "complianceScore": 99,
-    "lastEnriched": "2026-05-03T04:56:44.650Z"
+    "lastEnriched": "2026-05-03T04:56:44.650Z",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "London",
@@ -272,21 +277,22 @@
     "prices_local": {
       "cappuccino": 4.1,
       "mealCheap": 15,
-      "beerLocal": 5.97,
+      "beerLocal": 5.96,
       "milk1L": 2.09,
       "chickenBreast1kg": 10,
       "coworkingDay": 30
     },
-    "exchangeRate": 0.7462,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.7453,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad",
     "tax_regime": "Global Talent Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: London is a top pick for Europe nomads.",
+    "visa_cost": 790,
+    "expertNotes": "20% basic rate (£12,571–£50,270). Global Talent requires endorsement from approved body.",
     "expertTaxNotes": "Residency verification for London requires professional audit.",
     "complianceScore": 89,
-    "lastEnriched": "2026-05-03T04:56:45.153Z"
+    "lastEnriched": "2026-05-03T04:56:45.153Z",
+    "official_visa_portal": "https://www.gov.uk/browse/visas-immigration/work-visas"
   },
   {
     "name": "Berlin",
@@ -325,16 +331,17 @@
       "chickenBreast1kg": 8.62,
       "coworkingDay": 24
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1509233725247-49e657c54213",
     "tax_regime": "Freelance Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Berlin is a top pick for Europe nomads.",
+    "visa_cost": 110,
+    "expertNotes": "Progressive tax 14-45%. Freelance Visa requires proof of contracts and health insurance. ~€100 fee.",
     "expertTaxNotes": "Residency verification for Berlin requires professional audit.",
     "complianceScore": 92,
-    "lastEnriched": "2026-05-03T04:56:45.654Z"
+    "lastEnriched": "2026-05-03T04:56:45.654Z",
+    "official_visa_portal": "https://www.make-it-in-germany.com/en/visa-residence/types/freelance-self-employed"
   },
   {
     "name": "Amsterdam",
@@ -373,16 +380,17 @@
       "chickenBreast1kg": 12,
       "coworkingDay": 34
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.067Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "DAFT / Orientation Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Amsterdam is a top pick for Europe nomads.",
+    "visa_cost": 1590,
+    "expertNotes": "30% ruling exempts 30% of salary from tax. DAFT treaty for US/Japan entrepreneurs. IND fee: €1,446.",
     "external_image_url": "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4",
     "expertTaxNotes": "Residency verification for Amsterdam requires professional audit.",
     "complianceScore": 93,
-    "lastEnriched": "2026-05-03T04:56:46.162Z"
+    "lastEnriched": "2026-05-03T04:56:46.162Z",
+    "official_visa_portal": "https://ind.nl/en/residence-permits/work/working-as-a-self-employed-person"
   },
   {
     "name": "Athens",
@@ -421,16 +429,17 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa (7% Flat Tax)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Athens is a top pick for Europe nomads.",
+    "visa_cost": 75,
+    "expertNotes": "7% flat tax for qualifying remote workers under Greece's non-dom regime. 2-year permit.",
     "external_image_url": "https://images.unsplash.com/photo-1503152394-c571994fd383",
     "expertTaxNotes": "Residency verification for Athens requires professional audit.",
     "complianceScore": 97,
-    "lastEnriched": "2026-05-03T04:56:46.668Z"
+    "lastEnriched": "2026-05-03T04:56:46.668Z",
+    "official_visa_portal": "https://www.mfa.gr/en/visas/visas-for-foreigners-traveling-to-greece/"
   },
   {
     "name": "Split",
@@ -469,16 +478,17 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Split is a top pick for Europe nomads.",
+    "visa_cost": 80,
+    "expertNotes": "0% Croatian tax under Digital Nomad Visa. Requires €2,539/mo income. 1-year permit, renewable.",
     "external_image_url": "https://images.unsplash.com/photo-1555990538-9676432f4745",
     "expertTaxNotes": "Residency verification for Split requires professional audit.",
     "complianceScore": 99,
-    "lastEnriched": "2026-05-03T04:56:47.170Z"
+    "lastEnriched": "2026-05-03T04:56:47.170Z",
+    "official_visa_portal": "https://digitalnomadscroatia.mup.hr/"
   },
   {
     "name": "Budapest",
@@ -510,20 +520,21 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 1000,
+      "cappuccino": 990,
       "mealCheap": 2500,
       "beerLocal": 930,
       "milk1L": 560,
       "chickenBreast1kg": 2300,
       "coworkingDay": 5600
     },
-    "exchangeRate": 311.47,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 309.69,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "White Card (Digital Nomad Permit)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Budapest is a top pick for Europe nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1551867633-194f125bddfa"
+    "visa_cost": 120,
+    "expertNotes": "15% flat income tax + 13% social contribution. White Card is 1-year, renewable once.",
+    "external_image_url": "https://images.unsplash.com/photo-1551867633-194f125bddfa",
+    "official_visa_portal": "https://enterhungary.gov.hu/"
   },
   {
     "name": "Prague",
@@ -562,13 +573,14 @@
       "chickenBreast1kg": 160,
       "coworkingDay": 380
     },
-    "exchangeRate": 20.967,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 20.948,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Živnostenský List (Trade License)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Prague is a top pick for Europe nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1541849546-216549ae216d"
+    "visa_cost": 45,
+    "expertNotes": "Trade license enables 15% flat tax on 60% of revenue (effective ~6-9%). CZK 1,000 fee.",
+    "external_image_url": "https://images.unsplash.com/photo-1541849546-216549ae216d",
+    "official_visa_portal": "https://www.mzv.cz/jnp/en/information_for_aliens/index.html"
   },
   {
     "name": "Tallinn",
@@ -607,13 +619,14 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa / e-Residency",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Tallinn is a top pick for Europe nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1589412211516-79178f5a6b0c"
+    "visa_cost": 130,
+    "expertNotes": "20% flat income tax. e-Residency costs €100-120. DNV allows 1 year stay.",
+    "external_image_url": "https://images.unsplash.com/photo-1589412211516-79178f5a6b0c",
+    "official_visa_portal": "https://www.e-resident.gov.ee/nomadvisa/"
   },
   {
     "name": "Vilnius",
@@ -652,14 +665,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Vilnius is a top pick for Europe nomads.",
+    "visa_cost": 130,
+    "expertNotes": "20% flat income tax. Lithuania DNV: 1-year permit for remote workers earning from abroad. €120 fee.",
     "affiliate_url": "Active",
-    "external_image_url": "https://images.unsplash.com/photo-1595155731317-0638541998f4"
+    "external_image_url": "https://images.unsplash.com/photo-1595155731317-0638541998f4",
+    "official_visa_portal": "https://www.migracija.lt/en/noriu-gauti-viza"
   },
   {
     "name": "Bucharest",
@@ -694,18 +708,19 @@
       "cappuccino": 14,
       "mealCheap": 36,
       "beerLocal": 14,
-      "milk1L": 8.12,
+      "milk1L": 8.15,
       "chickenBreast1kg": 34,
       "coworkingDay": 81
     },
-    "exchangeRate": 4.5115,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 4.527,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Bucharest is a top pick for Europe nomads.",
+    "visa_cost": 55,
+    "expertNotes": "Micro-enterprise tax: 1% (with employees) or 3% (without) on revenue. Standard income tax: 10% flat.",
     "affiliate_url": "Active",
-    "external_image_url": "https://images.unsplash.com/photo-1560170412-16e788c0353c"
+    "external_image_url": "https://images.unsplash.com/photo-1560170412-16e788c0353c",
+    "official_visa_portal": "https://evisa.mae.ro/"
   },
   {
     "name": "Tenerife",
@@ -744,14 +759,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Tenerife is a top pick for Europe nomads.",
+    "visa_cost": 320,
+    "expertNotes": "24% flat under Beckham Law. Canary Islands have reduced IGIC (7%) instead of mainland IVA (21%).",
     "affiliate_url": "Closed",
-    "external_image_url": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd"
+    "external_image_url": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "Funchal",
@@ -790,14 +806,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "ITS Regime (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Funchal is a top pick for Europe nomads.",
+    "visa_cost": 170,
+    "expertNotes": "20% flat tax under ITS/NHR successor regime. Madeira has same rules as mainland Portugal.",
     "affiliate_url": "Active",
-    "external_image_url": "https://images.unsplash.com/photo-1590425333452-95988e07978b"
+    "external_image_url": "https://images.unsplash.com/photo-1590425333452-95988e07978b",
+    "official_visa_portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "name": "Tbilisi",
@@ -837,12 +854,13 @@
       "coworkingDay": 32
     },
     "exchangeRate": 2.68,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Small Business Status",
-    "expertNotes": "AI Analysis: Tbilisi is a top pick for Europe nomads.",
+    "expertNotes": "1% tax on revenue under Small Business Status (up to GEL 500k/yr). Visa-free 1 year for most nationalities.",
     "visa_cost": 2500,
-    "external_image_url": "https://images.unsplash.com/photo-1543783321-42018861c890"
+    "external_image_url": "https://images.unsplash.com/photo-1543783321-42018861c890",
+    "official_visa_portal": "https://www.geoconsul.gov.ge/en"
   },
   {
     "name": "Istanbul",
@@ -875,19 +893,20 @@
     },
     "prices_local": {
       "cappuccino": 150,
-      "mealCheap": 360,
+      "mealCheap": 370,
       "beerLocal": 140,
       "milk1L": 82,
       "chickenBreast1kg": 340,
       "coworkingDay": 820
     },
-    "exchangeRate": 45.586,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 45.715,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Tourist Visa (90/180 days)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Istanbul is a top pick for Europe nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200"
+    "visa_cost": 60,
+    "expertNotes": "0% tax for non-resident remote workers. E-visa: $50-60. Max 90 days in 180-day period.",
+    "external_image_url": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200",
+    "official_visa_portal": "https://www.evisa.gov.tr/en/"
   },
   {
     "name": "Dubai",
@@ -927,12 +946,13 @@
       "coworkingDay": 150
     },
     "exchangeRate": 3.67,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
     "tax_regime": "Virtual Working Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Dubai is a top pick for Asia nomads."
+    "visa_cost": 611,
+    "expertNotes": "0% personal income tax. Virtual Working Visa costs AED 2,241 (~$611). Requires $3,500/mo income.",
+    "official_visa_portal": "https://www.visitdubai.com/en/invest-in-dubai/live-and-work/visas-and-entry/virtual-working-programme"
   },
   {
     "name": "Bangkok",
@@ -968,16 +988,17 @@
       "mealCheap": 260,
       "beerLocal": 98,
       "milk1L": 59,
-      "chickenBreast1kg": 250,
+      "chickenBreast1kg": 240,
       "coworkingDay": 590
     },
-    "exchangeRate": 32.675,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 32.665,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1508004528368-1e4471569a9e",
     "tax_regime": "LTR Visa (Long-Term Resident)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Bangkok is a top pick for Asia nomads."
+    "visa_cost": 280,
+    "expertNotes": "0% tax on foreign income under LTR Visa. Requires $80k/yr income or $250k in assets. 10-year visa.",
+    "official_visa_portal": "https://thaievisa.go.th/"
   },
   {
     "name": "Chiang Mai",
@@ -1016,13 +1037,14 @@
       "chickenBreast1kg": 150,
       "coworkingDay": 260
     },
-    "exchangeRate": 32.675,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 32.665,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1527333656061-ca7adf608ae1",
     "tax_regime": "LTR Visa (Long-Term Resident)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Chiang Mai is a top pick for Asia nomads."
+    "visa_cost": 280,
+    "expertNotes": "0% tax on foreign income under LTR. DTV (Destination Thailand Visa) is cheaper alternative at THB 10,000.",
+    "official_visa_portal": "https://thaievisa.go.th/"
   },
   {
     "name": "Bali",
@@ -1058,16 +1080,17 @@
       "mealCheap": 141600,
       "beerLocal": 53100,
       "milk1L": 31900,
-      "chickenBreast1kg": 132800,
-      "coworkingDay": 318600
+      "chickenBreast1kg": 132700,
+      "coworkingDay": 318500
     },
-    "exchangeRate": 17701,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17695,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1537996194471-e657df975ab4",
     "tax_regime": "B211A Remote Worker Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Bali is a top pick for Asia nomads."
+    "visa_cost": 300,
+    "expertNotes": "0% tax on foreign income under B211A. Requires sponsor agent. 6-month single entry, extendable.",
+    "official_visa_portal": "https://molina.imigrasi.go.id/"
   },
   {
     "name": "Tokyo",
@@ -1099,20 +1122,21 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 870,
+      "cappuccino": 880,
       "mealCheap": 3200,
       "beerLocal": 1300,
       "milk1L": 450,
       "chickenBreast1kg": 2200,
       "coworkingDay": 6400
     },
-    "exchangeRate": 159.03,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 159.15,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26",
     "tax_regime": "Digital Nomad Visa (6 months)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Tokyo is a top pick for Asia nomads."
+    "visa_cost": 20,
+    "expertNotes": "Non-residents pay 20.42% on Japan-sourced income only. DNV launched March 2024, 6-month max.",
+    "official_visa_portal": "https://www.mofa.go.jp/j_info/visit/visa/long/visa16.html"
   },
   {
     "name": "Seoul",
@@ -1144,20 +1168,21 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 6300,
-      "mealCheap": 21100,
+      "cappuccino": 6400,
+      "mealCheap": 21200,
       "beerLocal": 8300,
       "milk1L": 3300,
-      "chickenBreast1kg": 15100,
-      "coworkingDay": 42200
+      "chickenBreast1kg": 15200,
+      "coworkingDay": 42500
     },
-    "exchangeRate": 1505.44,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 1517.55,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Workcation Visa (K-ETA)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Seoul is a top pick for Asia nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc"
+    "visa_cost": 90,
+    "expertNotes": "0% tax for short-stay remote workers. Digital Nomad Visa (F-1-D) launched 2024, requires $65k/yr income.",
+    "external_image_url": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc",
+    "official_visa_portal": "https://www.visa.go.kr/"
   },
   {
     "name": "Singapore",
@@ -1192,17 +1217,18 @@
       "cappuccino": 7.04,
       "mealCheap": 26,
       "beerLocal": 10,
-      "milk1L": 3.58,
+      "milk1L": 3.59,
       "chickenBreast1kg": 18,
       "coworkingDay": 51
     },
-    "exchangeRate": 1.2803,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 1.2804,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1525625293386-3f8f99389edd",
     "tax_regime": "Standard Tiered",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Singapore is a top pick for Asia nomads."
+    "visa_cost": 200,
+    "expertNotes": "Progressive 0-22% tax. No capital gains tax. EntrePass for entrepreneurs: SGD 200. High cost of living.",
+    "official_visa_portal": "https://www.ica.gov.sg/enter-transit-depart/entering-singapore/visa_requirements"
   },
   {
     "name": "Ho Chi Minh City",
@@ -1242,12 +1268,13 @@
       "coworkingDay": 316200
     },
     "exchangeRate": 26351,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "E-Visa (90 days)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Ho Chi Minh City is a top pick for Asia nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a"
+    "visa_cost": 50,
+    "expertNotes": "0% tax on foreign-sourced income as non-resident. E-Visa is single-entry, 90 days max.",
+    "external_image_url": "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a",
+    "official_visa_portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
   },
   {
     "name": "Kuala Lumpur",
@@ -1279,20 +1306,21 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 9.53,
+      "cappuccino": 9.52,
       "mealCheap": 20,
-      "beerLocal": 7.15,
+      "beerLocal": 7.14,
       "milk1L": 5.56,
       "chickenBreast1kg": 22,
       "coworkingDay": 48
     },
-    "exchangeRate": 3.97,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 3.968,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "DE Rantau (Digital Nomad Pass)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Kuala Lumpur is a top pick for Asia nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1523073114639-6c3941ecd29f"
+    "visa_cost": 218,
+    "expertNotes": "0% tax on foreign income. DE Rantau requires $24k/yr income. 12-month renewable.",
+    "external_image_url": "https://images.unsplash.com/photo-1523073114639-6c3941ecd29f",
+    "official_visa_portal": "https://mdec.my/derantau/foreign"
   },
   {
     "name": "Manila",
@@ -1331,13 +1359,14 @@
       "chickenBreast1kg": 340,
       "coworkingDay": 740
     },
-    "exchangeRate": 61.697,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 61.621,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "SIRV / Tourist Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Manila is a top pick for Asia nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86"
+    "visa_cost": 60,
+    "expertNotes": "0% tax on foreign income as non-resident. Tourist visa extendable up to 36 months (~$30-50/extension).",
+    "external_image_url": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86",
+    "official_visa_portal": "https://www.visa.gov.ph/"
   },
   {
     "name": "Da Nang",
@@ -1377,12 +1406,13 @@
       "coworkingDay": 316200
     },
     "exchangeRate": 26351,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "E-Visa (90 days)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Da Nang is a top pick for Asia nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1559592442-7e182c9c241d"
+    "visa_cost": 50,
+    "expertNotes": "0% tax on foreign income as non-resident. Vietnam E-Visa: $50 online, single entry, 90 days.",
+    "external_image_url": "https://images.unsplash.com/photo-1559592442-7e182c9c241d",
+    "official_visa_portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
   },
   {
     "name": "Yerevan",
@@ -1422,12 +1452,13 @@
       "coworkingDay": 3000
     },
     "exchangeRate": 371,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Visa-free (180 days)",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Yerevan is a top pick for Asia nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047"
+    "expertNotes": "Non-residents: 0% on foreign income. IT sector: 0% corporate tax for qualified startups. Visa-free 180 days.",
+    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047",
+    "official_visa_portal": "https://evisa.mfa.am/"
   },
   {
     "name": "New York",
@@ -1468,12 +1499,13 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "N/A (Domestic)",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: New York is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9"
+    "expertNotes": "Federal 22-24% + NY state 4-8.82% + NYC 3.078-3.876%. Total effective rate varies by bracket.",
+    "external_image_url": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9",
+    "official_visa_portal": "https://travel.state.gov/content/travel/en/us-visas/employment.html"
   },
   {
     "name": "Montreal",
@@ -1505,20 +1537,21 @@
       "groceryIndex": 0.8
     },
     "prices_local": {
-      "cappuccino": 5.78,
+      "cappuccino": 5.8,
       "mealCheap": 19,
-      "beerLocal": 7.57,
-      "milk1L": 3.03,
+      "beerLocal": 7.59,
+      "milk1L": 3.04,
       "chickenBreast1kg": 14,
       "coworkingDay": 39
     },
-    "exchangeRate": 1.3758,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 1.3801,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Working Holiday / Startup Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Montreal is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1519177746073-c469f4f782ee"
+    "visa_cost": 190,
+    "expertNotes": "Combined federal + provincial tax ~20-33% depending on income. IEC Working Holiday: CAD 256.",
+    "external_image_url": "https://images.unsplash.com/photo-1519177746073-c469f4f782ee",
+    "official_visa_portal": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html"
   },
   {
     "name": "Toronto",
@@ -1550,20 +1583,21 @@
       "groceryIndex": 1
     },
     "prices_local": {
-      "cappuccino": 7.57,
+      "cappuccino": 7.59,
       "mealCheap": 28,
       "beerLocal": 11,
-      "milk1L": 3.85,
+      "milk1L": 3.86,
       "chickenBreast1kg": 19,
       "coworkingDay": 55
     },
-    "exchangeRate": 1.3758,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 1.3801,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Working Holiday / Startup Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Toronto is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1517090504586-fde19ea6066f"
+    "visa_cost": 190,
+    "expertNotes": "Combined federal + Ontario tax ~20-33%. IEC Working Holiday for 18-35 year olds from eligible countries.",
+    "external_image_url": "https://images.unsplash.com/photo-1517090504586-fde19ea6066f",
+    "official_visa_portal": "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html"
   },
   {
     "name": "Mexico City",
@@ -1595,20 +1629,21 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 56,
+      "cappuccino": 55,
       "mealCheap": 140,
       "beerLocal": 52,
       "milk1L": 31,
       "chickenBreast1kg": 130,
       "coworkingDay": 310
     },
-    "exchangeRate": 17.3681,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17.3385,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03",
     "tax_regime": "Residente Temporal",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Mexico City is a top pick for Americas nomads."
+    "visa_cost": 350,
+    "expertNotes": "Mexico taxes only Mexican-source income. 180-day tourist visa is free; Residente Temporal for longer stays.",
+    "official_visa_portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
   },
   {
     "name": "Tulum",
@@ -1642,18 +1677,19 @@
     "prices_local": {
       "cappuccino": 73,
       "mealCheap": 240,
-      "beerLocal": 96,
+      "beerLocal": 95,
       "milk1L": 38,
       "chickenBreast1kg": 170,
       "coworkingDay": 490
     },
-    "exchangeRate": 17.3681,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17.3385,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Residente Temporal",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Tulum is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1504730655501-24c39ac53f0e"
+    "visa_cost": 350,
+    "expertNotes": "Mexico taxes only Mexican-source income. Residente Temporal requires ~$2,500/mo income. Up to 4 years.",
+    "external_image_url": "https://images.unsplash.com/photo-1504730655501-24c39ac53f0e",
+    "official_visa_portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
   },
   {
     "name": "Medellín",
@@ -1693,12 +1729,13 @@
       "coworkingDay": 43900
     },
     "exchangeRate": 3655,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "external_image_url": "https://images.unsplash.com/photo-1594165230047-9257d07936a7",
     "tax_regime": "Foreign Income Exemption",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Medellín is a top pick for Americas nomads."
+    "visa_cost": 55,
+    "expertNotes": "Colombia taxes only local-source income for non-residents (183-day rule). V-Nomada Visa: ~$55.",
+    "official_visa_portal": "https://www.cancilleria.gov.co/v/nomada"
   },
   {
     "name": "Buenos Aires",
@@ -1738,12 +1775,13 @@
       "coworkingDay": 16700
     },
     "exchangeRate": 1393,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Monotributo/Export",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Buenos Aires is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1589909202802-8f4aadce1849"
+    "expertNotes": "Tourist visa holders pay 0% Argentine tax on foreign income. Monotributo for local billing is very low.",
+    "external_image_url": "https://images.unsplash.com/photo-1589909202802-8f4aadce1849",
+    "official_visa_portal": "https://www.migraciones.gov.ar/accesible/indexdnm.php?visas"
   },
   {
     "name": "Rio de Janeiro",
@@ -1778,17 +1816,18 @@
       "cappuccino": 16,
       "mealCheap": 40,
       "beerLocal": 15,
-      "milk1L": 9.05,
+      "milk1L": 9.03,
       "chickenBreast1kg": 38,
-      "coworkingDay": 91
+      "coworkingDay": 90
     },
-    "exchangeRate": 5.0299,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 5.0164,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Rio de Janeiro is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325"
+    "visa_cost": 100,
+    "expertNotes": "0% tax on foreign-sourced income under Digital Nomad Visa. Requires $1,500/mo income. 1-year permit.",
+    "external_image_url": "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
+    "official_visa_portal": "https://www.gov.br/mre/pt-br/assuntos/portal-consular/vistos/informacoes-sobre-vistos-para-estrangeiros-viajarem-ao-brasil"
   },
   {
     "name": "San José",
@@ -1828,12 +1867,13 @@
       "coworkingDay": 8200
     },
     "exchangeRate": 455,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa (Rentista)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: San José is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1580662346934-297f6424e29b"
+    "visa_cost": 250,
+    "expertNotes": "Costa Rica taxes only local-source income. DNV requires $3,000/mo income proof. 1-year renewable.",
+    "external_image_url": "https://images.unsplash.com/photo-1580662346934-297f6424e29b",
+    "official_visa_portal": "https://tramiteya.go.cr/dgme/"
   },
   {
     "name": "Panama City",
@@ -1874,12 +1914,13 @@
       "groceryIndex": 0.8
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Panama City is a top pick for Americas nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1513264177218-100803450c22"
+    "visa_cost": 300,
+    "expertNotes": "Panama taxes only local-source income. DNV is 9 months, renewable up to 18. Requires $3,000/mo income.",
+    "external_image_url": "https://images.unsplash.com/photo-1513264177218-100803450c22",
+    "official_visa_portal": "https://www.migracion.gob.pa/inicio/visas-de-turistas"
   },
   {
     "name": "Cape Town",
@@ -1913,18 +1954,19 @@
     "prices_local": {
       "cappuccino": 53,
       "mealCheap": 130,
-      "beerLocal": 50,
+      "beerLocal": 49,
       "milk1L": 30,
       "chickenBreast1kg": 120,
       "coworkingDay": 300
     },
-    "exchangeRate": 16.5935,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 16.4765,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Foreign Income Exemption",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Cape Town is a top pick for Africa nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4"
+    "expertNotes": "Foreign income exemption for non-residents. Visa-free entry for many nationalities (90 days).",
+    "external_image_url": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4",
+    "official_visa_portal": "https://www.dha.gov.za/index.php/immigration-services/exempt-countries"
   },
   {
     "name": "Nairobi",
@@ -1964,12 +2006,13 @@
       "coworkingDay": 1500
     },
     "exchangeRate": 129,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Work Permit",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Nairobi is a top pick for Africa nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5"
+    "visa_cost": 250,
+    "expertNotes": "Kenya does not tax foreign-sourced income for non-residents. Digital Nomad Permit is relatively new.",
+    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+    "official_visa_portal": "https://evisa.go.ke/evisa.html"
   },
   {
     "name": "Bansko",
@@ -2009,12 +2052,13 @@
       "coworkingDay": 13
     },
     "exchangeRate": 1.67,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Standard Tax Regime",
-    "visa_cost": 2500,
-    "expertNotes": "The digital nomad capital of the Balkans. 10% flat tax and incredibly low living costs make it a 2026 favorite.",
-    "external_image_url": "https://images.unsplash.com/photo-1544256718-3bcf237f3974"
+    "visa_cost": 110,
+    "expertNotes": "Bulgaria's 10% flat tax is among the EU's lowest. Popular coworking hub for European nomads.",
+    "external_image_url": "https://images.unsplash.com/photo-1544256718-3bcf237f3974",
+    "official_visa_portal": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria"
   },
   {
     "name": "Sofia",
@@ -2027,7 +2071,7 @@
     "rent": 600,
     "tax": 0.1,
     "score": 83,
-    "visa": "Digital Nomad Visa (10% Flat Tax)",
+    "visa": "Digital Nomad Visa (10% Flat)",
     "visaMinIncome": 0,
     "currency": "BGN",
     "highlights": [
@@ -2054,12 +2098,14 @@
       "coworkingDay": 20
     },
     "exchangeRate": 1.67,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
-    "tax_regime": "Digital Nomad Visa (10% Flat Tax)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Sofia is a high-value EU hub with a 10% flat tax.",
-    "external_image_url": "https://images.unsplash.com/photo-1555992336-fb0d23498913"
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
+    "tax_regime": "Digital Nomad Visa (10% Flat)",
+    "visa_cost": 110,
+    "expertNotes": "10% flat income tax — among lowest in EU. Bulgaria DNV for non-EU nationals. Growing tech scene.",
+    "external_image_url": "https://images.unsplash.com/photo-1555992336-fb0d23498913",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.mfa.bg/en/services-travel/consular-services/travel-bulgaria/visa-bulgaria"
   },
   {
     "name": "Belgrade",
@@ -2070,7 +2116,7 @@
     "continent": "Europe",
     "col": 1500,
     "rent": 700,
-    "tax": 0.1,
+    "tax": 0,
     "score": 81,
     "visa": "Freelancer Tax Regime",
     "visaMinIncome": 0,
@@ -2099,12 +2145,14 @@
       "coworkingDay": 1300
     },
     "exchangeRate": 107.5,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Freelancer Tax Regime",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Belgrade offers a straightforward 10% base tax for remote workers.",
-    "external_image_url": "https://images.unsplash.com/photo-1568478426038-038c64188b4d"
+    "expertNotes": "Non-residents: 0% on foreign income. Visa-free 90 days for most nationalities. Very low cost of living.",
+    "external_image_url": "https://images.unsplash.com/photo-1568478426038-038c64188b4d",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.mfa.gov.rs/en/citizens/travel-serbia/visa-requirements"
   },
   {
     "name": "Tirana",
@@ -2144,12 +2192,14 @@
       "coworkingDay": 650
     },
     "exchangeRate": 81.2,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Unique Permit (Digital Nomad)",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Albania is an emerging hub with a 0% tax base for short-term stays.",
-    "external_image_url": "https://images.unsplash.com/photo-1582260683050-84c81005167a"
+    "expertNotes": "Albania: 0% on foreign income for nomads. Visa-free 1 year for most nationalities. Ultra-low costs.",
+    "external_image_url": "https://images.unsplash.com/photo-1582260683050-84c81005167a",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://e-visa.al/"
   },
   {
     "name": "Montevideo",
@@ -2189,12 +2239,14 @@
       "coworkingDay": 730
     },
     "exchangeRate": 40.3,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Foreign Income Exemption",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Uruguay offers excellent tax exemptions for foreign remote income.",
-    "external_image_url": "https://images.unsplash.com/photo-1568393691622-c7ba169d63fe"
+    "visa_cost": 500,
+    "expertNotes": "Uruguay exempts foreign-source income for first 11 fiscal years. Digital Nomad Visa: ~$500.",
+    "external_image_url": "https://images.unsplash.com/photo-1568393691622-c7ba169d63fe",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://www.gub.uy/ministerio-interior/comunicacion/publicaciones/nomadas-digitales"
   },
   {
     "name": "Antigua",
@@ -2234,12 +2286,14 @@
       "coworkingDay": 92
     },
     "exchangeRate": 7.64,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Remote Work Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Antigua is a stunning colonial town in Guatemala.",
-    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047"
+    "visa_cost": 50,
+    "expertNotes": "Guatemala: 0% on foreign income for non-residents. Tourist visa ~$50. Very affordable living.",
+    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://igm.gob.gt/"
   },
   {
     "name": "Bratislava",
@@ -2278,13 +2332,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Freelance/Business Permit",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Slovakia offers a stable EU base but lacks a dedicated 0% nomad visa.",
-    "external_image_url": "https://images.unsplash.com/photo-1580910051074-3eb694886505"
+    "visa_cost": 240,
+    "expertNotes": "19% flat tax (25% above €38,553). Slovakia Trade License for freelancers. EU Schengen access.",
+    "external_image_url": "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.mic.iom.sk/en/residence/temporary-residence.html"
   },
   {
     "name": "Cusco",
@@ -2324,12 +2380,14 @@
       "coworkingDay": 28
     },
     "exchangeRate": 3.51,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Peru's new DN visa makes Cusco an attractive high-altitude base.",
-    "external_image_url": "https://images.unsplash.com/photo-1587595304958-86d49495856b"
+    "expertNotes": "Peru: 0% on foreign income for non-domiciled individuals. Tourist visa free for most nationalities.",
+    "external_image_url": "https://images.unsplash.com/photo-1587595304958-86d49495856b",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://www.consulado.pe/es/Paginas/Inicio.aspx"
   },
   {
     "name": "Playa del Carmen",
@@ -2361,20 +2419,22 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 56,
+      "cappuccino": 55,
       "mealCheap": 140,
       "beerLocal": 52,
       "milk1L": 31,
       "chickenBreast1kg": 130,
       "coworkingDay": 310
     },
-    "exchangeRate": 17.3681,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17.3385,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Residente Temporal",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Playa del Carmen is the quintessential beach nomad hub.",
-    "external_image_url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542"
+    "visa_cost": 350,
+    "expertNotes": "Mexico: 0% on foreign income (territorial taxation). Same visa regime as Mexico City/Tulum.",
+    "external_image_url": "https://images.unsplash.com/photo-1512813195386-6cf811ad3542",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
   },
   {
     "name": "Florianópolis",
@@ -2408,18 +2468,20 @@
     "prices_local": {
       "cappuccino": 12,
       "mealCheap": 25,
-      "beerLocal": 9.05,
-      "milk1L": 7.04,
+      "beerLocal": 9.03,
+      "milk1L": 7.02,
       "chickenBreast1kg": 28,
       "coworkingDay": 60
     },
-    "exchangeRate": 5.0299,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 5.0164,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa (VITEM XIV)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Brazil's tech island offers a great lifestyle with 0% tax for short-termers.",
-    "external_image_url": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd"
+    "visa_cost": 100,
+    "expertNotes": "0% tax on foreign income under Brazil's DNV. Island city with strong surf/startup culture.",
+    "external_image_url": "https://images.unsplash.com/photo-1534067783941-51c9c23ecefd",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://www.gov.br/mre/pt-br/assuntos/portal-consular/vistos/informacoes-sobre-vistos-para-estrangeiros-viajarem-ao-brasil"
   },
   {
     "name": "Batumi",
@@ -2432,7 +2494,7 @@
     "rent": 500,
     "tax": 0.01,
     "score": 82,
-    "visa": "Small Business Status",
+    "visa": "Small Business Status (1%)",
     "visaMinIncome": 2000,
     "currency": "GEL",
     "highlights": [
@@ -2459,12 +2521,14 @@
       "coworkingDay": 21
     },
     "exchangeRate": 2.68,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
-    "tax_regime": "Small Business Status",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
+    "tax_regime": "Small Business Status (1%)",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Batumi is a ultra-low tax haven for small business owners.",
-    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047"
+    "expertNotes": "Same 1% Small Business regime as Tbilisi. Visa-free 1 year. Black Sea resort town, very affordable.",
+    "external_image_url": "https://images.unsplash.com/photo-1548625361-949666f7f047",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.geoconsul.gov.ge/en"
   },
   {
     "name": "Koh Phangan",
@@ -2503,13 +2567,15 @@
       "chickenBreast1kg": 180,
       "coworkingDay": 390
     },
-    "exchangeRate": 32.675,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 32.665,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Destination Thailand Visa (DTV)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: The DTV has revolutionized Thailand for nomads, offering long-term stays.",
-    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
+    "visa_cost": 280,
+    "expertNotes": "0% tax on foreign income. DTV costs THB 10,000 (~$280). Popular island for remote workers.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://thaievisa.go.th/"
   },
   {
     "name": "George Town",
@@ -2541,20 +2607,22 @@
       "groceryIndex": 0.5
     },
     "prices_local": {
-      "cappuccino": 9.53,
+      "cappuccino": 9.52,
       "mealCheap": 20,
-      "beerLocal": 7.15,
+      "beerLocal": 7.14,
       "milk1L": 5.56,
       "chickenBreast1kg": 22,
       "coworkingDay": 48
     },
-    "exchangeRate": 3.97,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 3.968,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "DE Rantau (Digital Nomad Pass)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Penang is a food and culture capital for Asian nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
+    "visa_cost": 218,
+    "expertNotes": "0% tax on foreign income. Same DE Rantau as KL. Penang is cheaper with strong food culture.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://mdec.my/derantau/foreign"
   },
   {
     "name": "Lagos",
@@ -2567,7 +2635,7 @@
     "rent": 1100,
     "tax": 0.2,
     "score": 87,
-    "visa": "Business/Tourist E-Visa",
+    "visa": "NHR/ITS Regime (D8 Visa)",
     "visaMinIncome": 3280,
     "currency": "EUR",
     "highlights": [
@@ -2593,13 +2661,14 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
-    "tax_regime": "Business/Tourist E-Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Lagos is a major tech hub in Africa, though visa options are limited.",
-    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5"
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
+    "tax_regime": "NHR/ITS Regime (D8 Visa)",
+    "visa_cost": 170,
+    "expertNotes": "Same ITS/D8 regime as Lisbon. Algarve surf town popular with European nomads. Lower cost than Lisbon.",
+    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+    "official_visa_portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "name": "Las Palmas",
@@ -2638,13 +2707,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Beckham Law (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Las Palmas offers a year-round surf lifestyle in the Canary Islands.",
-    "external_image_url": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd"
+    "visa_cost": 320,
+    "expertNotes": "24% flat under Beckham Law. Canary Islands: reduced IGIC 7% vs mainland 21% VAT.",
+    "external_image_url": "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "Ericeira",
@@ -2657,7 +2728,7 @@
     "rent": 1100,
     "tax": 0.2,
     "score": 89,
-    "visa": "ITS Regime (Digital Nomad Visa)",
+    "visa": "NHR/ITS Regime (D8 Visa)",
     "visaMinIncome": 3280,
     "currency": "EUR",
     "highlights": [
@@ -2683,13 +2754,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
-    "tax_regime": "ITS Regime (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Ericeira is the premier surf nomad destination in Portugal.",
-    "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6"
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
+    "tax_regime": "NHR/ITS Regime (D8 Visa)",
+    "visa_cost": 170,
+    "expertNotes": "Same ITS/D8 regime as Lisbon. World Surfing Reserve. 45 mins from Lisbon.",
+    "external_image_url": "https://images.unsplash.com/photo-1589197331516-4d84593e64a6",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://vistos.mne.gov.pt/en/"
   },
   {
     "name": "Seville",
@@ -2728,13 +2801,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Beckham Law (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Seville is a cultural gem in Southern Spain.",
-    "external_image_url": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be"
+    "visa_cost": 320,
+    "expertNotes": "24% flat under Beckham Law. Andalusia has lower cost of living than Madrid/Barcelona.",
+    "external_image_url": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "Malaga",
@@ -2773,13 +2848,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Beckham Law (Digital Nomad Visa)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Malaga is a booming tech hub on the Costa del Sol.",
-    "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded"
+    "visa_cost": 320,
+    "expertNotes": "24% flat under Beckham Law. Malaga is Spain's emerging tech hub with Google HQ presence.",
+    "external_image_url": "https://images.unsplash.com/photo-1583422409516-2895a77efded",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.exteriores.gob.es/Consulados/washington/en/ServiciosConsulares/Paginas/Consular/Digital-Nomad-Visa.aspx"
   },
   {
     "name": "Warsaw",
@@ -2814,17 +2891,18 @@
       "cappuccino": 12,
       "mealCheap": 29,
       "beerLocal": 11,
-      "milk1L": 6.6,
-      "chickenBreast1kg": 28,
+      "milk1L": 6.59,
+      "chickenBreast1kg": 27,
       "coworkingDay": 66
     },
-    "exchangeRate": 3.6681,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 3.6585,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Poland Business Harbour",
-    "visa_cost": 2500,
-    "expertNotes": "The hidden gem of Eastern Europe. Low taxes for techies (12% lump sum) and a very high standard of living for the price.",
-    "external_image_url": "https://images.unsplash.com/photo-1519146759285-69bb41153c6d"
+    "visa_cost": 80,
+    "expertNotes": "12% flat tax on revenue under JDG sole trader. Business Harbour program for IT/tech workers.",
+    "external_image_url": "https://images.unsplash.com/photo-1519146759285-69bb41153c6d",
+    "official_visa_portal": "https://www.gov.pl/web/diplomacy/visas"
   },
   {
     "name": "Krakow",
@@ -2859,17 +2937,19 @@
       "cappuccino": 12,
       "mealCheap": 29,
       "beerLocal": 11,
-      "milk1L": 6.6,
-      "chickenBreast1kg": 28,
+      "milk1L": 6.59,
+      "chickenBreast1kg": 27,
       "coworkingDay": 66
     },
-    "exchangeRate": 3.6681,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 3.6585,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Poland Business Harbour",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Krakow is a beautiful historic city with a strong tech scene.",
-    "external_image_url": "https://images.unsplash.com/photo-1519659528534-7fd733a82ad1"
+    "visa_cost": 80,
+    "expertNotes": "12% flat on revenue under JDG. Same Business Harbour program as Warsaw. Lower cost of living.",
+    "external_image_url": "https://images.unsplash.com/photo-1519659528534-7fd733a82ad1",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://www.gov.pl/web/diplomacy/visas"
   },
   {
     "name": "Zagreb",
@@ -2908,13 +2988,15 @@
       "chickenBreast1kg": 6.47,
       "coworkingDay": 16
     },
-    "exchangeRate": 0.8621,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 0.8624,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Zagreb is the capital hub of Croatia with 0% tax for nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5"
+    "visa_cost": 80,
+    "expertNotes": "0% Croatian tax under DNV. Same program as Split. EU Schengen access. Continental climate.",
+    "external_image_url": "https://images.unsplash.com/photo-1543257580-7269da773bf5",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://digitalnomadscroatia.mup.hr/"
   },
   {
     "name": "Austin",
@@ -2925,7 +3007,7 @@
     "continent": "Americas",
     "col": 4000,
     "rent": 2200,
-    "tax": 0.2,
+    "tax": 0.22,
     "score": 80,
     "visa": "N/A (Domestic)",
     "visaMinIncome": 0,
@@ -2955,12 +3037,14 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "N/A (Domestic)",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Austin is the premier US nomad hub with no state income tax.",
-    "external_image_url": "https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35"
+    "expertNotes": "Federal 22-24% only — Texas has 0% state income tax. Major tech hub with growing nomad community.",
+    "external_image_url": "https://images.unsplash.com/photo-1531210483974-4f8c1f33fd35",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://travel.state.gov/content/travel/en/us-visas/employment.html"
   },
   {
     "name": "Miami",
@@ -2971,7 +3055,7 @@
     "continent": "Americas",
     "col": 4500,
     "rent": 2800,
-    "tax": 0.2,
+    "tax": 0.22,
     "score": 78,
     "visa": "N/A (Domestic)",
     "visaMinIncome": 0,
@@ -3001,12 +3085,14 @@
       "groceryIndex": 1
     },
     "exchangeRate": 1,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "N/A (Domestic)",
     "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Miami offers a tropical lifestyle with 0% state income tax.",
-    "external_image_url": "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f"
+    "expertNotes": "Federal 22-24% only — Florida has 0% state income tax. Gateway to Latin America.",
+    "external_image_url": "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f",
+    "affiliate_url": "https://www.theblueground.com/",
+    "official_visa_portal": "https://travel.state.gov/content/travel/en/us-visas/employment.html"
   },
   {
     "name": "Port Louis",
@@ -3019,7 +3105,7 @@
     "rent": 1000,
     "tax": 0,
     "score": 83,
-    "visa": "Premium Visa",
+    "visa": "Premium Visa (1 Year)",
     "visaMinIncome": 1500,
     "currency": "MUR",
     "highlights": [
@@ -3046,12 +3132,13 @@
       "coworkingDay": 850
     },
     "exchangeRate": 47,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
-    "tax_regime": "Premium Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Mauritius offers a stunning island base with a 0% tax Premium Visa.",
-    "external_image_url": "https://images.unsplash.com/photo-1583275484600-34192b8aa75b"
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
+    "tax_regime": "Premium Visa (1 Year)",
+    "visa_cost": 1000,
+    "expertNotes": "Mauritius Premium Visa: $1,000/yr. 0% tax on foreign income. Requires proof of remote employment.",
+    "external_image_url": "https://images.unsplash.com/photo-1583275484600-34192b8aa75b",
+    "official_visa_portal": "https://www.edbmauritius.org/premium-visa"
   },
   {
     "name": "Ubud",
@@ -3087,16 +3174,18 @@
       "mealCheap": 88500,
       "beerLocal": 31900,
       "milk1L": 24800,
-      "chickenBreast1kg": 97400,
-      "coworkingDay": 212400
+      "chickenBreast1kg": 97300,
+      "coworkingDay": 212300
     },
-    "exchangeRate": 17701,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17695,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "B211A Remote Worker Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Ubud is a spiritual and cultural hub for digital nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b"
+    "visa_cost": 300,
+    "expertNotes": "0% tax on foreign income. Same B211A as Bali/Canggu. Cultural hub with rice terraces and yoga retreats.",
+    "external_image_url": "https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://molina.imigrasi.go.id/"
   },
   {
     "name": "Canggu",
@@ -3132,16 +3221,18 @@
       "mealCheap": 141600,
       "beerLocal": 53100,
       "milk1L": 31900,
-      "chickenBreast1kg": 132800,
-      "coworkingDay": 318600
+      "chickenBreast1kg": 132700,
+      "coworkingDay": 318500
     },
-    "exchangeRate": 17701,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17695,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "B211A Remote Worker Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Canggu is the heart of the nomad scene in Bali.",
-    "external_image_url": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2"
+    "visa_cost": 300,
+    "expertNotes": "0% tax on foreign income. Same B211A as Bali. Surf/coworking capital of Southeast Asia.",
+    "external_image_url": "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://molina.imigrasi.go.id/"
   },
   {
     "name": "Sayulita",
@@ -3173,20 +3264,22 @@
       "groceryIndex": 0.65
     },
     "prices_local": {
-      "cappuccino": 56,
+      "cappuccino": 55,
       "mealCheap": 140,
       "beerLocal": 52,
       "milk1L": 31,
       "chickenBreast1kg": 130,
       "coworkingDay": 310
     },
-    "exchangeRate": 17.3681,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRate": 17.3385,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "Residente Temporal",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Sayulita is a premier surf and yoga hub for North American nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03"
+    "visa_cost": 350,
+    "expertNotes": "Mexico: 0% on foreign income. Same visa as CDMX/Tulum. Nayarit surf town with growing nomad scene.",
+    "external_image_url": "https://images.unsplash.com/photo-1512813583669-e4a68af26d03",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://consulmex.sre.gob.mx/washington/index.php/visas"
   },
   {
     "name": "Hoi An",
@@ -3226,12 +3319,14 @@
       "coworkingDay": 210800
     },
     "exchangeRate": 26351,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "E-Visa (90 days)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Hoi An is a charming, budget-friendly base with high quality of life.",
-    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
+    "visa_cost": 50,
+    "expertNotes": "0% tax on foreign income. Same E-Visa as HCMC/Da Nang. UNESCO heritage town, very affordable.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
   },
   {
     "name": "Siargao",
@@ -3244,7 +3339,7 @@
     "rent": 800,
     "tax": 0,
     "score": 82,
-    "visa": "Digital Nomad Visa",
+    "visa": "Tourist Visa Extension",
     "visaMinIncome": 2000,
     "currency": "PHP",
     "highlights": [
@@ -3270,13 +3365,15 @@
       "chickenBreast1kg": 340,
       "coworkingDay": 740
     },
-    "exchangeRate": 61.697,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
-    "tax_regime": "Digital Nomad Visa",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Siargao is the surfing capital of the Philippines with a new DN visa.",
-    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
+    "exchangeRate": 61.621,
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
+    "tax_regime": "Tourist Visa Extension",
+    "visa_cost": 60,
+    "expertNotes": "0% tax on foreign income as non-resident. Tourist visa extendable. Philippines' top surf island.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://www.visa.gov.ph/"
   },
   {
     "name": "Hanoi",
@@ -3316,12 +3413,14 @@
       "coworkingDay": 316200
     },
     "exchangeRate": 26351,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "E-Visa (90 days)",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: Hanoi is a chaotic and charming base for budget nomads.",
-    "external_image_url": "https://images.unsplash.com/photo-1555944011-2092f6b8b0e8"
+    "visa_cost": 50,
+    "expertNotes": "0% tax on foreign income. Same E-Visa as HCMC. Northern Vietnam hub with lower costs than HCMC.",
+    "external_image_url": "https://images.unsplash.com/photo-1555944011-2092f6b8b0e8",
+    "affiliate_url": "https://www.agoda.com/",
+    "official_visa_portal": "https://evisa.xuatnhapcanh.gov.vn/trang-chu-ttdt"
   },
   {
     "name": "Luang Prabang",
@@ -3361,11 +3460,12 @@
       "coworkingDay": 175800
     },
     "exchangeRate": 21975,
-    "exchangeRateDate": "2026-05-20",
-    "pulse_updated": "2026-05-20T17:51:49.068Z",
+    "exchangeRateDate": "2026-05-22",
+    "pulse_updated": "2026-05-22T18:09:42.267Z",
     "tax_regime": "E-Visa / Tourist",
-    "visa_cost": 2500,
-    "expertNotes": "AI Analysis: A peaceful, low-cost destination for those looking to disconnect.",
-    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a"
+    "visa_cost": 50,
+    "expertNotes": "Laos: 0% on foreign income for tourists. E-Visa or visa on arrival ~$30-50. UNESCO World Heritage town.",
+    "external_image_url": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
+    "affiliate_url": "https://www.agoda.com/"
   }
 ]

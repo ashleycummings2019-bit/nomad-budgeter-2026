@@ -315,6 +315,7 @@ async function main() {
       if (cityOverrides.visaCost) city.visa_cost = cityOverrides.visaCost;
       if (cityOverrides.expertNotes) city.expertNotes = cityOverrides.expertNotes;
       if (cityOverrides.affiliateUrl) city.affiliate_url = cityOverrides.affiliateUrl;
+      if (cityOverrides.officialVisaPortal) city.official_visa_portal = cityOverrides.officialVisaPortal;
     }
 
     if (city.currency && rates[city.currency]) {

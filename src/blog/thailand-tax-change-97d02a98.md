@@ -73,7 +73,7 @@ A flat 15% rate is easy to calculate, but the psychological sting comes from com
 | $100,000 ($8,333/mo) | $0 | $15,000 | $15,000 |
 | $150,000 ($12,500/mo) | $0 | $22,500 | $22,500 |
 
-For nomads in the $3,000–$5,000 monthly range, this is a significant hit. You are effectively adding $450–$750 per month to your [cost of living in Thailand](/city/thailand-cost-of-living). At the $100,000+ level, the pain is absolute but relative: 15% is still competitive compared to EU, US, or Australian marginal rates.
+For nomads in the $3,000–$5,000 monthly range, this is a significant hit. You are effectively adding $450–$750 per month to your [cost of living in Thailand](/#calculator-section). At the $100,000+ level, the pain is absolute but relative: 15% is still competitive compared to EU, US, or Australian marginal rates.
 
 ### Scenario 2: Previous Progressive Rate (Declared/Remitted Income)
 
@@ -94,15 +94,15 @@ The breakpoint sits around $80,000–$90,000 annual income. Below this, the flat
 
 2. **Run the math on remittance.** If you have unremitted 2025 income sitting offshore, speak to a Thai tax accountant immediately about whether accelerated remittance or deferral makes sense before the new rules lock in.
 
-3. **Budget for the 15% hit.** Update your [Thailand cost-of-living spreadsheet](/city/thailand-cost-of-living) to include estimated monthly tax. A $3,000/month lifestyle just became a $3,450/month lifestyle after tax.
+3. **Budget for the 15% hit.** Update your [Thailand cost-of-living spreadsheet](/#calculator-section) to include estimated monthly tax. A $3,000/month lifestyle just became a $3,450/month lifestyle after tax.
 
 4. **Get a local tax ID and register.** Voluntary compliance is always cheaper than back-tax assessments plus penalties. The Revenue Department has promised a simplified registration portal for LTR holders by March 2026.
 
-5. **Evaluate alternative structures.** Some nomads are already looking at Malaysian MM2H, Portugal's NHR successor regimes, or the UAE. Thailand is betting that 15% plus its lifestyle still beats those options. You need to decide if that math works for you. Our [Thailand vs. Malaysia tax comparison](/compare/tax/thailand-vs-malaysia) breaks down the numbers side by side.
+5. **Evaluate alternative structures.** Some nomads are already looking at Malaysian MM2H, Portugal's NHR successor regimes, or the UAE. Thailand is betting that 15% plus its lifestyle still beats those options. You need to decide if that math works for you. Our [Thailand vs. Malaysia tax comparison](/#calculator-section) breaks down the numbers side by side.
 
 ## Is Thailand Still Competitive? A Southeast Asia Tax Comparison
 
-Yes—but the "free lunch" is over. At a flat 15%, Thailand remains cheaper than most Western tax jurisdictions, but how does it stack up for [Southeast Asia tax comparison](/compare/tax/thailand-vs-malaysia) purposes?
+Yes—but the "free lunch" is over. At a flat 15%, Thailand remains cheaper than most Western tax jurisdictions, but how does it stack up for [Southeast Asia tax comparison](/#calculator-section) purposes?
 
 | Jurisdiction | Tax Rate on Foreign Income | Minimum Stay | Key Catch |
 |-------------|---------------------------|--------------|-----------|

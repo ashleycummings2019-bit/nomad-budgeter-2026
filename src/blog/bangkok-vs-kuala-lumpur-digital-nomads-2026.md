@@ -13,7 +13,7 @@ If you are deciding between planting roots in Thailand or Malaysia, the choice i
 
 ## Cost of Living Breakdown
 
-The headline figures set the tone immediately. A month in [Bangkok](/city/bangkok) costs **$1,900**, while a month in [Kuala Lumpur](/city/kuala-lumpur) costs **$1,600**. That $300 gap represents an 18.75% premium for Bangkok, which compounds fast. Over six months, the difference pays for a high-end laptop. Over a year, it totals **$3,600**—enough to fund a two-month sabbatical or a significant emergency buffer.
+The headline figures set the tone immediately. A month in [Bangkok](/#calculator-section) costs **$1,900**, while a month in [Kuala Lumpur](/#calculator-section) costs **$1,600**. That $300 gap represents an 18.75% premium for Bangkok, which compounds fast. Over six months, the difference pays for a high-end laptop. Over a year, it totals **$3,600**—enough to fund a two-month sabbatical or a significant emergency buffer.
 
 Daily micro-costs reinforce the pattern. A cheap local meal in Bangkok is **$8**; in KL, it is **$5**. A cappuccino runs **$3.20** versus **$2.40**. If you rely on coworking spaces rather than cafes, the gap widens further: a day pass in Bangkok is **$18**, while KL charges **$12**. Over 15 working days per month, that is $270 in Bangkok versus $180 in KL—a $90 monthly spread just for desk space.
 
@@ -35,7 +35,7 @@ This is one category where the data shows a true tie. Both cities offer a **0% t
 
 That zero-rate figure is not a minor footnote. Compared to European, North American, or Australian tax burdens, keeping 100% of your foreign paycheck is a massive effective raise. A nomad earning $6,000 per month might retain an extra $1,200–$1,800 monthly versus a high-tax residency, depending on their home country’s brackets.
 
-There is a necessary caveat: tax residency is a legal status, not a lifestyle aesthetic. The 0% rate applies within the specific visa context, but triggering broader tax residency rules or local permanent-establishment clauses can shift obligations. You should always verify your personal setup with a cross-border accountant. Still, on paper, both [Bangkok](/city/bangkok) and [Kuala Lumpur](/city/kuala-lumpur) present a rare fiscal advantage: they do not take a cut of your foreign-sourced remote income.
+There is a necessary caveat: tax residency is a legal status, not a lifestyle aesthetic. The 0% rate applies within the specific visa context, but triggering broader tax residency rules or local permanent-establishment clauses can shift obligations. You should always verify your personal setup with a cross-border accountant. Still, on paper, both [Bangkok](/#calculator-section) and [Kuala Lumpur](/#calculator-section) present a rare fiscal advantage: they do not take a cut of your foreign-sourced remote income.
 
 ## Visa & Legal Stay Options
 
@@ -72,12 +72,12 @@ If you need constant stimulus and a massive dating or social pool, Bangkok wins.
 ## Verdict: Who Should Choose Which City
 
 ### Budget Nomads: Choose Kuala Lumpur
-No ambiguity here. At **$1,600 per month**, with **$5 meals**, **$2.40 coffee**, and **$12 coworking day passes**, KL is one of the most financially sustainable capitals in Asia. The DE Rantau visa gives you legal cover without forcing you into a high-income bracket you might not yet have. If your priority is extending runway, preserving capital, or paying down debt, [Kuala Lumpur](/city/kuala-lumpur) is the mathematically superior choice.
+No ambiguity here. At **$1,600 per month**, with **$5 meals**, **$2.40 coffee**, and **$12 coworking day passes**, KL is one of the most financially sustainable capitals in Asia. The DE Rantau visa gives you legal cover without forcing you into a high-income bracket you might not yet have. If your priority is extending runway, preserving capital, or paying down debt, [Kuala Lumpur](/#calculator-section) is the mathematically superior choice.
 
 ### Mid-Range Nomads: Choose Based on Personality
-If you earn $3,000–$5,000 per month and can afford either city, decide on workflow and temperament. Choose [Bangkok](/city/bangkok) if you thrive on sensory overload, want a massive dating and social market, and can absorb the $300 monthly premium for energy and scale. Choose [Kuala Lumpur](/city/kuala-lumpur) if you prefer English fluency, orderly public transport, multicultural food options, and keeping your monthly baseline closer to $1,600 without feeling like you are sacrificing comfort.
+If you earn $3,000–$5,000 per month and can afford either city, decide on workflow and temperament. Choose [Bangkok](/#calculator-section) if you thrive on sensory overload, want a massive dating and social market, and can absorb the $300 monthly premium for energy and scale. Choose [Kuala Lumpur](/#calculator-section) if you prefer English fluency, orderly public transport, multicultural food options, and keeping your monthly baseline closer to $1,600 without feeling like you are sacrificing comfort.
 
 ### Premium Nomads: Choose Bangkok
-Despite the higher cost of living, [Bangkok](/city/bangkok) offers a deeper luxury housing stock, more international flight connections, and a broader ecosystem of high-end services. The LTR Visa aligns with long-term property and lifestyle investment rather than year-to-year nomad hopping. High earners often find that Bangkok’s premium tier—skyline condos with infinity pools, private international hospitals, and Michelin-guide street food—justifies the extra $300 per month. If your priority is maximum optionality and a major regional hub, Bangkok is the better base. If you are a high earner who still wants to optimize spending, KL remains a smart balance-sheet play, but you will sacrifice some scale and connectivity.
+Despite the higher cost of living, [Bangkok](/#calculator-section) offers a deeper luxury housing stock, more international flight connections, and a broader ecosystem of high-end services. The LTR Visa aligns with long-term property and lifestyle investment rather than year-to-year nomad hopping. High earners often find that Bangkok’s premium tier—skyline condos with infinity pools, private international hospitals, and Michelin-guide street food—justifies the extra $300 per month. If your priority is maximum optionality and a major regional hub, Bangkok is the better base. If you are a high earner who still wants to optimize spending, KL remains a smart balance-sheet play, but you will sacrifice some scale and connectivity.
 
 **Final call:** If the spreadsheet rules your decision, Kuala Lumpur is your city. If you are willing to pay an 18.75% premium for chaos, culture, and scale, Bangkok is worth every extra baht.

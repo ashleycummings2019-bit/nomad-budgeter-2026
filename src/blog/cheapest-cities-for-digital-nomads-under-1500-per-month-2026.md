@@ -9,7 +9,7 @@ draft: true
 
 Let’s rip the band-aid off immediately: if you are dead-set on living in a major digital nomad hub for under **$1,500 per month all-in**, your options from NomadBudgeter’s tracked cities are functionally down to **one**.
 
-We don’t do listicle padding here. We analyzed the full cost-of-living (CoL), tax burden, and visa friction across our top 20 ranked cities. The result? The “cheap nomad” window has slammed shut across most of Europe and the near-East. Inflation, short-term rental demand, and streamlined nomad visas have pushed formerly budget-friendly cities like [Budapest](/city/budapest) and [Vilnius](/city/vilnius) firmly into the $2,000/month camp.
+We don’t do listicle padding here. We analyzed the full cost-of-living (CoL), tax burden, and visa friction across our top 20 ranked cities. The result? The “cheap nomad” window has slammed shut across most of Europe and the near-East. Inflation, short-term rental demand, and streamlined nomad visas have pushed formerly budget-friendly cities like [Budapest](/#calculator-section) and [Vilnius](/#calculator-section) firmly into the $2,000/month camp.
 
 This guide gives you the hard data on what is actually available at the $1,500 mark in 2026, what barely misses the cutoff, and how to decide between them.
 
@@ -32,11 +32,11 @@ Of our 20 actively tracked nomad destinations, here is how the bottom of the cos
 
 | Rank | City | Country | Monthly CoL | Tax Rate | Under $1,500? |
 |------|------|---------|-------------|----------|---------------|
-| 1 | [Tbilisi](/city/tbilisi) | Georgia | **$1,200** | **0.01%** | ✅ Yes |
-| 2 | [Bucharest](/city/bucharest) | Romania | **$1,800** | **0.04%** | ❌ No (+$300) |
-| 3 | [Istanbul](/city/istanbul) | Turkey | **$1,800** | **0.2%** | ❌ No (+$300) |
-| 4 | [Vilnius](/city/vilnius) | Lithuania | **$2,000** | **0.2%** | ❌ No (+$500) |
-| 5 | [Budapest](/city/budapest) | Hungary | **$2,000** | **0.15%** | ❌ No (+$500) |
+| 1 | [Tbilisi](/#calculator-section) | Georgia | **$1,200** | **0.01%** | ✅ Yes |
+| 2 | [Bucharest](/#calculator-section) | Romania | **$1,800** | **0.04%** | ❌ No (+$300) |
+| 3 | [Istanbul](/#calculator-section) | Turkey | **$1,800** | **0.2%** | ❌ No (+$300) |
+| 4 | [Vilnius](/#calculator-section) | Lithuania | **$2,000** | **0.2%** | ❌ No (+$500) |
+| 5 | [Budapest](/#calculator-section) | Hungary | **$2,000** | **0.15%** | ❌ No (+$500) |
 | 6 | Tenerife | Spain | $2,000 | 0.04% | ❌ No |
 | 7 | Funchal | Portugal | $2,000 | 0.05% | ❌ No |
 
@@ -49,7 +49,7 @@ The lesson: **if your budget ceiling is genuinely $1,500, you have one option.**
 **Monthly burn: $1,200**  
 **Tax burden: 0.01%**
 
-[Tbilisi](/city/tbilisi) is the last city in our rankings that leaves you with $300 of headroom against a $1,500 limit. At a **0.01% effective tax rate**, it also lets you keep virtually everything you earn. For a nomad billing $2,500–$3,000/month, that combination is nearly impossible to beat.
+[Tbilisi](/#calculator-section) is the last city in our rankings that leaves you with $300 of headroom against a $1,500 limit. At a **0.01% effective tax rate**, it also lets you keep virtually everything you earn. For a nomad billing $2,500–$3,000/month, that combination is nearly impossible to beat.
 
 ### What the Money Gets You
 At $1,200/month, Tbilisi offers a comfortable solo apartment in neighborhoods like Saburtalo or Vera, fast fiber internet, and some of the world’s cheapest high-quality food. A meal at a local khinkali house still costs less than a coffee in Amsterdam. Coworking spaces are plentiful and aggressively priced compared to Western Europe.
@@ -67,7 +67,7 @@ If you can stretch your budget by $300, two more cities enter the conversation. 
 **Monthly burn: $1,800**  
 **Tax burden: 0.04%**
 
-[Bucharest](/city/bucharest) is the cheapest capital inside the European Union in our rankings. At $1,800, you get proper EU infrastructure—Schengen-adjacent air travel, decent healthcare, and a growing tech scene—at a 0.04% effective tax rate that is functionally identical to Tbilisi’s. English is widely spoken in tech and hospitality, and the city has a genuine metro system.
+[Bucharest](/#calculator-section) is the cheapest capital inside the European Union in our rankings. At $1,800, you get proper EU infrastructure—Schengen-adjacent air travel, decent healthcare, and a growing tech scene—at a 0.04% effective tax rate that is functionally identical to Tbilisi’s. English is widely spoken in tech and hospitality, and the city has a genuine metro system.
 
 The trade-off is straightforward: **you are paying a 50% premium over Tbilisi for EU polish.** If your income is volatile and you need to guarantee you stay under $1,500 in a bad month, Bucharest does not offer enough slack.
 
@@ -75,7 +75,7 @@ The trade-off is straightforward: **you are paying a 50% premium over Tbilisi fo
 **Monthly burn: $1,800**  
 **Tax burden: 0.2%**
 
-[Istanbul](/city/istanbul) is a metropolis of 15+ million people straddling two continents. At $1,800, you get scale: endless neighborhoods, world-class food, and genuine big-city energy. The 0.2% tax burden is still negligible in practice.
+[Istanbul](/#calculator-section) is a metropolis of 15+ million people straddling two continents. At $1,800, you get scale: endless neighborhoods, world-class food, and genuine big-city energy. The 0.2% tax burden is still negligible in practice.
 
 The risk here is currency volatility and visa bureaucracy. The Turkish lira can swing wildly, meaning your $1,800 could feel like $2,100 overnight if the exchange rate moves against you. Residence permits also require more paperwork than Georgia’s laissez-faire approach. Istanbul is the better choice if you crave urban intensity; it is the worse choice if you prize budget predictability.
 
@@ -90,11 +90,11 @@ The risk here is currency volatility and visa bureaucracy. The Turkish lira can 
 | **Visa Friction** | Very Low | Medium | Medium-High |
 | **Big-City Amenities** | Low | Medium | Very High |
 
-For a deeper comparison of the top two, see our [Tbilisi vs. Bucharest breakdown](/compare/tbilisi-vs-bucharest).
+For a deeper comparison of the top two, see our [Tbilisi vs. Bucharest breakdown](/#calculator-section).
 
 ## Why the $2,000 Floor Is the New Normal
 
-Notice the cliff after Istanbul. The next rung—[Vilnius](/city/vilnius), [Budapest](/city/budapest), Tenerife, Funchal, Split—sits right at **$2,000/month**. That is not an accident. These cities have graduated from “hidden gems” to mainstream nomad infrastructure hubs.
+Notice the cliff after Istanbul. The next rung—[Vilnius](/#calculator-section), [Budapest](/#calculator-section), Tenerife, Funchal, Split—sits right at **$2,000/month**. That is not an accident. These cities have graduated from “hidden gems” to mainstream nomad infrastructure hubs.
 
 Short-term rental demand, nomad-specific apartment arbitrage, and streamlined freelance visas have all compressed the bottom of the market. A city like Budapest used to be a budget hack; now it is a $2,000/month baseline for a proper nomad setup. If you are targeting $1,500, these cities are off the table unless you are willing to share housing or live far outside the center.
 
@@ -120,11 +120,11 @@ Compare that to Berlin (0.22%), Barcelona (0.24%), or London (0.2%)—cities whe
 
 Here is how to decide based on your actual budget ceiling.
 
-**If your hard cap is $1,500:** Go to [Tbilisi](/city/tbilisi). Full stop. It is the only city in our top 20 that leaves you breathing room. The 0.01% tax rate and $1,200 CoL mean you can earn $2,000/month and still save money. Just accept that you are trading EU comforts for cash flow.
+**If your hard cap is $1,500:** Go to [Tbilisi](/#calculator-section). Full stop. It is the only city in our top 20 that leaves you breathing room. The 0.01% tax rate and $1,200 CoL mean you can earn $2,000/month and still save money. Just accept that you are trading EU comforts for cash flow.
 
-**If you can stretch to $1,800 and want EU stability:** Choose [Bucharest](/city/bucharest). The extra $300 buys you EU legal frameworks, better transport, and easier English. The 0.04% tax rate keeps your effective burden identical to Tbilisi.
+**If you can stretch to $1,800 and want EU stability:** Choose [Bucharest](/#calculator-section). The extra $300 buys you EU legal frameworks, better transport, and easier English. The 0.04% tax rate keeps your effective burden identical to Tbilisi.
 
-**If you can stretch to $1,800 and want maximum city scale:** Choose [Istanbul](/city/istanbul). It is the best value megacity on the planet right now, but only if you can handle currency swings and visa paperwork.
+**If you can stretch to $1,800 and want maximum city scale:** Choose [Istanbul](/#calculator-section). It is the best value megacity on the planet right now, but only if you can handle currency swings and visa paperwork.
 
 **If you cannot stretch past $1,500 and Tbilisi does not appeal:** You will need to look outside our top 20 tracked cities—likely toward second-tier Southeast Asian or Latin American destinations not covered in this European/Near East ranking. We will cover those regions in a separate guide.
 

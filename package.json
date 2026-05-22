@@ -5,8 +5,8 @@
   "scripts": {
     "pulse": "node scripts/pulse.mjs",
     "trends": "node scripts/generate-best-of.mjs",
-    "dev": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
-    "build": "npm run pulse && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs",
+    "dev": "npm run pulse && node scripts/validate-build.mjs && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs --serve --port=3000",
+    "build": "npm run pulse && node scripts/validate-build.mjs && npm run trends && node ./node_modules/@11ty/eleventy/cmd.cjs",
     "build:no-pulse": "node ./node_modules/@11ty/eleventy/cmd.cjs",
     "minify:css": "postcss src/css/index.css -o _site/css/index.css",
     "minify:js": "terser _site/js/main.js -o _site/js/main.js --compress --mangle",

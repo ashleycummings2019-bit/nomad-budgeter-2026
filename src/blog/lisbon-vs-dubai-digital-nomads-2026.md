@@ -32,13 +32,13 @@ To put that in perspective: a nomad in Lisbon could bank the difference between 
 
 The premium is embedded in every swipe of your card. A $12 daily meal difference multiplied by thirty days equals $360. A $2.30 coffee gap over a month adds another $69. The $22 coworking premium across twenty work days extracts $440. That is $869 in recurring monthly micro-costs before you even unlock the door to your apartment. The aggregate data makes clear that Dubai charges premium prices as a default setting, not an upgrade.
 
-Currency dynamics add another layer. The euro trades at **0.8519 per USD**, meaning American nomads currently enjoy favorable purchasing power in [Lisbon](/city/lisbon). The UAE dirham is pegged at **3.67 per USD**, offering stability but no discount. Dubai charges top-tier prices regardless of exchange rate tailwinds.
+Currency dynamics add another layer. The euro trades at **0.8519 per USD**, meaning American nomads currently enjoy favorable purchasing power in [Lisbon](/#calculator-section). The UAE dirham is pegged at **3.67 per USD**, offering stability but no discount. Dubai charges top-tier prices regardless of exchange rate tailwinds.
 
 For nomads bootstrapping a business or living off freelance retainers, these numbers are decisive. Lisbon lets you live in Western Europe at prices that preserve runway. Dubai demands a premium for every meal, metro ride, and mattress.
 
 ## Tax Situation for Remote Workers
 
-Tax is where Dubai fights back. The UAE charges remote workers a **0%** personal income tax rate — making it one of the best [tax free destinations for digital nomads](/compare/best-digital-nomad-cities-2026). Portugal's ITS Regime — also known as the **Portugal digital nomad visa** tax framework — charges just **0.2%**. On paper, Dubai wins.
+Tax is where Dubai fights back. The UAE charges remote workers a **0%** personal income tax rate — making it one of the best [tax free destinations for digital nomads](/#calculator-section). Portugal's ITS Regime — also known as the **Portugal digital nomad visa** tax framework — charges just **0.2%**. On paper, Dubai wins.
 
 But context matters. On a $100,000 annual salary, Dubai saves you exactly $200 compared to Lisbon. That $200 is erased by your first ten days of higher meal costs in the Emirates. You would need to earn astronomical figures before Dubai's 0% rate offsets its $25,200 annual cost-of-living premium over Lisbon. For mid-tier nomads earning between $60,000 and $120,000, the "tax savings" in Dubai are a marketing angle, not a mathematical reality.
 
@@ -48,7 +48,7 @@ There is also currency repatriation to consider. Americans in Lisbon deal with E
 
 ## Visa & Legal Stay Options
 
-Both cities offer purpose-built remote work visas, but their philosophies differ. [Lisbon](/city/lisbon) operates under the **[Portugal digital nomad visa (D8 Visa)](/visas/portugal-d8-visa)**, a framework tailored explicitly for remote workers relocating to Portugal. [Dubai](/city/dubai) counters with its **[Virtual Working Visa](/visas/uae-virtual-working-visa)**, which allows foreign-employed professionals to reside in the UAE without a local employer sponsor.
+Both cities offer purpose-built remote work visas, but their philosophies differ. [Lisbon](/#calculator-section) operates under the **[Portugal digital nomad visa (D8 Visa)](/visas/portugal-d8-visa)**, a framework tailored explicitly for remote workers relocating to Portugal. [Dubai](/#calculator-section) counters with its **[Virtual Working Visa](/visas/uae-virtual-working-visa)**, which allows foreign-employed professionals to reside in the UAE without a local employer sponsor.
 
 The practical difference is geographic access versus commercial infrastructure. A Lisbon-based nomad anchors inside the European Union, with seamless travel and logistical benefits across the continent. A Dubai-based nomad plants a flag in the Middle East's primary business nexus, useful if your clients or industry converge in the Gulf, Africa, or South Asia.
 
@@ -84,13 +84,13 @@ Neither is better in the abstract. If you want to build a lifestyle business whi
 
 ## Verdict: Who Should Choose Which City
 
-**Choose [Lisbon](/city/lisbon) if:**
+**Choose [Lisbon](/#calculator-section) if:**
 - You earn under $150K and want to maximize financial runway
 - You value EU access, public healthcare, and a path to residency
 - You prefer organic community and lifestyle-first culture
 - You're building a bootstrapped product and need to control burn rate
 
-**Choose [Dubai](/city/dubai) if:**
+**Choose [Dubai](/#calculator-section) if:**
 - You earn $200K+ and the [zero-tax structure](/taxes/uae-zero-tax-guide) creates meaningful savings
 - Your clients are in the Gulf, Africa, or South/Central Asia
 - You want premium infrastructure and don't mind paying for it

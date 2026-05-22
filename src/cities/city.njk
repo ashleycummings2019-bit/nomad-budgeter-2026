@@ -293,7 +293,11 @@ window.__NB_STATIC_CITY__ = {
                     <div class="roi-yearly-savings" id="res-roi-savings">+$0 / yr</div>
                 </div>
             </div>
-            <a href="{{ site.affiliates.citizenremote.url | affUrl('city') }}" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for {{ city.name }} Visa →</a>
+            {% if city.official_visa_portal %}
+                <a href="{{ city.official_visa_portal }}" target="_blank" rel="noopener" id="visa-cta" class="action-btn w-full accent-bg">Apply for {{ city.name }} Visa &rarr;</a>
+            {% else %}
+                <a href="{{ site.affiliates.safetywing.url }}" target="_blank" rel="sponsored noopener" id="visa-cta" class="action-btn w-full accent-bg" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">Get Required Visa Insurance &rarr;</a>
+            {% endif %}
         </div>
 
         {# Expert Choice Top Pick #}

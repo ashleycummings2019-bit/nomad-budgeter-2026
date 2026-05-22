@@ -7,7 +7,7 @@ tags: ["compare", "tbilisi", "bucharest"]
 draft: true
 ---
 
-Tbilisi and Bucharest both sit at the crossroads of empires, but in 2026 they offer digital nomads two radically different value propositions. [Tbilisi](/city/tbilisi), the Georgian capital, pitches itself on bargain-basement costs and near-zero taxation. [Bucharest](/city/bucharest), Romania’s political and economic engine, counters with EU-standard infrastructure and a purpose-built Digital Nomad Visa. The headline numbers are stark: a month in Tbilisi costs roughly $1,200, while Bucharest demands $1,800. That $600 monthly gap balloons to $7,200 over a year—enough to fund multiple months of additional travel or a significant equipment upgrade.
+Tbilisi and Bucharest both sit at the crossroads of empires, but in 2026 they offer digital nomads two radically different value propositions. [Tbilisi](/#calculator-section), the Georgian capital, pitches itself on bargain-basement costs and near-zero taxation. [Bucharest](/#calculator-section), Romania’s political and economic engine, counters with EU-standard infrastructure and a purpose-built Digital Nomad Visa. The headline numbers are stark: a month in Tbilisi costs roughly $1,200, while Bucharest demands $1,800. That $600 monthly gap balloons to $7,200 over a year—enough to fund multiple months of additional travel or a significant equipment upgrade.
 
 Yet the spreadsheet is only half the story. Taxes, visa mechanics, and the texture of daily life determine whether a city is a profitable base or a bureaucratic headache. Below, we break down both destinations using the latest data to help you decide where to register your laptop in 2026.
 
@@ -48,7 +48,7 @@ Your employment structure should drive the choice. If you run your own consultan
 
 Both cities score “Good” for internet speed. In practical terms, that means reliable fiber connectivity capable of handling video conferencing, large file uploads, and cloud-based development without routine throttling. You will not be forced to choose Tbilisi or Bucharest based on bandwidth.
 
-The economic side of connectivity, however, is not a tie. A coworking day pass in [Tbilisi](/city/tbilisi) costs **$12**, while the same drop-in access in [Bucharest](/city/bucharest) runs **$18**. Over a standard twenty-workday month, that is $240 versus $360. If you are a café worker, the gap persists: your daily caffeine fix costs a third less in Georgia. Tbilisi effectively subsidizes your workspace through lower commercial real-estate costs.
+The economic side of connectivity, however, is not a tie. A coworking day pass in [Tbilisi](/#calculator-section) costs **$12**, while the same drop-in access in [Bucharest](/#calculator-section) runs **$18**. Over a standard twenty-workday month, that is $240 versus $360. If you are a café worker, the gap persists: your daily caffeine fix costs a third less in Georgia. Tbilisi effectively subsidizes your workspace through lower commercial real-estate costs.
 
 Nomads who work exclusively from Airbnbs or rented apartments can ignore the coworking line item, making the internet parity even more valuable. But if you crave separation between home and office, Bucharest charges a premium for that psychological boundary. Infrastructure quality is equal; infrastructure pricing is not.
 
@@ -75,4 +75,4 @@ This tier is where the decision fractures. Pick Bucharest if you need a Digital 
 **Premium Nomads ($3,000+/month): Split the mission.**  
 High earners should choose Bucharest if the premium budget is funding EU services, business-class travel, and a recognized residency pathway that may lead to long-term EU settlement. Choose Tbilisi if your goal is post-tax income maximization. At 0.01% tax, a high earner keeps virtually everything, while the low local costs allow for centrally located apartments, private driver services, and frequent regional travel at prices that would barely cover a studio in London or Berlin.
 
-The final spreadsheet is unambiguous: [Tbilisi](/city/tbilisi) wins on cost and tax minimization. [Bucharest](/city/bucharest) wins on EU predictability and visa clarity. Neither will leave you offline. Your 2026 base should match your risk tolerance—frontier-market arbitrage versus union-market stability.
+The final spreadsheet is unambiguous: [Tbilisi](/#calculator-section) wins on cost and tax minimization. [Bucharest](/#calculator-section) wins on EU predictability and visa clarity. Neither will leave you offline. Your 2026 base should match your risk tolerance—frontier-market arbitrage versus union-market stability.
