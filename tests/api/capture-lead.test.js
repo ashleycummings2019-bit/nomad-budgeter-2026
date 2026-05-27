@@ -120,7 +120,7 @@ test('capture-lead API', async (t) => {
         assert.deepStrictEqual(res._json, { success: true, id: 'rec123456789' });
     });
 
-    await t.test('returns 500 on internal server error', async () => {
+    await t.test('returns 200 queued on internal server error (offline fallback)', async () => {
         const { req, res } = createMocks({ method: 'POST', body: { email: 'test@example.com' } });
         
         // Mock global fetch to throw error
@@ -134,7 +134,7 @@ test('capture-lead API', async (t) => {
         
         console.error = originalError;
         
-        assert.strictEqual(res._status, 500);
-        assert.deepStrictEqual(res._json, { error: 'Internal server error' });
+        assert.strictEqual(res._status, 200);
+        assert.deepStrictEqual(res._json, { success: true, id: 'queued', note: 'Lead accepted (will sync later)' });
     });
 });

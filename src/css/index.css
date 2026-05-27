@@ -2563,3 +2563,134 @@ img { max-width: 100%; height: auto; }
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* ─── Nomad Expert Verdict & Layout Utilities ─── */
+.stack-on-mobile {
+    display: flex;
+    flex-direction: row;
+}
+.grid-2.stack-on-mobile,
+.grid-3.stack-on-mobile,
+.grid-4.stack-on-mobile {
+    display: grid;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+}
+
+@media (max-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stack-on-mobile {
+        flex-direction: column;
+    }
+    .grid-2.stack-on-mobile,
+    .grid-3.stack-on-mobile,
+    .grid-4.stack-on-mobile {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Expert Verdict Components */
+.expert-verdict-card {
+    background: rgba(139, 92, 246, 0.03);
+    border: 1px dashed rgba(139, 92, 246, 0.35);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+.expert-verdict-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--aura-primary), var(--aura-secondary));
+}
+
+.expert-verdict-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+@media (max-width: 768px) {
+    .expert-verdict-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.expert-avatar {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.expert-text {
+    flex-grow: 1;
+}
+
+.verdict-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.badge-2026.tag-success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #10b981;
+}
+
+.badge-2026.tag-info {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    color: #3b82f6;
+}
+
+.expert-verdict {
+    background: rgba(139, 92, 246, 0.03);
+    border-left: 4px solid var(--aura-primary);
+    border-radius: 0 12px 12px 0;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.verdict-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.verdict-icon {
+    font-size: 1.5rem;
+}
+
+.verdict-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.verdict-body {
+    color: var(--text-dim);
+    font-style: italic;
+    line-height: 1.6;
+}
+

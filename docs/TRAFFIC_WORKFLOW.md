@@ -23,6 +23,11 @@
 1.  **Heatmap Simulation:** Review `src/index.njk`. Ensure the "Lead Magnet" is positioned above the fold or immediately after calculation results.
 2.  **A/B Testing:** Test different CTAs for the $19 report (e.g., "Buy the Guide" vs "Unlock the Alpha").
 
+## Phase 5: Email Funnel & Lead Magnet
+1.  **Lead Magnet Delivery:** The "2026 Geo-Arbitrage Blueprint" is located at `/book/`. It is an interactive HTML page, not a static PDF file.
+2.  **Email Copy Strategy:** Do NOT attach a PDF in welcome emails. Instead, send them to the live URL: `https://www.nomadbudgeter.com/book/` and advise them to use the "Save as PDF" button if they want offline access. This ensures they always see the latest tax data.
+3.  **Upsell Sequence:** Day 1 (Blueprint delivery), Day 2 (183-Day trap education), Day 3 (Pitch $19 Pro Report), Day 4 (Pitch SafetyWing), Day 5 (Pitch Saily).
+
 ---
 
 ## Weekly CEO Checklist for OpenClaw:

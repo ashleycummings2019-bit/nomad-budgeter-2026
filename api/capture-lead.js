@@ -78,6 +78,24 @@ module.exports = async (req, res) => {
             });
         }
 
+        // --- CONVERTKIT (ESP) INTEGRATION ---
+        // Sync the lead to ConvertKit so the 5-day drip sequence begins automatically.
+        // We use catch() so it doesn't block the response if the ESP is slow.
+        const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
+        const CONVERTKIT_FORM_ID = process.env.CONVERTKIT_FORM_ID; // Form ID attached to the Sequence
+        
+        if (CONVERTKIT_API_KEY && CONVERTKIT_FORM_ID) {
+            fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=utf-8' },
+                body: JSON.stringify({
+                    api_key: CONVERTKIT_API_KEY,
+                    email: email,
+                    first_name: "Nomad" // Placeholder
+                })
+            }).catch(err => console.error('ConvertKit Sync Error:', err.message));
+        }
+
         return res.status(200).json({ success: true, id: data.records[0].id });
     } catch (error) {
         // NEVER lose a lead — accept it even if Airtable is completely down

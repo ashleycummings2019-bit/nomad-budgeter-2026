@@ -247,18 +247,38 @@
 
             const recommendations = [];
             
-            // Default: SafetyWing & Wise (Always relevant)
-            recommendations.push({
-                icon: '🛡️',
-                name: 'SafetyWing',
-                desc: 'Health Coverage',
-                url: cityData.affiliates.safetywing.url
-            });
+            const profileSelect = document.getElementById('calc-aura-profile');
+            const selectedProfile = profileSelect ? profileSelect.value : 'executive';
+
+            // Profile-based Health Insurance: Ekta for Bootstrappers, SafetyWing for Executive/Family
+            if (selectedProfile === 'bootstrapper') {
+                recommendations.push({
+                    icon: '🛡️',
+                    name: 'Ekta Insurance',
+                    desc: 'Budget Coverage',
+                    url: cityData.affiliates.ekta.url
+                });
+            } else {
+                recommendations.push({
+                    icon: '🛡️',
+                    name: 'SafetyWing',
+                    desc: 'Health Coverage',
+                    url: cityData.affiliates.safetywing.url
+                });
+            }
+
+            // Default: Wise & Saily eSIM (Always relevant)
             recommendations.push({
                 icon: '💳',
                 name: 'Wise',
                 desc: 'Transfer Savings',
                 url: cityData.affiliates.wise.url
+            });
+            recommendations.push({
+                icon: '📶',
+                name: 'Saily eSIM',
+                desc: 'eSIM Data Roaming',
+                url: cityData.affiliates.saily.url
             });
 
             // Contextual: Lexidy for Europe

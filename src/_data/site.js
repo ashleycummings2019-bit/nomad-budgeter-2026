@@ -45,6 +45,26 @@ module.exports = function() {
             "name": "Interactive Brokers",
             "url": "https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php",
             "desc": "The best brokerage for international expats and nomads."
+        },
+        "lexidy": {
+            "name": "Lexidy Legal",
+            "url": "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa",
+            "desc": "Verified legal experts for Spain, Portugal, and Greece digital nomad visas.",
+            "countryUrls": {
+                "portugal": "https://lexidy.com/portugal/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa",
+                "spain": "https://lexidy.com/spain/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa",
+                "greece": "https://lexidy.com/greece/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa"
+            }
+        },
+        "saily": {
+            "name": "Saily eSIM",
+            "url": "https://saily.tp.st/XPRLV5qw",
+            "desc": "Stay connected instantly with eSIM data roaming in 150+ countries. Set up in minutes before you land."
+        },
+        "ekta": {
+            "name": "Ekta Insurance",
+            "url": "https://ektatraveling.tp.st/OC777BtT",
+            "desc": "Budget-friendly travel medical insurance starting at just $0.99/day, fully Schengen visa compliant."
         }
     },
     "stripe": {
