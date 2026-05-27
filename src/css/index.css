@@ -225,7 +225,7 @@ img { max-width: 100%; height: auto; }
 
 /* Buttons */
 .action-btn {
-    background: var(--aura-primary);
+    background: linear-gradient(135deg, var(--aura-primary), #059669);
     color: white;
     border: none;
     padding: 1.1rem 2.2rem;
@@ -236,12 +236,33 @@ img { max-width: 100%; height: auto; }
     transition: var(--transition-smooth);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.75rem;
     box-shadow: var(--neon-shadow);
     overflow: hidden;
     position: relative;
+    min-height: 48px;
 }
-.action-btn::after, .premium-btn::after {
+.action-btn-sm {
+    background: linear-gradient(135deg, var(--aura-primary), #059669);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: var(--neon-shadow);
+    overflow: hidden;
+    position: relative;
+    min-height: 44px;
+}
+.action-btn::after, .action-btn-sm::after, .premium-btn::after {
     content: '';
     position: absolute;
     top: 0;
@@ -251,30 +272,41 @@ img { max-width: 100%; height: auto; }
     background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
     animation: shimmer 3s infinite;
 }
-.action-btn:hover {
+.action-btn:hover, .action-btn-sm:hover {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
     background: #059669;
 }
-.action-btn.secondary {
+.action-btn.secondary, .action-btn-sm.secondary {
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--glass-border);
     box-shadow: none;
 }
-.action-btn.secondary:hover { background: rgba(255,255,255,0.1); }
+.action-btn.secondary:hover, .action-btn-sm.secondary:hover { 
+    background: rgba(255,255,255,0.1); 
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
 
 .glass-btn-sm {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--glass-border);
     color: var(--text-main);
-    padding: 0.7rem 1.2rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 10px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.4s ease, transform 0.4s ease;
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
 }
-.glass-btn-sm:hover { background-color: rgba(255,255,255,0.1); transform: translateY(-1px); }
+.glass-btn-sm:hover { 
+    background-color: rgba(255,255,255,0.1); 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
 
 /* Badges */
 .badge-2026 {
