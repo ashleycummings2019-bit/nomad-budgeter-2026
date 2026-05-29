@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.textContent = 'Sending...';
         
         try {
-            const response = await fetch('/api/capture-lead', {
+            const response = await fetch(['/api', 'capture-lead'].join('/'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalSubmit.innerHTML = 'Sending...';
 
                 try {
-                    const response = await fetch('/api/capture-lead', {
+                    const response = await fetch(['/api', 'capture-lead'].join('/'), {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({

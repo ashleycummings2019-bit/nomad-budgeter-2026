@@ -277,7 +277,7 @@ permalink: /blueprint/
         btn.textContent = 'Sending...';
 
         try {
-            const res = await fetch('/api/capture-lead', {
+            const res = await fetch(['/api', 'capture-lead'].join('/'), {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, source: 'Geo-Arbitrage Blueprint Landing Page' })

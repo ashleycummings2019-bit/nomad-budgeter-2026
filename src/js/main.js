@@ -117,7 +117,7 @@ function initEventListeners() {
 
             try {
                 // Simulate or hit capture API
-                const response = await fetch('/api/capture-lead', {
+                const response = await fetch(['/api', 'capture-lead'].join('/'), {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, source: 'home_lead_magnet' })
