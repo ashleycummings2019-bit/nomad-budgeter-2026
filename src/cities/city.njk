@@ -324,7 +324,7 @@ window.__NB_STATIC_CITY__ = {
                 <div class="upsell-content">
                     <div class="badge-2026 upsell-badge">FINANCIAL CLARITY</div>
                     <h3 class="upsell-title">Maximize Your Sovereign ROI in {{ city.name }}</h3>
-                    <p class="text-dim mb-4" style="font-size: 0.95rem; line-height: 1.5;">Stop guessing with your finances. Get the exact tax arbitrage strategies and living costs for {{ city.name }} in 2026.</p>
+                    <p class="text-dim mb-4 upsell-desc" style="font-size: 0.95rem; line-height: 1.5;">Stop guessing with your finances. Get the exact tax arbitrage strategies and living costs for {{ city.name }} in 2026.</p>
                     <ul class="upsell-features">
                         <li>Detailed 2026 Tax Optimization Strategy</li>
                         <li>Local Apartment & Utility Estimates</li>
@@ -343,6 +343,45 @@ window.__NB_STATIC_CITY__ = {
                 </div>
             </div>
         </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 50/50 A/B Test for Upsell Pricing ($19 vs $99)
+            if (Math.random() < 0.5) {
+                const title = document.querySelector('#pro-upsell .upsell-title');
+                const desc = document.querySelector('#pro-upsell .upsell-desc');
+                const price = document.querySelector('#pro-upsell .nb-price');
+                const btn = document.querySelector('#unlock-pro-btn');
+                const features = document.querySelector('#pro-upsell .upsell-features');
+                const badge = document.querySelector('#pro-upsell .upsell-badge');
+
+                if (title) title.innerText = 'Enterprise Tax & Budget Intelligence';
+                if (desc) desc.innerText = 'High-fidelity global tax data. Includes API access, bulk exports, and 2026 compliance monitoring.';
+                if (price) {
+                    price.dataset.usd = "99";
+                    price.innerText = "$99";
+                }
+                if (btn) {
+                    btn.dataset.price = "99";
+                    btn.innerText = "Unlock Business Hub →";
+                }
+                if (badge) {
+                    badge.innerText = "HIGH-RESOLUTION DATA";
+                    badge.style.background = "rgba(139, 92, 246, 0.2)";
+                    badge.style.color = "var(--aura-primary)";
+                    badge.style.border = "1px solid rgba(139, 92, 246, 0.3)";
+                }
+                if (features) {
+                    features.innerHTML = `
+                        <li>Full Data API (JSON/GraphQL)</li>
+                        <li>Predictive Tax Delta Forecasting</li>
+                        <li>Dedicated Tax Strategist</li>
+                        <li>Unlimited Country Tracking</li>
+                    `;
+                }
+            }
+        });
+        </script>
 
         <div class="trust-badge mt-8">
             <span>📊 Tax data last verified: {{ site.dataLastVerified }}</span>

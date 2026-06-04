@@ -76,7 +76,18 @@ function loadRagContext() {
         console.warn('   ⚠️  Could not load TRAFFIC_WORKFLOW.md. Continuing without it.');
     }
 
-    return { taxGuide, affiliateLinks, trafficWorkflow };
+    // 1d. Internal Linking Graph (Cities)
+    let internalLinks = '';
+    try {
+        const cities = JSON.parse(fs.readFileSync(path.join(root, 'src', '_data', 'cities.json'), 'utf8'));
+        const cityUrls = cities.map(c => `[${c.name} Tax Guide](/cities/${c.slug}/)`).join(', ');
+        internalLinks = `Available City Guides for linking:\n${cityUrls}`;
+        console.log('   ✅ Injected: Internal City Links');
+    } catch (e) {
+        console.warn('   ⚠️  Could not load cities.json. Continuing without internal links.');
+    }
+
+    return { taxGuide, affiliateLinks, trafficWorkflow, internalLinks };
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -135,6 +146,7 @@ Your writing is authoritative, structured, and action-oriented. You focus on "We
 ━━━ LIVE CONTEXT (use these facts — do NOT hallucinate statistics) ━━━
 ${ctx.taxGuide ? `\nTAX ARBITRAGE GUIDE:\n${ctx.taxGuide}\n` : ''}
 ${ctx.affiliateLinks ? `\nAFFILIATE LINKS (use exact tracked URLs when mentioning partners):\n${ctx.affiliateLinks}\n` : ''}
+${ctx.internalLinks ? `\nINTERNAL LINKS (Integrate 2-3 of these organically into your blog post content using Markdown):\n${ctx.internalLinks}\n` : ''}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Topic: "${topic}"
@@ -200,6 +212,43 @@ async function callGemini(prompt, model, temperature = 0.7, retries = 4) {
 
         throw new Error(`Gemini API error (${model}): ${errText}`);
     }
+}
+
+async function generateBlogImage(topic, slug) {
+    const prompt = `A high-quality, cinematic, professional editorial photo representing: ${topic}. Digital nomad lifestyle, clean lighting, travel photography, photorealistic.`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=${GEMINI_API_KEY}`;
+    
+    try {
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                instances: [{ prompt: prompt }],
+                parameters: { sampleCount: 1, outputOptions: { mimeType: 'image/jpeg' } }
+            })
+        });
+
+        if (!res.ok) {
+            console.warn(`   ⚠️ Image generation failed: ${await res.text()}`);
+            return null;
+        }
+
+        const data = await res.json();
+        const base64Data = data?.predictions?.[0]?.bytesBase64Encoded;
+        
+        if (base64Data) {
+            const imgPath = path.join(process.cwd(), 'src', 'assets', 'images', 'blog');
+            if (!fs.existsSync(imgPath)) {
+                fs.mkdirSync(imgPath, { recursive: true });
+            }
+            const filePath = path.join(imgPath, `${slug}.jpg`);
+            fs.writeFileSync(filePath, Buffer.from(base64Data, 'base64'));
+            return `/assets/images/blog/${slug}.jpg`;
+        }
+    } catch (e) {
+        console.warn(`   ⚠️ Image generation error: ${e.message}`);
+    }
+    return null;
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -437,7 +486,18 @@ async function run() {
             if (content.blog?.trim()) {
                 const slug = topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
                 const blogPath = path.join(process.cwd(), 'src', 'blog', `${slug}.md`);
-                fs.writeFileSync(blogPath, content.blog.trim());
+                
+                console.log(`\n🎨 Generating cover image via Imagen 3...`);
+                const imagePath = await generateBlogImage(topic, slug);
+                let finalBlog = content.blog.trim();
+                
+                if (imagePath) {
+                    finalBlog = finalBlog.replace(/---([\s\S]*?)---/, (match, p1) => {
+                        return `---${p1}\nimage: "${imagePath}"\n---`;
+                    });
+                }
+
+                fs.writeFileSync(blogPath, finalBlog);
                 console.log(`\n📝 Blog saved → ${blogPath}`);
             } else {
                 console.warn(`⚠️  No blog content generated for "${topic}"`);
@@ -449,6 +509,17 @@ async function run() {
         }
 
         console.log('\n🎉 All topics processed!');
+
+        // Phase 5: Ping Google Sitemap
+        try {
+            console.log('\n📡 Pinging Google Search Console to index new posts...');
+            const sitemapUrl = 'https://nomadbudgeter.com/sitemap.xml';
+            const pingUrl = `https://www.google.com/ping?sitemap=${encodeURIComponent(sitemapUrl)}`;
+            await fetch(pingUrl);
+            console.log('   ✅ Sitemap ping successful. Google will crawl the new posts soon.');
+        } catch (e) {
+            console.warn(`   ⚠️ Sitemap ping failed: ${e.message}`);
+        }
 
     } catch (err) {
         console.error('\n❌ CMO Pipeline error:', err.message);
