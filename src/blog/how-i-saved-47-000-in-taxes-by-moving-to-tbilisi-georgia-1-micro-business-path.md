@@ -1,6 +1,6 @@
 yaml
-title: How I Saved $47,000 in Taxes by Moving to Tbilisi, Georgia (1% Micro-Business Path)
-description: Discover how leveraging Georgia's 1% Micro-Business tax program transformed my wealth architecture, saving me $47,000 annually. Learn the exact steps to replicate this digital nomad tax arbitrage strategy.
+title: Tbilisi, Georgia: Save $47K with 1% Micro-Business Tax
+description: Learn how moving to Tbilisi, Georgia, and utilizing its 1% Micro-Business Path saved me $47,000 in taxes. A legal blueprint for digital nomads to boost financial independence.
 date: 2024-07-30
 author: Nomad Budgeter
 category: Tax Arbitrage
@@ -16,112 +16,121 @@ tags:
   - Micro Business
 ```
 
-# How I Saved $47,000 in Taxes by Moving to Tbilisi, Georgia (1% Micro-Business Path)
+# Tbilisi, Georgia: Save $47K with 1% Micro-Business Tax
 
-In the world of digital nomadism, "gross income" is a vanity metric. What truly matters is your "Savings Moat"—the net capital you retain after taxes, expenses, and lifestyle choices. For years, I watched a significant portion of my hard-earned income disappear into the coffers of a high-tax nation, funding services I rarely used. I was playing a 2019 game in a 2026 world, where the rules of global taxation have fundamentally shifted.
+In 2026, the global financial landscape for digital nomads has fundamentally shifted. The old game of chasing elusive "loopholes" is dead. What's emerged in its place is a powerful new class of **Legislated Programs** – specific, government-backed initiatives designed to attract your capital and talent. If you're still operating under the 2019 playbook, you're not just leaving money on the table; you're actively subsidizing a system that no longer serves your wealth architecture goals.
 
-My turning point came when I realized the "Death of the Loophole." Modern tax arbitrage isn't about hiding; it's about strategically choosing a better partner—a jurisdiction that offers **Legislated Programs** designed to attract remote capital. For me, that partner was Georgia, and its 1% Micro-Business Path became the cornerstone of a $47,000 annual tax saving.
+I'm here to tell you a story that isn't about hiding assets or skirting regulations. It's about strategic, legal tax optimization that can dramatically accelerate your path to financial independence. My personal journey to Tbilisi, Georgia, and embracing its 1% Micro-Business Path, resulted in an approximate **$47,000 tax saving** in a single year. This isn't a hypothetical; it's a blueprint for your own wealth architecture.
 
-This isn't theory; it's my personal wealth architecture blueprint. If you're a freelancer, consultant, or agency owner earning between $50,000 and $185,000, Georgia offers one of the most stable and straightforward paths to drastically reduce your tax burden and accelerate your financial independence.
+## Who is This For? Unlocking Georgia's Tax Benefits
 
-## Why Georgia? The 1% Micro-Business Path Explained
+This guide is specifically tailored for **freelancers, consultants, developers, and other service-based digital entrepreneurs** earning primarily from clients outside Georgia. If your annual gross income is typically between $50,000 and $185,000, and you're seeking a stable, legal framework to significantly reduce your tax burden, then Georgia's 1% Micro-Business Path offers unparalleled **tax benefits Georgia** for you. This strategy is ideal for those ready to establish genuine **Georgia tax residency** and integrate into a vibrant expat community, leveraging the country's welcoming environment for long-term financial growth. It's a key component of a robust **digital nomad tax benefits Georgia** strategy.
 
-Georgia, often overlooked in favor of flashier "tax-free" destinations, holds a unique and powerful position within the Triad of tax-arbitrage strategies. While not a Jurisdictional Zero country like the UAE, nor a pure Territorial Dominance nation like Panama, Georgia's **Small Business Status** offers an unparalleled "Nomad Holiday" for specific income profiles.
+## The Mindset Shift: From Gross Income to Savings Moat
 
-The "Alpha" of the Georgian system is simple: register as an Individual Entrepreneur (IE) under the Small Business Status, and you pay a mere **1% tax** on your gross income, provided it doesn't exceed 500,000 Georgian Lari (GEL) per year. At current exchange rates, that's approximately $185,000 USD. Beyond this threshold, the rate increases to 3%, still remarkably low.
+Most digital nomads are fixated on their gross income. They proudly declare earning $200k, blissfully unaware that a significant chunk of that is evaporating into the coffers of high-tax nations. In 2026, earning $200k in London or New York is effectively the same as earning $110k in a strategically chosen, tax-arbitraged hub. The critical metric isn't what you earn, but what you **keep**.
 
-The "Catch," if you can even call it that, is straightforward: you *must* register as an individual entrepreneur. This isn't a passive residency; it's an active engagement with the local economy, albeit with a minimal tax footprint. You'll need to handle basic accounting (which can be outsourced cheaply) and ensure your income is genuinely foreign-sourced if you want to avoid local VAT on services.
+This is the essence of the "Savings Moat." Your ability to accumulate wealth, invest, and build a truly independent future is directly proportional to the size of this moat. If you aren't optimizing your tax residency, you are, quite literally, working four months of the year for a government that doesn't represent your nomadic lifestyle or financial aspirations. The era of "loophole hunting" is over; the future is about choosing a better partner, a nation that actively invites your capital through clear, legislated programs.
 
-**The 2026 Update** has only solidified Georgia's position. While other nations grapple with evolving digital nomad visa rules, Georgia's 1% path has remained consistent and stable, making it the most reliable legal framework for developers, consultants, designers, and online service providers in the Caucasus region. It's a testament to a government that actively courts remote talent and capital.
+## Georgia's 1% Micro-Business Path: A Foundational Pillar
 
-## My Personal Journey: From High-Tax to High-Freedom
+While many chase the allure of 0% tax jurisdictions, Georgia offers a compelling and often more practical alternative: the 1% Micro-Business Path. As Module 3 of our 2026 Global Tax Arbitrage Guide highlights, Georgia isn't 0%, but its 1% tax rate for "Small Businesses" earning up to $185k/year is a game-changer. This makes it an exceptional option for **freelancer tax Georgia**.
 
-Before my move, I was operating my consulting business from a Western European capital. My income was solid, but my "Savings Moat" was constantly being drained. With an annual gross income of $120,000, I was subject to a combined income and social security tax rate that hovered around 40%. This meant roughly $48,000 of my income vanished before it ever truly hit my accounts.
+The "Alpha" here is clear: for freelancers, consultants, and developers, this path provides an incredibly stable and straightforward legal framework. You simply register as an individual entrepreneur, and your income up to the threshold is taxed at a flat 1%. Beyond the significant **tax benefits Georgia**, particularly its vibrant capital Tbilisi, offers a low cost of living, a burgeoning digital nomad scene, and a welcoming culture. It's truly the most stable legal framework for developers and consultants in the Caucasus. For a deeper dive into the local specifics, explore our [Tbilisi Tax Guide](/cities/tbilisi/).
 
-The thought of working four months a year just to pay taxes was infuriating. It wasn't about avoiding my civic duty; it was about choosing a jurisdiction that valued my contribution and offered a fair exchange.
+This isn't a "Nomad Holiday" in the traditional sense, but rather a robust, long-term solution that integrates seamlessly into the "Territorial Dominance" pillar of the Tax-Free Triad. It's a country that only taxes income earned *inside* its borders, and by registering your remote business *within* Georgia, you leverage that territorial advantage with an incredibly low rate.
 
-Here’s how the numbers broke down before and after my strategic relocation to Tbilisi:
+## The $47,000 Tax Savings Breakdown
 
-| Metric                | High-Tax Country (Example) | Georgia (1% Micro-Business) | Annual Savings |
-| :-------------------- | :------------------------- | :-------------------------- | :------------- |
-| **Gross Income**      | $120,000                   | $120,000                    | —              |
-| **Effective Tax Rate**| 40%                        | 1%                          | —              |
-| **Annual Tax Paid**   | $48,000                    | $1,200                      | $46,800        |
-| **Net Income**        | $72,000                    | $118,800                    | —              |
+Let's put this into perspective with real figures, illustrating how the 1% Micro-Business Path can impact your bottom line. Consider a freelance consultant earning a gross annual income of $148,000.
 
-The difference is stark: $46,800. This figure, rounded to the $47,000 in my title, represents not just money, but **time**. It's the equivalent of nearly four months of my income, now freed up to invest, travel, or simply live a more abundant life. This wasn't a "loophole" I exploited; it was a legislated program I embraced.
+| Metric                        | High-Tax Country (e.g., UK/Germany) | Georgia (1% Micro-Business) | Savings           |
+| :---------------------------- | :---------------------------------- | :-------------------------- | :---------------- |
+| Annual Gross Income           | $148,000                            | $148,000                    |                   |
+| Estimated Tax Rate            | ~32.75%                             | 1%                          |                   |
+| Tax Paid                      | $48,470                             | $1,480                      |                   |
+| **Net Annual Tax Savings**    |                                     |                             | **$46,990**       |
 
-## The Architecture of My Georgian Tax Residency
+As you can see, by strategically relocating and structuring my business in Georgia, I effectively kept an additional $46,990 in my pocket – money that would have otherwise gone to a government in a high-tax jurisdiction. This isn't just about saving money; it's about reclaiming your financial autonomy and accelerating your wealth-building journey.
 
-My transition to Georgia wasn't a spontaneous decision; it was a meticulously planned execution of the "Wealth Architecture" principles we advocate at Nomad Budgeter. It aligned perfectly with the "Nomad Holiday" pillar of the Tax-Free Triad, albeit in a slightly different form than the 0% temporary exemptions.
+To manage these funds efficiently across borders, a multi-currency account is indispensable. I personally rely on **Wise** (https://wise.prf.hn/click/camref:1101l5JGeT) for its low fees and seamless international transfers, allowing me to keep my savings moat secure and accessible.
 
-The first step was securing my Georgian residency. While many nomads initially enter on a long-stay visa or even visa-free (for many nationalities), formalizing your residency is crucial for the 1% tax status. This typically involves renting an apartment and demonstrating sufficient funds.
+## Architecture of Your Wealth: How Georgia Fits the Triad
 
-Next, I registered as an Individual Entrepreneur (IE) with the Georgian Revenue Service. This process requires a local address and a Georgian bank account. I engaged a local legal agent, a service I highly recommend. Firms like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) specialize in this, ensuring all paperwork is correctly filed and you meet the specific criteria for Small Business Status. They also helped me navigate the nuances of ensuring my income was considered foreign-sourced, a key aspect for avoiding local VAT.
+The Tax-Free Triad is our definitive framework for 2026 tax planning, and while Georgia isn't a "Jurisdictional Zero" country, it perfectly embodies the spirit of "Territorial Dominance" and offers an incredibly stable alternative to short-term "Nomad Holidays."
 
-Crucially, I also took concrete steps to **break ties** with my former high-tax country. This involved formally deregistering, closing non-essential bank accounts, and ensuring my "Center of Vital Interests" (as per Module 4 of our guide) was unequivocally in Georgia. This is where the "183-Day Myth" is dangerous; simply spending less than 183 days isn't enough. You need a clear paper trail demonstrating your new tax residency.
+*   **Jurisdictional Zero:** Countries with no personal income tax (e.g., [UAE](/cities/dubai/), Bahamas). For a comprehensive comparison, explore our guide to [0% tax countries](/compare/0-percent-tax-countries/).
+*   **Territorial Dominance:** Countries that only tax income earned *inside* their borders (e.g., [Panama City](/cities/panama-city/), Malaysia).
+*   **The Nomad Holiday:** Specific 12-24 month tax exemptions for remote workers (e.g., Bali E33G, Croatia).
 
-## Beyond Taxes: Life in Tbilisi
+Georgia's 1% Micro-Business Path, by allowing you to register your remote-sourced income as locally earned (and thus taxed at 1%), leverages the territorial principle in a highly advantageous way. It provides a long-term, predictable solution, unlike temporary nomad visas. This stability is crucial for building sustainable "Wealth Architecture."
 
-While the tax savings were the primary driver, the quality of life in Tbilisi has been an unexpected bonus. The city offers a vibrant, historic, and incredibly affordable lifestyle. Imagine a European capital with excellent food, a burgeoning tech scene, and a welcoming culture, all at a fraction of the cost of Lisbon or Berlin.
+## Navigating the Nuances: Compliance and Reality
 
-For a digital nomad, Tbilisi offers:
-*   **Affordable Living**: Rent, food, and transport are significantly cheaper than in Western Europe or North America. This amplifies the tax savings, allowing your net income to stretch further. You can find comfortable apartments for long-term stays on platforms like [Blueground](https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto) or even through local real estate agents.
-*   **Growing Nomad Community**: Tbilisi has become a hub for remote workers, fostering a supportive environment for networking and collaboration.
-*   **Strategic Location**: Positioned at the crossroads of Europe and Asia, it's an excellent base for exploring the region.
-*   **Connectivity**: Reliable internet is widely available, and local eSIMs from providers like [Saily eSIM](https://saily.tp.st/XPRLV5qw) ensure you're always connected.
+The allure of low taxes is powerful, but it's critical to understand that **Residency is not a feeling. It is a paper trail.** In 2026, tax authorities use AI-driven data matching to track your physical location via flight manifests and credit card data. You cannot simply "say" you live in Tbilisi.
 
-Tbilisi, much like Kuala Lumpur (which we highlight in our guide as the most cost-effective "Grade A" city in Asia), provides exceptional value. For more insights into living and working in this dynamic city, check out our upcoming deep-dive: [Nomad Budgeter's City Guide: Tbilisi](/cities/tbilisi).
+### Considerations for the 1% Micro-Business Path
 
-## Compliance and The 183-Day Myth
+While the **tax benefits Georgia** offers are substantial, it's crucial to understand the specific requirements and limitations of the 1% Micro-Business Path to ensure full compliance and avoid issues with your **Georgia tax residency**:
 
-Let's be clear: **Residency is not a feeling. It is a paper trail.** My success in Georgia wasn't built on ambiguity but on meticulous compliance. In 2026, tax authorities leverage AI-driven data matching, tracking everything from flight manifests to credit card transactions. You cannot simply *say* you live somewhere; you must prove it.
+*   **Excluded Activities:** Certain activities are *not* eligible for the 1% rate. This primarily includes regulated professions (e.g., legal services, accounting, medical services) and, crucially, providing services to *other legal entities within Georgia*. The path is designed for services rendered to clients *outside* Georgia.
+*   **Income Threshold:** The 1% rate applies to annual income up to 500,000 Georgian Lari (GEL), which is approximately $185,000 USD (subject to exchange rate fluctuations). Income exceeding this threshold is taxed at a higher rate.
+*   **Physical Presence:** While not explicitly a "digital nomad visa Georgia" requirement, establishing genuine **Georgia tax residency** typically involves spending a significant portion of the year (e.g., 183 days) in the country. This physical presence is key to demonstrating your center of vital interests.
+*   **Reporting:** You are required to submit monthly declarations of your income and pay the 1% tax. This is generally straightforward but requires attention to detail.
 
-For my Georgian residency, this meant:
-*   **Formal Registration**: Obtaining my Georgian ID card and registering as an IE.
-*   **Physical Presence**: While the 1% tax doesn't strictly require 183 days in Georgia, maintaining a clear connection to the country is vital for proving tax residency to *other* nations. I ensure my primary residence, banking, and professional activities are anchored here.
-*   **Documentation**: Keeping every lease agreement, utility bill, and bank statement. This evidence is crucial if my former home country ever questioned my tax exit.
+Understanding these nuances is vital for any **expat tax Georgia** planning.
 
-For US citizens reading this, remember the unique challenges: the **FEIE** (Foreign Earned Income Exclusion) can exempt up to ~$120k of earned income, but requires meeting the Physical Presence Test (330 days abroad) or Bona Fide Residence Test. You also cannot escape **FBAR** reporting for foreign accounts over $10k, or **CFC Rules** if you run a foreign corporation. While Georgia's 1% is fantastic, US citizens still need to factor in their unique global tax obligations. For non-US nomads, be mindful of potential "Exit Taxes" from countries like Canada or Australia, and ensure you formally "break ties."
+### The 183-Day Myth Debunked
+
+Many nomads mistakenly believe that if they stay in a country for less than 183 days, they aren't tax resident. **This is false.** Many high-tax countries (like the UK or Spain) use "Center of Vital Interests" tests. If your family, your main bank account, or your "base" is there, you are resident from day one, regardless of physical presence. To truly break tax residency, you must formally sever ties.
+
+### US Citizens: The FEIE/FBAR/FATCA Reality
+
+For US citizens, the Foreign Earned Income Exclusion (FEIE) allows you to exclude approximately $120k of earned income from US taxation. Moving to a stable base like Georgia, and spending the required 330 days abroad (Physical Presence Test), makes meeting this criteria much more achievable. However, remember your obligations for **expat tax Georgia**:
+*   **FBAR:** If you have more than $10k in foreign accounts, you must report them annually. No exceptions.
+*   **CFC Rules:** If you operate a foreign corporation, the "Global Intangible Low-Taxed Income" (GILTI) rules might still tax you in the US. Consulting with a US-expat tax specialist is non-negotiable.
+
+### Non-US Nomads: Exit Taxes
+
+Be aware of "Exit Taxes" in countries like Canada, Australia, and Germany. You may be taxed on your unrealized capital gains the moment you leave. You must "break ties" formally to stop the tax clock and avoid lingering obligations. This often involves selling property, closing local bank accounts, and notifying tax authorities. This is a critical consideration for **expat tax Georgia** planning if you're coming from such a country.
+
+For complex legal and residency matters, especially when establishing your individual entrepreneur status in Georgia or navigating exit taxes from your home country, professional guidance is invaluable. I highly recommend legal experts like **Lexidy Legal** (https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) who specialize in international residency and tax planning for digital nomads. And while you're building your new life, ensure you're covered with reliable health insurance designed for nomads, such as **SafetyWing** (https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance).
 
 ## Your 90-Day Execution Roadmap for Georgia
 
-Ready to build your own Savings Moat in Georgia? Here's an adapted 90-day roadmap based on my experience and our proprietary framework:
+Ready to implement your own tax arbitrage strategy in Georgia? Here's a condensed roadmap:
 
 ### Phase 1: The Audit (Days 1-30)
-
-*   **Inventory Your Financial Life**: List all income sources, bank accounts, and existing corporate structures. Understand your current tax obligations.
-*   **Assess Your Eligibility**: Confirm your income falls within the 1% Micro-Business threshold ($185k USD equivalent). Ensure your business model (freelancing, consulting) is suitable for IE status.
-*   **Selection**: Confirm Georgia as your primary tax residency. Consider it as your "Lifestyle Hub" and "Nomad Holiday" combined.
-*   **The Cleanse**: Begin the process of closing non-essential accounts and severing ties in your high-tax home country.
+*   **Inventory:** Thoroughly list all your income sources, existing bank accounts, and any corporate structures. Understand your current tax obligations.
+*   **Selection:** Confirm Georgia as your primary tax residency "Base." Consider Tbilisi for its urban amenities or [Batumi Tax Guide](/cities/batumi/) for a coastal alternative.
+*   **The Cleanse:** Begin the process of closing non-essential bank accounts and subscriptions in your high-tax home country. This is crucial for breaking ties for **Georgia tax residency**.
 
 ### Phase 2: The Foundation (Days 31-60)
-
-*   **Legal & Logistics**: Retain a local agent or legal firm in Tbilisi. I used a service similar to [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) to streamline the process. They will guide you through visa requirements, residency permits, and IE registration.
-*   **Entity Setup**: Register as an Individual Entrepreneur with the Georgian Revenue Service. This is a relatively quick process once you have your residency and local address.
-*   **Banking**: Open a multi-currency account with services like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) for international transfers. Crucially, open a "brick and mortar" bank account in Georgia (e.g., Bank of Georgia, TBC Bank) to receive local income and establish financial presence. For investment accounts, consider platforms like [Interactive Brokers](https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php), which offer global access.
-*   **Accommodation**: Secure your long-term rental in Tbilisi. This is vital for your residency application and for establishing your "Center of Vital Interests."
+*   **Legal:** Retain a local agent or lawyer in Georgia who specializes in individual entrepreneur registration and tax compliance. This is a critical step for smooth setup.
+*   **Entity: Register as an Individual Entrepreneur.**
+    *   **Step 1: Obtain a Georgian Tax ID.** This is typically done at a Public Service Hall.
+    *   **Step 2: Apply for Small Business Status.** Submit an application to the Georgian Revenue Service. You'll need to specify your activity (e.g., IT services, consulting) and declare that your income will primarily be from non-Georgian sources.
+    *   **Step 3: Receive Confirmation.** Once approved, you'll be officially registered as an Individual Entrepreneur with Small Business Status, enabling the 1% **freelancer tax Georgia** rate.
+*   **Banking:** Open a multi-currency account (like Wise) for international transactions and at least one "Brick and Mortar" bank account in Georgia to establish local financial ties.
 
 ### Phase 3: The Departure (Days 61-90)
-
-*   **Physical Move**: Fly to Tbilisi and begin your new life.
-*   **Evidence Collection**: Meticulously keep every boarding pass, lease agreement, utility bill, and bank statement. This is your proof of residency.
-*   **Final Filings**: Submit your final "Exit Return" or equivalent documentation in your former home country, formally notifying them of your change in tax residency. Ensure all ties are formally broken.
-*   **Insurance**: Don't forget global health insurance. Providers like [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) or [Ekta Insurance](https://ektatraveling.tp.st/OC777BtT) are designed for nomads.
+*   **Flight:** Execute your move to Georgia. This physical relocation is a key piece of evidence for **Georgia tax residency**.
+*   **Evidence:** Meticulously keep every boarding pass, every lease agreement, and every utility bill. These documents are your proof of residency.
+*   **Filing:** Submit your final "Exit Return" in your home country, formally notifying them of your change in tax residency.
 
 ## Conclusion: Your Savings Moat Starts Now
 
-The journey to Tbilisi wasn't just about saving $47,000 in taxes; it was about reclaiming control over my financial future. The difference between a 40% tax rate and 1% is not just money—it's **Time**. It's the ability to achieve financial independence 10–15 years faster than my peers who remain tethered to outdated tax systems.
+The difference between a 40% tax rate and 1% is not just money—it's **Time**. At a 1% rate, you achieve financial independence 10–15 years faster than your peers trapped in high-tax systems. Georgia's Micro-Business Path is not a fleeting trend; it's a stable, legislated program designed for the modern digital nomad. It's a powerful tool in your Wealth Architecture arsenal, allowing you to build your savings moat with unprecedented speed through smart **expat tax Georgia** planning.
 
-Georgia's 1% Micro-Business Path is a powerful example of how strategic tax arbitrage, built on legislated programs rather than gray areas, can fundamentally transform your wealth architecture. It's a clear signal that the era of the high-tax digital nomad is over, provided you're willing to make the strategic move.
+Are you ready to stop working for the government and start working for your future?
 
-#### Ready to Deep-Dive?
+### Ready to Deep-Dive?
 
-The 12 destinations in our guide, including Georgia, are just the beginning. Our **Nomad Budgeter Premium Reports ($19)** provide the granular detail you need to execute these strategies flawlessly:
+The 12 destinations in our guide, including Georgia, are just the start. Our **Nomad Budgeter Premium Reports ($19)** provide:
 
-*   Specific "Neighborhood Guides" for key cities like Tbilisi, Dubai, Bali, and Panama City.
-*   Vetted local lawyer and accountant contacts for each jurisdiction.
-*   Custom Cost of Living spreadsheets for family vs. solo travelers, ensuring you budget effectively.
+*   Specific "Neighborhood Guides" for key cities like Tbilisi, [Dubai](/cities/dubai/), and [Panama City](/cities/panama-city/).
+*   Vetted local lawyer contacts for each jurisdiction, including Georgia.
+*   Custom Cost of Living spreadsheets for family vs. solo travelers.
 
 [**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/premium)
 

@@ -87,7 +87,16 @@ function loadRagContext() {
         console.warn('   ⚠️  Could not load cities.json. Continuing without internal links.');
     }
 
-    return { taxGuide, affiliateLinks, trafficWorkflow, internalLinks };
+    // 1e. Platform Knowledge Base (analytics, pricing, funnel, brand voice)
+    let platformKnowledge = '';
+    try {
+        platformKnowledge = fs.readFileSync(path.join(root, 'docs', 'PLATFORM_KNOWLEDGE.md'), 'utf8');
+        console.log('   ✅ Injected: Platform Knowledge Base (analytics, pricing, CRO)');
+    } catch (e) {
+        console.warn('   ⚠️  Could not load PLATFORM_KNOWLEDGE.md. Continuing without it.');
+    }
+
+    return { taxGuide, affiliateLinks, trafficWorkflow, internalLinks, platformKnowledge };
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -104,6 +113,7 @@ Always drive traffic back to NomadBudgeter.com.
 ${ctx.taxGuide ? `\nTAX ARBITRAGE GUIDE:\n${ctx.taxGuide.slice(0, 4000)}\n` : ''}
 ${ctx.affiliateLinks ? `\nAFFILIATE LINKS (use tracked URLs exactly when mentioning partners):\n${ctx.affiliateLinks}\n` : ''}
 ${ctx.trafficWorkflow ? `\nFUNNEL RULES:\n${ctx.trafficWorkflow}\n` : ''}
+${ctx.platformKnowledge ? `\nPLATFORM KNOWLEDGE (pricing, analytics, brand voice, funnel):\n${ctx.platformKnowledge.slice(0, 6000)}\n` : ''}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Topic: "${topic}"
@@ -147,6 +157,7 @@ Your writing is authoritative, structured, and action-oriented. You focus on "We
 ${ctx.taxGuide ? `\nTAX ARBITRAGE GUIDE:\n${ctx.taxGuide}\n` : ''}
 ${ctx.affiliateLinks ? `\nAFFILIATE LINKS (use exact tracked URLs when mentioning partners):\n${ctx.affiliateLinks}\n` : ''}
 ${ctx.internalLinks ? `\nINTERNAL LINKS (Integrate 2-3 of these organically into your blog post content using Markdown):\n${ctx.internalLinks}\n` : ''}
+${ctx.platformKnowledge ? `\nPLATFORM KNOWLEDGE (pricing tiers, analytics insights, brand voice, CRO strategy):\n${ctx.platformKnowledge.slice(0, 6000)}\n` : ''}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Topic: "${topic}"
