@@ -17,17 +17,13 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@prisma/client": "^7.8.0",
     "cssnano": "^8.0.1",
-    "pg": "^8.20.0",
     "postcss": "^8.5.15",
     "postcss-cli": "^11.0.1",
-    "prisma": "^7.8.0",
     "terser": "^5.47.1"
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.0",
-    "@prisma/adapter-pg": "^7.8.0",
     "axios": "^1.6.0",
     "stripe": "^15.0.0"
   },
