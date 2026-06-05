@@ -2,6 +2,8 @@
 layout: layouts/blog.njk
 title: "Tbilisi vs Bucharest for Digital Nomads (2026)"
 meta_description: "Compare cost of living, taxes, visas, and lifestyle between Tbilisi and Bucharest to find the best digital nomad base in Eastern Europe and the Caucasus."
+description: "Compare cost of living, taxes, visas, and lifestyle between Tbilisi and Bucharest to find the best digital nomad base in Eastern Europe and the Caucasus."
+author: "Ashley Cummings"
 date: 2025-01-09
 tags: ["compare", "tbilisi", "bucharest"]
 draft: true

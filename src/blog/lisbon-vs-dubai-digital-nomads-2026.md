@@ -2,6 +2,8 @@
 layout: layouts/blog.njk
 title: "Lisbon vs Dubai for Digital Nomads (2026): Costs, Tax & Visas"
 meta_description: "Lisbon vs Dubai in 2026: compare costs, taxes & visas for digital nomads. Find your ideal remote work city now."
+description: "Lisbon vs Dubai in 2026: compare costs, taxes & visas for digital nomads. Find your ideal remote work city now."
+author: "Ashley Cummings"
 date: 2026-05-12
 tags: ["compare", "lisbon", "dubai", "best digital nomad cities 2026", "tax free"]
 draft: true

@@ -198,7 +198,7 @@ The 12 destinations mentioned in our comprehensive guide are just the start. Our
 *   Vetted local lawyer contacts for each jurisdiction.
 *   Custom Cost of Living spreadsheets for family vs. solo travelers.
 
-[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/premium)
+[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/pricing/)
 
 ---
 *© 2026 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified tax professional before making residency changes.*

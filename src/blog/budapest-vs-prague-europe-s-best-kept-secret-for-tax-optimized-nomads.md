@@ -163,7 +163,7 @@ The strategic insights into Budapest and Prague are just the beginning. Our **No
 *   Vetted local lawyer and tax accountant contacts for various jurisdictions.
 *   Custom Cost of Living spreadsheets for family vs. solo travelers, helping you quantify your Savings Moat.
 
-[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/premium)
+[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/pricing/)
 
 ---
 *© 2026 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified tax professional before making residency changes.*

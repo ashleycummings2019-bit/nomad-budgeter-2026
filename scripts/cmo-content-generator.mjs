@@ -171,7 +171,7 @@ Requirements:
 - At least one data table with real figures from the Tax Guide context
 - Internal links to relevant /cities/[slug] or /compare/ pages
 - 2–3 natural affiliate mentions with tracked URLs from the context
-- CTA at the end linking to https://www.nomadbudgeter.com/premium for the $19 Pro Report
+- CTA at the end linking to https://www.nomadbudgeter.com/pricing/ for the $19 Pro Report
 - Do NOT wrap frontmatter or content in a code block — write raw markdown
 `;
 }

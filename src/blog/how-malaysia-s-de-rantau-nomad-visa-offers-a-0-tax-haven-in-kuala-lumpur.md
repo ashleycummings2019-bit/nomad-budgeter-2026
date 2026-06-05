@@ -150,7 +150,7 @@ The insights above are just the beginning. Our **Nomad Budgeter Premium Reports*
 *   Custom Cost of Living spreadsheets for family vs. solo travelers, tailored to Malaysian cities.
 *   Detailed walkthroughs of the DE Rantau application process.
 
-[**Get the Full Tax Arbitrage Bundle →**](https://www.nomadbudgeter.com/premium)
+[**Get the Full Tax Arbitrage Bundle →**](https://www.nomadbudgeter.com/pricing/)
 
 ---
 *© 2024 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified tax professional before making residency changes.*

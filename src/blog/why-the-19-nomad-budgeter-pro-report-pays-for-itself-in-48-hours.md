@@ -95,6 +95,6 @@ Stop playing a 2019 game. Equip yourself with the 2026 wealth architecture.
 
 The 12 destinations in our guide are just the beginning. The **Nomad Budgeter Premium Reports ($19)** provide the granular detail, vetted contacts, and actionable tools you need to legally drive your tax rate to zero and build your ultimate Savings Moat.
 
-[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/premium)
+[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/pricing/)
 
 *© 2026 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified tax professional before making residency changes.*

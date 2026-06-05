@@ -1,6 +1,12 @@
 ---
+layout: layouts/blog.njk
 title: "Tbilisi vs Chiang Mai for Digital Nomads (2026)"
+description: "Tbilisi vs Chiang Mai for digital nomads: 1% small business tax vs 0% foreign income, $1,200 vs $1,100 monthly costs, and visa options compared for 2026."
+meta_description: "Tbilisi vs Chiang Mai for digital nomads: 1% small business tax vs 0% foreign income, $1,200 vs $1,100 monthly costs, and visa options compared for 2026."
 date: "2026-05-10"
+author: "Ashley Cummings"
+tags: ["compare","tbilisi","chiang-mai"]
+draft: true
 ---
 
 ## 1. Cost of Living Breakdown

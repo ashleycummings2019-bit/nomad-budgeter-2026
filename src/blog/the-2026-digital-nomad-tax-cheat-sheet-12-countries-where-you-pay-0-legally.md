@@ -172,7 +172,7 @@ The 12 destinations above are just the start. Our **Nomad Budgeter Premium Repor
 *   Custom Cost of Living spreadsheets tailored for family vs. solo travelers.
 *   Detailed checklists for breaking ties and establishing new residency, including specific **digital nomad visa requirements**.
 
-[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/premium)
+[**Get the Full 2026 Tax Arbitrage Bundle →**](https://nomadbudgeter.com/pricing/)
 
 ---
 *© 2026 Nomad Budgeter. This guide is for educational purposes only and does not constitute legal or financial advice. Always consult with a qualified tax professional and immigration lawyer before making residency changes or financial decisions.*

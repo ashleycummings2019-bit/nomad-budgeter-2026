@@ -124,7 +124,7 @@ Ready to architect your wealth? The 12 destinations in our guide, including Duba
 *   Vetted local lawyer contacts for each jurisdiction.
 *   Custom Cost of Living spreadsheets for family vs. solo travelers.
 
-[**Get the Full 2026 Tax Arbitrage Bundle →**](https://www.nomadbudgeter.com/premium)
+[**Get the Full 2026 Tax Arbitrage Bundle →**](https://www.nomadbudgeter.com/pricing/)
 
 ---
 *© 2026 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified tax professional before making residency changes.*

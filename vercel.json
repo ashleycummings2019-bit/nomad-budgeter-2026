@@ -6,6 +6,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/premium",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
       "source": "/compare/city-country/:path*",
       "destination": "/compare/city-vs-country/:path*",
       "permanent": true

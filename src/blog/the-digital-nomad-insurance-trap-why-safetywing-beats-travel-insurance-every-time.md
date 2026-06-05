@@ -142,7 +142,7 @@ Don't let a medical emergency or a denied claim derail your carefully constructe
 
 The nuances of global living extend far beyond insurance. Our **Nomad Budgeter Premium Reports ($19)** provide the comprehensive insights you need to master every aspect of your location-independent wealth.
 
-[**Get the Full 2026 Tax Arbitrage Bundle & Premium Reports →**](https://nomadbudgeter.com/premium)
+[**Get the Full 2026 Tax Arbitrage Bundle & Premium Reports →**](https://nomadbudgeter.com/pricing/)
 
 ---
 *© 2026 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified insurance and tax professional before making residency or insurance changes.*

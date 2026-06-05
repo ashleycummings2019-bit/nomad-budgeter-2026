@@ -149,6 +149,6 @@ The principles of wealth architecture extend far beyond insurance. To truly mast
 *   Vetted local lawyer contacts for each jurisdiction.
 *   Custom Cost of Living spreadsheets for family vs. solo travelers.
 
-[**Master Your Global Wealth Architecture with Nomad Budgeter Premium Reports →**](https://www.nomadbudgeter.com/premium)
+[**Master Your Global Wealth Architecture with Nomad Budgeter Premium Reports →**](https://www.nomadbudgeter.com/pricing/)
 
 *© 2026 Nomad Budgeter. This guide is for educational purposes only. Always consult with a qualified tax or insurance professional before making residency or coverage decisions.*
