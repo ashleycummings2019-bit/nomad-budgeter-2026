@@ -13,33 +13,56 @@ const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 const TABLE_NAME = 'Content Pipeline';
 
-// ─── HIGH-CONVERTING TOPICS ──────────────────────────────────────────────────
-// Drawn from: Tax Guide, city data, affiliate angles, seasonal hooks
+// ─── TOPICS NEEDING CONTENT ─────────────────────────────────────────────────
+// These are stub/placeholder comparison posts that need full CMO-generated content.
+// Each entry maps to an existing blog file marked draft: true with generic body text.
 const TOPICS = [
-  // 🔥 Tax Arbitrage Hooks (high search intent)
-  "The 183-Day Trap: Why Most Digital Nomads Are Still Paying Tax They Don't Owe",
-  "Bali's E33G Visa in 2026: How to Pay 0% Tax While Living in Paradise",
-  "Spain's Beckham Law vs Portugal's NHR: Which Tax Hack Saves You More in 2026?",
-  "Dubai vs Singapore: The Ultimate 0% Tax Showdown for Remote Workers",
-  "How I Saved $47,000 in Taxes by Moving to Tbilisi, Georgia (1% Micro-Business Path)",
-
-  // 🌍 City Comparison Engines (drives calculator traffic)
-  "Chiang Mai vs Bali: The Real Cost of Living Breakdown for Digital Nomads in 2026",
-  "Lisbon vs Medellín: Where Your $3,000/Month Goes Further (With Real Data)",
-  "Budapest vs Prague: Europe's Best-Kept Secret for Tax-Optimized Nomads",
-  "Mexico City vs Buenos Aires: The Latin America Nomad Cost War",
-
-  // 💰 Affiliate-Driven Content (SafetyWing + Saily)
-  "The $42/Month Insurance That Saved My Life in Thailand (Why Every Nomad Needs SafetyWing)",
-  "Stop Paying $15/Day for Roaming: How Saily eSIM Cut My Travel Costs by 80%",
-
-  // 📊 Data-Led Authority Pieces
-  "The 2026 Digital Nomad Tax Cheat Sheet: 12 Countries Where You Pay 0% Legally",
-  "Exit Tax Warning: 5 Countries That Will Tax You for Leaving (And How to Avoid It)",
-  "US Citizens Abroad: FEIE vs FBAR vs FATCA — The Complete 2026 Survival Guide",
-
-  // 🚀 Conversion-Focused (Pro Report upsell)
-  "Why the $19 Nomad Budgeter Pro Report Pays for Itself in 48 Hours",
+  // 🌍 Stub Comparison Posts — need full data-driven rewrites
+  {
+    topic: "Bali vs Medellín for Digital Nomads (2026)",
+    slug: "bali-vs-medellin-digital-nomads-2026",
+    notes: "Compare cost of living ($1,800 vs $1,400), tax rates (0% E33G vs territorial), visa options, coworking scenes. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Chiang Mai vs Dubai for Digital Nomads (2026)",
+    slug: "chiang-mai-vs-dubai-digital-nomads-2026",
+    notes: "Compare $1,100 vs $3,500 monthly costs, 0% tax both cities, LTR vs freelance visa, coworking quality gap. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Dubai vs Lisbon for Digital Nomads (2026)",
+    slug: "dubai-vs-lisbon-digital-nomads-2026",
+    notes: "0% vs 20% NHR tax, $3,500 vs $2,400 monthly, visa pathways. Duplicate slug exists (dubai-vs-lisbon-tax-comparison) — this one needs its own angle. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Dubai vs Singapore for Digital Nomads (2026)",
+    slug: "dubai-vs-singapore-digital-nomads-2026",
+    notes: "Two 0% tax hubs compared. $3,500 vs $4,200 monthly. Freezone vs EP visa. Existing stub has generic placeholder text. Longer-form version exists at separate slug.",
+  },
+  {
+    topic: "Lisbon vs Barcelona for Digital Nomads (2026)",
+    slug: "lisbon-vs-barcelona-digital-nomads-2026",
+    notes: "NHR 2.0 vs Beckham Law, $2,400 vs $2,800 monthly, D7 vs Beckham visa. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Lisbon vs Valencia for Digital Nomads (2026)",
+    slug: "lisbon-vs-valencia-digital-nomads-2026",
+    notes: "Portugal NHR vs Spain Beckham Law angle, $2,400 vs $2,200 monthly, coworking scenes. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Medellín vs Mexico City for Digital Nomads (2026)",
+    slug: "medellin-vs-mexico-city-digital-nomads-2026",
+    notes: "Latin America heavyweight comparison. $1,400 vs $1,600 monthly, territorial tax, digital nomad visa vs tourist visa overstay risk. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Porto vs Valencia for Digital Nomads (2026)",
+    slug: "porto-vs-valencia-digital-nomads-2026",
+    notes: "Iberian Peninsula comparison. NHR vs Beckham Law, $1,800 vs $2,200 monthly, slower pace cities. Existing stub has generic placeholder text.",
+  },
+  {
+    topic: "Tbilisi vs Chiang Mai for Digital Nomads (2026)",
+    slug: "tbilisi-vs-chiang-mai-digital-nomads-2026",
+    notes: "Budget nomad showdown. 1% small business tax vs 0% foreign income, $1,200 vs $1,100 monthly. Existing stub has generic placeholder text.",
+  },
 ];
 
 // ─── AIRTABLE BATCH CREATE ───────────────────────────────────────────────────
@@ -65,7 +88,7 @@ async function createRecords(records) {
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 async function run() {
   console.log('╔══════════════════════════════════════════════════════════════╗');
-  console.log('║   🌱 AIRTABLE TOPIC SEEDER                                  ║');
+  console.log('║   🌱 AIRTABLE TOPIC SEEDER — Stub Post Queue               ║');
   console.log('╚══════════════════════════════════════════════════════════════╝');
 
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
@@ -73,14 +96,14 @@ async function run() {
     process.exit(1);
   }
 
-  const formatted = TOPICS.map(topic => ({
+  const formatted = TOPICS.map(t => ({
     fields: {
-      'Topic': topic,
+      'Topic': t.topic,
       'Status': 'Needs Draft',
     },
   }));
 
-  console.log(`\n📋 Seeding ${formatted.length} topics into "${TABLE_NAME}"...\n`);
+  console.log(`\n📋 Seeding ${formatted.length} stub topics into "${TABLE_NAME}"...\n`);
 
   // Batch in groups of 10 (Airtable limit)
   for (let i = 0; i < formatted.length; i += 10) {
