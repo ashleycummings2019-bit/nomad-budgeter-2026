@@ -1,6 +1,7 @@
 yaml
 title: Tbilisi, Georgia: Save $47K with 1% Micro-Business Tax
 description: Learn how moving to Tbilisi, Georgia, and utilizing its 1% Micro-Business Path saved me $47,000 in taxes. A legal blueprint for digital nomads to boost financial independence.
+meta_description: Learn how moving to Tbilisi, Georgia, and utilizing its 1% Micro-Business Path saved me $47,000 in taxes. A legal blueprint for digital nomads to boost financial independence.
 date: 2024-07-30
 author: Nomad Budgeter
 category: Tax Arbitrage

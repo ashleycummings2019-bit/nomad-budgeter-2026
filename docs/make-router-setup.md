@@ -102,17 +102,19 @@ After the Airtable trigger, add a **Router** module. Each route handles one plat
 ## Route 5: Instagram (Semi-Automated)
 
 **Workflow:**
-1. Make.com sends the caption (`{{1.Instagram}}`) to you via **Email** or **Telegram** notification.
+1. Make.com sends the caption (`{{1.Instagram}}`) to you via **Email** or **Telegram** notification (optional).
 2. You record or render the MP4 (using HeyGen with the `{{1.HeyGen Script}}`).
 3. You manually attach the MP4 to the `Video File` column in Airtable.
-4. A second Make.com scenario watches for `Video File` being populated → posts to Instagram via the **Instagram for Business** module.
+4. **Crucial Setup:** Set a **Filter** on the route leading to Instagram: `Condition: 1. Video File[]` -> `Exists`. This prevents the scenario from crashing if a record doesn't have a video yet.
+5. Add an **HTTP → Download a file** module. Map the URL to `{{1.Video File[].url}}`.
+6. Add the **Instagram for Business** module.
 
-**Module (Step 4):** `Instagram for Business → Create a Photo/Video Post`
+**Module (Step 6):** `Instagram for Business → Create a Photo/Video Post`
 
 | Field | Airtable Mapping |
 |---|---|
 | Caption | `{{1.Instagram}}` |
-| Media URL | `{{1.Video File[1].url}}` |
+| Video | Map the file downloaded from the HTTP module |
 | Media Type | `REELS` |
 
 ---
@@ -131,11 +133,13 @@ Same workflow as Instagram. Use the **TikTok** module:
 
 ## Route 7: YouTube Shorts (Semi-Automated)
 
+Same workflow as Instagram. Ensure the **Filter** (`Video File[]` Exists) and **HTTP → Download a file** module are in place before the YouTube module to prevent `Missing value of required parameter 'url'` errors.
+
 | Field | Airtable Mapping |
 |---|---|
 | Title | First line of `{{1.YouTube}}` |
 | Description | `{{1.YouTube}}` |
-| Video File | `{{1.Video File[1].url}}` |
+| Video File | Map the file downloaded from the HTTP module |
 | Category | `22` (People & Blogs) |
 | Privacy Status | `public` |
 | Made for Kids | `No` |

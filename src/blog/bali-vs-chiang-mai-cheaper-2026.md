@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "Bali vs Chiang Mai: Which is Cheaper in 2026?"
 description: "A head-to-head comparison of two of the world's most popular digital nomad hubs: Bali, Indonesia and Chiang Mai, Thailand."
+meta_description: "A head-to-head comparison of two of the world's most popular digital nomad hubs: Bali, Indonesia and Chiang Mai, Thailand."
 date: 2026-05-19
 author: Ashley Cummings
 tags: ["comparison", "asia", "budget"]

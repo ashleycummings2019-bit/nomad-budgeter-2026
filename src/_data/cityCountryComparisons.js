@@ -39,19 +39,22 @@ module.exports = function () {
         });
     });
 
-    // Deduplicate and limit to top 250 most relevant comparisons
+    // Deduplicate and limit to top 200 most relevant comparisons to prevent build hangs
     const uniqueResults = [];
     const seenSlugs = new Set();
 
-    // Sort by priority first so we keep the better quality ones if there's a collision
-    results.sort((a, b) => b.priority - a.priority);
+    // Sort by priority first, then alphabetically by slug to ensure deterministic, stable output
+    results.sort((a, b) => {
+        if (b.priority !== a.priority) return b.priority - a.priority;
+        return a.slug.localeCompare(b.slug);
+    });
 
     for (const res of results) {
         if (!seenSlugs.has(res.slug)) {
             uniqueResults.push(res);
             seenSlugs.add(res.slug);
         }
-        if (uniqueResults.length >= 250) break;
+        if (uniqueResults.length >= 200) break;
     }
 
     return uniqueResults;

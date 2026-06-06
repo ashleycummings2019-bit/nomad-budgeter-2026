@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "How to Avoid Double Taxation as a Digital Nomad"
 description: "Learn how to avoid paying taxes twice as a digital nomad using tax treaties, the 183-day rule, and proper legal structuring in 2026."
+meta_description: "Learn how to avoid paying taxes twice as a digital nomad using tax treaties, the 183-day rule, and proper legal structuring in 2026."
 date: 2026-05-23
 author: Ashley Cummings
 tags: ["tax", "strategy", "compliance"]

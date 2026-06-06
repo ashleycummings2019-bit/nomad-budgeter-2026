@@ -1,6 +1,7 @@
 ---
 title: "Spain's Beckham Law for Digital Nomads: 2026 Changes Explained"
 description: "Spain's Beckham Law lets qualifying expats pay just 24% flat tax for 6 years. Here's who qualifies in 2026, what changed, and how it compares to Portugal's IFICI and other EU tax regimes."
+meta_description: "Spain's Beckham Law lets qualifying expats pay just 24% flat tax for 6 years. Here's who qualifies in 2026, what changed, and how it compares to Portugal's IFICI and other EU tax regimes."
 date: 2026-05-02
 author: Ashley Cummings
 category: Tax Strategy

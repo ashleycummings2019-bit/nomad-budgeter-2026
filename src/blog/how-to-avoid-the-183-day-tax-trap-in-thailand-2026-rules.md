@@ -1,6 +1,7 @@
 yaml
 title: "How to Avoid the Evolving 183-Day Tax Trap in Thailand (2026 Rules)"
 description: "Navigate Thailand's new tax landscape for digital nomads. Understand the 2026 rules, the shift from the traditional 183-day trap, and master strategic geographic arbitrage to protect your foreign-sourced income. Hard math and actionable insights included."
+meta_description: "Navigate Thailand's new tax landscape for digital nomads. Understand the 2026 rules, the shift from the traditional 183-day trap, and master strategic geographic arbitrage to protect your foreign-sourced income. Hard math and actionable insights included."
 date: 2024-10-27
 author: "Chief Marketing Officer, NomadBudgeter.com"
 category: "Tax & Finance"

@@ -1,6 +1,7 @@
 ---
 title: "Dubai vs Lisbon for Digital Nomads: The Complete 2026 Tax & Cost Comparison"
 description: "Dubai offers 0% income tax while Lisbon has NHR 2.0 at 20%. But which city actually leaves more money in your pocket after rent, food, and visa costs? We run the full numbers for 2026."
+meta_description: "Dubai offers 0% income tax while Lisbon has NHR 2.0 at 20%. But which city actually leaves more money in your pocket after rent, food, and visa costs? We run the full numbers for 2026."
 date: 2026-05-04
 author: Ashley Cummings
 category: City Comparison

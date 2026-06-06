@@ -1,6 +1,7 @@
 ---
 title: "Digital Nomads: Is Your US LLC Taxed Inefficiently in 2026?"
 description: Digital nomads, is your US LLC costing you thousands in taxes? Learn why your current setup is inefficient in 2026 & discover tax-optimized global strategies.
+meta_description: Digital nomads, is your US LLC costing you thousands in taxes? Learn why your current setup is inefficient in 2026 & discover tax-optimized global strategies.
 date: 2024-04-23
 author: Nomad Budgeter
 category: Tax Strategy

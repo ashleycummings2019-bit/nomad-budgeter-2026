@@ -2,6 +2,7 @@ yaml
 ---
 title: Why the $19 Nomad Budgeter Pro Report Pays for Itself in 48 Hours
 description: Unlock 0% tax rates and accelerate your financial independence. Discover how the Nomad Budgeter Pro Report provides the actionable insights and vetted resources you need to master global tax arbitrage in 2026, saving you thousands for just $19.
+meta_description: Unlock 0% tax rates and accelerate your financial independence. Discover how the Nomad Budgeter Pro Report provides the actionable insights and vetted resources you need to master global tax arbitrage in 2026, saving you thousands for just $19.
 date: 2024-07-30
 author: Nomad Budgeter
 category: Tax Strategy

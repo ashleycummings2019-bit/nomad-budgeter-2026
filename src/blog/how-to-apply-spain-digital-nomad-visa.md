@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "How to Apply for Spain's Digital Nomad Visa: Step by Step (2026)"
 description: "A complete, step-by-step guide to applying for the Spanish Digital Nomad Visa in 2026, including requirements, documents, and the Beckham Law tax benefit."
+meta_description: "A complete, step-by-step guide to applying for the Spanish Digital Nomad Visa in 2026, including requirements, documents, and the Beckham Law tax benefit."
 date: 2026-05-20
 author: Ashley Cummings
 tags: ["visa", "spain", "europe"]

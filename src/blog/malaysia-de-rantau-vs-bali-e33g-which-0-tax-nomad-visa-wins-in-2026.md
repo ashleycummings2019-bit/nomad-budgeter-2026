@@ -1,6 +1,7 @@
 yaml
 title: "Malaysia DE Rantau vs Bali E33G: Which 0% Tax Nomad Visa Wins in 2026"
 description: "Compare Malaysia's DE Rantau and Bali's E33G visas for digital nomads in 2026. Discover which 0% tax residency offers the best wealth architecture for your lifestyle and financial goals, leveraging Asia's top tax arbitrage opportunities."
+meta_description: "Compare Malaysia's DE Rantau and Bali's E33G visas for digital nomads in 2026. Discover which 0% tax residency offers the best wealth architecture for your lifestyle and financial goals, leveraging Asia's top tax arbitrage opportunities."
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "Tax Arbitrage"

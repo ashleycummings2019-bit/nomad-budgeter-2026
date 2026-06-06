@@ -1,6 +1,7 @@
 yaml
 title: 2026 Digital Nomad Tax: 12 Countries to Pay 0% Legally
 description: Unlock 0% income tax for digital nomads in 2026. Discover 12 countries with legal tax holidays & territorial systems. Optimize your wealth, accelerate financial independence.
+meta_description: Unlock 0% income tax for digital nomads in 2026. Discover 12 countries with legal tax holidays & territorial systems. Optimize your wealth, accelerate financial independence.
 date: 2023-10-27
 author: Nomad Budgeter
 category: Tax & Residency

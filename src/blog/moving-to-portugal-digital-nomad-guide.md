@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "Moving to Portugal as a Digital Nomad: Full Tax & Cost Guide (2026)"
 description: "Everything you need to know about moving to Portugal in 2026, including the D8 visa, the NHR 2.0 successor, and cost of living in Lisbon and Porto."
+meta_description: "Everything you need to know about moving to Portugal in 2026, including the D8 visa, the NHR 2.0 successor, and cost of living in Lisbon and Porto."
 date: 2026-05-18
 author: Ashley Cummings
 tags: ["portugal", "guide", "tax"]

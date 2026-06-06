@@ -1,6 +1,7 @@
 yaml
 title: Chiang Mai vs Bali: Digital Nomad Cost of Living & Tax in 2026
 description: Chiang Mai vs Bali: A 2026 breakdown of real cost of living, tax implications, and wealth architecture for digital nomads. Optimize your finances in Southeast Asia.
+meta_description: Chiang Mai vs Bali: A 2026 breakdown of real cost of living, tax implications, and wealth architecture for digital nomads. Optimize your finances in Southeast Asia.
 date: 2024-07-30
 author: Nomad Budgeter
 category: Cost of Living
