@@ -1,7 +1,7 @@
 ---
 layout: layouts/blog.njk
-title: "Cheapest Cities for Digital Nomads Under $1,500/Month (2026)"
-meta_description: "We ranked 20 top nomad hubs. In 2026, only one city actually clears the bar at under $1,500/month. Here’s the unfiltered data on Tbilisi, plus the nearest honest alternatives."
+title: "\"Cheapest Cities for Digital Nomads Under $1,500/Month (2026)\""
+meta_description: "\"We ranked 20 top nomad hubs. In 2026, only one city actually clears the bar at under $1,500/month. Here’s the unfiltered data on Tbilisi, plus the nearest honest alternatives.\""
 date: 2026-01-15
 tags: ["budget", "under-1500", "tbilisi", "bucharest", "istanbul"]
 draft: true

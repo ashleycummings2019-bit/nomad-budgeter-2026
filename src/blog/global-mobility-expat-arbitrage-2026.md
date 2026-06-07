@@ -1,7 +1,7 @@
 ---
-title: "Global Mobility and Expat Arbitrage: Strategic Geopolitical, Financial, and Regulatory Engineering for Remote Professionals"
-description: "An analytical, unbiased financial decision engine designed to cut through superficial social media narratives and deliver exact return-on-investment calculations for digital nomads."
-meta_description: "An analytical, unbiased financial decision engine designed to cut through superficial social media narratives and deliver exact return-on-investment calculations for digital nomads."
+title: "\"Global Mobility and Expat Arbitrage: Strategic Geopolitical, Financial, and Regulatory Engineering for Remote Professionals\""
+description: "\"An analytical, unbiased financial decision engine designed to cut through superficial social media narratives and deliver exact return-on-investment calculations for digital nomads.\""
+meta_description: "\"An analytical, unbiased financial decision engine designed to cut through superficial social media narratives and deliver exact return-on-investment calculations for digital nomads.\""
 date: 2026-05-22
 tags: ["post", "taxes", "digital nomad", "expat"]
 layout: layouts/post.njk

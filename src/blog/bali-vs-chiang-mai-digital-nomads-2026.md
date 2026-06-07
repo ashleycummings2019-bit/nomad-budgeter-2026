@@ -1,8 +1,8 @@
 ---
 layout: layouts/blog.njk
-title: "Bali vs Chiang Mai for Digital Nomads (2026)"
-meta_description: "Compare Bali and Chiang Mai for digital nomads: $1,800 vs $1,100 monthly costs, 0% tax rates, B211A vs LTR visas, coworking, and lifestyle in 2026."
-description: "Compare Bali and Chiang Mai for digital nomads: $1,800 vs $1,100 monthly costs, 0% tax rates, B211A vs LTR visas, coworking, and lifestyle in 2026."
+title: "\"Bali vs Chiang Mai for Digital Nomads (2026)\""
+meta_description: "\"Compare Bali and Chiang Mai for digital nomads: $1,800 vs $1,100 monthly costs, 0% tax rates, B211A vs LTR visas, coworking, and lifestyle in 2026.\""
+description: "\"Compare Bali and Chiang Mai for digital nomads: $1,800 vs $1,100 monthly costs, 0% tax rates, B211A vs LTR visas, coworking, and lifestyle in 2026.\""
 author: "Ashley Cummings"
 date: 2026-01-17
 tags: ["compare", "bali", "chiang-mai"]

@@ -1,8 +1,8 @@
 ---
 layout: layouts/blog.njk
-title: "Bali vs Medellín for Digital Nomads (2026)"
-description: "Compare Bali and Medellín for digital nomads in 2026: cost of living, tax rates, visa options, coworking, and lifestyle. Find which city stretches your budget further."
-meta_description: "Compare Bali and Medellín for digital nomads in 2026: cost of living, tax rates, visa options, coworking, and lifestyle. Find which city stretches your budget further."
+title: "\"Bali vs Medellín for Digital Nomads (2026)\""
+description: "\"Compare Bali and Medellín for digital nomads in 2026: cost of living, tax rates, visa options, coworking, and lifestyle. Find which city stretches your budget further.\""
+meta_description: "\"Compare Bali and Medellín for digital nomads in 2026: cost of living, tax rates, visa options, coworking, and lifestyle. Find which city stretches your budget further.\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","bali","medellin"]

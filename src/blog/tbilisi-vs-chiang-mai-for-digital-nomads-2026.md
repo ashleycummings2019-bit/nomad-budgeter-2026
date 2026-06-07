@@ -1,6 +1,6 @@
 ---
-title: Tbilisi vs. Chiang Mai 2026: Tax-Savvy Digital Nomad Guide
-description: Tbilisi vs. Chiang Mai 2026: Which city wins for digital nomads? Compare tax, cost of living, and lifestyle to optimize your wealth architecture.
+title: "\"Tbilisi vs. Chiang Mai 2026: Tax-Savvy Digital Nomad Guide\""
+description: "Tbilisi vs. Chiang Mai 2026: Which city wins for digital nomads? Compare tax, cost of living, and lifestyle to optimize your wealth architecture."
 date: 2026-06-03
 author: Nomad Budgeter
 category: City Comparisons

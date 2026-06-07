@@ -1,7 +1,7 @@
 ---
-title: "Malaysia DE Rantau Visa: 0% Tax for Nomads in Kuala Lumpur"
-description: "Unlock 0% tax on foreign income in Malaysia with the DE Rantau visa. Discover Kuala Lumpur's territorial tax system, affordability, and vibrant lifestyle for digital nomads."
-meta_description: "Unlock 0% tax on foreign income in Malaysia with the DE Rantau visa. Discover Kuala Lumpur's territorial tax system, affordability, and vibrant lifestyle for digital nomads."
+title: "\"Malaysia DE Rantau Visa: 0% Tax for Nomads in Kuala Lumpur\""
+description: "\"Unlock 0% tax on foreign income in Malaysia with the DE Rantau visa. Discover Kuala Lumpur's territorial tax system, affordability, and vibrant lifestyle for digital nomads.\""
+meta_description: "\"Unlock 0% tax on foreign income in Malaysia with the DE Rantau visa. Discover Kuala Lumpur's territorial tax system, affordability, and vibrant lifestyle for digital nomads.\""
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "Tax Arbitrage"

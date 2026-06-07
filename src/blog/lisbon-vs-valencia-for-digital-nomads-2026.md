@@ -1,6 +1,6 @@
-yaml
-title: "Lisbon vs Valencia for Digital Nomads (2026): Architecting Your European Wealth Base"
-description: "Compare Lisbon and Valencia for digital nomads in 2026. Dive into tax incentives, cost of living, visa processes, and lifestyle to architect your optimal European wealth base."
+---
+title: "\"Lisbon vs Valencia for Digital Nomads (2026): Architecting Your European Wealth Base\""
+description: "\"Compare Lisbon and Valencia for digital nomads in 2026. Dive into tax incentives, cost of living, visa processes, and lifestyle to architect your optimal European wealth base.\""
 date: 2026-06-04
 author: "Nomad Budgeter"
 category: "Tax & Visa Guides"

@@ -1,7 +1,7 @@
 ---
-title: "Portugal NHR 2.0 (IFICI) Explained: The 2026 Guide for Digital Nomads"
-description: "Everything you need to know about Portugal's new IFICI tax regime that replaced NHR in 2024. Who qualifies, the 20% flat rate, and how it compares to the original NHR for digital nomads in 2026."
-meta_description: "Everything you need to know about Portugal's new IFICI tax regime that replaced NHR in 2024. Who qualifies, the 20% flat rate, and how it compares to the original NHR for digital nomads in 2026."
+title: "\"Portugal NHR 2.0 (IFICI) Explained: The 2026 Guide for Digital Nomads\""
+description: "\"Everything you need to know about Portugal's new IFICI tax regime that replaced NHR in 2024. Who qualifies, the 20% flat rate, and how it compares to the original NHR for digital nomads in 2026.\""
+meta_description: "\"Everything you need to know about Portugal's new IFICI tax regime that replaced NHR in 2024. Who qualifies, the 20% flat rate, and how it compares to the original NHR for digital nomads in 2026.\""
 date: 2026-05-06
 author: Ashley Cummings
 category: Tax Strategy

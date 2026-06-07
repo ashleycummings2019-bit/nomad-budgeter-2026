@@ -1,7 +1,7 @@
 ---
 layout: layouts/blog.njk
-title: "Thailand Digital Nomad Tax 2026: New 15% Flat Tax Rules"
-meta_description: "Thailand's new 2026 digital nomad tax rules impose a 15% flat rate on foreign income. Learn who is affected, key deadlines, and how to prepare—read our full guide now."
+title: "\"Thailand Digital Nomad Tax 2026: New 15% Flat Tax Rules\""
+meta_description: "\"Thailand's new 2026 digital nomad tax rules impose a 15% flat rate on foreign income. Learn who is affected, key deadlines, and how to prepare—read our full guide now.\""
 date: 2026-01-14
 tags: ["tax", "thailand", "news", "ltr-visa", "digital-nomad-tax-planning", "southeast-asia-tax-comparison"]
 draft: true

@@ -1,7 +1,7 @@
 ---
-title: "Thailand's 180-Day Rule: What Digital Nomads Must Know in 2026"
-description: "Thailand's 180-day tax residency threshold catches thousands of nomads off guard. Learn how it works, what triggers it, and how to track your days to avoid unexpected tax bills in 2026."
-meta_description: "Thailand's 180-day tax residency threshold catches thousands of nomads off guard. Learn how it works, what triggers it, and how to track your days to avoid unexpected tax bills in 2026."
+title: "\"Thailand's 180-Day Rule: What Digital Nomads Must Know in 2026\""
+description: "\"Thailand's 180-day tax residency threshold catches thousands of nomads off guard. Learn how it works, what triggers it, and how to track your days to avoid unexpected tax bills in 2026.\""
+meta_description: "\"Thailand's 180-day tax residency threshold catches thousands of nomads off guard. Learn how it works, what triggers it, and how to track your days to avoid unexpected tax bills in 2026.\""
 date: 2026-05-05
 author: Ashley Cummings
 category: Tax Residency

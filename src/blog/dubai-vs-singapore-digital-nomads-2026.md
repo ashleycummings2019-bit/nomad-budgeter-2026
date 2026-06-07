@@ -1,8 +1,8 @@
 ---
 layout: layouts/blog.njk
-title: "Dubai vs Singapore for Digital Nomads (2026)"
-description: "Dubai vs Singapore: two 0% tax hubs compared for digital nomads. Cost of living, visa options, infrastructure, and which city builds a bigger savings moat in 2026."
-meta_description: "Dubai vs Singapore: two 0% tax hubs compared for digital nomads. Cost of living, visa options, infrastructure, and which city builds a bigger savings moat in 2026."
+title: "\"Dubai vs Singapore for Digital Nomads (2026)\""
+description: "\"Dubai vs Singapore: two 0% tax hubs compared for digital nomads. Cost of living, visa options, infrastructure, and which city builds a bigger savings moat in 2026.\""
+meta_description: "\"Dubai vs Singapore: two 0% tax hubs compared for digital nomads. Cost of living, visa options, infrastructure, and which city builds a bigger savings moat in 2026.\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","dubai","singapore"]

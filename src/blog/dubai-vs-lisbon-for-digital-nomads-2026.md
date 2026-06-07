@@ -1,6 +1,6 @@
-yaml
-title: "Dubai vs Lisbon for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown"
-description: "In 2026, choosing your digital nomad base is a strategic wealth architecture decision. This guide dissects Dubai and Lisbon's tax benefits, lifestyle, and visa pathways, helping you maximize savings and lifestyle as a digital nomad."
+---
+title: "\"Dubai vs Lisbon for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown\""
+description: "\"In 2026, choosing your digital nomad base is a strategic wealth architecture decision. This guide dissects Dubai and Lisbon's tax benefits, lifestyle, and visa pathways, helping you maximize savings and lifestyle as a digital nomad.\""
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "City Comparisons"
@@ -15,7 +15,7 @@ tags:
   - Portugal
   - UAE
   - NHR
-```
+---
 
 # Dubai vs Lisbon for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown
 

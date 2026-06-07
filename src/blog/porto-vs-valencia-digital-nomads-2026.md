@@ -1,8 +1,8 @@
 ---
 layout: layouts/blog.njk
-title: "Porto vs Valencia for Digital Nomads (2026)"
-description: "Porto vs Valencia for digital nomads: Portugal NHR vs Spain Beckham Law, monthly budgets, coworking, food costs, and lifestyle quality compared for 2026."
-meta_description: "Porto vs Valencia for digital nomads: Portugal NHR vs Spain Beckham Law, monthly budgets, coworking, food costs, and lifestyle quality compared for 2026."
+title: "\"Porto vs Valencia for Digital Nomads (2026)\""
+description: "\"Porto vs Valencia for digital nomads: Portugal NHR vs Spain Beckham Law, monthly budgets, coworking, food costs, and lifestyle quality compared for 2026.\""
+meta_description: "\"Porto vs Valencia for digital nomads: Portugal NHR vs Spain Beckham Law, monthly budgets, coworking, food costs, and lifestyle quality compared for 2026.\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","porto","valencia"]

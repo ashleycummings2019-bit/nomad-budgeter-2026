@@ -1,7 +1,7 @@
 ---
-title: Lisbon vs Medellín - Where Your $3,000/Month Goes Further (With Real Data)
-description: A deep dive into Lisbon and Medellín for digital nomads, comparing cost of living, tax implications, and lifestyle to reveal where your $3,000/month budget builds a stronger "Savings Moat."
-meta_description: A deep dive into Lisbon and Medellín for digital nomads, comparing cost of living, tax implications, and lifestyle to reveal where your $3,000/month budget builds a stronger "Savings Moat."
+title: "Lisbon vs Medellín - Where Your $3,000/Month Goes Further (With Real Data)"
+description: "A deep dive into Lisbon and Medellín for digital nomads, comparing cost of living, tax implications, and lifestyle to reveal where your $3,000/month budget builds a stronger \"Savings Moat.\""
+meta_description: "A deep dive into Lisbon and Medellín for digital nomads, comparing cost of living, tax implications, and lifestyle to reveal where your $3,000/month budget builds a stronger \"Savings Moat.\""
 date: 2024-05-15
 author: "Nomad Budgeter"
 category: "Cost of Living"

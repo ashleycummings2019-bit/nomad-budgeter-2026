@@ -1,7 +1,7 @@
 ---
-title: "Dubai vs Singapore: The Ultimate 0% Tax Showdown for Remote Workers"
-description: "Navigate the 2026 tax landscape. This guide compares Dubai's Jurisdictional Zero and Singapore's Territorial Dominance for digital nomads seeking a 0% tax rate and robust wealth architecture."
-meta_description: "Navigate the 2026 tax landscape. This guide compares Dubai's Jurisdictional Zero and Singapore's Territorial Dominance for digital nomads seeking a 0% tax rate and robust wealth architecture."
+title: "\"Dubai vs Singapore: The Ultimate 0% Tax Showdown for Remote Workers\""
+description: "\"Navigate the 2026 tax landscape. This guide compares Dubai's Jurisdictional Zero and Singapore's Territorial Dominance for digital nomads seeking a 0% tax rate and robust wealth architecture.\""
+meta_description: "\"Navigate the 2026 tax landscape. This guide compares Dubai's Jurisdictional Zero and Singapore's Territorial Dominance for digital nomads seeking a 0% tax rate and robust wealth architecture.\""
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "Tax Arbitrage"

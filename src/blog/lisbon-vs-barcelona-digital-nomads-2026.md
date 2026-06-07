@@ -1,8 +1,8 @@
 ---
 layout: layouts/blog.njk
-title: "Lisbon vs Barcelona for Digital Nomads (2026)"
-description: "Lisbon vs Barcelona for digital nomads: NHR 2.0 vs Beckham Law, cost of living, visa pathways, and which European city offers the best tax advantage in 2026."
-meta_description: "Lisbon vs Barcelona for digital nomads: NHR 2.0 vs Beckham Law, cost of living, visa pathways, and which European city offers the best tax advantage in 2026."
+title: "\"Lisbon vs Barcelona for Digital Nomads (2026)\""
+description: "\"Lisbon vs Barcelona for digital nomads: NHR 2.0 vs Beckham Law, cost of living, visa pathways, and which European city offers the best tax advantage in 2026.\""
+meta_description: "\"Lisbon vs Barcelona for digital nomads: NHR 2.0 vs Beckham Law, cost of living, visa pathways, and which European city offers the best tax advantage in 2026.\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","lisbon","barcelona"]

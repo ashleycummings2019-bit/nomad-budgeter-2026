@@ -1,6 +1,6 @@
 ---
-title: Porto vs Valencia for Digital Nomads (2026)
-description: A comprehensive 2026 guide comparing Porto and Valencia for digital nomads, focusing on tax efficiency, cost of living, lifestyle, and visa pathways. Build your wealth architecture.
+title: "Porto vs Valencia for Digital Nomads (2026)"
+description: "A comprehensive 2026 guide comparing Porto and Valencia for digital nomads, focusing on tax efficiency, cost of living, lifestyle, and visa pathways. Build your wealth architecture."
 date: 2026-06-03
 author: Nomad Budgeter
 category: City Comparisons

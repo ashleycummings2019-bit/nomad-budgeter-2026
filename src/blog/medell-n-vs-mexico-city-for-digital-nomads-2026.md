@@ -1,6 +1,6 @@
 ---
-title: "Medellín vs Mexico City for Digital Nomads (2026): A Wealth Architecture Deep Dive"
-description: "Navigate the 2026 landscape for digital nomads comparing Medellín and Mexico City. Discover cost, lifestyle, and critical tax implications to build your 'Savings Moat' effectively."
+title: "\"Medellín vs Mexico City for Digital Nomads (2026): A Wealth Architecture Deep Dive\""
+description: "\"Navigate the 2026 landscape for digital nomads comparing Medellín and Mexico City. Discover cost, lifestyle, and critical tax implications to build your 'Savings Moat' effectively.\""
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "Tax & Visa Guides"

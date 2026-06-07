@@ -1,7 +1,7 @@
-yaml
-title: The $42/Month Insurance That Saved My Life in Thailand (Why Every Nomad Needs SafetyWing)
-description: Discover how SafetyWing's affordable travel medical insurance is a non-negotiable component of your wealth architecture, protecting your financial future from unexpected global emergencies.
-meta_description: Discover how SafetyWing's affordable travel medical insurance is a non-negotiable component of your wealth architecture, protecting your financial future from unexpected global emergencies.
+---
+title: "The $42/Month Insurance That Saved My Life in Thailand (Why Every Nomad Needs SafetyWing)"
+description: "Discover how SafetyWing's affordable travel medical insurance is a non-negotiable component of your wealth architecture, protecting your financial future from unexpected global emergencies."
+meta_description: "Discover how SafetyWing's affordable travel medical insurance is a non-negotiable component of your wealth architecture, protecting your financial future from unexpected global emergencies."
 date: 2024-07-30
 author: Nomad Budgeter
 category: Digital Nomad Essentials
@@ -17,7 +17,7 @@ tags:
   - Thailand
   - Emergency Planning
   - Financial Security
-```
+---
 
 # The $42/Month Insurance That Saved My Life in Thailand (Why Every Nomad Needs SafetyWing)
 

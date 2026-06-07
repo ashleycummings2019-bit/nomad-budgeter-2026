@@ -1,8 +1,8 @@
 ---
 layout: layouts/post.njk
-title: "Best 0% Tax Countries for Freelancers in 2026"
-description: "Discover the top countries offering 0% income tax for digital nomads and freelancers in 2026, including UAE, Bahamas, and Malaysia."
-meta_description: "Discover the top countries offering 0% income tax for digital nomads and freelancers in 2026, including UAE, Bahamas, and Malaysia."
+title: "\"Best 0% Tax Countries for Freelancers in 2026\""
+description: "\"Discover the top countries offering 0% income tax for digital nomads and freelancers in 2026, including UAE, Bahamas, and Malaysia.\""
+meta_description: "\"Discover the top countries offering 0% income tax for digital nomads and freelancers in 2026, including UAE, Bahamas, and Malaysia.\""
 date: 2026-05-15
 author: Ashley Cummings
 tags: ["tax", "0-tax", "destinations"]

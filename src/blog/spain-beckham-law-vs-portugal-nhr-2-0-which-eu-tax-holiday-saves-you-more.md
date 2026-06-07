@@ -1,7 +1,7 @@
 ---
-title: "Spain Beckham Law vs Portugal NHR 2.0: Which EU Tax Holiday Saves You More"
-description: "Navigate the 2026 European tax landscape. Compare Spain's Beckham Law and Portugal's NHR 2.0 to determine which legislated program offers digital nomads the greatest tax savings and lifestyle advantages for building their wealth architecture."
-meta_description: "Navigate the 2026 European tax landscape. Compare Spain's Beckham Law and Portugal's NHR 2.0 to determine which legislated program offers digital nomads the greatest tax savings and lifestyle advantages for building their wealth architecture."
+title: "\"Spain Beckham Law vs Portugal NHR 2.0: Which EU Tax Holiday Saves You More\""
+description: "\"Navigate the 2026 European tax landscape. Compare Spain's Beckham Law and Portugal's NHR 2.0 to determine which legislated program offers digital nomads the greatest tax savings and lifestyle advantages for building their wealth architecture.\""
+meta_description: "\"Navigate the 2026 European tax landscape. Compare Spain's Beckham Law and Portugal's NHR 2.0 to determine which legislated program offers digital nomads the greatest tax savings and lifestyle advantages for building their wealth architecture.\""
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "Tax Arbitrage"

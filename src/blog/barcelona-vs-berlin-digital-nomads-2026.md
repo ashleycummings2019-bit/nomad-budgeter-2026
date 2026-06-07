@@ -1,8 +1,8 @@
 ---
 layout: layouts/blog.njk
-title: "Barcelona vs Berlin for Digital Nomads (2026)"
-meta_description: "Barcelona or Berlin for digital nomads? Compare 2026 cost of living, taxes, visas, coworking costs, and lifestyle with real data to pick your next base."
-description: "Barcelona or Berlin for digital nomads? Compare 2026 cost of living, taxes, visas, coworking costs, and lifestyle with real data to pick your next base."
+title: "\"Barcelona vs Berlin for Digital Nomads (2026)\""
+meta_description: "\"Barcelona or Berlin for digital nomads? Compare 2026 cost of living, taxes, visas, coworking costs, and lifestyle with real data to pick your next base.\""
+description: "\"Barcelona or Berlin for digital nomads? Compare 2026 cost of living, taxes, visas, coworking costs, and lifestyle with real data to pick your next base.\""
 author: "Ashley Cummings"
 date: 2025-01-21
 tags: ["compare", "barcelona", "berlin"]

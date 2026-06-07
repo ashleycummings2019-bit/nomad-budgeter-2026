@@ -1,8 +1,8 @@
 ---
 layout: layouts/post.njk
-title: "Portugal D8 Visa Requirements: 2026 Update"
-description: "Everything you need to know about Portugal's D8 Digital Nomad Visa in 2026, including minimum income, documents, and application process."
-meta_description: "Everything you need to know about Portugal's D8 Digital Nomad Visa in 2026, including minimum income, documents, and application process."
+title: "\"Portugal D8 Visa Requirements: 2026 Update\""
+description: "\"Everything you need to know about Portugal's D8 Digital Nomad Visa in 2026, including minimum income, documents, and application process.\""
+meta_description: "\"Everything you need to know about Portugal's D8 Digital Nomad Visa in 2026, including minimum income, documents, and application process.\""
 date: 2026-05-21
 author: Ashley Cummings
 tags: ["visa", "portugal", "europe"]

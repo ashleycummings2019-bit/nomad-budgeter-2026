@@ -1,6 +1,6 @@
 ---
-title: "Bali vs Medellín for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown"
-description: "Choosing between Bali and Medellín in 2026 is a strategic wealth architecture decision. This guide compares tax advantages, lifestyle, cost of living, and community for digital nomads."
+title: "\"Bali vs Medellín for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown\""
+description: "\"Choosing between Bali and Medellín in 2026 is a strategic wealth architecture decision. This guide compares tax advantages, lifestyle, cost of living, and community for digital nomads.\""
 date: 2026-06-03
 author: "Nomad Budgeter"
 category: "Destination Comparison"
