@@ -1,13 +1,13 @@
 [
   {
     "label": "USD/EUR",
-    "value": "0.86",
+    "value": "0.87",
     "change": "+0.2%",
     "positive": true
   },
   {
     "label": "BTC/USD",
-    "value": "$63,204",
+    "value": "$62,655",
     "change": "+1.4%",
     "positive": true
   },
@@ -25,13 +25,13 @@
   },
   {
     "label": "USD/EUR",
-    "value": "0.86",
+    "value": "0.87",
     "change": "+0.2%",
     "positive": true
   },
   {
     "label": "BTC/USD",
-    "value": "$63,204",
+    "value": "$62,655",
     "change": "+1.4%",
     "positive": true
   },
