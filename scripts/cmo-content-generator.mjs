@@ -267,8 +267,9 @@ async function generateBlogImage(topic, slug) {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function extractSection(text, tag) {
+    // Make regex more forgiving to handle LLM adding bold (**), headers (###), or colons
     const regex = new RegExp(
-        `\\[${tag}\\]([\\s\\S]*?)(?=\\[(?:TWITTER|LINKEDIN|REDDIT|FACEBOOK|INSTAGRAM|TIKTOK|YOUTUBE|HEYGEN|NEWSLETTER|BLOG)\\]|$)`,
+        `(?:\\*\\*|### |# |^|\\n)\\s*\\[${tag}\\](?:\\*\\*|:)?\\s*([\\s\\S]*?)(?=(?:\\*\\*|### |# |\\n)\\s*\\[(?:TWITTER|LINKEDIN|REDDIT|FACEBOOK|INSTAGRAM|TIKTOK|YOUTUBE|HEYGEN|NEWSLETTER|BLOG)\\]|$)`,
         'i'
     );
     const match = text.match(regex);
@@ -401,17 +402,28 @@ async function generateContent(topic, ctx) {
         }
     }
 
+    const fallbackText = `Check out our latest guide on ${topic}! #nomadbudgeter #digitalnomad`;
+    const twitter = extractSection(socialText, 'TWITTER') || fallbackText;
+    const linkedin = extractSection(socialText, 'LINKEDIN') || twitter;
+    const facebook = extractSection(socialText, 'FACEBOOK') || linkedin;
+    const instagram = extractSection(socialText, 'INSTAGRAM') || facebook;
+    const reddit = extractSection(socialText, 'REDDIT');
+    const tiktok = extractSection(socialText, 'TIKTOK');
+    const youtube = extractSection(socialText, 'YOUTUBE');
+    const heygen = extractSection(socialText, 'HEYGEN');
+    const newsletter = extractSection(socialText, 'NEWSLETTER');
+
     return {
-        twitter:    extractSection(socialText, 'TWITTER'),
-        linkedin:   extractSection(socialText, 'LINKEDIN'),
-        reddit:     extractSection(socialText, 'REDDIT'),
-        facebook:   extractSection(socialText, 'FACEBOOK'),
-        instagram:  extractSection(socialText, 'INSTAGRAM'),
-        tiktok:     extractSection(socialText, 'TIKTOK'),
-        youtube:    extractSection(socialText, 'YOUTUBE'),
-        heygen:     extractSection(socialText, 'HEYGEN'),
-        newsletter: extractSection(socialText, 'NEWSLETTER'),
-        blog:       blogContent
+        twitter,
+        linkedin,
+        reddit,
+        facebook,
+        instagram,
+        tiktok,
+        youtube,
+        heygen,
+        newsletter,
+        blog: blogContent
     };
 }
 
