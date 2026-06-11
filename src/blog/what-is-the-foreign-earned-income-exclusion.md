@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "\"What is the Foreign Earned Income Exclusion (FEIE)?\""
+title: "What is the Foreign Earned Income Exclusion (FEIE)?"
 description: "\"A simple, jargon-free explainer of the Foreign Earned Income Exclusion (FEIE) and how US digital nomads can legally pay $0 in federal income tax.\""
 meta_description: "\"A simple, jargon-free explainer of the Foreign Earned Income Exclusion (FEIE) and how US digital nomads can legally pay $0 in federal income tax.\""
 date: 2026-05-22

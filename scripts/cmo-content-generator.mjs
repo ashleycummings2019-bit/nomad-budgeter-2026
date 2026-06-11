@@ -513,10 +513,33 @@ async function run() {
                 console.log(`\n🎨 Generating cover image via Imagen 3...`);
                 const imagePath = await generateBlogImage(topic, slug);
                 let finalBlog = content.blog.trim();
+
+                // ── Ensure proper frontmatter structure ──────────────────────
+                // Fix broken delimiters (e.g., yaml/``` instead of ---)
+                finalBlog = finalBlog
+                    .replace(/^yaml\s*/i, '---\n')
+                    .replace(/^```yaml\s*/i, '---\n')
+                    .replace(/\n```\s*\n/, '\n---\n');
+
+                // Ensure layout field exists in frontmatter
+                if (finalBlog.startsWith('---')) {
+                    const fmEnd = finalBlog.indexOf('\n---', 3);
+                    if (fmEnd !== -1) {
+                        let fm = finalBlog.substring(0, fmEnd);
+                        const body = finalBlog.substring(fmEnd);
+                        if (!fm.includes('layout:')) {
+                            fm += '\nlayout: layouts/blog.njk';
+                        }
+                        finalBlog = fm + body;
+                    }
+                } else {
+                    // No frontmatter at all — wrap the content
+                    finalBlog = `---\ntitle: "${topic}"\ndescription: "A comprehensive guide on ${topic} for digital nomads in 2026."\ndate: ${new Date().toISOString().split('T')[0]}\nauthor: Nomad Budgeter\nlayout: layouts/blog.njk\ncategory: City Comparisons\ntags: ["digital nomad", "2026"]\n---\n\n${finalBlog}`;
+                }
                 
                 if (imagePath) {
-                    finalBlog = finalBlog.replace(/---([\s\S]*?)---/, (match, p1) => {
-                        return `---${p1}\nimage: "${imagePath}"\n---`;
+                    finalBlog = finalBlog.replace(/---(\n[\s\S]*?\n)---/, (match, p1) => {
+                        return `---${p1}image: "${imagePath}"\n---`;
                     });
                 }
 

@@ -1,11 +1,12 @@
 ---
-title: "\"Dubai vs. Singapore for Digital Nomads: A 2026 Wealth Architecture Showdown\""
+title: "Dubai vs. Singapore for Digital Nomads: A 2026 Wealth Architecture Showdown"
 description: "\"Unpack the 2026 tax and lifestyle advantages of Dubai and Singapore for digital nomads. Discover which global hub aligns with your wealth architecture goals for maximum 'Savings Moat' growth.\""
 date: 2026-06-05
 author: "Nomad Budgeter"
 category: "Tax & Residency Guides"
 readingTime: "12 min"
 tags: ["Dubai", "Singapore", "Tax Arbitrage", "Digital Nomad Visa", "Wealth Architecture", "Cost of Living", "Global Tax", "Jurisdictional Zero"]
+layout: layouts/blog.njk
 ---
 
 # Dubai vs. Singapore for Digital Nomads: A 2026 Wealth Architecture Showdown

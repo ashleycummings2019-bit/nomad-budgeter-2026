@@ -15,6 +15,7 @@ tags:
   - Tax Arbitrage
   - Asia
   - Wealth Architecture
+layout: layouts/blog.njk
 ---
 
 # Da Nang vs Chiang Mai for Digital Nomads (2026): Architecting Your Asian Base

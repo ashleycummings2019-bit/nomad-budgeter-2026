@@ -1,11 +1,12 @@
 ---
-title: "\"Chiang Mai vs Dubai for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown\""
+title: "Chiang Mai vs Dubai for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown"
 description: "\"Unsure whether to choose the ultra-modern zero-tax hub of Dubai or the affordable, culturally rich Chiang Mai? This 2026 guide breaks down the tax implications, cost of living, lifestyle, and infrastructure to help digital nomads architect their wealth.\""
 date: 2024-07-30
 author: "Nomad Budgeter"
 category: "City Comparisons"
 readingTime: "12 min"
 tags: ["Chiang Mai", "Dubai", "Digital Nomads", "Tax Arbitrage", "Cost of Living", "Lifestyle", "Wealth Architecture", "Jurisdictional Zero", "Territorial Tax"]
+layout: layouts/blog.njk
 ---
 
 # Chiang Mai vs Dubai for Digital Nomads (2026): The Ultimate Wealth Architecture Showdown

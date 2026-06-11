@@ -1,5 +1,5 @@
 ---
-title: "\"Bali E33G Visa 2026: 0% Tax for Digital Nomads in Paradise\""
+title: "Bali E33G Visa 2026: 0% Tax for Digital Nomads in Paradise"
 description: "Unlock Bali's E33G Visa in 2026 for 0% tax on foreign income. This guide helps digital nomads leverage Indonesia's 'Nomad Holiday' for wealth architecture & paradise living."
 meta_description: "Unlock Bali's E33G Visa in 2026 for 0% tax on foreign income. This guide helps digital nomads leverage Indonesia's 'Nomad Holiday' for wealth architecture & paradise living."
 date: 2024-05-15
@@ -7,6 +7,7 @@ author: "Nomad Budgeter"
 category: "Tax Arbitrage"
 readingTime: "12 minutes"
 tags: ["Bali", "E33G Visa", "Tax Arbitrage", "Digital Nomad", "0% Tax", "Wealth Architecture", "Indonesia", "Nomad Holiday"]
+layout: layouts/blog.njk
 ---
 
 # Bali E33G Visa 2026: 0% Tax for Digital Nomads in Paradise

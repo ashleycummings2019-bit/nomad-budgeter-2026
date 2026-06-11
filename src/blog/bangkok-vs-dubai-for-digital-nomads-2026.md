@@ -6,6 +6,7 @@ author: Nomad Budgeter
 category: City Comparisons
 readingTime: 12 minutes
 tags: ["Bangkok", "Dubai", "Digital Nomad", "Tax Arbitrage", "Cost of Living", "Lifestyle", "Wealth Architecture", "2026", "Zero Tax"]
+layout: layouts/blog.njk
 ---
 
 # Bangkok vs Dubai: The Ultimate 2026 Showdown for Digital Nomads

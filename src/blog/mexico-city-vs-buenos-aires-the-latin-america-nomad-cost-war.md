@@ -1,5 +1,5 @@
 ---
-title: "\"Mexico City vs Buenos Aires: The Latin America Nomad Cost War\""
+title: "Mexico City vs Buenos Aires: The Latin America Nomad Cost War"
 description: "\"Unpack the true cost of living and wealth architecture in Mexico City and Buenos Aires for digital nomads. Discover which city offers a better 'Savings Moat' for your financial goals in 2026.\""
 meta_description: "\"Unpack the true cost of living and wealth architecture in Mexico City and Buenos Aires for digital nomads. Discover which city offers a better 'Savings Moat' for your financial goals in 2026.\""
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: "Nomad Budgeter"
 category: "Cost of Living"
 readingTime: "12 min"
 tags: ["Mexico City", "Buenos Aires", "Cost of Living", "Digital Nomad", "Latin America", "Wealth Architecture", "Budgeting", "Tax Arbitrage"]
+layout: layouts/blog.njk
 ---
 
 # Mexico City vs Buenos Aires: The Latin America Nomad Cost War

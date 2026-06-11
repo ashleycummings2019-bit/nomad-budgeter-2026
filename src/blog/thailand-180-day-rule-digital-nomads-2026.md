@@ -1,5 +1,5 @@
 ---
-title: "\"Thailand's 180-Day Rule: What Digital Nomads Must Know in 2026\""
+title: "Thailand's 180-Day Rule: What Digital Nomads Must Know in 2026"
 description: "\"Thailand's 180-day tax residency threshold catches thousands of nomads off guard. Learn how it works, what triggers it, and how to track your days to avoid unexpected tax bills in 2026.\""
 meta_description: "\"Thailand's 180-day tax residency threshold catches thousands of nomads off guard. Learn how it works, what triggers it, and how to track your days to avoid unexpected tax bills in 2026.\""
 date: 2026-05-05
@@ -14,6 +14,7 @@ faqs:
     answer: "Yes. Since January 2024, Thailand taxes foreign income remitted to Thailand regardless of when it was earned. If you are a Thai tax resident and transfer money into a Thai bank account, it is potentially taxable under Thai progressive rates up to 35%."
   - question: "How do I avoid becoming a Thai tax resident?"
     answer: "Track your cumulative days carefully and leave before reaching 170 days (keeping a 10-day safety buffer). Use a days tracker tool to monitor your status. Keep entry and exit records, and minimize foreign income remittances when approaching the threshold."
+layout: layouts/blog.njk
 ---
 
 Thailand is the world's most popular digital nomad destination. Cheap pad thai, fast internet, and a cost of living that makes a $3,000/month income feel like $8,000 back home.

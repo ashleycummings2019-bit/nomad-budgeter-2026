@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Dubai vs Lisbon for Digital Nomads (2026)\""
+title: "Dubai vs Lisbon for Digital Nomads (2026)"
 description: "\"Dubai vs Lisbon for digital nomads: 0% vs 20% NHR tax, $3,500 vs $2,400 monthly costs, visa pathways, and lifestyle trade-offs in 2026.\""
 meta_description: "\"Dubai vs Lisbon for digital nomads: 0% vs 20% NHR tax, $3,500 vs $2,400 monthly costs, visa pathways, and lifestyle trade-offs in 2026.\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","dubai","lisbon"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 ## 1. Cost of Living Breakdown

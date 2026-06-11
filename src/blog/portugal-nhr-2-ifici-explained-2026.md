@@ -1,5 +1,5 @@
 ---
-title: "\"Portugal NHR 2.0 (IFICI) Explained: The 2026 Guide for Digital Nomads\""
+title: "Portugal NHR 2.0 (IFICI) Explained: The 2026 Guide for Digital Nomads"
 description: "\"Everything you need to know about Portugal's new IFICI tax regime that replaced NHR in 2024. Who qualifies, the 20% flat rate, and how it compares to the original NHR for digital nomads in 2026.\""
 meta_description: "\"Everything you need to know about Portugal's new IFICI tax regime that replaced NHR in 2024. Who qualifies, the 20% flat rate, and how it compares to the original NHR for digital nomads in 2026.\""
 date: 2026-05-06
@@ -14,6 +14,7 @@ faqs:
     answer: "Most remote workers for foreign companies do not automatically qualify for IFICI. However, if you work in tech, data science, engineering, or innovation and either get hired by a Portuguese company or structure through a Portuguese entity in a qualifying sector, you can qualify."
   - question: "What is the tax rate under Portugal's IFICI?"
     answer: "IFICI offers a 20% flat rate on qualifying employment and self-employment income for 10 consecutive years. Foreign dividends and capital gains can be exempt under certain conditions. Pension income is taxed at a flat 10%."
+layout: layouts/blog.njk
 ---
 
 Portugal's Non-Habitual Resident (NHR) regime was the golden ticket for digital nomads for over a decade. A 20% flat tax on qualifying income, zero tax on most foreign dividends, and a 10-year lock-in period made Lisbon the unofficial capital of location-independent professionals.

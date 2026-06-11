@@ -1,4 +1,4 @@
-yaml
+---
 title: Madeira vs Lisbon for Digital Nomads (2026): Tax & Lifestyle
 description: Choosing between Lisbon and Madeira in 2026? This guide helps digital nomads compare tax advantages, lifestyle, and cost of living for a strategic move to Portugal.
 date: 2024-07-30
@@ -17,8 +17,8 @@ tags:
   - Portugal Digital Nomad Visa
   - Cost of Living
   - Remote Work
-```
-
+layout: layouts/blog.njk
+---
 # Madeira vs Lisbon for Digital Nomads (2026): Tax & Lifestyle
 
 Portugal has long been a beacon for digital nomads and remote workers, offering a blend of rich culture, stunning landscapes, and a welcoming visa framework. But in 2026, the choice between its vibrant capital, Lisbon, and the serene island of Madeira isn't just about lifestyle—it's a critical decision for your "Wealth Architecture."

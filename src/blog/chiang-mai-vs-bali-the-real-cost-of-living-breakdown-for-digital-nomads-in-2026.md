@@ -1,5 +1,5 @@
 ---
-title: "\"Chiang Mai vs Bali: Digital Nomad Cost of Living & Tax in 2026\""
+title: "Chiang Mai vs Bali: Digital Nomad Cost of Living & Tax in 2026"
 description: "Chiang Mai vs Bali: A 2026 breakdown of real cost of living, tax implications, and wealth architecture for digital nomads. Optimize your finances in Southeast Asia."
 meta_description: "Chiang Mai vs Bali: A 2026 breakdown of real cost of living, tax implications, and wealth architecture for digital nomads. Optimize your finances in Southeast Asia."
 date: 2024-07-30
@@ -15,6 +15,7 @@ tags:
   - Wealth Architecture
   - Southeast Asia
   - 2026 Tax
+layout: layouts/blog.njk
 ---
 
 # Chiang Mai vs Bali: Digital Nomad Cost of Living & Tax in 2026

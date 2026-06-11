@@ -1,5 +1,5 @@
 ---
-title: "\"Exit Tax Warning: 5 Countries Taxing You for Leaving (Avoid It)\""
+title: "Exit Tax Warning: 5 Countries Taxing You for Leaving (Avoid It)"
 description: "\"Digital nomads: Avoid the exit tax trap! Learn which 5 countries tax you for leaving and how to legally sever ties to protect your wealth from expatriation taxes.\""
 meta_description: "\"Digital nomads: Avoid the exit tax trap! Learn which 5 countries tax you for leaving and how to legally sever ties to protect your wealth from expatriation taxes.\""
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: "Nomad Budgeter"
 category: "Tax Strategy"
 readingTime: "12 min"
 tags: ["exit tax", "tax residency", "digital nomad tax", "wealth architecture", "tax planning", "global arbitrage", "compliance", "expatriation tax", "international tax planning", "global tax residency rules"]
+layout: layouts/blog.njk
 ---
 
 # Exit Tax Warning: 5 Countries Taxing You for Leaving (Avoid It)

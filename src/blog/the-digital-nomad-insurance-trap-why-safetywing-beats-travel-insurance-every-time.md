@@ -1,5 +1,5 @@
 ---
-title: "\"The Digital Nomad Insurance Trap: Why SafetyWing Beats Travel Insurance Every Time\""
+title: "The Digital Nomad Insurance Trap: Why SafetyWing Beats Travel Insurance Every Time"
 description: "Uncover the critical difference between standard travel insurance and specialized digital nomad insurance. Learn why SafetyWing is essential for protecting your wealth architecture and ensuring continuous, compliant coverage in a 2026 world."
 meta_description: "Uncover the critical difference between standard travel insurance and specialized digital nomad insurance. Learn why SafetyWing is essential for protecting your wealth architecture and ensuring continuous, compliant coverage in a 2026 world."
 date: 2024-07-30
@@ -14,6 +14,7 @@ tags:
   - Risk Management
   - Nomad Health
   - Global Mobility
+layout: layouts/blog.njk
 ---
 
 # The Digital Nomad Insurance Trap: Why SafetyWing Beats Travel Insurance Every Time

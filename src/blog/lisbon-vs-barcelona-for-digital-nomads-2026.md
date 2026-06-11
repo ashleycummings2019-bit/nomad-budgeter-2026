@@ -1,4 +1,5 @@
 ---
+layout: layouts/blog.njk
 ---
 title: "Lisbon vs. Barcelona for Digital Nomads: Architecting Your Wealth in 2026"
 description: "Unpack the 2026 tax and lifestyle differences between Lisbon and Barcelona for digital nomads. Discover which city builds a stronger 'Savings Moat' for your wealth architecture and aligns with your global arbitrage strategy."

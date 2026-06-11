@@ -16,6 +16,7 @@ tags:
   - Beckham Law
   - Cost of Living
   - Wealth Architecture
+layout: layouts/blog.njk
 ---
 
 # Porto vs Valencia for Digital Nomads (2026)

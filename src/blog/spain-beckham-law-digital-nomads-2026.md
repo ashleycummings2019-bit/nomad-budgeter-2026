@@ -1,5 +1,5 @@
 ---
-title: "\"Spain's Beckham Law for Digital Nomads: 2026 Changes Explained\""
+title: "Spain's Beckham Law for Digital Nomads: 2026 Changes Explained"
 description: "\"Spain's Beckham Law lets qualifying expats pay just 24% flat tax for 6 years. Here's who qualifies in 2026, what changed, and how it compares to Portugal's IFICI and other EU tax regimes.\""
 meta_description: "\"Spain's Beckham Law lets qualifying expats pay just 24% flat tax for 6 years. Here's who qualifies in 2026, what changed, and how it compares to Portugal's IFICI and other EU tax regimes.\""
 date: 2026-05-02
@@ -18,6 +18,7 @@ faqs:
     answer: "Spain's Beckham Law offers a 24% flat rate for 6 years with full foreign income exemption. Portugal's IFICI (NHR 2.0) offers a lower 20% rate for 10 years but with conditional foreign income treatment. Portugal also offers a faster path to EU citizenship (5 years vs 10)."
   - question: "How do I apply for the Beckham Law in Spain?"
     answer: "First obtain a qualifying visa (such as the Digital Nomad Visa), then register for a NIE, Census (Padrón), and Social Security. File Form 149 with the Spanish Tax Agency within 6 months of your Social Security registration. Confirmation typically takes 1-3 months."
+layout: layouts/blog.njk
 ---
 
 Spain's **Beckham Law** (officially *Régimen Especial de Trabajadores Desplazados*, or the Special Regime for Displaced Workers) has been one of Europe's most attractive tax incentives since it was introduced in 2005 — originally to lure football stars, now increasingly used by digital nomads and remote workers.

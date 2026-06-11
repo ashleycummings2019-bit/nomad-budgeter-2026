@@ -77,12 +77,12 @@
 </script>
 
 <!-- Google tag (gtag.js) - Placeholder, replace G-XXXXXXXXXX with real Measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', '{{ site.ga4 }}');
 </script>
 
 <!-- Drive Integration Script -->

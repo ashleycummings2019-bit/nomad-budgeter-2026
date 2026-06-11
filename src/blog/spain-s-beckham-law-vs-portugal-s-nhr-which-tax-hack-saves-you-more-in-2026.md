@@ -1,5 +1,5 @@
 ---
-title: "\"Spain's Beckham Law vs Portugal's NHR: Which Tax Hack Saves You More in 2026?\""
+title: "Spain's Beckham Law vs Portugal's NHR: Which Tax Hack Saves You More in 2026?"
 description: "Navigate the complexities of European tax residency with our 2026 comparison of Spain's Beckham Law and Portugal's NHR program. Discover which legislated tax holiday offers the greatest \"Savings Moat\" for digital nomads and high-net-worth individuals."
 meta_description: "Navigate the complexities of European tax residency with our 2026 comparison of Spain's Beckham Law and Portugal's NHR program. Discover which legislated tax holiday offers the greatest \"Savings Moat\" for digital nomads and high-net-worth individuals."
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: Nomad Budgeter
 category: Tax Arbitrage, Europe
 readingTime: 12 minutes
 tags: ["Beckham Law", "NHR", "Spain Tax", "Portugal Tax", "Digital Nomad Tax", "Europe Tax", "Tax Residency", "Wealth Architecture"]
+layout: layouts/blog.njk
 ---
 
 # Spain's Beckham Law vs Portugal's NHR: Which Tax Hack Saves You More in 2026?

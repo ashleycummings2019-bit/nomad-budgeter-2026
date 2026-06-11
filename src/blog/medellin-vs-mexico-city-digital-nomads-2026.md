@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Medellín vs Mexico City for Digital Nomads (2026)\""
+title: "Medellín vs Mexico City for Digital Nomads (2026)"
 description: "\"Medellín vs Mexico City for digital nomads: cost of living, tax implications, visa options, safety, and lifestyle. Which Latin American hub wins in 2026?\""
 meta_description: "\"Medellín vs Mexico City for digital nomads: cost of living, tax implications, visa options, safety, and lifestyle. Which Latin American hub wins in 2026?\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","medellin","mexico-city"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 ## 1. Cost of Living Breakdown

@@ -17,6 +17,7 @@ tags:
   - Thailand
   - Emergency Planning
   - Financial Security
+layout: layouts/blog.njk
 ---
 
 # The $42/Month Insurance That Saved My Life in Thailand (Why Every Nomad Needs SafetyWing)

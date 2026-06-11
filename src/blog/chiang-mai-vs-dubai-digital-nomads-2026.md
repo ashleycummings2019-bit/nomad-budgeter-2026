@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Chiang Mai vs Dubai for Digital Nomads (2026)\""
+title: "Chiang Mai vs Dubai for Digital Nomads (2026)"
 description: "\"Chiang Mai vs Dubai for digital nomads: $1,100 vs $3,500 monthly costs, 0% tax rates, LTR vs freelance visas, and lifestyle comparison for 2026.\""
 meta_description: "\"Chiang Mai vs Dubai for digital nomads: $1,100 vs $3,500 monthly costs, 0% tax rates, LTR vs freelance visas, and lifestyle comparison for 2026.\""
 date: "2026-05-10"
 author: "Ashley Cummings"
 tags: ["compare","chiang-mai","dubai"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 ## 1. Cost of Living Breakdown

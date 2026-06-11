@@ -6,6 +6,7 @@ author: Nomad Budgeter
 category: City Comparisons
 readingTime: 12 minutes
 tags: ["Ho Chi Minh City", "Bangkok", "Digital Nomad", "Tax Arbitrage", "Cost of Living", "Southeast Asia", "Wealth Architecture"]
+layout: layouts/blog.njk
 ---
 
 # Ho Chi Minh City vs Bangkok for Digital Nomads (2026)

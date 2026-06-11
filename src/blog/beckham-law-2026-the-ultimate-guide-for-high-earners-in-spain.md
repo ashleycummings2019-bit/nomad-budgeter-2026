@@ -1,5 +1,5 @@
 ---
-title: "\"Beckham Law Spain 2026: Guide for High-Earners & Nomads\""
+title: "Beckham Law Spain 2026: Guide for High-Earners & Nomads"
 description: "\"Unlock Spain's Beckham Law 2026. High-earning digital nomads & professionals: discover how this special tax regime offers significant savings for your global wealth strategy.\""
 meta_description: "\"Unlock Spain's Beckham Law 2026. High-earning digital nomads & professionals: discover how this special tax regime offers significant savings for your global wealth strategy.\""
 date: 2024-07-30
@@ -15,6 +15,7 @@ tags:
   - Tax Residency
   - Expat Tax
   - EU Tax
+layout: layouts/blog.njk
 ---
 
 # Beckham Law Spain 2026: Guide for High-Earners & Nomads

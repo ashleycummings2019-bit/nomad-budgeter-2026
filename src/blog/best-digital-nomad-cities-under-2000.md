@@ -1,8 +1,9 @@
 ---
-title: "\"7 Best Digital Nomad Cities for Under $2,000/Month (2026)\""
+title: "7 Best Digital Nomad Cities for Under $2,000/Month (2026)"
 description: "\"Maximize your lifestyle without breaking the bank. Discover the top digital nomad cities worldwide where you can live comfortably for under $2,000 a month in 2026.\""
 meta_description: "\"Maximize your lifestyle without breaking the bank. Discover the top digital nomad cities worldwide where you can live comfortably for under $2,000 a month in 2026.\""
 date: 2026-05-05
+layout: layouts/blog.njk
 ---
 
 The digital nomad landscape in 2026 is vastly different from a few years ago. Inflation, rising housing costs, and gentrification have priced out many classic hubs. If your goal is to maintain a high quality of life while keeping your monthly burn rate strictly under $2,000, you need to be strategic.

@@ -1,5 +1,5 @@
 ---
-title: "\"Dubai vs Lisbon for Digital Nomads: The Complete 2026 Tax & Cost Comparison\""
+title: "Dubai vs Lisbon for Digital Nomads: The Complete 2026 Tax & Cost Comparison"
 description: "\"Dubai offers 0% income tax while Lisbon has NHR 2.0 at 20%. But which city actually leaves more money in your pocket after rent, food, and visa costs? We run the full numbers for 2026.\""
 meta_description: "\"Dubai offers 0% income tax while Lisbon has NHR 2.0 at 20%. But which city actually leaves more money in your pocket after rent, food, and visa costs? We run the full numbers for 2026.\""
 date: 2026-05-04
@@ -14,6 +14,7 @@ faqs:
     answer: "A comfortable digital nomad lifestyle costs $3,400-5,000/month in Dubai compared to $1,600-2,500/month in Lisbon. The biggest differences are rent ($2,200-3,000 vs $1,100-1,600), transportation ($200-400 vs $40-80), and health insurance ($200-400 vs $60-150)."
   - question: "Can you get EU citizenship through Portugal or Dubai?"
     answer: "Portugal offers a path to EU citizenship after 5 years of residency, granting access to live and work in all 27 EU member states. Dubai does not offer citizenship to foreign residents regardless of how long they live there."
+layout: layouts/blog.njk
 ---
 
 It's the most debated matchup in the digital nomad world: **Dubai's 0% tax** versus **Lisbon's lifestyle at a fraction of the cost**. On paper, Dubai wins in a landslide. In practice, it's far more nuanced than the tax rate alone suggests.

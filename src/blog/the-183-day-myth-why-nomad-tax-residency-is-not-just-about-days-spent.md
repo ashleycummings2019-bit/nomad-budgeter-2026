@@ -1,5 +1,5 @@
 ---
-title: "\"The 183-Day Myth: Why Nomad Tax Residency Is Not Just About Days Spent\""
+title: "The 183-Day Myth: Why Nomad Tax Residency Is Not Just About Days Spent"
 description: "Debunk the dangerous 183-day tax residency myth. Learn how \"Center of Vital Interests\" and AI-driven data matching determine your true tax home, and how to legally achieve 0% tax."
 meta_description: "Debunk the dangerous 183-day tax residency myth. Learn how \"Center of Vital Interests\" and AI-driven data matching determine your true tax home, and how to legally achieve 0% tax."
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: Nomad Budgeter
 category: Tax Strategy
 readingTime: 12 min
 tags: ["tax residency", "digital nomad tax", "183-day rule", "tax arbitrage", "wealth architecture", "compliance", "FEIE", "exit tax"]
+layout: layouts/blog.njk
 ---
 
 # The 183-Day Myth: Why Nomad Tax Residency Is Not Just About Days Spent

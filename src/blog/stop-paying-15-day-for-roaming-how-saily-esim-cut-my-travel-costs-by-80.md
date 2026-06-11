@@ -1,5 +1,5 @@
 ---
-title: "\"Stop Paying $15/Day for Roaming: How Saily eSIM Cut My Travel Costs by 80%\""
+title: "Stop Paying $15/Day for Roaming: How Saily eSIM Cut My Travel Costs by 80%"
 description: "\"Discover how Saily eSIM revolutionizes digital nomad connectivity, cutting roaming costs by 80% and fortifying your 'Savings Moat' for true wealth architecture.\""
 meta_description: "\"Discover how Saily eSIM revolutionizes digital nomad connectivity, cutting roaming costs by 80% and fortifying your 'Savings Moat' for true wealth architecture.\""
 date: 2024-07-30
@@ -15,6 +15,7 @@ tags:
   - Savings Moat
   - Connectivity
   - Budgeting
+layout: layouts/blog.njk
 ---
 
 # Stop Paying $15/Day for Roaming: How Saily eSIM Cut My Travel Costs by 80%

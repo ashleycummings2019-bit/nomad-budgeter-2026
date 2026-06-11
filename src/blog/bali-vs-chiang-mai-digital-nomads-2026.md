@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Bali vs Chiang Mai for Digital Nomads (2026)\""
+title: "Bali vs Chiang Mai for Digital Nomads (2026)"
 meta_description: "\"Compare Bali and Chiang Mai for digital nomads: $1,800 vs $1,100 monthly costs, 0% tax rates, B211A vs LTR visas, coworking, and lifestyle in 2026.\""
 description: "\"Compare Bali and Chiang Mai for digital nomads: $1,800 vs $1,100 monthly costs, 0% tax rates, B211A vs LTR visas, coworking, and lifestyle in 2026.\""
 author: "Ashley Cummings"
 date: 2026-01-17
 tags: ["compare", "bali", "chiang-mai"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 For more than a decade, [Bali](/#calculator-section) and [Chiang Mai](/#calculator-section) have been the default answer to the question, “Where should I go first?” In 2026, both still deliver tropical weather, established expat communities, and a 0% local tax rate on foreign-sourced remote income—but your monthly budget will look drastically different depending on which flag you plant.

@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Tbilisi vs Bucharest for Digital Nomads (2026)\""
+title: "Tbilisi vs Bucharest for Digital Nomads (2026)"
 meta_description: "\"Compare cost of living, taxes, visas, and lifestyle between Tbilisi and Bucharest to find the best digital nomad base in Eastern Europe and the Caucasus.\""
 description: "\"Compare cost of living, taxes, visas, and lifestyle between Tbilisi and Bucharest to find the best digital nomad base in Eastern Europe and the Caucasus.\""
 author: "Ashley Cummings"
 date: 2025-01-09
 tags: ["compare", "tbilisi", "bucharest"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 Tbilisi and Bucharest both sit at the crossroads of empires, but in 2026 they offer digital nomads two radically different value propositions. [Tbilisi](/#calculator-section), the Georgian capital, pitches itself on bargain-basement costs and near-zero taxation. [Bucharest](/#calculator-section), Romania’s political and economic engine, counters with EU-standard infrastructure and a purpose-built Digital Nomad Visa. The headline numbers are stark: a month in Tbilisi costs roughly $1,200, while Bucharest demands $1,800. That $600 monthly gap balloons to $7,200 over a year—enough to fund multiple months of additional travel or a significant equipment upgrade.

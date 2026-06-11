@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Barcelona vs Berlin for Digital Nomads (2026)\""
+title: "Barcelona vs Berlin for Digital Nomads (2026)"
 meta_description: "\"Barcelona or Berlin for digital nomads? Compare 2026 cost of living, taxes, visas, coworking costs, and lifestyle with real data to pick your next base.\""
 description: "\"Barcelona or Berlin for digital nomads? Compare 2026 cost of living, taxes, visas, coworking costs, and lifestyle with real data to pick your next base.\""
 author: "Ashley Cummings"
 date: 2025-01-21
 tags: ["compare", "barcelona", "berlin"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 Europe’s two heavyweight nomad capitals—[Barcelona](/#calculator-section) and [Berlin](/#calculator-section)—are often pitted against each other for good reason. Both offer massive international airports, deep freelancer ecosystems, and a cost structure that undercuts London or Paris. But when you strip away the Instagram filters and look at the hard numbers, the choice becomes less about hype and more about a few decisive financial and lifestyle variables.

@@ -7,6 +7,7 @@ author: "Nomad Budgeter"
 category: "Cost of Living"
 readingTime: 12 minutes
 tags: ["Lisbon", "Medellin", "Cost of Living", "Digital Nomad", "Tax Arbitrage", "Budget Travel", "Wealth Architecture"]
+layout: layouts/blog.njk
 ---
 
 # Lisbon vs Medellín: Where Your $3,000/Month Goes Further (With Real Data)

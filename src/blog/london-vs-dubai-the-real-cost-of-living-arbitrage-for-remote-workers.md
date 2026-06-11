@@ -1,5 +1,5 @@
 ---
-title: "\"London vs Dubai: The Real Cost of Living Arbitrage for Remote Workers\""
+title: "London vs Dubai: The Real Cost of Living Arbitrage for Remote Workers"
 description: "Discover how digital nomads can leverage tax and lifestyle arbitrage between London and Dubai to accelerate wealth architecture, turning a 45% tax burden into 0% and achieving financial independence years faster."
 meta_description: "Discover how digital nomads can leverage tax and lifestyle arbitrage between London and Dubai to accelerate wealth architecture, turning a 45% tax burden into 0% and achieving financial independence years faster."
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: Nomad Budgeter
 category: Tax Arbitrage
 readingTime: 8 mins
 tags: ["London", "Dubai", "Tax Arbitrage", "Cost of Living", "Digital Nomad", "Wealth Architecture", "UAE Tax", "UK Tax", "Financial Independence", "Remote Work"]
+layout: layouts/blog.njk
 ---
 
 # London vs Dubai: The Real Cost of Living Arbitrage for Remote Workers

@@ -15,6 +15,7 @@ tags:
   - Wealth Architecture
   - Digital Nomad Visa
   - Remote Work
+layout: layouts/blog.njk
 ---
 
 # Buenos Aires vs Medellín: Digital Nomads Guide (2026)

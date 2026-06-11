@@ -1,5 +1,5 @@
 ---
-title: "\"US Citizens Abroad: FEIE vs FBAR vs FATCA — The Complete 2026 Survival Guide\""
+title: "US Citizens Abroad: FEIE vs FBAR vs FATCA — The Complete 2026 Survival Guide"
 description: "\"Master the complexities of US citizenship-based taxation. This 2026 guide demystifies FEIE, FBAR, and FATCA, providing actionable strategies for US digital nomads to legally minimize their tax burden and build their wealth architecture abroad.\""
 meta_description: "\"Master the complexities of US citizenship-based taxation. This 2026 guide demystifies FEIE, FBAR, and FATCA, providing actionable strategies for US digital nomads to legally minimize their tax burden and build their wealth architecture abroad.\""
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: "Nomad Budgeter"
 category: "Tax Strategy"
 readingTime: "12 min"
 tags: ["US Taxes", "FEIE", "FBAR", "FATCA", "Digital Nomad Taxes", "Tax Arbitrage", "Wealth Architecture"]
+layout: layouts/blog.njk
 ---
 
 # US Citizens Abroad: FEIE vs FBAR vs FATCA — The Complete 2026 Survival Guide

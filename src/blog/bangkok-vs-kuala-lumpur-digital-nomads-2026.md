@@ -1,12 +1,14 @@
 ---
 layout: layouts/blog.njk
-title: "\"Bangkok vs Kuala Lumpur for Digital Nomads (2026)\""
+title: "Bangkok vs Kuala Lumpur for Digital Nomads (2026)"
 meta_description: "\"Compare cost of living, taxes, visas, coworking costs, and lifestyle between Bangkok and Kuala Lumpur to choose your 2026 Southeast Asia digital nomad base.\""
 description: "\"Compare cost of living, taxes, visas, coworking costs, and lifestyle between Bangkok and Kuala Lumpur to choose your 2026 Southeast Asia digital nomad base.\""
 author: "Ashley Cummings"
 date: 2025-01-15
 tags: ["compare", "bangkok", "kuala-lumpur"]
 draft: true
+noindex: true
+eleventyExcludeFromCollections: true
 ---
 
 Southeast Asia remains the default region for digital nomads in 2026, and the debate increasingly narrows to two financial capitals: Bangkok and Kuala Lumpur. Both offer tropical climates, solid infrastructure, and globally connected airports, but they deliver those benefits at meaningfully different price points and paces.

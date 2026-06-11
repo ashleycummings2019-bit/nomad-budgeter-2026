@@ -1,5 +1,5 @@
 ---
-title: "\"Budapest vs Prague: Tax-Optimized Nomads in Central Europe\""
+title: "Budapest vs Prague: Tax-Optimized Nomads in Central Europe"
 description: "Compare Budapest vs Prague for tax-optimized digital nomads. Discover Central Europe's cost of living & tax advantages to boost your savings moat. Your 2026 wealth strategy starts here!"
 meta_description: "Compare Budapest vs Prague for tax-optimized digital nomads. Discover Central Europe's cost of living & tax advantages to boost your savings moat. Your 2026 wealth strategy starts here!"
 date: 2024-07-30
@@ -7,6 +7,7 @@ author: "Nomad Budgeter"
 category: Tax Strategy
 readingTime: 12 minutes
 tags: ["Europe", "Tax Arbitrage", "Digital Nomad", "Budapest", "Prague", "Cost of Living", "Wealth Architecture", "Digital Nomad Visa"]
+layout: layouts/blog.njk
 ---
 
 # Budapest vs Prague: Tax-Optimized Nomads in Central Europe
