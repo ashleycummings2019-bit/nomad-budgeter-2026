@@ -17,52 +17,31 @@ const TABLE_NAME = 'Content Pipeline';
 // These are stub/placeholder comparison posts that need full CMO-generated content.
 // Each entry maps to an existing blog file marked draft: true with generic body text.
 const TOPICS = [
-  // 🌍 Stub Comparison Posts — need full data-driven rewrites
   {
-    topic: "Bali vs Medellín for Digital Nomads (2026)",
-    slug: "bali-vs-medellin-digital-nomads-2026",
-    notes: "Compare cost of living ($1,800 vs $1,400), tax rates (0% E33G vs territorial), visa options, coworking scenes. Existing stub has generic placeholder text.",
+    topic: "Buenos Aires vs Medellín for Digital Nomads (2026)",
+    slug: "buenos-aires-vs-medellin-digital-nomads-2026",
+    notes: "South American capitals of remote work. Compare the blue dollar rate vs $1,400 monthly in Medellin. Territorial taxation vs complex tax systems. Visas and timezone benefits."
   },
   {
-    topic: "Chiang Mai vs Dubai for Digital Nomads (2026)",
-    slug: "chiang-mai-vs-dubai-digital-nomads-2026",
-    notes: "Compare $1,100 vs $3,500 monthly costs, 0% tax both cities, LTR vs freelance visa, coworking quality gap. Existing stub has generic placeholder text.",
+    topic: "Da Nang vs Chiang Mai for Digital Nomads (2026)",
+    slug: "da-nang-vs-chiang-mai-digital-nomads-2026",
+    notes: "Southeast Asia low-cost showdown. Beach vs Mountains. Both under $1,200/mo. Compare Vietnam's new e-visa to Thailand's DTV visa."
   },
   {
-    topic: "Dubai vs Lisbon for Digital Nomads (2026)",
-    slug: "dubai-vs-lisbon-digital-nomads-2026",
-    notes: "0% vs 20% NHR tax, $3,500 vs $2,400 monthly, visa pathways. Duplicate slug exists (dubai-vs-lisbon-tax-comparison) — this one needs its own angle. Existing stub has generic placeholder text.",
+    topic: "Madeira vs Lisbon for Digital Nomads (2026)",
+    slug: "madeira-vs-lisbon-digital-nomads-2026",
+    notes: "Portugal island vs mainland. NHR 2.0 implications. Lower cost of living in Madeira ($1,500/mo) vs Lisbon ($2,400/mo). Digital Nomad Village community."
   },
   {
-    topic: "Dubai vs Singapore for Digital Nomads (2026)",
-    slug: "dubai-vs-singapore-digital-nomads-2026",
-    notes: "Two 0% tax hubs compared. $3,500 vs $4,200 monthly. Freezone vs EP visa. Existing stub has generic placeholder text. Longer-form version exists at separate slug.",
+    topic: "Bangkok vs Dubai for Digital Nomads (2026)",
+    slug: "bangkok-vs-dubai-digital-nomads-2026",
+    notes: "Big city hubs. Thailand DTV visa vs Dubai remote work visa. Cost difference ($1,500 vs $3,500). 0% tax vs territorial tax."
   },
   {
-    topic: "Lisbon vs Barcelona for Digital Nomads (2026)",
-    slug: "lisbon-vs-barcelona-digital-nomads-2026",
-    notes: "NHR 2.0 vs Beckham Law, $2,400 vs $2,800 monthly, D7 vs Beckham visa. Existing stub has generic placeholder text.",
-  },
-  {
-    topic: "Lisbon vs Valencia for Digital Nomads (2026)",
-    slug: "lisbon-vs-valencia-digital-nomads-2026",
-    notes: "Portugal NHR vs Spain Beckham Law angle, $2,400 vs $2,200 monthly, coworking scenes. Existing stub has generic placeholder text.",
-  },
-  {
-    topic: "Medellín vs Mexico City for Digital Nomads (2026)",
-    slug: "medellin-vs-mexico-city-digital-nomads-2026",
-    notes: "Latin America heavyweight comparison. $1,400 vs $1,600 monthly, territorial tax, digital nomad visa vs tourist visa overstay risk. Existing stub has generic placeholder text.",
-  },
-  {
-    topic: "Porto vs Valencia for Digital Nomads (2026)",
-    slug: "porto-vs-valencia-digital-nomads-2026",
-    notes: "Iberian Peninsula comparison. NHR vs Beckham Law, $1,800 vs $2,200 monthly, slower pace cities. Existing stub has generic placeholder text.",
-  },
-  {
-    topic: "Tbilisi vs Chiang Mai for Digital Nomads (2026)",
-    slug: "tbilisi-vs-chiang-mai-digital-nomads-2026",
-    notes: "Budget nomad showdown. 1% small business tax vs 0% foreign income, $1,200 vs $1,100 monthly. Existing stub has generic placeholder text.",
-  },
+    topic: "Ho Chi Minh City vs Bangkok for Digital Nomads (2026)",
+    slug: "hcmc-vs-bangkok-digital-nomads-2026",
+    notes: "Bustling SE Asia metropolises. Cost of living comparison ($1,100 vs $1,500). Coworking spaces, coffee culture, and visa longevity."
+  }
 ];
 
 // ─── AIRTABLE BATCH CREATE ───────────────────────────────────────────────────
