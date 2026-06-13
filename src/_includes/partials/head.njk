@@ -1,7 +1,8 @@
 {# SEO Head Partial — Renders title, meta, OG tags, canonical, and JSON-LD #}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Outfit:wght@300;500;700;900&display=swap"></noscript>
 
 {# Favicon & PWA #}
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" type="image/svg+xml">
@@ -76,21 +77,5 @@
 }
 </script>
 
-<!-- Google tag (gtag.js) - Placeholder, replace G-XXXXXXXXXX with real Measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4 }}"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '{{ site.ga4 }}');
-</script>
-
-<!-- Drive Integration Script -->
-<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.com/NTMxOTA3.js?t=531907';
-      document.head.appendChild(script);
-  })();
-</script>
+{# GA4 is lazy-loaded in base.njk after user interaction — no duplicate needed here #}
+{# Drive Integration Script — deferred to not block initial paint #}

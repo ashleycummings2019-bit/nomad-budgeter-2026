@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "partials/head.njk" %}
-    <link rel="stylesheet" href="/css/index.css?v=1.0.2">
+    {# Critical inline CSS for above-the-fold content — prevents FOUC #}
+    <style>
+      :root{--bg-dark:#09090b;--text-main:#f4f4f5;--text-dim:#a1a1aa;--aura-primary:#10b981;--font-main:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--font-heading:'Outfit',sans-serif;--glass-border:rgba(255,255,255,.08);--transition-smooth:all .4s cubic-bezier(.4,0,.2,1)}
+      *{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+      html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
+      body{background:var(--bg-dark);color:var(--text-main);font-family:var(--font-main);line-height:1.6;overflow-x:hidden;width:100%;min-height:100vh;position:relative}
+      .site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(9,9,11,.4);border-bottom:1px solid rgba(255,255,255,.05);transform:translateZ(0);contain:layout style}
+      @media(max-width:768px){.site-header{background:rgba(9,9,11,.92)}}
+      .header-container{max-width:1400px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:80px}
+      .logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;flex-shrink:0}
+      .main-nav{display:flex;gap:2rem}
+      .nav-link{font-weight:600;font-size:.9rem;color:var(--text-dim)}
+      a{text-decoration:none;color:inherit}
+      img{max-width:100%;height:auto}
+      .aura-blob,.mobile-sticky-cta,.mobile-tab-bar,.cookie-banner{display:none}
+    </style>
+    <link rel="stylesheet" href="/css/index.css?v=1.0.3" media="all">
     {% if '/blog' in page.url or '/post' in page.url %}
-    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/blog.css" media="all">
     {% endif %}
 
     {# Google Analytics 4 — deferred to not block rendering #}
@@ -43,7 +59,7 @@
 
     <script src="/js/geo-currency.js" defer></script>
     <script src="/js/aura-ticker.js" defer></script>
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/main.js" defer></script>
     <script src="/js/capture-lead.js" defer></script>
     <script src="/js/auth.js" defer></script>
 
@@ -105,13 +121,19 @@
                     } catch(e) {}
                 }
             };
+
+            // Drive Integration Script (deferred from head)
+            var drive = document.createElement('script');
+            drive.async = true;
+            drive.src = 'https://emrldtp.com/NTMxOTA3.js?t=531907';
+            document.head.appendChild(drive);
         }
 
-        // Load on first interaction or after 8s fallback
+        // Load on first interaction or after 5s fallback
         ['scroll', 'click', 'touchstart', 'keydown', 'mousemove'].forEach(function(evt) {
             window.addEventListener(evt, loadThirdParty, { once: true, passive: true });
         });
-        setTimeout(loadThirdParty, 8000);
+        setTimeout(loadThirdParty, 5000);
     })();
     </script>
 </body>
