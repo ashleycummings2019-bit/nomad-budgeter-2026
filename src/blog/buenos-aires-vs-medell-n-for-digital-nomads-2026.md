@@ -1,5 +1,5 @@
 ---
-title: Buenos Aires vs Medellín: Digital Nomads Guide (2026)
+title: "Buenos Aires vs Medellín: Digital Nomads Guide (2026)"
 description: Buenos Aires vs Medellín for digital nomads in 2026. Compare cost of living, tax efficiency, lifestyle & more to find your ideal South American hub.
 date: 2024-07-30
 author: Nomad Budgeter

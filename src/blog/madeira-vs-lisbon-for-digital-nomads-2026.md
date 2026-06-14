@@ -1,5 +1,5 @@
 ---
-title: Madeira vs Lisbon for Digital Nomads (2026): Tax & Lifestyle
+title: "Madeira vs Lisbon for Digital Nomads (2026): Tax & Lifestyle"
 description: Choosing between Lisbon and Madeira in 2026? This guide helps digital nomads compare tax advantages, lifestyle, and cost of living for a strategic move to Portugal.
 date: 2024-07-30
 author: Nomad Budgeter

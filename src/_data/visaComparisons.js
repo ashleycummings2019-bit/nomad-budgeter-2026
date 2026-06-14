@@ -18,6 +18,8 @@ module.exports = function() {
 
     visaDestinations.forEach(dest => {
         HOME_COUNTRIES.forEach(home => {
+
+
             const savings100k = Math.round(100000 * (home.taxRate - dest.tax));
             const monthlySavings = Math.round(savings100k / 12);
             
