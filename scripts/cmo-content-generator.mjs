@@ -103,51 +103,7 @@ function loadRagContext() {
 // STEP 2: PROMPT TEMPLATES
 // ═══════════════════════════════════════════════════════════════════════════════
 
-function buildSocialPrompt(topic, ctx) {
-    return `You are the Chief Marketing Officer (CMO) for NomadBudgeter.com.
-Your brand voice: authoritative, contrarian, high-status. Deals in "Alpha", "Arbitrage", and "Savings Moats".
-Always hook the reader immediately with a counter-intuitive financial truth.
-Always drive traffic back to NomadBudgeter.com.
-
-━━━ LIVE CONTEXT (use these facts — do NOT hallucinate) ━━━
-${ctx.taxGuide ? `\nTAX ARBITRAGE GUIDE:\n${ctx.taxGuide.slice(0, 4000)}\n` : ''}
-${ctx.affiliateLinks ? `\nAFFILIATE LINKS (use tracked URLs exactly when mentioning partners):\n${ctx.affiliateLinks}\n` : ''}
-${ctx.trafficWorkflow ? `\nFUNNEL RULES:\n${ctx.trafficWorkflow}\n` : ''}
-${ctx.platformKnowledge ? `\nPLATFORM KNOWLEDGE (pricing, analytics, brand voice, funnel):\n${ctx.platformKnowledge.slice(0, 6000)}\n` : ''}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Topic: "${topic}"
-
-Generate 9 pieces of social + email content. Format your response EXACTLY like this:
-
-[TWITTER]
-(Write a punchy 4-tweet thread. Tweet 1 is the hook with a shocking stat. Tweet 4 links to NomadBudgeter.com)
-
-[LINKEDIN]
-(Write a short, data-led LinkedIn post. Max 200 words. End with a CTA to the calculator)
-
-[REDDIT]
-(Write an educational, bullet-point-heavy r/digitalnomad post. No self-promotion in the title. Link to calculator naturally in body)
-
-[FACEBOOK]
-(Write a community-focused post sparking discussion. Ask a question at the end)
-
-[INSTAGRAM]
-(Write a visually descriptive caption with 10–15 relevant hashtags)
-
-[TIKTOK]
-(Write a short punchy caption with 5 high-volume hashtags. Reference the trending format)
-
-[YOUTUBE]
-(Write an SEO-optimized YouTube Shorts description. Include 5 keyword tags at the bottom)
-
-[HEYGEN]
-(Write a 45-second high-energy spoken script for the HeyGen AI Avatar. No stage directions. Just the script)
-
-[NEWSLETTER]
-(Write a high-converting broadcast email using the PAS framework. Pitch the $19 Pro Report. Link to NomadBudgeter.com. Include one relevant affiliate partner with tracked URL)
-`;
-}
+// Social prompts removed to optimize for website-only generation
 
 function buildBlogPrompt(topic, ctx) {
     return `You are the lead SEO Content Writer for NomadBudgeter.com.
@@ -226,16 +182,19 @@ async function callGemini(prompt, model, temperature = 0.7, retries = 4) {
 }
 
 async function generateBlogImage(topic, slug) {
-    const prompt = `A high-quality, cinematic, professional editorial photo representing: ${topic}. Digital nomad lifestyle, clean lighting, travel photography, photorealistic.`;
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=${GEMINI_API_KEY}`;
+    const prompt = `Generate a high-quality, cinematic, professional editorial photo representing: ${topic}. Digital nomad lifestyle, clean lighting, travel photography, photorealistic. No text or watermarks.`;
+    const model = 'gemini-2.0-flash-exp';
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
     
     try {
         const res = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                instances: [{ prompt: prompt }],
-                parameters: { sampleCount: 1, outputOptions: { mimeType: 'image/jpeg' } }
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: {
+                    responseModalities: ['TEXT', 'IMAGE']
+                }
             })
         });
 
@@ -245,16 +204,21 @@ async function generateBlogImage(topic, slug) {
         }
 
         const data = await res.json();
-        const base64Data = data?.predictions?.[0]?.bytesBase64Encoded;
+        const parts = data?.candidates?.[0]?.content?.parts || [];
+        const imagePart = parts.find(p => p.inlineData?.mimeType?.startsWith('image/'));
         
-        if (base64Data) {
-            const imgPath = path.join(process.cwd(), 'src', 'assets', 'images', 'blog');
-            if (!fs.existsSync(imgPath)) {
-                fs.mkdirSync(imgPath, { recursive: true });
+        if (imagePart) {
+            const imgDir = path.join(process.cwd(), 'src', 'assets', 'images', 'blog');
+            if (!fs.existsSync(imgDir)) {
+                fs.mkdirSync(imgDir, { recursive: true });
             }
-            const filePath = path.join(imgPath, `${slug}.jpg`);
-            fs.writeFileSync(filePath, Buffer.from(base64Data, 'base64'));
-            return `/assets/images/blog/${slug}.jpg`;
+            const ext = imagePart.inlineData.mimeType === 'image/png' ? 'png' : 'jpg';
+            const filePath = path.join(imgDir, `${slug}.${ext}`);
+            fs.writeFileSync(filePath, Buffer.from(imagePart.inlineData.data, 'base64'));
+            console.log(`   ✅ Cover image saved → ${filePath}`);
+            return `/assets/images/blog/${slug}.${ext}`;
+        } else {
+            console.warn(`   ⚠️ No image part found in Gemini response.`);
         }
     } catch (e) {
         console.warn(`   ⚠️ Image generation error: ${e.message}`);
@@ -267,11 +231,7 @@ async function generateBlogImage(topic, slug) {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function extractSection(text, tag) {
-    // Make regex more forgiving to handle LLM adding bold (**), headers (###), or colons
-    const regex = new RegExp(
-        `(?:\\*\\*|### |# |^|\\n)\\s*\\[${tag}\\](?:\\*\\*|:)?\\s*([\\s\\S]*?)(?=(?:\\*\\*|### |# |\\n)\\s*\\[(?:TWITTER|LINKEDIN|REDDIT|FACEBOOK|INSTAGRAM|TIKTOK|YOUTUBE|HEYGEN|NEWSLETTER|BLOG)\\]|$)`,
-        'i'
-    );
+    const regex = new RegExp(`(?:\\[${tag}\\])(?:\\*\\*|:)?\\s*([\\s\\S]*?)(?=\\[|$)`, 'i');
     const match = text.match(regex);
     if (!match) return '';
     let section = match[1].trim();
@@ -376,9 +336,6 @@ ${JSON.stringify(seoReport, null, 2)}
 // ═══════════════════════════════════════════════════════════════════════════════
 
 async function generateContent(topic, ctx) {
-    console.log(`\n🤖 Generating social content via ${MODEL_FLASH}...`);
-    const socialText = await callGemini(buildSocialPrompt(topic, ctx), MODEL_FLASH, 0.7);
-
     console.log(`📝 Generating blog post via ${MODEL_PRO}...`);
     const blogText = await callGemini(buildBlogPrompt(topic, ctx), MODEL_PRO, 0.5);
     let blogContent = extractSection(blogText + '\n[END]', 'BLOG');
@@ -402,27 +359,7 @@ async function generateContent(topic, ctx) {
         }
     }
 
-    const fallbackText = `Check out our latest guide on ${topic}! #nomadbudgeter #digitalnomad`;
-    const twitter = extractSection(socialText, 'TWITTER') || fallbackText;
-    const linkedin = extractSection(socialText, 'LINKEDIN') || twitter;
-    const facebook = extractSection(socialText, 'FACEBOOK') || linkedin;
-    const instagram = extractSection(socialText, 'INSTAGRAM') || facebook;
-    const reddit = extractSection(socialText, 'REDDIT');
-    const tiktok = extractSection(socialText, 'TIKTOK');
-    const youtube = extractSection(socialText, 'YOUTUBE');
-    const heygen = extractSection(socialText, 'HEYGEN');
-    const newsletter = extractSection(socialText, 'NEWSLETTER');
-
     return {
-        twitter,
-        linkedin,
-        reddit,
-        facebook,
-        instagram,
-        tiktok,
-        youtube,
-        heygen,
-        newsletter,
         blog: blogContent
     };
 }
@@ -433,30 +370,21 @@ async function generateContent(topic, ctx) {
 
 async function fetchPendingTopics() {
     console.log(`🔍 Checking Airtable (${TABLE_NAME}) for Status = 'Needs Draft'...`);
-    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}?filterByFormula=${encodeURIComponent("{Status}='Needs Draft'")}`;
+    const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}?filterByFormula=${encodeURIComponent("{Status}='Needs Draft'")}&maxRecords=5`;
     const res = await fetch(url, { headers: { 'Authorization': `Bearer ${AIRTABLE_API_KEY}` } });
     if (!res.ok) throw new Error(`Airtable fetch failed: ${await res.text()}`);
     return (await res.json()).records;
 }
 
-async function updateAirtableRow(recordId, content) {
-    console.log(`💾 Saving drafts back to Airtable record: ${recordId}...`);
+async function updateAirtableRow(recordId) {
+    console.log(`💾 Marking Airtable record as Done: ${recordId}...`);
     const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}/${recordId}`;
     const res = await fetch(url, {
         method: 'PATCH',
         headers: { 'Authorization': `Bearer ${AIRTABLE_API_KEY}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
             fields: {
-                'Twitter':       content.twitter,
-                'LinkedIn':      content.linkedin,
-                'Reddit':        content.reddit,
-                'Facebook':      content.facebook,
-                'Instagram':     content.instagram,
-                'TikTok':        content.tiktok,
-                'YouTube':       content.youtube,
-                'HeyGen Script': content.heygen,
-                'Newsletter':    content.newsletter,
-                'Status':        'Done'
+                'Status': 'Done'
             }
         })
     });
@@ -549,8 +477,8 @@ async function run() {
                 console.warn(`⚠️  No blog content generated for "${topic}"`);
             }
 
-            // Push social drafts to Airtable
-            await updateAirtableRow(record.id, content);
+            // Mark record as done in Airtable
+            await updateAirtableRow(record.id);
             console.log(`\n✅ Done: "${topic}"\n`);
         }
 

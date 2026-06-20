@@ -302,6 +302,61 @@ eleventyComputed:
     </div>
 </div>
 
+{# ── Sticky Bottom CTA Bar ── #}
+<div class="sticky-cta-bar" id="sticky-cta-bar">
+    <div class="sticky-cta-bar__inner">
+        <div class="sticky-cta-bar__text">
+            <strong>{{ comp.winner }} wins by ${{ comp.arbitrageValue | localeString }}/mo.</strong>
+            <span class="text-dim">Get the full visa + tax roadmap →</span>
+        </div>
+        <div class="sticky-cta-bar__actions">
+            <a href="/pricing/" class="action-btn accent-bg sticky-cta-btn">Unlock Pro Report — $19</a>
+            <a href="/" class="action-btn sticky-cta-btn-secondary">Free Calculator</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.sticky-cta-bar {
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: rgba(10, 10, 20, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 0.75rem 1.5rem;
+    transition: bottom 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sticky-cta-bar.visible { bottom: 0; }
+.sticky-cta-bar__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.sticky-cta-bar__text { font-size: 0.9rem; }
+.sticky-cta-bar__text .text-dim { display: block; font-size: 0.78rem; margin-top: 2px; }
+.sticky-cta-bar__actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+.sticky-cta-btn { font-size: 0.85rem !important; padding: 0.6rem 1.4rem !important; white-space: nowrap; }
+.sticky-cta-btn-secondary {
+    font-size: 0.85rem !important;
+    padding: 0.6rem 1.4rem !important;
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    white-space: nowrap;
+}
+@media (max-width: 640px) {
+    .sticky-cta-bar__inner { flex-direction: column; text-align: center; }
+    .sticky-cta-bar__actions { width: 100%; }
+    .sticky-cta-btn, .sticky-cta-btn-secondary { flex: 1; text-align: center; }
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const incomeInput = document.getElementById('relocation-income');
@@ -357,5 +412,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initial calculation
     calculateROI();
+
+    // ── Sticky CTA Bar: show after scrolling past hero ──
+    const stickyBar = document.getElementById('sticky-cta-bar');
+    if (stickyBar) {
+        const observer = new IntersectionObserver(([entry]) => {
+            stickyBar.classList.toggle('visible', !entry.isIntersecting);
+        }, { threshold: 0 });
+        const hero = document.querySelector('.comparison-hero');
+        if (hero) observer.observe(hero);
+    }
 });
 </script>
