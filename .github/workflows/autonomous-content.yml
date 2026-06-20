@@ -1,0 +1,39 @@
+name: Autonomous Content Engine
+on:
+  repository_dispatch:
+      types: [update-website-content]
+  workflow_dispatch:
+    # Allows you to trigger this workflow manually from the Actions tab
+  jobs:
+    generate-content:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout repository
+              uses: actions/checkout@v4
+                  with:
+                    # Required to trigger other workflows (like Vercel deployments)
+                    # if we commit using a standard token, sometimes Vercel ignores it.
+                    # We use default token, Vercel app usually picks up any push.
+                    fetch-depth: 1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+        node-version: '20'
+        cache: 'npm'
+- name: Install dependencies
+run: npm ci
+- name: Generate AI Content (CMO Script)
+env:
+AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
+AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+run: npm run cmo
+- name: Commit and push changes
+uses: stefanzweifel/git-auto-commit-action@v5
+with:
+commit_message: "chore: auto-generated blog posts and social copy"
+file_pattern: "src/blog/*.md src/assets/images/blog/*.jpg"
+commit_user_name: "Nomad Budgeter AI"
+commit_user_email: "ai@nomadbudgeter.com"
+commit_author: "Nomad Budgeter AI <ai@nomadbudgeter.com>"
+branch: main
