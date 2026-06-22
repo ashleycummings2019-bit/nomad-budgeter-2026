@@ -102,7 +102,7 @@ async function initDashboard() {
                 </div>
                 <div class="trip-info-card">
                     <div class="trip-meta">
-                        <img src="https://flagcdn.com/w40/${getFlag(f.Country)}.png" alt="${f.Country}" class="mini-flag">
+                        <img src="https://flagcdn.com/w40/${getFlag(f.Country)}.png" alt="${f.Country}" class="mini-flag" width="40" height="30">
                         <span class="trip-country">${f.Country}</span>
                         <span class="trip-badge${isCurrent ? ' current' : ''}">${isCurrent ? 'Current' : 'Completed'}</span>
                     </div>

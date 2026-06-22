@@ -196,7 +196,7 @@ function renderDaysTracker(records, isPro) {
     <div class="tracker-card" style="border-color:${col.border};background:${col.bg};">
       <div class="tc-header">
         <div class="tc-country">
-          <img src="https://flagcdn.com/w40/${flag}.png" alt="${c.country}" class="tc-flag">
+          <img src="https://flagcdn.com/w40/${flag}.png" alt="${c.country}" class="tc-flag" width="40" height="30">
           <div>
             <div class="tc-name">${c.country}${c.isCurrent ? ' <span class="tc-current">● NOW</span>' : ''}</div>
             <div class="tc-threshold-label">${c.threshold}-day threshold</div>
