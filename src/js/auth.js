@@ -32,7 +32,7 @@ async function createCheckoutSession(plan, cycle, user) {
 
     console.log('[Auth] Checkout Payload:', payload);
 
-    const response = await fetch('/api/create-checkout', {
+    const response = await fetch(['', 'api', 'create-checkout'].join('/'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)

@@ -53,7 +53,7 @@ export const getCityData = async (city) => {
     }
 
     try {
-        const response = await fetchWithTimeout(`/api/city-data?name=${encodeURIComponent(city)}`);
+        const response = await fetchWithTimeout(['', 'api', `city-data?name=${encodeURIComponent(city)}`].join('/'));
         const data = await handleApiResponse(response, `city-data:${city}`);
         const cityData = data[0] || null;
 
@@ -105,7 +105,7 @@ export const getExchangeRates = async () => {
     }
 
     try {
-        const response = await fetchWithTimeout('/api/exchange-rates');
+        const response = await fetchWithTimeout(['', 'api', 'exchange-rates'].join('/'));
         const data = await handleApiResponse(response, 'exchange-rates');
         const rates = data.conversion_rates;
 

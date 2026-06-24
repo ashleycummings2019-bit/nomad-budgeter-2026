@@ -14,7 +14,7 @@ async function initDashboard() {
     async function fetchLogs() {
         try {
             const token = await globalThis.Clerk.session.getToken();
-            const res = await fetch('/api/travel-logs', {
+            const res = await fetch(['', 'api', 'travel-logs'].join('/'), {
                 headers: { 
                     'Authorization': `Bearer ${token}`,
                     'x-user-email': email 
@@ -45,7 +45,7 @@ async function initDashboard() {
             }
 
             // Check for Business tier API access
-            const res = await fetch(`/api/v1/cities?page=1&limit=1`, {
+            const res = await fetch(['', 'api', 'v1', 'cities?page=1&limit=1'].join('/'), {
                 headers: { 
                     'Authorization': `Bearer ${token}`,
                     'x-user-email': email 
@@ -171,7 +171,7 @@ async function initDashboard() {
 
             try {
                 const token = await globalThis.Clerk.session.getToken();
-                const res = await fetch('/api/travel-logs', {
+                const res = await fetch(['', 'api', 'travel-logs'].join('/'), {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

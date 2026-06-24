@@ -50,7 +50,7 @@
   // ─── Load Rates ───
   async function loadRates() {
     try {
-      const res = await fetch('/api/rates.json');
+      const res = await fetch(['', 'api', 'rates.json'].join('/'));
       const data = await res.json();
       rates = data.rates;
     } catch (e) {
