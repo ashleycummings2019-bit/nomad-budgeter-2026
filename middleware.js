@@ -60,6 +60,15 @@ export const config = {
 export default function middleware(request) {
   const url = new URL(request.url);
 
+  // 0. Staging Domain Redirect: Force all staging traffic to production
+  //    This MUST run first — vercel.json redirects don't fire when middleware
+  //    is present because middleware intercepts the request pipeline.
+  const host = request.headers.get('host') || '';
+  if (host === 'nomad-budgeter-2026.vercel.app') {
+    const productionUrl = new URL(url.pathname + url.search, 'https://www.nomadbudgeter.com');
+    return Response.redirect(productionUrl.toString(), 301);
+  }
+
   // 1. Dashboard Protection: Check for Clerk Session
   if (url.pathname.startsWith('/dashboard')) {
     // Vercel Edge Middleware request.cookies is a Map-like object
