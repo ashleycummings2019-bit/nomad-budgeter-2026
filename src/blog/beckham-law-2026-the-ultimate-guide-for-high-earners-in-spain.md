@@ -92,7 +92,7 @@ Key Documents for the **Beckham Law application process** typically include: you
 
 **The 183-Day Myth** is especially relevant here. While you are taxed as a non-resident under Beckham Law, you are physically resident in Spain. You must genuinely establish your "center of vital interests" in Spain. This means having your primary home, bank accounts, and daily life centered there.
 
-Given the complexities, **retaining a local expert is not optional; it's essential.** A specialized tax lawyer or advisor can navigate the specific decree updates and ensure your application is flawless. For comprehensive legal support in Spain, from visa applications to tax residency, we recommend **[Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa)**. Their expertise is invaluable for a smooth transition.
+Given the complexities, **retaining a local expert is not optional; it's essential.** A specialized tax lawyer or advisor can navigate the specific decree updates and ensure your application is flawless. For comprehensive legal support in Spain, from visa applications to tax residency, we recommend **{% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %}**. Their expertise is invaluable for a smooth transition.
 
 ## Lifestyle & Location Considerations: Your Spanish Base
 
@@ -101,9 +101,9 @@ Choosing Spain under the Beckham Law isn't just a tax decision; it's a lifestyle
 *   **Vibrant Cities:** From the historic grandeur of [Madrid](/cities/madrid-digital-nomad-guide) to the architectural marvels of [Barcelona](/cities/barcelona-expat-life), the cultural richness of Valencia, or the sunny coasts of Malaga, Spain offers diverse urban experiences. Explore our detailed guides for these hubs: [/cities/valencia](/cities/valencia), [/cities/malaga](/cities/malaga).
 *   **High Quality of Life:** Excellent healthcare, delicious cuisine, a rich cultural heritage, and a generally relaxed pace of life.
 *   **Connectivity:** As an EU member, Spain offers superb connectivity to the rest of Europe and beyond, making it an ideal base for continued travel.
-*   **Cost of Living:** While not as low as some Southeast Asian hubs, Spain offers a significantly lower cost of living than London or New York, especially outside of Madrid and Barcelona. For short-term stays while you settle, consider **[Agoda Stays](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia)**, and for furnished long-term rentals, **[Blueground](https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto)** offers premium options in major Spanish cities.
+*   **Cost of Living:** While not as low as some Southeast Asian hubs, Spain offers a significantly lower cost of living than London or New York, especially outside of Madrid and Barcelona. For short-term stays while you settle, consider **{% affiliateButton "Agoda Stays", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %}**, and for furnished long-term rentals, **[Blueground](https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto)** offers premium options in major Spanish cities.
 
-Crucially, ensure you have robust health insurance. While Spain has an excellent public health system, private insurance is often a requirement for visas and provides peace of mind. **[SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance)** offers flexible travel and medical insurance tailored for digital nomads.
+Crucially, ensure you have robust health insurance. While Spain has an excellent public health system, private insurance is often a requirement for visas and provides peace of mind. **{% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %}** offers flexible travel and medical insurance tailored for digital nomads.
 
 ## Who Should Consider Beckham Law?
 
@@ -122,11 +122,11 @@ Architecting your move to Spain under the Beckham Law requires a structured appr
 ### Phase 1: The Audit (Days 1-30)
 *   **Inventory:** List all income sources (employment, passive, capital gains), current bank accounts, and any corporate structures. Understand your current tax residency status and potential exit tax implications from your home country.
 *   **Selection:** Confirm Spain is your ideal "Lifestyle Hub" and that the Beckham Law aligns with your "Savings Moat" objectives.
-*   **Initial Consult:** Engage with a specialist like **[Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa)** to assess your eligibility and plan your **Beckham Law application process** strategy.
+*   **Initial Consult:** Engage with a specialist like **{% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %}** to assess your eligibility and plan your **Beckham Law application process** strategy.
 
 ### Phase 2: The Foundation (Days 31-60)
 *   **Legal & Visa:** Begin the process of securing your Spanish work contract or establishing your Spanish entity. Initiate your visa application, specifically considering the **Spanish Digital Nomad Visa** if applicable.
-*   **Banking:** Start exploring options for Spanish bank accounts and ensure you have a multi-currency account like **[Wise](https://wise.prf.hn/click/camref:1101l5JGeT)** for seamless international transfers.
+*   **Banking:** Start exploring options for Spanish bank accounts and ensure you have a multi-currency account like **{% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %}** for seamless international transfers.
 *   **Accommodation:** Begin researching and securing your long-term accommodation in Spain.
 
 ### Phase 3: The Departure (Days 61-90)
@@ -134,7 +134,7 @@ Architecting your move to Spain under the Beckham Law requires a structured appr
 *   **Registration:** Obtain your NIE and register with Spanish Social Security immediately upon arrival.
 *   **Beckham Law Application:** Submit Form 149 within the 6-month deadline.
 *   **Evidence:** Keep meticulous records of all your travel, accommodation, and financial activities to prove your Spanish residency.
-*   **Insurance:** Ensure your health insurance, such as **[SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance)**, is active from day one.
+*   **Insurance:** Ensure your health insurance, such as **{% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %}**, is active from day one.
 
 ## Conclusion: Architect Your Spanish Wealth
 

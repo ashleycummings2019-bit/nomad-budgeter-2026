@@ -56,7 +56,7 @@ Here's a comparative snapshot of estimated monthly expenses for a solo digital n
 
 *Note: These figures are estimates and can vary widely based on personal lifestyle choices. For detailed, custom cost of living spreadsheets tailored to solo, couple, or family travelers, our [Nomad Budgeter Premium Reports ($19)](https://www.nomadbudgeter.com/pricing/) provide invaluable insights.*
 
-For booking longer stays in Southeast Asia, many nomads find competitive rates on [Agoda Stays](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia).
+For booking longer stays in Southeast Asia, many nomads find competitive rates on {% affiliateButton "Agoda Stays", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %}.
 
 ## Module 2: Tax Residency & Global Arbitrage Strategy
 
@@ -77,7 +77,7 @@ To achieve 0% tax while enjoying HCMC or Bangkok, you must align with the "Tax-F
 2.  **Territorial Dominance:** Establish residency in a country that only taxes income earned *inside* its borders (e.g., Panama, Malaysia). If your income is foreign-sourced (as it is for most digital nomads), you pay 0% tax in your country of residency. You can then live for extended periods in HCMC or Bangkok. Malaysia, with its DE Rantau visa, is a prime example of this, offering 0% tax on income earned outside Malaysia. For more on this, explore our [Kuala Lumpur Tax Guide](/cities/kuala-lumpur/).
 3.  **The Nomad Holiday:** Leverage specific 12-24 month tax exemptions for remote workers elsewhere (e.g., Bali E33G, Croatia). While on one of these "holidays," you can visit HCMC or Bangkok.
 
-**Action Point:** If you plan to spend significant time in HCMC or Bangkok, you must have a robust tax residency strategy in place *before* you arrive. This often involves setting up banking with services like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) for multi-currency management, and potentially a foreign entity. For specific guidance on managing your tax residency and navigating the complexities, our [Ho Chi Minh City Tax Guide](/cities/ho-chi-minh-city/) and [Bangkok Tax Guide](/cities/bangkok/) delve deeper into local regulations and strategic planning.
+**Action Point:** If you plan to spend significant time in HCMC or Bangkok, you must have a robust tax residency strategy in place *before* you arrive. This often involves setting up banking with services like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} for multi-currency management, and potentially a foreign entity. For specific guidance on managing your tax residency and navigating the complexities, our [Ho Chi Minh City Tax Guide](/cities/ho-chi-minh-city/) and [Bangkok Tax Guide](/cities/bangkok/) delve deeper into local regulations and strategic planning.
 
 ## Module 3: Lifestyle & Infrastructure
 
@@ -145,7 +145,7 @@ Bangkok's Suvarnabhumi Airport (BKK) is one of the busiest and best-connected ai
 *   **International Travel:** Direct flights to almost every major city globally, offering flexibility for long-haul journeys.
 *   **Visa:** Thailand offers relatively straightforward visa processes for many nationalities, including visa-exempt entry for tourism and a growing number of long-stay options.
 
-Regardless of your chosen base, comprehensive travel insurance is non-negotiable. Every 2026 nomad visa requires health insurance proof. We recommend [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) for its flexibility and global coverage, or [Ekta Insurance](https://ektatraveling.tp.st/OC777BtT) for budget-friendly, Schengen-compliant options starting from $0.99/day.
+Regardless of your chosen base, comprehensive travel insurance is non-negotiable. Every 2026 nomad visa requires health insurance proof. We recommend {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} for its flexibility and global coverage, or {% affiliateButton "Ekta Insurance", "https://ektatraveling.tp.st/OC777BtT" %} for budget-friendly, Schengen-compliant options starting from $0.99/day.
 
 ## Conclusion: Your Saving Moat Starts Now
 

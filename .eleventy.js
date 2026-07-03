@@ -1,3 +1,4 @@
+console.log('Loading .eleventy.js...');
 module.exports = function config(eleventyConfig) {
   // ─── Passthrough Copy ───
   eleventyConfig.addPassthroughCopy("src/assets");
@@ -111,6 +112,11 @@ module.exports = function config(eleventyConfig) {
   // Get current date for sitemap
   eleventyConfig.addShortcode("sitemapDate", () => {
     return new Date().toISOString().split('T')[0];
+  });
+
+  // Affiliate Button Shortcode for 44x44px accessible mobile targets
+  eleventyConfig.addShortcode("affiliateButton", function(text, url) {
+    return `<a href="${url}" class="action-btn-sm" style="margin: 1rem 0;">${text}</a>`;
   });
 
   // Vercel Image Optimization Filter

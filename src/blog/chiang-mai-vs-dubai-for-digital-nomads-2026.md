@@ -76,10 +76,10 @@ While tax benefits are paramount for wealth architecture, lifestyle and practica
 *   **Chiang Mai:** A regional hub, well-connected within Southeast Asia, but requires connecting flights for intercontinental travel.
 
 ### Healthcare & Insurance
-Regardless of your chosen destination, robust health insurance is non-negotiable. Many 2026 nomad visas, including those in the UAE, require proof of adequate health coverage. We strongly recommend **SafetyWing** for comprehensive nomad-specific health insurance that covers you globally. Get your quote and ensure you're covered before you land: [SafetyWing Nomad Insurance](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance).
+Regardless of your chosen destination, robust health insurance is non-negotiable. Many 2026 nomad visas, including those in the UAE, require proof of adequate health coverage. We strongly recommend **SafetyWing** for comprehensive nomad-specific health insurance that covers you globally. Get your quote and ensure you're covered before you land: {% affiliateButton "SafetyWing Nomad Insurance", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %}.
 
 ### Banking & Transfers
-For both cities, managing international finances efficiently is key. A multi-currency account like **Wise** is the banking backbone of every strategic nomad's setup, allowing you to send, spend, and receive money across borders with minimal fees. Open your Wise account today: [Wise Multi-Currency Account](https://wise.prf.hn/click/camref:1101l5JGeT).
+For both cities, managing international finances efficiently is key. A multi-currency account like **Wise** is the banking backbone of every strategic nomad's setup, allowing you to send, spend, and receive money across borders with minimal fees. Open your Wise account today: {% affiliateButton "Wise Multi-Currency Account", "https://wise.prf.hn/click/camref:1101l5JGeT" %}.
 
 ### Staying Connected
 From the moment you touch down, reliable internet is essential. Don't scramble for local SIMs; activate an **Saily eSIM** before your flight to ensure you're connected instantly. Check out Saily here: [Saily eSIM](https://saily.tp.st/XPRLV5qw).

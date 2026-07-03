@@ -6,11 +6,25 @@ const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 const TABLE_NAME = 'Content Pipeline';
 
 async function run() {
+    function getFiles(dir) {
+        let results = [];
+        const list = fs.readdirSync(dir);
+        list.forEach(file => {
+            file = path.join(dir, file);
+            const stat = fs.statSync(file);
+            if (stat && stat.isDirectory()) {
+                results = results.concat(getFiles(file));
+            } else if (file.endsWith('.md')) {
+                results.push(file);
+            }
+        });
+        return results;
+    }
+    
     const blogDir = path.join(process.cwd(), 'src', 'blog');
-    const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
+    const files = getFiles(blogDir);
 
-    for (const file of files) {
-        const filePath = path.join(blogDir, file);
+    for (const filePath of files) {
         const content = fs.readFileSync(filePath, 'utf8');
         if (content.includes('draft: true')) {
             const titleMatch = content.match(/title:\s*"([^"]+)"/);

@@ -46,7 +46,7 @@ However, this premium lifestyle comes with a premium price tag. The cost of livi
 
 Dubai is a global business hub, offering incredible opportunities for networking and expansion. Its Freezones are designed to attract foreign investment and talent, providing 100% foreign ownership, repatriation of capital, and simplified business setup processes. This makes it an ideal location for those running online businesses or consultancies.
 
-For banking, while local options exist, many nomads start with a multi-currency account like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) for seamless international transfers, then establish a local "brick and mortar" account once residency is secure.
+For banking, while local options exist, many nomads start with a multi-currency account like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} for seamless international transfers, then establish a local "brick and mortar" account once residency is secure.
 
 ### The Catch: Culture and Climate
 
@@ -60,7 +60,7 @@ Lisbon, Portugal's vibrant capital, has long been a darling of the digital nomad
 
 Portugal's Non-Habitual Resident (NHR) scheme has been a game-changer, offering a **0% tax rate on certain foreign-sourced income** for a period of 10 years, provided specific criteria are met. This includes income from self-employment, pensions, and certain capital gains, under specific conditions and depending on existing tax treaties. While the NHR program is undergoing changes for 2024 and beyond, it still represents a significant "Nomad Holiday" opportunity for those who qualify, particularly for those who can structure their income effectively.
 
-The Digital Nomad Visa (D8 Visa) provides a pathway to residency for remote workers, allowing you to live in Portugal and potentially apply for NHR status. Navigating these programs requires expert guidance. Vetted legal experts like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) specialize in helping nomads secure their D7 or NHR status in Portugal (and Spain/Greece). For more detailed information, explore our [Lisbon Tax Guide](/cities/lisbon/) or even our [Porto Tax Guide](/cities/porto/) as the NHR principles apply across Portugal.
+The Digital Nomad Visa (D8 Visa) provides a pathway to residency for remote workers, allowing you to live in Portugal and potentially apply for NHR status. Navigating these programs requires expert guidance. Vetted legal experts like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %} specialize in helping nomads secure their D7 or NHR status in Portugal (and Spain/Greece). For more detailed information, explore our [Lisbon Tax Guide](/cities/lisbon/) or even our [Porto Tax Guide](/cities/porto/) as the NHR principles apply across Portugal.
 
 ### Lifestyle & Cost: European Charm, Rising Expenses
 
@@ -72,7 +72,7 @@ However, Lisbon's popularity has led to a significant increase in the cost of li
 
 Portugal's membership in the European Union provides access to a vast single market, making it an attractive base for businesses targeting European clients. The tech scene is growing, and there's a strong entrepreneurial spirit.
 
-Banking in Portugal can be notoriously slow and bureaucratic. Setting up a local bank account often requires patience and local assistance. Again, a multi-currency account like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) is essential for managing international finances.
+Banking in Portugal can be notoriously slow and bureaucratic. Setting up a local bank account often requires patience and local assistance. Again, a multi-currency account like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} is essential for managing international finances.
 
 ### The Catch: Complexity and the 183-Day Trap
 
@@ -94,7 +94,7 @@ Let's break down the key differences to help you decide which city best supports
 | **Ease of Banking**        | Relatively efficient                      | Can be slow and bureaucratic                       |
 | **Healthcare (Insurance)** | Private (Mandatory)                       | Public (with private options)                      |
 
-For health insurance, regardless of your choice, securing robust coverage is non-negotiable. [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) is a popular choice among digital nomads, offering comprehensive and flexible plans that meet visa requirements.
+For health insurance, regardless of your choice, securing robust coverage is non-negotiable. {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} is a popular choice among digital nomads, offering comprehensive and flexible plans that meet visa requirements.
 
 ## The "Savings Moat" Metric: A Financial Deep Dive
 
@@ -139,9 +139,9 @@ The decision between Dubai and Lisbon boils down to your priorities: pure tax op
 
 ### Phase 2: The Foundation (Days 31-60)
 
-*   **Legal:** Retain a local agent in Dubai or a specialized lawyer like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) for Lisbon to navigate visa and tax residency applications.
+*   **Legal:** Retain a local agent in Dubai or a specialized lawyer like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %} for Lisbon to navigate visa and tax residency applications.
 *   **Entity:** If you're a freelancer, consider setting up a US LLC (for non-US nomads) or a UAE Freezone entity for optimal tax efficiency.
-*   **Banking:** Open a multi-currency account with [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) as your primary international financial backbone, and plan for at least one "Brick and Mortar" bank account in your chosen residency.
+*   **Banking:** Open a multi-currency account with {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} as your primary international financial backbone, and plan for at least one "Brick and Mortar" bank account in your chosen residency.
 
 ### Phase 3: The Departure (Days 61-90)
 

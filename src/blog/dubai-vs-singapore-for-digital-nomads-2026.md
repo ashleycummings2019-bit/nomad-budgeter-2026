@@ -108,8 +108,8 @@ Regardless of your chosen hub, remember: **Residency is not a feeling. It is a p
 
 *   **Formal Residency:** Both Dubai and Singapore require formal visa and residency processes. Ensure you meet all physical presence requirements and maintain clear documentation.
 *   **Breaking Ties:** If you're exiting a high-tax home country, you must formally "break ties" to avoid being deemed a tax resident there. This often involves selling property, closing bank accounts, and notifying tax authorities.
-*   **Health Insurance:** A non-negotiable for any residency application. Every 2026 nomad visa requires health insurance proof. We recommend **SafetyWing** for comprehensive nomad health insurance: [https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance).
-*   **Banking:** A multi-currency account is crucial. **Wise** is the banking backbone of every nomad's tax setup, facilitating seamless international transfers and local currency accounts: [https://wise.prf.hn/click/camref:1101l5JGeT](https://wise.prf.hn/click/camref:1101l5JGeT).
+*   **Health Insurance:** A non-negotiable for any residency application. Every 2026 nomad visa requires health insurance proof. We recommend **SafetyWing** for comprehensive nomad health insurance: {% affiliateButton "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %}.
+*   **Banking:** A multi-currency account is crucial. **Wise** is the banking backbone of every nomad's tax setup, facilitating seamless international transfers and local currency accounts: {% affiliateButton "https://wise.prf.hn/click/camref:1101l5JGeT", "https://wise.prf.hn/click/camref:1101l5JGeT" %}.
 
 ## Conclusion: Your Wealth Architecture, Your Choice
 

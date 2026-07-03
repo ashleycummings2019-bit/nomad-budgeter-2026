@@ -135,7 +135,7 @@ Many 0% tax countries don't have extensive double taxation agreements. This can 
 
 ### 4. Banking and Payment Friction
 
-Opening bank accounts, receiving international payments, and managing multi-currency finances is harder in some 0% tax jurisdictions. [Wise](https://wise.com/invite/u/nomadbudgeter?utm_source=nomadbudgeter&utm_medium=blog&utm_campaign=NB_2026_ZeroTax) and [Interactive Brokers](https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php) solve most of these problems but add another layer of planning.
+Opening bank accounts, receiving international payments, and managing multi-currency finances is harder in some 0% tax jurisdictions. {% affiliateButton "Wise", "https://wise.com/invite/u/nomadbudgeter?utm_source=nomadbudgeter&utm_medium=blog&utm_campaign=NB_2026_ZeroTax" %} and [Interactive Brokers](https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php) solve most of these problems but add another layer of planning.
 
 ## How to Choose the Right 0% Tax Destination
 

@@ -37,7 +37,7 @@ The allure of Southeast Asia often begins with its affordability. Both Da Nang a
 *   **Da Nang:** From modern beachfront apartments in An Thuong to more local options further inland, Da Nang offers a wide range. A comfortable 1-bedroom apartment can be found for $400-$700 USD per month. Serviced apartments are also plentiful, catering to short and long-term stays. The city is growing rapidly, with new developments constantly emerging.
 *   **Chiang Mai:** The market here is mature, with a vast selection of condos and apartments, particularly around the Nimmanhaemin area or within the Old City. Expect to pay $350-$650 USD for a modern 1-bedroom. Longer leases often secure better rates.
 
-For initial stays or scouting trips, consider using platforms like [Agoda Stays](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia) to secure monthly rentals at competitive prices, especially in Southeast Asia.
+For initial stays or scouting trips, consider using platforms like {% affiliateButton "Agoda Stays", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %} to secure monthly rentals at competitive prices, especially in Southeast Asia.
 
 ### Daily Expenses: Food, Transport, and Entertainment
 
@@ -124,7 +124,7 @@ Your "Wealth Architecture" isn't just about money; it's about securing your heal
 *   **Da Nang:** Has a mix of public and private hospitals. For serious medical issues, expats often travel to Hanoi or Ho Chi Minh City, or even Bangkok. Quality can vary.
 *   **Chiang Mai:** Offers a higher standard of healthcare, particularly in its private hospitals, which are often used by medical tourists. English-speaking staff are common.
 
-Regardless of your chosen base, comprehensive health insurance is non-negotiable. Every 2026 nomad visa requires health insurance proof. We recommend [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) for its flexibility and global coverage tailored for nomads. For budget-conscious travelers, [Ekta Insurance](https://ektatraveling.tp.st/OC777BtT) offers Schengen-compliant plans from $0.99/day.
+Regardless of your chosen base, comprehensive health insurance is non-negotiable. Every 2026 nomad visa requires health insurance proof. We recommend {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} for its flexibility and global coverage tailored for nomads. For budget-conscious travelers, {% affiliateButton "Ekta Insurance", "https://ektatraveling.tp.st/OC777BtT" %} offers Schengen-compliant plans from $0.99/day.
 
 ## Conclusion: Your Next Strategic Move
 

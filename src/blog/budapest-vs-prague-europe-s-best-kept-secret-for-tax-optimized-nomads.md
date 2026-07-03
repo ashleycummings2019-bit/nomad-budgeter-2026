@@ -141,15 +141,15 @@ If Budapest or Prague aligns with your Wealth Architecture goals, here’s how t
 
 ### Phase 2: The Foundation (Days 31-60)
 
-*   **Legal:** Retain a local agent or tax advisor in your chosen destination. This is crucial for navigating local residency and tax registration processes. For complex legal needs, consider partners like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa).
+*   **Legal:** Retain a local agent or tax advisor in your chosen destination. This is crucial for navigating local residency and tax registration processes. For complex legal needs, consider partners like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %}.
 *   **Entity:** If you are a freelancer, investigate setting up a local individual entrepreneur (EV in Hungary, živnostenský list in Czech Republic) or a US LLC (for non-US nomads) or a UAE Freezone entity, depending on your overarching strategy.
-*   **Banking:** Open a multi-currency account with services like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) for seamless international transactions, and explore opening a local brick-and-mortar bank account once you establish residency.
+*   **Banking:** Open a multi-currency account with services like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} for seamless international transactions, and explore opening a local brick-and-mortar bank account once you establish residency.
 
 ### Phase 3: The Departure (Days 61-90)
 
 *   **Flight:** Execute your move to your new base in Budapest or Prague.
 *   **Evidence:** Keep every boarding pass, every lease agreement, and every utility bill. This paper trail is your defense against tax authority scrutiny.
-*   **Filing:** Submit your final "Exit Return" in your home country, formally breaking ties if applicable. Ensure you have comprehensive travel insurance from providers like [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) or [Ekta Insurance](https://ektatraveling.tp.st/OC777BtT) for your move.
+*   **Filing:** Submit your final "Exit Return" in your home country, formally breaking ties if applicable. Ensure you have comprehensive travel insurance from providers like {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} or {% affiliateButton "Ekta Insurance", "https://ektatraveling.tp.st/OC777BtT" %} for your move.
 
 ## Conclusion: Your Savings Moat Starts Now
 

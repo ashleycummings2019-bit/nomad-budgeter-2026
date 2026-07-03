@@ -60,7 +60,7 @@ Beyond tax, the cost of living directly impacts your "Savings Moat." Both Bali a
 
 Bali offers a premium lifestyle at a fraction of the cost of Europe or North America. While it's generally more expensive than Chiang Mai, strategic budgeting can still yield substantial savings.
 
-*   **Accommodation:** Expect to pay $500-$1,500/month for a comfortable villa or apartment, depending on location (Ubud, Canggu, Seminyak). For longer stays, consider platforms like [Agoda](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia) for monthly rental deals.
+*   **Accommodation:** Expect to pay $500-$1,500/month for a comfortable villa or apartment, depending on location (Ubud, Canggu, Seminyak). For longer stays, consider platforms like {% affiliateButton "Agoda", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %} for monthly rental deals.
 *   **Food:** Local food (warungs) is incredibly cheap ($2-$5/meal). Western restaurants and cafes will be closer to $10-$20/meal.
 *   **Transport:** Scooters are the norm ($60-$100/month rental). Ride-hailing apps like Gojek/Grab are also affordable.
 *   **Coworking:** Numerous high-quality coworking spaces range from $100-$250/month.
@@ -94,7 +94,7 @@ Both destinations boast robust infrastructure tailored for remote work.
 
 ### Bali: Evolving Connectivity
 
-Bali has seen massive improvements in internet infrastructure. Fast fiber optic is widely available in nomad hubs like Canggu and Ubud. Coworking spaces are plentiful and well-equipped. Banking can be slower, but services like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) are essential for managing multi-currency finances efficiently, acting as the banking backbone for every nomad's tax setup. For instant connectivity upon arrival, consider activating a [Saily eSIM](https://saily.tp.st/XPRLV5qw) before your flight.
+Bali has seen massive improvements in internet infrastructure. Fast fiber optic is widely available in nomad hubs like Canggu and Ubud. Coworking spaces are plentiful and well-equipped. Banking can be slower, but services like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} are essential for managing multi-currency finances efficiently, acting as the banking backbone for every nomad's tax setup. For instant connectivity upon arrival, consider activating a [Saily eSIM](https://saily.tp.st/XPRLV5qw) before your flight.
 
 ### Chiang Mai: Stable & Reliable
 
@@ -118,7 +118,7 @@ No matter where you choose, robust health insurance is non-negotiable. Every 202
 
 ### Bali & Chiang Mai: Accessible Healthcare
 
-Both destinations offer accessible and affordable private healthcare options, especially for routine needs. For comprehensive coverage that travels with you, [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) is a popular choice among digital nomads, designed specifically for the global lifestyle.
+Both destinations offer accessible and affordable private healthcare options, especially for routine needs. For comprehensive coverage that travels with you, {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} is a popular choice among digital nomads, designed specifically for the global lifestyle.
 
 ## The 183-Day Trap & Compliance
 

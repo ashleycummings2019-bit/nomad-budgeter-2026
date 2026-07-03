@@ -49,7 +49,7 @@ For those seeking furnished, flexible accommodation in Dubai, services like [Blu
 
 Bangkok, conversely, offers an exceptional value proposition. You can enjoy a high quality of life, including world-class dining, modern apartments, and efficient public transport, at a fraction of the cost you'd incur in Dubai or Western capitals. This affordability allows your capital to stretch further, accelerating your investment growth and enhancing your "Savings Moat."
 
-The cost-effectiveness of Bangkok means you can allocate more of your tax-free income (from your primary tax residency) towards investments, early retirement, or enriching experiences. For finding the best monthly rental rates and accommodation in Southeast Asia, [Agoda Stays](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia) is an invaluable resource.
+The cost-effectiveness of Bangkok means you can allocate more of your tax-free income (from your primary tax residency) towards investments, early retirement, or enriching experiences. For finding the best monthly rental rates and accommodation in Southeast Asia, {% affiliateButton "Agoda Stays", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %} is an invaluable resource.
 
 Here's a qualitative comparison of key cost categories:
 
@@ -88,7 +88,7 @@ The ultimate "Wealth Architecture" strategy isn't about choosing one city over t
 *   **Dubai as your Primary Tax Residency:** Establish your legal tax residence in Dubai to benefit from 0% income tax. This solidifies your "Savings Moat" by ensuring you keep every dollar you earn.
 *   **Bangkok as your Lifestyle Hub:** Spend a few months of the year in Bangkok, enjoying its vibrant culture and low cost of living. This allows you to experience a premium lifestyle without the premium price tag, while your primary tax residency in Dubai (or another 0% jurisdiction) handles your income.
 
-This approach embodies the essence of global arbitrage: optimizing your tax burden in one location while enjoying your preferred lifestyle in another. It's about making your money work harder for you, not just earning more. To manage your finances across multiple currencies and jurisdictions, a robust multi-currency account like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) is the banking backbone of every successful nomad's tax setup.
+This approach embodies the essence of global arbitrage: optimizing your tax burden in one location while enjoying your preferred lifestyle in another. It's about making your money work harder for you, not just earning more. To manage your finances across multiple currencies and jurisdictions, a robust multi-currency account like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} is the banking backbone of every successful nomad's tax setup.
 
 This strategy is particularly effective for those who understand that **Gross Income is a Vanity Metric**. Earning $200k in London is effectively the same as earning $110k in a tax-arbitraged hub. The "Savings Moat" is the only metric that matters.
 
@@ -98,7 +98,7 @@ Regardless of your chosen strategy, remember: **Residency is not a feeling. It i
 
 The common belief that staying in a country for less than 183 days absolves you of tax residency is **false**. Many countries use "Center of Vital Interests" tests. If your family, your main bank account, or your "base" is there, you are resident from day one. Breaking ties formally is crucial to stop the tax clock.
 
-Ensuring you have adequate health coverage is also a non-negotiable part of responsible nomadism. Most 2026 nomad visas, including those in the UAE, require proof of health insurance. [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) offers robust, flexible health insurance designed specifically for digital nomads.
+Ensuring you have adequate health coverage is also a non-negotiable part of responsible nomadism. Most 2026 nomad visas, including those in the UAE, require proof of health insurance. {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} offers robust, flexible health insurance designed specifically for digital nomads.
 
 ## Conclusion: Your Strategic Move
 

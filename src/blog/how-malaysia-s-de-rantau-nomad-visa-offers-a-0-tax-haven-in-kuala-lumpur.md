@@ -80,7 +80,7 @@ Navigating the **DE Rantau application process** requires careful attention to d
 4.  **Interview (if required) & Approval:** Some applicants may be invited for an online interview. Upon successful review of your application and documents, you'll receive an approval letter.
 5.  **Visa Endorsement & Entry:** With your approval, you can then proceed to get your visa endorsed at a Malaysian embassy or consulate, or upon arrival in Malaysia, depending on your nationality. This allows you to formally enter Malaysia and establish your residency.
 
-While the **DE Rantau application process** is designed to be streamlined, retaining local expertise can significantly ease your transition. A local agent or legal counsel can help navigate specific requirements, ensure all **DE Rantau visa requirements** are met, and ensure a smooth application. For general legal assistance in establishing residency abroad, partners like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) offer valuable services.
+While the **DE Rantau application process** is designed to be streamlined, retaining local expertise can significantly ease your transition. A local agent or legal counsel can help navigate specific requirements, ensure all **DE Rantau visa requirements** are met, and ensure a smooth application. For general legal assistance in establishing residency abroad, partners like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %} offer valuable services.
 
 ## Architecture of Your Malaysian Tax Strategy: Beyond the Visa
 
@@ -90,7 +90,7 @@ Securing the DE Rantau visa is the first step; the next is structuring your fina
 
 Proper banking is crucial for maintaining your 0% tax status and managing your global finances.
 
-*   **Multi-Currency Accounts:** Utilize services like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) to manage international payments, receive income in various currencies, and make local payments without incurring excessive fees. This keeps your foreign-sourced income clearly separated from any local transactions.
+*   **Multi-Currency Accounts:** Utilize services like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} to manage international payments, receive income in various currencies, and make local payments without incurring excessive fees. This keeps your foreign-sourced income clearly separated from any local transactions.
 *   **Local Banking:** While not strictly necessary for 0% tax on foreign income, opening a local Malaysian bank account can be beneficial for day-to-day living expenses and demonstrating local ties.
 *   **Investment Platforms:** For your investment portfolio, platforms like [Interactive Brokers](https://www.interactivebrokers.com/mkt/?src=nomadbudgeter&url=%2Fen%2Fhome.php) provide global access to markets, allowing you to grow your wealth from your Malaysian base.
 
@@ -132,7 +132,7 @@ Ready to architect your wealth in Malaysia? Follow this condensed roadmap:
 ### Phase 2: The Foundation (Days 31-60)
 *   **Legal:** Initiate your DE Rantau visa application, ensuring you meet all **DE Rantau visa requirements**. Consider retaining a local agent or legal counsel to assist with the **DE Rantau application process**.
 *   **Entity:** If you are a freelancer or run an online business, ensure your corporate structure is optimized for foreign-sourced income (e.g., a US LLC for non-US nomads, or a suitable offshore entity).
-*   **Banking:** Set up your multi-currency account with [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) and explore options for a local Malaysian bank account. Secure your global health insurance through providers like [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) before your move.
+*   **Banking:** Set up your multi-currency account with {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} and explore options for a local Malaysian bank account. Secure your global health insurance through providers like {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} before your move.
 
 ### Phase 3: The Departure (Days 61-90)
 *   **Flight:** Execute your move to Kuala Lumpur.

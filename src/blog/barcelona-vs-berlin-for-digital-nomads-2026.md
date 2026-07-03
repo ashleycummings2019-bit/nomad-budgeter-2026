@@ -82,7 +82,7 @@ Germany's Freelancer Visa has been a popular choice for years, particularly in B
 *   **Process:** Typically applied for in Germany after arriving on a tourist visa, involving appointments at the local Ausländerbehörde (Foreigners' Office). This process can be bureaucratic, requires meticulous documentation, and often involves multiple appointments and significant patience.
 *   **Wealth Architecture Tip:** While the tax burden is higher, the stability and access to a robust economy can be appealing for those prioritizing long-term European integration and a strong social safety net, including excellent **healthcare for digital nomads**.
 
-Navigating these visa processes can be complex. For expert guidance on Spanish and Portuguese visas, consider reaching out to vetted legal partners like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa). Remember, every 2026 nomad visa requires health insurance proof. We recommend [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) for comprehensive nomad health insurance.
+Navigating these visa processes can be complex. For expert guidance on Spanish and Portuguese visas, consider reaching out to vetted legal partners like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %}. Remember, every 2026 nomad visa requires health insurance proof. We recommend {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} for comprehensive nomad health insurance.
 
 ## Lifestyle & Community: Which Vibe is Yours?
 
@@ -161,7 +161,7 @@ The insights above are just the beginning. Our **Nomad Budgeter Professional Rep
 *   Specific "Neighborhood Guides" for key European cities.
 *   Vetted local lawyer contacts for each jurisdiction, including Spain and Germany.
 *   Custom Cost of Living spreadsheets for family vs. solo travelers.
-*   Detailed banking setup guides (including [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) for multi-currency accounts).
+*   Detailed banking setup guides (including {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} for multi-currency accounts).
 
 [**Get the Full 2026 Tax Arbitrage Bundle →**](https://www.nomadbudgeter.com/pricing/)
 

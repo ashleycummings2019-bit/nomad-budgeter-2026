@@ -114,9 +114,9 @@ This table clearly demonstrates the power of tax arbitrage. By choosing Bali wit
 
 To effectively manage your finances and lifestyle while leveraging the E33G visa, you'll need the right tools:
 
-*   **Multi-Currency Banking:** A platform like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) is indispensable for receiving payments in various currencies, converting funds at mid-market rates, and spending locally in Indonesia. It streamlines your international transactions, saving you fees and hassle.
-*   **Global Health Insurance:** Don't overlook comprehensive health coverage. Providers like [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) offer plans specifically designed for digital nomads, ensuring you're covered no matter where your adventures take you.
-*   **Accommodation Solutions:** For your initial landing or longer stays, platforms like [Agoda Stays](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia) are excellent for finding villas and apartments across Bali. For those seeking premium, furnished apartments with flexible leases, [Blueground](https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto) offers high-quality options in major global cities, which can be useful for transitional periods or future moves.
+*   **Multi-Currency Banking:** A platform like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} is indispensable for receiving payments in various currencies, converting funds at mid-market rates, and spending locally in Indonesia. It streamlines your international transactions, saving you fees and hassle.
+*   **Global Health Insurance:** Don't overlook comprehensive health coverage. Providers like {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} offer plans specifically designed for digital nomads, ensuring you're covered no matter where your adventures take you.
+*   **Accommodation Solutions:** For your initial landing or longer stays, platforms like {% affiliateButton "Agoda Stays", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %} are excellent for finding villas and apartments across Bali. For those seeking premium, furnished apartments with flexible leases, [Blueground](https://www.theblueground.com/?utm_source=nomadbudgeter&utm_medium=toolkit&utm_campaign=All_2026_BuildMngrAuto) offers high-quality options in major global cities, which can be useful for transitional periods or future moves.
 *   **Seamless Connectivity:** Staying connected is non-negotiable. An eSIM provider like [Saily eSIM](https://saily.tp.st/XPRLV5qw) ensures you have data from the moment you land, without the need for physical SIM cards.
 *   **Legal & Visa Assistance:** While the E33G is streamlined, navigating specific requirements can be complex. Retaining a local agent or legal counsel is crucial for smooth application and compliance.
 
@@ -173,9 +173,9 @@ Transitioning to a 0% tax residency in Bali requires a structured approach. Here
 
 ### Phase 2: The Foundation & Bali Setup (Days 31-60)
 
-*   **Legal:** Retain a local agent or lawyer in Bali to assist with your E33G visa application and provide guidance on local regulations. This is where expertise from services like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) (for other jurisdictions) highlights the importance of professional help.
+*   **Legal:** Retain a local agent or lawyer in Bali to assist with your E33G visa application and provide guidance on local regulations. This is where expertise from services like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %} (for other jurisdictions) highlights the importance of professional help.
 *   **Entity:** If you are a freelancer or business owner, set up a suitable entity. For non-US nomads, a US LLC can be beneficial for payment processing, or a UAE Freezone entity for true 0% corporate tax.
-*   **Banking:** Open a multi-currency account with [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) and at least one "Brick and Mortar" bank account in your new residency (if required for visa or local expenses) to establish financial ties.
+*   **Banking:** Open a multi-currency account with {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} and at least one "Brick and Mortar" bank account in your new residency (if required for visa or local expenses) to establish financial ties.
 
 ### Phase 3: The Departure & Bali Arrival (Days 61-90)
 

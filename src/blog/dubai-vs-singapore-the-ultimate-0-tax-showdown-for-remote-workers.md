@@ -120,7 +120,7 @@ Even with higher living expenses, the additional $45,000 - $60,000 in your "Savi
 ### Ease of Entry & Compliance
 
 *   **Dubai:** Generally, setting up a Free Zone company and obtaining a residency visa is a well-trodden path. The process is streamlined, and local agents are readily available. Maintaining tax residency is relatively straightforward due to the clear 0% personal income tax regime.
-*   **Singapore:** Entry can be more challenging for individual remote workers without a clear business plan or high income. The visa process is more selective. Compliance for the territorial tax system requires careful attention to the source and remittance of funds. Multi-currency banking solutions like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) are essential for managing foreign-sourced income without triggering local tax obligations.
+*   **Singapore:** Entry can be more challenging for individual remote workers without a clear business plan or high income. The visa process is more selective. Compliance for the territorial tax system requires careful attention to the source and remittance of funds. Multi-currency banking solutions like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} are essential for managing foreign-sourced income without triggering local tax obligations.
 
 ### Strategic Positioning
 
@@ -149,7 +149,7 @@ For US citizens, the path to 0% tax is complicated by worldwide taxation. While 
 
 ### Non-US Nomads: Exit Taxes
 
-Be aware of "Exit Taxes" in countries like Canada, Australia, and Germany. You may be taxed on unrealized capital gains when you leave. Consult with a specialist, such as those at [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa), to formally "break ties" and stop the tax clock.
+Be aware of "Exit Taxes" in countries like Canada, Australia, and Germany. You may be taxed on unrealized capital gains when you leave. Consult with a specialist, such as those at {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %}, to formally "break ties" and stop the tax clock.
 
 ### Financial Infrastructure
 
@@ -169,7 +169,7 @@ The decision between Dubai and Singapore is a strategic one, aligning with your 
 
 *   **Legal Counsel:** Retain a local agent or lawyer in your chosen destination. This is non-negotiable for navigating visa applications, company setup, and tax compliance.
 *   **Entity Setup:** For freelancers, consider a UAE Freezone entity for Dubai, or carefully structure your foreign entity for Singapore to ensure non-remittance.
-*   **Banking:** Establish a multi-currency account with services like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) and a local brick-and-mortar bank in your new residency.
+*   **Banking:** Establish a multi-currency account with services like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} and a local brick-and-mortar bank in your new residency.
 
 ### Phase 3: The Departure & Documentation
 

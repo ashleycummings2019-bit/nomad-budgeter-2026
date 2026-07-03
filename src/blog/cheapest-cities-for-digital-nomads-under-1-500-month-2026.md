@@ -35,7 +35,7 @@ When we talk about a sub-$1,500 monthly budget, we're considering your *entire* 
 *   **Food:** A mix of home cooking from local markets and enjoying affordable local eateries.
 *   **Transportation:** Public transport, ride-sharing, or scooter rentals.
 *   **Utilities & Internet:** Reliable internet is non-negotiable for digital nomads.
-*   **Health Insurance:** Essential for any nomad. Solutions like [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance) or [Ekta Insurance](https://ektatraveling.tp.st/OC777BtT) offer comprehensive, budget-friendly coverage starting from under $1/day, often satisfying visa requirements.
+*   **Health Insurance:** Essential for any nomad. Solutions like {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %} or {% affiliateButton "Ekta Insurance", "https://ektatraveling.tp.st/OC777BtT" %} offer comprehensive, budget-friendly coverage starting from under $1/day, often satisfying visa requirements.
 *   **Miscellaneous:** Coffee, coworking, leisure.
 
 The goal is to find cities where this lifestyle is not just possible, but comfortable and sustainable, allowing you to build your "Savings Moat" faster than ever before.
@@ -78,7 +78,7 @@ Bali, particularly areas like Ubud and Canggu, has long been a magnet for digita
 *   **Estimated Monthly Cost:** $900 - $1,400
 *   **Tax Benefit:** The Bali E33G visa offers 0% tax on foreign-sourced income for remote workers. This is a game-changer for those seeking a tropical, wellness-focused lifestyle without the tax burden.
 *   **Lifestyle Highlight:** Lush rice paddies, vibrant spiritual and wellness scene (Ubud), world-class surfing and beach clubs (Canggu), and a thriving international community.
-*   **Internal Link:** Dive deeper into these popular spots with our [Ubud Tax Guide](/cities/ubud/) and [Canggu Tax Guide](/cities/canggu/). For finding great monthly rentals in Asia, consider using [Agoda Stays](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia).
+*   **Internal Link:** Dive deeper into these popular spots with our [Ubud Tax Guide](/cities/ubud/) and [Canggu Tax Guide](/cities/canggu/). For finding great monthly rentals in Asia, consider using {% affiliateButton "Agoda Stays", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %}.
 
 ### 5. Asunción, Paraguay — The Low-Barrier Plan B
 
@@ -106,9 +106,9 @@ Choosing an affordable city is merely the first pillar of your wealth architectu
 
 To truly optimize your setup, consider these additional architectural elements:
 
-*   **Banking Backbone:** A multi-currency account like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) is the essential banking backbone for every nomad's tax setup, allowing seamless international transfers and local currency management.
+*   **Banking Backbone:** A multi-currency account like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} is the essential banking backbone for every nomad's tax setup, allowing seamless international transfers and local currency management.
 *   **Global Connectivity:** Don't underestimate the need for reliable internet from day one. An [Saily eSIM](https://saily.tp.st/XPRLV5qw) ensures you stay connected the moment you land, avoiding costly roaming charges and local SIM card hassles.
-*   **Legal Compliance:** As our guide stresses, "Residency is not a feeling. It is a paper trail." Always consult with local experts. For European destinations, vetted legal experts like [Lexidy Legal](https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa) can guide you through complex visa and tax processes.
+*   **Legal Compliance:** As our guide stresses, "Residency is not a feeling. It is a paper trail." Always consult with local experts. For European destinations, vetted legal experts like {% affiliateButton "Lexidy Legal", "https://lexidy.com/?utm_source=nomadbudgeter&utm_medium=affiliate&utm_campaign=NB_2026_Visa" %} can guide you through complex visa and tax processes.
 
 ## Navigating the 183-Day Trap & Compliance
 

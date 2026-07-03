@@ -76,7 +76,7 @@ As noted in our 2026 Global Tax Arbitrage Guide, Kuala Lumpur remains the most c
 
 Bangkok offers an unparalleled sensory experience with its bustling markets, ornate temples, and legendary street food. While generally affordable, certain aspects can be pricier than KL, especially if you opt for a Western lifestyle.
 
-*   **Accommodation:** Rent can vary wildly. While budget options are plentiful, modern condos in prime areas can rival KL's prices. For initial stays or monthly rentals, explore options on [Agoda](https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia) for competitive rates.
+*   **Accommodation:** Rent can vary wildly. While budget options are plentiful, modern condos in prime areas can rival KL's prices. For initial stays or monthly rentals, explore options on {% affiliateButton "Agoda", "https://www.agoda.com/?utm_source=nomadbudgeter&utm_medium=calculator&utm_campaign=NB_2026_Asia" %} for competitive rates.
 *   **Food:** Street food is incredibly cheap and delicious, but dining in trendy cafes or international restaurants can quickly add up.
 *   **Transport:** The BTS Skytrain and MRT subway are efficient but don't cover every corner. Taxis and tuk-tuks are common, but traffic can be a major time sink.
 
@@ -113,7 +113,7 @@ Thailand has been actively developing its visa landscape for remote workers, but
 *   **Smart Visa:** Aimed at highly skilled professionals in specific industries.
 *   **Tourist Visas:** While many nomads start on tourist visas, this is not a sustainable or compliant long-term strategy for establishing tax residency or leveraging tax benefits.
 
-For any international move, securing reliable health insurance is a non-negotiable. Many nomad visas, including those in Southeast Asia, require proof of coverage. We highly recommend [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance), designed specifically for digital nomads. For budget-conscious options, [Ekta Insurance](https://ektatraveling.tp.st/OC777BtT) offers Schengen-compliant plans from $0.99/day.
+For any international move, securing reliable health insurance is a non-negotiable. Many nomad visas, including those in Southeast Asia, require proof of coverage. We highly recommend {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %}, designed specifically for digital nomads. For budget-conscious options, {% affiliateButton "Ekta Insurance", "https://ektatraveling.tp.st/OC777BtT" %} offers Schengen-compliant plans from $0.99/day.
 
 ## Lifestyle & Infrastructure: Beyond the Numbers
 
@@ -128,7 +128,7 @@ Kuala Lumpur is a sprawling, modern metropolis with a diverse population.
 *   **Culture:** A rich tapestry of Malay, Chinese, and Indian cultures, reflected in its food, festivals, and architecture. English is widely spoken.
 *   **Nature:** Proximity to lush rainforests, national parks, and coastal areas for weekend escapes.
 *   **Community:** A growing digital nomad scene, though perhaps less overt than Bangkok's. [Nomad List](https://nomadlist.com?utm_source=nomadbudgeter&utm_medium=community&utm_campaign=NB_2026_Silo) can help you connect with fellow nomads and find local insights.
-*   **Banking:** For managing international finances, a multi-currency account like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) is essential, providing the banking backbone for every nomad's tax setup.
+*   **Banking:** For managing international finances, a multi-currency account like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} is essential, providing the banking backbone for every nomad's tax setup.
 
 ### Bangkok: The Ultimate Sensory Experience
 

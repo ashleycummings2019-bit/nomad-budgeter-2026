@@ -127,4 +127,4 @@ The **EU passport** is Portugal's nuclear advantage. After 5 years, you get acce
 
 Run the exact comparison with your numbers in our [Lisbon vs Dubai Showdown](/compare/showdown/lisbon-vs-dubai/) or use the [free calculator](/) to model both scenarios.
 
-*Updated May 2026. Use [Wise](https://wise.com/invite/u/nomadbudgeter?utm_source=nomadbudgeter&utm_medium=blog&utm_campaign=NB_2026_DubaiLisbon) for the best exchange rates when transferring funds between EUR and AED.*
+*Updated May 2026. Use {% affiliateButton "Wise", "https://wise.com/invite/u/nomadbudgeter?utm_source=nomadbudgeter&utm_medium=blog&utm_campaign=NB_2026_DubaiLisbon" %} for the best exchange rates when transferring funds between EUR and AED.*

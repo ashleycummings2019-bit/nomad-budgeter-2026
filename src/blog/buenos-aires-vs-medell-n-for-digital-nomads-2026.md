@@ -82,7 +82,7 @@ Colombia also operates on a worldwide income tax system for tax residents. Simil
 *   **Digital Nomad Visa Colombia Advantage:** Colombia launched its **digital nomad visa Colombia** in 2022, allowing stays of up to two years. This visa is specifically designed for individuals earning income from outside Colombia. Crucially, the law explicitly states that income earned from abroad by digital nomads on this visa is **not considered Colombian-sourced income** and is therefore exempt from Colombian income tax. This is a significant advantage for wealth architecture.
 *   **Actionable Insight:** While the visa allows a longer stay, exceeding the 183-day threshold in any 365-day period (even with the nomad visa) *can* trigger tax residency if not carefully managed. It's vital to track your days and ensure your income remains foreign-sourced. Consulting a local tax expert is highly recommended.
 
-**Action Point:** For both destinations, a multi-currency account like [Wise](https://wise.prf.hn/click/camref:1101l5JGeT) is non-negotiable for managing your income across borders and keeping your foreign-sourced income distinct from any local transactions.
+**Action Point:** For both destinations, a multi-currency account like {% affiliateButton "Wise", "https://wise.prf.hn/click/camref:1101l5JGeT" %} is non-negotiable for managing your income across borders and keeping your foreign-sourced income distinct from any local transactions.
 
 ## Module 3: Digital Nomad Infrastructure & Community
 
@@ -146,7 +146,7 @@ Argentina's **digital nomad visa Argentina** allows remote workers to stay for 1
 
 Colombia's **digital nomad visa Colombia** is a standout, offering up to two years of residency. This provides significant stability for those looking to establish a longer-term base. The explicit tax exemption for foreign-sourced income under this visa makes Medellín a compelling option for tax-conscious nomads. Explore the specifics in our [Medellín Digital Nomad Guide](/cities/medellin-digital-nomad-guide).
 
-**Crucial Consideration:** Every 2026 nomad visa requires proof of health insurance. Don't even consider your flight without securing robust health insurance like [SafetyWing](https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance).
+**Crucial Consideration:** Every 2026 nomad visa requires proof of health insurance. Don't even consider your flight without securing robust health insurance like {% affiliateButton "SafetyWing", "https://safetywing.com/?referenceID=26514835&utm_source=nomadbudgeter&utm_medium=ambassador&utm_campaign=NB_2026_Insurance" %}.
 
 ## Buenos Aires vs Medellín: Quick Comparison for Digital Nomads (2026)
 
