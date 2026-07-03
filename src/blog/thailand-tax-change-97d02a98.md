@@ -4,7 +4,6 @@ title: "Thailand 15% Flat Tax on Foreign Income for Digital Nomads (2026)"
 meta_description: "Thailand's new 15% flat tax on foreign income hits LTR visa holders in 2026. Compare alternatives and calculate your tax bill before you relocate."
 date: 2026-01-15
 tags: ["thailand", "tax", "visa", "ltr-visa", "breaking-news", "digital-nomad-tax-planning-2026"]
-draft: true
 ---
 
 # Thailand Introduces 15% Flat Tax on Foreign Income for Digital Nomads in 2026
