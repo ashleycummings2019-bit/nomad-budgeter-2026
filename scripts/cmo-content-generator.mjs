@@ -183,7 +183,7 @@ async function callGemini(prompt, model, temperature = 0.7, retries = 4) {
 
 async function generateBlogImage(topic, slug) {
     const prompt = `Generate a high-quality, cinematic, professional editorial photo representing: ${topic}. Digital nomad lifestyle, clean lighting, travel photography, photorealistic. No text or watermarks.`;
-    const model = 'gemini-2.0-flash-exp';
+    const model = 'gemini-2.5-flash';
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
     
     try {
