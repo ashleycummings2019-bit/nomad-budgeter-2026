@@ -53,7 +53,7 @@ title: "Nomad Budgeter — Professional Plans"
                 <li><span class="check">✓</span> <strong>AI Budget Optimizer</strong></li>
                 <li><span class="check">✓</span> Priority Data Requests</li>
             </ul>
-            <a href="{{ site.stripe.pro }}" class="btn-primary" id="btn-subscribe-pro">Unlock Pro Features</a>
+            <a href="{{ site.stripe.pro }}" class="btn-primary" id="btn-subscribe-pro" data-variant="A">Unlock Pro Features</a>
         </div>
 
         {# Business Tier #}
@@ -611,6 +611,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // A/B Testing Logic for Pro Plan CTA
+    const btnSubscribePro = document.getElementById('btn-subscribe-pro');
+    if (btnSubscribePro) {
+        let variant = localStorage.getItem('ab_variant_pricing_cta');
+        if (!variant) {
+            // Randomly assign A (Control) or B (Variant)
+            variant = Math.random() < 0.5 ? 'A' : 'B';
+            localStorage.setItem('ab_variant_pricing_cta', variant);
+        }
+
+        // Apply Variant B changes
+        if (variant === 'B') {
+            btnSubscribePro.textContent = 'Start 14-Day Free Trial';
+            btnSubscribePro.setAttribute('data-variant', 'B');
+        } else {
+            btnSubscribePro.setAttribute('data-variant', 'A');
+        }
+
+        // Track clicks with GA4
+        btnSubscribePro.addEventListener('click', () => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_pro_cta', {
+                    'ab_variant': variant,
+                    'button_text': btnSubscribePro.textContent
+                });
+            }
+        });
+    }
 });
 </script>
 

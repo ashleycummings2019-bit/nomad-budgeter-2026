@@ -10,7 +10,7 @@ permissions:
   contents: write # Needed to commit back to the repo
 
 jobs:
-  pulse-and-deploy:
+  pulse-and-commit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -27,8 +27,10 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Run Data Pulse & Build Validation
-        run: npm run build
+      - name: Run Data Pulse & Trends
+        run: |
+          npm run pulse
+          npm run trends
         env:
           AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
           AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
@@ -43,6 +45,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add src/_data/freshness.json src/_data/rates.json src/_data/ticker.json src/_data/airtable_cache.json
-          git commit -m "chore(data): auto-update currency, BTC, and visa data [skip ci]"
+          git add src/_data/freshness.json src/_data/rates.json src/_data/ticker.json src/_data/airtable_cache.json src/_data/best_cities.json
+          git commit -m "chore(data): auto-update currency, BTC, city trends, and visa data [skip ci]"
           git push
