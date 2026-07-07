@@ -153,6 +153,8 @@ module.exports = async function() {
             if (offset) {
                 url += `?offset=${encodeURIComponent(offset)}`;
             }
+            
+            // fetchWithRetry handles 429 and 500 automatically
             const response = await fetchWithRetry(url, { headers: { Authorization: `Bearer ${activeKey}` } });
             
             if (response.status === 404) {
@@ -162,7 +164,18 @@ module.exports = async function() {
                 return { response, ok: false };
             }
             
-            const data = await response.json();
+            // AbortController from fetchWithRetry may have been cleared, so wrap this carefully
+            let data;
+            try {
+                // adding a manual 10s timeout just for JSON parsing in case Vercel hangs on the socket
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 10000);
+                data = await response.json();
+                clearTimeout(timeoutId);
+            } catch(e) {
+                throw new Error("Timeout or error reading response body: " + e.message);
+            }
+            
             allRecords = allRecords.concat(data.records);
             offset = data.offset;
         } while (offset);
