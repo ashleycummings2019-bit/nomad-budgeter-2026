@@ -271,7 +271,13 @@ async function fetchBTCPrice() {
 async function fetchTeleportScore(slug) {
   try {
     const url = `https://api.teleport.org/api/urban_areas/slug:${slug}/scores/`;
-    const res = await fetch(url);
+    // Add a 2-second timeout to prevent build hangs
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2000);
+    
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeoutId);
+    
     if (!res.ok) return null;
     const data = await res.json();
     let safety = 0;
@@ -281,7 +287,7 @@ async function fetchTeleportScore(slug) {
       if (cat.name === 'Internet access') internet = cat.score_out_of_10;
     }
     return { safety, internet };
-  } catch {
+  } catch (err) {
     return null;
   }
 }
@@ -322,7 +328,14 @@ async function main() {
   
   // Enrich
   let enriched = 0;
-  for (const city of cities) {
+  
+  // Prepare all teleport fetch promises to run in parallel
+  const teleportPromises = cities.map(city => fetchTeleportScore(city.slug));
+  const teleportResults = await Promise.all(teleportPromises);
+
+  for (let i = 0; i < cities.length; i++) {
+    const city = cities[i];
+    
     // Apply Airtable Overrides first so they can be used in enrichment
     const cityOverrides = overrides[city.slug.toLowerCase()];
     if (cityOverrides) {
@@ -340,7 +353,7 @@ async function main() {
     if (city.currency && rates[city.currency]) {
       enrichCity(city, rates);
       
-      const tp = await fetchTeleportScore(city.slug);
+      const tp = teleportResults[i];
       if (tp) {
          city.safety_score = tp.safety;
          city.internet_score = tp.internet;
