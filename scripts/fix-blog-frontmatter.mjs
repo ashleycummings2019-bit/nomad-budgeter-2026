@@ -19,7 +19,7 @@ const BLOG_DIR = path.join(process.cwd(), 'src', 'blog');
 
 // Get all .md files (skip subdirectories like drafts/)
 const files = fs.readdirSync(BLOG_DIR)
-    .filter(f => f.endsWith('.md'))
+    .filter(f => f.endsWith('.md') || f.endsWith('.njk'))
     .map(f => path.join(BLOG_DIR, f));
 
 let fixedCount = 0;

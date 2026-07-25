@@ -90,6 +90,13 @@ eleventyComputed:
         </div>
     </div>
 
+    {% if country.continent == "Europe" %}
+    <div class="mt-8 mb-8 p-4 glass-panel" style="border: 1px solid rgba(59, 130, 246, 0.4); background: rgba(59, 130, 246, 0.05); border-radius: 12px; display: flex; align-items: center; gap: 1rem;">
+        <span style="font-size: 1.5rem;">🛡️</span>
+        <p style="margin: 0; color: var(--text-light); font-size: 0.95rem;">Planning to travel across Europe? Use our free Schengen Calculator at <a href="https://schengenradar.com?utm_source=nomadbudgeter&utm_medium=visa_cta&utm_campaign=ecosystem_2026" target="_blank" style="color: #3b82f6; text-decoration: underline; font-weight: bold;">schengenradar.com</a> to track your 90/180-day limit.</p>
+    </div>
+    {% endif %}
+
     {# Expert Analysis #}
     <div class="expert-analysis">
         <h2 class="mb-6">Is {{ country.name }} Right for You?</h2>
@@ -295,6 +302,13 @@ eleventyComputed:
             </div>
         </div>
     </div>
+
+    {% if country.continent == "Europe" %}
+    {# Ecosystem Cross-Promotion #}
+    <div class="mt-16 mb-8">
+        {% include 'partials/schengen-radar-widget.njk' %}
+    </div>
+    {% endif %}
 
     {# Lead Magnet #}
     {% include "partials/lead-magnet.njk" %}

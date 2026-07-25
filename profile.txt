@@ -1,0 +1,276 @@
+Statistical profiling result from isolate-0xa85c64000-40000-v8.log, (7307 ticks, 3 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     18    0.2%          /usr/lib/system/libsystem_c.dylib
+     12    0.2%          /usr/lib/libc++.1.dylib
+      3    0.0%          /usr/lib/system/libsystem_malloc.dylib
+      1    0.0%          /usr/lib/system/libsystem_kernel.dylib
+      1    0.0%          /usr/lib/system/libdyld.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.0%    0.0%  JS: ^processImmediate node:internal/timers:456:28
+      1    0.0%    0.0%  JS: ^assert node:internal/assert:8:16
+      1    0.0%    0.0%  JS: ^<anonymous> node:internal/validators:460:42
+
+ [C++]:
+   ticks  total  nonlib   name
+   7083   96.9%   97.4%  T _pselect$DARWIN_EXTSN
+     78    1.1%    1.1%  t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+     41    0.6%    0.6%  T _chmod
+     16    0.2%    0.2%  T __kernelrpc_mach_port_get_refs
+     10    0.1%    0.1%  T _mig_get_reply_port
+      6    0.1%    0.1%  t __pthread_bsdthread_init
+      5    0.1%    0.1%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>> std::__1::__pad_and_output[abi:nn180100]<char, std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>>, char const*, char const*, char const*, std::__1::ios_base&, char)
+      5    0.1%    0.1%  T _pthread_key_init_np
+      4    0.1%    0.1%  t std::__1::basic_ostream<char, std::__1::char_traits<char>>& std::__1::__put_character_sequence[abi:nn180100]<char, std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>>&, char const*, unsigned long)
+      4    0.1%    0.1%  T _pthread_key_create
+      3    0.0%    0.0%  t __pthread_mutex_global_init
+      3    0.0%    0.0%  t ___pfz_setup
+      3    0.0%    0.0%  T ___pthread_init
+      1    0.0%    0.0%  t __os_nospin_lock_unlock_slow
+      1    0.0%    0.0%  t __os_nospin_lock_lock_slow
+      1    0.0%    0.0%  T node::Environment::ToggleImmediateRef(bool)
+      1    0.0%    0.0%  T __kernelrpc_mach_vm_map
+
+ [Summary]:
+   ticks  total  nonlib   name
+      4    0.1%    0.1%  JavaScript
+   7265   99.4%   99.9%  C++
+      5    0.1%    0.1%  GC
+     35    0.5%          Shared libraries
+      3    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+     70   43.8%    1.0%  t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+     29   18.1%    0.4%  T _chmod
+     15    9.4%    0.2%  T __kernelrpc_mach_port_get_refs
+      9    5.6%    0.1%  T _mig_get_reply_port
+      6    3.8%    0.1%  t __pthread_bsdthread_init
+      5    3.1%    0.1%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>> std::__1::__pad_and_output[abi:nn180100]<char, std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>>, char const*, char const*, char const*, std::__1::ios_base&, char)
+      5    3.1%    0.1%  T _pthread_key_init_np
+      4    2.5%    0.1%  t std::__1::basic_ostream<char, std::__1::char_traits<char>>& std::__1::__put_character_sequence[abi:nn180100]<char, std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>>&, char const*, unsigned long)
+      4    2.5%    0.1%  T _pthread_key_create
+      3    1.9%    0.0%  t __pthread_mutex_global_init
+      3    1.9%    0.0%  t ___pfz_setup
+      3    1.9%    0.0%  T ___pthread_init
+      1    0.6%    0.0%  t __os_nospin_lock_unlock_slow
+      1    0.6%    0.0%  t __os_nospin_lock_lock_slow
+      1    0.6%    0.0%  T node::Environment::ToggleImmediateRef(bool)
+      1    0.6%    0.0%  T __kernelrpc_mach_vm_map
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   7083   96.9%  T _pselect$DARWIN_EXTSN
+
+     78    1.1%  t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+     33   42.3%    JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+     31   93.9%      JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      3    9.7%        JS: ~setupBuffer node:internal/bootstrap/node:450:21
+      3  100.0%          JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      3    9.7%        JS: ~<anonymous> node:internal/timers:1:1
+      3  100.0%          JS: ~compileForInternalLoader node:internal/bootstrap/realm:383:27
+      3  100.0%            JS: ~requireBuiltin node:internal/bootstrap/realm:420:24
+      3    9.7%        JS: ~<anonymous> node:internal/main/worker_thread:1:1
+      2    6.5%        JS: ~<anonymous> node:tty:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      2  100.0%            JS: ~compileForPublicLoader node:internal/bootstrap/realm:331:25
+      2    6.5%        JS: ~<anonymous> node:internal/modules/esm/loader:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      2  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      2    6.5%        JS: ~<anonymous> node:crypto:1:1
+      2  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      2  100.0%            JS: ~compileForPublicLoader node:internal/bootstrap/realm:331:25
+      1    3.2%        JS: ~setupProcessObject node:internal/bootstrap/node:409:28
+      1  100.0%          JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      1    3.2%        JS: ~<anonymous> node:util:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:stream:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/streams/pipeline:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/streams/duplex:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/streams/compose:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/modules/esm/worker:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/modules/esm/hooks:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/modules/cjs/loader:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/main/worker_thread:91:20
+      1  100.0%          JS: ~<anonymous> node:internal/event_target:782:20
+      1  100.0%            JS: ~<anonymous> node:internal/per_context/messageport:19:31
+      1    3.2%        JS: ~<anonymous> node:internal/event_target:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/crypto/hkdf:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:internal/console/global:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:fs:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1    3.2%        JS: ~<anonymous> node:buffer:1:1
+      1  100.0%          JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      2    6.1%      JS: ~compileForPublicLoader node:internal/bootstrap/realm:331:25
+      2  100.0%        JS: ~loadBuiltinModule node:internal/modules/helpers:117:27
+      2  100.0%          JS: ~builtinStrategy node:internal/modules/esm/translators:456:52
+      2  100.0%            JS: ~#translate node:internal/modules/esm/loader:464:13
+      4    5.1%    JS: ~compileForInternalLoader node:internal/bootstrap/realm:383:27
+      4  100.0%      JS: ~requireBuiltin node:internal/bootstrap/realm:420:24
+      2   50.0%        JS: ~setupPrepareStackTrace node:internal/bootstrap/realm:443:32
+      2  100.0%          JS: ~<anonymous> node:internal/bootstrap/realm:1:1
+      1   25.0%        JS: ~<anonymous> node:internal/timers:1:1
+      1  100.0%          JS: ~compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%            JS: ~requireBuiltin node:internal/bootstrap/realm:420:24
+      1   25.0%        JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      3    3.8%    t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+      1   33.3%      JS: ~<anonymous> node:internal/util/inspect:1:1
+      1  100.0%        JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%          JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%            JS: ~<anonymous> node:internal/timers:1:1
+      1   33.3%      JS: ~<anonymous> node:internal/deps/cjs-module-lexer/lexer:1:1
+      1  100.0%        JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%          JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%            JS: ~initCJSParseSync node:internal/modules/esm/translators:80:26
+      1   33.3%      JS: ^getNearestParentPackageJSON node:internal/modules/package_json_reader:178:37
+      1  100.0%        JS: ~Module._extensions..js node:internal/modules/cjs/loader:1858:37
+      1  100.0%          JS: ~Module.load node:internal/modules/cjs/loader:1472:33
+      1  100.0%            JS: ^Module._load node:internal/modules/cjs/loader:1204:24
+      2    2.6%    JS: ^nextHookFactory node:internal/modules/esm/hooks:742:25
+      1   50.0%      JS: ^nextHookFactory node:internal/modules/esm/hooks:742:25
+      1  100.0%        JS: ^resolve node:internal/modules/esm/hooks:228:16
+      1  100.0%          JS: ^handleMessage node:internal/modules/esm/worker:226:31
+      1  100.0%            JS: ^checkForMessages node:internal/modules/esm/worker:186:28
+      1   50.0%      JS: ^load node:internal/modules/esm/hooks:361:13
+      1  100.0%        JS: ^handleMessage node:internal/modules/esm/worker:226:31
+      1  100.0%          JS: ^checkForMessages node:internal/modules/esm/worker:186:28
+      1  100.0%            JS: ^processImmediate node:internal/timers:456:28
+      2    2.6%    JS: ^internalBinding node:internal/bootstrap/realm:182:45
+      1   50.0%      JS: ~<anonymous> node:internal/v8/startup_snapshot:1:1
+      1  100.0%        JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%          JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%            JS: ~<anonymous> node:internal/buffer:1:1
+      1   50.0%      JS: ~<anonymous> node:buffer:1:1
+      1  100.0%        JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%          JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%            JS: ~setupBuffer node:internal/bootstrap/node:450:21
+      1    1.3%    JS: ~wrapMessage node:internal/modules/esm/worker:109:21
+      1  100.0%      JS: ~customizedModuleWorker node:internal/modules/esm/worker:143:38
+      1  100.0%        t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+      1  100.0%          t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+      1  100.0%            JS: ~processTicksAndRejections node:internal/process/task_queues:71:35
+      1    1.3%    JS: ~readFileSync node:fs:433:22
+      1  100.0%      JS: ~getSourceSync node:internal/modules/esm/load:32:23
+      1  100.0%        JS: ~defaultLoad node:internal/modules/esm/load:58:21
+      1  100.0%          JS: ^ObjectDefineProperty.__proto__ node:internal/modules/esm/hooks:770:5
+      1  100.0%            JS: ~load node:internal/modules/esm/hooks:361:13
+      1    1.3%    JS: ~detectModuleFormat node:internal/modules/esm/get_format:37:28
+      1  100.0%      JS: ~getFileProtocolModuleFormat node:internal/modules/esm/get_format:113:37
+      1  100.0%        JS: ~defaultGetFormat node:internal/modules/esm/get_format:206:26
+      1  100.0%          JS: ^defaultLoad node:internal/modules/esm/load:58:21
+      1  100.0%            JS: ^ObjectDefineProperty.__proto__ node:internal/modules/esm/hooks:770:5
+      1    1.3%    JS: ~deserializePackageJSON node:internal/modules/package_json_reader:48:32
+      1  100.0%      JS: ~read node:internal/modules/package_json_reader:113:14
+      1  100.0%        JS: ~packageResolve node:internal/modules/esm/resolve:762:24
+      1  100.0%          JS: ~moduleResolve node:internal/modules/esm/resolve:831:23
+      1  100.0%            JS: ~defaultResolve node:internal/modules/esm/resolve:945:24
+      1    1.3%    JS: ~URL node:internal/url:812:14
+      1  100.0%      JS: ~pathToFileURL node:internal/url:1635:23
+      1  100.0%        JS: ~getCWDURL node:internal/util:419:19
+      1  100.0%          JS: ~initializeAsyncLoaderHooksOnLoaderHookWorker node:internal/modules/esm/worker:48:60
+      1  100.0%            JS: ~customizedModuleWorker node:internal/modules/esm/worker:143:38
+      1    1.3%    JS: ~Readable node:internal/streams/readable:318:18
+      1  100.0%      JS: ~ReadableWorkerStdio node:internal/worker/io:251:14
+      1  100.0%        JS: ~createWorkerStdio node:internal/worker/io:332:27
+      1  100.0%          JS: ~lazyWorkerStdio node:internal/bootstrap/switches/is_not_main_thread:40:25
+      1  100.0%            JS: ~getStdin node:internal/bootstrap/switches/is_not_main_thread:58:18
+      1    1.3%    JS: ~ModuleLoader node:internal/modules/esm/loader:169:3
+      1  100.0%      JS: ~ModuleLoader node:internal/modules/esm/loader:216:14
+      1  100.0%        JS: ~createModuleLoader node:internal/modules/esm/loader:853:28
+      1  100.0%          JS: ~getOrInitializeCascadedLoader node:internal/modules/esm/loader:900:39
+      1  100.0%            JS: ~initializeAsyncLoaderHooksOnLoaderHookWorker node:internal/modules/esm/worker:48:60
+      1    1.3%    JS: ~<anonymous> node:internal/streams/readable:1:1
+      1  100.0%      JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%        JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%          JS: ~<anonymous> node:internal/streams/duplex:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1    1.3%    JS: ~<anonymous> node:internal/per_context/primordials:224:11
+      1  100.0%      t std::__1::__shared_ptr_emplace<node::SocketAddress, std::__1::allocator<node::SocketAddress>>::~__shared_ptr_emplace()
+      1  100.0%        JS: ~<anonymous> node:internal/per_context/primordials:1:1
+      1    1.3%    JS: ~<anonymous> node:internal/crypto/hashnames:1:1
+      1  100.0%      JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%        JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%          JS: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1    1.3%    JS: ~<anonymous> node:internal/bootstrap/realm:1:1
+      1    1.3%    JS: ~<anonymous> node:internal/bootstrap/node:1:1
+      1    1.3%    JS: ~<anonymous> node:fs:1:1
+      1  100.0%      JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%        JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%          JS: ~<anonymous> node:internal/source_map/source_map_cache:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1    1.3%    JS: ~<anonymous> node:diagnostics_channel:1:1
+      1  100.0%      JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1  100.0%        JS: ^requireBuiltin node:internal/bootstrap/realm:420:24
+      1  100.0%          JS: ~<anonymous> node:internal/process/per_thread:1:1
+      1  100.0%            JS: ^compileForInternalLoader node:internal/bootstrap/realm:383:27
+      1    1.3%    JS: ^toRealPath node:internal/modules/helpers:61:20
+      1  100.0%      JS: ^Module._findPath node:internal/modules/cjs/loader:698:28
+      1  100.0%        JS: ^Module._resolveFilename node:internal/modules/cjs/loader:1337:35
+      1  100.0%          JS: ^defaultResolveImpl node:internal/modules/cjs/loader:1045:30
+      1  100.0%            JS: ~resolveForCJSWithHooks node:internal/modules/cjs/loader:1040:32
+      1    1.3%    JS: ^resolve node:path:1245:10
+      1  100.0%      JS: ^pathToFileURL node:internal/url:1635:23
+      1  100.0%        JS: ^finalizeResolution node:internal/modules/esm/resolve:228:28
+      1  100.0%          JS: ^moduleResolve node:internal/modules/esm/resolve:831:23
+      1  100.0%            JS: ^defaultResolve node:internal/modules/esm/resolve:945:24
+      1    1.3%    JS: ^pushAsyncContext node:internal/async_hooks:547:26
+      1  100.0%      JS: ^emitBeforeScript node:internal/async_hooks:517:26
+      1  100.0%        JS: ^processImmediate node:internal/timers:456:28
+      1    1.3%    JS: ^popAsyncContext node:internal/async_hooks:561:25
+      1  100.0%      JS: ^emitAfterScript node:internal/async_hooks:525:25
+      1  100.0%        JS: ^processImmediate node:internal/timers:456:28
+      1    1.3%    JS: ^getPackageScopeConfig node:internal/modules/package_json_reader:207:31
+      1  100.0%      JS: ^getPackageJSONURL node:internal/modules/package_json_reader:282:27
+      1  100.0%        JS: ~packageResolve node:internal/modules/esm/resolve:762:24
+      1  100.0%          JS: ^moduleResolve node:internal/modules/esm/resolve:831:23
+      1  100.0%            JS: ^defaultResolve node:internal/modules/esm/resolve:945:24
+      1    1.3%    JS: ^getPackageJSONURL node:internal/modules/package_json_reader:282:27
+      1  100.0%      JS: ~packageResolve node:internal/modules/esm/resolve:762:24
+      1  100.0%        JS: ^moduleResolve node:internal/modules/esm/resolve:831:23
+      1  100.0%          JS: ^defaultResolve node:internal/modules/esm/resolve:945:24
+      1  100.0%            JS: ^ObjectDefineProperty.__proto__ node:internal/modules/esm/hooks:770:5
+      1    1.3%    JS: ^detectModuleFormat node:internal/modules/esm/get_format:37:28
+      1  100.0%      JS: ~getFileProtocolModuleFormat node:internal/modules/esm/get_format:113:37
+      1  100.0%        JS: ~defaultGetFormat node:internal/modules/esm/get_format:206:26
+      1  100.0%          JS: ^defaultLoad node:internal/modules/esm/load:58:21
+      1  100.0%            JS: ^ObjectDefineProperty.__proto__ node:internal/modules/esm/hooks:770:5
+      1    1.3%    JS: +getPathFromURLPosix node:internal/url:1565:29
+      1  100.0%      JS: ^fileURLToPath node:internal/url:1606:23
+      1  100.0%        JS: ^toPathIfFileURL node:internal/url:1677:25
+      1  100.0%          JS: ^<anonymous> node:internal/fs/utils:722:42
+      1  100.0%            JS: ^wrappedFn node:internal/errors:537:21
+
