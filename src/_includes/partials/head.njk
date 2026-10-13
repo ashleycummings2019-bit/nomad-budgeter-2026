@@ -35,7 +35,7 @@
 <meta property="og:description" content="{{ pageDescription or description or site.description }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta property="og:image" content="{{ site.url }}{{ ogImage | default('/img/og-main.jpg') }}">
+<meta property="og:image" content="{{ site.url }}{{ ogImage | default('/assets/images/og-main.jpg') }}">
 <meta property="og:site_name" content="{{ site.name }}">
 
 {# Twitter Card #}
@@ -43,7 +43,7 @@
 <meta name="twitter:site" content="@nomadbudgeter">
 <meta name="twitter:title" content="{{ pageTitle or title or site.name }}">
 <meta name="twitter:description" content="{{ pageDescription or description or site.description }}">
-<meta name="twitter:image" content="{{ site.url }}{{ ogImage | default('/img/og-main.jpg') }}">
+<meta name="twitter:image" content="{{ site.url }}{{ ogImage | default('/assets/images/og-main.jpg') }}">
 
 {# JSON-LD Structured Data — Page-specific blocks injected via pageSchema variable #}
 {% if pageSchema %}
@@ -61,7 +61,7 @@
   "url": "{{ site.url }}",
   "logo": {
     "@type": "ImageObject",
-    "url": "{{ site.url }}/img/logo.png",
+    "url": "{{ site.url }}/assets/images/logo-square.png",
     "width": 512,
     "height": 512
   },

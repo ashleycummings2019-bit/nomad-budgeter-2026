@@ -82,71 +82,77 @@ module.exports = function () {
     });
   });
 
-  // Auto-generate additional pairs from all cities
-  const topSlugs = cities.map(c => c.slug);
-  const existingSlugs = new Set(results.map((r) => r.slug));
+  // 1. Helper to add unique comparison pairs
+  const seenSlugs = new Set(results.map((r) => r.slug));
+  function addComparisonPair(slugA, slugB, meta = {}) {
+    if (!slugA || !slugB || slugA === slugB) return;
+    const forwardSlug = `${slugA}-vs-${slugB}`;
+    const reverseSlug = `${slugB}-vs-${slugA}`;
+    if (seenSlugs.has(forwardSlug) || seenSlugs.has(reverseSlug)) return;
 
-  for (let i = 0; i < topSlugs.length; i++) {
-    for (let j = i + 1; j < topSlugs.length; j++) {
-      const slugA = topSlugs[i];
-      const slugB = topSlugs[j];
-      const forwardSlug = `${slugA}-vs-${slugB}`;
-      const reverseSlug = `${slugB}-vs-${slugA}`;
+    const cityA = cityMap[slugA];
+    const cityB = cityMap[slugB];
+    if (!cityA || !cityB) return;
 
-      if (existingSlugs.has(forwardSlug) || existingSlugs.has(reverseSlug)) continue;
+    let priorityScore = meta.priority || 0;
+    if (priorityHubs.includes(slugA)) priorityScore += 10;
+    if (priorityHubs.includes(slugB)) priorityScore += 10;
+    if (cityA.continent === cityB.continent) priorityScore += 5;
 
-      const cityA = cityMap[slugA];
-      const cityB = cityMap[slugB];
-      if (!cityA || !cityB) continue;
+    const savingsA = Math.round((100000 * (1 - cityA.tax)) / 12 - cityA.col);
+    const savingsB = Math.round((100000 * (1 - cityB.tax)) / 12 - cityB.col);
+    const arbitrageValue = Math.abs(savingsA - savingsB);
 
-      // Calculate priority score: 10 for each priority city involved
-      let priorityScore = 0;
-      if (priorityHubs.includes(slugA)) priorityScore += 10;
-      if (priorityHubs.includes(slugB)) priorityScore += 10;
-      
-      // Bonus for same region (more relevant comparisons)
-      if (cityA.continent === cityB.continent) priorityScore += 5;
-
-      const savingsA = Math.round((100000 * (1 - cityA.tax)) / 12 - cityA.col);
-      const savingsB = Math.round((100000 * (1 - cityB.tax)) / 12 - cityB.col);
-      const arbitrageValue = Math.abs(savingsA - savingsB);
-
-      results.push({
-        slug: forwardSlug,
-        cityA: cityA,
-        cityB: cityB,
-        theme: "Cost of Living",
-        emoji: "📊",
-        region: cityA.continent === cityB.continent ? cityA.continent : "Global",
-        featured: false,
-        priority: priorityScore,
-        savingsA: savingsA,
-        savingsB: savingsB,
-        arbitrageValue: arbitrageValue,
-        winner: savingsA > savingsB ? cityA.name : cityB.name,
-        title: `${cityA.name} vs. ${cityB.name}: 2026 Digital Nomad Cost of Living Comparison`,
-        description: `Compare cost of living, taxes, and savings for digital nomads in ${cityA.name} vs. ${cityB.name}. Updated for 2026.`,
-      });
-    }
+    seenSlugs.add(forwardSlug);
+    results.push({
+      slug: forwardSlug,
+      cityA: cityA,
+      cityB: cityB,
+      theme: meta.theme || (cityA.continent === cityB.continent ? `${cityA.continent} Hubs` : "Cost of Living"),
+      emoji: meta.emoji || "📊",
+      region: meta.region || (cityA.continent === cityB.continent ? cityA.continent : "Global"),
+      featured: !!meta.featured,
+      priority: priorityScore,
+      savingsA: savingsA,
+      savingsB: savingsB,
+      arbitrageValue: arbitrageValue,
+      winner: savingsA > savingsB ? cityA.name : cityB.name,
+      title: `${cityA.name} vs. ${cityB.name}: 2026 Digital Nomad Cost of Living Comparison`,
+      description: `Compare cost of living, taxes, and savings for digital nomads in ${cityA.name} vs. ${cityB.name}. Updated for 2026.`,
+    });
   }
 
-  // Deduplicate and limit to top 200 most relevant comparisons
-  const uniqueResults = [];
-  const seenSlugs = new Set();
-  
-  // Sort by priority first, then alphabetically by slug to ensure deterministic, stable output
-  results.sort((a, b) => {
-      if (b.priority !== a.priority) return b.priority - a.priority;
-      return a.slug.localeCompare(b.slug);
+  // 2. Guarantee 2 highly relevant comparisons for EVERY city in cities.json
+  cities.forEach((c) => {
+    const candidates = cities
+      .filter((other) => other.slug !== c.slug)
+      .map((other) => {
+        let score = 0;
+        if (other.continent === c.continent) score += 50;
+        if (other.country === c.country) score += 30;
+        const colDiff = Math.abs(other.col - c.col);
+        score -= colDiff / 100;
+        return { other, score };
+      })
+      .sort((x, y) => y.score - x.score);
+
+    for (let k = 0; k < Math.min(2, candidates.length); k++) {
+      addComparisonPair(c.slug, candidates[k].other.slug, { priority: 50 });
+    }
   });
 
-  for (const res of results) {
-    if (!seenSlugs.has(res.slug)) {
-      uniqueResults.push(res);
-      seenSlugs.add(res.slug);
+  // 3. Add priority hub combinations up to 250 total comparisons
+  for (let i = 0; i < priorityHubs.length && results.length < 250; i++) {
+    for (let j = i + 1; j < priorityHubs.length && results.length < 250; j++) {
+      addComparisonPair(priorityHubs[i], priorityHubs[j], { priority: 20 });
     }
-    if (uniqueResults.length >= 200) break;
   }
+
+  // Stable sort: priority descending, then slug ascending
+  const uniqueResults = results.sort((a, b) => {
+    if (b.priority !== a.priority) return b.priority - a.priority;
+    return a.slug.localeCompare(b.slug);
+  });
 
   // ─── Themes (Nomad Archetypes) ───
   const themes = [

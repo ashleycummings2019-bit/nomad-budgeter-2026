@@ -575,32 +575,6 @@ title: "Nomad Budgeter — Professional Plans"
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('billing-toggle');
-    const proPrice = document.getElementById('price-pro');
-    const businessPrice = document.getElementById('price-business');
-    const labels = [document.getElementById('label-monthly'), document.getElementById('label-annual')];
-
-    toggle.addEventListener('click', () => {
-        const isAnnual = toggle.classList.toggle('annual');
-        
-        // Update active labels
-        labels[0].classList.toggle('active', !isAnnual);
-        labels[1].classList.toggle('active', isAnnual);
-
-        // Update prices with a small animation
-        const updatePrice = (el) => {
-            const newPrice = isAnnual ? el.dataset.annual : el.dataset.monthly;
-            el.style.opacity = '0';
-            setTimeout(() => {
-                el.innerHTML = `$${newPrice}<span>/mo</span>`;
-                el.style.opacity = '1';
-            }, 150);
-        };
-
-        updatePrice(proPrice);
-        updatePrice(businessPrice);
-    });
-
     // Reveal animations on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -612,32 +586,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // A/B Testing Logic for Pro Plan CTA
+    // --- Nomad Budgeter A/B Testing Engine ---
+    // 1. CTA Text Test (Buy the Guide vs Unlock the Alpha)
     const btnSubscribePro = document.getElementById('btn-subscribe-pro');
     if (btnSubscribePro) {
-        let variant = localStorage.getItem('ab_variant_pricing_cta');
-        if (!variant) {
-            // Randomly assign A (Control) or B (Variant)
-            variant = Math.random() < 0.5 ? 'A' : 'B';
-            localStorage.setItem('ab_variant_pricing_cta', variant);
+        let ctaVariant = localStorage.getItem('ab_variant_pricing_cta');
+        if (!ctaVariant) {
+            ctaVariant = Math.random() < 0.5 ? 'Buy the Guide' : 'Unlock the Alpha';
+            localStorage.setItem('ab_variant_pricing_cta', ctaVariant);
         }
+        btnSubscribePro.textContent = ctaVariant;
+        btnSubscribePro.setAttribute('data-ab-cta', ctaVariant);
+    }
 
-        // Apply Variant B changes
-        if (variant === 'B') {
-            btnSubscribePro.textContent = 'Start 14-Day Free Trial';
-            btnSubscribePro.setAttribute('data-variant', 'B');
-        } else {
-            btnSubscribePro.setAttribute('data-variant', 'A');
-        }
+    // 2. Monthly / Annual billing toggle
+    const toggle = document.getElementById('billing-toggle');
+    const labels = [document.getElementById('label-monthly'), document.getElementById('label-annual')];
+    const priceEls = [document.getElementById('price-pro'), document.getElementById('price-business')].filter(Boolean);
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            const isAnnual = toggle.classList.toggle('annual');
+            if (labels[0]) labels[0].classList.toggle('active', !isAnnual);
+            if (labels[1]) labels[1].classList.toggle('active', isAnnual);
+            priceEls.forEach(el => {
+                const newPrice = isAnnual ? el.dataset.annual : el.dataset.monthly;
+                el.innerHTML = `$${newPrice}<span>/mo</span>`;
+            });
+        });
+    }
 
-        // Track clicks with GA4
+    // 3. Track clicks with GA4 incorporating both variants
+    if (btnSubscribePro) {
         btnSubscribePro.addEventListener('click', () => {
+            const currentCta = localStorage.getItem('ab_variant_pricing_cta');
+            const currentPrice = localStorage.getItem('ab_variant_price_point');
             if (typeof gtag === 'function') {
-                gtag('event', 'click_pro_cta', {
-                    'ab_variant': variant,
-                    'button_text': btnSubscribePro.textContent
+                gtag('event', 'click_pro_checkout', {
+                    'ab_variant_cta': currentCta,
+                    'ab_variant_price': currentPrice
                 });
             }
+            console.log(`Tracking checkout: CTA=${currentCta}, Price=$${currentPrice}`);
         });
     }
 });

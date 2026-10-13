@@ -8,7 +8,17 @@
     
     {% if city and not comp %}
     <li style="display: flex; align-items: center;">
+      {% set hasVisaGuide = false %}
+      {% for c in countries %}
+        {% if c.slug == city.countrySlug %}
+          {% set hasVisaGuide = true %}
+        {% endif %}
+      {% endfor %}
+      {% if hasVisaGuide %}
       <a href="/visas/{{ city.countrySlug }}/" style="color: var(--text-dim); text-decoration: none;">{{ city.country }}</a>
+      {% else %}
+      <span style="color: var(--text-dim);">{{ city.country }}</span>
+      {% endif %}
       <span style="margin-left: 0.5rem; margin-right: 0.5rem;">/</span>
     </li>
     <li style="display: flex; align-items: center;">

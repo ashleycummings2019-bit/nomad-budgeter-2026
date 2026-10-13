@@ -9,7 +9,7 @@ module.exports = function() {
     "tagline": "Your 2026 Digital Nomad Financial Engine",
     "email": "hello@nomadbudgeter.com",
     "year": "2026",
-    "dataLastVerified": "May 2026",
+    "dataLastVerified": "September 2026",
     "socialProof": "12,402 nomads",
     "apiKeys": {
         "clerkPubKey": "pk_live_Y2xlcmsubm9tYWRidWRnZXRlci5jb20k"
@@ -72,6 +72,6 @@ module.exports = function() {
         "biz": "https://buy.stripe.com/eVq28lbUi7ywfyN2IveAg0c"
     }
 },
-    dataLastVerified: freshness.displayDate || 'May 2026'
+    dataLastVerified: freshness.displayDate || 'September 2026'
   };
 };

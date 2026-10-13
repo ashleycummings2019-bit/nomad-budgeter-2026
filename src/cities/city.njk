@@ -480,15 +480,29 @@ window.__NB_STATIC_CITY__ = {
 
             <div class="showdown-vs">VS</div>
 
-            {# Comparison Target (Dynamic suggested city) #}
+            {# Comparison Target (Derived from verified comparisons.list) #}
+            {% set activeComp = null %}
             {% set compTarget = null %}
-            {% for other in cities %}
-                {% if other.slug != city.slug and not compTarget %}
-                    {% if other.country == city.country or (other.col > city.col * 0.8 and other.col < city.col * 1.2) %}
-                        {% set compTarget = other %}
+            {% for c in comparisons.list %}
+                {% if not activeComp %}
+                    {% if c.cityA.slug == city.slug %}
+                        {% set activeComp = c %}
+                        {% set compTarget = c.cityB %}
+                    {% elif c.cityB.slug == city.slug %}
+                        {% set activeComp = c %}
+                        {% set compTarget = c.cityA %}
                     {% endif %}
                 {% endif %}
             {% endfor %}
+            {% if not compTarget %}
+                {% for other in cities %}
+                    {% if other.slug != city.slug and not compTarget %}
+                        {% if other.country == city.country or (other.col > city.col * 0.8 and other.col < city.col * 1.2) %}
+                            {% set compTarget = other %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
 
             {% if compTarget %}
             <div class="showdown-card target-hub glass-panel reveal">
@@ -517,7 +531,11 @@ window.__NB_STATIC_CITY__ = {
                 <div class="showdown-verdict">
                     <p>{{ compTarget.intro | truncate(80) }}</p>
                 </div>
-                <a href="/compare/city/{{ city.slug }}-vs-{{ compTarget.slug }}/" class="action-btn-sm mt-4">Full Side-by-Side →</a>
+                {% if activeComp %}
+                <a href="/compare/city/{{ activeComp.slug }}/" class="action-btn-sm mt-4">Full Side-by-Side →</a>
+                {% else %}
+                <a href="/cities/{{ compTarget.slug }}/" class="action-btn-sm mt-4">Explore {{ compTarget.name }} Guide →</a>
+                {% endif %}
             </div>
             {% endif %}
         </div>
@@ -554,41 +572,28 @@ window.__NB_STATIC_CITY__ = {
         
         {# Quick Comparison Widget #}
         <div class="glass-panel p-8 mb-12 text-center">
-            <h3 class="section-subtitle mb-4">Select a city to compare costs & taxes</h3>
+            <h3 class="section-subtitle mb-4">Select a destination to compare costs & taxes</h3>
             <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-                {# Dynamic Comparison Logic: Same country or similar CoL #}
-                {% set suggestedComparisons = [] %}
-                {% for other in cities %}
-                    {% if other.slug != city.slug and suggestedComparisons.length < 6 %}
-                        {% if other.country == city.country or (other.col > city.col * 0.85 and other.col < city.col * 1.15) %}
-                            {% set _ = suggestedComparisons.push(other) %}
-                        {% endif %}
+                {% set compButtons = 0 %}
+                {% for c in comparisons.list %}
+                    {% if (c.cityA.slug == city.slug or c.cityB.slug == city.slug) and compButtons < 6 %}
+                        {% set compButtons = compButtons + 1 %}
+                        {% set otherCity = c.cityB if c.cityA.slug == city.slug else c.cityA %}
+                        <a href="/compare/city/{{ c.slug }}/" class="glass-btn-sm aura-hover-lift" style="padding: 0.75rem 1.25rem; border-radius: 50px;">
+                            <span style="opacity: 0.7; font-size: 0.9rem;">{{ otherCity.emoji | default('📍') }}</span>
+                            vs. {{ otherCity.name }}
+                        </a>
                     {% endif %}
                 {% endfor %}
-
-                {# Fallbacks if list is short #}
-                {% if suggestedComparisons.length < 3 %}
-                    {% for other in cities %}
-                        {% if other.slug != city.slug and other not in suggestedComparisons and suggestedComparisons.length < 6 %}
-                            {% if other.continent == city.continent %}
-                                {% set _ = suggestedComparisons.push(other) %}
-                            {% endif %}
-                        {% endif %}
-                    {% endfor %}
+                {% if compButtons == 0 %}
+                    <a href="/compare/" class="action-btn-sm accent-bg">Explore All Comparisons →</a>
                 {% endif %}
-
-                {% for qCity in suggestedComparisons %}
-                    <a href="/compare/city/{{ city.slug }}-vs-{{ qCity.slug }}/" class="glass-btn-sm aura-hover-lift" style="padding: 0.75rem 1.25rem; border-radius: 50px;">
-                        <span style="opacity: 0.7; font-size: 0.9rem;">{{ qCity.emoji | default('📍') }}</span>
-                        vs. {{ qCity.name }}
-                    </a>
-                {% endfor %}
             </div>
         </div>
 
         <div class="stack-grid">
             {% set compCount = 0 %}
-            {% for comp in comparisons %}
+            {% for comp in comparisons.list %}
                 {% if (comp.cityA.slug == city.slug or comp.cityB.slug == city.slug) and compCount < 4 %}
                     {% set compCount = compCount + 1 %}
                     <a href="/compare/city/{{ comp.slug }}/" class="stack-item glass-panel hub-card">

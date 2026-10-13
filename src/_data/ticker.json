@@ -1,19 +1,19 @@
 [
   {
     "label": "USD/EUR",
-    "value": "0.87",
+    "value": "0.89",
     "change": "+0.2%",
     "positive": true
   },
   {
     "label": "BTC/USD",
-    "value": "$64,083",
+    "value": "$83,136",
     "change": "+1.4%",
     "positive": true
   },
   {
-    "label": "LISBON COL",
-    "value": "$2,400",
+    "label": "AMSTERDAM COL",
+    "value": "$3,500",
     "change": "-0.5%",
     "positive": false
   },
@@ -25,19 +25,19 @@
   },
   {
     "label": "USD/EUR",
-    "value": "0.87",
+    "value": "0.89",
     "change": "+0.2%",
     "positive": true
   },
   {
     "label": "BTC/USD",
-    "value": "$64,083",
+    "value": "$83,136",
     "change": "+1.4%",
     "positive": true
   },
   {
-    "label": "LISBON COL",
-    "value": "$2,400",
+    "label": "AMSTERDAM COL",
+    "value": "$3,500",
     "change": "-0.5%",
     "positive": false
   },

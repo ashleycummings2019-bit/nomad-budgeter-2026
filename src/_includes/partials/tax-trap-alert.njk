@@ -1,0 +1,16 @@
+{% if country.continent == "Europe" or country.isEurope %}
+<div class="tax-trap-alert mt-8 p-6 glass-panel" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(15, 23, 42, 0.4)); border-left: 4px solid #ef4444; border-radius: 8px;">
+    <div class="flex items-start gap-4">
+        <span style="font-size: 2rem;">⚠️</span>
+        <div>
+            <h4 class="text-xl font-bold mb-2 text-white" style="margin-top: 0;">The 2026 "183-Day Trap" Warning</h4>
+            <p class="text-dim mb-4">
+                <strong>Visa approval does NOT equal tax exemption in {{ country.name }}.</strong> The OECD is strictly enforcing "center of vital interest" rules in Q3 2026. If you spend over 183 days here—or establish economic ties—you will be taxed as a resident at rates up to 45%.
+            </p>
+            <a href="{{ site.affiliates.lexidy.url }}" target="_blank" rel="noopener sponsored" class="aura-button" style="background: #ef4444; color: white; padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; text-decoration: none; display: inline-block;">
+                Get a Pre-Move Tax Audit with Lexidy &rarr;
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}

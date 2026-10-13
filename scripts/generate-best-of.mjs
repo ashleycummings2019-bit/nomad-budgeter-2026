@@ -102,7 +102,7 @@ permalink: /trends/${cat.slug}/
             <p class="listicle-notes">${city.expertNotes || `Experience the perfect nomadic lifestyle in ${city.name}. With a favorable tax regime and high quality of life, it's a top choice for 2026.`}</p>
             
             <div class="listicle-actions">
-                <a href="/compare/city/${city.slug}-vs-london/" class="glass-btn-sm">Compare with London</a>
+                <a href="/cities/${city.slug}/" class="glass-btn-sm">Explore ${city.name} Guide →</a>
                 <a href="/" class="action-btn-sm accent-bg">Calculate My Savings →</a>
             </div>
         </div>

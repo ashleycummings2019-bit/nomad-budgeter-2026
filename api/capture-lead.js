@@ -1,5 +1,3 @@
-const { airtableFetch } = require('./_lib/airtable-client');
-
 module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -25,81 +23,41 @@ module.exports = async (req, res) => {
         return res.status(400).json({ error: 'Email is required' });
     }
 
-    const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
-    const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
-    const TABLE_NAME = 'Leads';
-
-    if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
-        // Accept the lead silently — never lose a signup due to config issues
-        console.error('Missing Airtable credentials for capture-lead');
+    // --- LOOPS.SO (ESP) INTEGRATION ---
+    const LOOPS_API_KEY = process.env.LOOPS_API_KEY;
+    
+    if (!LOOPS_API_KEY) {
+        console.error('Missing LOOPS_API_KEY credentials');
         return res.status(200).json({ success: true, id: 'queued', note: 'Lead accepted (offline mode)' });
     }
 
     try {
-        const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(TABLE_NAME)}`;
-
-        const response = await airtableFetch(url, {
+        const response = await fetch(`https://app.loops.so/api/v1/contacts/create`, {
             method: 'POST',
-            headers: {
-                Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-                'Content-Type': 'application/json'
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${LOOPS_API_KEY}`
             },
             body: JSON.stringify({
-                records: [
-                    {
-                        fields: {
-                            'Email': email,
-                            'Notes': `Source: ${source || 'Nomad Budgeter Guide Magnet'}`,
-                            'Created': new Date().toISOString().split('T')[0]
-                        }
-                    }
-                ]
+                email: email,
+                source: source || 'Nomad Budgeter Guide Magnet',
+                userGroup: 'Nomad Budgeter'
             })
         });
 
-        const data = await response.json();
+        const data = await response.json().catch(() => ({}));
 
         if (!response.ok) {
-            console.error('Airtable Error:', data);
-            let errorMessage = data.error?.message || 'Failed to save lead';
-            
-            // Detailed troubleshooting for Airtable setup
-            if (response.status === 404) {
-                errorMessage = `Airtable Table Not Found: Ensure your base (${AIRTABLE_BASE_ID}) has a table named exactly "${TABLE_NAME}".`;
-            } else if (response.status === 422) {
-                errorMessage = `Airtable Field Mismatch: Ensure the "${TABLE_NAME}" table has these exact fields: "Email" (Email type), "Notes" (Long text), and "Created" (Date or Text).`;
-            } else if (response.status === 401) {
-                errorMessage = "Airtable Authentication Failed: Check your AIRTABLE_API_KEY.";
-            }
-
+            console.error('Loops Error:', data);
             return res.status(response.status).json({ 
-                error: errorMessage,
-                details: data.error
+                error: data.message || 'Failed to save lead to Loops',
+                details: data
             });
         }
 
-        // --- CONVERTKIT (ESP) INTEGRATION ---
-        // Sync the lead to ConvertKit so the 5-day drip sequence begins automatically.
-        // We use catch() so it doesn't block the response if the ESP is slow.
-        const CONVERTKIT_API_KEY = process.env.CONVERTKIT_API_KEY;
-        const CONVERTKIT_FORM_ID = process.env.CONVERTKIT_FORM_ID; // Form ID attached to the Sequence
-        
-        if (CONVERTKIT_API_KEY && CONVERTKIT_FORM_ID) {
-            fetch(`https://api.convertkit.com/v3/forms/${CONVERTKIT_FORM_ID}/subscribe`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json; charset=utf-8' },
-                body: JSON.stringify({
-                    api_key: CONVERTKIT_API_KEY,
-                    email: email,
-                    first_name: "Nomad" // Placeholder
-                })
-            }).catch(err => console.error('ConvertKit Sync Error:', err.message));
-        }
-
-        return res.status(200).json({ success: true, id: data.records[0].id });
+        return res.status(200).json({ success: true, id: data.id || 'loops_success' });
     } catch (error) {
-        // NEVER lose a lead — accept it even if Airtable is completely down
-        console.error('Capture-lead Airtable error (lead accepted anyway):', error.message);
-        return res.status(200).json({ success: true, id: 'queued', note: 'Lead accepted (will sync later)' });
+        console.error('Capture-lead Loops error:', error.message);
+        return res.status(500).json({ error: 'Internal server error while syncing to Loops' });
     }
 };

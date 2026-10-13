@@ -5,6 +5,8 @@ module.exports = function config(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/ads.txt");
+  eleventyConfig.addPassthroughCopy("src/manifest.json");
   eleventyConfig.addPassthroughCopy({"src/_data/rates.json": "api/rates.json"});
 
   // ─── Custom Filters ───
@@ -124,8 +126,21 @@ module.exports = function config(eleventyConfig) {
     if (!url) return "";
     // If it's already an optimized URL or local, return as is
     if (url.startsWith('/_vercel/image')) return url;
+
+    // Unsplash has its own resizing CDN — use it directly (no Vercel quota, no config dependency)
+    if (url.startsWith('https://images.unsplash.com/')) {
+      const u = new URL(url);
+      u.searchParams.set('w', String(width));
+      u.searchParams.set('q', String(quality));
+      u.searchParams.set('auto', 'format');
+      u.searchParams.set('fit', 'crop');
+      return u.toString();
+    }
     
-    // Construct Vercel Image Optimization URL
+    // Local static assets should be served directly via Vercel CDN cache (saves image quota)
+    if (url.startsWith('/')) return url;
+    
+    // Construct Vercel Image Optimization URL (requires "images" block in vercel.json)
     const encodedUrl = encodeURIComponent(url);
     return `/_vercel/image?url=${encodedUrl}&w=${width}&q=${quality}`;
   });
